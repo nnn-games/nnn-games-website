@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects - [Company Name]</title>
+    <title>Project Alpha - [Company Name]</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -23,14 +23,14 @@
             background-color: var(--background-color);
             color: var(--text-color);
             margin: 0;
-            padding-top: 70px; /* 헤더 높이만큼 패딩 추가 */
+            padding-top: 70px;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* Header & Navigation */
+        /* Header & Navigation (from index.html) */
         .main-header {
             background-color: var(--card-bg);
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -39,7 +39,6 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            transition: background-color 0.3s;
         }
         .main-header .container {
             display: flex;
@@ -92,90 +91,98 @@
             font-size: 24px;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+        /* Project Header */
+        .project-header {
+            padding: 80px 20px;
             text-align: center;
-            padding: 120px 20px;
+            background: var(--card-bg);
         }
-        .hero h1 {
+        .project-header h1 {
             font-family: 'Poppins', sans-serif;
             font-size: 3.5em;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
         }
-        .hero p {
+        .project-header p {
             font-size: 1.3em;
+            color: #7f8c8d;
             max-width: 700px;
-            margin: 0 auto 30px;
-            animation: fadeInUp 1s 0.5s;
-        }
-        .cta-button {
-            background-color: white;
-            color: var(--primary-color);
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            animation: fadeInUp 1s 1s;
-        }
-        .cta-button:hover {
-            background-color: var(--background-color);
-            transform: translateY(-3px);
+            margin: 0 auto;
         }
 
-        /* Project Section */
-        .project-section {
-            padding: 80px 0;
+        /* Main Content */
+        .project-main {
+            padding: 60px 0;
         }
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 60px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 40px;
-        }
-        .project-card {
-            background-color: var(--card-bg);
+        .project-main img.main-image {
+            width: 100%;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 60px;
         }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
         }
-        .project-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
+        .project-description h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
-        .project-card-content {
+        .project-description p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .project-details {
+            background-color: var(--card-bg);
             padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
         }
-        .project-card h2 {
-            font-size: 1.6em;
+        .project-details h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .project-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .project-details ul li {
             margin-bottom: 15px;
+        }
+        .project-details ul li strong {
+            display: block;
             color: var(--secondary-color);
+            margin-bottom: 5px;
         }
-        .project-card p {
-            margin-bottom: 25px;
-            line-height: 1.7;
+
+        /* Image Gallery */
+        .gallery-section {
+            padding: 60px 0;
         }
-        .project-card a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 700;
+        .gallery-section h2 {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 40px;
         }
-        .project-card a:hover {
-            text-decoration: underline;
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .image-gallery img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
         }
 
         /* Footer */
@@ -204,58 +211,30 @@
         .footer-section p, .footer-section a {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
-            line-height: 1.8;
-        }
-        .footer-section a:hover {
-            color: white;
         }
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.9em;
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
+            .menu-toggle { display: block; }
             .main-nav {
                 position: absolute;
                 top: 70px;
                 left: 0;
                 width: 100%;
                 background-color: var(--card-bg);
-                flex-direction: column;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.5s ease-in-out;
             }
-            .main-nav.active {
-                max-height: 300px; /* 충분한 높이 */
-            }
-            .main-nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-            .main-nav ul li a {
-                padding: 15px;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-            .hero h1 { font-size: 2.5em; }
-            .hero p { font-size: 1.1em; }
+            .main-nav.active { max-height: 300px; }
+            .main-nav ul { flex-direction: column; width: 100%; }
+            .main-nav ul li a { padding: 15px; text-align: center; border-bottom: 1px solid #eee; }
+            .project-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -275,40 +254,46 @@
         </div>
     </header>
 
-    <section class="hero">
-        <h1>Our Innovative Projects</h1>
-        <p>We turn bold ideas into exceptional digital experiences. Explore our work.</p>
-        <a href="#projects" class="cta-button">View Our Work</a>
-    </section>
+    <header class="project-header">
+        <h1>Project Alpha</h1>
+        <p>A cutting-edge web platform for data analytics.</p>
+    </header>
 
-    <main id="projects" class="project-section container">
-        <h2 class="section-title">What We've Built</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/3498db/ffffff?text=Project+Alpha" alt="Project Alpha">
-                <div class="project-card-content">
-                    <h2>Project Alpha</h2>
-                    <p>A cutting-edge web platform designed to streamline data analytics, providing actionable insights through an intuitive interface.</p>
-                    <a href="project-alpha.html">Learn More &rarr;</a>
-                </div>
+    <main class="project-main container">
+        <img src="https://via.placeholder.com/1200x600/3498db/ffffff?text=Project+Alpha+Main+Visual" alt="Project Alpha Main Image" class="main-image">
+
+        <div class="project-content">
+            <div class="project-description">
+                <h2>About the Project</h2>
+                <p>Project Alpha is a comprehensive data analytics platform designed to provide businesses with actionable insights through a highly intuitive and interactive interface. We focused on creating a seamless user experience that simplifies complex data visualization and reporting.</p>
+                <p>The platform integrates multiple data sources, offering real-time dashboards and customizable reports. Our goal was to empower decision-makers to understand their data deeply and make informed choices quickly and efficiently.</p>
             </div>
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/2ecc71/ffffff?text=Project+Beta" alt="Project Beta">
-                <div class="project-card-content">
-                    <h2>Project Beta</h2>
-                    <p>A revolutionary mobile application that connects communities, fostering collaboration and local engagement like never before.</p>
-                    <a href="#">Learn More &rarr;</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Project+Gamma" alt="Project Gamma">
-                <div class="project-card-content">
-                    <h2>Project Gamma</h2>
-                    <p>An e-commerce solution with a focus on user experience, driving sales through personalized recommendations and seamless checkout.</p>
-                    <a href="#">Learn More &rarr;</a>
-                </div>
-            </div>
+            <aside class="project-details">
+                <h3>Project Details</h3>
+                <ul>
+                    <li><strong>Client:</strong> Global Tech Inc.</li>
+                    <li><strong>Date:</strong> January 2025</li>
+                    <li><strong>Services:</strong> Web Development, UI/UX Design, Data Visualization</li>
+                    <li><strong>Technology:</strong>
+                        <ul>
+                            <li>- React.js</li>
+                            <li>- Node.js</li>
+                            <li>- D3.js</li>
+                            <li>- PostgreSQL</li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
         </div>
+
+        <section class="gallery-section">
+            <h2>Image Gallery</h2>
+            <div class="image-gallery">
+                <img src="https://via.placeholder.com/400x300/2c3e50/ffffff?text=Dashboard" alt="Dashboard View">
+                <img src="https://via.placeholder.com/400x300/2c3e50/ffffff?text=Analytics" alt="Analytics Interface">
+                <img src="https://via.placeholder.com/400x300/2c3e50/ffffff?text=Mobile+View" alt="Mobile Responsive View">
+            </div>
+        </section>
     </main>
 
     <footer class="main-footer">
@@ -327,7 +312,6 @@
                 <h3>Contact Us</h3>
                 <p>Email: contact@example.com</p>
                 <p>Phone: +82 2-1234-5678</p>
-                <p>Address: Seoul, South Korea</p>
             </div>
         </div>
         <div class="container footer-bottom">
