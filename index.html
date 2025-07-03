@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - [Company Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-color: #f8f9fa;
+            --text-color: #343a40;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding-top: 70px; /* 헤더 높이만큼 패딩 추가 */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header & Navigation */
+        .main-header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .main-nav ul li a {
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .main-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        .main-nav ul li a:hover, .main-nav ul li a.active {
+            color: var(--primary-color);
+        }
+        .main-nav ul li a.active::after {
+            width: 60%;
+        }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s;
+        }
+        .hero p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s 0.5s;
+        }
+        .cta-button {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            animation: fadeInUp 1s 1s;
+        }
+        .cta-button:hover {
+            background-color: var(--background-color);
+            transform: translateY(-3px);
+        }
+
+        /* Project Section */
+        .project-section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .project-card-content {
+            padding: 30px;
+        }
+        .project-card h2 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        .project-card p {
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        .project-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-section h3 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        .footer-section a:hover {
+            color: white;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9em;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .main-nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-in-out;
+            }
+            .main-nav.active {
+                max-height: 300px; /* 충분한 높이 */
+            }
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            .main-nav ul li a {
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.1em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">[회사명]</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Projects</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">&#9776;</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Our Innovative Projects</h1>
+        <p>We turn bold ideas into exceptional digital experiences. Explore our work.</p>
+        <a href="#projects" class="cta-button">View Our Work</a>
+    </section>
+
+    <main id="projects" class="project-section container">
+        <h2 class="section-title">What We've Built</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250/3498db/ffffff?text=Project+Alpha" alt="Project Alpha">
+                <div class="project-card-content">
+                    <h2>Project Alpha</h2>
+                    <p>A cutting-edge web platform designed to streamline data analytics, providing actionable insights through an intuitive interface.</p>
+                    <a href="#">Learn More &rarr;</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250/2ecc71/ffffff?text=Project+Beta" alt="Project Beta">
+                <div class="project-card-content">
+                    <h2>Project Beta</h2>
+                    <p>A revolutionary mobile application that connects communities, fostering collaboration and local engagement like never before.</p>
+                    <a href="#">Learn More &rarr;</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Project+Gamma" alt="Project Gamma">
+                <div class="project-card-content">
+                    <h2>Project Gamma</h2>
+                    <p>An e-commerce solution with a focus on user experience, driving sales through personalized recommendations and seamless checkout.</p>
+                    <a href="#">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>[Company Name]</h3>
+                <p>Crafting the future of digital interaction, one project at a time.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Projects</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: contact@example.com</p>
+                <p>Phone: +82 2-1234-5678</p>
+                <p>Address: Seoul, South Korea</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 [Company Name]. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
