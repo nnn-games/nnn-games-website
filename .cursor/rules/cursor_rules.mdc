@@ -1,0 +1,282 @@
+---
+description: Guidelines for creating and maintaining Cursor rules to ensure consistency and effectiveness.
+globs: .cursor/rules/*.mdc
+alwaysApply: true
+---
+
+- **Required Rule Structure:**
+  ```markdown
+  ---
+  description: Clear, one-line description of what the rule enforces
+  globs: path/to/files/*.ext, other/path/**/*
+  alwaysApply: boolean
+  ---
+
+  - **Main Points in Bold**
+    - Sub-points with details
+    - Examples and explanations
+  ```
+
+- **File References:**
+  - Use `[filename](mdc:path/to/file)` ([filename](mdc:filename)) to reference files
+  - Example: [prisma.mdc](mdc:.cursor/rules/prisma.mdc) for rule references
+  - Example: [schema.prisma](mdc:prisma/schema.prisma) for code references
+
+- **Code Examples:**
+  - Use language-specific code blocks
+  ```typescript
+  // ✅ DO: Show good examples
+  const goodExample = true;
+  
+  // ❌ DON'T: Show anti-patterns
+  const badExample = false;
+  ```
+
+- **Rule Content Guidelines:**
+  - Start with high-level overview
+  - Include specific, actionable requirements
+  - Show examples of correct implementation
+  - Reference existing code when possible
+  - Keep rules DRY by referencing other rules
+
+- **Rule Maintenance:**
+  - Update rules when new patterns emerge
+  - Add examples from actual codebase
+  - Remove outdated patterns
+  - Cross-reference related rules
+
+- **Best Practices:**
+  - Use bullet points for clarity
+  - Keep descriptions concise
+  - Include both DO and DON'T examples
+  - Reference actual code over theoretical examples
+  - Use consistent formatting across rules
+
+  # Cursor Rules for GitHub Pages Landing Page
+
+  ## Project Context
+  You are developing a company landing page for GitHub Pages deployment. The project prioritizes simplicity, performance, and maintainability without over-engineering.
+
+  ## Core Principles
+  - **No Over-Engineering**: Use vanilla HTML, CSS, and JavaScript only
+  - **Single File First**: Prefer inline styles and scripts in index.html
+  - **Performance First**: Optimize for fast loading and minimal resources
+  - **Mobile First**: Design for mobile devices, then scale up
+  - **SEO Friendly**: Include proper meta tags and semantic HTML
+
+  ## File Structure
+  ```
+  /
+  ├── index.html          # Main landing page
+  ├── README.md          # Project documentation
+  └── assets/            # Optional, only if absolutely necessary
+      ├── images/        # Optimized images (WebP preferred)
+      └── favicon.ico    # Site favicon
+  ```
+
+  ## Code Style Guidelines
+
+  ### HTML
+  - Use semantic HTML5 elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`)
+  - Include proper meta tags in `<head>`
+  - Add descriptive alt attributes for images
+  - Use BEM naming convention for CSS classes when needed
+
+  ### CSS
+  - Write CSS in `<style>` tag within `<head>`
+  - Use CSS custom properties for colors and spacing
+  - Mobile-first media queries
+  - Prefer flexbox and grid over floats
+  - Minimize use of !important
+
+  ### JavaScript
+  - Write JavaScript in `<script>` tag before `</body>`
+  - Use ES6+ features supported by modern browsers
+  - No external dependencies or frameworks
+  - Progressive enhancement approach
+  - Minimal DOM manipulation
+
+  ## Implementation Rules
+
+  ### When asked to create a new section:
+  1. Add semantic HTML structure first
+  2. Style with inline CSS in the `<style>` tag
+  3. Add interactivity with vanilla JavaScript only if necessary
+  4. Ensure mobile responsiveness
+  5. Test accessibility (ARIA labels, keyboard navigation)
+
+  ### When asked to modify existing code:
+  1. Locate the specific section to modify
+  2. Make minimal changes to achieve the goal
+  3. Preserve existing functionality
+  4. Update comments if present
+  5. Maintain consistent code style
+
+  ### When asked about performance:
+  1. Suggest inline critical CSS
+  2. Recommend lazy loading for images
+  3. Minify code for production
+  4. Use system fonts or optimize web fonts
+  5. Implement proper caching headers
+
+  ## Template Structure
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="회사 설명">
+      <title>회사명 - 슬로건</title>
+
+      <style>
+          /* CSS Reset and Custom Properties */
+          :root {
+              --primary-color: #333;
+              --secondary-color: #666;
+              --accent-color: #0066cc;
+              --max-width: 1200px;
+              --spacing: 1rem;
+          }
+
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+
+          /* Mobile First Styles */
+          body {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+              line-height: 1.6;
+              color: var(--primary-color);
+          }
+
+          /* Component Styles */
+          .container {
+              max-width: var(--max-width);
+              margin: 0 auto;
+              padding: 0 var(--spacing);
+          }
+
+          /* Responsive Design */
+          @media (min-width: 768px) {
+              :root {
+                  --spacing: 2rem;
+              }
+          }
+      </style>
+  </head>
+  <body>
+      <!-- Content sections here -->
+
+      <script>
+          // Minimal JavaScript for interactivity
+          document.addEventListener('DOMContentLoaded', () => {
+              // Progressive enhancement code
+          });
+      </script>
+  </body>
+  </html>
+  ```
+
+  ## Common Patterns
+
+  ### Hero Section Pattern
+  ```html
+  <section class="hero">
+      <div class="container">
+          <h1>임팩트 있는 헤드라인</h1>
+          <p>간단한 서브 헤드라인</p>
+          <a href="#contact" class="cta-button">문의하기</a>
+      </div>
+  </section>
+  ```
+
+  ### Card Grid Pattern
+  ```html
+  <section class="services">
+      <div class="container">
+          <div class="card-grid">
+              <article class="card">
+                  <h3>서비스명</h3>
+                  <p>서비스 설명</p>
+              </article>
+              <!-- More cards -->
+          </div>
+      </div>
+  </section>
+  ```
+
+  ### Contact Section Pattern
+  ```html
+  <footer class="contact">
+      <div class="container">
+          <address>
+              <a href="mailto:email@company.com">email@company.com</a>
+              <a href="tel:+82212345678">02-1234-5678</a>
+          </address>
+      </div>
+  </footer>
+  ```
+
+  ## Error Prevention
+
+  ### Avoid These Common Mistakes:
+  - Don't use build tools or bundlers
+  - Don't add unnecessary npm packages
+  - Don't create multiple HTML files unless specifically requested
+  - Don't use CSS preprocessors (SASS, LESS)
+  - Don't implement features that require a backend
+
+  ### Always Remember:
+  - GitHub Pages only serves static files
+  - No server-side processing available
+  - HTTPS is provided by default
+  - Custom domains are supported but require DNS configuration
+  - The site will be available at `https://[username].github.io/[repository]/`
+
+  ## Response Format
+
+  When providing code:
+  1. Show the complete relevant section, not just the changes
+  2. Include comments for complex logic
+  3. Explain what the code does and why
+  4. Suggest alternatives if there are simpler solutions
+  5. Mention any browser compatibility concerns
+
+  ## SEO Checklist
+  - [ ] Title tag (50-60 characters)
+  - [ ] Meta description (150-160 characters)
+  - [ ] Open Graph tags for social sharing
+  - [ ] Canonical URL
+  - [ ] Structured data (JSON-LD)
+  - [ ] Sitemap.xml (if multiple pages)
+  - [ ] Robots.txt (if needed)
+
+  ## Performance Checklist
+  - [ ] Images optimized and compressed
+  - [ ] CSS minified and inlined (critical CSS)
+  - [ ] JavaScript minified and deferred
+  - [ ] HTML minified
+  - [ ] Gzip compression (automatic on GitHub Pages)
+  - [ ] Browser caching headers configured
+
+  ## Accessibility Checklist
+  - [ ] Proper heading hierarchy (h1 → h2 → h3)
+  - [ ] Alt text for all images
+  - [ ] ARIA labels where needed
+  - [ ] Keyboard navigation support
+  - [ ] Color contrast ratio (WCAG AA standard)
+  - [ ] Focus indicators visible
+  - [ ] Skip navigation link
+
+  ## Testing Recommendations
+  1. Test on real mobile devices, not just browser DevTools
+  2. Check loading speed with Google PageSpeed Insights
+  3. Validate HTML with W3C Validator
+  4. Test with screen readers
+  5. Check cross-browser compatibility (Chrome, Firefox, Safari, Edge)
+
+  Remember: Keep it simple, make it fast, ensure it works everywhere.
