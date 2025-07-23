@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-key="contact_page_title">문의 - NNN GAMES</title>
+    <title data-key="projects_page_title">프로젝트 - NNN GAMES</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,8 +18,8 @@
                 <ul>
                     <li><a href="index.html" data-key="nav_home">홈</a></li>
                     <li><a href="about.html" data-key="nav_about">소개</a></li>
-                    <li><a href="projects.html" data-key="nav_projects">프로젝트</a></li>
-                    <li><a href="contact.html" class="active" data-key="nav_contact">문의</a></li>
+                    <li><a href="projects.html" class="active" data-key="nav_projects">프로젝트</a></li>
+                    <li><a href="contact.html" data-key="nav_contact">문의</a></li>
                     <li class="lang-switcher">
                         <a href="#" data-lang="ko" class="lang-btn active">한국어</a>
                         <a href="#" data-lang="en" class="lang-btn">English</a>
@@ -34,40 +34,36 @@
     <main>
         <section class="page-header">
             <div class="container">
-                <h1 data-key="contact_page_header">문의하기</h1>
-                <p data-key="contact_page_subtitle">저희에게 연락해 주세요. 프로젝트, 서비스 또는 기타 문의사항이 있으시면 언제든 답변드리겠습니다.</p>
+                <h1 data-key="projects_page_header">프로젝트</h1>
+                <p data-key="project_preview_title">진행 중인 프로젝트</p>
             </div>
         </section>
 
-        <section class="contact-section container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h2 data-key="contact_info_title">연락처 정보</h2>
-                    <div class="info-item">
-                        <span class="icon">📧</span>
-                        <p><strong>Email:</strong><br>developer@triplengames.com</p>
-                    </div>
-                    <div class="info-item">
-                        <span class="icon">🏠</span>
-                        <p data-key="footer_address"><strong>주소:</strong><br>서울특별시 강남구 테헤란로 152, 6층</p>
-                    </div>
-                    <div class="info-item">
-                        <span class="icon">📄</span>
-                        <p data-key="footer_business_number"><strong>사업자등록번호:</strong><br>123-45-67890</p>
+        <!-- 현재 진행 중인 프로젝트 -->
+        <section class="project-preview container">
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/gt-preview.jpg" alt="Get Train Preview">
+                    <div class="project-info">
+                        <h3 data-key="project_alpha_title">겟 트레인(JR 동일본) - ZEPETO</h3>
+                        <p data-key="project_alpha_desc">게임의 재미를 통해 JR 동일본의 브랜드를 전 세계 사용자에게 자연스럽게 알리는 ZEPETO 월드입니다.</p>
+                        <a href="project-alpha.html" class="learn-more" data-key="learn_more">자세히 보기 →</a>
                     </div>
                 </div>
-                <div class="map-container">
-                    <h2 data-key="office_location_title">사무실 위치</h2>
-                    <div class="map-wrapper">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.4158!2d127.091549!3d37.411969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDI0JzQzLjEiTiAxMjfCsDA1JzM2LjgiRQ!5e0!3m2!1sko!2skr!4v1640000000000"
-                            width="100%" 
-                            height="400" 
-                            style="border:0; border-radius: 10px;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                <div class="project-card">
+                    <img src="images/ldg-preview.jpg" alt="Legendary DJ Gear Preview">
+                    <div class="project-info">
+                        <h3 data-key="project_beta_title">Legendary DJ Gear - ROBLOX</h3>
+                        <p data-key="project_beta_desc">음악과 코스튬을 수집하며 나만의 플레이리스트를 완성하는 로블록스 수집형 게임.</p>
+                        <a href="project-beta.html" class="learn-more" data-key="learn_more">자세히 보기 →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/nnnugc-preview.jpg" alt="NNN UGC Preview">
+                    <div class="project-info">
+                        <h3 data-key="project_gamma_title">NNN UGC</h3>
+                        <p data-key="project_gamma_desc">트렌디한 아이템을 제작해 로블록스 유저에게 선보이는 UGC 제작 프로젝트.</p>
+                        <a href="project-gamma.html" class="learn-more" data-key="learn_more">자세히 보기 →</a>
                     </div>
                 </div>
             </div>

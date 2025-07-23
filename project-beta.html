@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-key="project_alpha_page_title">Get Train - NNN GAMES</title>
+    <title data-key="project_beta_title">프로젝트 베타 - NNN GAMES</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -109,17 +109,22 @@
         }
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
         }
-        .image-gallery img {
-            width: 100%;
+        .image-gallery > div {
+            overflow: hidden;
             border-radius: var(--border-radius);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
-        .image-gallery img:hover {
-            transform: scale(1.05);
+        .image-gallery > div:hover {
+            transform: scale(1.03);
+        }
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Footer */
@@ -201,26 +206,35 @@
     </header>
 
     <header class="project-header">
-        <h1 data-key="project_page_header">프로젝트 알파</h1>
-        <p><span data-key="project_status">개발 중</span> | <span data-key="project_genre">장르: 오픈월드 RPG</span> | <span data-key="project_platform">플랫폼: PC, 콘솔</span></p>
+        <h1 data-key="project_beta_page_header">Legendary DJ Gear</h1>
+        <p><span data-key="project_beta_status">정식 운영 중</span> | <span data-key="project_beta_genre">장르: 음악 수집 게임</span> | <span data-key="project_beta_platform">플랫폼: ROBLOX</span></p>
     </header>
 
     <main class="project-main container">
-        <img src="images/gt-main.jpg" alt="Get Train Main Image" class="main-image">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 60px;">
+            <iframe 
+                src="https://www.youtube.com/embed/0cEj3Tnb-No" 
+                title="Legendary DJ Gear Gameplay"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
 
         <div class="project-content">
             <div class="project-description">
-                <h2 data-key="project_summary_title">프로젝트 개요</h2>
-                <p data-key="project_summary_p1">프로젝트 알파는 광활한 오픈월드를 배경으로 하는 차세대 롤플레잉 게임입니다. 플레이어는 살아 숨쉬는 세계를 탐험하며 자신만의 서사를 만들어가게 됩니다.</p>
-                <p data-key="project_summary_p2">최첨단 그래픽 기술과 깊이 있는 스토리텔링, 높은 자유도를 결합하여 이전에는 없던 몰입감 넘치는 경험을 선사하는 것을 목표로 합니다.</p>
+                <h2 data-key="project_beta_summary_title">프로젝트 개요</h2>
+                <p data-key="project_beta_summary_p1">Legendary DJ Gear는 음악과 패션을 결합한 혁신적인 로블록스 수집형 게임입니다. 플레이어는 다양한 음악 장르의 DJ가 되어 전설적인 의상과 음악을 수집하며 자신만의 독특한 스타일을 완성해 나갑니다.</p>
+                <p data-key="project_beta_summary_p2">게임 내에서 플레이어는 리듬 게임, 퀘스트, 이벤트를 통해 희귀한 아이템을 획득하고, 다른 플레이어들과 경쟁하며 최고의 DJ로 성장할 수 있습니다. 커뮤니티 중심의 소셜 기능으로 전 세계 플레이어들과 음악을 공유하고 협업할 수 있습니다.</p>
             </div>
             <aside class="project-details">
-                <h3 data-key="project_features_title">주요 특징</h3>
+                <h3 data-key="project_beta_features_title">주요 특징</h3>
                 <ul>
-                    <li data-key="project_feature_1">광활하고 동적인 오픈월드</li>
-                    <li data-key="project_feature_2">선택에 따라 변화하는 비선형적 스토리</li>
-                    <li data-key="project_feature_3">전략적인 실시간 전투 시스템</li>
-                    <li data-key="project_feature_4">깊이 있는 캐릭터 커스터마이징</li>
+                    <li data-key="project_beta_feature_1">100개 이상의 유니크한 DJ 의상과 액세서리 수집</li>
+                    <li data-key="project_beta_feature_2">다양한 음악 장르별 테마 월드와 리듬 게임</li>
+                    <li data-key="project_beta_feature_3">실시간 멀티플레이어 DJ 배틀과 랭킹 시스템</li>
+                    <li data-key="project_beta_feature_4">커스텀 플레이리스트와 음악 공유 커뮤니티</li>
                 </ul>
             </aside>
         </div>
@@ -228,14 +242,15 @@
         <section class="gallery-section">
             <h2 data-key="gallery_title">갤러리</h2>
             <div class="image-gallery">
-                <img src="images/gt-icon.jpg" alt="Get Train Gallery 0">
-                <img src="images/gt-gallery-0.jpg" alt="Get Train Gallery 1">
-                <img src="images/gt-gallery-1.jpg" alt="Get Train Gallery 2">
-                <img src="images/gt-gallery-2.jpg" alt="Get Train Gallery 3">
-                <img src="images/gt-gallery-3.jpg" alt="Get Train Gallery 4">
-                <img src="images/gt-gallery-4.jpg" alt="Get Train Gallery 5">
-                <img src="images/gt-gallery-5.jpg" alt="Get Train Gallery 6">
-                <img src="images/gt-gallery-6.jpg" alt="Get Train Gallery 7">
+                <div>
+                    <img src="images/ldg-gallery-1.jpg" alt="Legendary DJ Gear Gallery 1">
+                </div>
+                <div>
+                    <img src="images/ldg-gallery-2.jpg" alt="Legendary DJ Gear Gallery 2">
+                </div>
+                <div>
+                    <img src="images/ldg-gallery-3.jpg" alt="Legendary DJ Gear Gallery 3">
+                </div>
             </div>
         </section>
     </main>
@@ -256,12 +271,12 @@
             <div class="footer-section">
                 <h3 data-key="footer_contact_title">연락처</h3>
                 <p>Email: developer@triplengames.com</p>
-                <p data-key="footer_address">주소 : (13449) 경기도 성남시 수정구 창업로 54, 판교 제2테크노밸리 LH기업성장센터, 804B호</p>
-                <p data-key="footer_business_number">사업자등록번호: 629-87-01849</p>
+                <p data-key="footer_address">주소: 서울특별시 강남구 테헤란로 152, 6층</p>
+                <p data-key="footer_business_number">사업자등록번호: 123-45-67890</p>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p data-key="footer_copyright">© 2025 Triple N Games Inc. All Rights Reserved.</p>
+            <p data-key="footer_copyright">© 2025 TripleN Games Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
