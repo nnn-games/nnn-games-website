@@ -41,14 +41,14 @@ const projectsData = {
         {
             id: 'project-gamma',
             title: {
-                ko: '프로젝트 감마',
-                en: 'Project Gamma',
-                ja: 'プロジェクトガンマ'
+                ko: 'NNN UGC',
+                en: 'NNN UGC',
+                ja: 'NNN UGC'
             },
             description: {
-                ko: '세 번째 프로젝트에 대한 설명을 여기에 추가하세요.',
-                en: 'Add description for the third project here.',
-                ja: '3番目のプロジェクトの説明をここに追加してください。'
+                ko: '트렌디한 아이템을 제작해 로블록스 유저에게 선보이는 UGC 제작 프로젝트.',
+                en: 'A UGC creation project delivering trendy items to Roblox users.',
+                ja: 'Robloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
             },
             image: 'images/nnnugc-preview.jpg',
             detailPage: 'project-gamma.html',
@@ -107,14 +107,14 @@ const projectsData = {
         {
             id: 'project-gamma',
             title: {
-                ko: '프로젝트 감마',
-                en: 'Project Gamma',
-                ja: 'プロジェクトガンマ'
+                ko: 'NNN UGC',
+                en: 'NNN UGC',
+                ja: 'NNN UGC'
             },
             description: {
-                ko: '세 번째 프로젝트에 대한 설명을 여기에 추가하세요.',
-                en: 'Add description for the third project here.',
-                ja: '3番目のプロジェクトの説明をここに追加してください。'
+                ko: '트렌디한 아이템을 제작해 로블록스 유저에게 선보이는 UGC 제작 프로젝트.',
+                en: 'A UGC creation project delivering trendy items to Roblox users.',
+                ja: 'Robloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
             },
             image: 'images/nnnugc-preview.jpg',
             detailPage: 'project-gamma.html',

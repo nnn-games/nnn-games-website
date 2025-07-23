@@ -111,7 +111,7 @@ const translations = {
         project_beta_feature_4: "커스텀 플레이리스트와 음악 공유 커뮤니티",
         
         // 프로젝트 감마 페이지
-        project_gamma_title: "NNN UGC - NNN GAMES",
+        project_gamma_title: "NNN UGC",
         project_gamma_page_header: "NNN UGC",
         project_gamma_status: "제작 중",
         project_gamma_genre: "장르: UGC 아이템 제작",
@@ -249,7 +249,7 @@ const translations = {
         project_beta_feature_4: "Custom playlists and music sharing community",
         
         // Project Gamma page
-        project_gamma_title: "NNN UGC - NNN GAMES",
+        project_gamma_title: "NNN UGC",
         project_gamma_page_header: "NNN UGC",
         project_gamma_status: "In Production",
         project_gamma_genre: "Genre: UGC Item Creation",
@@ -387,7 +387,7 @@ const translations = {
         project_beta_feature_4: "カスタムプレイリストと音楽共有コミュニティ",
         
         // プロジェクトガンマページ
-        project_gamma_title: "NNN UGC - NNN GAMES",
+        project_gamma_title: "NNN UGC",
         project_gamma_page_header: "NNN UGC",
         project_gamma_status: "制作中",
         project_gamma_genre: "ジャンル：UGCアイテム制作",
@@ -433,6 +433,12 @@ function changeLanguage(lang) {
         updateTranslations();
         // 언어 버튼 활성화 상태 업데이트
         updateLanguageButtons();
+        // 프로젝트 렌더러에 언어 변경 이벤트 전송
+        if (window.ProjectRenderer) {
+            window.ProjectRenderer.updateLanguage(lang);
+        }
+        // 커스텀 이벤트 발생
+        document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
     }
 }
 
@@ -472,6 +478,11 @@ if (isBrowser) {
         // 현재 언어로 번역 적용
         updateTranslations();
         updateLanguageButtons();
+        
+        // 프로젝트 렌더러에 초기 언어 설정 알림
+        if (window.ProjectRenderer) {
+            window.ProjectRenderer.updateLanguage(currentLanguage);
+        }
         
         // 언어 버튼 클릭 이벤트 추가
         const langButtons = document.querySelectorAll('.lang-btn');

@@ -1,5 +1,9 @@
 // 프로젝트 렌더링 관련 함수들
 const ProjectRenderer = {
+    // 현재 언어 가져오기 (localStorage와 동기화)
+    getCurrentLanguage: function() {
+        return localStorage.getItem('language') || document.documentElement.lang || 'ko';
+    },
     // 메인 페이지 프로젝트 카드 렌더링
     renderFeaturedProjects: function(containerId = 'project-grid') {
         const container = document.querySelector(`.${containerId}`) || document.querySelector(`#${containerId}`);
@@ -8,7 +12,7 @@ const ProjectRenderer = {
             return;
         }
 
-        const currentLang = document.documentElement.lang || 'ko';
+        const currentLang = this.getCurrentLanguage();
         const projects = ProjectManager.getFeaturedProjects();
         
         container.innerHTML = '';
@@ -48,7 +52,7 @@ const ProjectRenderer = {
             return;
         }
 
-        const currentLang = document.documentElement.lang || 'ko';
+        const currentLang = this.getCurrentLanguage();
         const projects = projectsData.all;
         
         container.innerHTML = '';
@@ -153,11 +157,18 @@ const ProjectRenderer = {
 
     // 언어 변경 시 프로젝트 업데이트
     updateLanguage: function(lang) {
+        // 메인 페이지 프로젝트 카드가 없으면 렌더링
+        const mainProjectContainer = document.querySelector('.project-preview .project-grid');
+        if (mainProjectContainer && mainProjectContainer.children.length === 0) {
+            this.renderFeaturedProjects('project-grid');
+            return;
+        }
+        
         // 메인 페이지 프로젝트 카드 업데이트
         const mainProjectCards = document.querySelectorAll('.project-preview .project-card');
         mainProjectCards.forEach(card => {
             const projectId = card.getAttribute('data-project-id');
-            const project = ProjectManager.getProject(projectId);
+            const project = projectsData.all.find(p => p.id === projectId);
             if (project) {
                 const title = card.querySelector('h3');
                 const description = card.querySelector('p');
@@ -171,7 +182,7 @@ const ProjectRenderer = {
         const allProjectCards = document.querySelectorAll('#all-projects-grid .project-card');
         allProjectCards.forEach(card => {
             const projectId = card.getAttribute('data-project-id');
-            const project = ProjectManager.getProject(projectId);
+            const project = projectsData.all.find(p => p.id === projectId);
             if (project) {
                 const title = card.querySelector('h3');
                 const description = card.querySelector('p');
@@ -192,15 +203,18 @@ const ProjectRenderer = {
 
 // DOM이 로드되면 프로젝트 렌더링
 document.addEventListener('DOMContentLoaded', function() {
-    // 메인 페이지인 경우
-    if (document.querySelector('.project-preview')) {
-        ProjectRenderer.renderFeaturedProjects('project-grid');
-    }
-    
-    // 프로젝트 페이지인 경우
-    if (document.querySelector('#all-projects-grid')) {
-        ProjectRenderer.renderAllProjects('all-projects-grid');
-    }
+    // 언어 설정이 완료된 후 렌더링하도록 약간의 지연
+    setTimeout(function() {
+        // 메인 페이지인 경우
+        if (document.querySelector('.project-preview')) {
+            ProjectRenderer.renderFeaturedProjects('project-grid');
+        }
+        
+        // 프로젝트 페이지인 경우
+        if (document.querySelector('#all-projects-grid')) {
+            ProjectRenderer.renderAllProjects('all-projects-grid');
+        }
+    }, 50);
 });
 
 // 언어 변경 이벤트 리스너
