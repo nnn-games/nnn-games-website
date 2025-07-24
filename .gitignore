@@ -11,10 +11,18 @@ node_modules/
 
 # Environment variables
 .env
+.env.example
+.mcp.json
+.mcp
+CLAUDE.md
+PROJECT-MANAGEMENT-GUIDE.md
 
 # Editor directories and files
 .idea
 .vscode
+.claude
+.cursor
+.taskmaster
 *.suo
 *.ntvs*
 *.njsproj
