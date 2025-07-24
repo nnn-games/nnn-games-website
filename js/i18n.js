@@ -93,6 +93,15 @@ const translations = {
         project_feature_3: "아우라, 가챠, 협동 버프 등 차별화된 성장 시스템",
         project_feature_4: "브랜드와 연결된 시즌별 이벤트 및 광고 시스템",
         
+        // 프로젝트 관련 링크
+        project_related_links: "관련 링크",
+        project_world_link: "월드 링크:",
+        project_world_link_text: "Get Train 월드 방문하기",
+        project_related_article: "관련 기사:",
+        project_related_article_text: "PR Times 기사 보기",
+        project_related_event: "관련 이벤트:",
+        project_related_event_text: "JRE Wallet 캠페인",
+        
         // 공통 레이블
         gallery_title: "갤러리",
         
@@ -127,6 +136,11 @@ const translations = {
         project_gamma_feature_3_desc: "Y2K, 스트릿웨어, 페스티벌룩 등 인기 테마 중심의 트렌디한 아바타 아이템 제작\nSNS 공유를 유도하는 스타일 구성 및 포징 최적화",
         project_gamma_feature_4_title: "Roblox 아이템 생태계에 최적화된 제작 및 유통 구조",
         project_gamma_feature_4_desc: "판매/가챠/보상형 배포 등 다양한 BM 적용 가능\n커뮤니티 기반 확산 전략과 한정판 운영 방식 병행",
+        
+        // 프로젝트 감마 관련 링크
+        project_gamma_related_links: "관련 링크",
+        project_gamma_group_page: "그룹 페이지:",
+        project_gamma_group_page_text: "NNN UGC Roblox 그룹 방문하기",
         
         // 푸터
         footer_about_title: "NNN GAMES",
@@ -231,6 +245,15 @@ const translations = {
         project_feature_3: "Unique growth systems including Auras, gachas, and co-op buffs",
         project_feature_4: "Seasonal events and advertising systems integrated with the brand",
         
+        // Project related links
+        project_related_links: "Related Links",
+        project_world_link: "World Link:",
+        project_world_link_text: "Visit Get Train World",
+        project_related_article: "Related Article:",
+        project_related_article_text: "View PR Times Article",
+        project_related_event: "Related Event:",
+        project_related_event_text: "JRE Wallet Campaign",
+        
         // Common labels
         gallery_title: "Gallery",
         
@@ -265,6 +288,11 @@ const translations = {
         project_gamma_feature_3_desc: "Trendy avatar items focused on popular themes like Y2K, streetwear, and festival looks\nStyle composition and posing optimization to encourage SNS sharing",
         project_gamma_feature_4_title: "Production and Distribution Structure Optimized for Roblox Item Ecosystem",
         project_gamma_feature_4_desc: "Various business models applicable including sales/gacha/reward-based distribution\nCombining community-based expansion strategies with limited edition operations",
+        
+        // Project Gamma related links
+        project_gamma_related_links: "Related Links",
+        project_gamma_group_page: "Group Page:",
+        project_gamma_group_page_text: "Visit NNN UGC Roblox Group",
         
         // Footer
         footer_about_title: "NNN GAMES",
@@ -369,6 +397,15 @@ const translations = {
         project_feature_3: "アウラ、ガチャ、協力バフなどの差別化された成長システム",
         project_feature_4: "ブランドと連動したシーズンイベントと広告システム",
         
+        // プロジェクト関連リンク
+        project_related_links: "関連リンク",
+        project_world_link: "ワールドリンク:",
+        project_world_link_text: "Get Trainワールドを訪問",
+        project_related_article: "関連記事:",
+        project_related_article_text: "PR Times記事を見る",
+        project_related_event: "関連イベント:",
+        project_related_event_text: "JRE Walletキャンペーン",
+        
         // 共通ラベル
         gallery_title: "ギャラリー",
         
@@ -403,6 +440,11 @@ const translations = {
         project_gamma_feature_3_desc: "Y2K、ストリートウェア、フェスティバルルックなど人気テーマ中心のトレンディなアバターアイテム制作\nSNSシェアを促すスタイル構成とポージング最適化",
         project_gamma_feature_4_title: "Robloxアイテム生態系に最適化された制作・流通構造",
         project_gamma_feature_4_desc: "販売/ガチャ/報酬型配布など様々なビジネスモデル適用可能\nコミュニティベース拡散戦略と限定版運営方式の並行",
+        
+        // プロジェクトガンマ関連リンク
+        project_gamma_related_links: "関連リンク",
+        project_gamma_group_page: "グループページ:",
+        project_gamma_group_page_text: "NNN UGC Robloxグループを訪問",
         
         // フッター
         footer_about_title: "NNN GAMES",
