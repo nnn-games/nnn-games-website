@@ -119,6 +119,11 @@ const translations = {
         project_beta_feature_3: "실시간 멀티플레이어 DJ 배틀과 랭킹 시스템",
         project_beta_feature_4: "커스텀 플레이리스트와 음악 공유 커뮤니티",
         
+        // 프로젝트 베타 관련 링크
+        project_beta_related_links: "관련 링크",
+        project_beta_experience_page: "체험 페이지:",
+        project_beta_experience_page_text: "Legendary DJ Gear 게임 플레이하기",
+        
         // 프로젝트 감마 페이지
         project_gamma_title: "NNN UGC",
         project_gamma_page_header: "NNN UGC",
@@ -271,6 +276,11 @@ const translations = {
         project_beta_feature_3: "Real-time multiplayer DJ battles and ranking system",
         project_beta_feature_4: "Custom playlists and music sharing community",
         
+        // Project Beta related links
+        project_beta_related_links: "Related Links",
+        project_beta_experience_page: "Experience Page:",
+        project_beta_experience_page_text: "Play Legendary DJ Gear",
+        
         // Project Gamma page
         project_gamma_title: "NNN UGC",
         project_gamma_page_header: "NNN UGC",
@@ -422,6 +432,11 @@ const translations = {
         project_beta_feature_2: "様々な音楽ジャンル別のテーマワールドとリズムゲーム",
         project_beta_feature_3: "リアルタイムマルチプレイヤーDJバトルとランキングシステム",
         project_beta_feature_4: "カスタムプレイリストと音楽共有コミュニティ",
+        
+        // プロジェクトベータ関連リンク
+        project_beta_related_links: "関連リンク",
+        project_beta_experience_page: "体験ページ:",
+        project_beta_experience_page_text: "Legendary DJ Gearをプレイ",
         
         // プロジェクトガンマページ
         project_gamma_title: "NNN UGC",
