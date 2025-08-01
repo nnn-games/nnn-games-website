@@ -57,7 +57,7 @@ const translations = {
         history_2020_title: "2020",
         history_2020_desc: "트리플엔게임즈 설립, 모바일 게임 'MineSweeper: The Dungeon' 출시",
         history_2023_title: "2023",
-        history_2023_desc: "ZEPETO 'K-Dance Studio' 출시, ZEPETO World Jam Fall 2023 우승",
+        history_2023_desc: "ZEPETO World Jam Fall 2023 우승",
         history_2024_title: "2024",
         history_2024_desc: "ZEPETO 월드 제작 MOU 체결 및 사업 수주, 판교 글로벌게임허브센터 입주, JR 동일본 프로젝트 개발 시작",
         history_2025_title: "2025",
@@ -70,7 +70,7 @@ const translations = {
         award_2_title: "ZEPETO World Jam Fall 2023",
         award_2_desc: "1위",
         award_3_title: "Get Train(JR 동일본)",
-        award_3_desc: "누적 방문 100만 명 달성",
+        award_3_desc: "누적 방문 1.2M 달성",
         
         // Contact 페이지
         contact_page_title: "문의 - NNN GAMES",
@@ -214,7 +214,7 @@ const translations = {
         history_2020_title: "2020",
         history_2020_desc: "Established Triple N Games; released mobile game 'MineSweeper: The Dungeon'",
         history_2023_title: "2023",
-        history_2023_desc: "Released ZEPETO world 'K-Dance Studio'; Winner of ZEPETO World Jam Fall 2023",
+        history_2023_desc: "Winner of ZEPETO World Jam Fall 2023",
         history_2024_title: "2024",
         history_2024_desc: "Signed MOU for ZEPETO world development; secured project contract; joined Pangyo Global Game Hub Center; began JR EAST project",
         history_2025_title: "2025",
@@ -227,7 +227,7 @@ const translations = {
         award_2_title: "ZEPETO World Jam Fall 2023",
         award_2_desc: "1st Place",
         award_3_title: "Get Train (JR EAST)",
-        award_3_desc: "Surpassed 1 million cumulative visits",
+        award_3_desc: "Achieved 1.2M cumulative visits",
         
         // Contact Page
         contact_page_title: "Contact - NNN GAMES",
@@ -371,7 +371,7 @@ const translations = {
         history_2020_title: "2020年",
         history_2020_desc: "Triple N Games設立、モバイルゲーム『MineSweeper: The Dungeon』をリリース",
         history_2023_title: "2023年",
-        history_2023_desc: "ZEPETOワールド『K-Dance Studio』をリリース、ZEPETO World Jam Fall 2023優勝",
+        history_2023_desc: "ZEPETO World Jam Fall 2023優勝",
         history_2024_title: "2024年",
         history_2024_desc: "ZEPETOワールド制作に関するMOU締結および事業受託、板橋グローバルゲームハブセンター入居、JR東日本プロジェクト開発開始",
         history_2025_title: "2025年",
@@ -384,7 +384,7 @@ const translations = {
         award_2_title: "ZEPETO World Jam Fall 2023",
         award_2_desc: "第1位",
         award_3_title: "Get Train（JR東日本）",
-        award_3_desc: "累計訪問者数100万人を突破",
+        award_3_desc: "累計訪問者数1.2M達成",
         
         // Contactページ
         contact_page_title: "お問い合わせ - NNN GAMES",

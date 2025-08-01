@@ -5,9 +5,9 @@ const projectsData = {
         {
             id: 'get-train',
             title: {
-                ko: '겟 트레인(JR 동일본) - ZEPETO',
-                en: 'Get Train (JR East) - ZEPETO',
-                ja: 'ゲットトレイン(JR東日本) - ZEPETO'
+                ko: '겟 트레인(JR 동일본)',
+                en: 'Get Train (JR East)',
+                ja: 'ゲットトレイン(JR東日本)'
             },
             description: {
                 ko: '게임의 재미를 통해 JR 동일본의 브랜드를 전 세계 사용자에게 자연스럽게 알리는 ZEPETO 월드입니다.',
@@ -23,9 +23,9 @@ const projectsData = {
         {
             id: 'legendary-dj-gear',
             title: {
-                ko: 'Legendary DJ Gear - ROBLOX',
-                en: 'Legendary DJ Gear - ROBLOX',
-                ja: 'Legendary DJ Gear - ROBLOX'
+                ko: 'Legendary DJ Gear',
+                en: 'Legendary DJ Gear',
+                ja: 'Legendary DJ Gear'
             },
             description: {
                 ko: '음악과 코스튬을 수집하며 나만의 플레이리스트를 완성하는 로블록스 수집형 게임.',
@@ -46,9 +46,9 @@ const projectsData = {
                 ja: 'NNN UGC'
             },
             description: {
-                ko: '트렌디한 아이템을 제작해 로블록스 유저에게 선보이는 UGC 제작 프로젝트.',
-                en: 'A UGC creation project delivering trendy items to Roblox users.',
-                ja: 'Robloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
+                ko: '트렌디한 아이템을 제작해 ZEPETO와 Roblox 유저에게 선보이는 UGC 제작 프로젝트.',
+                en: 'A UGC creation project delivering trendy items to ZEPETO and Roblox users.',
+                ja: 'ZEPETOとRobloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
             },
             image: 'images/nnnugc-preview.jpg',
             detailPage: 'project-gamma.html',
@@ -63,9 +63,9 @@ const projectsData = {
         {
             id: 'get-train',
             title: {
-                ko: '겟 트레인(JR 동일본) - ZEPETO',
-                en: 'Get Train (JR East) - ZEPETO',
-                ja: 'ゲットトレイン(JR東日本) - ZEPETO'
+                ko: '겟 트레인(JR 동일본)',
+                en: 'Get Train (JR East)',
+                ja: 'ゲットトレイン(JR東日本)'
             },
             description: {
                 ko: '게임의 재미를 통해 JR 동일본의 브랜드를 전 세계 사용자에게 자연스럽게 알리는 ZEPETO 월드입니다.',
@@ -85,9 +85,9 @@ const projectsData = {
         {
             id: 'legendary-dj-gear',
             title: {
-                ko: 'Legendary DJ Gear - ROBLOX',
-                en: 'Legendary DJ Gear - ROBLOX',
-                ja: 'Legendary DJ Gear - ROBLOX'
+                ko: 'Legendary DJ Gear',
+                en: 'Legendary DJ Gear',
+                ja: 'Legendary DJ Gear'
             },
             description: {
                 ko: '음악과 코스튬을 수집하며 나만의 플레이리스트를 완성하는 로블록스 수집형 게임.',
@@ -112,9 +112,9 @@ const projectsData = {
                 ja: 'NNN UGC'
             },
             description: {
-                ko: '트렌디한 아이템을 제작해 로블록스 유저에게 선보이는 UGC 제작 프로젝트.',
-                en: 'A UGC creation project delivering trendy items to Roblox users.',
-                ja: 'Robloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
+                ko: '트렌디한 아이템을 제작해 ZEPETO와 Roblox 유저에게 선보이는 UGC 제작 프로젝트.',
+                en: 'A UGC creation project delivering trendy items to ZEPETO and Roblox users.',
+                ja: 'ZEPETOとRobloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
             },
             image: 'images/nnnugc-preview.jpg',
             detailPage: 'project-gamma.html',
