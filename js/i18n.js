@@ -70,7 +70,7 @@ const translations = {
         award_2_title: "ZEPETO World Jam Fall 2023",
         award_2_desc: "1위",
         award_3_title: "Get Train(JR 동일본)",
-        award_3_desc: "누적 방문 1.2M 달성",
+        award_3_desc: "유저 수 1M, 누적 방문 2.1M 달성",
         
         // Contact 페이지
         contact_page_title: "문의 - NNN GAMES",
@@ -227,7 +227,7 @@ const translations = {
         award_2_title: "ZEPETO World Jam Fall 2023",
         award_2_desc: "1st Place",
         award_3_title: "Get Train (JR EAST)",
-        award_3_desc: "Achieved 1.2M cumulative visits",
+        award_3_desc: "1M users, 2.1M cumulative visits achieved",
         
         // Contact Page
         contact_page_title: "Contact - NNN GAMES",
@@ -384,7 +384,7 @@ const translations = {
         award_2_title: "ZEPETO World Jam Fall 2023",
         award_2_desc: "第1位",
         award_3_title: "Get Train（JR東日本）",
-        award_3_desc: "累計訪問者数1.2M達成",
+        award_3_desc: "ユーザー数1M、累計訪問数2.1M達成",
         
         // Contactページ
         contact_page_title: "お問い合わせ - NNN GAMES",
