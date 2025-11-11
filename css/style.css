@@ -282,6 +282,117 @@ body {
     transform: translateX(5px);
 }
 
+/* 플랫폼별 프로젝트 카드 스타일 */
+.project-card[data-platform="zepeto"] {
+    border-top: 4px solid #5C46FF;
+    position: relative;
+}
+
+.project-card[data-platform="zepeto"] .project-info {
+    text-align: left;
+}
+
+.project-card[data-platform="zepeto"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #5C46FF, #4A36CC);
+}
+
+.project-card[data-platform="zepeto"]:hover {
+    box-shadow: 0 10px 25px rgba(92, 70, 255, 0.3);
+}
+
+.project-card[data-platform="roblox"] {
+    border-top: 4px solid #315CF7;
+    position: relative;
+}
+
+.project-card[data-platform="roblox"] .project-info {
+    text-align: center;
+}
+
+.project-card[data-platform="roblox"] .learn-more {
+    justify-content: center;
+}
+
+.project-card[data-platform="roblox"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #315CF7, #2547C5);
+}
+
+.project-card[data-platform="roblox"]:hover {
+    box-shadow: 0 10px 25px rgba(49, 92, 247, 0.3);
+}
+
+.project-card[data-platform="other"],
+.project-card[data-platform="tbd"],
+.project-card[data-platform="TBD"],
+.project-card[data-platform="TBA"] {
+    border-top: 4px solid #6B7280;
+    position: relative;
+}
+
+.project-card[data-platform="other"]::before,
+.project-card[data-platform="tbd"]::before,
+.project-card[data-platform="TBD"]::before,
+.project-card[data-platform="TBA"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #6B7280, #4B5563);
+}
+
+.project-card[data-platform="other"]:hover,
+.project-card[data-platform="tbd"]:hover,
+.project-card[data-platform="TBD"]:hover,
+.project-card[data-platform="TBA"]:hover {
+    box-shadow: 0 10px 25px rgba(107, 114, 128, 0.3);
+}
+
+/* 플랫폼 배지 스타일 */
+.platform-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.platform-badge.platform-zepeto {
+    background: rgba(92, 70, 255, 0.95);
+    color: white;
+}
+
+.platform-badge.platform-roblox {
+    background: rgba(49, 92, 247, 0.95);
+    color: white;
+}
+
+.platform-badge.platform-other,
+.platform-badge.platform-tbd,
+.platform-badge.platform-TBD,
+.platform-badge.platform-TBA {
+    background: rgba(107, 114, 128, 0.95);
+    color: white;
+}
+
 /* 페이지 헤더 (서브페이지용) */
 .page-header {
     background-color: #3498db;

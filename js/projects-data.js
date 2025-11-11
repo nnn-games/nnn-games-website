@@ -1,6 +1,7 @@
 // 프로젝트 데이터 관리
 const projectsData = {
     // 메인 페이지에 표시될 프로젝트들 (최대 3개 권장)
+    // 순서: 1.ZEPETO, 2.Roblox, 3.Other, 4.ZEPETO, 5.Roblox
     featured: [
         {
             id: 'get-train',
@@ -53,6 +54,42 @@ const projectsData = {
             image: 'images/nnnugc-preview.jpg',
             detailPage: 'project-gamma.html',
             category: 'other',
+            status: 'development',
+            featured: true
+        },
+        {
+            id: 'project-epsilon',
+            title: {
+                ko: '프로젝트 K',
+                en: 'Project K',
+                ja: 'プロジェクト K'
+            },
+            description: {
+                ko: 'ZEPETO에서 K-POP 곡에 맞춰 경쟁하며 퍼포먼스 영상을 만드는 실시간 경연 콘텐츠.',
+                en: 'Real-time K-POP competition content where you compete and create performance videos on ZEPETO.',
+                ja: 'ZEPETOでK-POPの曲に合わせて競い合い、パフォーマンス動画を作成するリアルタイム競演コンテンツ。'
+            },
+            image: 'images/projectk-preview.jpg',
+            detailPage: 'project-epsilon.html',
+            category: 'zepeto',
+            status: 'development',
+            featured: true
+        },
+        {
+            id: 'project-delta',
+            title: {
+                ko: 'Korean Spa',
+                en: 'Korean Spa',
+                ja: 'Korean Spa'
+            },
+            description: {
+                ko: '작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.',
+                en: 'A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.',
+                ja: '小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。'
+            },
+            image: 'images/ks-preview.jpg',
+            detailPage: 'project-delta.html',
+            category: 'roblox',
             status: 'development',
             featured: true
         }
@@ -125,6 +162,50 @@ const projectsData = {
             platform: 'TBD',
             client: 'Confidential',
             technologies: ['TBD']
+        },
+        {
+            id: 'project-epsilon',
+            title: {
+                ko: '프로젝트 K',
+                en: 'Project K',
+                ja: 'プロジェクト K'
+            },
+            description: {
+                ko: 'ZEPETO에서 K-POP 곡에 맞춰 경쟁하며 퍼포먼스 영상을 만드는 실시간 경연 콘텐츠.',
+                en: 'Real-time K-POP competition content where you compete and create performance videos on ZEPETO.',
+                ja: 'ZEPETOでK-POPの曲に合わせて競い合い、パフォーマンス動画を作成するリアルタイム競演コンテンツ。'
+            },
+            image: 'images/projectk-preview.jpg',
+            detailPage: 'project-epsilon.html',
+            category: 'zepeto',
+            status: 'development',
+            featured: true,
+            launchDate: '2025-TBA',
+            platform: 'ZEPETO',
+            client: 'Internal Project',
+            technologies: ['ZEPETO Studio', 'Lua Script', 'Performance Capture']
+        },
+        {
+            id: 'project-delta',
+            title: {
+                ko: 'Korean Spa',
+                en: 'Korean Spa',
+                ja: 'Korean Spa'
+            },
+            description: {
+                ko: '작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.',
+                en: 'A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.',
+                ja: '小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。'
+            },
+            image: 'images/ks-preview.jpg',
+            detailPage: 'project-delta.html',
+            category: 'roblox',
+            status: 'development',
+            featured: true,
+            launchDate: '2025-12',
+            platform: 'Roblox',
+            client: 'Internal Project',
+            technologies: ['Roblox Studio', 'Luau', 'UGC Creation']
         }
     ]
 };

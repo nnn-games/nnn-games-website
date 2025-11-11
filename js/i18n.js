@@ -39,6 +39,10 @@ const translations = {
         project_beta_desc: "음악과 코스튬을 수집하며 나만의 플레이리스트를 완성하는 로블록스 수집형 게임",
         project_gamma_title: "NNN UGC",
         project_gamma_desc: "트렌디한 아이템을 제작해 로블록스 유저에게 선보이는 UGC 제작 프로젝트.",
+        project_delta_title: "Project Delta",
+        project_delta_desc: "혁신적인 게임플레이와 독창적인 콘텐츠로 새로운 경험을 선사할 신규 프로젝트.",
+        project_epsilon_title: "Project Epsilon",
+        project_epsilon_desc: "창의적인 아이디어와 참신한 접근 방식으로 특별한 경험을 제공할 신규 프로젝트.",
         learn_more: "자세히 보기 →",
         
         // 프로젝트 페이지
@@ -70,7 +74,7 @@ const translations = {
         award_2_title: "ZEPETO World Jam Fall 2023",
         award_2_desc: "1위",
         award_3_title: "Get Train(JR 동일본)",
-        award_3_desc: "유저 수 1M, 누적 방문 2.1M 달성",
+        award_3_desc: "유저 수 1.1M, 누적 방문 2.2M 달성",
         
         // Contact 페이지
         contact_page_title: "문의 - NNN GAMES",
@@ -146,7 +150,36 @@ const translations = {
         project_gamma_related_links: "관련 링크",
         project_gamma_group_page: "그룹 페이지:",
         project_gamma_group_page_text: "NNN UGC Roblox 그룹 방문하기",
-        
+
+        // 프로젝트 델타 페이지 (Korean Spa)
+        project_delta_page_title: "Korean Spa - NNN GAMES",
+        project_delta_header: "Korean Spa",
+        project_delta_status: "개발 중 (2025년 12월 출시 예정)",
+        project_delta_genre: "장르: 퍼즐 어드벤처",
+        project_delta_platform: "플랫폼: Roblox",
+        project_delta_summary_p1: "작아진 탐험가가 되어, 거대한 한국 목욕탕을 모험하세요! Korean Spa는 현실보다 거대한 한국식 대형 목욕탕을 무대로, 플레이어가 작아진 캐릭터의 시점에서 욕탕과 찜질방을 탐험하는 퍼즐 어드벤처 게임입니다.",
+        project_delta_summary_p2: "곳곳에 숨겨진 퍼즐 방과 비밀의 문을 찾아내고, 클리어 보상으로 귀여운 캐릭터들을 수집해보세요. 탐험 중엔 수건, 목욕가운, 직원카드 같은 아이템을 모아 새로운 구역을 열고 특별한 보상을 획득할 수 있습니다.",
+        project_delta_feature_1: "작은 시선으로 바라보는 거대한 목욕탕의 세계",
+        project_delta_feature_2: "쉽고 재미있는 퍼즐과 숨겨진 비밀의 방",
+        project_delta_feature_3: "숨겨진 캐릭터들을 찾아 모아보세요!",
+        project_delta_feature_4: "탐험을 통해 양머리 수건부터 특별한 UGC 아이템까지 획득해보세요!",
+
+        // 프로젝트 엡실론 페이지 (프로젝트 K)
+        project_epsilon_page_title: "프로젝트 K - NNN GAMES",
+        project_epsilon_header: "프로젝트 K",
+        project_epsilon_status: "개발 중",
+        project_epsilon_genre: "장르: 실시간 K-POP 경연",
+        project_epsilon_platform: "플랫폼: ZEPETO",
+        project_epsilon_summary_p1: "프로젝트 K는 ZEPETO 플랫폼에서 개발 중인 실시간 K-POP 경연 콘텐츠입니다.",
+        project_epsilon_summary_p2: "무작위로 재생되는 K-POP 곡에 맞춰 다른 유저들과 경쟁하며 노래 실력을 겨루고, 자신의 ZEPETO 아바타로 곡을 따라 부르며 멋진 퍼포먼스 영상을 제작할 수 있습니다. 완성된 영상은 ZEPETO 피드와 시즌 챌린지에 공유되어, 전 세계 유저들과 소셜 경쟁과 팬 커뮤니티 참여를 이어갑니다.",
+        project_epsilon_feature_1: "실시간 반응형 경연 시스템",
+        project_epsilon_feature_2: "자신의 ZEPETO 아바타로 K-POP 무대를 재현",
+        project_epsilon_feature_3: "노래에 맞춘 퍼포먼스 영상을 제작",
+        project_epsilon_feature_4: "소셜 경쟁 & 시즌 챌린지",
+
+        // 공통
+        project_coming_soon: "공개 예정",
+
         // 푸터
         footer_about_title: "NNN GAMES",
         footer_about_text: "NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에 전달하는 인터랙티브 콘텐츠를 만들어갑니다.",
@@ -196,6 +229,10 @@ const translations = {
         project_beta_desc: "A Roblox collection game where you gather music and costumes to build your own playlist.",
         project_gamma_title: "NNN UGC",
         project_gamma_desc: "A UGC creation project delivering trendy items to Roblox users.",
+        project_delta_title: "Project Delta",
+        project_delta_desc: "A new project that will provide innovative gameplay and unique content experiences.",
+        project_epsilon_title: "Project Epsilon",
+        project_epsilon_desc: "A new project offering special experiences through creative ideas and fresh approaches.",
         learn_more: "Learn More →",
         
         // Projects Page
@@ -227,7 +264,7 @@ const translations = {
         award_2_title: "ZEPETO World Jam Fall 2023",
         award_2_desc: "1st Place",
         award_3_title: "Get Train (JR EAST)",
-        award_3_desc: "1M users, 2.1M cumulative visits achieved",
+        award_3_desc: "1.1M users, 2.2M cumulative visits achieved",
         
         // Contact Page
         contact_page_title: "Contact - NNN GAMES",
@@ -303,7 +340,36 @@ const translations = {
         project_gamma_related_links: "Related Links",
         project_gamma_group_page: "Group Page:",
         project_gamma_group_page_text: "Visit NNN UGC Roblox Group",
-        
+
+        // Project Delta page (Korean Spa)
+        project_delta_page_title: "Korean Spa - NNN GAMES",
+        project_delta_header: "Korean Spa",
+        project_delta_status: "In Development (Launching December 2025)",
+        project_delta_genre: "Genre: Puzzle Adventure",
+        project_delta_platform: "Platform: Roblox",
+        project_delta_summary_p1: "Become a tiny explorer and adventure through a giant Korean spa! Korean Spa is a puzzle adventure game where players explore a massive Korean bathhouse and sauna from a shrunken character's perspective.",
+        project_delta_summary_p2: "Discover hidden puzzle rooms and secret doors, collect cute characters as clear rewards. During your exploration, gather items like towels, bathrobes, and staff cards to unlock new areas and obtain special rewards.",
+        project_delta_feature_1: "Experience a giant bathhouse world from a tiny perspective",
+        project_delta_feature_2: "Easy and fun puzzles with hidden secret rooms",
+        project_delta_feature_3: "Find and collect hidden characters!",
+        project_delta_feature_4: "Obtain special UGC items from sheep head towels to exclusive accessories through exploration!",
+
+        // Project Epsilon page (Project K)
+        project_epsilon_page_title: "Project K - NNN GAMES",
+        project_epsilon_header: "Project K",
+        project_epsilon_status: "In Development",
+        project_epsilon_genre: "Genre: Real-time K-POP Competition",
+        project_epsilon_platform: "Platform: ZEPETO",
+        project_epsilon_summary_p1: "Project K is a real-time K-POP competition content currently in development on the ZEPETO platform.",
+        project_epsilon_summary_p2: "Compete with other users by singing along to randomly played K-POP songs, and create amazing performance videos with your ZEPETO avatar. Completed videos are shared on ZEPETO Feed and seasonal challenges, continuing social competition and fan community participation with users around the world.",
+        project_epsilon_feature_1: "Real-time responsive competition system",
+        project_epsilon_feature_2: "Recreate K-POP stages with your ZEPETO avatar",
+        project_epsilon_feature_3: "Create performance videos synchronized with songs",
+        project_epsilon_feature_4: "Social competition & seasonal challenges",
+
+        // Common
+        project_coming_soon: "Coming Soon",
+
         // Footer
         footer_about_title: "NNN GAMES",
         footer_about_text: "NNN GAMES creates interactive content that delivers both fun and value to users around the world through UGC and game experiences on ZEPETO and Roblox.",
@@ -353,6 +419,10 @@ const translations = {
         project_beta_desc: "音楽とコスチュームを集めて、自分だけのプレイリストを完成させるRobloxの収集型ゲーム。",
         project_gamma_title: "NNN UGC",
         project_gamma_desc: "Robloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。",
+        project_delta_title: "Project Delta",
+        project_delta_desc: "革新的なゲームプレイと独創的なコンテンツで新しい体験を提供する新規プロジェクト。",
+        project_epsilon_title: "Project Epsilon",
+        project_epsilon_desc: "創造的なアイデアと斬新なアプローチで特別な体験を提供する新規プロジェクト。",
         learn_more: "詳細を見る →",
         
         // プロジェクトページ
@@ -384,7 +454,7 @@ const translations = {
         award_2_title: "ZEPETO World Jam Fall 2023",
         award_2_desc: "第1位",
         award_3_title: "Get Train（JR東日本）",
-        award_3_desc: "ユーザー数1M、累計訪問数2.1M達成",
+        award_3_desc: "ユーザー数1.1M、累計訪問数2.2M達成",
         
         // Contactページ
         contact_page_title: "お問い合わせ - NNN GAMES",
@@ -460,7 +530,36 @@ const translations = {
         project_gamma_related_links: "関連リンク",
         project_gamma_group_page: "グループページ:",
         project_gamma_group_page_text: "NNN UGC Robloxグループを訪問",
-        
+
+        // プロジェクトデルタページ (Korean Spa)
+        project_delta_page_title: "Korean Spa - NNN GAMES",
+        project_delta_header: "Korean Spa",
+        project_delta_status: "開発中（2025年12月リリース予定）",
+        project_delta_genre: "ジャンル：パズルアドベンチャー",
+        project_delta_platform: "プラットフォーム：Roblox",
+        project_delta_summary_p1: "小さな探検家になって、巨大な韓国式スパを冒険しよう！Korean Spaは、現実よりも巨大な韓国式大型銭湯を舞台に、プレイヤーが小さくなったキャラクターの視点から浴場とチムジルバンを探検するパズルアドベンチャーゲームです。",
+        project_delta_summary_p2: "あちこちに隠されたパズル部屋と秘密の扉を見つけ出し、クリア報酬として可愛いキャラクターを収集しましょう。探検中はタオル、バスローブ、スタッフカードなどのアイテムを集めて新しいエリアを開き、特別な報酬を獲得できます。",
+        project_delta_feature_1: "小さな視点で見る巨大な銭湯の世界",
+        project_delta_feature_2: "簡単で楽しいパズルと隠された秘密の部屋",
+        project_delta_feature_3: "隠されたキャラクターを見つけて集めよう！",
+        project_delta_feature_4: "羊頭タオルから特別なUGCアイテムまで、探検を通じて獲得しよう！",
+
+        // プロジェクトイプシロンページ (プロジェクト K)
+        project_epsilon_page_title: "プロジェクト K - NNN GAMES",
+        project_epsilon_header: "プロジェクト K",
+        project_epsilon_status: "開発中",
+        project_epsilon_genre: "ジャンル：リアルタイムK-POP競演",
+        project_epsilon_platform: "プラットフォーム：ZEPETO",
+        project_epsilon_summary_p1: "プロジェクトKは、ZEPETOプラットフォームで開発中のリアルタイムK-POP競演コンテンツです。",
+        project_epsilon_summary_p2: "ランダムに再生されるK-POPの曲に合わせて他のユーザーと競い合い、自分のZEPETOアバターで曲を歌いながら素敵なパフォーマンス動画を制作できます。完成した動画はZEPETOフィードやシーズンチャレンジに共有され、世界中のユーザーとソーシャル競争とファンコミュニティ参加を続けます。",
+        project_epsilon_feature_1: "リアルタイム反応型競演システム",
+        project_epsilon_feature_2: "自分のZEPETOアバターでK-POPステージを再現",
+        project_epsilon_feature_3: "曲に合わせたパフォーマンス動画を制作",
+        project_epsilon_feature_4: "ソーシャル競争&シーズンチャレンジ",
+
+        // 共通
+        project_coming_soon: "公開予定",
+
         // フッター
         footer_about_title: "NNN GAMES",
         footer_about_text: "NNN GAMESは、ZEPETOやRobloxを基盤としたUGCとゲームコンテンツを通じて、世界中のユーザーに楽しさと価値を同時に届けるインタラクティブなコンテンツを制作しています。",
