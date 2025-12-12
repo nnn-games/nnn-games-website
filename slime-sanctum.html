@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-key="project_epsilon_page_title">Project Epsilon - NNN GAMES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title data-key="project_slime_sanctum_page_title">Slime Sanctum: Last Stand - NNN GAMES</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
@@ -16,12 +19,15 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --border-radius: 12px;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             padding-top: 70px;
         }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -34,12 +40,14 @@
             text-align: center;
             background: var(--card-bg);
         }
+
         .project-header h1 {
             font-family: 'Poppins', sans-serif;
             font-size: 3.5em;
             color: var(--secondary-color);
             margin-bottom: 10px;
         }
+
         .project-header p {
             font-size: 1.3em;
             color: #7f8c8d;
@@ -51,32 +59,38 @@
         .project-main {
             padding: 60px 0;
         }
+
         .project-main img.main-image {
             width: 100%;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             margin-bottom: 60px;
         }
+
         .project-content {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 60px;
         }
+
         .project-description h2 {
             font-family: 'Poppins', sans-serif;
             font-size: 2em;
             margin-bottom: 20px;
         }
+
         .project-description p {
             line-height: 1.8;
             margin-bottom: 20px;
         }
+
         .project-details {
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
+
         .project-details h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 1.5em;
@@ -84,13 +98,16 @@
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
         }
+
         .project-details ul {
             list-style: none;
             padding: 0;
         }
+
         .project-details ul li {
             margin-bottom: 15px;
         }
+
         .project-details ul li strong {
             display: block;
             color: var(--secondary-color);
@@ -101,23 +118,27 @@
         .gallery-section {
             padding: 60px 0;
         }
+
         .gallery-section h2 {
             text-align: center;
             font-family: 'Poppins', sans-serif;
             font-size: 2.5em;
             margin-bottom: 40px;
         }
+
         .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
+
         .image-gallery img {
             width: 100%;
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
+
         .image-gallery img:hover {
             transform: scale(1.05);
         }
@@ -129,6 +150,7 @@
             padding: 60px 0 30px;
             margin-top: 80px;
         }
+
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -136,28 +158,36 @@
             gap: 40px;
             margin-bottom: 40px;
         }
+
         .footer-section {
             flex: 1;
             min-width: 250px;
         }
+
         .footer-section h3 {
             font-size: 1.4em;
             margin-bottom: 20px;
             color: var(--primary-color);
         }
-        .footer-section p, .footer-section a {
-            color: rgba(255,255,255,0.8);
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
         }
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .menu-toggle { display: block; }
+            .menu-toggle {
+                display: block;
+            }
+
             .main-nav {
                 position: absolute;
                 top: 70px;
@@ -168,13 +198,29 @@
                 overflow: hidden;
                 transition: max-height 0.5s ease-in-out;
             }
-            .main-nav.active { max-height: 300px; }
-            .main-nav ul { flex-direction: column; width: 100%; }
-            .main-nav ul li a { padding: 15px; text-align: center; border-bottom: 1px solid #eee; }
-            .project-content { grid-template-columns: 1fr; }
+
+            .main-nav.active {
+                max-height: 300px;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .main-nav ul li a {
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .project-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header class="main-header">
@@ -200,19 +246,25 @@
         </div>
     </header>
 
-    <header class="project-header">
-        <h1 data-key="project_epsilon_header">프로젝트 K</h1>
-        <p><span data-key="project_epsilon_status">개발 중</span> | <span data-key="project_epsilon_genre">장르: 실시간 K-POP 경연</span> | <span data-key="project_epsilon_platform">플랫폼: ZEPETO</span></p>
+    <header class="project-header" style="text-align: center; padding: 120px 0 40px;">
+        <h1 data-key="project_slime_sanctum_header" style="font-size: 2.5rem; margin-bottom: 1rem; color: #2c3e50;">슬라임
+            성소: 최후의 항전</h1>
+        <div class="project-meta-info">
+            <p class="meta-item"><span data-key="project_slime_sanctum_status">개발 중</span></p>
+            <p class="meta-item"><span data-key="project_slime_sanctum_genre">장르: 협동 생존 디펜스</span></p>
+            <p class="meta-item"><span data-key="project_slime_sanctum_platform">플랫폼: META HORIZON WORLD</span></p>
+        </div>
     </header>
 
     <main class="project-main container">
-        <img src="images/projectk-main.jpg" alt="Project K Main Image" class="main-image">
+        <img src="images/slimesanctum-main.jpg" alt="Slime Sanctum Main Image" class="main-image">
 
         <div class="project-content">
             <div class="project-description">
                 <h2 data-key="project_summary_title">프로젝트 개요</h2>
-                <p data-key="project_epsilon_summary_p1">프로젝트 K는 ZEPETO 플랫폼에서 개발 중인 실시간 K-POP 경연 콘텐츠입니다.</p>
-                <p data-key="project_epsilon_summary_p2">무작위로 재생되는 K-POP 곡에 맞춰 다른 유저들과 경쟁하며 노래 실력을 겨루고, 자신의 ZEPETO 아바타로 곡을 따라 부르며 멋진 퍼포먼스 영상을 제작할 수 있습니다. 완성된 영상은 ZEPETO 피드와 시즌 챌린지에 공유되어, 전 세계 유저들과 소셜 경쟁과 팬 커뮤니티 참여를 이어갑니다.</p>
+                <p data-key="project_slime_sanctum_summary_p1">어둡고 폐허가 된 성소에서 친구들과 함께 끝없이 몰려오는 슬라임 무리를 막아내세요!</p>
+                <p data-key="project_slime_sanctum_summary_p2">매번 달라지는 스킬 조합으로 전략을 세우고, 얼마나 오래 버티는지 친구들과 겨루는 협동 생존 디펜스
+                    게임입니다.</p>
 
                 <h3 data-key="project_related_links">관련 링크</h3>
                 <ul style="list-style: none; padding: 0; margin-top: 20px;">
@@ -224,10 +276,10 @@
             <aside class="project-details">
                 <h3 data-key="project_features_title">주요 특징</h3>
                 <ul>
-                    <li data-key="project_epsilon_feature_1">실시간 반응형 경연 시스템</li>
-                    <li data-key="project_epsilon_feature_2">자신의 ZEPETO 아바타로 K-POP 무대를 재현</li>
-                    <li data-key="project_epsilon_feature_3">노래에 맞춘 퍼포먼스 영상을 제작</li>
-                    <li data-key="project_epsilon_feature_4">소셜 경쟁 & 시즌 챌린지</li>
+                    <li data-key="project_slime_sanctum_feature_1">협동 생존 디펜스 게임플레이</li>
+                    <li data-key="project_slime_sanctum_feature_2">끝없이 몰려오는 슬라임 웨이브</li>
+                    <li data-key="project_slime_sanctum_feature_3">매번 달라지는 로그라이크형 스킬 조합</li>
+                    <li data-key="project_slime_sanctum_feature_4">Meta Horizon World 기반의 몰입형 경험</li>
                 </ul>
             </aside>
         </div>
@@ -235,10 +287,10 @@
         <section class="gallery-section">
             <h2 data-key="gallery_title">갤러리</h2>
             <div class="image-gallery">
-                <img src="images/projectk-gallery-0.jpg" alt="Project K Gallery 0">
-                <img src="images/projectk-gallery-1.jpg" alt="Project K Gallery 1">
-                <img src="images/projectk-gallery-2.jpg" alt="Project K Gallery 2">
-                <img src="images/projectk-gallery-3.jpg" alt="Project K Gallery 3">
+                <img src="images/slimesanctum-gallery-0.jpg" alt="Slime Sanctum Gallery 0">
+                <img src="images/slimesanctum-gallery-1.jpg" alt="Slime Sanctum Gallery 1">
+                <img src="images/slimesanctum-gallery-2.jpg" alt="Slime Sanctum Gallery 2">
+                <img src="images/slimesanctum-gallery-3.jpg" alt="Slime Sanctum Gallery 3">
             </div>
         </section>
     </main>
@@ -247,7 +299,8 @@
         <div class="container footer-content">
             <div class="footer-section">
                 <h3 data-key="footer_about_title">NNN GAMES</h3>
-                <p data-key="footer_about_text">NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에 전달하는 인터랙티브 콘텐츠를 만들어갑니다.</p>
+                <p data-key="footer_about_text">NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에
+                    전달하는 인터랙티브 콘텐츠를 만들어갑니다.</p>
             </div>
             <div class="footer-section">
                 <h3 data-key="footer_links_title">바로가기</h3>
@@ -271,4 +324,5 @@
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

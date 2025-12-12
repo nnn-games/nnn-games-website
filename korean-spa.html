@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-key="project_delta_page_title">Project Delta - NNN GAMES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title data-key="project_korean_spa_page_title">Project Delta - NNN GAMES</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
@@ -16,12 +19,15 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --border-radius: 12px;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             padding-top: 70px;
         }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -34,12 +40,14 @@
             text-align: center;
             background: var(--card-bg);
         }
+
         .project-header h1 {
             font-family: 'Poppins', sans-serif;
             font-size: 3.5em;
             color: var(--secondary-color);
             margin-bottom: 10px;
         }
+
         .project-header p {
             font-size: 1.3em;
             color: #7f8c8d;
@@ -51,32 +59,38 @@
         .project-main {
             padding: 60px 0;
         }
+
         .project-main img.main-image {
             width: 100%;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             margin-bottom: 60px;
         }
+
         .project-content {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 60px;
         }
+
         .project-description h2 {
             font-family: 'Poppins', sans-serif;
             font-size: 2em;
             margin-bottom: 20px;
         }
+
         .project-description p {
             line-height: 1.8;
             margin-bottom: 20px;
         }
+
         .project-details {
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
+
         .project-details h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 1.5em;
@@ -84,13 +98,16 @@
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
         }
+
         .project-details ul {
             list-style: none;
             padding: 0;
         }
+
         .project-details ul li {
             margin-bottom: 15px;
         }
+
         .project-details ul li strong {
             display: block;
             color: var(--secondary-color);
@@ -101,23 +118,27 @@
         .gallery-section {
             padding: 60px 0;
         }
+
         .gallery-section h2 {
             text-align: center;
             font-family: 'Poppins', sans-serif;
             font-size: 2.5em;
             margin-bottom: 40px;
         }
+
         .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
+
         .image-gallery img {
             width: 100%;
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
+
         .image-gallery img:hover {
             transform: scale(1.05);
         }
@@ -129,6 +150,7 @@
             padding: 60px 0 30px;
             margin-top: 80px;
         }
+
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -136,28 +158,36 @@
             gap: 40px;
             margin-bottom: 40px;
         }
+
         .footer-section {
             flex: 1;
             min-width: 250px;
         }
+
         .footer-section h3 {
             font-size: 1.4em;
             margin-bottom: 20px;
             color: var(--primary-color);
         }
-        .footer-section p, .footer-section a {
-            color: rgba(255,255,255,0.8);
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
         }
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .menu-toggle { display: block; }
+            .menu-toggle {
+                display: block;
+            }
+
             .main-nav {
                 position: absolute;
                 top: 70px;
@@ -168,13 +198,29 @@
                 overflow: hidden;
                 transition: max-height 0.5s ease-in-out;
             }
-            .main-nav.active { max-height: 300px; }
-            .main-nav ul { flex-direction: column; width: 100%; }
-            .main-nav ul li a { padding: 15px; text-align: center; border-bottom: 1px solid #eee; }
-            .project-content { grid-template-columns: 1fr; }
+
+            .main-nav.active {
+                max-height: 300px;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .main-nav ul li a {
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .project-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header class="main-header">
@@ -200,9 +246,14 @@
         </div>
     </header>
 
-    <header class="project-header">
-        <h1 data-key="project_delta_header">Korean Spa</h1>
-        <p><span data-key="project_delta_status">개발 중 (2025년 12월 출시 예정)</span> | <span data-key="project_delta_genre">장르: 퍼즐 어드벤처</span> | <span data-key="project_delta_platform">플랫폼: Roblox</span></p>
+    <header class="project-header" style="text-align: center; padding: 120px 0 40px;">
+        <h1 data-key="project_korean_spa_header" style="font-size: 2.5rem; margin-bottom: 1rem; color: #2c3e50;">Korean
+            Spa</h1>
+        <div class="project-meta-info">
+            <p class="meta-item"><span data-key="project_korean_spa_status">2025년 12월 출시 운영 중</span></p>
+            <p class="meta-item"><span data-key="project_korean_spa_genre">장르: 퍼즐 어드벤처</span></p>
+            <p class="meta-item"><span data-key="project_korean_spa_platform">플랫폼: Roblox</span></p>
+        </div>
     </header>
 
     <main class="project-main container">
@@ -211,23 +262,28 @@
         <div class="project-content">
             <div class="project-description">
                 <h2 data-key="project_summary_title">프로젝트 개요</h2>
-                <p data-key="project_delta_summary_p1">작아진 탐험가가 되어, 거대한 한국 목욕탕을 모험하세요! Korean Spa는 현실보다 거대한 한국식 대형 목욕탕을 무대로, 플레이어가 작아진 캐릭터의 시점에서 욕탕과 찜질방을 탐험하는 퍼즐 어드벤처 게임입니다.</p>
-                <p data-key="project_delta_summary_p2">곳곳에 숨겨진 퍼즐 방과 비밀의 문을 찾아내고, 클리어 보상으로 귀여운 캐릭터들을 수집해보세요. 탐험 중엔 수건, 목욕가운, 직원카드 같은 아이템을 모아 새로운 구역을 열고 특별한 보상을 획득할 수 있습니다.</p>
+                <p data-key="project_korean_spa_summary_p1">작아진 탐험가가 되어, 거대한 한국 목욕탕을 모험하세요! Korean Spa는 현실보다 거대한 한국식 대형
+                    목욕탕을 무대로, 플레이어가 작아진 캐릭터의 시점에서 욕탕과 찜질방을 탐험하는 퍼즐 어드벤처 게임입니다.</p>
+                <p data-key="project_korean_spa_summary_p2">곳곳에 숨겨진 퍼즐 방과 비밀의 문을 찾아내고, 클리어 보상으로 귀여운 캐릭터들을 수집해보세요. 탐험 중엔
+                    수건, 목욕가운, 직원카드 같은 아이템을 모아 새로운 구역을 열고 특별한 보상을 획득할 수 있습니다.</p>
 
                 <h3 data-key="project_related_links">관련 링크</h3>
                 <ul style="list-style: none; padding: 0; margin-top: 20px;">
                     <li style="margin-bottom: 10px;">
-                        <strong data-key="project_coming_soon">공개 예정</strong>
+                        <strong data-key="project_korean_spa_experience_page">체험 페이지:</strong>
+                        <a href="https://www.roblox.com/ko/games/90029482000377/Grubby" target="_blank"
+                            style="color: var(--primary-color);"
+                            data-key="project_korean_spa_experience_page_text">Korean Spa 게임 플레이하기</a>
                     </li>
                 </ul>
             </div>
             <aside class="project-details">
                 <h3 data-key="project_features_title">주요 특징</h3>
                 <ul>
-                    <li data-key="project_delta_feature_1">작은 시선으로 바라보는 거대한 목욕탕의 세계</li>
-                    <li data-key="project_delta_feature_2">쉽고 재미있는 퍼즐과 숨겨진 비밀의 방</li>
-                    <li data-key="project_delta_feature_3">숨겨진 캐릭터들을 찾아 모아보세요!</li>
-                    <li data-key="project_delta_feature_4">탐험을 통해 양머리 수건부터 특별한 UGC 아이템까지 획득해보세요!</li>
+                    <li data-key="project_korean_spa_feature_1">작은 시선으로 바라보는 거대한 목욕탕의 세계</li>
+                    <li data-key="project_korean_spa_feature_2">쉽고 재미있는 퍼즐과 숨겨진 비밀의 방</li>
+                    <li data-key="project_korean_spa_feature_3">숨겨진 캐릭터들을 찾아 모아보세요!</li>
+                    <li data-key="project_korean_spa_feature_4">탐험을 통해 양머리 수건부터 특별한 UGC 아이템까지 획득해보세요!</li>
                 </ul>
             </aside>
         </div>
@@ -251,7 +307,8 @@
         <div class="container footer-content">
             <div class="footer-section">
                 <h3 data-key="footer_about_title">NNN GAMES</h3>
-                <p data-key="footer_about_text">NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에 전달하는 인터랙티브 콘텐츠를 만들어갑니다.</p>
+                <p data-key="footer_about_text">NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에
+                    전달하는 인터랙티브 콘텐츠를 만들어갑니다.</p>
             </div>
             <div class="footer-section">
                 <h3 data-key="footer_links_title">바로가기</h3>
@@ -275,4 +332,5 @@
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

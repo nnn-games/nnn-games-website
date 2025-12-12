@@ -1,8 +1,44 @@
 // 프로젝트 데이터 관리
 const projectsData = {
     // 메인 페이지에 표시될 프로젝트들 (최대 3개 권장)
-    // 순서: 1.ZEPETO, 2.Roblox, 3.Other, 4.ZEPETO, 5.Roblox
+    // 순서: 1.Roblox, 2.Meta Horizon (horizon), 3.Fortnite, 4.ZEPETO, 5.Mobile
     featured: [
+        {
+            id: 'korean-spa',
+            title: {
+                ko: 'Korean Spa',
+                en: 'Korean Spa',
+                ja: 'Korean Spa'
+            },
+            description: {
+                ko: '작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.',
+                en: 'A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.',
+                ja: '小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。'
+            },
+            image: 'images/ks-preview.jpg',
+            detailPage: 'korean-spa.html',
+            category: 'roblox',
+            status: 'development',
+            featured: true
+        },
+        {
+            id: 'slime-sanctum',
+            title: {
+                ko: '슬라임 성소: 최후의 항전',
+                en: 'Slime Sanctum: Last Stand',
+                ja: 'スライム聖域：ラストスタンド'
+            },
+            description: {
+                ko: '어둡고 폐허가 된 성소에서 친구들과 함께 끝없이 몰려오는 슬라임 무리를 막아내고, 매번 달라지는 스킬 조합으로 얼마나 오래 버티는지 겨루는 협동 생존 디펜스 게임.',
+                en: 'A co-op survival defense game where you and your friends hold a dark, ruined sanctum against endless slime hordes, using ever-changing skill combinations to see how long you can last.',
+                ja: '暗く荒れ果てた聖域で、仲間とともに無限に押し寄せるスライムの群れを迎え撃ち、毎回変わるスキルの組み合わせでどこまで耐えられるかを競う協力型サバイバル防衛ゲーム。'
+            },
+            image: 'images/slimesanctum-preview.jpg',
+            detailPage: 'slime-sanctum.html',
+            category: 'horizon',
+            status: 'development',
+            featured: true
+        },
         {
             id: 'get-train',
             title: {
@@ -16,7 +52,7 @@ const projectsData = {
                 ja: 'ゲームの楽しさを通じてJR東日本のブランドを世界中のユーザーに自然に紹介するZEPETOワールドです。'
             },
             image: 'images/gt-preview.jpg',
-            detailPage: 'project-alpha.html',
+            detailPage: 'get-train.html',
             category: 'zepeto',
             status: 'active',
             featured: true
@@ -34,13 +70,13 @@ const projectsData = {
                 ja: '音楽とコスチュームを収集して自分だけのプレイリストを完成させるRobloxコレクションゲーム。'
             },
             image: 'images/ldg-preview.jpg',
-            detailPage: 'project-beta.html',
+            detailPage: 'legendary-dj-gear.html',
             category: 'roblox',
             status: 'active',
             featured: true
         },
         {
-            id: 'project-gamma',
+            id: 'nnn-ugc',
             title: {
                 ko: 'NNN UGC',
                 en: 'NNN UGC',
@@ -52,31 +88,17 @@ const projectsData = {
                 ja: 'ZEPETOとRobloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
             },
             image: 'images/nnnugc-preview.jpg',
-            detailPage: 'project-gamma.html',
+            detailPage: 'nnn-ugc.html',
             category: 'other',
             status: 'development',
             featured: true
-        },
+        }
+    ],
+
+    // 전체 프로젝트 목록 (프로젝트 페이지용)
+    all: [
         {
-            id: 'project-epsilon',
-            title: {
-                ko: '프로젝트 K',
-                en: 'Project K',
-                ja: 'プロジェクト K'
-            },
-            description: {
-                ko: 'ZEPETO에서 K-POP 곡에 맞춰 경쟁하며 퍼포먼스 영상을 만드는 실시간 경연 콘텐츠.',
-                en: 'Real-time K-POP competition content where you compete and create performance videos on ZEPETO.',
-                ja: 'ZEPETOでK-POPの曲に合わせて競い合い、パフォーマンス動画を作成するリアルタイム競演コンテンツ。'
-            },
-            image: 'images/projectk-preview.jpg',
-            detailPage: 'project-epsilon.html',
-            category: 'zepeto',
-            status: 'development',
-            featured: true
-        },
-        {
-            id: 'project-delta',
+            id: 'korean-spa',
             title: {
                 ko: 'Korean Spa',
                 en: 'Korean Spa',
@@ -88,15 +110,37 @@ const projectsData = {
                 ja: '小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。'
             },
             image: 'images/ks-preview.jpg',
-            detailPage: 'project-delta.html',
+            detailPage: 'korean-spa.html',
             category: 'roblox',
             status: 'development',
-            featured: true
-        }
-    ],
-
-    // 전체 프로젝트 목록 (프로젝트 페이지용)
-    all: [
+            featured: true,
+            launchDate: '2025-12',
+            platform: 'Roblox',
+            client: 'Internal Project',
+            technologies: ['Roblox Studio', 'Luau', 'UGC Creation']
+        },
+        {
+            id: 'slime-sanctum',
+            title: {
+                ko: '슬라임 성소: 최후의 항전',
+                en: 'Slime Sanctum: Last Stand',
+                ja: 'スライム聖域：ラストスタンド'
+            },
+            description: {
+                ko: '어둡고 폐허가 된 성소에서 친구들과 함께 끝없이 몰려오는 슬라임 무리를 막아내고, 매번 달라지는 스킬 조합으로 얼마나 오래 버티는지 겨루는 협동 생존 디펜스 게임.',
+                en: 'A co-op survival defense game where you and your friends hold a dark, ruined sanctum against endless slime hordes, using ever-changing skill combinations to see how long you can last.',
+                ja: '暗く荒れ果てた聖域で、仲間とともに無限に押し寄せるスライムの群れを迎え撃ち、毎回変わるスキルの組み合わせでどこまで耐えられるかを競う協力型サバイバル防衛ゲーム。'
+            },
+            image: 'images/slimesanctum-preview.jpg',
+            detailPage: 'slime-sanctum.html',
+            category: 'horizon',
+            status: 'development',
+            featured: true,
+            launchDate: '2026-01',
+            platform: 'META HORIZON WORLD',
+            client: 'Internal Project',
+            technologies: ['META HORIZON WORLD Engine', 'Noesis UI']
+        },
         {
             id: 'get-train',
             title: {
@@ -110,7 +154,7 @@ const projectsData = {
                 ja: 'ゲームの楽しさを通じてJR東日本のブランドを世界中のユーザーに自然に紹介するZEPETOワールドです。'
             },
             image: 'images/gt-preview.jpg',
-            detailPage: 'project-alpha.html',
+            detailPage: 'get-train.html',
             category: 'zepeto',
             status: 'active',
             featured: true,
@@ -132,7 +176,7 @@ const projectsData = {
                 ja: '音楽とコスチュームを収集して自分だけのプレイリストを完成させるRobloxコレクションゲーム。'
             },
             image: 'images/ldg-preview.jpg',
-            detailPage: 'project-beta.html',
+            detailPage: 'legendary-dj-gear.html',
             category: 'roblox',
             status: 'active',
             featured: true,
@@ -142,7 +186,7 @@ const projectsData = {
             technologies: ['Roblox Studio', 'Luau', 'UI Design']
         },
         {
-            id: 'project-gamma',
+            id: 'nnn-ugc',
             title: {
                 ko: 'NNN UGC',
                 en: 'NNN UGC',
@@ -154,7 +198,7 @@ const projectsData = {
                 ja: 'ZEPETOとRobloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
             },
             image: 'images/nnnugc-preview.jpg',
-            detailPage: 'project-gamma.html',
+            detailPage: 'nnn-ugc.html',
             category: 'other',
             status: 'development',
             featured: true,
@@ -163,111 +207,67 @@ const projectsData = {
             client: 'Confidential',
             technologies: ['TBD']
         },
-        {
-            id: 'project-epsilon',
-            title: {
-                ko: '프로젝트 K',
-                en: 'Project K',
-                ja: 'プロジェクト K'
-            },
-            description: {
-                ko: 'ZEPETO에서 K-POP 곡에 맞춰 경쟁하며 퍼포먼스 영상을 만드는 실시간 경연 콘텐츠.',
-                en: 'Real-time K-POP competition content where you compete and create performance videos on ZEPETO.',
-                ja: 'ZEPETOでK-POPの曲に合わせて競い合い、パフォーマンス動画を作成するリアルタイム競演コンテンツ。'
-            },
-            image: 'images/projectk-preview.jpg',
-            detailPage: 'project-epsilon.html',
-            category: 'zepeto',
-            status: 'development',
-            featured: true,
-            launchDate: '2025-TBA',
-            platform: 'ZEPETO',
-            client: 'Internal Project',
-            technologies: ['ZEPETO Studio', 'Lua Script', 'Performance Capture']
-        },
-        {
-            id: 'project-delta',
-            title: {
-                ko: 'Korean Spa',
-                en: 'Korean Spa',
-                ja: 'Korean Spa'
-            },
-            description: {
-                ko: '작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.',
-                en: 'A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.',
-                ja: '小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。'
-            },
-            image: 'images/ks-preview.jpg',
-            detailPage: 'project-delta.html',
-            category: 'roblox',
-            status: 'development',
-            featured: true,
-            launchDate: '2025-12',
-            platform: 'Roblox',
-            client: 'Internal Project',
-            technologies: ['Roblox Studio', 'Luau', 'UGC Creation']
-        }
     ]
 };
 
 // 프로젝트 관리 유틸리티 함수들
 const ProjectManager = {
     // 특정 프로젝트 가져오기
-    getProject: function(id) {
+    getProject: function (id) {
         return this.all.find(project => project.id === id);
     },
 
     // 카테고리별 프로젝트 가져오기
-    getProjectsByCategory: function(category) {
+    getProjectsByCategory: function (category) {
         return projectsData.all.filter(project => project.category === category);
     },
 
     // 상태별 프로젝트 가져오기
-    getProjectsByStatus: function(status) {
+    getProjectsByStatus: function (status) {
         return projectsData.all.filter(project => project.status === status);
     },
 
     // 메인 페이지용 추천 프로젝트 가져오기
-    getFeaturedProjects: function() {
+    getFeaturedProjects: function () {
         return projectsData.featured;
     },
 
     // 새 프로젝트 추가
-    addProject: function(projectData) {
+    addProject: function (projectData) {
         const newProject = {
             id: projectData.id || this.generateId(),
             ...projectData,
             featured: projectData.featured || false
         };
-        
+
         projectsData.all.push(newProject);
-        
+
         if (newProject.featured) {
             projectsData.featured.push(newProject);
         }
-        
+
         return newProject;
     },
 
     // 프로젝트 업데이트
-    updateProject: function(id, updateData) {
+    updateProject: function (id, updateData) {
         const projectIndex = projectsData.all.findIndex(project => project.id === id);
         if (projectIndex !== -1) {
             projectsData.all[projectIndex] = { ...projectsData.all[projectIndex], ...updateData };
-            
+
             // featured 목록도 업데이트
             const featuredIndex = projectsData.featured.findIndex(project => project.id === id);
             if (featuredIndex !== -1) {
                 projectsData.featured[featuredIndex] = { ...projectsData.featured[featuredIndex], ...updateData };
             }
-            
+
             return projectsData.all[projectIndex];
         }
         return null;
     },
 
     // ID 생성 (단순한 예시)
-    generateId: function() {
+    generateId: function () {
         return 'project-' + Date.now();
     }
 };

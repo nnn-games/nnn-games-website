@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-key="project_gamma_title">NNN UGC - NNN GAMES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title data-key="project_get_train_page_title">Get Train - NNN GAMES</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
@@ -16,12 +19,15 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --border-radius: 12px;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             padding-top: 70px;
         }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -34,12 +40,14 @@
             text-align: center;
             background: var(--card-bg);
         }
+
         .project-header h1 {
             font-family: 'Poppins', sans-serif;
             font-size: 3.5em;
             color: var(--secondary-color);
             margin-bottom: 10px;
         }
+
         .project-header p {
             font-size: 1.3em;
             color: #7f8c8d;
@@ -51,32 +59,38 @@
         .project-main {
             padding: 60px 0;
         }
+
         .project-main img.main-image {
             width: 100%;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             margin-bottom: 60px;
         }
+
         .project-content {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 60px;
         }
+
         .project-description h2 {
             font-family: 'Poppins', sans-serif;
             font-size: 2em;
             margin-bottom: 20px;
         }
+
         .project-description p {
             line-height: 1.8;
             margin-bottom: 20px;
         }
+
         .project-details {
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
+
         .project-details h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 1.5em;
@@ -84,13 +98,16 @@
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
         }
+
         .project-details ul {
             list-style: none;
             padding: 0;
         }
+
         .project-details ul li {
             margin-bottom: 15px;
         }
+
         .project-details ul li strong {
             display: block;
             color: var(--secondary-color);
@@ -101,23 +118,27 @@
         .gallery-section {
             padding: 60px 0;
         }
+
         .gallery-section h2 {
             text-align: center;
             font-family: 'Poppins', sans-serif;
             font-size: 2.5em;
             margin-bottom: 40px;
         }
+
         .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
+
         .image-gallery img {
             width: 100%;
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
+
         .image-gallery img:hover {
             transform: scale(1.05);
         }
@@ -129,6 +150,7 @@
             padding: 60px 0 30px;
             margin-top: 80px;
         }
+
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -136,28 +158,36 @@
             gap: 40px;
             margin-bottom: 40px;
         }
+
         .footer-section {
             flex: 1;
             min-width: 250px;
         }
+
         .footer-section h3 {
             font-size: 1.4em;
             margin-bottom: 20px;
             color: var(--primary-color);
         }
-        .footer-section p, .footer-section a {
-            color: rgba(255,255,255,0.8);
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
         }
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .menu-toggle { display: block; }
+            .menu-toggle {
+                display: block;
+            }
+
             .main-nav {
                 position: absolute;
                 top: 70px;
@@ -168,13 +198,29 @@
                 overflow: hidden;
                 transition: max-height 0.5s ease-in-out;
             }
-            .main-nav.active { max-height: 300px; }
-            .main-nav ul { flex-direction: column; width: 100%; }
-            .main-nav ul li a { padding: 15px; text-align: center; border-bottom: 1px solid #eee; }
-            .project-content { grid-template-columns: 1fr; }
+
+            .main-nav.active {
+                max-height: 300px;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .main-nav ul li a {
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .project-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header class="main-header">
@@ -192,7 +238,7 @@
                     <li class="lang-switcher">
                         <a href="#" data-lang="ko" class="lang-btn active">한국어</a>
                         <a href="#" data-lang="en" class="lang-btn">English</a>
-                        <a href="#" data-lang="ja" class="lang-btn">日본語</a>
+                        <a href="#" data-lang="ja" class="lang-btn">日本語</a>
                     </li>
                 </ul>
             </nav>
@@ -200,44 +246,56 @@
         </div>
     </header>
 
-    <header class="project-header">
-        <h1 data-key="project_gamma_page_header">NNN UGC</h1>
-        <p><span data-key="project_gamma_status">개발 중</span> | <span data-key="project_gamma_genre">장르: UGC 아이템 제작</span> | <span data-key="project_gamma_platform">플랫폼: ROBLOX</span></p>
+    <header class="project-header" style="text-align: center; padding: 120px 0 40px;">
+        <h1 data-key="project_get_train_header" style="font-size: 2.5rem; margin-bottom: 1rem; color: #2c3e50;">프로젝트 알파
+        </h1>
+        <div class="project-meta-info">
+            <p class="meta-item"><span data-key="project_get_train_status">개발 중</span></p>
+            <p class="meta-item"><span data-key="project_get_train_genre">장르: 오픈월드 RPG</span></p>
+            <p class="meta-item"><span data-key="project_get_train_platform">플랫폼: PC, 콘솔</span></p>
+        </div>
     </header>
 
     <main class="project-main container">
-        <img src="images/nnnugc-main.jpg" alt="Project Gamma Main Image" class="main-image">
+        <img src="images/gt-main.jpg" alt="Get Train Main Image" class="main-image">
 
         <div class="project-content">
             <div class="project-description">
                 <h2 data-key="project_summary_title">프로젝트 개요</h2>
-                <p data-key="project_gamma_summary_p1">NNN UGC 제작 프로젝트는 Roblox 플랫폼에서 활동하는 유저들을 대상으로, 트렌디하고 창의적인 아바타 아이템을 제작·판매하는 수익형 콘텐츠 프로젝트입니다.</p>
-                <p data-key="project_gamma_summary_p2">Z세대 유저의 감각에 맞춘 디자인과 시즌 테마, SNS 연동 요소 등을 적극 반영하여, 유저의 꾸미기 욕구와 소장 욕구를 자극하는 패션 중심의 UGC 브랜드를 구축합니다.</p>
-                <p data-key="project_gamma_summary_p3">단순한 아이템 제작을 넘어, 유저 참여형 콘텐츠, 리미티드 에디션, 협업 시리즈 등 다양한 방식으로 Roblox 경제 시스템 내에서 지속 가능한 수익 구조를 설계합니다.</p>
-                
-                <h3 data-key="project_gamma_related_links">관련 링크</h3>
+                <p data-key="project_get_train_summary_p1">프로젝트 알파는 광활한 오픈월드를 배경으로 하는 차세대 롤플레잉 게임입니다. 플레이어는 살아 숨쉬는 세계를
+                    탐험하며 자신만의 서사를 만들어가게 됩니다.</p>
+                <p data-key="project_get_train_summary_p2">최첨단 그래픽 기술과 깊이 있는 스토리텔링, 높은 자유도를 결합하여 이전에는 없던 몰입감 넘치는 경험을
+                    선사하는 것을 목표로 합니다.</p>
+
+                <h3 data-key="project_related_links">관련 링크</h3>
                 <ul style="list-style: none; padding: 0; margin-top: 20px;">
                     <li style="margin-bottom: 10px;">
-                        <strong data-key="project_gamma_group_page">그룹 페이지:</strong> 
-                        <a href="https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about" target="_blank" style="color: var(--primary-color);" data-key="project_gamma_group_page_text">NNN UGC Roblox 그룹 방문하기</a>
+                        <strong data-key="project_get_train_world_link">월드 링크:</strong>
+                        <a href="https://web.zepeto.me/en/detail/com.jreast.gettrain@b87f94387597b9443499fd92c068d9bd?referrer=copylink_share"
+                            target="_blank" style="color: var(--primary-color);"
+                            data-key="project_get_train_world_link_text">Get Train 월드 방문하기</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong data-key="project_get_train_related_article">관련 기사:</strong>
+                        <a href="https://prtimes.jp/main/html/rd/p/000000468.000041458.html" target="_blank"
+                            style="color: var(--primary-color);" data-key="project_get_train_related_article_text">PR
+                            Times 기사 보기</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong data-key="project_get_train_related_event">관련 이벤트:</strong>
+                        <a href="https://www.jrewallet.jp/campaign/zepeto" target="_blank"
+                            style="color: var(--primary-color);" data-key="project_get_train_related_event_text">JRE
+                            Wallet 캠페인</a>
                     </li>
                 </ul>
             </div>
             <aside class="project-details">
                 <h3 data-key="project_features_title">주요 특징</h3>
                 <ul>
-                    <li><strong data-key="project_gamma_feature_1_title">동양권 감성을 담은 전통 의상 라인업</strong><br>
-                        <span data-key="project_gamma_feature_1_desc">한복, 기모노, 치파오 등 동아시아 전통 의상을 현대적으로 재해석<br>
-                        Roblox 아바타에 최적화된 실루엣과 소재 연출</span></li>
-                    <li><strong data-key="project_gamma_feature_2_title">K-콘텐츠 기반 코스튬 제작</strong><br>
-                        <span data-key="project_gamma_feature_2_desc">K-POP, K-드라마, 한국 전통 설화 등에서 영감을 받은 캐릭터 스타일 구현<br>
-                        글로벌 유저를 타깃으로 한 한류 감성 디자인</span></li>
-                    <li><strong data-key="project_gamma_feature_3_title">글로벌 Z세대를 겨냥한 최신 트렌드 반영</strong><br>
-                        <span data-key="project_gamma_feature_3_desc">Y2K, 스트릿웨어, 페스티벌룩 등 인기 테마 중심의 트렌디한 아바타 아이템 제작<br>
-                        SNS 공유를 유도하는 스타일 구성 및 포징 최적화</span></li>
-                    <li><strong data-key="project_gamma_feature_4_title">Roblox 아이템 생태계에 최적화된 제작 및 유통 구조</strong><br>
-                        <span data-key="project_gamma_feature_4_desc">판매/가챠/보상형 배포 등 다양한 BM 적용 가능<br>
-                        커뮤니티 기반 확산 전략과 한정판 운영 방식 병행</span></li>
+                    <li data-key="project_get_train_feature_1">광활하고 동적인 오픈월드</li>
+                    <li data-key="project_get_train_feature_2">선택에 따라 변화하는 비선형적 스토리</li>
+                    <li data-key="project_get_train_feature_3">전략적인 실시간 전투 시스템</li>
+                    <li data-key="project_get_train_feature_4">깊이 있는 캐릭터 커스터마이징</li>
                 </ul>
             </aside>
         </div>
@@ -245,10 +303,14 @@
         <section class="gallery-section">
             <h2 data-key="gallery_title">갤러리</h2>
             <div class="image-gallery">
-                <img src="images/nnnugc-gallery-1.jpg" alt="NNN UGC Gallery 1">
-                <img src="images/nnnugc-gallery-2.jpg" alt="NNN UGC Gallery 2">
-                <img src="images/nnnugc-gallery-3.jpg" alt="NNN UGC Gallery 3">
-                <img src="images/nnnugc-gallery-4.jpg" alt="NNN UGC Gallery 4">
+                <img src="images/gt-icon.jpg" alt="Get Train Gallery 0">
+                <img src="images/gt-gallery-0.jpg" alt="Get Train Gallery 1">
+                <img src="images/gt-gallery-1.jpg" alt="Get Train Gallery 2">
+                <img src="images/gt-gallery-2.jpg" alt="Get Train Gallery 3">
+                <img src="images/gt-gallery-3.jpg" alt="Get Train Gallery 4">
+                <img src="images/gt-gallery-4.jpg" alt="Get Train Gallery 5">
+                <img src="images/gt-gallery-5.jpg" alt="Get Train Gallery 6">
+                <img src="images/gt-gallery-6.jpg" alt="Get Train Gallery 7">
             </div>
         </section>
     </main>
@@ -257,7 +319,8 @@
         <div class="container footer-content">
             <div class="footer-section">
                 <h3 data-key="footer_about_title">NNN GAMES</h3>
-                <p data-key="footer_about_text">NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에 전달하는 인터랙티브 콘텐츠를 만들어갑니다.</p>
+                <p data-key="footer_about_text">NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에
+                    전달하는 인터랙티브 콘텐츠를 만들어갑니다.</p>
             </div>
             <div class="footer-section">
                 <h3 data-key="footer_links_title">바로가기</h3>
@@ -274,11 +337,12 @@
             </div>
         </div>
         <div class="container footer-bottom">
-            <p data-key="footer_copyright">© 2025 TripleN Games Inc. All Rights Reserved.</p>
+            <p data-key="footer_copyright">© 2025 Triple N Games Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-key="project_beta_title">프로젝트 베타 - NNN GAMES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title data-key="project_nnn_ugc_title">NNN UGC - NNN GAMES</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
@@ -16,12 +19,15 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --border-radius: 12px;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             padding-top: 70px;
         }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -34,12 +40,14 @@
             text-align: center;
             background: var(--card-bg);
         }
+
         .project-header h1 {
             font-family: 'Poppins', sans-serif;
             font-size: 3.5em;
             color: var(--secondary-color);
             margin-bottom: 10px;
         }
+
         .project-header p {
             font-size: 1.3em;
             color: #7f8c8d;
@@ -51,32 +59,38 @@
         .project-main {
             padding: 60px 0;
         }
+
         .project-main img.main-image {
             width: 100%;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             margin-bottom: 60px;
         }
+
         .project-content {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 60px;
         }
+
         .project-description h2 {
             font-family: 'Poppins', sans-serif;
             font-size: 2em;
             margin-bottom: 20px;
         }
+
         .project-description p {
             line-height: 1.8;
             margin-bottom: 20px;
         }
+
         .project-details {
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
+
         .project-details h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 1.5em;
@@ -84,13 +98,16 @@
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
         }
+
         .project-details ul {
             list-style: none;
             padding: 0;
         }
+
         .project-details ul li {
             margin-bottom: 15px;
         }
+
         .project-details ul li strong {
             display: block;
             color: var(--secondary-color);
@@ -101,30 +118,29 @@
         .gallery-section {
             padding: 60px 0;
         }
+
         .gallery-section h2 {
             text-align: center;
             font-family: 'Poppins', sans-serif;
             font-size: 2.5em;
             margin-bottom: 40px;
         }
+
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        .image-gallery > div {
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .image-gallery > div:hover {
-            transform: scale(1.03);
-        }
+
         .image-gallery img {
             width: 100%;
-            height: auto;
-            display: block;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
         }
 
         /* Footer */
@@ -134,6 +150,7 @@
             padding: 60px 0 30px;
             margin-top: 80px;
         }
+
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -141,28 +158,36 @@
             gap: 40px;
             margin-bottom: 40px;
         }
+
         .footer-section {
             flex: 1;
             min-width: 250px;
         }
+
         .footer-section h3 {
             font-size: 1.4em;
             margin-bottom: 20px;
             color: var(--primary-color);
         }
-        .footer-section p, .footer-section a {
-            color: rgba(255,255,255,0.8);
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
         }
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .menu-toggle { display: block; }
+            .menu-toggle {
+                display: block;
+            }
+
             .main-nav {
                 position: absolute;
                 top: 70px;
@@ -173,13 +198,29 @@
                 overflow: hidden;
                 transition: max-height 0.5s ease-in-out;
             }
-            .main-nav.active { max-height: 300px; }
-            .main-nav ul { flex-direction: column; width: 100%; }
-            .main-nav ul li a { padding: 15px; text-align: center; border-bottom: 1px solid #eee; }
-            .project-content { grid-template-columns: 1fr; }
+
+            .main-nav.active {
+                max-height: 300px;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .main-nav ul li a {
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .project-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header class="main-header">
@@ -197,7 +238,7 @@
                     <li class="lang-switcher">
                         <a href="#" data-lang="ko" class="lang-btn active">한국어</a>
                         <a href="#" data-lang="en" class="lang-btn">English</a>
-                        <a href="#" data-lang="ja" class="lang-btn">日本語</a>
+                        <a href="#" data-lang="ja" class="lang-btn">日본語</a>
                     </li>
                 </ul>
             </nav>
@@ -205,44 +246,59 @@
         </div>
     </header>
 
-    <header class="project-header">
-        <h1 data-key="project_beta_page_header">Legendary DJ Gear</h1>
-        <p><span data-key="project_beta_status">정식 운영 중</span> | <span data-key="project_beta_genre">장르: 음악 수집 게임</span> | <span data-key="project_beta_platform">플랫폼: ROBLOX</span></p>
+    <header class="project-header" style="text-align: center; padding: 120px 0 40px;">
+        <h1 data-key="project_nnn_ugc_page_header" style="font-size: 2.5rem; margin-bottom: 1rem; color: #2c3e50;">NNN
+            UGC</h1>
+        <div class="project-meta-info">
+            <p class="meta-item"><span data-key="project_nnn_ugc_status">개발 중</span></p>
+            <p class="meta-item"><span data-key="project_nnn_ugc_genre">장르: UGC 아이템 제작</span></p>
+            <p class="meta-item"><span data-key="project_nnn_ugc_platform">플랫폼: ROBLOX</span></p>
+        </div>
     </header>
 
     <main class="project-main container">
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 60px;">
-            <iframe 
-                src="https://www.youtube.com/embed/0cEj3Tnb-No" 
-                title="Legendary DJ Gear Gameplay"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-            </iframe>
-        </div>
+        <img src="images/nnnugc-main.jpg" alt="Project Gamma Main Image" class="main-image">
 
         <div class="project-content">
             <div class="project-description">
-                <h2 data-key="project_beta_summary_title">프로젝트 개요</h2>
-                <p data-key="project_beta_summary_p1">Legendary DJ Gear는 음악과 패션을 결합한 혁신적인 로블록스 수집형 게임입니다. 플레이어는 다양한 음악 장르의 DJ가 되어 전설적인 의상과 음악을 수집하며 자신만의 독특한 스타일을 완성해 나갑니다.</p>
-                <p data-key="project_beta_summary_p2">게임 내에서 플레이어는 리듬 게임, 퀘스트, 이벤트를 통해 희귀한 아이템을 획득하고, 다른 플레이어들과 경쟁하며 최고의 DJ로 성장할 수 있습니다. 커뮤니티 중심의 소셜 기능으로 전 세계 플레이어들과 음악을 공유하고 협업할 수 있습니다.</p>
-                
-                <h3 data-key="project_beta_related_links">관련 링크</h3>
+                <h2 data-key="project_summary_title">프로젝트 개요</h2>
+                <p data-key="project_nnn_ugc_summary_p1">NNN UGC 제작 프로젝트는 Roblox 플랫폼에서 활동하는 유저들을 대상으로, 트렌디하고 창의적인 아바타
+                    아이템을 제작·판매하는 수익형 콘텐츠 프로젝트입니다.</p>
+                <p data-key="project_nnn_ugc_summary_p2">Z세대 유저의 감각에 맞춘 디자인과 시즌 테마, SNS 연동 요소 등을 적극 반영하여, 유저의 꾸미기 욕구와 소장
+                    욕구를 자극하는 패션 중심의 UGC 브랜드를 구축합니다.</p>
+                <p data-key="project_nnn_ugc_summary_p3">단순한 아이템 제작을 넘어, 유저 참여형 콘텐츠, 리미티드 에디션, 협업 시리즈 등 다양한 방식으로 Roblox
+                    경제 시스템 내에서 지속 가능한 수익 구조를 설계합니다.</p>
+
+                <h3 data-key="project_nnn_ugc_related_links">관련 링크</h3>
                 <ul style="list-style: none; padding: 0; margin-top: 20px;">
                     <li style="margin-bottom: 10px;">
-                        <strong data-key="project_beta_experience_page">체험 페이지:</strong> 
-                        <a href="https://www.roblox.com/ko/games/110796735931100/Legendary-DJ-Gear" target="_blank" style="color: var(--primary-color);" data-key="project_beta_experience_page_text">Legendary DJ Gear 게임 플레이하기</a>
+                        <strong data-key="project_nnn_ugc_group_page">그룹 페이지:</strong>
+                        <a href="https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about" target="_blank"
+                            style="color: var(--primary-color);" data-key="project_nnn_ugc_group_page_text">NNN UGC
+                            Roblox 그룹 방문하기</a>
                     </li>
                 </ul>
             </div>
             <aside class="project-details">
-                <h3 data-key="project_beta_features_title">주요 특징</h3>
+                <h3 data-key="project_features_title">주요 특징</h3>
                 <ul>
-                    <li data-key="project_beta_feature_1">100개 이상의 유니크한 DJ 의상과 액세서리 수집</li>
-                    <li data-key="project_beta_feature_2">다양한 음악 장르별 테마 월드와 리듬 게임</li>
-                    <li data-key="project_beta_feature_3">실시간 멀티플레이어 DJ 배틀과 랭킹 시스템</li>
-                    <li data-key="project_beta_feature_4">커스텀 플레이리스트와 음악 공유 커뮤니티</li>
+                    <li><strong data-key="project_nnn_ugc_feature_1_title">동양권 감성을 담은 전통 의상 라인업</strong><br>
+                        <span data-key="project_nnn_ugc_feature_1_desc">한복, 기모노, 치파오 등 동아시아 전통 의상을 현대적으로 재해석<br>
+                            Roblox 아바타에 최적화된 실루엣과 소재 연출</span>
+                    </li>
+                    <li><strong data-key="project_nnn_ugc_feature_2_title">K-콘텐츠 기반 코스튬 제작</strong><br>
+                        <span data-key="project_nnn_ugc_feature_2_desc">K-POP, K-드라마, 한국 전통 설화 등에서 영감을 받은 캐릭터 스타일 구현<br>
+                            글로벌 유저를 타깃으로 한 한류 감성 디자인</span>
+                    </li>
+                    <li><strong data-key="project_nnn_ugc_feature_3_title">글로벌 Z세대를 겨냥한 최신 트렌드 반영</strong><br>
+                        <span data-key="project_nnn_ugc_feature_3_desc">Y2K, 스트릿웨어, 페스티벌룩 등 인기 테마 중심의 트렌디한 아바타 아이템
+                            제작<br>
+                            SNS 공유를 유도하는 스타일 구성 및 포징 최적화</span>
+                    </li>
+                    <li><strong data-key="project_nnn_ugc_feature_4_title">Roblox 아이템 생태계에 최적화된 제작 및 유통 구조</strong><br>
+                        <span data-key="project_nnn_ugc_feature_4_desc">판매/가챠/보상형 배포 등 다양한 BM 적용 가능<br>
+                            커뮤니티 기반 확산 전략과 한정판 운영 방식 병행</span>
+                    </li>
                 </ul>
             </aside>
         </div>
@@ -250,15 +306,10 @@
         <section class="gallery-section">
             <h2 data-key="gallery_title">갤러리</h2>
             <div class="image-gallery">
-                <div>
-                    <img src="images/ldg-gallery-1.jpg" alt="Legendary DJ Gear Gallery 1">
-                </div>
-                <div>
-                    <img src="images/ldg-gallery-2.jpg" alt="Legendary DJ Gear Gallery 2">
-                </div>
-                <div>
-                    <img src="images/ldg-gallery-3.jpg" alt="Legendary DJ Gear Gallery 3">
-                </div>
+                <img src="images/nnnugc-gallery-1.jpg" alt="NNN UGC Gallery 1">
+                <img src="images/nnnugc-gallery-2.jpg" alt="NNN UGC Gallery 2">
+                <img src="images/nnnugc-gallery-3.jpg" alt="NNN UGC Gallery 3">
+                <img src="images/nnnugc-gallery-4.jpg" alt="NNN UGC Gallery 4">
             </div>
         </section>
     </main>
@@ -267,7 +318,8 @@
         <div class="container footer-content">
             <div class="footer-section">
                 <h3 data-key="footer_about_title">NNN GAMES</h3>
-                <p data-key="footer_about_text">NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에 전달하는 인터랙티브 콘텐츠를 만들어갑니다.</p>
+                <p data-key="footer_about_text">NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에
+                    전달하는 인터랙티브 콘텐츠를 만들어갑니다.</p>
             </div>
             <div class="footer-section">
                 <h3 data-key="footer_links_title">바로가기</h3>
@@ -279,8 +331,8 @@
             <div class="footer-section">
                 <h3 data-key="footer_contact_title">연락처</h3>
                 <p>Email: developer@triplengames.com</p>
-                <p data-key="footer_address">주소: 서울특별시 강남구 테헤란로 152, 6층</p>
-                <p data-key="footer_business_number">사업자등록번호: 123-45-67890</p>
+                <p data-key="footer_address">주소 : (13449) 경기도 성남시 수정구 창업로 54, 판교 제2테크노밸리 LH기업성장센터, 804B호</p>
+                <p data-key="footer_business_number">사업자등록번호: 629-87-01849</p>
             </div>
         </div>
         <div class="container footer-bottom">
@@ -291,4 +343,5 @@
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
-</html>project-beta.html
+
+</html>
