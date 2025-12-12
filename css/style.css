@@ -458,6 +458,52 @@ body {
     margin: 0 !important;
 }
 
+/* Theme Scopes */
+.theme-roblox {
+    --theme-color: #315CF7;
+    --theme-bg-gradient: linear-gradient(135deg, #315CF7 0%, #0C2BA1 100%);
+    --header-text-color: #ffffff;
+}
+
+.theme-zepeto {
+    --theme-color: #5C46FF;
+    --theme-bg-gradient: linear-gradient(135deg, #5C46FF 0%, #4A36CC 100%);
+    --header-text-color: #ffffff;
+}
+
+.theme-horizon {
+    --theme-color: #000000;
+    --theme-bg-gradient: linear-gradient(135deg, #222222 0%, #000000 100%);
+    --header-text-color: #ffffff;
+}
+
+.theme-other {
+    --theme-color: #6B7280;
+    --theme-bg-gradient: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
+    --header-text-color: #ffffff;
+}
+
+/* Apply to Header */
+body[class*="theme-"] .project-header {
+    background: var(--theme-bg-gradient);
+    color: var(--header-text-color);
+    padding: 120px 0 60px !important;
+    margin-top: 0;
+}
+
+body[class*="theme-"] .project-header h1 {
+    color: var(--header-text-color) !important;
+}
+
+body[class*="theme-"] .meta-item {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body[class*="theme-"] .meta-item span {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 2px;
+}
+
 /* 페이지 헤더 (서브페이지용) */
 .page-header {
     background-color: #3498db;
