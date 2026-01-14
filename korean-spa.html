@@ -9,219 +9,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --background-color: #f8f9fa;
-            --text-color: #343a40;
-            --card-bg: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --border-radius: 12px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            padding-top: 70px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Project Header */
-        .project-header {
-            padding: 80px 20px;
-            text-align: center;
-            background: var(--card-bg);
-        }
-
-        .project-header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5em;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .project-header p {
-            font-size: 1.3em;
-            color: #7f8c8d;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Main Content */
-        .project-main {
-            padding: 60px 0;
-        }
-
-        .project-main img.main-image {
-            width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 60px;
-        }
-
-        .project-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-        }
-
-        .project-description h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .project-description p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .project-details {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-
-        .project-details h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-
-        .project-details ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .project-details ul li {
-            margin-bottom: 15px;
-        }
-
-        .project-details ul li strong {
-            display: block;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-
-        /* Image Gallery */
-        .gallery-section {
-            padding: 60px 0;
-        }
-
-        .gallery-section h2 {
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .image-gallery img {
-            width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .image-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        .main-footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 60px 0 30px;
-            margin-top: 80px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .footer-section h3 {
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .main-nav {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--card-bg);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.5s ease-in-out;
-            }
-
-            .main-nav.active {
-                max-height: 300px;
-            }
-
-            .main-nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .main-nav ul li a {
-                padding: 15px;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-
-            .project-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
-<body class="theme-roblox">
+<body>
 
     <header class="main-header">
         <div class="container">
@@ -246,60 +36,72 @@
         </div>
     </header>
 
-    <header class="project-header" style="text-align: center; padding: 120px 0 40px;">
-        <h1 data-key="project_korean_spa_header" style="font-size: 2.5rem; margin-bottom: 1rem; color: #2c3e50;">Korean
-            Spa</h1>
-        <div class="project-meta-info">
-            <p class="meta-item"><span data-key="project_korean_spa_status">2025년 12월 출시 운영 중</span></p>
-            <p class="meta-item"><span data-key="project_korean_spa_genre">장르: 퍼즐 어드벤처</span></p>
-            <p class="meta-item"><span data-key="project_korean_spa_platform">플랫폼: Roblox</span></p>
-        </div>
-    </header>
-
-    <main class="project-main container">
-        <img src="images/ks-main.jpg" alt="Korean Spa Main Image" class="main-image">
-
-        <div class="project-content">
-            <div class="project-description">
-                <h2 data-key="project_summary_title">프로젝트 개요</h2>
-                <p data-key="project_korean_spa_summary_p1">작아진 탐험가가 되어, 거대한 한국 목욕탕을 모험하세요! Korean Spa는 현실보다 거대한 한국식 대형
-                    목욕탕을 무대로, 플레이어가 작아진 캐릭터의 시점에서 욕탕과 찜질방을 탐험하는 퍼즐 어드벤처 게임입니다.</p>
-                <p data-key="project_korean_spa_summary_p2">곳곳에 숨겨진 퍼즐 방과 비밀의 문을 찾아내고, 클리어 보상으로 귀여운 캐릭터들을 수집해보세요. 탐험 중엔
-                    수건, 목욕가운, 직원카드 같은 아이템을 모아 새로운 구역을 열고 특별한 보상을 획득할 수 있습니다.</p>
-
-                <h3 data-key="project_related_links">관련 링크</h3>
-                <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                    <li style="margin-bottom: 10px;">
-                        <strong data-key="project_korean_spa_experience_page">체험 페이지:</strong>
-                        <a href="https://www.roblox.com/ko/games/90029482000377/Grubby" target="_blank"
-                            style="color: var(--primary-color);"
-                            data-key="project_korean_spa_experience_page_text">Korean Spa 게임 플레이하기</a>
-                    </li>
-                </ul>
+    <main>
+        <section class="project-header">
+            <div class="container">
+                <h1 data-key="project_korean_spa_header" class="text-3xl font-bold text-brand-secondary mb-3">Korean Spa</h1>
+                <div class="project-meta-info text-sm text-brand-muted flex flex-wrap justify-center gap-3">
+                    <span class="badge-metric play" data-key="project_korean_spa_status">2025년 12월 출시 운영 중</span>
+                    <span class="badge-metric ugc" data-key="project_korean_spa_genre">장르: 퍼즐 어드벤처</span>
+                    <span class="badge-metric media" data-key="project_korean_spa_platform">플랫폼: Roblox</span>
+                </div>
+                <div class="mt-6 flex flex-wrap justify-center gap-3">
+                    <a href="https://www.roblox.com/ko/games/90029482000377/Grubby" class="btn-primary" target="_blank" rel="noreferrer">Play on Roblox</a>
+                    <a href="#" class="btn-ghost">Watch Trailer</a>
+                    <a href="#" class="btn-ghost">Read Article</a>
+                </div>
             </div>
-            <aside class="project-details">
-                <h3 data-key="project_features_title">주요 특징</h3>
-                <ul>
-                    <li data-key="project_korean_spa_feature_1">작은 시선으로 바라보는 거대한 목욕탕의 세계</li>
-                    <li data-key="project_korean_spa_feature_2">쉽고 재미있는 퍼즐과 숨겨진 비밀의 방</li>
-                    <li data-key="project_korean_spa_feature_3">숨겨진 캐릭터들을 찾아 모아보세요!</li>
-                    <li data-key="project_korean_spa_feature_4">탐험을 통해 양머리 수건부터 특별한 UGC 아이템까지 획득해보세요!</li>
-                </ul>
-            </aside>
-        </div>
+        </section>
 
-        <section class="gallery-section">
-            <h2 data-key="gallery_title">갤러리</h2>
-            <div class="image-gallery">
-                <img src="images/ks-gallery-0.jpg" alt="Korean Spa Gallery 0">
-                <img src="images/ks-gallery-1.jpg" alt="Korean Spa Gallery 1">
-                <img src="images/ks-gallery-2.jpg" alt="Korean Spa Gallery 2">
-                <img src="images/ks-gallery-3.jpg" alt="Korean Spa Gallery 3">
-                <img src="images/ks-gallery-4.jpg" alt="Korean Spa Gallery 4">
-                <img src="images/ks-gallery-5.jpg" alt="Korean Spa Gallery 5">
-                <img src="images/ks-gallery-6.jpg" alt="Korean Spa Gallery 6">
-                <img src="images/ks-gallery-7.jpg" alt="Korean Spa Gallery 7">
+        <section class="project-main container">
+            <img src="images/ks-main.jpg" alt="Korean Spa Main Image" class="main-image">
+
+            <div class="project-content">
+                <div class="project-description">
+                    <h2 data-key="project_summary_title">프로젝트 개요</h2>
+                    <p data-key="project_korean_spa_summary_p1">작아진 탐험가가 되어, 거대한 한국 목욕탕을 모험하세요! Korean Spa는 거대한 목욕탕과 찜질방을 무대로 퍼즐 어드벤처를 즐기며 탐험과 수집의 재미를 제공하는 Roblox 경험입니다.</p>
+                    <p data-key="project_korean_spa_summary_p2">숨겨진 퍼즐 방, 비밀의 문을 찾고 보상 캐릭터를 수집하며, 수건/목욕가운/직원카드 등을 모아 새로운 구역을 여는 성장 루프를 제공합니다.</p>
+
+                    <h3 data-key="project_related_links">관련 링크</h3>
+                    <ul class="list-none space-y-2 mt-3">
+                        <li class="flex items-center gap-2">
+                            <strong data-key="project_korean_spa_experience_page">체험 페이지:</strong>
+                            <a href="https://www.roblox.com/ko/games/90029482000377/Grubby" class="text-brand-primary font-semibold" target="_blank" rel="noreferrer" data-key="project_korean_spa_experience_page_text">Play on Roblox</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <strong>Trailer:</strong>
+                            <span>Coming soon</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <strong>Article:</strong>
+                            <span>Coming soon</span>
+                        </li>
+                    </ul>
+                </div>
+                <aside class="project-details">
+                    <h3 data-key="project_features_title">주요 특징</h3>
+                    <ul class="space-y-3">
+                        <li data-key="project_korean_spa_feature_1">작은 시선으로 바라보는 거대한 목욕탕의 세계</li>
+                        <li data-key="project_korean_spa_feature_2">쉽고 재미있는 퍼즐과 숨겨진 비밀의 방</li>
+                        <li data-key="project_korean_spa_feature_3">숨겨진 캐릭터들을 찾아 모아보세요!</li>
+                        <li data-key="project_korean_spa_feature_4">탐험을 통해 양머리 수건부터 특별한 UGC 아이템까지 획득</li>
+                    </ul>
+                </aside>
             </div>
+
+            <section class="gallery-section">
+                <h2 data-key="gallery_title">갤러리</h2>
+                <div class="image-gallery">
+                    <img src="images/ks-gallery-0.jpg" alt="Korean Spa Gallery 0">
+                    <img src="images/ks-gallery-1.jpg" alt="Korean Spa Gallery 1">
+                    <img src="images/ks-gallery-2.jpg" alt="Korean Spa Gallery 2">
+                    <img src="images/ks-gallery-3.jpg" alt="Korean Spa Gallery 3">
+                    <img src="images/ks-gallery-4.jpg" alt="Korean Spa Gallery 4">
+                    <img src="images/ks-gallery-5.jpg" alt="Korean Spa Gallery 5">
+                    <img src="images/ks-gallery-6.jpg" alt="Korean Spa Gallery 6">
+                    <img src="images/ks-gallery-7.jpg" alt="Korean Spa Gallery 7">
+                </div>
+            </section>
         </section>
     </main>
 

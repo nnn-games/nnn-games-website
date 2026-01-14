@@ -127,11 +127,7 @@ const ProjectRenderer = {
     // 카테고리 배지 생성
     getCategoryBadge: function (category) {
         const categoryLabels = {
-            zepeto: 'ZEPETO',
-            roblox: 'ROBLOX',
-            horizon: 'HORIZON WORLD',
-            unity: 'Unity',
-            other: 'Other'
+            roblox: 'ROBLOX'
         };
 
         const label = categoryLabels[category] || category.toUpperCase();
@@ -145,27 +141,13 @@ const ProjectRenderer = {
 
         // 플랫폼 매핑
         const platformMap = {
-            'zepeto': { key: 'zepeto', label: 'ZEPETO' },
-            'horizon': { key: 'horizon', label: 'HORIZON WORLD' },
-            'roblox': { key: 'roblox', label: 'ROBLOX' },
-            'other': { key: 'other', label: 'OTHER' },
-            'tbd': { key: 'tbd', label: 'TBD' },
-            'tba': { key: 'tba', label: 'TBA' }
+            'roblox': { key: 'roblox', label: 'ROBLOX' }
         };
 
-        // category가 있으면 사용, 없으면 platform 필드 확인
-        if (platformMap[category]) {
-            return platformMap[category];
-        }
-
-        // platform 필드 확인
+        if (platformMap[category]) return platformMap[category];
         const platform = (project.platform || '').toLowerCase();
-        if (platformMap[platform]) {
-            return platformMap[platform];
-        }
-
-        // 기본값
-        return { key: 'other', label: 'OTHER' };
+        if (platformMap[platform]) return platformMap[platform];
+        return platformMap['roblox'];
     },
 
     // 카테고리별 필터링

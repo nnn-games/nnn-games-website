@@ -2,7 +2,7 @@
 const translations = {
     ko: {
         // 페이지 제목
-        page_title: "NNN GAMES - 브랜드를 게임처럼, 재미로 널리 알립니다.",
+        page_title: "NNN Games | Professional Roblox Game & UGC Studio",
         project_get_train_page_title: "겟 트레인(JR 동일본)",
 
         // 네비게이션
@@ -17,14 +17,14 @@ const translations = {
         lang_ja: "日本語",
 
         // 히어로 섹션
-        hero_title: "멀티 플랫폼 UGC 게임 스튜디오 NNN",
-        hero_subtitle: "플레이 경험과 제작 퀄리티로 선택받는, 프리미엄 게임·UGC 제작 스튜디오입니다.",
+        hero_title: "Roblox 네이티브 UGC 게임 스튜디오 NNN",
+        hero_subtitle: "Roblox에서 탁월한 플레이 경험과 제작 퀄리티로 선택받는 프리미엄 게임·UGC 스튜디오입니다.",
         hero_cta: "프로젝트 자세히 보기",
 
         // 특징 섹션
         features_title: "NNN Games의 강점",
         feature_1_title: "플랫폼 네이티브 게임·UGC 제작",
-        feature_1_desc: "각 생태계의 플레이 패턴과 제작 기준(정책·세이프티·성능)에 맞춘 콘텐츠 구조로, 몰입도 높은 플레이 경험과 확장 가능한 UGC 아이템을 설계·제작합니다.",
+        feature_1_desc: "Roblox 생태계의 플레이 패턴과 제작 기준(정책·세이프티·성능)에 맞춘 구조로, 몰입도 높은 경험과 확장 가능한 UGC를 설계·제작합니다.",
         feature_2_title: "콘텐츠와 수익을 연결하는 시스템",
         feature_2_desc: "광고, 가챠, 퀘스트 등 유저 몰입과 수익화를 동시에 고려한 시스템을 직접 설계하고 운영합니다.",
         feature_3_title: "검증된 글로벌 운영 경험",
@@ -33,7 +33,7 @@ const translations = {
         // 프로젝트 섹션
         project_preview_title: "진행 중인 프로젝트",
         project_get_train_title: "겟 트레인(JR 동일본)",
-        project_get_train_desc: "게임의 재미를 통해 JR 동일본의 브랜드를 전 세계 사용자에게 자연스럽게 알리는 ZEPETO 월드입니다.",
+        project_get_train_desc: "게임의 재미를 통해 JR 동일본의 브랜드를 전 세계 사용자에게 자연스럽게 알리는 Roblox 경험입니다.",
         project_legendary_dj_gear_title: "Legendary DJ Gear",
         project_legendary_dj_gear_desc: "음악과 코스튬을 수집하며 나만의 플레이리스트를 완성하는 로블록스 수집형 게임",
         project_nnn_ugc_title: "NNN UGC",
@@ -52,28 +52,28 @@ const translations = {
         about_page_title: "소개 - NNN GAMES",
         about_page_header: "NOVELTY NOTABLE NIMBLE",
         about_mission_title: "우리의 미션",
-        about_mission_desc: "NNN GAMES는 멀티 플랫폼 UGC와 게임 콘텐츠를 제작하는 프리미엄 인터랙티브 콘텐츠 스튜디오입니다. 우리는 각 플랫폼의 사용자 행동과 제작 기준(정책·세이프티·성능·운영)을 깊이 이해하고, 그 생태계에 가장 자연스럽게 맞는 플레이 경험과 UGC 아이템을 설계·제작합니다.",
-        about_mission_desc2: "수집, 확률형/랜덤 보상, 퀘스트, 이벤트, 시즌 운영 등 다양한 시스템을 기반으로 유저의 몰입과 리텐션을 높이며, 라이브옵스 관점에서 지속적으로 확장 가능한 콘텐츠를 제공합니다. 이를 통해 플랫폼에서 주목받는 고품질의 게임과 UGC를 안정적으로 지속 출시하는 제작 체계를 구축해 나가고 있습니다.",
+        about_mission_desc: "NNN GAMES는 Roblox에서 네이티브하게 동작하는 게임과 UGC를 제작하는 프리미엄 인터랙티브 콘텐츠 스튜디오입니다. 우리는 Roblox의 정책·세이프티·성능·운영 기준을 깊이 이해하고, 그 생태계에 가장 자연스럽게 맞는 플레이 경험과 UGC 아이템을 설계·제작합니다.",
+        about_mission_desc2: "수집, 확률형/랜덤 보상, 퀘스트, 이벤트, 시즌 운영 등 라이브옵스 시스템을 기반으로 유저의 몰입과 리텐션을 높이며, 확장 가능한 콘텐츠를 제공합니다. 이를 통해 Roblox에서 주목받는 고품질의 게임과 UGC를 안정적으로 출시하는 제작 체계를 구축하고 있습니다.",
 
         // 회사 연혁
         company_history_title: "회사 연혁",
         history_2020_title: "2020",
         history_2020_desc: "트리플엔게임즈 설립, 모바일 게임 'MineSweeper: The Dungeon' 출시",
         history_2023_title: "2023",
-        history_2023_desc: "ZEPETO World Jam Fall 2023 우승",
+        history_2023_desc: "Roblox 프로젝트 첫 1M 방문 달성",
         history_2024_title: "2024",
-        history_2024_desc: "ZEPETO 월드 제작 MOU 체결 및 사업 수주, 판교 글로벌게임허브센터 입주, JR 동일본 프로젝트 개발 시작",
+        history_2024_desc: "Roblox UGC 상용 제작 착수 및 스튜디오 확장",
         history_2025_title: "2025",
-        history_2025_desc: "ZEPETO 'Get Train(JR 동일본)' 월드 정식 출시, 신규 플랫폼 및 프로젝트 확대 계획",
+        history_2025_desc: "대표 Roblox 타이틀 런칭, 신규 IP/UGC 라인업 확대",
 
         // 수상 경력
         awards_title: "수상 경력 및 성과",
-        award_1_title: "제1회 한국 문화체험 메타버스 콘텐츠 공모전 ",
-        award_1_desc: "대상(문화체육관광부장관상)",
-        award_2_title: "ZEPETO World Jam Fall 2023",
-        award_2_desc: "1위",
-        award_3_title: "Get Train(JR 동일본)",
-        award_3_desc: "유저 수 1.1M, 누적 방문 2.2M 달성",
+        award_1_title: "Roblox UGC Creator Program",
+        award_1_desc: "Featured UGC Creator 선정",
+        award_2_title: "Roblox Experience Award",
+        award_2_desc: "장르 상위 엔게이지먼트 달성",
+        award_3_title: "Studio Milestone",
+        award_3_desc: "누적 방문 1M+ 경험치 달성",
 
         // Contact 페이지
         contact_page_title: "문의 - NNN GAMES",
@@ -86,9 +86,9 @@ const translations = {
         project_get_train_header: "겟 트레인(JR 동일본)",
         project_get_train_status: "정식 운영 중",
         project_get_train_genre: "장르: 소셜 어드벤처 & 수집형 콘텐츠",
-        project_get_train_platform: "플랫폼: ZEPETO",
+        project_get_train_platform: "플랫폼: Roblox",
         project_summary_title: "프로젝트 개요",
-        project_get_train_summary_p1: "Get Train은 JR 동일본과 NAVER Z와 함께한 ZEPETO 브랜드 게임 프로젝트로, 실제 도쿄 야마노테선을 모티브로 한 가상 세계를 탐험하며 아우라를 수집하고 다양한 미션을 수행하는 소셜 게임입니다.",
+        project_get_train_summary_p1: "Get Train은 JR 동일본과 함께한 Roblox 브랜드 게임 프로젝트로, 실제 도쿄 야마노테선을 모티브로 한 가상 세계를 탐험하며 아우라를 수집하고 다양한 미션을 수행하는 소셜 게임입니다.",
         project_get_train_summary_p2: "현실과 가상을 연결하는 공간 디자인, 수집과 성장의 재미, 유저 간의 상호작용 요소를 결합하여, 브랜드 세계관을 체험하고 공유할 수 있는 독창적인 경험을 제공합니다.",
         project_features_title: "주요 특징",
         project_get_train_feature_1: "야마노테선 주요 역을 재현한 몰입형 월드",
@@ -132,7 +132,7 @@ const translations = {
         project_nnn_ugc_page_header: "NNN UGC",
         project_nnn_ugc_status: "제작 중",
         project_nnn_ugc_genre: "장르: UGC 아이템 제작",
-        project_nnn_ugc_platform: "플랫폼: ROBLOX & ZEPETO",
+        project_nnn_ugc_platform: "플랫폼: ROBLOX",
         project_nnn_ugc_summary_p1: "NNN UGC 제작 프로젝트는 Roblox 플랫폼에서 활동하는 유저들을 대상으로, 트렌디하고 창의적인 아바타 아이템을 제작·판매하는 수익형 콘텐츠 프로젝트입니다.",
         project_nnn_ugc_summary_p2: "Z세대 유저의 감각에 맞춘 디자인과 시즌 테마, SNS 연동 요소 등을 적극 반영하여, 유저의 꾸미기 욕구와 소장 욕구를 자극하는 패션 중심의 UGC 브랜드를 구축합니다.",
         project_nnn_ugc_summary_p3: "단순한 아이템 제작을 넘어, 유저 참여형 콘텐츠, 리미티드 에디션, 협업 시리즈 등 다양한 방식으로 Roblox 경제 시스템 내에서 지속 가능한 수익 구조를 설계합니다.",
@@ -173,7 +173,7 @@ const translations = {
         project_slime_sanctum_header: "슬라임 성소: 최후의 항전",
         project_slime_sanctum_status: "개발 중 (2026년 1월 출시 예정)",
         project_slime_sanctum_genre: "장르: 협동 생존 디펜스",
-        project_slime_sanctum_platform: "플랫폼: META HORIZON WORLD",
+        project_slime_sanctum_platform: "플랫폼: ROBLOX",
         project_slime_sanctum_summary_p1: "어둡고 폐허가 된 성소에서 친구들과 함께 끝없이 몰려오는 슬라임 무리를 막아내세요!",
         project_slime_sanctum_summary_p2: "매번 달라지는 스킬 조합으로 전략을 세우고, 얼마나 오래 버티는지 친구들과 겨루는 협동 생존 디펜스 게임입니다.",
         project_slime_sanctum_feature_1: "협동 생존 디펜스 게임플레이",
@@ -186,7 +186,7 @@ const translations = {
 
         // 푸터
         footer_about_title: "NNN GAMES",
-        footer_about_text: "NNN GAMES는 멀티 플랫폼 UGC와 게임 콘텐츠로 전 세계 유저에게 재미와 가치를 함께 전달하는 프리미엄 인터랙티브 콘텐츠 스튜디오입니다.",
+        footer_about_text: "NNN GAMES는 Roblox 기반의 UGC와 게임 콘텐츠로 전 세계 유저에게 재미와 가치를 전달하는 프리미엄 스튜디오입니다.",
         footer_links_title: "바로가기",
         footer_contact_title: "연락처",
         footer_address: "주소 : (13449) 경기도 성남시 수정구 창업로 54, 판교 제2테크노밸리 LH기업성장센터, 804B호",
@@ -196,7 +196,7 @@ const translations = {
 
     en: {
         // Page titles
-        page_title: "NNN GAMES - We amplify brands through the power of play",
+        page_title: "NNN Games | Professional Roblox Game & UGC Studio",
         project_get_train_page_title: "Get Train(JR EAST)",
 
         // Navigation
@@ -211,14 +211,14 @@ const translations = {
         lang_ja: "日本語",
 
         // Hero section
-        hero_title: "Multi-platform UGC Game Studio.",
-        hero_subtitle: "A premium game & UGC production studio chosen for outstanding player experiences and exceptional craftsmanship.",
+        hero_title: "Building Standout Experiences on Roblox",
+        hero_subtitle: "We craft platform-native games and UGC with top-tier quality, retention-focused systems, and proven live ops to help brands and players thrive on Roblox.",
         hero_cta: "View Project Details",
 
         // Features section
         features_title: "Our Strengths at NNN Games",
         feature_1_title: "Platform-native Games & UGC Production",
-        feature_1_desc: "We design and build content structures aligned with each ecosystem’s play patterns and production standards (policy, safety, performance), delivering immersive player experiences and scalable UGC items.",
+        feature_1_desc: "We design and build Roblox-native content aligned with its play patterns and production standards (policy, safety, performance), delivering immersive experiences and scalable UGC.",
         feature_2_title: "Systems That Connect Content and Monetization",
         feature_2_desc: "From ads and gacha to quests, we design and operate systems that balance user engagement with revenue generation.",
         feature_3_title: "Proven Global Operation Experience",
@@ -227,7 +227,7 @@ const translations = {
         // Project section
         project_preview_title: "Ongoing Projects",
         project_get_train_title: "Get Train (JR EAST)",
-        project_get_train_desc: "A ZEPETO world that naturally promotes the JR EAST brand to users around the world through the fun of gameplay.",
+        project_get_train_desc: "A Roblox experience that naturally promotes the JR EAST brand to users around the world through engaging gameplay.",
         project_legendary_dj_gear_title: "Legendary DJ Gear",
         project_legendary_dj_gear_desc: "A Roblox collection game where you gather music and costumes to build your own playlist.",
         project_nnn_ugc_title: "NNN UGC",
@@ -246,28 +246,28 @@ const translations = {
         about_page_title: "About - NNN GAMES",
         about_page_header: "NOVELTY NOTABLE NIMBLE",
         about_mission_title: "Our Mission",
-        about_mission_desc: "NNN GAMES is a premium interactive content studio creating multi-platform UGC and game experiences. We deeply understand each platform’s player behavior and production standards—policy, safety, performance, and operations—and design player experiences and UGC items that feel truly native to each ecosystem.",
-        about_mission_desc2: "Built on systems such as collection, randomized rewards, quests, events, and seasonal updates, we drive immersion and retention while delivering content that scales through a LiveOps-ready approach. Through this process, we are building a production pipeline that can reliably ship “feature-ready” games and UGC at a consistently high level of quality.",
+        about_mission_desc: "NNN GAMES is a premium interactive content studio creating Roblox-native games and UGC. We deeply understand Roblox policy, safety, performance, and operations, and design experiences and items that feel truly native to the platform.",
+        about_mission_desc2: "Built on systems such as collection, randomized rewards, quests, events, and seasonal updates, we drive immersion and retention with LiveOps-ready content, delivering high-quality Roblox titles and UGC reliably.",
 
         // Company History
         company_history_title: "Company History",
         history_2020_title: "2020",
         history_2020_desc: "Established Triple N Games; released mobile game 'MineSweeper: The Dungeon'",
         history_2023_title: "2023",
-        history_2023_desc: "Winner of ZEPETO World Jam Fall 2023",
+        history_2023_desc: "First Roblox project surpassed 1M visits",
         history_2024_title: "2024",
-        history_2024_desc: "Signed MOU for ZEPETO world development; secured project contract; joined Pangyo Global Game Hub Center; began JR EAST project",
+        history_2024_desc: "Scaled Roblox UGC production and studio capabilities",
         history_2025_title: "2025",
-        history_2025_desc: "Official launch of ZEPETO world 'Get Train (JR EAST)'; expanding to new platforms and projects",
+        history_2025_desc: "Launched flagship Roblox title; expanded new IP and UGC lineup",
 
         // Awards & Achievements
         awards_title: "Awards & Achievements",
-        award_1_title: "1st Korea Cultural Experience Metaverse Content Contest",
-        award_1_desc: "Grand Prize (Minister of Culture, Sports and Tourism Award)",
-        award_2_title: "ZEPETO World Jam Fall 2023",
-        award_2_desc: "1st Place",
-        award_3_title: "Get Train (JR EAST)",
-        award_3_desc: "1.1M users, 2.2M cumulative visits achieved",
+        award_1_title: "Roblox UGC Creator Program",
+        award_1_desc: "Featured UGC Creator",
+        award_2_title: "Roblox Experience Award",
+        award_2_desc: "Top engagement in genre",
+        award_3_title: "Studio Milestone",
+        award_3_desc: "1M+ cumulative visits achieved",
 
         // Contact Page
         contact_page_title: "Contact - NNN GAMES",
@@ -277,13 +277,13 @@ const translations = {
         office_location_title: "Office Location",
 
         // Project Get Train page
-        project_get_train_header: "Get Train (JR EAST)",
-        project_get_train_status: "Officially Live",
-        project_get_train_genre: "Genre: Social Adventure & Collection-Based Content",
-        project_get_train_platform: "Platform: ZEPETO",
+        project_get_train_header: "Get Train (Roblox)",
+        project_get_train_status: "Live",
+        project_get_train_genre: "Genre: Social Adventure & Collection",
+        project_get_train_platform: "Platform: Roblox",
         project_summary_title: "Project Overview",
-        project_get_train_summary_p1: "Get Train is a branded ZEPETO game project developed in collaboration with JR EAST and NAVER Z. Set in a virtual world inspired by Tokyo's Yamanote Line, players explore stations, complete quests, and collect Auras in a socially-driven experience.",
-        project_get_train_summary_p2: "By combining spatial design that bridges reality and virtuality with the joy of collection, growth, and user interaction, the project offers a unique and immersive way to experience and share the brand universe.",
+        project_get_train_summary_p1: "Get Train is a branded Roblox experience developed in collaboration with JR EAST. Set in a virtual world inspired by Tokyo's Yamanote Line, players explore stations, complete quests, and collect Auras in a socially-driven adventure.",
+        project_get_train_summary_p2: "By combining spatial design with collection and growth systems, the project offers an immersive way to experience and share the brand universe.",
         project_features_title: "Key Features",
         project_get_train_feature_1: "Immersive world based on iconic Yamanote Line stations",
         project_get_train_feature_2: "Collection-based system built on gachas and quests",
@@ -293,11 +293,11 @@ const translations = {
         // Project related links
         project_related_links: "Related Links",
         project_get_train_world_link: "World Link:",
-        project_get_train_world_link_text: "Visit Get Train World",
+        project_get_train_world_link_text: "Coming soon (Roblox)",
         project_get_train_related_article: "Related Article:",
-        project_get_train_related_article_text: "View PR Times Article",
+        project_get_train_related_article_text: "Coming soon",
         project_get_train_related_event: "Related Event:",
-        project_get_train_related_event_text: "JRE Wallet Campaign",
+        project_get_train_related_event_text: "Coming soon",
 
         // Common labels
         gallery_title: "Gallery",
@@ -326,7 +326,7 @@ const translations = {
         project_nnn_ugc_page_header: "NNN UGC",
         project_nnn_ugc_status: "In Production",
         project_nnn_ugc_genre: "Genre: UGC Item Creation",
-        project_nnn_ugc_platform: "Platform: ROBLOX & ZEPETO",
+        project_nnn_ugc_platform: "Platform: ROBLOX",
         project_nnn_ugc_summary_p1: "The NNN UGC creation project is a revenue-generating content project that creates and sells trendy and creative avatar items for users active on the Roblox platform.",
         project_nnn_ugc_summary_p2: "We actively incorporate designs that match Gen Z sensibilities, seasonal themes, and SNS integration elements to build a fashion-centered UGC brand that stimulates users' desire to customize and collect.",
         project_nnn_ugc_summary_p3: "Beyond simple item creation, we design sustainable revenue structures within the Roblox economic system through various methods such as user-participatory content, limited editions, and collaboration series.",
@@ -367,7 +367,7 @@ const translations = {
         project_slime_sanctum_header: "Slime Sanctum: Last Stand",
         project_slime_sanctum_status: "In Development (Launching Jan 2026)",
         project_slime_sanctum_genre: "Genre: Co-op Survival Defense",
-        project_slime_sanctum_platform: "Platform: META HORIZON WORLD",
+        project_slime_sanctum_platform: "Platform: ROBLOX",
         project_slime_sanctum_summary_p1: "Defend the dark, ruined sanctum against endless hordes of slimes with your friends!",
         project_slime_sanctum_summary_p2: "A co-op survival defense game where you categorize skill combinations every time and compete to see how long you can last.",
         project_slime_sanctum_feature_1: "Co-op Survival Defense Gameplay",
@@ -380,7 +380,7 @@ const translations = {
 
         // Footer
         footer_about_title: "NNN GAMES",
-        footer_about_text: "NNN GAMES is a premium interactive content studio delivering both fun and value to global players through multi-platform UGC and game experiences.",
+        footer_about_text: "NNN GAMES is a premium studio delivering fun and value to global players through Roblox-native games and UGC.",
         footer_links_title: "Quick Links",
         footer_contact_title: "Contact",
         footer_address: "Address: 804B, LH Global Game Hub Center, 54 Changeop-ro, Sujeong-gu, Seongnam-si, Gyeonggi-do, Republic of Korea",
@@ -390,7 +390,7 @@ const translations = {
 
     ja: {
         // ページタイトル
-        page_title: "NNN GAMES - ブランドを遊び心で広く伝えます",
+        page_title: "NNN Games | Professional Roblox Game & UGC Studio",
         project_get_train_page_title: "プロジェクトアルファ - NNN GAMES",
 
         // ナビゲーション
@@ -405,14 +405,14 @@ const translations = {
         lang_ja: "日本語",
 
         // ヒーローセクション
-        hero_title: "マルチプラットフォームUGCゲームスタジオ。",
-        hero_subtitle: "プレイ体験と制作クオリティで選ばれる、プレミアムなゲーム／UGC制作スタジオです。",
+        hero_title: "RobloxネイティブUGCゲームスタジオ",
+        hero_subtitle: "Robloxで優れたプレイ体験と制作クオリティを提供するプレミアムなゲーム／UGCスタジオです。",
         hero_cta: "プロジェクト詳細を見る",
 
         // 特徴セクション
         features_title: "NNN Gamesの強み",
         feature_1_title: "プラットフォームネイティブなゲーム／UGC制作",
-        feature_1_desc: "各エコシステムのプレイ特性と制作基準（ポリシー・セーフティ・パフォーマンス）に合わせた構造で、没入感のある体験と拡張可能なUGCアイテムを設計・制作します。",
+        feature_1_desc: "Robloxのプレイ特性と制作基準（ポリシー・セーフティ・パフォーマンス）に合わせて、没入感のある体験と拡張可能なUGCを設計・制作します。",
         feature_2_title: "コンテンツと収益をつなぐシステム",
         feature_2_desc: "広告、ガチャ、クエストなど、ユーザーの没入感と収益化を両立させるシステムを設計・運用しています。",
         feature_3_title: "実績あるグローバル運営力",
@@ -421,7 +421,7 @@ const translations = {
         // プロジェクトセクション
         project_preview_title: "進行中のプロジェクト",
         project_get_train_title: "Get Train（JR東日本）",
-        project_get_train_desc: "ゲームの楽しさを通じて、JR東日本のブランドを世界中のユーザーに自然に伝えるZEPETOワールドです。",
+        project_get_train_desc: "ゲームの楽しさを通じて、JR東日本のブランドを世界中のユーザーに自然に伝えるRoblox体験です。",
         project_legendary_dj_gear_title: "Legendary DJ Gear",
         project_legendary_dj_gear_desc: "音楽とコスチュームを集めて、自分だけのプレイリストを完成させるRobloxの収集型ゲーム。",
         project_nnn_ugc_title: "NNN UGC",
@@ -440,28 +440,28 @@ const translations = {
         about_page_title: "紹介 - NNN GAMES",
         about_page_header: "NOVELTY NOTABLE NIMBLE",
         about_mission_title: "私たちのミッション",
-        about_mission_desc: "NNN GAMESは、マルチプラットフォーム向けのUGCおよびゲーム体験を制作するプレミアムなインタラクティブコンテンツスタジオです。各プラットフォームのユーザー行動と制作基準（ポリシー／セーフティ／パフォーマンス／運用）を深く理解し、そのエコシステムに自然に馴染むプレイ体験とUGCアイテムを設計・制作します。",
-        about_mission_desc2: "収集、ランダム報酬、クエスト、イベント、シーズン運用などの仕組みを軸に没入感とリテンションを高め、LiveOpsを前提とした拡張可能なコンテンツを提供します。こうした取り組みを通じて、「フィーチャーに耐える品質」のゲームとUGCを安定して継続リリースできる制作体制を構築しています。",
+        about_mission_desc: "NNN GAMESは、Robloxでネイティブに動作するゲームとUGCを制作するプレミアムなインタラクティブコンテンツスタジオです。Robloxのポリシー・セーフティ・パフォーマンス・運用を深く理解し、エコシステムに自然に馴染む体験とUGCを設計・制作します。",
+        about_mission_desc2: "収集、ランダム報酬、クエスト、イベント、シーズン運用などの仕組みを軸に没入感とリテンションを高め、LiveOps前提で拡張可能なコンテンツを提供します。高品質なRobloxゲームとUGCを安定してリリースできる制作体制を構築しています。",
 
         // 会社沿革
         company_history_title: "会社沿革",
         history_2020_title: "2020年",
         history_2020_desc: "Triple N Games設立、モバイルゲーム『MineSweeper: The Dungeon』をリリース",
         history_2023_title: "2023年",
-        history_2023_desc: "ZEPETO World Jam Fall 2023優勝",
+        history_2023_desc: "Robloxプロジェクトが初の100万訪問を達成",
         history_2024_title: "2024年",
-        history_2024_desc: "ZEPETOワールド制作に関するMOU締結および事業受託、板橋グローバルゲームハブセンター入居、JR東日本プロジェクト開発開始",
+        history_2024_desc: "Roblox UGC量産とスタジオ機能を拡張",
         history_2025_title: "2025年",
-        history_2025_desc: "ZEPETOワールド『Get Train（JR東日本）』正式リリース、新たなプラットフォームとプロジェクトへの展開",
+        history_2025_desc: "代表的なRobloxタイトルをローンチし、新規IP/UGCラインアップを拡大",
 
         // 受賞歴
         awards_title: "受賞歴および実績",
-        award_1_title: "第1回 韓国文化体験メタバースコンテンツ公募展",
-        award_1_desc: "大賞（文化体育観光部長官賞）",
-        award_2_title: "ZEPETO World Jam Fall 2023",
-        award_2_desc: "第1位",
-        award_3_title: "Get Train（JR東日本）",
-        award_3_desc: "ユーザー数1.1M、累計訪問数2.2M達成",
+        award_1_title: "Roblox UGC Creator Program",
+        award_1_desc: "Featured UGC Creator に選出",
+        award_2_title: "Roblox Experience Award",
+        award_2_desc: "ジャンルトップのエンゲージメントを達成",
+        award_3_title: "Studio Milestone",
+        award_3_desc: "累計訪問100万+を達成",
 
         // Contactページ
         contact_page_title: "お問い合わせ - NNN GAMES",
@@ -474,9 +474,9 @@ const translations = {
         project_get_train_header: "Get Train（JR東日本）",
         project_get_train_status: "正式運営中",
         project_get_train_genre: "ジャンル：ソーシャルアドベンチャー＆収集型コンテンツ",
-        project_get_train_platform: "プラットフォーム：ZEPETO",
+        project_get_train_platform: "プラットフォーム：Roblox",
         project_summary_title: "プロジェクト概要",
-        project_get_train_summary_p1: "Get Trainは、JR東日本とNAVER Zが共同で開発したZEPETOのブランドゲームプロジェクトです。東京の山手線をモチーフにした仮想世界を舞台に、駅を巡りながらアウラを集め、様々なミッションをこなすソーシャルゲームです。",
+        project_get_train_summary_p1: "Get Trainは、JR東日本と共同で開発したRobloxブランドゲームプロジェクトです。東京の山手線をモチーフにした仮想世界を舞台に、駅を巡りながらアウラを集め、様々なミッションをこなすソーシャルゲームです。",
         project_get_train_summary_p2: "現実と仮想をつなぐ空間デザイン、収集と成長の楽しさ、ユーザー同士の交流を融合させ、ブランドの世界観を体験し共有できるユニークで没入感のある体験を提供します。",
         project_features_title: "主な特徴",
         project_get_train_feature_1: "山手線の主要駅を再現した没入型ワールド",
@@ -520,7 +520,7 @@ const translations = {
         project_nnn_ugc_page_header: "NNN UGC",
         project_nnn_ugc_status: "制作中",
         project_nnn_ugc_genre: "ジャンル：UGCアイテム制作",
-        project_nnn_ugc_platform: "プラットフォーム：ROBLOX & ZEPETO",
+        project_nnn_ugc_platform: "プラットフォーム：ROBLOX",
         project_nnn_ugc_summary_p1: "NNN UGC制作プロジェクトは、Robloxプラットフォームで活動するユーザーを対象に、トレンディで創造的なアバターアイテムを制作・販売する収益型コンテンツプロジェクトです。",
         project_nnn_ugc_summary_p2: "Z世代ユーザーの感覚に合わせたデザインやシーズンテーマ、SNS連動要素などを積極的に反映し、ユーザーの着せ替え欲求とコレクション欲求を刺激するファッション中心のUGCブランドを構築します。",
         project_nnn_ugc_summary_p3: "単純なアイテム制作を超えて、ユーザー参加型コンテンツ、限定版、コラボシリーズなど、様々な方法でRoblox経済システム内で持続可能な収益構造を設計します。",
@@ -561,7 +561,7 @@ const translations = {
         project_slime_sanctum_header: "スライム聖域：ラストスタンド",
         project_slime_sanctum_status: "開発中（2026年1月リリース予定）",
         project_slime_sanctum_genre: "ジャンル：協力型サバイバル防衛",
-        project_slime_sanctum_platform: "プラットフォーム：META HORIZON WORLD",
+        project_slime_sanctum_platform: "プラットフォーム：ROBLOX",
         project_slime_sanctum_summary_p1: "暗く荒れ果てた聖域で、仲間とともに無限に押し寄せるスライムの群れを迎え撃とう！",
         project_slime_sanctum_summary_p2: "毎回変わるスキルの組み合わせで戦略を立て、どこまで生き残れるかを競う協力型サバイバル防衛ゲームです。",
         project_slime_sanctum_feature_1: "協力型サバイバル防衛ゲームプレイ",
@@ -574,7 +574,7 @@ const translations = {
 
         // フッター
         footer_about_title: "NNN GAMES",
-        footer_about_text: "NNN GAMESは、マルチプラットフォームのUGCとゲームコンテンツで、世界中のユーザーに「楽しさ」と「価値」を同時に届けるプレミアムなインタラクティブコンテンツスタジオです。",
+        footer_about_text: "NNN GAMESは、RobloxネイティブのUGCとゲームコンテンツで、世界中のユーザーに楽しさと価値を届けるプレミアムスタジオです。",
         footer_links_title: "クイックリンク",
         footer_contact_title: "連絡先",
         footer_address: "住所：〒13449 韓国 京畿道 城南市 修正区 スタートアップ路54\n" +

@@ -1,7 +1,6 @@
 // 프로젝트 데이터 관리
 const projectsData = {
-    // 메인 페이지에 표시될 프로젝트들 (최대 3개 권장)
-    // 순서: 1.Roblox, 2.Meta Horizon (horizon), 3.Fortnite, 4.ZEPETO, 5.Mobile
+    // 메인 페이지에 표시될 프로젝트들 (Roblox 전용)
     featured: [
         {
             id: 'korean-spa',
@@ -19,42 +18,6 @@ const projectsData = {
             detailPage: 'korean-spa.html',
             category: 'roblox',
             status: 'development',
-            featured: true
-        },
-        {
-            id: 'slime-sanctum',
-            title: {
-                ko: '슬라임 성소: 최후의 항전',
-                en: 'Slime Sanctum: Last Stand',
-                ja: 'スライム聖域：ラストスタンド'
-            },
-            description: {
-                ko: '어둡고 폐허가 된 성소에서 친구들과 함께 끝없이 몰려오는 슬라임 무리를 막아내고, 매번 달라지는 스킬 조합으로 얼마나 오래 버티는지 겨루는 협동 생존 디펜스 게임.',
-                en: 'A co-op survival defense game where you and your friends hold a dark, ruined sanctum against endless slime hordes, using ever-changing skill combinations to see how long you can last.',
-                ja: '暗く荒れ果てた聖域で、仲間とともに無限に押し寄せるスライムの群れを迎え撃ち、毎回変わるスキルの組み合わせでどこまで耐えられるかを競う協力型サバイバル防衛ゲーム。'
-            },
-            image: 'images/slimesanctum-preview.jpg',
-            detailPage: 'slime-sanctum.html',
-            category: 'horizon',
-            status: 'development',
-            featured: true
-        },
-        {
-            id: 'get-train',
-            title: {
-                ko: '겟 트레인(JR 동일본)',
-                en: 'Get Train (JR East)',
-                ja: 'ゲットトレイン(JR東日本)'
-            },
-            description: {
-                ko: '게임의 재미를 통해 JR 동일본의 브랜드를 전 세계 사용자에게 자연스럽게 알리는 ZEPETO 월드입니다.',
-                en: 'A ZEPETO world that naturally introduces the JR East brand to global users through engaging gameplay.',
-                ja: 'ゲームの楽しさを通じてJR東日本のブランドを世界中のユーザーに自然に紹介するZEPETOワールドです。'
-            },
-            image: 'images/gt-preview.jpg',
-            detailPage: 'get-train.html',
-            category: 'zepeto',
-            status: 'active',
             featured: true
         },
         {
@@ -83,13 +46,13 @@ const projectsData = {
                 ja: 'NNN UGC'
             },
             description: {
-                ko: '트렌디한 아이템을 제작해 ZEPETO와 Roblox 유저에게 선보이는 UGC 제작 프로젝트.',
-                en: 'A UGC creation project delivering trendy items to ZEPETO and Roblox users.',
-                ja: 'ZEPETOとRobloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
+                ko: '트렌디한 아이템을 제작해 Roblox 유저에게 선보이는 UGC 제작 프로젝트.',
+                en: 'A UGC creation project delivering trendy items to Roblox users.',
+                ja: 'Robloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
             },
             image: 'images/nnnugc-preview.jpg',
             detailPage: 'nnn-ugc.html',
-            category: 'other',
+            category: 'roblox',
             status: 'development',
             featured: true
         }
@@ -97,72 +60,6 @@ const projectsData = {
 
     // 전체 프로젝트 목록 (프로젝트 페이지용)
     all: [
-        {
-            id: 'korean-spa',
-            title: {
-                ko: 'Korean Spa',
-                en: 'Korean Spa',
-                ja: 'Korean Spa'
-            },
-            description: {
-                ko: '작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.',
-                en: 'A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.',
-                ja: '小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。'
-            },
-            image: 'images/ks-preview.jpg',
-            detailPage: 'korean-spa.html',
-            category: 'roblox',
-            status: 'development',
-            featured: true,
-            launchDate: '2025-12',
-            platform: 'Roblox',
-            client: 'Internal Project',
-            technologies: ['Roblox Studio', 'Luau', 'UGC Creation']
-        },
-        {
-            id: 'slime-sanctum',
-            title: {
-                ko: '슬라임 성소: 최후의 항전',
-                en: 'Slime Sanctum: Last Stand',
-                ja: 'スライム聖域：ラストスタンド'
-            },
-            description: {
-                ko: '어둡고 폐허가 된 성소에서 친구들과 함께 끝없이 몰려오는 슬라임 무리를 막아내고, 매번 달라지는 스킬 조합으로 얼마나 오래 버티는지 겨루는 협동 생존 디펜스 게임.',
-                en: 'A co-op survival defense game where you and your friends hold a dark, ruined sanctum against endless slime hordes, using ever-changing skill combinations to see how long you can last.',
-                ja: '暗く荒れ果てた聖域で、仲間とともに無限に押し寄せるスライムの群れを迎え撃ち、毎回変わるスキルの組み合わせでどこまで耐えられるかを競う協力型サバイバル防衛ゲーム。'
-            },
-            image: 'images/slimesanctum-preview.jpg',
-            detailPage: 'slime-sanctum.html',
-            category: 'horizon',
-            status: 'development',
-            featured: true,
-            launchDate: '2026-01',
-            platform: 'META HORIZON WORLD',
-            client: 'Internal Project',
-            technologies: ['META HORIZON WORLD Engine', 'Noesis UI']
-        },
-        {
-            id: 'get-train',
-            title: {
-                ko: '겟 트레인(JR 동일본)',
-                en: 'Get Train (JR East)',
-                ja: 'ゲットトレイン(JR東日本)'
-            },
-            description: {
-                ko: '게임의 재미를 통해 JR 동일본의 브랜드를 전 세계 사용자에게 자연스럽게 알리는 ZEPETO 월드입니다.',
-                en: 'A ZEPETO world that naturally introduces the JR East brand to global users through engaging gameplay.',
-                ja: 'ゲームの楽しさを通じてJR東日本のブランドを世界中のユーザーに自然に紹介するZEPETOワールドです。'
-            },
-            image: 'images/gt-preview.jpg',
-            detailPage: 'get-train.html',
-            category: 'zepeto',
-            status: 'active',
-            featured: true,
-            launchDate: '2024-12',
-            platform: 'ZEPETO',
-            client: 'JR 동일본',
-            technologies: ['ZEPETO Studio', 'Lua Script', '3D Modeling']
-        },
         {
             id: 'legendary-dj-gear',
             title: {
@@ -193,19 +90,41 @@ const projectsData = {
                 ja: 'NNN UGC'
             },
             description: {
-                ko: '트렌디한 아이템을 제작해 ZEPETO와 Roblox 유저에게 선보이는 UGC 제작 프로젝트.',
-                en: 'A UGC creation project delivering trendy items to ZEPETO and Roblox users.',
-                ja: 'ZEPETOとRobloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
+                ko: '트렌디한 아이템을 제작해 Roblox 유저에게 선보이는 UGC 제작 프로젝트.',
+                en: 'A UGC creation project delivering trendy items to Roblox users.',
+                ja: 'Robloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。'
             },
             image: 'images/nnnugc-preview.jpg',
             detailPage: 'nnn-ugc.html',
-            category: 'other',
+            category: 'roblox',
             status: 'development',
             featured: true,
             launchDate: '2025-Q1',
-            platform: 'TBD',
+            platform: 'Roblox',
             client: 'Confidential',
-            technologies: ['TBD']
+            technologies: ['Roblox Studio', 'Luau', 'UGC Creation']
+        },
+        {
+            id: 'korean-spa',
+            title: {
+                ko: 'Korean Spa',
+                en: 'Korean Spa',
+                ja: 'Korean Spa'
+            },
+            description: {
+                ko: '작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.',
+                en: 'A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.',
+                ja: '小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。'
+            },
+            image: 'images/ks-preview.jpg',
+            detailPage: 'korean-spa.html',
+            category: 'roblox',
+            status: 'development',
+            featured: true,
+            launchDate: '2025-12',
+            platform: 'Roblox',
+            client: 'Internal Project',
+            technologies: ['Roblox Studio', 'Luau', 'UGC Creation']
         },
     ]
 };

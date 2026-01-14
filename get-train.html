@@ -9,219 +9,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --background-color: #f8f9fa;
-            --text-color: #343a40;
-            --card-bg: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --border-radius: 12px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            padding-top: 70px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Project Header */
-        .project-header {
-            padding: 80px 20px;
-            text-align: center;
-            background: var(--card-bg);
-        }
-
-        .project-header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5em;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .project-header p {
-            font-size: 1.3em;
-            color: #7f8c8d;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Main Content */
-        .project-main {
-            padding: 60px 0;
-        }
-
-        .project-main img.main-image {
-            width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 60px;
-        }
-
-        .project-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-        }
-
-        .project-description h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .project-description p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .project-details {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-
-        .project-details h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-
-        .project-details ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .project-details ul li {
-            margin-bottom: 15px;
-        }
-
-        .project-details ul li strong {
-            display: block;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-
-        /* Image Gallery */
-        .gallery-section {
-            padding: 60px 0;
-        }
-
-        .gallery-section h2 {
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .image-gallery img {
-            width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .image-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        .main-footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 60px 0 30px;
-            margin-top: 80px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .footer-section h3 {
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .main-nav {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--card-bg);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.5s ease-in-out;
-            }
-
-            .main-nav.active {
-                max-height: 300px;
-            }
-
-            .main-nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .main-nav ul li a {
-                padding: 15px;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-
-            .project-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
-<body class="theme-zepeto">
+<body>
 
     <header class="main-header">
         <div class="container">
@@ -246,72 +36,72 @@
         </div>
     </header>
 
-    <header class="project-header" style="text-align: center; padding: 120px 0 40px;">
-        <h1 data-key="project_get_train_header" style="font-size: 2.5rem; margin-bottom: 1rem; color: #2c3e50;">프로젝트 알파
-        </h1>
-        <div class="project-meta-info">
-            <p class="meta-item"><span data-key="project_get_train_status">개발 중</span></p>
-            <p class="meta-item"><span data-key="project_get_train_genre">장르: 오픈월드 RPG</span></p>
-            <p class="meta-item"><span data-key="project_get_train_platform">플랫폼: PC, 콘솔</span></p>
-        </div>
-    </header>
-
-    <main class="project-main container">
-        <img src="images/gt-main.jpg" alt="Get Train Main Image" class="main-image">
-
-        <div class="project-content">
-            <div class="project-description">
-                <h2 data-key="project_summary_title">프로젝트 개요</h2>
-                <p data-key="project_get_train_summary_p1">프로젝트 알파는 광활한 오픈월드를 배경으로 하는 차세대 롤플레잉 게임입니다. 플레이어는 살아 숨쉬는 세계를
-                    탐험하며 자신만의 서사를 만들어가게 됩니다.</p>
-                <p data-key="project_get_train_summary_p2">최첨단 그래픽 기술과 깊이 있는 스토리텔링, 높은 자유도를 결합하여 이전에는 없던 몰입감 넘치는 경험을
-                    선사하는 것을 목표로 합니다.</p>
-
-                <h3 data-key="project_related_links">관련 링크</h3>
-                <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                    <li style="margin-bottom: 10px;">
-                        <strong data-key="project_get_train_world_link">월드 링크:</strong>
-                        <a href="https://web.zepeto.me/en/detail/com.jreast.gettrain@b87f94387597b9443499fd92c068d9bd?referrer=copylink_share"
-                            target="_blank" style="color: var(--primary-color);"
-                            data-key="project_get_train_world_link_text">Get Train 월드 방문하기</a>
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <strong data-key="project_get_train_related_article">관련 기사:</strong>
-                        <a href="https://prtimes.jp/main/html/rd/p/000000468.000041458.html" target="_blank"
-                            style="color: var(--primary-color);" data-key="project_get_train_related_article_text">PR
-                            Times 기사 보기</a>
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <strong data-key="project_get_train_related_event">관련 이벤트:</strong>
-                        <a href="https://www.jrewallet.jp/campaign/zepeto" target="_blank"
-                            style="color: var(--primary-color);" data-key="project_get_train_related_event_text">JRE
-                            Wallet 캠페인</a>
-                    </li>
-                </ul>
+    <main>
+        <section class="project-header">
+            <div class="container">
+                <h1 data-key="project_get_train_header" class="text-3xl font-bold text-brand-secondary mb-3">Get Train (Roblox)</h1>
+                <div class="project-meta-info text-sm text-brand-muted flex flex-wrap justify-center gap-3">
+                    <span class="badge-metric play" data-key="project_get_train_status">Live</span>
+                    <span class="badge-metric ugc" data-key="project_get_train_genre">Social Adventure & Collection</span>
+                    <span class="badge-metric media" data-key="project_get_train_platform">Platform: Roblox</span>
+                </div>
+                <div class="mt-6 flex flex-wrap justify-center gap-3">
+                    <a href="#" class="btn-primary" aria-label="Play on Roblox">Play on Roblox (Coming soon)</a>
+                    <a href="#" class="btn-ghost" aria-label="Watch trailer">Watch Trailer</a>
+                    <a href="#" class="btn-ghost" aria-label="Read article">Read Article</a>
+                </div>
             </div>
-            <aside class="project-details">
-                <h3 data-key="project_features_title">주요 특징</h3>
-                <ul>
-                    <li data-key="project_get_train_feature_1">광활하고 동적인 오픈월드</li>
-                    <li data-key="project_get_train_feature_2">선택에 따라 변화하는 비선형적 스토리</li>
-                    <li data-key="project_get_train_feature_3">전략적인 실시간 전투 시스템</li>
-                    <li data-key="project_get_train_feature_4">깊이 있는 캐릭터 커스터마이징</li>
-                </ul>
-            </aside>
-        </div>
+        </section>
 
-        <section class="gallery-section">
-            <h2 data-key="gallery_title">갤러리</h2>
-            <div class="image-gallery">
-                <img src="images/gt-icon.jpg" alt="Get Train Gallery 0">
-                <img src="images/gt-gallery-0.jpg" alt="Get Train Gallery 1">
-                <img src="images/gt-gallery-1.jpg" alt="Get Train Gallery 2">
-                <img src="images/gt-gallery-2.jpg" alt="Get Train Gallery 3">
-                <img src="images/gt-gallery-3.jpg" alt="Get Train Gallery 4">
-                <img src="images/gt-gallery-4.jpg" alt="Get Train Gallery 5">
-                <img src="images/gt-gallery-5.jpg" alt="Get Train Gallery 6">
-                <img src="images/gt-gallery-6.jpg" alt="Get Train Gallery 7">
+        <section class="project-main container">
+            <img src="images/gt-main.jpg" alt="Get Train Main Image" class="main-image">
+
+            <div class="project-content">
+                <div class="project-description">
+                    <h2 data-key="project_summary_title">프로젝트 개요</h2>
+                    <p data-key="project_get_train_summary_p1">Get Train은 JR 동일본과 함께한 Roblox 브랜드 경험으로, 야마노테선을 모티브로 한 가상 공간을 탐험하며 퀘스트와 수집형 콘텐츠를 즐기는 소셜 어드벤처입니다.</p>
+                    <p data-key="project_get_train_summary_p2">현실-가상 공간 디자인과 성장/수집 시스템을 결합해 글로벌 유저가 브랜드를 자연스럽게 체험하도록 설계했습니다.</p>
+
+                    <h3 data-key="project_related_links">관련 링크</h3>
+                    <ul class="list-none space-y-2 mt-3">
+                        <li class="flex items-center gap-2">
+                            <strong data-key="project_get_train_world_link">월드 링크:</strong>
+                            <span data-key="project_get_train_world_link_text">Coming soon (Roblox)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <strong data-key="project_get_train_related_article">관련 기사:</strong>
+                            <a href="#" class="text-brand-primary font-semibold" data-key="project_get_train_related_article_text">준비 중</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <strong data-key="project_get_train_related_event">관련 이벤트:</strong>
+                            <span data-key="project_get_train_related_event_text">준비 중</span>
+                        </li>
+                    </ul>
+                </div>
+                <aside class="project-details">
+                    <h3 data-key="project_features_title">주요 특징</h3>
+                    <ul class="space-y-3">
+                        <li data-key="project_get_train_feature_1">야마노테선 모티브의 몰입형 Roblox 월드</li>
+                        <li data-key="project_get_train_feature_2">퀘스트/수집 중심의 소셜 어드벤처</li>
+                        <li data-key="project_get_train_feature_3">아우라·수집 아이템 성장 시스템</li>
+                        <li data-key="project_get_train_feature_4">브랜드 연계 시즌 이벤트</li>
+                    </ul>
+                </aside>
             </div>
+
+            <section class="gallery-section">
+                <h2 data-key="gallery_title">갤러리</h2>
+                <div class="image-gallery">
+                    <img src="images/gt-icon.jpg" alt="Get Train Gallery 0">
+                    <img src="images/gt-gallery-0.jpg" alt="Get Train Gallery 1">
+                    <img src="images/gt-gallery-1.jpg" alt="Get Train Gallery 2">
+                    <img src="images/gt-gallery-2.jpg" alt="Get Train Gallery 3">
+                    <img src="images/gt-gallery-3.jpg" alt="Get Train Gallery 4">
+                    <img src="images/gt-gallery-4.jpg" alt="Get Train Gallery 5">
+                    <img src="images/gt-gallery-5.jpg" alt="Get Train Gallery 6">
+                    <img src="images/gt-gallery-6.jpg" alt="Get Train Gallery 7">
+                </div>
+            </section>
         </section>
     </main>
 

@@ -9,225 +9,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --background-color: #f8f9fa;
-            --text-color: #343a40;
-            --card-bg: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --border-radius: 12px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            padding-top: 70px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Project Header */
-        .project-header {
-            padding: 80px 20px;
-            text-align: center;
-            background: var(--card-bg);
-        }
-
-        .project-header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5em;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .project-header p {
-            font-size: 1.3em;
-            color: #7f8c8d;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Main Content */
-        .project-main {
-            padding: 60px 0;
-        }
-
-        .project-main img.main-image {
-            width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 60px;
-        }
-
-        .project-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-        }
-
-        .project-description h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .project-description p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .project-details {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-
-        .project-details h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-
-        .project-details ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .project-details ul li {
-            margin-bottom: 15px;
-        }
-
-        .project-details ul li strong {
-            display: block;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-
-        /* Image Gallery */
-        .gallery-section {
-            padding: 60px 0;
-        }
-
-        .gallery-section h2 {
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-        }
-
-        .image-gallery>div {
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .image-gallery>div:hover {
-            transform: scale(1.03);
-        }
-
-        .image-gallery img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Footer */
-        .main-footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 60px 0 30px;
-            margin-top: 80px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .footer-section h3 {
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .main-nav {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--card-bg);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.5s ease-in-out;
-            }
-
-            .main-nav.active {
-                max-height: 300px;
-            }
-
-            .main-nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .main-nav ul li a {
-                padding: 15px;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-
-            .project-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
-<body class="theme-roblox">
+<body>
 
     <header class="main-header">
         <div class="container">
@@ -252,67 +36,64 @@
         </div>
     </header>
 
-    <header class="project-header" style="text-align: center; padding: 120px 0 40px;">
-        <h1 data-key="project_legendary_dj_gear_header" style="font-size: 2.5rem; margin-bottom: 1rem; color: #2c3e50;">
-            Legendary DJ Gear</h1>
-        <div class="project-meta-info">
-            <p class="meta-item"><span data-key="project_legendary_dj_gear_status">정식 운영 중</span></p>
-            <p class="meta-item"><span data-key="project_legendary_dj_gear_genre">장르: 음악 수집 게임</span></p>
-            <p class="meta-item"><span data-key="project_legendary_dj_gear_platform">플랫폼: ROBLOX</span></p>
-        </div>
-    </header>
-
-    <main class="project-main container">
-        <div
-            style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); margin-bottom: 60px;">
-            <iframe src="https://www.youtube.com/embed/0cEj3Tnb-No?si=n_3q2Qe3IN24cLbQ" title="YouTube video player"
-                frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-        <div class="project-content">
-            <div class="project-description">
-                <h2 data-key="project_legendary_dj_gear_summary_title">프로젝트 개요</h2>
-                <p data-key="project_legendary_dj_gear_summary_p1">Legendary DJ Gear는 음악과 패션을 결합한 혁신적인 로블록스 수집형 게임입니다.
-                    플레이어는 다양한 음악 장르의 DJ가 되어 전설적인 의상과 음악을 수집하며 자신만의 독특한 스타일을 완성해 나갑니다.</p>
-                <p data-key="project_legendary_dj_gear_summary_p2">게임 내에서 플레이어는 리듬 게임, 퀘스트, 이벤트를 통해 희귀한 아이템을 획득하고, 다른
-                    플레이어들과 경쟁하며 최고의 DJ로 성장할 수 있습니다. 커뮤니티 중심의 소셜 기능으로 전 세계 플레이어들과 음악을 공유하고 협업할 수 있습니다.</p>
-
-                <h3 data-key="project_legendary_dj_gear_related_links">관련 링크</h3>
-                <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                    <li style="margin-bottom: 10px;">
-                        <strong data-key="project_legendary_dj_gear_experience_page">체험 페이지:</strong>
-                        <a href="https://www.roblox.com/ko/games/110796735931100/Legendary-DJ-Gear" target="_blank"
-                            style="color: var(--primary-color);"
-                            data-key="project_legendary_dj_gear_experience_page_text">Legendary DJ Gear 게임 플레이하기</a>
-                    </li>
-                </ul>
-            </div>
-            <aside class="project-details">
-                <h3 data-key="project_legendary_dj_gear_features_title">주요 특징</h3>
-                <ul>
-                    <li data-key="project_legendary_dj_gear_feature_1">100개 이상의 유니크한 DJ 의상과 액세서리 수집</li>
-                    <li data-key="project_legendary_dj_gear_feature_2">다양한 음악 장르별 테마 월드와 리듬 게임</li>
-                    <li data-key="project_legendary_dj_gear_feature_3">실시간 멀티플레이어 DJ 배틀과 랭킹 시스템</li>
-                    <li data-key="project_legendary_dj_gear_feature_4">커스텀 플레이리스트와 음악 공유 커뮤니티</li>
-                </ul>
-            </aside>
-        </div>
-
-        <section class="gallery-section">
-            <h2 data-key="gallery_title">갤러리</h2>
-            <div class="image-gallery">
-                <div>
-                    <img src="images/ldg-gallery-1.jpg" alt="Legendary DJ Gear Gallery 1">
+    <main>
+        <section class="project-header">
+            <div class="container">
+                <h1 data-key="project_legendary_dj_gear_header" class="text-3xl font-bold text-brand-secondary mb-3">
+                    Legendary DJ Gear
+                </h1>
+                <div class="project-meta-info text-sm text-brand-muted flex flex-wrap justify-center gap-3">
+                    <span class="badge-metric play" data-key="project_legendary_dj_gear_status">정식 운영 중</span>
+                    <span class="badge-metric ugc" data-key="project_legendary_dj_gear_genre">장르: 음악 수집 게임</span>
+                    <span class="badge-metric media" data-key="project_legendary_dj_gear_platform">플랫폼: ROBLOX</span>
                 </div>
-                <div>
-                    <img src="images/ldg-gallery-2.jpg" alt="Legendary DJ Gear Gallery 2">
-                </div>
-                <div>
-                    <img src="images/ldg-gallery-3.jpg" alt="Legendary DJ Gear Gallery 3">
+                <div class="mt-6 flex flex-wrap justify-center gap-3">
+                    <a href="https://www.roblox.com/ko/games/110796735931100/Legendary-DJ-Gear" class="btn-primary" target="_blank" rel="noreferrer" data-key="project_legendary_dj_gear_experience_page_text">Play on Roblox</a>
+                    <a href="https://www.youtube.com/watch?v=0cEj3Tnb-No" class="btn-ghost" target="_blank" rel="noreferrer">Watch Trailer</a>
+                    <a href="#" class="btn-ghost">Read Article</a>
                 </div>
             </div>
+        </section>
+
+        <section class="project-main container">
+            <div class="w-full rounded-xl shadow overflow-hidden mb-10 relative pb-[56.25%]">
+                <iframe src="https://www.youtube.com/embed/0cEj3Tnb-No?si=n_3q2Qe3IN24cLbQ" title="YouTube video player"
+                    frameborder="0" class="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div class="project-content">
+                <div class="project-description">
+                    <h2 data-key="project_legendary_dj_gear_summary_title">프로젝트 개요</h2>
+                    <p data-key="project_legendary_dj_gear_summary_p1">Legendary DJ Gear는 음악과 패션을 결합한 혁신적인 Roblox 수집형 게임입니다. 플레이어는 다양한 음악 장르의 DJ가 되어 전설적인 의상과 음악을 수집하며 자신만의 스타일을 완성합니다.</p>
+                    <p data-key="project_legendary_dj_gear_summary_p2">리듬 게임, 퀘스트, 이벤트를 통해 희귀 아이템을 획득하고, 멀티플레이어 경쟁과 커뮤니티 기능으로 글로벌 플레이어들과 협업·경쟁할 수 있습니다.</p>
+                </div>
+                <aside class="project-details">
+                    <h3 data-key="project_legendary_dj_gear_features_title">주요 특징</h3>
+                    <ul class="space-y-3">
+                        <li data-key="project_legendary_dj_gear_feature_1">100개 이상의 유니크한 DJ 의상과 액세서리 수집</li>
+                        <li data-key="project_legendary_dj_gear_feature_2">장르별 테마 월드와 리듬 게임</li>
+                        <li data-key="project_legendary_dj_gear_feature_3">실시간 멀티플레이어 DJ 배틀과 랭킹 시스템</li>
+                        <li data-key="project_legendary_dj_gear_feature_4">커스텀 플레이리스트와 음악 공유 커뮤니티</li>
+                    </ul>
+                </aside>
+            </div>
+
+            <section class="gallery-section">
+                <h2 data-key="gallery_title">갤러리</h2>
+                <div class="image-gallery">
+                    <div>
+                        <img src="images/ldg-gallery-1.jpg" alt="Legendary DJ Gear Gallery 1">
+                    </div>
+                    <div>
+                        <img src="images/ldg-gallery-2.jpg" alt="Legendary DJ Gear Gallery 2">
+                    </div>
+                    <div>
+                        <img src="images/ldg-gallery-3.jpg" alt="Legendary DJ Gear Gallery 3">
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
 
