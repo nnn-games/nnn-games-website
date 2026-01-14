@@ -16,7 +16,5 @@
 ## 4. 작업 보드 (수시 업데이트)
 | ID | 항목 | 상태 | 산출물/링크 |
 | --- | --- | --- | --- |
-| N-01 | 프로젝트 상세 허브 실링크/지표 반영(플레이·영상·기사·메트릭 확정) | In Progress | `korean-spa.html`, `legendary-dj-gear.html`, `nnn-ugc.html`, `js/i18n.js`, `data/projects.json` |
-| N-02 | 프로젝트 데이터/i18n 정규화(상세 CTA/링크/카피를 JSON+i18n 키로 분리) | In Progress | `data/projects.json`, `js/projects-data.js`, `js/project-renderer.js`, `js/i18n.js` |
-| N-03 | 레거시 인라인 스타일 제거 및 Tailwind 공용 스타일 적용 | Todo | `slime-sanctum.html` 등 인라인 스타일 잔존 페이지, `src/styles/tailwind.css` |
-| N-04 | CTA 추적 엔드포인트/스키마 확정 및 적용(sendBeacon 대상 교체) | In Progress | `js/main.js`, 서버 수집 URL/스키마 정의 |
+| N-01 | 신규 프로젝트 추가 (`Tower Flood Race`)  | To Do | `tower-flood-race.html`, `js/projects-data.js`, `js/project-renderer.js``js/i18n.js`, `data/projects.json` |
+| N-02 | 히어로 섹션 하단에 현재 운영중인 3개의 커뮤니티 포탈 기능 개발. 커뮤니티는 계속 추가될 예정이며 각 커뮤니티의 인원을 공개 API를 이용해 가져와 합산하여 섹션에 잘 보이게 표시 | To Do | `index.html`, `js/i18n.js` |
