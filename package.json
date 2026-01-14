@@ -1,0 +1,30 @@
+{
+  "name": "nnn-games-website",
+  "version": "1.0.0",
+  "description": "TripleN Games Inc. Website",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./css/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnn-games/nnn-games-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nnn-games/nnn-games-website/issues"
+  },
+  "homepage": "https://github.com/nnn-games/nnn-games-website#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.13"
+  }
+}

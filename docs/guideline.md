@@ -1,5 +1,5 @@
 # NNN GAMES 랜딩 페이지 개발 가이드라인
-회사 기본 정보와 프로젝트/업적을 명확히 알리는 랜딩 페이지를 대상으로, 북미 대형 소프트웨어 조직에서 통용되는 품질·운영 기준을 정리했다. 정적 웹사이트(HTML/CSS/JS) 구조를 유지하면서도 확장성·보안·운영 편의를 높이는 것을 목표로 한다.
+회사 기본 정보와 프로젝트/업적을 명확히 알리는 랜딩 페이지를 대상으로, 정적 웹사이트(HTML/CSS/JS) 구조를 유지하면서도 확장성·보안·운영 편의를 높이는 것을 목표로 한다.
 
 ## 1. 범위와 원칙
 - 목적: 회사 기본 정보, 프로젝트 레퍼런스, 업적을 명확히 전달하고 CTA(문의/프로젝트 상세/플레이 링크)로 전환 유도.
@@ -72,3 +72,14 @@
 - 프로젝트 필터/정렬 UI 연결 시 `ProjectRenderer.filterByCategory/Status` 활용.
 - 새 플랫폼/카테고리 추가 시 `ProjectRenderer.getPlatformInfo`와 CSS 배지 클래스 확장.
 - SEO 강화 시 각 페이지별 OG 이미지/설명 개별화, 구조화 데이터(Organization, Breadcrumb) 검토.
+
+## 15. 대규모 프로젝트(수백 개) 관리 가이드
+- 데이터 소스 분리: `projects-data.js`를 JSON 분할(예: 카테고리/연도별) 후 빌드 시 병합, 프런트에는 경량 index만 로드.
+- 리스트 최적화: 기본 뷰는 페이징 또는 무한 스크롤 + 필터/검색(텍스트, 카테고리, 상태). 카드에 필수 필드만 포함하고 상세는 지연 로드.
+- 정적 빌드 전략: 정적 HTML은 공통 셸 + 클라이언트 렌더; 대량 데이터는 JSON fetch + 캐시. 필요 시 정적 검색 인덱스(예: prebuilt JSON) 사용.
+- 이미지/자산: 썸네일/갤러리 분리, WebP 우선, srcset/`loading="lazy"` 적용, 파일명 규칙(슬러그_사이즈.ext) 유지.
+- 스키마: 필수 키(id, slug, title{ko,en,ja}, description{...}, category, status, platform, launchDate, metrics, links{play, video, article}, thumbnail). 확장 필드는 optional로 관리.
+- URL/슬러그: `projects/<slug>.html` 규칙 유지, slug는 고유·소문자·하이픈.
+- i18n: 데이터 레벨에서 다국어 필드 병행 관리, 새 키 추가 시 세 언어 동시 추가.
+- 퍼포먼스: 초기 로드 데이터 최소화, 필터/검색 시 debounce, 큰 리스트는 가상 스크롤 고려.
+- SEO: 주요 대표 프로젝트는 개별 정적 페이지 유지, 대량 리스트는 카테고리/태그 페이지로 내부 링크 구조 확보.

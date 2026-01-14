@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply font-sans text-brand-text bg-white antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold;
+  }
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-6xl mx-auto px-4;
+  }
+
+  /* Header & Nav */
+  .main-header {
+    @apply fixed top-0 left-0 w-full bg-white/95 backdrop-blur shadow-sm z-50 border-b border-gray-100;
+  }
+  .main-header .container {
+    @apply flex items-center justify-between h-16;
+  }
+  .logo {
+    @apply flex items-center gap-2 font-semibold text-brand-secondary;
+  }
+  .logo img {
+    @apply w-10 h-10 rounded-md object-cover;
+  }
+  .logo-text {
+    @apply text-lg font-semibold;
+  }
+  .main-nav ul {
+    @apply hidden md:flex items-center gap-6;
+  }
+  .main-nav a {
+    @apply text-sm font-semibold text-brand-secondary hover:text-brand-primary transition;
+  }
+  .main-nav a.active {
+    @apply text-brand-primary;
+  }
+  .menu-toggle {
+    @apply md:hidden text-2xl cursor-pointer;
+  }
+  .main-nav.active ul {
+    @apply flex flex-col gap-2 bg-white shadow-md p-4 absolute top-16 left-0 w-full;
+  }
+
+  /* Hero */
+  .hero {
+    @apply bg-gradient-to-r from-brand-primary to-brand-primaryDark text-white pt-24 pb-16 mt-16;
+  }
+  .hero-content {
+    @apply max-w-3xl mx-auto text-center space-y-4;
+  }
+  .hero h1 {
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+  }
+  .hero p {
+    @apply text-lg md:text-xl text-white/80;
+  }
+  .cta-button {
+    @apply inline-block px-6 py-3 bg-white text-brand-primary font-semibold rounded-lg shadow hover:-translate-y-0.5 hover:shadow-lg transition;
+  }
+
+  /* Sections */
+  section {
+    @apply py-12;
+  }
+  .page-header {
+    @apply bg-brand-bg border-b border-gray-200;
+  }
+  .page-header h1 {
+    @apply text-3xl font-bold text-brand-secondary;
+  }
+  .page-header p {
+    @apply text-brand-muted mt-2;
+  }
+
+  /* Grids & Cards */
+  .feature-grid,
+  .project-grid,
+  .image-gallery {
+    @apply grid gap-6;
+  }
+  .feature-grid {
+    @apply md:grid-cols-3;
+  }
+  .project-grid {
+    @apply md:grid-cols-2 lg:grid-cols-3;
+  }
+  .feature-item,
+  .project-card,
+  .award-item {
+    @apply bg-white border border-gray-100 rounded-xl shadow-sm p-5 transition hover:-translate-y-0.5 hover:shadow-lg;
+  }
+  .project-card {
+    @apply flex flex-col h-full overflow-hidden;
+  }
+  .project-card img {
+    @apply w-full h-48 object-cover rounded-lg;
+  }
+  .project-card .project-info {
+    @apply mt-4 space-y-2;
+  }
+  .project-card h3 {
+    @apply text-lg font-semibold text-gray-900;
+  }
+  .project-card p {
+    @apply text-sm text-gray-600;
+  }
+  .project-card .learn-more {
+    @apply text-sm font-semibold text-indigo-600 hover:text-indigo-700 inline-flex items-center;
+  }
+
+  /* Badges */
+  .platform-badge,
+  .status-badge,
+  .category-badge {
+    @apply inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full;
+  }
+  .status-active {
+    @apply bg-emerald-100 text-emerald-700;
+  }
+  .status-development {
+    @apply bg-amber-100 text-amber-700;
+  }
+  .status-completed {
+    @apply bg-blue-100 text-blue-700;
+  }
+  .status-paused {
+    @apply bg-gray-200 text-gray-700;
+  }
+  .platform-badge {
+    @apply bg-brand-secondary text-white;
+  }
+  .category-badge {
+    @apply bg-gray-100 text-brand-secondary;
+  }
+  .badge-metric {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-full bg-gray-900 text-white;
+  }
+  .badge-metric.play {
+    @apply bg-metric-play text-white;
+  }
+  .badge-metric.ugc {
+    @apply bg-metric-ugc text-white;
+  }
+  .badge-metric.media {
+    @apply bg-metric-media text-white;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-brand-primary text-white font-semibold shadow hover:bg-brand-primaryDark hover:-translate-y-0.5 hover:shadow-lg transition;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-brand-secondary text-white font-semibold shadow hover:-translate-y-0.5 hover:shadow-lg transition;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-gray-200 text-brand-secondary font-semibold hover:border-brand-primary hover:text-brand-primary transition;
+  }
+
+  /* Project detail pages */
+  .project-header {
+    @apply text-center py-16 bg-gray-50 border-b border-gray-200;
+  }
+  .project-header h1 {
+    @apply text-3xl font-bold text-gray-900 mb-2;
+  }
+  .project-meta-info {
+    @apply flex flex-wrap justify-center gap-3 text-sm text-gray-600;
+  }
+  .project-main {
+    @apply container py-12;
+  }
+  .project-main .main-image {
+    @apply w-full rounded-xl shadow mb-10 object-cover;
+  }
+  .project-content {
+    @apply grid gap-10 lg:grid-cols-3;
+  }
+  .project-description {
+    @apply lg:col-span-2 space-y-4;
+  }
+  .project-description h2 {
+    @apply text-2xl font-bold text-gray-900;
+  }
+  .project-description p {
+    @apply text-gray-700 leading-relaxed;
+  }
+  .project-details {
+    @apply bg-white border border-gray-100 rounded-xl shadow-sm p-6 space-y-4;
+  }
+  .project-details h3 {
+    @apply text-xl font-semibold border-b border-gray-200 pb-3;
+  }
+  .project-details ul {
+    @apply space-y-3 text-sm text-gray-700;
+  }
+  .project-details li strong {
+    @apply block text-gray-900;
+  }
+  .gallery-section h2 {
+    @apply text-center text-2xl font-bold text-gray-900 mb-6;
+  }
+  .image-gallery {
+    @apply grid gap-4 md:grid-cols-2 lg:grid-cols-3;
+  }
+  .image-gallery img {
+    @apply w-full rounded-lg shadow object-cover;
+  }
+
+  /* Footer */
+  .main-footer {
+    @apply bg-brand-secondary text-gray-200 mt-16;
+  }
+  .main-footer .container {
+    @apply py-12;
+  }
+  .footer-content {
+    @apply grid gap-8 md:grid-cols-3;
+  }
+  .footer-section h3 {
+    @apply text-lg font-semibold text-white mb-2;
+  }
+  .footer-section p,
+  .footer-section a {
+    @apply text-sm text-gray-300;
+  }
+  .footer-section a:hover {
+    @apply text-white;
+  }
+  .footer-bottom {
+    @apply border-t border-gray-800 pt-6 text-sm text-gray-400 text-center;
+  }
+
+  /* Contact page */
+  .contact-wrapper {
+    @apply grid gap-8 md:grid-cols-2;
+  }
+  .info-item {
+    @apply flex items-start gap-3 text-sm text-gray-700;
+  }
+  .info-item .icon {
+    @apply text-lg;
+  }
+  .map-wrapper {
+    @apply rounded-xl overflow-hidden shadow;
+  }
+}
