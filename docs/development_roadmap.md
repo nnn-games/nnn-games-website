@@ -16,10 +16,10 @@
 ## 4. 작업 보드 (수시 업데이트)
 | ID | 항목 | 상태 | 산출물/링크 |
 | --- | --- | --- | --- |
-| R-01 | 데이터/카테고리 로블록스 전용화(비로블록스: zepeto/horizon/other 제거) | Todo | `js/projects-data.js`, `js/project-renderer.js`, `css/style.css` |
-| R-02 | i18n/텍스트 로블록스화(Hero/미션/footer 등 멀티플랫폼 언급 제거) | Todo | `index.html`, `about.html`, 공통 footer, `js/i18n.js` |
-| R-03 | 프로젝트 상세 허브화(플레이·영상·기사 링크와 실제 카피/지표로 교체) | Todo | `get-train.html` 등 상세 페이지 |
-| R-04 | 프로젝트 필터/검색 UI 연결(카테고리/상태, 필요 시 검색) | Todo | `projects.html`, `js/project-renderer.js` |
+| R-01 | 데이터/카테고리 로블록스 전용화(비로블록스: zepeto/horizon/other 제거) | Completed | `js/projects-data.js`, `js/project-renderer.js`, `css/style.css` |
+| R-02 | i18n/텍스트 로블록스화(Hero/미션/footer 등 멀티플랫폼 언급 제거) | Completed | `index.html`, `about.html`, 공통 footer, `js/i18n.js` |
+| R-03 | 프로젝트 상세 허브화(플레이·영상·기사 링크와 실제 카피/지표로 교체) | In Progress | `get-train.html` 등 상세 페이지 |
+| R-04 | 프로젝트 필터/검색 UI 연결(카테고리/상태, 필요 시 검색) | Completed | `projects.html`, `js/project-renderer.js` |
 | R-05 | 공통 CTA/링크 블록 정립 + 추적용 data-attr/클래스 적용, 경량 분석 스크립트 결정 | Todo | 주요 페이지 HTML |
 | R-06 | SEO/OG/파비콘 정비(로블록스 키워드 중심 title/description/og) | Todo | 주요 페이지 HTML, `images/` |
 | R-07 | 문서 동기화(로블록스 전용 내용으로 `docs/prd.md`/가이드 갱신) | Todo | `docs/prd.md`, `docs/guideline.md` |

@@ -150,6 +150,54 @@ const ProjectRenderer = {
         return platformMap['roblox'];
     },
 
+    // 통합 필터 적용
+    applyFilters: function ({ category = 'all', status = 'all', keyword = '' } = {}, containerId = 'all-projects-grid') {
+        const container = document.querySelector(`.${containerId}`) || document.querySelector(`#${containerId}`);
+        if (!container) return;
+
+        const cards = container.querySelectorAll('.project-card');
+        const kw = (keyword || '').toLowerCase();
+
+        cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            const cardStatus = card.getAttribute('data-status');
+            const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+            const desc = (card.querySelector('p')?.textContent || '').toLowerCase();
+
+            const matchCategory = category === 'all' || cardCategory === category;
+            const matchStatus = status === 'all' || cardStatus === status;
+            const matchKeyword = !kw || title.includes(kw) || desc.includes(kw);
+
+            card.style.display = (matchCategory && matchStatus && matchKeyword) ? 'block' : 'none';
+        });
+    },
+
+    // 필터 UI 바인딩
+    bindFilters: function () {
+        const containerId = 'all-projects-grid';
+        const categoryEl = document.getElementById('categoryFilter');
+        const statusEl = document.getElementById('statusFilter');
+        const keywordEl = document.getElementById('keywordFilter');
+        if (!categoryEl && !statusEl && !keywordEl) return;
+
+        const apply = () => {
+            this.applyFilters({
+                category: categoryEl ? categoryEl.value : 'all',
+                status: statusEl ? statusEl.value : 'all',
+                keyword: keywordEl ? keywordEl.value : ''
+            }, containerId);
+        };
+
+        categoryEl && categoryEl.addEventListener('change', apply);
+        statusEl && statusEl.addEventListener('change', apply);
+        if (keywordEl) {
+            keywordEl.addEventListener('input', () => {
+                window.clearTimeout(this._kwTimer);
+                this._kwTimer = window.setTimeout(apply, 150);
+            });
+        }
+    },
+
     // 카테고리별 필터링
     filterByCategory: function (category, containerId = 'all-projects-grid') {
         const container = document.querySelector(`.${containerId}`) || document.querySelector(`#${containerId}`);
@@ -240,6 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 프로젝트 페이지인 경우
         if (document.querySelector('#all-projects-grid')) {
             ProjectRenderer.renderAllProjects('all-projects-grid');
+            ProjectRenderer.bindFilters();
         }
     }, 50);
 });

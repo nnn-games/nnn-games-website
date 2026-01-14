@@ -43,9 +43,34 @@
             </div>
         </section>
 
+        <!-- 필터/검색 -->
+        <section class="container" style="padding: 2rem 0;">
+            <div class="project-filters" style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); align-items: center;">
+                <div>
+                    <label for="categoryFilter" style="display:block; font-weight:600; margin-bottom:0.25rem;">카테고리</label>
+                    <select id="categoryFilter" style="width:100%; padding:0.6rem; border:1px solid #e5e7eb; border-radius:0.5rem;">
+                        <option value="all">All</option>
+                        <option value="roblox">Roblox</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="statusFilter" style="display:block; font-weight:600; margin-bottom:0.25rem;">상태</label>
+                    <select id="statusFilter" style="width:100%; padding:0.6rem; border:1px solid #e5e7eb; border-radius:0.5rem;">
+                        <option value="all">All</option>
+                        <option value="active">Active</option>
+                        <option value="development">Development</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="keywordFilter" style="display:block; font-weight:600; margin-bottom:0.25rem;">검색</label>
+                    <input id="keywordFilter" type="text" placeholder="프로젝트 검색" style="width:100%; padding:0.6rem; border:1px solid #e5e7eb; border-radius:0.5rem;">
+                </div>
+            </div>
+        </section>
+
         <!-- 현재 진행 중인 프로젝트 -->
         <section class="project-preview container">
-            <div class="project-grid">
+            <div class="project-grid" id="all-projects-grid">
                 <!-- 프로젝트 카드들은 project-renderer.js에 의해 동적으로 생성됩니다 -->
             </div>
         </section>

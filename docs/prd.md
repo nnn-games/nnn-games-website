@@ -14,13 +14,13 @@
 
 ## 3. 정보 구조 (현재 구현)
 - **홈(`index.html`)**
-  - Hero: “브랜드를 게임처럼” 메시지, CTA는 `projects.html`.
-  - 강점 3가지: 플랫폼 네이티브 제작, 수익-콘텐츠 연결, 글로벌 운영 경험.
+  - Hero: Roblox 전문 스튜디오 메시지, CTA는 `projects.html`.
+  - 강점 3가지: Roblox 네이티브 제작, 수익-콘텐츠 연결, 글로벌 운영 경험.
   - 프로젝트 프리뷰: `projects-data.js`의 featured 목록을 `project-renderer.js`로 동적 렌더.
-- **소개(`about.html`)**: 미션, 연혁(2020~2025), 수상/성과.
-- **프로젝트 목록(`projects.html`)**: featured 프로젝트 카드 렌더 (필터 UI는 미구현).
+- **소개(`about.html`)**: 미션, 연혁, 수상/성과(로블록스 중심 카피 반영).
+- **프로젝트 목록(`projects.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
 - **프로젝트 상세**
-  - `get-train.html` (ZEPETO, JR 동일본), `legendary-dj-gear.html` (ROBLOX), `nnn-ugc.html` (UGC 아이템), `korean-spa.html` (ROBLOX 퍼즐 어드벤처), `slime-sanctum.html` (META HORIZON 협동 디펜스).
+  - `get-train.html` (Roblox 브랜드 경험), `legendary-dj-gear.html` (Roblox 음악 수집), `nnn-ugc.html` (Roblox UGC 아이템), `korean-spa.html` (Roblox 퍼즐 어드벤처), `slime-sanctum.html` (향후 정비 예정).
 - **문의(`contact.html`)**: 이메일, 주소, 사업자등록번호, 지도 iframe.
 - **공통 UI**: 헤더/푸터, 모바일 메뉴 토글(`js/main.js`), 이미지 지연 로딩 및 스크롤 애니메이션.
 
