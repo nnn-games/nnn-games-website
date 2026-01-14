@@ -13,7 +13,7 @@ const ProjectRenderer = {
         }
 
         const currentLang = this.getCurrentLanguage();
-        const projects = ProjectManager.getFeaturedProjects();
+        const projects = (ProjectManager.getFeatured && ProjectManager.getFeatured()) || (ProjectManager.getFeaturedProjects && ProjectManager.getFeaturedProjects()) || projectsData.featured || [];
 
         container.innerHTML = '';
 
@@ -44,7 +44,7 @@ const ProjectRenderer = {
             <div class="project-info">
                 <h3>${title}</h3>
                 <p>${description}</p>
-                <a href="${project.detailPage}" class="learn-more" data-key="learn_more">자세히 보기 →</a>
+                <a href="${project.detailPage}" class="learn-more" data-key="learn_more" data-cta="project-card-featured" data-project-id="${project.id}" data-cta-origin="home-featured">자세히 보기 →</a>
             </div>
         `;
 
@@ -60,7 +60,7 @@ const ProjectRenderer = {
         }
 
         const currentLang = this.getCurrentLanguage();
-        const projects = projectsData.all;
+        const projects = (ProjectManager.getAll && ProjectManager.getAll()) || projectsData.all || [];
 
         container.innerHTML = '';
 
@@ -84,6 +84,11 @@ const ProjectRenderer = {
 
         const title = project.title[lang] || project.title.ko;
         const description = project.description[lang] || project.description.ko;
+        const metrics = project.metrics || {};
+        const hasMetrics = typeof metrics.visits === 'number' || typeof metrics.playing === 'number' || typeof metrics.favorites === 'number';
+        const visits = typeof metrics.visits === 'number' ? metrics.visits.toLocaleString() : null;
+        const playing = typeof metrics.playing === 'number' ? metrics.playing.toLocaleString() : null;
+        const favorites = typeof metrics.favorites === 'number' ? metrics.favorites.toLocaleString() : null;
 
         const statusBadge = this.getStatusBadge(project.status, lang);
         const categoryBadge = this.getCategoryBadge(project.category);
@@ -104,7 +109,14 @@ const ProjectRenderer = {
                     <span class="platform">${project.platform}</span>
                     <span class="launch-date">${project.launchDate}</span>
                 </div>
-                <a href="${project.detailPage}" class="learn-more" data-key="learn_more">자세히 보기 →</a>
+                ${hasMetrics ? `
+                <div class="project-metrics">
+                    ${visits ? `<span class="badge-metric play">Visits ${visits}</span>` : ''}
+                    ${playing ? `<span class="badge-metric media">Playing ${playing}</span>` : ''}
+                    ${favorites ? `<span class="badge-metric ugc">Favorites ${favorites}</span>` : ''}
+                </div>
+                ` : ''}
+                <a href="${project.detailPage}" class="learn-more" data-key="learn_more" data-cta="project-card-list" data-project-id="${project.id}" data-cta-origin="projects-list">자세히 보기 →</a>
             </div>
         `;
 
@@ -257,7 +269,8 @@ const ProjectRenderer = {
         const allProjectCards = document.querySelectorAll('#all-projects-grid .project-card');
         allProjectCards.forEach(card => {
             const projectId = card.getAttribute('data-project-id');
-            const project = projectsData.all.find(p => p.id === projectId);
+            const source = (ProjectManager.getAll && ProjectManager.getAll()) || projectsData.all || [];
+            const project = source.find(p => p.id === projectId);
             if (project) {
                 const title = card.querySelector('h3');
                 const description = card.querySelector('p');
@@ -278,19 +291,18 @@ const ProjectRenderer = {
 
 // DOM이 로드되면 프로젝트 렌더링
 document.addEventListener('DOMContentLoaded', function () {
-    // 언어 설정이 완료된 후 렌더링하도록 약간의 지연
-    setTimeout(function () {
-        // 메인 페이지인 경우
+    const renderAfterLoad = function () {
         if (document.querySelector('.project-preview')) {
             ProjectRenderer.renderFeaturedProjects('project-grid');
         }
-
-        // 프로젝트 페이지인 경우
         if (document.querySelector('#all-projects-grid')) {
             ProjectRenderer.renderAllProjects('all-projects-grid');
             ProjectRenderer.bindFilters();
         }
-    }, 50);
+    };
+
+    const loader = window.ProjectManager && ProjectManager.loadProjectsData ? ProjectManager.loadProjectsData() : Promise.resolve();
+    loader.then(renderAfterLoad).catch(renderAfterLoad);
 });
 
 // 언어 변경 이벤트 리스너

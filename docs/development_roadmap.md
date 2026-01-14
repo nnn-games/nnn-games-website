@@ -16,14 +16,10 @@
 ## 4. 작업 보드 (수시 업데이트)
 | ID | 항목 | 상태 | 산출물/링크 |
 | --- | --- | --- | --- |
-| R-01 | 데이터/카테고리 로블록스 전용화(비로블록스: zepeto/horizon/other 제거) | Completed | `js/projects-data.js`, `js/project-renderer.js`, `css/style.css` |
-| R-02 | i18n/텍스트 로블록스화(Hero/미션/footer 등 멀티플랫폼 언급 제거) | Completed | `index.html`, `about.html`, 공통 footer, `js/i18n.js` |
-| R-03 | 프로젝트 상세 허브화(플레이·영상·기사 링크와 실제 카피/지표로 교체) | In Progress | `get-train.html` 등 상세 페이지 |
-| R-04 | 프로젝트 필터/검색 UI 연결(카테고리/상태, 필요 시 검색) | Completed | `projects.html`, `js/project-renderer.js` |
-| R-05 | 공통 CTA/링크 블록 정립 + 추적용 data-attr/클래스 적용, 경량 분석 스크립트 결정 | Todo | 주요 페이지 HTML |
-| R-06 | SEO/OG/파비콘 정비(로블록스 키워드 중심 title/description/og) | Todo | 주요 페이지 HTML, `images/` |
-| R-07 | 문서 동기화(로블록스 전용 내용으로 `docs/prd.md`/가이드 갱신) | Todo | `docs/prd.md`, `docs/guideline.md` |
-| R-08 | 경량 구조 정리(데이터 분리, 이미지 디렉터리 정돈, 필요 시 빌드 경로 추가) | Todo | `data/` 또는 `js/projects-data.js`, `images/`, 빌드 스크립트 |
+| N-01 | 프로젝트 상세 허브 실링크/지표 반영(플레이·영상·기사·메트릭 확정) | Todo | `get-train.html`, `legendary-dj-gear.html`, `korean-spa.html`, `nnn-ugc.html`, `slime-sanctum.html`, `js/i18n.js`, `data/projects.json` |
+| N-02 | 프로젝트 데이터/i18n 정규화(상세 CTA/링크/카피를 JSON+i18n 키로 분리) | Todo | `data/projects.json`, `js/projects-data.js`, `js/project-renderer.js`, `js/i18n.js` |
+| N-03 | 레거시 인라인 스타일 제거 및 Tailwind 공용 스타일 적용 | Todo | `slime-sanctum.html` 등 인라인 스타일 잔존 페이지, `src/styles/tailwind.css` |
+| N-04 | CTA 추적 엔드포인트/스키마 확정 및 적용(sendBeacon 대상 교체) | Todo | `js/main.js`, 서버 수집 URL/스키마 정의 |
 
 ## 5. 근무 주기 제안
 - 매주: 배포 전 수동 검증(다국어, 모바일 내비, CTA, 외부 링크), Lighthouse(모바일/데스크톱) 스냅샷.

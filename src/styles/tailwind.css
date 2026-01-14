@@ -75,14 +75,15 @@
   section {
     @apply py-12;
   }
+  /* Page header shared style: avoid overlap with fixed header + ensure contrast */
   .page-header {
-    @apply bg-brand-bg border-b border-gray-200;
+    @apply pt-24 pb-10 bg-brand-secondary text-white text-center border-b border-gray-800 mt-16;
   }
   .page-header h1 {
-    @apply text-3xl font-bold text-brand-secondary;
+    @apply text-3xl font-bold text-white;
   }
   .page-header p {
-    @apply text-brand-muted mt-2;
+    @apply text-white/80 mt-2;
   }
 
   /* Grids & Cards */
@@ -171,13 +172,13 @@
 
   /* Project detail pages */
   .project-header {
-    @apply text-center py-16 bg-gray-50 border-b border-gray-200;
+    @apply text-center pt-24 pb-10 bg-brand-secondary text-white border-b border-gray-800 mt-16;
   }
   .project-header h1 {
-    @apply text-3xl font-bold text-gray-900 mb-2;
+    @apply text-3xl font-bold text-white mb-2;
   }
   .project-meta-info {
-    @apply flex flex-wrap justify-center gap-3 text-sm text-gray-600;
+    @apply flex flex-wrap justify-center gap-3 text-sm text-white/80;
   }
   .project-main {
     @apply container py-12;

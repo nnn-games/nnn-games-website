@@ -5,13 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-key="project_nnn_ugc_title">NNN UGC - NNN GAMES</title>
+    <meta name="description" content="NNN UGC is a Roblox UGC project delivering trendy avatar items with K-content and global Z-gen sensibilities.">
+    <meta name="keywords" content="Roblox UGC, avatar items, NNN UGC, NNN GAMES">
+    <meta property="og:title" content="NNN UGC | Roblox UGC Collection by NNN GAMES">
+    <meta property="og:description" content="Explore trendy Roblox UGC items inspired by K-content and global street trends from NNN GAMES.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="images/nnnugc-main.jpg">
+    <meta property="og:site_name" content="NNN GAMES">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NNN UGC | Roblox UGC Collection by NNN GAMES">
+    <meta name="twitter:description" content="Explore trendy Roblox UGC items inspired by K-content and global street trends from NNN GAMES.">
+    <meta name="twitter:image" content="images/nnnugc-main.jpg">
+    <link rel="icon" href="images/nnn-logo.png" type="image/png" sizes="256x256">
+    <meta name="theme-color" content="#1F242B">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body data-project-id="nnn-ugc">
 
     <header class="main-header">
         <div class="container">
@@ -22,7 +35,6 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" data-key="nav_home">홈</a></li>
-                    <li><a href="about.html" data-key="nav_about">소개</a></li>
                     <li><a href="projects.html" class="active" data-key="nav_projects">프로젝트</a></li>
                     <li><a href="contact.html" data-key="nav_contact">문의</a></li>
                     <li class="lang-switcher">
@@ -45,10 +57,18 @@
                     <span class="badge-metric ugc" data-key="project_nnn_ugc_genre">장르: UGC 아이템 제작</span>
                     <span class="badge-metric media" data-key="project_nnn_ugc_platform">플랫폼: ROBLOX</span>
                 </div>
+                <div class="project-metrics-header flex flex-wrap justify-center gap-2 mt-3">
+                    <span class="badge-metric play" data-metric="visits" style="display:none;">Visits --</span>
+                    <span class="badge-metric media" data-metric="likeRatio" style="display:none;">Like --%</span>
+                </div>
+                <div class="project-metrics-header flex flex-wrap justify-center gap-2 mt-3">
+                    <span class="badge-metric play" data-metric="visits" style="display:none;">Visits --</span>
+                    <span class="badge-metric media" data-metric="likeRatio" style="display:none;">Like --%</span>
+                </div>
                 <div class="mt-6 flex flex-wrap justify-center gap-3">
-                    <a href="https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about" class="btn-primary" target="_blank" rel="noreferrer" data-key="project_nnn_ugc_group_page_text">Visit Roblox Group</a>
-                    <a href="#" class="btn-ghost">View Showcase</a>
-                    <a href="#" class="btn-ghost">Read Article</a>
+                    <a href="https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about" class="btn-primary" target="_blank" rel="noreferrer" data-key="project_nnn_ugc_group_page_text" data-cta="group" data-project-id="nnn-ugc" data-cta-origin="detail-header">Visit Roblox Group</a>
+                    <a href="#" class="btn-ghost" data-cta="showcase" data-project-id="nnn-ugc" data-cta-origin="detail-header">View Showcase</a>
+                    <a href="#" class="btn-ghost" data-cta="article" data-project-id="nnn-ugc" data-cta-origin="detail-header">Read Article</a>
                 </div>
             </div>
         </section>
@@ -67,7 +87,7 @@
                     <ul class="list-none space-y-2 mt-3">
                         <li class="flex items-center gap-2">
                             <strong data-key="project_nnn_ugc_group_page">그룹 페이지:</strong>
-                            <a href="https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about" class="text-brand-primary font-semibold" target="_blank" rel="noreferrer" data-key="project_nnn_ugc_group_page_text">Visit Roblox Group</a>
+                            <a href="https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about" class="text-brand-primary font-semibold" target="_blank" rel="noreferrer" data-key="project_nnn_ugc_group_page_text" data-cta="group" data-project-id="nnn-ugc" data-cta-origin="detail-related">Visit Roblox Group</a>
                         </li>
                         <li class="flex items-center gap-2">
                             <strong>Showcase:</strong>
@@ -123,9 +143,8 @@
             </div>
             <div class="footer-section">
                 <h3 data-key="footer_links_title">바로가기</h3>
-                <a href="index.html" data-key="nav_home">홈</a><br>
-                <a href="about.html" data-key="nav_about">소개</a><br>
-                <a href="projects.html" data-key="nav_projects">프로젝트</a><br>
+                    <a href="index.html" data-key="nav_home">홈</a><br>
+                    <a href="projects.html" data-key="nav_projects">프로젝트</a><br>
                 <a href="contact.html" data-key="nav_contact">문의</a>
             </div>
             <div class="footer-section">
@@ -140,6 +159,8 @@
         </div>
     </footer>
 
+    <script src="js/projects-data.js"></script>
+    <script src="js/projects-data.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>

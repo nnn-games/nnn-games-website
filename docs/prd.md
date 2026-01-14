@@ -1,45 +1,44 @@
-# NNN GAMES 웹사이트 및 멀티플랫폼 UGC 스튜디오 PRD
+# NNN GAMES 웹사이트 및 Roblox 전문 스튜디오 PRD
 
 본 문서는 현재 코드베이스(정적 웹사이트)에서 구현된 내용과 제공 가치에 기반해 작성되었으며, 향후 기능/콘텐츠 확장을 위한 기준 문서로 계속 업데이트한다.
 
 ## 1. 제품 개요
-- **제품 목적**: 멀티 플랫폼 UGC·게임 스튜디오인 NNN GAMES의 역량, 진행/운영 중인 프로젝트, 연락 채널을 명확히 전달하는 마케팅·세일즈용 웹사이트.
-- **핵심 메시지**: 플랫폼 네이티브 제작력(ROBLOX, ZEPETO, META HORIZON), 검증된 글로벌 운영 경험, 브랜드와 수익을 연결하는 시스템 설계 역량.
+- **제품 목적**: Roblox 게임·UGC 전문 스튜디오 NNN GAMES의 역량, 진행/운영 중인 Roblox 프로젝트, 연락 채널을 명확히 전달하는 마케팅·세일즈용 웹사이트.
+- **핵심 메시지**: Roblox 네이티브 제작력, 리텐션 중심 시스템/라이브옵스, 브랜드/수익을 연결하는 설계 역량.
 - **운영 형태**: 정적 HTML/CSS/JS 기반 (파일 경로: `index.html`, `projects.html`, 개별 프로젝트 상세 페이지, `js/*.js`, `css/style.css`).
 
 ## 2. 주요 사용자와 목표
-- **브랜드/파트너 담당자**: 협업·수주 문의, 제작 역량과 레퍼런스 확인 → `contact.html` 내 이메일/주소 노출.
-- **플랫폼 운영사 및 투자자**: 멀티 플랫폼 제작 경험, 수상/지표, 파이프라인 확인.
-- **게이머/커뮤니티**: 개별 프로젝트 플레이/체험 링크 확인(ROBLOX, ZEPETO 등).
+- **브랜드/파트너 담당자**: 협업·수주 문의, Roblox 제작 역량과 레퍼런스 확인 → `contact.html` 내 이메일/주소 노출.
+- **플랫폼 운영사 및 투자자**: Roblox 제작·운영 경험, 수상/지표, 파이프라인 확인.
+- **게이머/커뮤니티**: 개별 Roblox 프로젝트 플레이/체험 링크 확인.
 
 ## 3. 정보 구조 (현재 구현)
 - **홈(`index.html`)**
   - Hero: Roblox 전문 스튜디오 메시지, CTA는 `projects.html`.
-  - 강점 3가지: Roblox 네이티브 제작, 수익-콘텐츠 연결, 글로벌 운영 경험.
   - 프로젝트 프리뷰: `projects-data.js`의 featured 목록을 `project-renderer.js`로 동적 렌더.
-- **소개(`about.html`)**: 미션, 연혁, 수상/성과(로블록스 중심 카피 반영).
 - **프로젝트 목록(`projects.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
 - **프로젝트 상세**
   - `get-train.html` (Roblox 브랜드 경험), `legendary-dj-gear.html` (Roblox 음악 수집), `nnn-ugc.html` (Roblox UGC 아이템), `korean-spa.html` (Roblox 퍼즐 어드벤처), `slime-sanctum.html` (향후 정비 예정).
 - **문의(`contact.html`)**: 이메일, 주소, 사업자등록번호, 지도 iframe.
-- **공통 UI**: 헤더/푸터, 모바일 메뉴 토글(`js/main.js`), 이미지 지연 로딩 및 스크롤 애니메이션.
+- **공통 UI**: 헤더/푸터, 모바일 메뉴 토글(`js/main.js`), 이미지 지연 로딩 및 스크롤 애니메이션, CTA 추적(data-cta/sendBeacon) 경량 스텁.
 
 ## 4. 데이터 및 렌더링 구조
-- **데이터 소스**: `js/projects-data.js`
+- **데이터 소스**: `data/projects.json` (정적 JSON) + `js/projects-data.js` (fallback)
   - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`.
 - **렌더링**: `js/project-renderer.js`
-  - 메인/프로젝트 페이지 카드 동적 생성, 플랫폼/상태/카테고리 배지, 언어 변경 시 실시간 텍스트 교체.
+  - JSON 로드 후 카드 동적 생성, 플랫폼/상태/카테고리 배지, 언어 변경 시 실시간 텍스트 교체.
 - **국제화**: `js/i18n.js`
   - 지원 언어: KO/EN/JA. `localStorage` 기반 언어 기억, `data-key`를 통해 텍스트 교체, `languageChanged` 커스텀 이벤트로 프로젝트 카드 재렌더.
 
 ## 5. 현재 프로젝트 파이프라인 (코드 기준)
 | 이름 | 플랫폼 | 상태 | 예정/출시 | 클라이언트 | 상세 페이지 |
 | --- | --- | --- | --- | --- | --- |
-| Get Train (JR 동일본) | ZEPETO | 운영 | 2024-12 | JR 동일본 | `get-train.html` |
 | Legendary DJ Gear | ROBLOX | 운영 | 2024-11 | Internal | `legendary-dj-gear.html` |
 | Korean Spa | ROBLOX | 운영 | 2025-12 | Internal | `korean-spa.html` |
-| NNN UGC | ROBLOX & ZEPETO | 개발 | 2025-Q1 | Confidential | `nnn-ugc.html` |
-| Slime Sanctum: Last Stand | META HORIZON WORLD | 개발 | 2026-01 | Internal | `slime-sanctum.html` |
+| NNN UGC | ROBLOX | 개발 | 2025-Q1 | Confidential | `nnn-ugc.html` |
+
+### 진행 상태 메모
+- R-03(프로젝트 상세 허브화): 실제 플레이/영상/기사 링크와 지표가 필요한 상태. 링크/카피 확정 후 각 상세 페이지 및 `js/i18n.js` 번역 키를 업데이트해야 함.
 
 ## 6. 기능 요구사항 (현행)
 - 다국어 전환 버튼 동작 및 브라우저 저장.
@@ -53,6 +52,7 @@
 - 성능: 이미지 지연 로딩, IntersectionObserver 사용.
 - 접근성/언어: `<html lang>` 업데이트, 3개 국어 번역 유지.
 - 호스팅: 정적 사이트 (CNAME 포함)로 GitHub Pages/정적 호스팅 대응.
+- SEO/OG: 모든 주요 페이지에 meta description/keywords, OG/Twitter 카드, 파비콘 적용(로블록스 키워드 중심).
 
 ## 8. 향후 개선 및 로드맵
 - 개선·신규 작업 항목은 `docs/development_roadmap.md`에서 통합 관리한다.  

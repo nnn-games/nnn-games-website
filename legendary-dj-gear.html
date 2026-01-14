@@ -5,13 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-key="project_legendary_dj_gear_title">프로젝트 베타 - NNN GAMES</title>
+    <meta name="description" content="Legendary DJ Gear is a Roblox collection game combining music, fashion, and multiplayer DJ battles.">
+    <meta name="keywords" content="Roblox, Legendary DJ Gear, music game, collection game, NNN GAMES">
+    <meta property="og:title" content="Legendary DJ Gear | Roblox Music Collection Game by NNN GAMES">
+    <meta property="og:description" content="Collect legendary outfits and tracks, play rhythm content, and compete in multiplayer DJ battles on Roblox.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="images/ldg-gallery-1.jpg">
+    <meta property="og:site_name" content="NNN GAMES">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Legendary DJ Gear | Roblox Music Collection Game by NNN GAMES">
+    <meta name="twitter:description" content="Collect legendary outfits and tracks, play rhythm content, and compete in multiplayer DJ battles on Roblox.">
+    <meta name="twitter:image" content="images/ldg-gallery-1.jpg">
+    <link rel="icon" href="images/nnn-logo.png" type="image/png" sizes="256x256">
+    <meta name="theme-color" content="#1F242B">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body data-project-id="legendary-dj-gear">
 
     <header class="main-header">
         <div class="container">
@@ -22,7 +35,6 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" data-key="nav_home">홈</a></li>
-                    <li><a href="about.html" data-key="nav_about">소개</a></li>
                     <li><a href="projects.html" class="active" data-key="nav_projects">프로젝트</a></li>
                     <li><a href="contact.html" data-key="nav_contact">문의</a></li>
                     <li class="lang-switcher">
@@ -47,10 +59,14 @@
                     <span class="badge-metric ugc" data-key="project_legendary_dj_gear_genre">장르: 음악 수집 게임</span>
                     <span class="badge-metric media" data-key="project_legendary_dj_gear_platform">플랫폼: ROBLOX</span>
                 </div>
+                <div class="project-metrics-header flex flex-wrap justify-center gap-2 mt-3">
+                    <span class="badge-metric play" data-metric="visits" style="display:none;">Visits --</span>
+                    <span class="badge-metric media" data-metric="likeRatio" style="display:none;">Like --%</span>
+                </div>
                 <div class="mt-6 flex flex-wrap justify-center gap-3">
-                    <a href="https://www.roblox.com/ko/games/110796735931100/Legendary-DJ-Gear" class="btn-primary" target="_blank" rel="noreferrer" data-key="project_legendary_dj_gear_experience_page_text">Play on Roblox</a>
-                    <a href="https://www.youtube.com/watch?v=0cEj3Tnb-No" class="btn-ghost" target="_blank" rel="noreferrer">Watch Trailer</a>
-                    <a href="#" class="btn-ghost">Read Article</a>
+                    <a href="https://www.roblox.com/ko/games/110796735931100/Legendary-DJ-Gear" class="btn-primary" target="_blank" rel="noreferrer" data-key="project_legendary_dj_gear_experience_page_text" data-cta="play" data-project-id="legendary-dj-gear" data-cta-origin="detail-header">Play on Roblox</a>
+                    <a href="https://www.youtube.com/watch?v=0cEj3Tnb-No" class="btn-ghost" target="_blank" rel="noreferrer" data-cta="trailer" data-project-id="legendary-dj-gear" data-cta-origin="detail-header">Watch Trailer</a>
+                    <a href="#" class="btn-ghost" data-cta="article" data-project-id="legendary-dj-gear" data-cta-origin="detail-header">Read Article</a>
                 </div>
             </div>
         </section>
@@ -106,9 +122,8 @@
             </div>
             <div class="footer-section">
                 <h3 data-key="footer_links_title">바로가기</h3>
-                <a href="index.html" data-key="nav_home">홈</a><br>
-                <a href="about.html" data-key="nav_about">소개</a><br>
-                <a href="projects.html" data-key="nav_projects">프로젝트</a><br>
+                    <a href="index.html" data-key="nav_home">홈</a><br>
+                    <a href="projects.html" data-key="nav_projects">프로젝트</a><br>
                 <a href="contact.html" data-key="nav_contact">문의</a>
             </div>
             <div class="footer-section">
@@ -123,6 +138,7 @@
         </div>
     </footer>
 
+    <script src="js/projects-data.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>

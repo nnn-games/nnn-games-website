@@ -2,15 +2,15 @@
 회사 기본 정보와 프로젝트/업적을 명확히 알리는 랜딩 페이지를 대상으로, 정적 웹사이트(HTML/CSS/JS) 구조를 유지하면서도 확장성·보안·운영 편의를 높이는 것을 목표로 한다.
 
 ## 1. 범위와 원칙
-- 목적: 회사 기본 정보, 프로젝트 레퍼런스, 업적을 명확히 전달하고 CTA(문의/프로젝트 상세/플레이 링크)로 전환 유도.
+- 목적: Roblox 게임/UGC 전문 스튜디오의 정보, 프로젝트 레퍼런스, 업적을 명확히 전달하고 CTA(문의/프로젝트 상세/플레이 링크)로 전환 유도.
 - 품질 우선순위: 접근성 ≥ 성능 ≥ 일관된 UI/브랜드 ≥ SEO/측정 ≥ 개발 생산성.
 - 변경 관리: 모든 수정은 PR + 코드리뷰 1인 이상. PR 템플릿에 변경 요약, 테스트 결과, 리스크를 명시하고 스크린샷/미리보기 링크를 첨부.
 
 ## 2. 정보 구조 & 코드베이스
-- 정적 페이지: `index.html`, `about.html`, `projects.html`, 개별 프로젝트 상세(`get-train.html` 등), `contact.html`.
+- 정적 페이지: `index.html`, `projects.html`, 개별 프로젝트 상세(`get-train.html` 등), `contact.html` (소개 페이지는 제거됨).
 - 데이터 소스: `js/projects-data.js`에서 프로젝트 메타를 관리하고 `js/project-renderer.js`로 카드/배지를 생성.
 - 다국어: `js/i18n.js` + `data-key` 속성. KO/EN/JA 유지, 새 텍스트는 세 언어 모두 추가.
-- 공통 자산: `css/style.css`, `images/` 썸네일·갤러리, `js/main.js`(네비/애니메이션/지연 로딩).
+- 공통 자산: `css/style.css`, `images/` 썸네일·갤러리, `js/main.js`(네비/애니메이션/지연 로딩/CTA 추적 스텁).
 
 ## 3. 콘텐츠 관리 규칙
 - 프로젝트 추가/수정 시 `projects-data.js`와 `i18n.js` 번역 키를 동시에 반영, 필요하면 상세 HTML도 갱신.
@@ -19,7 +19,7 @@
 
 ## 4. UI/UX 가이드
 - 반응형: 768px 이하 모바일 내비 토글 정상 동작 확인. 터치 타겟 44px 이상.
-- 내비/CTA: Hero CTA는 우선 홍보 프로젝트 상세로 연결, 모든 주요 CTA는 트래킹 가능하도록 별도 클래스/데이터 속성 부여.
+- 내비/CTA: Hero·카드·상세 CTA에 `data-cta`, `data-project-id`, `data-cta-origin` 부여해 추적 가능하게 유지.
 - 상태/플랫폼 배지: `category/status` 값이 데이터와 일치하도록 유지. 새 플랫폼은 `ProjectRenderer.getPlatformInfo` 확장.
 
 ## 5. 국제화(i18n)
