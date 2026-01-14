@@ -99,25 +99,50 @@ document.addEventListener('DOMContentLoaded', function() {
         animateElements.forEach(el => animateObserver.observe(el));
     }
 
-    // 경량 CTA 추적: data-cta가 있는 요소 클릭 시 sendBeacon/console 로깅
-    const trackCta = (event, target) => {
+    // CTA 추적 설정 및 스키마
+    const CTA_ENDPOINT = '/analytics/cta';
+    const CTA_SCHEMA_VERSION = 'v1';
+
+    // CTA 추적: data-cta가 있는 요소 클릭 시 sendBeacon 우선, 실패 시 fetch
+    const trackCta = (_event, target) => {
         const payload = {
+            v: CTA_SCHEMA_VERSION,
+            type: 'cta_click',
+            ts: Date.now(),
+            tzOffsetMinutes: new Date().getTimezoneOffset(),
+            lang: document.documentElement.lang || 'ko',
+            path: location.pathname,
+            referrer: document.referrer || null,
             cta: target.getAttribute('data-cta') || 'unknown',
             origin: target.getAttribute('data-cta-origin') || 'unknown',
             projectId: target.getAttribute('data-project-id') || null,
             href: target.getAttribute('href') || null,
             text: (target.textContent || '').trim().slice(0, 120),
-            lang: document.documentElement.lang || 'ko',
-            ts: Date.now(),
-            path: location.pathname
+            viewport: { w: window.innerWidth, h: window.innerHeight }
         };
+
         const body = JSON.stringify(payload);
 
-        if (navigator.sendBeacon) {
-            navigator.sendBeacon('/analytics', body);
-        } else {
-            // Fallback: 콘솔 로깅
-            console.debug('[cta]', payload);
+        const sendWithBeacon = () => {
+            if (!navigator.sendBeacon) return false;
+            try {
+                const blob = new Blob([body], { type: 'application/json' });
+                return navigator.sendBeacon(CTA_ENDPOINT, blob);
+            } catch (_e) {
+                return false;
+            }
+        };
+
+        if (!sendWithBeacon()) {
+            fetch(CTA_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body,
+                keepalive: true
+            }).catch(() => {
+                // 네트워크 실패 시 콘솔에만 남김 (정적 페이지 특성상 재시도 없음)
+                console.debug('[cta-failed]', payload);
+            });
         }
     };
 
@@ -154,5 +179,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }).catch(() => {});
     };
 
+    // 상세 페이지 CTA 링크를 프로젝트 데이터 기준으로 설정
+    const applyProjectLinks = () => {
+        if (!(window.ProjectManager && ProjectManager.loadProjectsData)) return;
+        const projectId = document.body.getAttribute('data-project-id');
+        if (!projectId) return;
+
+        ProjectManager.loadProjectsData()
+            .then(() => {
+                const all = (ProjectManager.getAll && ProjectManager.getAll()) || [];
+                const project = (ProjectManager.getProject && ProjectManager.getProject(projectId)) || all.find(p => p.id === projectId);
+                if (!project || !project.links) return;
+
+                const linkKeyMap = {
+                    play: 'play',
+                    trailer: 'trailer',
+                    article: 'article',
+                    group: 'group',
+                    showcase: 'showcase'
+                };
+
+                document.querySelectorAll(`[data-project-id="${projectId}"][data-cta]`).forEach(el => {
+                    const key = linkKeyMap[el.getAttribute('data-cta')] || null;
+                    const url = key ? project.links[key] : null;
+                    const container = el.closest('li') || el;
+
+                    if (url) {
+                        el.setAttribute('href', url);
+                        el.style.display = '';
+                        if (container) container.style.display = '';
+                    } else if (container) {
+                        container.style.display = 'none';
+                    }
+                });
+            })
+            .catch(() => {});
+    };
+
     renderHeaderMetrics();
+    applyProjectLinks();
 });

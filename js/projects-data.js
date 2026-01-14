@@ -24,7 +24,38 @@ const ProjectManager = {
             .catch(err => {
                 console.warn('[ProjectManager] Using fallback projectsData due to load error:', err);
                 // fallback 내장 데이터
+                // JSON 로드 실패 시에도 PRD 순서(korean-spa → legendary-dj-gear → nnn-ugc)를 유지하도록 fallback 정렬
                 const fallbackAll = [
+                    {
+                        id: 'korean-spa',
+                        title: { ko: 'Korean Spa', en: 'Korean Spa', ja: 'Korean Spa' },
+                        description: {
+                            ko: '작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.',
+                            en: 'A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.',
+                            ja: '小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。'
+                        },
+                        image: 'images/ks-preview.jpg',
+                        detailPage: 'korean-spa.html',
+                        category: 'roblox',
+                        status: 'active',
+                        featured: true,
+                        launchDate: '2025-12',
+                        platform: 'Roblox',
+                        client: 'Internal Project',
+                        technologies: ['Roblox Studio', 'Luau', 'UGC Creation'],
+                        links: {
+                            play: 'https://www.roblox.com/games/90029482000377/Grubby',
+                            trailer: '',
+                            article: ''
+                        },
+                        metrics: {
+                            visits: 80002,
+                            playing: 2,
+                            favorites: 479,
+                            likeRatio: 0.8581,
+                            updatedAt: '2025-12-31T05:19:44.590Z'
+                        }
+                    },
                     {
                         id: 'legendary-dj-gear',
                         title: { ko: 'Legendary DJ Gear', en: 'Legendary DJ Gear', ja: 'Legendary DJ Gear' },
@@ -41,7 +72,19 @@ const ProjectManager = {
                         launchDate: '2024-11',
                         platform: 'Roblox',
                         client: 'Internal Project',
-                        technologies: ['Roblox Studio', 'Luau', 'UI Design']
+                        technologies: ['Roblox Studio', 'Luau', 'UI Design'],
+                        links: {
+                            play: 'https://www.roblox.com/games/110796735931100/Legendary-DJ-Gear',
+                            trailer: 'https://www.youtube.com/watch?v=0cEj3Tnb-No',
+                            article: ''
+                        },
+                        metrics: {
+                            visits: 49865,
+                            playing: 0,
+                            favorites: 203,
+                            likeRatio: 0.5323,
+                            updatedAt: '2025-11-11T01:56:25.827Z'
+                        }
                     },
                     {
                         id: 'nnn-ugc',
@@ -59,25 +102,21 @@ const ProjectManager = {
                         launchDate: '2025-Q1',
                         platform: 'Roblox',
                         client: 'Confidential',
-                        technologies: ['Roblox Studio', 'Luau', 'UGC Creation']
-                    },
-                    {
-                        id: 'korean-spa',
-                        title: { ko: 'Korean Spa', en: 'Korean Spa', ja: 'Korean Spa' },
-                        description: {
-                            ko: '작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.',
-                            en: 'A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.',
-                            ja: '小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。'
+                        technologies: ['Roblox Studio', 'Luau', 'UGC Creation'],
+                        links: {
+                            play: '',
+                            trailer: '',
+                            article: '',
+                            group: 'https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about',
+                            showcase: ''
                         },
-                        image: 'images/ks-preview.jpg',
-                        detailPage: 'korean-spa.html',
-                        category: 'roblox',
-                        status: 'development',
-                        featured: true,
-                        launchDate: '2025-12',
-                        platform: 'Roblox',
-                        client: 'Internal Project',
-                        technologies: ['Roblox Studio', 'Luau', 'UGC Creation']
+                        metrics: {
+                            visits: null,
+                            playing: null,
+                            favorites: null,
+                            likeRatio: null,
+                            updatedAt: null
+                        }
                     }
                 ];
                 projectsData = {

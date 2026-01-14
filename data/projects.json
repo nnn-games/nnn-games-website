@@ -15,7 +15,7 @@
       "image": "images/ks-preview.jpg",
       "detailPage": "korean-spa.html",
       "category": "roblox",
-      "status": "development",
+      "status": "active",
       "featured": true,
       "launchDate": "2025-12",
       "platform": "Roblox",
@@ -29,11 +29,11 @@
         "article": ""
       },
       "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
+        "visits": 80002,
+        "playing": 2,
+        "favorites": 479,
+        "likeRatio": 0.8581,
+        "updatedAt": "2025-12-31T05:19:44.590Z"
       }
     },
     {
@@ -65,11 +65,11 @@
         "article": ""
       },
       "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
+        "visits": 49865,
+        "playing": 0,
+        "favorites": 203,
+        "likeRatio": 0.5323,
+        "updatedAt": "2025-11-11T01:56:25.827Z"
       }
     },
     {
@@ -97,7 +97,9 @@
       "links": {
         "play": "",
         "trailer": "",
-        "article": ""
+        "article": "",
+        "group": "https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about",
+        "showcase": ""
       },
       "metrics": {
         "visits": null,

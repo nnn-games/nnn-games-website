@@ -107,6 +107,12 @@ const translations = {
 
         // 공통 레이블
         gallery_title: "갤러리",
+        // 공통 CTA
+        cta_play: "Roblox에서 플레이",
+        cta_watch_trailer: "트레일러 보기",
+        cta_read_article: "기사 보기",
+        cta_visit_group: "그룹 방문",
+        cta_view_showcase: "쇼케이스 보기",
 
         // 프로젝트 베타 페이지
         project_legendary_dj_gear_header: "Legendary DJ Gear",
@@ -301,6 +307,12 @@ const translations = {
 
         // Common labels
         gallery_title: "Gallery",
+        // Common CTA
+        cta_play: "Play on Roblox",
+        cta_watch_trailer: "Watch Trailer",
+        cta_read_article: "Read Article",
+        cta_visit_group: "Visit Roblox Group",
+        cta_view_showcase: "View Showcase",
 
         // Project Beta page
         project_legendary_dj_gear_header: "Legendary DJ Gear",
@@ -495,6 +507,12 @@ const translations = {
 
         // 共通ラベル
         gallery_title: "ギャラリー",
+        // 共通CTA
+        cta_play: "Robloxでプレイ",
+        cta_watch_trailer: "トレーラーを見る",
+        cta_read_article: "記事を読む",
+        cta_visit_group: "グループを訪問",
+        cta_view_showcase: "ショーケースを見る",
 
         // プロジェクトベータページ
         project_legendary_dj_gear_header: "Legendary DJ Gear",
