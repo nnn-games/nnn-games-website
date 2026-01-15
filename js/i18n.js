@@ -219,7 +219,7 @@ const translations = {
         footer_contact_title: "연락처",
         footer_address: "주소 : (13449) 경기도 성남시 수정구 창업로 54, 판교 제2테크노밸리 LH기업성장센터, 804B호",
         footer_business_number: "사업자등록번호: 629-87-01849",
-        footer_copyright: "© 2025 Triple N Games Inc. All Rights Reserved."
+        footer_copyright: "© 2026 Triple N Games Inc. All Rights Reserved."
     },
 
     en: {
@@ -441,7 +441,7 @@ const translations = {
         footer_contact_title: "Contact",
         footer_address: "Address: 804B, LH Global Game Hub Center, 54 Changeop-ro, Sujeong-gu, Seongnam-si, Gyeonggi-do, Republic of Korea",
         footer_business_number: "Business Registration No: 629-87-01849",
-        footer_copyright: "© 2025 TripleN Games Inc. All Rights Reserved."
+        footer_copyright: "© 2026 Triple N Games Inc. All Rights Reserved."
     },
 
     ja: {
@@ -664,7 +664,7 @@ const translations = {
         footer_address: "住所：〒13449 韓国 京畿道 城南市 修正区 スタートアップ路54\n" +
             "        LH企業成長センター 804B号室",
         footer_business_number: "事業者登録番号: 629-87-01849",
-        footer_copyright: "© 2025 TripleN Games Inc. All Rights Reserved."
+        footer_copyright: "© 2026 Triple N Games Inc. All Rights Reserved."
     }
 };
 
