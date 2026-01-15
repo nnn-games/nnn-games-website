@@ -21,6 +21,12 @@ const translations = {
         hero_subtitle: "잘 설계된 플레이, 공정한 시스템, 오래가는 재미.",
         hero_cta: "프로젝트 자세히 보기",
 
+        // 커뮤니티 섹션
+        community_title: "운영 중인 Roblox 커뮤니티",
+        community_subtitle: "공개 API로 멤버 수와 아이콘을 실시간 표시합니다.",
+        community_visit_cta: "커뮤니티 방문",
+        community_members_label: "멤버",
+
         // 특징 섹션
         features_title: "NNN Games의 강점",
         feature_1_title: "플랫폼 네이티브 게임·UGC 제작",
@@ -237,6 +243,12 @@ const translations = {
         hero_subtitle: "Well-designed gameplay. Fair systems. Fun that lasts.",
         hero_cta: "View Project Details",
 
+        // Community section
+        community_title: "Active Roblox communities",
+        community_subtitle: "Icons and member counts fetched via Roblox public API.",
+        community_visit_cta: "Visit community",
+        community_members_label: "members",
+
         // Features section
         features_title: "Our Strengths at NNN Games",
         feature_1_title: "Platform-native Games & UGC Production",
@@ -452,6 +464,12 @@ const translations = {
         hero_title: "より良いRobloxゲームを作っています。",
         hero_subtitle: "丁寧に設計されたゲーム性、公平なシステム、長く楽しめる体験。",
         hero_cta: "プロジェクト詳細を見る",
+
+        // コミュニティセクション
+        community_title: "運営中のRobloxコミュニティ",
+        community_subtitle: "Roblox公開APIでアイコンとメンバー数を取得します。",
+        community_visit_cta: "コミュニティへ",
+        community_members_label: "メンバー",
 
         // 特徴セクション
         features_title: "NNN Gamesの強み",

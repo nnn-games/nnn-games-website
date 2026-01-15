@@ -15,30 +15,39 @@
 ## 3. 정보 구조 (현재 구현)
 - **홈(`index.html`)**
   - Hero: Roblox 전문 스튜디오 메시지, CTA는 `projects.html`.
+  - 커뮤니티 포털: Roblox 그룹 3종(IDs: 34453707, 294985728, 916094546) 아이콘/멤버 수를 공개 API로 실시간 표시, 각 링크는 Roblox share URL로 연결.
   - 프로젝트 프리뷰: `projects-data.js`의 featured 목록을 `project-renderer.js`로 동적 렌더.
 - **프로젝트 목록(`projects.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
 - **프로젝트 상세**
-  - `get-train.html` (Roblox 브랜드 경험), `legendary-dj-gear.html` (Roblox 음악 수집), `nnn-ugc.html` (Roblox UGC 아이템), `korean-spa.html` (Roblox 퍼즐 어드벤처), `slime-sanctum.html` (향후 정비 예정).
+  - `tower-flood-race.html` (Roblox 오비 레이스), `korean-spa.html` (Roblox 퍼즐 어드벤처), `legendary-dj-gear.html` (Roblox 음악 수집), `nnn-ugc.html` (Roblox UGC 아이템)
 - **문의(`contact.html`)**: 이메일, 주소, 사업자등록번호, 지도 iframe.
 - **공통 UI**: 헤더/푸터, 모바일 메뉴 토글(`js/main.js`), 이미지 지연 로딩 및 스크롤 애니메이션, CTA 추적(data-cta/sendBeacon) 경량 스텁.
 
 ## 4. 데이터 및 렌더링 구조
 - **데이터 소스**: `data/projects.json` (정적 JSON) + `js/projects-data.js` (fallback)
-  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`.
+  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`, `placeId`, `universeId`, `links{play,trailer,article,group,showcase}`, `metrics{visits,playing,favorites,likeRatio,updatedAt}`.
 - **렌더링**: `js/project-renderer.js`
-  - JSON 로드 후 카드 동적 생성, 플랫폼/상태/카테고리 배지, 언어 변경 시 실시간 텍스트 교체.
+  - JSON 로드 후 카드 동적 생성, 플랫폼/상태/카테고리 배지, 언어 변경 시 실시간 텍스트 교체, 목록 카드에 visits/playing/favorites 배지 노출.
+- **상세 페이지 지표/링크 주입**: `js/main.js`
+  - `renderHeaderMetrics()`로 상세 헤더에 방문자수·좋아요% 표시, `applyProjectLinks()`로 CTA URL을 프로젝트 데이터 기반으로 동기화.
+- **커뮤니티 데이터**: Roblox 공개 API 사용
+  - 그룹 정보: `https://groups.roblox.com/v1/groups/{groupId}` → 멤버 수/이름
+  - 썸네일: `https://thumbnails.roblox.com/v1/groups/icons?groupIds=...&size=150x150&format=Png&isCircular=false`
+  - 구현: `js/main.js`의 `renderCommunities()`가 홈 섹션에 실시간 렌더, 실패 시 로고/텍스트 폴백.
 - **국제화**: `js/i18n.js`
   - 지원 언어: KO/EN/JA. `localStorage` 기반 언어 기억, `data-key`를 통해 텍스트 교체, `languageChanged` 커스텀 이벤트로 프로젝트 카드 재렌더.
 
 ## 5. 현재 프로젝트 파이프라인 (코드 기준)
 | 이름 | 플랫폼 | 상태 | 예정/출시 | 클라이언트 | 상세 페이지 |
 | --- | --- | --- | --- | --- | --- |
-| Legendary DJ Gear | ROBLOX | 운영 | 2024-11 | Internal | `legendary-dj-gear.html` |
+| Tower Flood Race | ROBLOX | 운영 | 2026-01 | Internal | `tower-flood-race.html` |
 | Korean Spa | ROBLOX | 운영 | 2025-12 | Internal | `korean-spa.html` |
+| Legendary DJ Gear | ROBLOX | 운영 | 2024-11 | Internal | `legendary-dj-gear.html` |
 | NNN UGC | ROBLOX | 개발 | 2025-Q1 | Confidential | `nnn-ugc.html` |
 
 ### 진행 상태 메모
-- R-03(프로젝트 상세 허브화): 실제 플레이/영상/기사 링크와 지표가 필요한 상태. 링크/카피 확정 후 각 상세 페이지 및 `js/i18n.js` 번역 키를 업데이트해야 함.
+- N-01(신규 프로젝트 추가: Tower Flood Race) 완료, 데이터/페이지/지표 연동 반영됨.
+- N-02(커뮤니티 포탈 섹션) 완료: 홈 섹션에 3개 그룹 아이콘·멤버 수 실시간 표시.
 
 ## 6. 기능 요구사항 (현행)
 - 다국어 전환 버튼 동작 및 브라우저 저장.

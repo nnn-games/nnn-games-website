@@ -16,5 +16,4 @@
 ## 4. 작업 보드 (수시 업데이트)
 | ID | 항목 | 상태 | 산출물/링크 |
 | --- | --- | --- | --- |
-| N-01 | 신규 프로젝트 추가 (`Tower Flood Race`)  | To Do | `tower-flood-race.html`, `js/projects-data.js`, `js/project-renderer.js``js/i18n.js`, `data/projects.json` |
-| N-02 | 히어로 섹션 하단에 현재 운영중인 3개의 커뮤니티 포탈 기능 개발. 커뮤니티는 계속 추가될 예정이며 각 커뮤니티의 인원을 공개 API를 이용해 가져와 합산하여 섹션에 잘 보이게 표시 | To Do | `index.html`, `js/i18n.js` |
+| N-02 | 히어로 섹션 하단에 현재 운영중인 3개의 커뮤니티 포탈 기능 개발. 커뮤니티는 계속 추가될 예정이며 각 커뮤니티의 인원을 공개 API를 이용해 가져와 합산하여 섹션에 잘 보이게 표시 | Completed | `index.html`, `js/i18n.js`, `js/main.js`, `src/styles/tailwind.css` |

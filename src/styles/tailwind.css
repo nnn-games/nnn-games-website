@@ -98,6 +98,9 @@
   .project-grid {
     @apply md:grid-cols-2 lg:grid-cols-3;
   }
+  .community-grid {
+    @apply grid gap-6 md:grid-cols-3;
+  }
   .feature-item,
   .project-card,
   .award-item {
@@ -157,6 +160,33 @@
   }
   .badge-metric.media {
     @apply bg-metric-media text-white;
+  }
+  .section-header {
+    @apply text-center space-y-2 mb-8;
+  }
+  .section-header h2 {
+    @apply text-2xl md:text-3xl font-bold text-brand-secondary;
+  }
+  .section-header p {
+    @apply text-gray-600;
+  }
+  .community-section {
+    @apply bg-gray-50;
+  }
+  .community-card {
+    @apply bg-white border border-gray-100 rounded-xl shadow-sm p-6 flex flex-col items-center text-center gap-3 hover:-translate-y-0.5 hover:shadow-lg transition;
+  }
+  .community-thumb {
+    @apply w-20 h-20 rounded-full object-cover border border-gray-200;
+  }
+  .community-body h3 {
+    @apply text-lg font-semibold text-gray-900;
+  }
+  .community-members {
+    @apply text-sm text-gray-600;
+  }
+  .community-error {
+    @apply text-center text-sm text-gray-500;
   }
 
   /* Buttons */

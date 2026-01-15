@@ -152,6 +152,100 @@ document.addEventListener('DOMContentLoaded', function() {
         trackCta(e, target);
     });
 
+    // 커뮤니티 섹션: 그룹 아이콘과 멤버 수를 Roblox 공개 API로 가져오기
+    const COMMUNITY_GROUPS = [
+        {
+            id: '34453707',
+            url: 'https://www.roblox.com/share/g/34453707',
+            names: { ko: 'NNN UGC 커뮤니티', en: 'NNN UGC Community', ja: 'NNN UGC コミュニティ' }
+        },
+        {
+            id: '294985728',
+            url: 'https://www.roblox.com/share/g/294985728',
+            names: { ko: 'NNN GAMES 커뮤니티', en: 'NNN GAMES Community', ja: 'NNN GAMES コミュニティ' }
+        },
+        {
+            id: '916094546',
+            url: 'https://www.roblox.com/share/g/916094546',
+            names: { ko: '파트너스 커뮤니티', en: 'Partners Community', ja: 'パートナー コミュニティ' }
+        }
+    ];
+
+    const COMMUNITY_FALLBACK_ICON = 'images/nnn-logo.png';
+
+    const fetchCommunityThumbnails = async (ids) => {
+        const url = `https://thumbnails.roblox.com/v1/groups/icons?groupIds=${ids.join(',')}&size=150x150&format=Png&isCircular=false`;
+        const res = await fetch(url, { headers: { accept: 'application/json' } });
+        if (!res.ok) throw new Error(`thumb ${res.status}`);
+        const json = await res.json();
+        const map = new Map();
+        (json.data || []).forEach(item => {
+            if (item && item.targetId) {
+                map.set(String(item.targetId), item.imageUrl);
+            }
+        });
+        return map;
+    };
+
+    const fetchCommunityInfos = async (ids) => {
+        const results = await Promise.all(ids.map(id =>
+            fetch(`https://groups.roblox.com/v1/groups/${id}`, { headers: { accept: 'application/json' } })
+                .then(res => res.ok ? res.json() : null)
+                .catch(() => null)
+        ));
+        const map = new Map();
+        results.forEach(info => {
+            if (info && info.id) map.set(String(info.id), info);
+        });
+        return map;
+    };
+
+    const formatMemberCount = (count, lang) => {
+        if (typeof count !== 'number') return lang === 'ja' ? 'メンバー 정보 없음' : lang === 'en' ? 'Members n/a' : '멤버 정보 없음';
+        const label = lang === 'ja' ? 'メンバー' : (lang === 'en' ? 'members' : '명 멤버');
+        return `${count.toLocaleString()} ${label}`;
+    };
+
+    const renderCommunities = async () => {
+        const grid = document.getElementById('community-grid');
+        if (!grid) return;
+
+        const lang = document.documentElement.lang || 'ko';
+        grid.innerHTML = '';
+
+        const ids = COMMUNITY_GROUPS.map(g => g.id);
+        try {
+            const [infoMap, thumbMap] = await Promise.all([
+                fetchCommunityInfos(ids),
+                fetchCommunityThumbnails(ids).catch(() => new Map())
+            ]);
+
+            COMMUNITY_GROUPS.forEach(cfg => {
+                const info = infoMap.get(cfg.id) || {};
+                const name = info.name || cfg.names[lang] || cfg.names.ko;
+                const memberCount = typeof info.memberCount === 'number' ? info.memberCount : null;
+                const icon = thumbMap.get(cfg.id) || COMMUNITY_FALLBACK_ICON;
+
+                const card = document.createElement('div');
+                card.className = 'community-card';
+                card.innerHTML = `
+                    <img class="community-thumb" src="${icon}" alt="${name}">
+                    <div class="community-body">
+                        <h3>${name}</h3>
+                        <p class="community-members">${formatMemberCount(memberCount, lang)}</p>
+                        <a class="btn-ghost community-link" href="${cfg.url}" target="_blank" rel="noreferrer" data-cta="community" data-cta-origin="home-community" data-project-id="${cfg.id}">
+                            ${lang === 'ja' ? 'コミュニティへ' : lang === 'en' ? 'Visit community' : '커뮤니티 방문'}
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        } catch (err) {
+            console.debug('community render failed', err);
+            grid.innerHTML = `<p class="community-error">커뮤니티 정보를 불러오지 못했습니다.</p>`;
+        }
+    };
+
     // 상세 페이지 헤더 지표 표시 (visits, likeRatio)
     const renderHeaderMetrics = () => {
         if (!(window.ProjectManager && ProjectManager.loadProjectsData)) return;
@@ -218,4 +312,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     renderHeaderMetrics();
     applyProjectLinks();
+    renderCommunities();
 });
