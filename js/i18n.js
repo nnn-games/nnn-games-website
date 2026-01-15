@@ -17,8 +17,8 @@ const translations = {
         lang_ja: "日本語",
 
         // 히어로 섹션
-        hero_title: "Roblox 네이티브 UGC 게임 스튜디오 NNN",
-        hero_subtitle: "Roblox에서 탁월한 플레이 경험과 제작 퀄리티로 선택받는 프리미엄 게임·UGC 스튜디오입니다.",
+        hero_title: "더 나은 Roblox 게임을 만듭니다.",
+        hero_subtitle: "잘 설계된 플레이, 공정한 시스템, 오래가는 재미.",
         hero_cta: "프로젝트 자세히 보기",
 
         // 특징 섹션
@@ -217,8 +217,8 @@ const translations = {
         lang_ja: "日本語",
 
         // Hero section
-        hero_title: "Building Standout Experiences on Roblox",
-        hero_subtitle: "We craft platform-native games and UGC with top-tier quality, retention-focused systems, and proven live ops to help brands and players thrive on Roblox.",
+        hero_title: "Building better Roblox games.",
+        hero_subtitle: "Well-designed gameplay. Fair systems. Fun that lasts.",
         hero_cta: "View Project Details",
 
         // Features section
@@ -417,8 +417,8 @@ const translations = {
         lang_ja: "日本語",
 
         // ヒーローセクション
-        hero_title: "RobloxネイティブUGCゲームスタジオ",
-        hero_subtitle: "Robloxで優れたプレイ体験と制作クオリティを提供するプレミアムなゲーム／UGCスタジオです。",
+        hero_title: "より良いRobloxゲームを作っています。",
+        hero_subtitle: "丁寧に設計されたゲーム性、公平なシステム、長く楽しめる体験。",
         hero_cta: "プロジェクト詳細を見る",
 
         // 特徴セクション
