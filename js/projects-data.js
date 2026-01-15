@@ -27,6 +27,38 @@ const ProjectManager = {
                 // JSON 로드 실패 시에도 PRD 순서(korean-spa → legendary-dj-gear → nnn-ugc)를 유지하도록 fallback 정렬
                 const fallbackAll = [
                     {
+                        id: 'tower-flood-race',
+                        title: { ko: '타워 홍수 경주', en: 'Tower Flood Race', ja: 'タワー・フラッド・レース' },
+                        description: {
+                            ko: 'Race Up. Water Rises. – 물이 차오르는 가운데 랜덤 타워를 가장 빠르게 오르는 오비 레이스.',
+                            en: 'Race up while the water keeps rising—an obby race to the top of random towers before the flood catches you.',
+                            ja: '水位が上がる中、ランダムなタワーを誰より速く登り切るObbyレース。'
+                        },
+                        image: 'images/tfr-preview.jpg',
+                        detailPage: 'tower-flood-race.html',
+                        category: 'roblox',
+                        status: 'active',
+                        featured: true,
+                        launchDate: '2026-01',
+                        platform: 'Roblox',
+                        client: 'Internal Project',
+                        technologies: ['Roblox Studio', 'Luau', 'Procedural Level'],
+                        links: {
+                            play: 'https://www.roblox.com/games/77732766603333',
+                            trailer: '',
+                            article: '',
+                            group: 'https://www.roblox.com/groups/294985728',
+                            showcase: ''
+                        },
+                        metrics: {
+                            visits: null,
+                            playing: null,
+                            favorites: null,
+                            likeRatio: null,
+                            updatedAt: null
+                        }
+                    },
+                    {
                         id: 'korean-spa',
                         title: { ko: 'Korean Spa', en: 'Korean Spa', ja: 'Korean Spa' },
                         description: {

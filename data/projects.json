@@ -1,6 +1,48 @@
 {
   "all": [
     {
+      "id": "tower-flood-race",
+      "title": {
+        "ko": "타워 홍수 경주",
+        "en": "Tower Flood Race",
+        "ja": "タワー・フラッド・レース"
+      },
+      "description": {
+        "ko": "Race Up. Water Rises. – 물이 차오르는 가운데 랜덤 타워를 가장 빠르게 오르는 오비 레이스.",
+        "en": "Race up while the water keeps rising—an obby race to the top of random towers before the flood catches you.",
+        "ja": "水位が上がる中、ランダムなタワーを誰より速く登り切るObbyレース。"
+      },
+      "image": "images/tfr-preview.jpg",
+      "detailPage": "tower-flood-race.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "launchDate": "2026-01",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "Procedural Level"
+      ],
+      "placeId": "77732766603333",
+      "universeId": "8908746905",
+      "links": {
+        "play": "https://www.roblox.com/games/77732766603333",
+        "trailer": "",
+        "article": "",
+        "group": "https://www.roblox.com/groups/294985728",
+        "showcase": ""
+      },
+      "metrics": {
+        "visits": 37,
+        "playing": 0,
+        "favorites": 2,
+        "likeRatio": 1,
+        "updatedAt": "2026-01-15T03:34:21.427Z"
+      }
+    },
+    {
       "id": "korean-spa",
       "title": {
         "ko": "Korean Spa",
@@ -20,7 +62,11 @@
       "launchDate": "2025-12",
       "platform": "Roblox",
       "client": "Internal Project",
-      "technologies": ["Roblox Studio", "Luau", "UGC Creation"],
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "UGC Creation"
+      ],
       "placeId": "90029482000377",
       "universeId": "8508024007",
       "links": {
@@ -29,11 +75,11 @@
         "article": ""
       },
       "metrics": {
-        "visits": 80002,
-        "playing": 2,
+        "visits": 80271,
+        "playing": 1,
         "favorites": 479,
-        "likeRatio": 0.8581,
-        "updatedAt": "2025-12-31T05:19:44.590Z"
+        "likeRatio": 0.8581081081081081,
+        "updatedAt": "2026-01-15T03:34:21.427Z"
       }
     },
     {
@@ -56,7 +102,11 @@
       "launchDate": "2024-11",
       "platform": "Roblox",
       "client": "Internal Project",
-      "technologies": ["Roblox Studio", "Luau", "UI Design"],
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "UI Design"
+      ],
       "placeId": "110796735931100",
       "universeId": "7661096144",
       "links": {
@@ -68,8 +118,8 @@
         "visits": 49865,
         "playing": 0,
         "favorites": 203,
-        "likeRatio": 0.5323,
-        "updatedAt": "2025-11-11T01:56:25.827Z"
+        "likeRatio": 0.532258064516129,
+        "updatedAt": "2026-01-15T03:34:21.427Z"
       }
     },
     {
@@ -92,7 +142,11 @@
       "launchDate": "2025-Q1",
       "platform": "Roblox",
       "client": "Confidential",
-      "technologies": ["Roblox Studio", "Luau", "UGC Creation"],
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "UGC Creation"
+      ],
       "placeId": null,
       "links": {
         "play": "",

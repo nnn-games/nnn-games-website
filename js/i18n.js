@@ -174,6 +174,22 @@ const translations = {
         project_korean_spa_experience_page: "체험 페이지:",
         project_korean_spa_experience_page_text: "Korean Spa 게임 플레이하기",
 
+        // 프로젝트 Tower Flood Race
+        project_tfr_page_title: "Tower Flood Race - NNN GAMES",
+        project_tfr_header: "Tower Flood Race",
+        project_tfr_status: "정식 운영 중",
+        project_tfr_genre: "장르: 오비 러너 & 타워 레이스",
+        project_tfr_platform: "플랫폼: Roblox",
+        project_tfr_summary_p1: "Race Up. Water Rises. – 물이 차오르는 가운데 랜덤 타워를 누구보다 빠르게 오르는 오비 레이스입니다.",
+        project_tfr_summary_p2: "라운드마다 새로운 타워가 생성되고, 잠깐의 멈춤도 순위 차이로 이어집니다. Obby 실력을 증명하세요.",
+        project_tfr_feature_1: "라운드마다 바뀌는 랜덤 타워 코스",
+        project_tfr_feature_2: "계속 차오르는 물을 피해 정상까지 질주",
+        project_tfr_feature_3: "순간 판단과 정확한 점프로 경쟁",
+        project_tfr_feature_4: "짧은 라운드 기반의 빠른 매치메이킹",
+        project_tfr_related_links: "관련 링크",
+        project_tfr_experience_page: "체험 페이지:",
+        project_tfr_experience_page_text: "Tower Flood Race 게임 플레이하기",
+
         // 프로젝트 슬라임 성소 페이지 (Slime Sanctum)
         project_slime_sanctum_page_title: "슬라임 성소: 최후의 항전 - NNN GAMES",
         project_slime_sanctum_header: "슬라임 성소: 최후의 항전",
@@ -374,6 +390,22 @@ const translations = {
         project_korean_spa_experience_page: "Experience Page:",
         project_korean_spa_experience_page_text: "Play Korean Spa",
 
+        // Project Tower Flood Race
+        project_tfr_page_title: "Tower Flood Race - NNN GAMES",
+        project_tfr_header: "Tower Flood Race",
+        project_tfr_status: "Live",
+        project_tfr_genre: "Genre: Obby Runner & Tower Race",
+        project_tfr_platform: "Platform: Roblox",
+        project_tfr_summary_p1: "Race up while the water keeps rising—an obby race to the top of random towers.",
+        project_tfr_summary_p2: "Each round spawns a new layout; even a brief pause widens the rank gap. Show your obby skills.",
+        project_tfr_feature_1: "New random tower course every round",
+        project_tfr_feature_2: "Climb fast while the water keeps rising",
+        project_tfr_feature_3: "Compete with quick decisions and precise jumps",
+        project_tfr_feature_4: "Short rounds for rapid matchmaking",
+        project_tfr_related_links: "Related Links",
+        project_tfr_experience_page: "Experience Page:",
+        project_tfr_experience_page_text: "Play Tower Flood Race on Roblox",
+
         // Project Slime Sanctum page
         project_slime_sanctum_page_title: "Slime Sanctum: Last Stand - NNN GAMES",
         project_slime_sanctum_header: "Slime Sanctum: Last Stand",
@@ -573,6 +605,22 @@ const translations = {
         project_korean_spa_related_links: "関連リンク",
         project_korean_spa_experience_page: "体験ページ:",
         project_korean_spa_experience_page_text: "Korean Spaをプレイ",
+
+        // プロジェクト Tower Flood Race
+        project_tfr_page_title: "Tower Flood Race - NNN GAMES",
+        project_tfr_header: "Tower Flood Race",
+        project_tfr_status: "正式運営中",
+        project_tfr_genre: "ジャンル：Obbyランナー & タワーレース",
+        project_tfr_platform: "プラットフォーム：Roblox",
+        project_tfr_summary_p1: "水位が上がる中、ランダムなタワーを誰より速く登り切るObbyレースです。",
+        project_tfr_summary_p2: "毎ラウンド新しいレイアウトが生成され、わずかな足止めがすぐ順位差に。あなたのObbyスキルを見せてください。",
+        project_tfr_feature_1: "毎ラウンド変わるランダムタワーコース",
+        project_tfr_feature_2: "上昇する水を避けながら頂上まで疾走",
+        project_tfr_feature_3: "素早い判断と正確なジャンプで競う",
+        project_tfr_feature_4: "短いラウンドでクイックマッチング",
+        project_tfr_related_links: "関連リンク",
+        project_tfr_experience_page: "体験ページ:",
+        project_tfr_experience_page_text: "Tower Flood Raceをプレイ",
 
         // プロジェクト スライム聖域ページ (Slime Sanctum)
         project_slime_sanctum_page_title: "スライム聖域：ラストスタンド - NNN GAMES",
