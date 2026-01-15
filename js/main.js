@@ -99,14 +99,23 @@ document.addEventListener('DOMContentLoaded', function() {
         animateElements.forEach(el => animateObserver.observe(el));
     }
 
-    // CTA 추적 설정 및 스키마
-    const CTA_ENDPOINT = '/analytics/cta';
-    const CTA_SCHEMA_VERSION = 'v1';
+    // CTA 추적 설정 및 스키마 (메타태그/전역 설정으로 엔드포인트 오버라이드 가능)
+    const CTA_DEFAULT_ENDPOINT = '/analytics/cta';
+    const CTA_DEFAULT_SCHEMA = 'v1';
+    const CTA_CONFIG = (() => {
+        const metaEndpoint = document.querySelector('meta[name="cta-endpoint"]');
+        const metaSchema = document.querySelector('meta[name="cta-schema-version"]');
+        const global = (typeof window !== 'undefined' && window.CTA_CONFIG) ? window.CTA_CONFIG : {};
+        return {
+            endpoint: (global.endpoint || (metaEndpoint && metaEndpoint.content) || CTA_DEFAULT_ENDPOINT),
+            schemaVersion: (global.schemaVersion || (metaSchema && metaSchema.content) || CTA_DEFAULT_SCHEMA)
+        };
+    })();
 
     // CTA 추적: data-cta가 있는 요소 클릭 시 sendBeacon 우선, 실패 시 fetch
     const trackCta = (_event, target) => {
         const payload = {
-            v: CTA_SCHEMA_VERSION,
+            v: CTA_CONFIG.schemaVersion,
             type: 'cta_click',
             ts: Date.now(),
             tzOffsetMinutes: new Date().getTimezoneOffset(),
@@ -127,14 +136,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!navigator.sendBeacon) return false;
             try {
                 const blob = new Blob([body], { type: 'application/json' });
-                return navigator.sendBeacon(CTA_ENDPOINT, blob);
+                return navigator.sendBeacon(CTA_CONFIG.endpoint, blob);
             } catch (_e) {
                 return false;
             }
         };
 
         if (!sendWithBeacon()) {
-            fetch(CTA_ENDPOINT, {
+            fetch(CTA_CONFIG.endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body,
@@ -339,14 +348,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const project = all.find(p => p.id === projectId);
             if (!project || !project.metrics) return;
             const { visits, likeRatio } = project.metrics;
-            if (typeof visits === 'number' && visitEl) {
-                visitEl.textContent = `Visits ${visits.toLocaleString()}`;
-                visitEl.style.display = 'inline-flex';
+            if (visitEl) {
+                if (typeof visits === 'number') {
+                    visitEl.textContent = `Visits ${visits.toLocaleString()}`;
+                    visitEl.classList.remove('hidden');
+                } else {
+                    visitEl.classList.add('hidden');
+                }
             }
-            if (typeof likeRatio === 'number' && likeEl) {
-                const pct = Math.round(likeRatio * 1000) / 10; // one decimal
-                likeEl.textContent = `Like ${pct}%`;
-                likeEl.style.display = 'inline-flex';
+            if (likeEl) {
+                if (typeof likeRatio === 'number') {
+                    const pct = Math.round(likeRatio * 1000) / 10; // one decimal
+                    likeEl.textContent = `Like ${pct}%`;
+                    likeEl.classList.remove('hidden');
+                } else {
+                    likeEl.classList.add('hidden');
+                }
             }
         }).catch(() => {});
     };

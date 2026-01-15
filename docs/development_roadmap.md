@@ -16,4 +16,6 @@
 ## 4. 작업 보드 (수시 업데이트)
 | ID | 항목 | 상태 | 산출물/링크 |
 | --- | --- | --- | --- |
-| N-02 | 히어로 섹션 하단에 현재 운영중인 3개의 커뮤니티 포탈 기능 개발. 커뮤니티는 계속 추가될 예정이며 각 커뮤니티의 인원을 공개 API를 이용해 가져와 합산하여 섹션에 잘 보이게 표시 | Completed | `index.html`, `js/i18n.js`, `js/main.js`, `src/styles/tailwind.css` |
+| N-02 | 히어로 섹션 하단에 현재 운영중인 3개의 커뮤니티 포탈 기능 개발. 커뮤니티는 계속 추가될 예정이며 각 커뮤니티의 인원을 공개 API를 이용해 가져와 합산하여 섹션에 잘 보이게 표시. `npm run update:metrics` 시 `data/communities.json`으로 정적 데이터 생성, 프런트는 JSON 우선 사용 후 API 폴백 | Completed | `index.html`, `js/i18n.js`, `js/main.js`, `src/styles/tailwind.css`, `scripts/update-metrics.js`, `data/communities.json` |
+| N-03 | 인라인 스타일 제거 후 Tailwind 공용 적용 | Completed | `tower-flood-race.html`, `js/main.js` |
+| N-04 | CTA 추적 엔드포인트/스키마 확정 및 적용 | Completed | `js/main.js`, `docs/prd.md` |
