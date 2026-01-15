@@ -155,19 +155,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // 커뮤니티 섹션: 그룹 아이콘과 멤버 수를 Roblox 공개 API로 가져오기
     const COMMUNITY_GROUPS = [
         {
-            id: '34453707',
-            url: 'https://www.roblox.com/share/g/34453707',
-            names: { ko: 'NNN UGC 커뮤니티', en: 'NNN UGC Community', ja: 'NNN UGC コミュニティ' }
+            id: '294985728',
+            url: 'https://www.roblox.com/communities/294985728/NNN-PLAY#!/about',
+            names: { ko: 'NNN PLAY', en: 'NNN PLAY', ja: 'NNN PLAY' }
         },
         {
-            id: '294985728',
-            url: 'https://www.roblox.com/share/g/294985728',
-            names: { ko: 'NNN GAMES 커뮤니티', en: 'NNN GAMES Community', ja: 'NNN GAMES コミュニティ' }
+            id: '34453707',
+            url: 'https://www.roblox.com/share/g/34453707',
+            names: { ko: 'NNN UGC', en: 'NNN UGC', ja: 'NNN UGC' }
         },
         {
             id: '916094546',
-            url: 'https://www.roblox.com/share/g/916094546',
-            names: { ko: '파트너스 커뮤니티', en: 'Partners Community', ja: 'パートナー コミュニティ' }
+            url: 'https://www.roblox.com/communities/916094546/NNN-Weapon-Master#!/about',
+            names: { ko: 'NNN Weapon Master', en: 'NNN Weapon Master', ja: 'NNN Weapon Master' }
         }
     ];
 
@@ -206,6 +206,24 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${count.toLocaleString()} ${label}`;
     };
 
+    const getCommunityVisitLabel = (lang) => {
+        const fallback = lang === 'ja' ? 'コミュニ티へ' : (lang === 'en' ? 'Visit community' : '커뮤니티 방문');
+        try {
+            const t = window.translations || translations;
+            return (t && t[lang] && t[lang].community_visit_cta) || fallback;
+        } catch (_e) {
+            return fallback;
+        }
+    };
+
+    const setCommunityTotal = (total, lang) => {
+        const subtitleEl = document.querySelector('[data-key="community_subtitle"]');
+        if (!subtitleEl) return;
+        if (typeof total !== 'number') return;
+        const label = lang === 'ja' ? '訪問者' : (lang === 'en' ? 'visitors' : '명 방문자');
+        subtitleEl.textContent = `${total.toLocaleString()} ${label}`;
+    };
+
     const renderCommunities = async () => {
         const grid = document.getElementById('community-grid');
         if (!grid) return;
@@ -220,11 +238,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetchCommunityThumbnails(ids).catch(() => new Map())
             ]);
 
+            const totalMembers = Array.from(infoMap.values())
+                .map(info => info && typeof info.memberCount === 'number' ? info.memberCount : 0)
+                .reduce((a, b) => a + b, 0);
+            setCommunityTotal(totalMembers, lang);
+
             COMMUNITY_GROUPS.forEach(cfg => {
                 const info = infoMap.get(cfg.id) || {};
                 const name = info.name || cfg.names[lang] || cfg.names.ko;
                 const memberCount = typeof info.memberCount === 'number' ? info.memberCount : null;
                 const icon = thumbMap.get(cfg.id) || COMMUNITY_FALLBACK_ICON;
+                const visitLabel = getCommunityVisitLabel(lang);
 
                 const card = document.createElement('div');
                 card.className = 'community-card';
@@ -234,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3>${name}</h3>
                         <p class="community-members">${formatMemberCount(memberCount, lang)}</p>
                         <a class="btn-ghost community-link" href="${cfg.url}" target="_blank" rel="noreferrer" data-cta="community" data-cta-origin="home-community" data-project-id="${cfg.id}">
-                            ${lang === 'ja' ? 'コミュニティへ' : lang === 'en' ? 'Visit community' : '커뮤니티 방문'}
+                            ${visitLabel}
                         </a>
                     </div>
                 `;
@@ -245,6 +269,11 @@ document.addEventListener('DOMContentLoaded', function() {
             grid.innerHTML = `<p class="community-error">커뮤니티 정보를 불러오지 못했습니다.</p>`;
         }
     };
+
+    // 언어 변경 시 커뮤니티 섹션도 재렌더
+    document.addEventListener('languageChanged', function (event) {
+        renderCommunities();
+    });
 
     // 상세 페이지 헤더 지표 표시 (visits, likeRatio)
     const renderHeaderMetrics = () => {

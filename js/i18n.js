@@ -22,8 +22,8 @@ const translations = {
         hero_cta: "프로젝트 자세히 보기",
 
         // 커뮤니티 섹션
-        community_title: "운영 중인 Roblox 커뮤니티",
-        community_subtitle: "공개 API로 멤버 수와 아이콘을 실시간 표시합니다.",
+        community_title: "NNN 커뮤니티",
+        community_subtitle: "멤버 수 집계 중...",
         community_visit_cta: "커뮤니티 방문",
         community_members_label: "멤버",
 
@@ -244,8 +244,8 @@ const translations = {
         hero_cta: "View Project Details",
 
         // Community section
-        community_title: "Active Roblox communities",
-        community_subtitle: "Icons and member counts fetched via Roblox public API.",
+        community_title: "NNN communities",
+        community_subtitle: "Counting members...",
         community_visit_cta: "Visit community",
         community_members_label: "members",
 
@@ -466,8 +466,8 @@ const translations = {
         hero_cta: "プロジェクト詳細を見る",
 
         // コミュニティセクション
-        community_title: "運営中のRobloxコミュニティ",
-        community_subtitle: "Roblox公開APIでアイコンとメンバー数を取得します。",
+        community_title: "NNN コミュニティ",
+        community_subtitle: "メンバー数を集計中...",
         community_visit_cta: "コミュニティへ",
         community_members_label: "メンバー",
 
