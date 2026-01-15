@@ -18,7 +18,11 @@
      - 투표 지표: `https://games.roblox.com/v1/games/votes?universeIds=<ids>`
   3) 각 프로젝트의 `metrics`를 업데이트  
      - `visits`, `playing`, `favorites`, `likeRatio`, `updatedAt`
-  4) 결과를 동일 파일에 저장
+  4) 커뮤니티 그룹(3개)의 멤버 수·아이콘을 업데이트  
+     - 그룹 메타: `https://groups.roblox.com/v1/groups/<groupId>`
+     - 아이콘: `https://thumbnails.roblox.com/v1/groups/icons?groupIds=...`
+     - 결과를 `data/communities.json`에 저장 (`groups[]`, `totalMembers`, `updatedAt`, `icon`, `url`, `memberCount`)
+  5) 파일 저장
 
 ## 그룹 ID로 universeId 조회하기 (수동)
 Roblox 그룹이 소유한 경험(게임)의 `universeId`를 알아낼 때 사용할 수 있는 공개 엔드포인트입니다.

@@ -12,7 +12,29 @@ const fs = require('fs');
 const path = require('path');
 
 const DATA_PATH = path.join(__dirname, '..', 'data', 'projects.json');
+const COMMUNITY_PATH = path.join(__dirname, '..', 'data', 'communities.json');
 const ROBLOX_API_BASE = 'https://games.roblox.com/v1/games';
+const GROUP_API_BASE = 'https://groups.roblox.com/v1/groups';
+const GROUP_ICON_API = 'https://thumbnails.roblox.com/v1/groups/icons';
+
+// 커뮤니티 구성 (main.js와 동일 순서/ID를 유지)
+const COMMUNITY_GROUPS = [
+  {
+    id: '294985728',
+    url: 'https://www.roblox.com/communities/294985728/NNN-PLAY#!/about',
+    nameFallback: 'NNN PLAY'
+  },
+  {
+    id: '34453707',
+    url: 'https://www.roblox.com/share/g/34453707',
+    nameFallback: 'NNN UGC'
+  },
+  {
+    id: '916094546',
+    url: 'https://www.roblox.com/communities/916094546/NNN-Weapon-Master#!/about',
+    nameFallback: 'NNN Weapon Master'
+  }
+];
 
 async function fetchJson(url) {
   const res = await fetch(url, { headers: { accept: 'application/json' } });
@@ -92,6 +114,75 @@ async function main() {
 
   fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2) + '\n', 'utf-8');
   console.log(`Updated metrics for ${projects.length} projects at ${now}`);
+
+  // 커뮤니티 지표 업데이트 (아이콘 + 멤버수)
+  try {
+    const communityPayload = await updateCommunities(COMMUNITY_GROUPS, now);
+    fs.writeFileSync(COMMUNITY_PATH, JSON.stringify(communityPayload, null, 2) + '\n', 'utf-8');
+    console.log(`Updated community metrics for ${communityPayload.groups.length} groups at ${now}`);
+  } catch (err) {
+    console.warn('Community metrics update failed:', err.message);
+  }
+}
+
+async function updateCommunities(groupsConfig, nowIso) {
+  const ids = groupsConfig.map((g) => g.id);
+
+  const [infos, icons] = await Promise.all([
+    fetchGroupInfos(ids),
+    fetchGroupIcons(ids).catch(() => new Map()) // 아이콘 실패 시 null로 처리
+  ]);
+
+  let totalMembers = 0;
+  const groups = groupsConfig.map((cfg) => {
+    const info = infos.get(cfg.id) || {};
+    const memberCount = typeof info.memberCount === 'number' ? info.memberCount : null;
+    const name = info.name || cfg.nameFallback;
+    if (typeof memberCount === 'number') totalMembers += memberCount;
+    return {
+      id: cfg.id,
+      name,
+      url: cfg.url,
+      memberCount,
+      icon: icons.get(cfg.id) || null,
+      updatedAt: nowIso
+    };
+  });
+
+  return {
+    groups,
+    totalMembers,
+    updatedAt: nowIso
+  };
+}
+
+async function fetchGroupInfos(ids) {
+  const results = await Promise.all(
+    ids.map((id) =>
+      fetch(`${GROUP_API_BASE}/${id}`, { headers: { accept: 'application/json' } })
+        .then((res) => (res.ok ? res.json() : null))
+        .catch(() => null)
+    )
+  );
+  const map = new Map();
+  results.forEach((info) => {
+    if (info && info.id) map.set(String(info.id), info);
+  });
+  return map;
+}
+
+async function fetchGroupIcons(ids) {
+  const url = `${GROUP_ICON_API}?groupIds=${ids.join(',')}&size=150x150&format=Png&isCircular=false`;
+  const res = await fetch(url, { headers: { accept: 'application/json' } });
+  if (!res.ok) throw new Error(`Group icon fetch failed: ${res.status} ${res.statusText}`);
+  const json = await res.json();
+  const map = new Map();
+  (json.data || []).forEach((item) => {
+    if (item && item.targetId) {
+      map.set(String(item.targetId), item.imageUrl);
+    }
+  });
+  return map;
 }
 
 main().catch((err) => {

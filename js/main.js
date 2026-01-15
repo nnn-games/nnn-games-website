@@ -224,6 +224,12 @@ document.addEventListener('DOMContentLoaded', function() {
         subtitleEl.textContent = `${total.toLocaleString()} ${label}`;
     };
 
+    const loadCommunityData = async () => {
+        const res = await fetch('data/communities.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`community data ${res.status}`);
+        return res.json();
+    };
+
     const renderCommunities = async () => {
         const grid = document.getElementById('community-grid');
         if (!grid) return;
@@ -233,6 +239,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const ids = COMMUNITY_GROUPS.map(g => g.id);
         try {
+            const cfgById = new Map(COMMUNITY_GROUPS.map(c => [c.id, c]));
+
+            // 1) 정적 JSON (npm run update:metrics 결과) 우선 시도
+            let communityData = null;
+            try {
+                communityData = await loadCommunityData();
+            } catch (_e) {
+                communityData = null;
+            }
+
+            if (communityData && Array.isArray(communityData.groups) && communityData.groups.length > 0) {
+                const groups = communityData.groups;
+                const totalMembers = typeof communityData.totalMembers === 'number'
+                    ? communityData.totalMembers
+                    : groups.reduce((sum, g) => sum + (typeof g.memberCount === 'number' ? g.memberCount : 0), 0);
+                setCommunityTotal(totalMembers, lang);
+
+                groups.forEach(g => {
+                    const cfg = cfgById.get(String(g.id)) || {};
+                    const name = g.name || (cfg.names && (cfg.names[lang] || cfg.names.ko)) || cfg.nameFallback || 'Community';
+                    const memberCount = typeof g.memberCount === 'number' ? g.memberCount : null;
+                    const icon = g.icon || COMMUNITY_FALLBACK_ICON;
+                    const url = g.url || cfg.url || '#';
+                    const visitLabel = getCommunityVisitLabel(lang);
+
+                    const card = document.createElement('div');
+                    card.className = 'community-card';
+                    card.innerHTML = `
+                        <img class="community-thumb" src="${icon}" alt="${name}">
+                        <div class="community-body">
+                            <h3>${name}</h3>
+                            <p class="community-members">${formatMemberCount(memberCount, lang)}</p>
+                            <a class="btn-ghost community-link" href="${url}" target="_blank" rel="noreferrer" data-cta="community" data-cta-origin="home-community" data-project-id="${g.id}">
+                                ${visitLabel}
+                            </a>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+                return;
+            }
+
+            // 2) 폴백: 실시간 Roblox 공개 API
             const [infoMap, thumbMap] = await Promise.all([
                 fetchCommunityInfos(ids),
                 fetchCommunityThumbnails(ids).catch(() => new Map())
