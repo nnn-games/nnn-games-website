@@ -45,7 +45,7 @@ const ProjectManager = {
                         technologies: ['Roblox Studio', 'Luau', 'Procedural Level'],
                         links: {
                             play: 'https://www.roblox.com/games/77732766603333',
-                            trailer: '',
+                            trailer: 'https://youtu.be/5g11rbdF4_I',
                             article: '',
                             group: 'https://www.roblox.com/groups/294985728',
                             showcase: ''
