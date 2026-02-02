@@ -35,11 +35,11 @@
         "showcase": ""
       },
       "metrics": {
-        "visits": 22863,
-        "playing": 17,
-        "favorites": 1348,
-        "likeRatio": 0.47368421052631576,
-        "updatedAt": "2026-02-02T01:05:49.587Z"
+        "visits": 25662,
+        "playing": 33,
+        "favorites": 1533,
+        "likeRatio": 0.5238095238095238,
+        "updatedAt": "2026-02-02T13:12:40.045Z"
       }
     },
     {
@@ -75,11 +75,11 @@
         "article": ""
       },
       "metrics": {
-        "visits": 84661,
-        "playing": 2,
-        "favorites": 504,
-        "likeRatio": 0.86084142394822,
-        "updatedAt": "2026-02-02T01:05:49.587Z"
+        "visits": 84914,
+        "playing": 0,
+        "favorites": 503,
+        "likeRatio": 0.8610662358642972,
+        "updatedAt": "2026-02-02T13:12:40.045Z"
       }
     },
     {
@@ -115,11 +115,11 @@
         "article": ""
       },
       "metrics": {
-        "visits": 49880,
+        "visits": 49881,
         "playing": 0,
         "favorites": 202,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-02-02T01:05:49.587Z"
+        "updatedAt": "2026-02-02T13:12:40.045Z"
       }
     },
     {
