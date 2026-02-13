@@ -18,14 +18,14 @@ const translations = {
 
         // 히어로 섹션
         hero_title: "더 나은 Roblox 게임을 만듭니다.",
-        hero_subtitle: "잘 설계된 플레이, 공정한 시스템, 오래가는 재미.",
-        hero_cta: "프로젝트 자세히 보기",
+        hero_subtitle: "새로운 재미를 설계하고, 돋보이는 완성도를 구현하며, 민첩하게 실행합니다.",
+        hero_cta: "로블록스 프로젝트 다시보기",
 
         // 커뮤니티 섹션
         community_title: "NNN 커뮤니티",
-        community_subtitle: "멤버 수 집계 중...",
+        community_subtitle: "가입자 수 집계 중...",
         community_visit_cta: "커뮤니티 방문",
-        community_members_label: "멤버",
+        community_members_label: "가입자",
 
         // 특징 섹션
         features_title: "NNN Games의 강점",
@@ -240,14 +240,14 @@ const translations = {
 
         // Hero section
         hero_title: "Building better Roblox games.",
-        hero_subtitle: "Well-designed gameplay. Fair systems. Fun that lasts.",
-        hero_cta: "View Project Details",
+        hero_subtitle: "Novelty in play. Notable in quality. Nimble in execution.",
+        hero_cta: "Revisit Roblox Projects",
 
         // Community section
         community_title: "NNN communities",
-        community_subtitle: "Counting members...",
+        community_subtitle: "Counting subscribers...",
         community_visit_cta: "Visit community",
-        community_members_label: "members",
+        community_members_label: "subscribers",
 
         // Features section
         features_title: "Our Strengths at NNN Games",
@@ -462,14 +462,14 @@ const translations = {
 
         // ヒーローセクション
         hero_title: "より良いRobloxゲームを作っています。",
-        hero_subtitle: "丁寧に設計されたゲーム性、公平なシステム、長く楽しめる体験。",
-        hero_cta: "プロジェクト詳細を見る",
+        hero_subtitle: "新しさのある遊びを生み出し、際立つ品質を追求し、素早く形にします。",
+        hero_cta: "Robloxプロジェクトをもう一度見る",
 
         // コミュニティセクション
         community_title: "NNN コミュニティ",
-        community_subtitle: "メンバー数を集計中...",
+        community_subtitle: "加入者数を集計中...",
         community_visit_cta: "コミュニティへ",
-        community_members_label: "メンバー",
+        community_members_label: "加入者",
 
         // 特徴セクション
         features_title: "NNN Gamesの強み",

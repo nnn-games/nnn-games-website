@@ -168,6 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
             url: 'https://www.roblox.com/communities/294985728/NNN-PLAY#!/about',
             names: { ko: 'NNN PLAY', en: 'NNN PLAY', ja: 'NNN PLAY' }
         },
+                {
+            id: '937186626',
+            url: 'https://www.roblox.com/ko/communities/937186626/NNN-FUN#!/about',
+            names: { ko: 'NNN FUN', en: 'NNN FUN', ja: 'NNN FUN' }
+        },
         {
             id: '34453707',
             url: 'https://www.roblox.com/share/g/34453707',
@@ -210,8 +215,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const formatMemberCount = (count, lang) => {
-        if (typeof count !== 'number') return lang === 'ja' ? 'メンバー 정보 없음' : lang === 'en' ? 'Members n/a' : '멤버 정보 없음';
-        const label = lang === 'ja' ? 'メンバー' : (lang === 'en' ? 'members' : '명 멤버');
+        if (typeof count !== 'number') return lang === 'ja' ? '加入者情報なし' : lang === 'en' ? 'Subscribers n/a' : '가입자 정보 없음';
+        const label = lang === 'ja' ? '加入者' : (lang === 'en' ? 'subscribers' : '명 가입자');
         return `${count.toLocaleString()} ${label}`;
     };
 
@@ -229,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const subtitleEl = document.querySelector('[data-key="community_subtitle"]');
         if (!subtitleEl) return;
         if (typeof total !== 'number') return;
-        const label = lang === 'ja' ? '訪問者' : (lang === 'en' ? 'visitors' : '명 방문자');
+        const label = lang === 'ja' ? '加入者' : (lang === 'en' ? 'subscribers' : '명 가입자');
         subtitleEl.textContent = `${total.toLocaleString()} ${label}`;
     };
 

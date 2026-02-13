@@ -25,6 +25,11 @@ const COMMUNITY_GROUPS = [
     nameFallback: 'NNN PLAY'
   },
   {
+    id: '937186626',
+    url: 'https://www.roblox.com/ko/communities/937186626/NNN-FUN#!/about',
+    nameFallback: 'NNN FUN'
+  },
+  {
     id: '34453707',
     url: 'https://www.roblox.com/share/g/34453707',
     nameFallback: 'NNN UGC'
