@@ -99,7 +99,12 @@
     @apply md:grid-cols-2 lg:grid-cols-3;
   }
   .community-grid {
-    @apply grid gap-6 md:grid-cols-3;
+    @apply flex gap-6 overflow-x-auto pb-2;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .community-grid::-webkit-scrollbar {
+    display: none;
   }
   .feature-item,
   .project-card,
@@ -175,6 +180,7 @@
   }
   .community-card {
     @apply bg-white border border-gray-100 rounded-xl shadow-sm p-6 flex flex-col items-center text-center gap-3 hover:-translate-y-0.5 hover:shadow-lg transition;
+    flex: 0 0 18rem;
   }
   .community-thumb {
     @apply w-20 h-20 rounded-full object-cover border border-gray-200;
