@@ -10,6 +10,8 @@ const translations = {
         nav_about: "소개",
         nav_projects: "프로젝트",
         nav_contact: "문의",
+        nav_menu_open: "메뉴 열기",
+        nav_menu_close: "메뉴 닫기",
 
         // 언어 선택
         lang_ko: "한국어",
@@ -17,9 +19,26 @@ const translations = {
         lang_ja: "日本語",
 
         // 히어로 섹션
+        hero_eyebrow: "로블록스 전문 개발 스튜디오",
         hero_title: "더 나은 Roblox 게임을 만듭니다.",
         hero_subtitle: "새로운 재미를 설계하고, 돋보이는 완성도를 구현하며, 민첩하게 실행합니다.",
-        hero_cta: "로블록스 프로젝트 다시보기",
+        hero_cta: "프로젝트 보기",
+        hero_stat_projects: "운영 프로젝트",
+        hero_stat_visits: "누적 방문 수",
+        hero_stat_communities: "커뮤니티 구독자",
+        home_dashboard_kicker: "운영 현황",
+        home_dashboard_title: "운영 프로젝트 지표 및 자료",
+        home_dashboard_subtitle: "핵심 지표와 플레이, 트레일러, 그룹, 기사 링크를 한 곳에서 확인할 수 있도록 정리합니다.",
+        hero_panel_title: "Studio Snapshot",
+        hero_panel_subtitle: "출시 이후 운영까지 끊기지 않는 Roblox 제작 흐름을 설계합니다.",
+        hero_panel_item_1_title: "지표 연결형 포트폴리오",
+        hero_panel_item_1_desc: "프로젝트와 커뮤니티 지표를 사이트에 연결해 업데이트 근거가 남는 소개 구조를 유지합니다.",
+        hero_panel_item_2_title: "플레이 가능한 BM 설계",
+        hero_panel_item_2_desc: "가챠, 퀘스트, 수집, 이벤트 같은 수익·리텐션 구조를 게임 플레이와 함께 설계합니다.",
+        hero_panel_item_3_title: "빠른 출시와 안정적 운영",
+        hero_panel_item_3_desc: "브랜드 프로젝트와 내부 프로젝트 모두에서 짧은 출시 사이클과 운영 안정성을 함께 추구합니다.",
+        project_resources_title: "바로 보기",
+        project_updated_label: "최근 갱신",
 
         // 커뮤니티 섹션
         community_title: "NNN 커뮤니티",
@@ -28,7 +47,9 @@ const translations = {
         community_members_label: "가입자",
 
         // 특징 섹션
+        features_kicker: "제작 방식",
         features_title: "NNN Games의 강점",
+        features_subtitle: "플랫폼 이해도, BM 설계, 운영 경험을 하나의 제작 파이프라인으로 묶습니다.",
         feature_1_title: "플랫폼 네이티브 게임·UGC 제작",
         feature_1_desc: "Roblox 생태계의 플레이 패턴과 제작 기준(정책·세이프티·성능)에 맞춘 구조로, 몰입도 높은 경험과 확장 가능한 UGC를 설계·제작합니다.",
         feature_2_title: "콘텐츠와 수익을 연결하는 시스템",
@@ -53,6 +74,24 @@ const translations = {
         // 프로젝트 페이지
         projects_page_title: "프로젝트 - NNN GAMES",
         projects_page_header: "프로젝트",
+        projects_filter_kicker: "Portfolio Explorer",
+        projects_filter_title: "필터로 맞는 프로젝트를 빠르게 찾기",
+        projects_filter_desc: "카테고리, 진행 상태, 키워드로 포트폴리오를 바로 좁힐 수 있습니다.",
+        projects_filter_reset: "필터 초기화",
+        projects_filter_category_label: "카테고리",
+        projects_filter_status_label: "상태",
+        projects_filter_keyword_label: "검색",
+        projects_filter_keyword_placeholder: "프로젝트 이름이나 설명 검색",
+        projects_filter_option_all: "전체",
+        projects_filter_option_roblox: "Roblox",
+        projects_filter_option_active: "운영 중",
+        projects_filter_option_development: "개발 중",
+        projects_filter_option_completed: "완료",
+        projects_filter_option_paused: "일시중단",
+        projects_filter_results_default: "전체 프로젝트를 표시하고 있습니다.",
+        projects_filter_results: "{{visible}} / {{total}}개 프로젝트 표시 중",
+        projects_filter_results_none: "조건에 맞는 프로젝트가 없습니다.",
+        projects_empty_state: "조건에 맞는 프로젝트가 없습니다. 필터를 조정해 주세요.",
 
         // About 페이지
         about_page_title: "소개 - NNN GAMES",
@@ -119,6 +158,10 @@ const translations = {
         cta_read_article: "기사 보기",
         cta_visit_group: "그룹 방문",
         cta_view_showcase: "쇼케이스 보기",
+        metric_visits: "방문",
+        metric_playing: "플레이 중",
+        metric_favorites: "즐겨찾기",
+        metric_like: "좋아요",
 
         // 프로젝트 베타 페이지
         project_legendary_dj_gear_header: "Legendary DJ Gear",
@@ -232,6 +275,8 @@ const translations = {
         nav_about: "About",
         nav_projects: "Projects",
         nav_contact: "Contact",
+        nav_menu_open: "Open menu",
+        nav_menu_close: "Close menu",
 
         // Language selection
         lang_ko: "한국어",
@@ -239,9 +284,26 @@ const translations = {
         lang_ja: "日本語",
 
         // Hero section
-        hero_title: "Building better Roblox games.",
-        hero_subtitle: "Novelty in play. Notable in quality. Nimble in execution.",
-        hero_cta: "Revisit Roblox Projects",
+        hero_eyebrow: "Roblox development studio",
+        hero_title: "We build better Roblox games.",
+        hero_subtitle: "We design new fun, deliver standout quality, and move quickly in execution.",
+        hero_cta: "View projects",
+        hero_stat_projects: "live projects",
+        hero_stat_visits: "total visits",
+        hero_stat_communities: "community subscribers",
+        home_dashboard_kicker: "Operations",
+        home_dashboard_title: "Project metrics and materials",
+        home_dashboard_subtitle: "Keep core KPIs and quick access links for play, trailers, groups, and articles in one place.",
+        hero_panel_title: "Studio Snapshot",
+        hero_panel_subtitle: "We design Roblox production flows that stay coherent from launch to live operations.",
+        hero_panel_item_1_title: "Metrics-ready portfolio",
+        hero_panel_item_1_desc: "Project and community metrics stay connected to the site so updates remain traceable and credible.",
+        hero_panel_item_2_title: "Playable business systems",
+        hero_panel_item_2_desc: "We design gachas, quests, collection loops, and events as part of the core play experience.",
+        hero_panel_item_3_title: "Fast launch, steady live ops",
+        hero_panel_item_3_desc: "We optimize for short release cycles without losing operational stability across client and internal work.",
+        project_resources_title: "Quick links",
+        project_updated_label: "Updated",
 
         // Community section
         community_title: "NNN communities",
@@ -250,7 +312,9 @@ const translations = {
         community_members_label: "subscribers",
 
         // Features section
+        features_kicker: "How we operate",
         features_title: "Our Strengths at NNN Games",
+        features_subtitle: "Platform fluency, monetization systems, and live ops experience work as one production pipeline.",
         feature_1_title: "Platform-native Games & UGC Production",
         feature_1_desc: "We design and build Roblox-native content aligned with its play patterns and production standards (policy, safety, performance), delivering immersive experiences and scalable UGC.",
         feature_2_title: "Systems That Connect Content and Monetization",
@@ -275,6 +339,24 @@ const translations = {
         // Projects Page
         projects_page_title: "Projects - NNN GAMES",
         projects_page_header: "Projects",
+        projects_filter_kicker: "Portfolio Explorer",
+        projects_filter_title: "Find the right project faster",
+        projects_filter_desc: "Narrow the portfolio immediately by category, status, and keyword.",
+        projects_filter_reset: "Reset filters",
+        projects_filter_category_label: "Category",
+        projects_filter_status_label: "Status",
+        projects_filter_keyword_label: "Search",
+        projects_filter_keyword_placeholder: "Search by project name or description",
+        projects_filter_option_all: "All",
+        projects_filter_option_roblox: "Roblox",
+        projects_filter_option_active: "Live",
+        projects_filter_option_development: "In Development",
+        projects_filter_option_completed: "Completed",
+        projects_filter_option_paused: "Paused",
+        projects_filter_results_default: "Showing all projects.",
+        projects_filter_results: "{{visible}} of {{total}} projects shown",
+        projects_filter_results_none: "No projects match the current filters.",
+        projects_empty_state: "No projects match the current filters. Adjust the filters and try again.",
 
         // About Page
         about_page_title: "About - NNN GAMES",
@@ -341,6 +423,10 @@ const translations = {
         cta_read_article: "Read Article",
         cta_visit_group: "Visit Roblox Group",
         cta_view_showcase: "View Showcase",
+        metric_visits: "Visits",
+        metric_playing: "Playing",
+        metric_favorites: "Favorites",
+        metric_like: "Like",
 
         // Project Beta page
         project_legendary_dj_gear_header: "Legendary DJ Gear",
@@ -454,6 +540,8 @@ const translations = {
         nav_about: "紹介",
         nav_projects: "プロジェクト",
         nav_contact: "お問い合わせ",
+        nav_menu_open: "メニューを開く",
+        nav_menu_close: "メニューを閉じる",
 
         // 言語選択
         lang_ko: "한국어",
@@ -461,9 +549,26 @@ const translations = {
         lang_ja: "日本語",
 
         // ヒーローセクション
+        hero_eyebrow: "Roblox専門開発スタジオ",
         hero_title: "より良いRobloxゲームを作っています。",
-        hero_subtitle: "新しさのある遊びを生み出し、際立つ品質を追求し、素早く形にします。",
-        hero_cta: "Robloxプロジェクトをもう一度見る",
+        hero_subtitle: "新しい楽しさを設計し、際立つ完成度を実装し、素早く実行します。",
+        hero_cta: "プロジェクトを見る",
+        hero_stat_projects: "運営プロジェクト",
+        hero_stat_visits: "累計訪問数",
+        hero_stat_communities: "コミュニティ加入者",
+        home_dashboard_kicker: "運営状況",
+        home_dashboard_title: "運営プロジェクトの指標と資料",
+        home_dashboard_subtitle: "主要KPIとプレイ、トレーラー、グループ、記事リンクを一か所で確認できるように整理します。",
+        hero_panel_title: "Studio Snapshot",
+        hero_panel_subtitle: "ローンチ後の運営まで切れ目なくつながるRoblox制作フローを設計します。",
+        hero_panel_item_1_title: "指標連動ポートフォリオ",
+        hero_panel_item_1_desc: "プロジェクトとコミュニティ指標をサイトに接続し、更新の根拠が残る紹介体験を維持します。",
+        hero_panel_item_2_title: "遊べる収益化設計",
+        hero_panel_item_2_desc: "ガチャ、クエスト、収集、イベントなどの収益・リテンション構造をゲームプレイの一部として設計します。",
+        hero_panel_item_3_title: "迅速な公開と安定運営",
+        hero_panel_item_3_desc: "受託案件と自社案件の両方で、短い公開サイクルと運営安定性を両立します。",
+        project_resources_title: "クイックリンク",
+        project_updated_label: "更新日",
 
         // コミュニティセクション
         community_title: "NNN コミュニティ",
@@ -472,7 +577,9 @@ const translations = {
         community_members_label: "加入者",
 
         // 特徴セクション
+        features_kicker: "制作アプローチ",
         features_title: "NNN Gamesの強み",
+        features_subtitle: "プラットフォーム理解、BM設計、運営経験をひとつの制作パイプラインとして扱います。",
         feature_1_title: "プラットフォームネイティブなゲーム／UGC制作",
         feature_1_desc: "Robloxのプレイ特性と制作基準（ポリシー・セーフティ・パフォーマンス）に合わせて、没入感のある体験と拡張可能なUGCを設計・制作します。",
         feature_2_title: "コンテンツと収益をつなぐシステム",
@@ -497,6 +604,24 @@ const translations = {
         // プロジェクトページ
         projects_page_title: "プロジェクト - NNN GAMES",
         projects_page_header: "プロジェクト",
+        projects_filter_kicker: "Portfolio Explorer",
+        projects_filter_title: "条件に合うプロジェクトを素早く探す",
+        projects_filter_desc: "カテゴリ、進行状況、キーワードでポートフォリオをすぐ絞り込めます。",
+        projects_filter_reset: "フィルターをリセット",
+        projects_filter_category_label: "カテゴリ",
+        projects_filter_status_label: "ステータス",
+        projects_filter_keyword_label: "検索",
+        projects_filter_keyword_placeholder: "プロジェクト名または説明で検索",
+        projects_filter_option_all: "すべて",
+        projects_filter_option_roblox: "Roblox",
+        projects_filter_option_active: "運営中",
+        projects_filter_option_development: "開発中",
+        projects_filter_option_completed: "完了",
+        projects_filter_option_paused: "一時停止",
+        projects_filter_results_default: "すべてのプロジェクトを表示しています。",
+        projects_filter_results: "{{total}}件中{{visible}}件を表示",
+        projects_filter_results_none: "条件に一致するプロジェクトがありません。",
+        projects_empty_state: "条件に一致するプロジェクトがありません。フィルターを調整してください。",
 
         // Aboutページ
         about_page_title: "紹介 - NNN GAMES",
@@ -563,6 +688,10 @@ const translations = {
         cta_read_article: "記事を読む",
         cta_visit_group: "グループを訪問",
         cta_view_showcase: "ショーケースを見る",
+        metric_visits: "訪問",
+        metric_playing: "プレイ中",
+        metric_favorites: "お気に入り",
+        metric_like: "いいね",
 
         // プロジェクトベータページ
         project_legendary_dj_gear_header: "Legendary DJ Gear",
@@ -670,6 +799,9 @@ const translations = {
 
 // 브라우저 환경 체크
 const isBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';
+if (isBrowser) {
+    window.translations = translations;
+}
 
 // 현재 언어 설정 (localStorage에서 가져오거나 기본값은 한국어)
 let currentLanguage = isBrowser && localStorage.getItem('language') || 'ko';
@@ -685,10 +817,6 @@ function changeLanguage(lang) {
         updateTranslations();
         // 언어 버튼 활성화 상태 업데이트
         updateLanguageButtons();
-        // 프로젝트 렌더러에 언어 변경 이벤트 전송
-        if (window.ProjectRenderer) {
-            window.ProjectRenderer.updateLanguage(lang);
-        }
         // 커스텀 이벤트 발생
         document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
     }
@@ -696,18 +824,29 @@ function changeLanguage(lang) {
 
 // 번역 업데이트 함수
 function updateTranslations() {
-    // data-key 속성을 가진 모든 요소 찾기
-    const elements = document.querySelectorAll('[data-key]');
+    const locale = translations[currentLanguage] || {};
 
-    elements.forEach(element => {
+    const textElements = document.querySelectorAll('[data-key]');
+    textElements.forEach(element => {
         const key = element.getAttribute('data-key');
-        if (translations[currentLanguage] && translations[currentLanguage][key]) {
-            // title 속성이 있는 경우 (페이지 제목)
-            if (element.tagName === 'TITLE') {
-                element.textContent = translations[currentLanguage][key];
-            } else {
-                element.textContent = translations[currentLanguage][key];
-            }
+        if (locale[key]) {
+            element.textContent = locale[key];
+        }
+    });
+
+    const placeholderElements = document.querySelectorAll('[data-key-placeholder]');
+    placeholderElements.forEach(element => {
+        const key = element.getAttribute('data-key-placeholder');
+        if (locale[key]) {
+            element.setAttribute('placeholder', locale[key]);
+        }
+    });
+
+    const ariaLabelElements = document.querySelectorAll('[data-key-aria-label]');
+    ariaLabelElements.forEach(element => {
+        const key = element.getAttribute('data-key-aria-label');
+        if (locale[key]) {
+            element.setAttribute('aria-label', locale[key]);
         }
     });
 }
@@ -727,14 +866,10 @@ function updateLanguageButtons() {
 // 페이지 로드 시 초기화
 if (isBrowser) {
     document.addEventListener('DOMContentLoaded', function () {
+        document.documentElement.lang = currentLanguage;
         // 현재 언어로 번역 적용
         updateTranslations();
         updateLanguageButtons();
-
-        // 프로젝트 렌더러에 초기 언어 설정 알림
-        if (window.ProjectRenderer) {
-            window.ProjectRenderer.updateLanguage(currentLanguage);
-        }
 
         // 언어 버튼 클릭 이벤트 추가
         const langButtons = document.querySelectorAll('.lang-btn');

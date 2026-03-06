@@ -1,0 +1,52 @@
+{
+  "groups": [
+    {
+      "id": "294985728",
+      "url": "https://www.roblox.com/communities/294985728/NNN-PLAY#!/about",
+      "names": {
+        "ko": "NNN PLAY",
+        "en": "NNN PLAY",
+        "ja": "NNN PLAY"
+      },
+      "status": "active",
+      "showOnHomepage": true,
+      "includeInHeroSubscriberTotal": true
+    },
+    {
+      "id": "937186626",
+      "url": "https://www.roblox.com/ko/communities/937186626/NNN-FUN#!/about",
+      "names": {
+        "ko": "NNN FUN",
+        "en": "NNN FUN",
+        "ja": "NNN FUN"
+      },
+      "status": "active",
+      "showOnHomepage": true,
+      "includeInHeroSubscriberTotal": true
+    },
+    {
+      "id": "34453707",
+      "url": "https://www.roblox.com/share/g/34453707",
+      "names": {
+        "ko": "NNN UGC",
+        "en": "NNN UGC",
+        "ja": "NNN UGC"
+      },
+      "status": "active",
+      "showOnHomepage": true,
+      "includeInHeroSubscriberTotal": true
+    },
+    {
+      "id": "916094546",
+      "url": "https://www.roblox.com/communities/916094546/NNN-Weapon-Master#!/about",
+      "names": {
+        "ko": "NNN Weapon Master",
+        "en": "NNN Weapon Master",
+        "ja": "NNN Weapon Master"
+      },
+      "status": "active",
+      "showOnHomepage": true,
+      "includeInHeroSubscriberTotal": true
+    }
+  ]
+}

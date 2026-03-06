@@ -31,7 +31,7 @@
                 <img src="images/nnn-logo.png" alt="NNN GAMES">
                 <span class="logo-text">NNN GAMES</span>
             </a>
-            <nav class="main-nav">
+            <nav class="main-nav" id="site-navigation">
                 <ul>
                     <li><a href="index.html" class="active" data-key="nav_home">홈</a></li>
                     <li><a href="projects.html" data-key="nav_projects">프로젝트</a></li>
@@ -45,16 +45,35 @@
                     </li>
                 </ul>
             </nav>
-            <div class="menu-toggle">☰</div>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="메뉴 열기" data-key-aria-label="nav_menu_open">☰</button>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <h1 data-key="hero_title">Building better Roblox games.</h1>
-                <p data-key="hero_subtitle">Novelty in play. Notable in quality. Nimble in execution.</p>
-                <a href="projects.html" class="cta-button" data-key="hero_cta" data-cta="hero-projects" data-cta-origin="hero">로블록스 프로젝트 다시보기</a>
+            <div class="container hero-shell">
+                <div class="hero-content">
+                    <p class="hero-eyebrow" data-key="hero_eyebrow">Roblox Development Studio</p>
+                    <h1 data-key="hero_title">더 나은 Roblox 게임을 만듭니다.</h1>
+                    <p data-key="hero_subtitle">새로운 재미를 설계하고, 돋보이는 완성도를 구현하며, 민첩하게 실행합니다.</p>
+                    <div class="hero-actions">
+                        <a href="projects.html" class="cta-button" data-key="hero_cta" data-cta="hero-projects" data-cta-origin="hero">프로젝트 보기</a>
+                    </div>
+                    <div class="hero-stats">
+                        <article class="hero-stat">
+                            <strong data-hero-project-count>3</strong>
+                            <span data-key="hero_stat_projects">운영 프로젝트</span>
+                        </article>
+                        <article class="hero-stat">
+                            <strong data-hero-total-visits>2.3M+</strong>
+                            <span data-key="hero_stat_visits">누적 방문 수</span>
+                        </article>
+                        <article class="hero-stat">
+                            <strong data-hero-community-count>34.3K+</strong>
+                            <span data-key="hero_stat_communities">커뮤니티 구독자</span>
+                        </article>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -71,9 +90,37 @@
         </section>
 
         <section class="project-preview container">
-            <h2 data-key="project_preview_title">진행 중인 프로젝트</h2>
             <div class="project-grid">
                 <!-- 프로젝트 카드들은 project-renderer.js에 의해 동적으로 생성됩니다 -->
+            </div>
+        </section>
+
+        <section class="ugc-spotlight-section">
+            <div class="container">
+                <div class="ugc-spotlight-shell" id="home-ugc-spotlight">
+                    <div class="ugc-spotlight-media">
+                        <img src="images/nnnugc-main.jpg" alt="NNN UGC" data-home-ugc-image>
+                    </div>
+                    <div class="ugc-spotlight-content">
+                        <p class="section-kicker">UGC</p>
+                        <div class="ugc-spotlight-header">
+                            <h2 data-key="project_nnn_ugc_title">NNN UGC</h2>
+                            <span class="status-badge status-development" data-key="project_nnn_ugc_status">제작 중</span>
+                        </div>
+                        <div class="ugc-spotlight-meta">
+                            <span class="badge-metric ugc" data-key="project_nnn_ugc_genre">장르: UGC 아이템 제작</span>
+                            <span class="badge-metric media" data-key="project_nnn_ugc_platform">플랫폼: ROBLOX</span>
+                        </div>
+                        <div class="ugc-spotlight-copy">
+                            <p data-key="project_nnn_ugc_summary_p1">NNN UGC는 Roblox 이용자를 위한 트렌디하고 창의적인 아바타 아이템을 제작·판매하는 수익형 콘텐츠 프로젝트입니다.</p>
+                            <p data-key="project_nnn_ugc_summary_p2">Z세대 감각에 맞춘 디자인, 시즌 테마, SNS 연동 요소로 꾸미기·소장 욕구를 자극하는 패션 중심 UGC 브랜드를 구축합니다.</p>
+                        </div>
+                        <div class="ugc-spotlight-actions">
+                            <a href="nnn-ugc.html" class="btn-primary" data-home-ugc-detail data-cta="home-ugc-detail" data-project-id="nnn-ugc" data-cta-origin="home-ugc-section" data-key="learn_more">자세히 보기 →</a>
+                            <a href="#" class="btn-ghost" data-cta="group" data-project-id="nnn-ugc" data-cta-origin="home-ugc-section" data-key="cta_visit_group">그룹 방문</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

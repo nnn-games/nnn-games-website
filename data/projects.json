@@ -34,12 +34,17 @@
         "group": "https://www.roblox.com/groups/294985728",
         "showcase": ""
       },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
       "metrics": {
-        "visits": 1889887,
-        "playing": 752,
-        "favorites": 122781,
-        "likeRatio": 0.5631399317406144,
-        "updatedAt": "2026-03-05T08:25:33.233Z"
+        "visits": 2181336,
+        "playing": 1421,
+        "favorites": 143979,
+        "likeRatio": 0.5460030165912518,
+        "updatedAt": "2026-03-06T12:17:42.018Z"
       }
     },
     {
@@ -74,12 +79,17 @@
         "trailer": "",
         "article": ""
       },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
       "metrics": {
-        "visits": 95849,
+        "visits": 96025,
         "playing": 0,
         "favorites": 531,
-        "likeRatio": 0.8638426626323752,
-        "updatedAt": "2026-03-05T08:25:33.233Z"
+        "likeRatio": 0.8642533936651584,
+        "updatedAt": "2026-03-06T12:17:42.018Z"
       }
     },
     {
@@ -114,12 +124,17 @@
         "trailer": "https://www.youtube.com/watch?v=0cEj3Tnb-No",
         "article": ""
       },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
       "metrics": {
         "visits": 49910,
         "playing": 0,
         "favorites": 202,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-03-05T08:25:33.233Z"
+        "updatedAt": "2026-03-06T12:17:42.018Z"
       }
     },
     {
@@ -155,6 +170,11 @@
         "group": "https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about",
         "showcase": ""
       },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
       "metrics": {
         "visits": null,
         "playing": null,
@@ -163,5 +183,22 @@
         "updatedAt": null
       }
     }
-  ]
+  ],
+  "summary": {
+    "hero": {
+      "projectCount": 3,
+      "projectIds": [
+        "tower-flood-race",
+        "korean-spa",
+        "legendary-dj-gear"
+      ],
+      "totalVisits": 2327271,
+      "visitProjectIds": [
+        "tower-flood-race",
+        "korean-spa",
+        "legendary-dj-gear"
+      ],
+      "updatedAt": "2026-03-06T12:17:42.018Z"
+    }
+  }
 }

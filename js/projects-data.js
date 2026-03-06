@@ -1,7 +1,63 @@
 // 기본 프로젝트 데이터 (JSON 로드 실패 시 fallback)
 let projectsData = {
     featured: [],
-    all: []
+    all: [],
+    summary: {
+        hero: {
+            projectCount: 0,
+            projectIds: [],
+            totalVisits: 0,
+            visitProjectIds: [],
+            updatedAt: null
+        }
+    }
+};
+
+const getProjectReporting = function (project) {
+    return project && typeof project.reporting === 'object' && project.reporting
+        ? project.reporting
+        : {};
+};
+
+const isActiveProject = function (project) {
+    return project && project.status === 'active';
+};
+
+const shouldIncludeInHeroProjectCount = function (project) {
+    const reporting = getProjectReporting(project);
+    const include = typeof reporting.includeInHeroProjectCount === 'boolean'
+        ? reporting.includeInHeroProjectCount
+        : true;
+    return isActiveProject(project) && include;
+};
+
+const shouldIncludeInHeroVisitTotal = function (project) {
+    const reporting = getProjectReporting(project);
+    const include = typeof reporting.includeInHeroVisitTotal === 'boolean'
+        ? reporting.includeInHeroVisitTotal
+        : true;
+    return isActiveProject(project) && include;
+};
+
+const buildProjectSummary = function (projects, updatedAt = null) {
+    const heroProjects = (projects || []).filter(shouldIncludeInHeroProjectCount);
+    const visitProjects = (projects || []).filter(shouldIncludeInHeroVisitTotal);
+    const totalVisits = visitProjects.reduce((sum, project) => {
+        const visits = project && project.metrics && typeof project.metrics.visits === 'number'
+            ? project.metrics.visits
+            : 0;
+        return sum + visits;
+    }, 0);
+
+    return {
+        hero: {
+            projectCount: heroProjects.length,
+            projectIds: heroProjects.map(project => project.id),
+            totalVisits,
+            visitProjectIds: visitProjects.map(project => project.id),
+            updatedAt
+        }
+    };
 };
 
 // 프로젝트 관리 유틸리티 함수들
@@ -15,9 +71,11 @@ const ProjectManager = {
             .then(res => res.ok ? res.json() : Promise.reject(new Error('Failed to load projects.json')))
             .then(json => {
                 const all = json.all || [];
+                const summary = json.summary || buildProjectSummary(all, null);
                 projectsData = {
                     all,
-                    featured: all.filter(p => p.featured)
+                    featured: all.filter(p => p.featured),
+                    summary
                 };
                 return projectsData;
             })
@@ -50,6 +108,11 @@ const ProjectManager = {
                             group: 'https://www.roblox.com/groups/294985728',
                             showcase: ''
                         },
+                        reporting: {
+                            collectMetrics: true,
+                            includeInHeroProjectCount: true,
+                            includeInHeroVisitTotal: true
+                        },
                         metrics: {
                             visits: null,
                             playing: null,
@@ -80,6 +143,11 @@ const ProjectManager = {
                             trailer: '',
                             article: ''
                         },
+                        reporting: {
+                            collectMetrics: true,
+                            includeInHeroProjectCount: true,
+                            includeInHeroVisitTotal: true
+                        },
                         metrics: {
                             visits: 80002,
                             playing: 2,
@@ -109,6 +177,11 @@ const ProjectManager = {
                             play: 'https://www.roblox.com/games/110796735931100/Legendary-DJ-Gear',
                             trailer: 'https://www.youtube.com/watch?v=0cEj3Tnb-No',
                             article: ''
+                        },
+                        reporting: {
+                            collectMetrics: true,
+                            includeInHeroProjectCount: true,
+                            includeInHeroVisitTotal: true
                         },
                         metrics: {
                             visits: 49865,
@@ -142,6 +215,11 @@ const ProjectManager = {
                             group: 'https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about',
                             showcase: ''
                         },
+                        reporting: {
+                            collectMetrics: false,
+                            includeInHeroProjectCount: false,
+                            includeInHeroVisitTotal: false
+                        },
                         metrics: {
                             visits: null,
                             playing: null,
@@ -151,9 +229,11 @@ const ProjectManager = {
                         }
                     }
                 ];
+                const summary = buildProjectSummary(fallbackAll, null);
                 projectsData = {
                     all: fallbackAll,
-                    featured: fallbackAll.filter(p => p.featured)
+                    featured: fallbackAll.filter(p => p.featured),
+                    summary
                 };
                 return projectsData;
             });
@@ -166,6 +246,19 @@ const ProjectManager = {
     },
     getFeatured: function () {
         return projectsData.featured;
+    },
+    getSummary: function () {
+        if (!projectsData.summary) {
+            projectsData.summary = buildProjectSummary(projectsData.all, null);
+        }
+        return projectsData.summary;
+    },
+    getHeroSummary: function () {
+        const summary = this.getSummary();
+        return summary && summary.hero ? summary.hero : buildProjectSummary(projectsData.all, null).hero;
+    },
+    getHeroProjects: function () {
+        return projectsData.all.filter(shouldIncludeInHeroProjectCount);
     },
 
     // 특정 프로젝트 가져오기
@@ -202,6 +295,8 @@ const ProjectManager = {
             projectsData.featured.push(newProject);
         }
 
+        projectsData.summary = buildProjectSummary(projectsData.all, null);
+
         return newProject;
     },
 
@@ -211,11 +306,8 @@ const ProjectManager = {
         if (projectIndex !== -1) {
             projectsData.all[projectIndex] = { ...projectsData.all[projectIndex], ...updateData };
 
-            // featured 목록도 업데이트
-            const featuredIndex = projectsData.featured.findIndex(project => project.id === id);
-            if (featuredIndex !== -1) {
-                projectsData.featured[featuredIndex] = { ...projectsData.featured[featuredIndex], ...updateData };
-            }
+            projectsData.featured = projectsData.all.filter(project => project.featured);
+            projectsData.summary = buildProjectSummary(projectsData.all, null);
 
             return projectsData.all[projectIndex];
         }

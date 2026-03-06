@@ -15,7 +15,7 @@
 ## 3. 정보 구조 (현재 구현)
 - **홈(`index.html`)**
   - Hero: Roblox 전문 스튜디오 메시지, CTA는 `projects.html`.
-  - 커뮤니티 포털: Roblox 그룹 3종(IDs: 34453707, 294985728, 916094546) 아이콘/멤버 수를 표시. `npm run update:metrics`가 `data/communities.json`을 생성/갱신하고, 프런트는 이 JSON을 우선 사용하며 실패 시 Roblox 공개 API로 폴백. 각 링크는 Roblox share/community URL로 연결.
+  - 커뮤니티 포털: `data/community-groups.json`에 정의된 활성 Roblox 그룹의 아이콘/멤버 수를 표시. `npm run update:metrics`가 `status/showOnHomepage/includeInHeroSubscriberTotal` 플래그 기준으로 `data/communities.json`을 생성/갱신하고, 프런트는 이 JSON을 우선 사용하며 실패 시 설정 JSON + Roblox 공개 API로 폴백한다. 각 링크는 Roblox share/community URL로 연결.
   - 프로젝트 프리뷰: `projects-data.js`의 featured 목록을 `project-renderer.js`로 동적 렌더.
 - **프로젝트 목록(`projects.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
 - **프로젝트 상세**
@@ -25,17 +25,18 @@
 
 ## 4. 데이터 및 렌더링 구조
 - **데이터 소스**: `data/projects.json` (정적 JSON) + `js/projects-data.js` (fallback)
-  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`, `placeId`, `universeId`, `links{play,trailer,article,group,showcase}`, `metrics{visits,playing,favorites,likeRatio,updatedAt}`.
+  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`, `placeId`, `universeId`, `links{play,trailer,article,group,showcase}`, `reporting{collectMetrics,includeInHeroProjectCount,includeInHeroVisitTotal}`, `metrics{visits,playing,favorites,likeRatio,updatedAt}`, `summary.hero`.
 - **렌더링**: `js/project-renderer.js`
   - JSON 로드 후 카드 동적 생성, 플랫폼/상태/카테고리 배지, 언어 변경 시 실시간 텍스트 교체, 목록 카드에 visits/playing/favorites 배지 노출.
 - **상세 페이지 지표/링크 주입**: `js/main.js`
   - `renderHeaderMetrics()`로 상세 헤더에 방문자수·좋아요% 표시, `applyProjectLinks()`로 CTA URL을 프로젝트 데이터 기반으로 동기화.
-- **커뮤니티 데이터**: 정적 JSON + 공개 API 폴백
-  - 정적 소스: `data/communities.json` (`npm run update:metrics` 실행 시 생성) — `groups[]`, `totalMembers`, `icon`, `memberCount`, `updatedAt`
+- **커뮤니티 데이터**: 설정 JSON + 정적 JSON + 공개 API 폴백
+  - 설정 소스: `data/community-groups.json` — `status`, `showOnHomepage`, `includeInHeroSubscriberTotal`, `names`, `url`
+  - 정적 소스: `data/communities.json` (`npm run update:metrics` 실행 시 생성) — `groups[]`, `totals.heroSubscriberCount`, `totalMembers`, `icon`, `memberCount`, `updatedAt`
   - 폴백 API:  
     - 그룹 정보: `https://groups.roblox.com/v1/groups/{groupId}`  
     - 썸네일: `https://thumbnails.roblox.com/v1/groups/icons?groupIds=...&size=150x150&format=Png&isCircular=false`
-  - 구현: `js/main.js`의 `renderCommunities()`가 JSON 우선 사용, 실패 시 API로 재시도 후 폴백 렌더. 실패 시 에러 메시지 출력.
+  - 구현: `js/main.js`의 `renderCommunities()`가 정적 JSON 우선 사용, 실패 시 설정 JSON을 기준으로 API 재시도 후 폴백 렌더. 실패 시 에러 메시지 출력.
 - **국제화**: `js/i18n.js`
   - 지원 언어: KO/EN/JA. `localStorage` 기반 언어 기억, `data-key`를 통해 텍스트 교체, `languageChanged` 커스텀 이벤트로 프로젝트 카드 재렌더.
 
@@ -49,7 +50,7 @@
 
 ### 진행 상태 메모
 - N-01(신규 프로젝트 추가: Tower Flood Race) 완료, 데이터/페이지/지표 연동 반영됨.
-- N-02(커뮤니티 포탈 섹션) 완료: 홈 섹션에 3개 그룹 아이콘·멤버 수 실시간 표시.
+- N-02(커뮤니티 포탈 섹션) 완료: 홈 섹션에 활성 그룹 아이콘·멤버 수 표시.
 
 ## 6. 기능 요구사항 (현행)
 - 다국어 전환 버튼 동작 및 브라우저 저장.

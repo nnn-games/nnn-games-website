@@ -24,7 +24,10 @@
 
   /* Header & Nav */
   .main-header {
-    @apply fixed top-0 left-0 w-full bg-white/95 backdrop-blur shadow-sm z-50 border-b border-gray-100;
+    @apply fixed top-0 left-0 w-full bg-white/95 backdrop-blur shadow-sm z-50 border-b border-gray-100 transition;
+  }
+  .main-header.scrolled {
+    @apply bg-white shadow-md border-gray-200;
   }
   .main-header .container {
     @apply flex items-center justify-between h-16;
@@ -47,33 +50,92 @@
   .main-nav a.active {
     @apply text-brand-primary;
   }
+  .lang-switcher {
+    @apply flex items-center gap-2 pl-3 border-l border-gray-200;
+  }
+  .lang-switcher a {
+    @apply text-xs font-semibold text-gray-500;
+  }
+  .lang-switcher a.active {
+    @apply text-brand-primary;
+  }
   .menu-toggle {
-    @apply md:hidden text-2xl cursor-pointer;
+    @apply md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-2xl cursor-pointer transition hover:border-brand-primary hover:text-brand-primary focus:border-brand-primary focus:outline-none focus:ring focus:ring-brand-primary/20;
   }
   .main-nav.active ul {
-    @apply flex flex-col gap-2 bg-white shadow-md p-4 absolute top-16 left-0 w-full;
+    @apply flex flex-col gap-3 bg-white shadow-xl p-5 absolute top-16 left-0 w-full border-t border-gray-100;
+  }
+  .main-nav.active .lang-switcher {
+    @apply pl-0 pt-2 border-0;
   }
 
   /* Hero */
   .hero {
-    @apply bg-gradient-to-r from-brand-primary to-brand-primaryDark text-white pt-24 pb-16 mt-16;
+    @apply relative overflow-hidden text-white pt-20 pb-16 mt-16;
+    background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 48%, #38bdf8 100%);
+  }
+  .hero::before,
+  .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.55;
+  }
+  .hero::before {
+    width: 18rem;
+    height: 18rem;
+    left: -4rem;
+    bottom: -6rem;
+    background: rgba(56, 189, 248, 0.45);
+  }
+  .hero::after {
+    width: 20rem;
+    height: 20rem;
+    right: -5rem;
+    top: -5rem;
+    background: rgba(255, 255, 255, 0.18);
+  }
+  .hero-shell {
+    @apply relative z-10;
   }
   .hero-content {
-    @apply max-w-3xl mx-auto text-center space-y-4;
+    @apply max-w-4xl text-left space-y-5;
+  }
+  .hero-eyebrow {
+    @apply inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white/80;
   }
   .hero h1 {
-    @apply text-3xl md:text-4xl font-bold leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
   }
-  .hero p {
-    @apply text-lg md:text-xl text-white/80;
+  .hero-content > p:not(.hero-eyebrow) {
+    @apply text-base md:text-lg text-white/80;
+  }
+  .hero-actions {
+    @apply flex flex-wrap gap-3 pt-2;
   }
   .cta-button {
-    @apply inline-block px-6 py-3 bg-white text-brand-primary font-semibold rounded-lg shadow hover:-translate-y-0.5 hover:shadow-lg transition;
+    @apply inline-flex items-center justify-center px-6 py-3.5 bg-white text-brand-secondary font-semibold rounded-full shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition;
+  }
+  .hero-stats {
+    @apply grid gap-3 pt-4 sm:grid-cols-3;
+  }
+  .hero-stat {
+    @apply rounded-2xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur;
+  }
+  .hero-stat strong {
+    @apply block text-2xl md:text-3xl font-bold text-white;
+  }
+  .hero-stat span {
+    @apply mt-1 block text-sm text-white/70;
   }
 
   /* Sections */
   section {
     @apply py-12;
+  }
+  .section-kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary;
   }
   /* Page header shared style: avoid overlap with fixed header + ensure contrast */
   .page-header {
@@ -114,11 +176,20 @@
   .project-card {
     @apply flex flex-col h-full overflow-hidden;
   }
+  .project-image-wrapper {
+    @apply relative;
+  }
+  .project-image-wrapper .platform-badge {
+    @apply absolute left-3 top-3 z-10;
+  }
+  .project-badges {
+    @apply absolute right-3 top-3 z-10 flex flex-wrap gap-2;
+  }
   .project-card img {
     @apply w-full h-48 object-cover rounded-lg;
   }
   .project-card .project-info {
-    @apply mt-4 space-y-2;
+    @apply mt-4 space-y-3 grow flex flex-col;
   }
   .project-card h3 {
     @apply text-lg font-semibold text-gray-900;
@@ -126,8 +197,33 @@
   .project-card p {
     @apply text-sm text-gray-600;
   }
+  .home-project-card .project-summary {
+    @apply text-sm text-gray-600;
+    min-height: 3.5rem;
+  }
   .project-card .learn-more {
-    @apply text-sm font-semibold text-indigo-600 hover:text-indigo-700 inline-flex items-center;
+    @apply text-sm font-semibold text-brand-primary hover:text-brand-primaryDark inline-flex items-center mt-auto pt-1;
+  }
+  .project-meta {
+    @apply flex flex-wrap gap-2 text-xs font-medium text-gray-500;
+  }
+  .project-metrics {
+    @apply flex flex-wrap gap-2;
+  }
+  .project-kpi-grid {
+    @apply grid grid-cols-3 gap-2;
+  }
+  .project-kpi {
+    @apply rounded-xl border border-slate-200 bg-slate-50 px-3 py-3;
+  }
+  .project-kpi-label {
+    @apply block text-[11px] font-semibold uppercase tracking-[0.16em] text-gray-500;
+  }
+  .project-kpi-value {
+    @apply mt-1 block text-base font-semibold text-gray-900;
+  }
+  .project-updated {
+    @apply text-xs font-medium text-gray-500;
   }
 
   /* Badges */
@@ -169,10 +265,13 @@
   .section-header {
     @apply text-center space-y-2 mb-8;
   }
+  .section-header-left {
+    @apply text-left items-start;
+  }
   .section-header h2 {
     @apply text-2xl md:text-3xl font-bold text-brand-secondary;
   }
-  .section-header p {
+  .section-header > p:not(.section-kicker) {
     @apply text-gray-600;
   }
   .community-section {
@@ -194,6 +293,40 @@
   .community-error {
     @apply text-center text-sm text-gray-500;
   }
+  .ugc-spotlight-section {
+    @apply pb-0;
+  }
+  .ugc-spotlight-shell {
+    @apply overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm lg:grid lg:grid-cols-2;
+  }
+  .ugc-spotlight-media {
+    @apply bg-slate-100;
+    min-height: 20rem;
+  }
+  .ugc-spotlight-media img {
+    @apply h-full w-full object-cover;
+  }
+  .ugc-spotlight-content {
+    @apply flex flex-col gap-5 p-6 md:p-8;
+  }
+  .ugc-spotlight-header {
+    @apply flex flex-wrap items-center gap-3;
+  }
+  .ugc-spotlight-header h2 {
+    @apply text-2xl md:text-3xl font-bold text-brand-secondary;
+  }
+  .ugc-spotlight-meta {
+    @apply flex flex-wrap gap-2;
+  }
+  .ugc-spotlight-copy {
+    @apply space-y-3;
+  }
+  .ugc-spotlight-copy p {
+    @apply text-sm leading-6 text-gray-600 md:text-base;
+  }
+  .ugc-spotlight-actions {
+    @apply mt-auto flex flex-wrap gap-3 pt-2;
+  }
 
   /* Buttons */
   .btn-primary {
@@ -204,6 +337,32 @@
   }
   .btn-ghost {
     @apply inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-gray-200 text-brand-secondary font-semibold hover:border-brand-primary hover:text-brand-primary transition;
+  }
+
+  /* Project controls */
+  .project-controls {
+    @apply py-8;
+  }
+  .project-controls-header {
+    @apply mb-5 flex flex-col gap-4 rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 lg:flex-row lg:items-end lg:justify-between;
+  }
+  .project-controls-header h2 {
+    @apply mt-2 text-2xl font-bold text-gray-900;
+  }
+  .project-controls-header > div > p:last-child {
+    @apply mt-2 text-sm text-gray-600;
+  }
+  .project-filters {
+    @apply rounded-[1.5rem] border border-gray-100 bg-white p-5 shadow-sm;
+  }
+  .filter-field {
+    @apply min-w-0;
+  }
+  .project-filter-summary {
+    @apply mt-4 text-sm text-gray-600;
+  }
+  .project-empty {
+    @apply mt-6 rounded-2xl border border-dashed border-gray-300 bg-slate-50 px-6 py-10 text-center text-sm text-gray-500;
   }
 
   /* Project detail pages */

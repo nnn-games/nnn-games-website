@@ -31,7 +31,7 @@
                 <img src="images/nnn-logo.png" alt="NNN GAMES">
                 <span class="logo-text">NNN GAMES</span>
             </a>
-            <nav class="main-nav">
+            <nav class="main-nav" id="site-navigation">
                 <ul>
                     <li><a href="index.html" data-key="nav_home">홈</a></li>
                     <li><a href="projects.html" class="active" data-key="nav_projects">프로젝트</a></li>
@@ -43,7 +43,7 @@
                     </li>
                 </ul>
             </nav>
-            <div class="menu-toggle">☰</div>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="메뉴 열기" data-key-aria-label="nav_menu_open">☰</button>
         </div>
     </header>
 
@@ -56,27 +56,40 @@
         </section>
 
         <!-- 필터/검색 -->
-        <section class="container py-8">
+        <section class="project-controls container">
+            <div class="project-controls-header">
+                <div>
+                    <p class="section-kicker" data-key="projects_filter_kicker">Portfolio Explorer</p>
+                    <h2 data-key="projects_filter_title">필터로 맞는 프로젝트를 빠르게 찾기</h2>
+                    <p data-key="projects_filter_desc">카테고리, 진행 상태, 키워드로 포트폴리오를 바로 좁힐 수 있습니다.</p>
+                </div>
+                <button id="resetFilters" type="button" class="btn-ghost" data-key="projects_filter_reset">필터 초기화</button>
+            </div>
             <div class="project-filters grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center">
-                <div class="space-y-1">
-                    <label for="categoryFilter" class="block font-semibold text-brand-secondary">카테고리</label>
+                <div class="filter-field space-y-1">
+                    <label for="categoryFilter" class="block font-semibold text-brand-secondary" data-key="projects_filter_category_label">카테고리</label>
                     <select id="categoryFilter" class="w-full px-3 py-2.5 border border-gray-200 rounded-lg bg-white text-sm text-brand-secondary focus:border-brand-primary focus:ring focus:ring-brand-primary/20">
-                        <option value="all">All</option>
-                        <option value="roblox">Roblox</option>
+                        <option value="all" data-key="projects_filter_option_all">전체</option>
+                        <option value="roblox" data-key="projects_filter_option_roblox">Roblox</option>
                     </select>
                 </div>
-                <div class="space-y-1">
-                    <label for="statusFilter" class="block font-semibold text-brand-secondary">상태</label>
+                <div class="filter-field space-y-1">
+                    <label for="statusFilter" class="block font-semibold text-brand-secondary" data-key="projects_filter_status_label">상태</label>
                     <select id="statusFilter" class="w-full px-3 py-2.5 border border-gray-200 rounded-lg bg-white text-sm text-brand-secondary focus:border-brand-primary focus:ring focus:ring-brand-primary/20">
-                        <option value="all">All</option>
-                        <option value="active">Active</option>
-                        <option value="development">Development</option>
+                        <option value="all" data-key="projects_filter_option_all">전체</option>
+                        <option value="active" data-key="projects_filter_option_active">운영 중</option>
+                        <option value="development" data-key="projects_filter_option_development">개발 중</option>
+                        <option value="completed" data-key="projects_filter_option_completed">완료</option>
+                        <option value="paused" data-key="projects_filter_option_paused">일시중단</option>
                     </select>
                 </div>
-                <div class="space-y-1">
-                    <label for="keywordFilter" class="block font-semibold text-brand-secondary">검색</label>
-                    <input id="keywordFilter" type="text" placeholder="프로젝트 검색" class="w-full px-3 py-2.5 border border-gray-200 rounded-lg bg-white text-sm text-brand-secondary focus:border-brand-primary focus:ring focus:ring-brand-primary/20">
+                <div class="filter-field space-y-1">
+                    <label for="keywordFilter" class="block font-semibold text-brand-secondary" data-key="projects_filter_keyword_label">검색</label>
+                    <input id="keywordFilter" type="text" placeholder="프로젝트 검색" data-key-placeholder="projects_filter_keyword_placeholder" class="w-full px-3 py-2.5 border border-gray-200 rounded-lg bg-white text-sm text-brand-secondary focus:border-brand-primary focus:ring focus:ring-brand-primary/20">
                 </div>
+            </div>
+            <div class="project-filter-summary">
+                <p id="projectResultsText" data-key="projects_filter_results_default">전체 프로젝트를 표시하고 있습니다.</p>
             </div>
         </section>
 
@@ -84,6 +97,17 @@
         <section class="project-preview container">
             <div class="project-grid" id="all-projects-grid">
                 <!-- 프로젝트 카드들은 project-renderer.js에 의해 동적으로 생성됩니다 -->
+            </div>
+            <p id="projectEmptyState" class="project-empty hidden" data-key="projects_empty_state">조건에 맞는 프로젝트가 없습니다. 필터를 조정해 주세요.</p>
+        </section>
+
+        <section class="project-preview container" id="specialProjectSection">
+            <div class="section-header section-header-left">
+                <p class="section-kicker">UGC</p>
+                <h2>NNN UGC</h2>
+            </div>
+            <div class="project-grid" id="special-projects-grid">
+                <!-- NNN UGC 카드는 별도 섹션으로 렌더링됩니다 -->
             </div>
         </section>
     </main>
