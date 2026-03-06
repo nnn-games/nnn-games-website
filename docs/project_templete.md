@@ -2,6 +2,7 @@
 
 신규 프로젝트를 추가할 때 아래 항목을 채워 주세요. 값을 모르면 `TBD`로 표시하고, 번역이 없으면 한국어만 먼저 적어도 됩니다.  
 데이터 확정 후 `data/projects.json`, `js/i18n.js`(필요 시), 개별 상세 페이지(옵션) 순서로 반영합니다.
+표준 상세 페이지를 사용할 경우 프로젝트별 본문 카피는 `js/project-details/<slug>.js`에 저장하고, HTML은 공통 셸 + `js/project-detail.js` 렌더러를 사용합니다.
 
 ---
 ### 1) 기본 메타
@@ -48,7 +49,11 @@
 ### 6) 상세 페이지 생성 여부
 - 필요 여부: yes/no  
 - 필요 시 파일명: `<slug>.html` (예: `tower-flood-race.html`)  
-- 포함 섹션: 헤더 메타(OG/SEO), 히어로/CTA, 개요, 특징(리스트), 관련 링크, 갤러리.
+- 표준 방식:
+  - HTML: `data-project-id="<slug>"`를 가진 공통 셸 페이지
+  - 설정 파일: `js/project-details/<slug>.js`
+  - 공통 렌더러: `js/project-detail.js`
+- 포함 섹션: 히어로/CTA, 개요, 핵심 포인트, 스냅샷, 특징, 관련 링크, 갤러리.
 
 ### 7) 검증 체크리스트
 - JSON 스키마: 필수 필드(id, title{ko,en,ja}, description{ko,en,ja}, image, detailPage, category, status, launchDate, platform, client, technologies, links, metrics) 누락 없음

@@ -425,6 +425,11 @@ document.addEventListener('DOMContentLoaded', function() {
         syncHomeUgcSpotlight();
     });
 
+    document.addEventListener('projectDetailRendered', function () {
+        renderHeaderMetrics();
+        applyProjectLinks();
+    });
+
     // 상세 페이지 헤더 지표 표시 (visits, likeRatio)
     const renderHeaderMetrics = () => {
         if (!(window.ProjectManager && ProjectManager.loadProjectsData)) return;

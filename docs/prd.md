@@ -19,7 +19,8 @@
   - 프로젝트 프리뷰: `projects-data.js`의 featured 목록을 `project-renderer.js`로 동적 렌더.
 - **프로젝트 목록(`projects.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
 - **프로젝트 상세**
-  - `tower-flood-race.html` (Roblox 오비 레이스), `korean-spa.html` (Roblox 퍼즐 어드벤처), `legendary-dj-gear.html` (Roblox 음악 수집), `nnn-ugc.html` (Roblox UGC 아이템)
+  - 표준화된 공통 셸 + 설정 파일 구조: `tower-flood-race.html`, `korean-spa.html`, `legendary-dj-gear.html`, `great-tower-reset.html`, `hacker-vs-security.html`
+  - 기존 정적 상세 페이지: `nnn-ugc.html`
 - **문의(`contact.html`)**: 이메일, 주소, 사업자등록번호, 지도 iframe.
 - **공통 UI**: 헤더/푸터, 모바일 메뉴 토글(`js/main.js`), 이미지 지연 로딩 및 스크롤 애니메이션, CTA 추적(sendBeacon 우선 → fetch 폴백, payload v/schema/cta/origin/projectId/href/text/viewport 포함). `meta[name="cta-endpoint"]`/전역 `window.CTA_CONFIG.endpoint`로 엔드포인트 오버라이드 가능, 기본 `/analytics/cta`, 스키마 버전은 `cta-schema-version` 메타 또는 전역 설정으로 덮어씀(기본 `v1`).
 
@@ -30,6 +31,8 @@
   - JSON 로드 후 카드 동적 생성, 플랫폼/상태/카테고리 배지, 언어 변경 시 실시간 텍스트 교체, 목록 카드에 visits/playing/favorites 배지 노출.
 - **상세 페이지 지표/링크 주입**: `js/main.js`
   - `renderHeaderMetrics()`로 상세 헤더에 방문자수·좋아요% 표시, `applyProjectLinks()`로 CTA URL을 프로젝트 데이터 기반으로 동기화.
+- **상세 페이지 본문 렌더링**: `js/project-detail.js` + `js/project-details/*.js`
+  - 프로젝트별 설정 파일에서 SEO, 히어로 카피, 개요, 핵심 포인트, 스냅샷, 특징, 링크, 갤러리를 읽어 공통 레이아웃으로 렌더.
 - **커뮤니티 데이터**: 설정 JSON + 정적 JSON + 공개 API 폴백
   - 설정 소스: `data/community-groups.json` — `status`, `showOnHomepage`, `includeInHeroSubscriberTotal`, `names`, `url`
   - 정적 소스: `data/communities.json` (`npm run update:metrics` 실행 시 생성) — `groups[]`, `totals.heroSubscriberCount`, `totalMembers`, `icon`, `memberCount`, `updatedAt`

@@ -227,6 +227,82 @@ const ProjectManager = {
                             likeRatio: null,
                             updatedAt: null
                         }
+                    },
+                    {
+                        id: 'great-tower-reset',
+                        title: { ko: 'The Great Tower Reset', en: 'The Great Tower Reset', ja: 'The Great Tower Reset' },
+                        description: {
+                            ko: '리셋 성장과 타워 돌파를 결합한 Roblox 메타 진행형 프로젝트.',
+                            en: 'A Roblox progression project built around tower pushes and reset-driven growth.',
+                            ja: 'タワー攻略とリセット成長を組み合わせたRobloxメタ進行型プロジェクト。'
+                        },
+                        image: 'images/gt-preview.jpg',
+                        detailPage: 'great-tower-reset.html',
+                        showDetailLinkInProjects: false,
+                        category: 'roblox',
+                        status: 'development',
+                        featured: false,
+                        launchDate: '2026-Q2',
+                        platform: 'Roblox',
+                        client: 'Internal Project',
+                        technologies: ['Roblox Studio', 'Luau', 'Progression Systems'],
+                        links: {
+                            play: '',
+                            trailer: '',
+                            article: '',
+                            group: '',
+                            showcase: ''
+                        },
+                        reporting: {
+                            collectMetrics: false,
+                            includeInHeroProjectCount: false,
+                            includeInHeroVisitTotal: false
+                        },
+                        metrics: {
+                            visits: null,
+                            playing: null,
+                            favorites: null,
+                            likeRatio: null,
+                            updatedAt: null
+                        }
+                    },
+                    {
+                        id: 'hacker-vs-security',
+                        title: { ko: 'Hacker vs Security', en: 'Hacker vs Security', ja: 'Hacker vs Security' },
+                        description: {
+                            ko: '침투와 방어의 읽기 싸움을 중심으로 한 Roblox 비대칭 전략 PvP 프로젝트.',
+                            en: 'A Roblox asymmetric strategy PvP project centered on infiltration and defensive counterplay.',
+                            ja: '侵入と防衛の読み合いを軸にしたRoblox非対称戦略PvPプロジェクト。'
+                        },
+                        image: 'images/projectk-preview.jpg',
+                        detailPage: 'hacker-vs-security.html',
+                        showDetailLinkInProjects: false,
+                        category: 'roblox',
+                        status: 'development',
+                        featured: false,
+                        launchDate: '2026-Q3',
+                        platform: 'Roblox',
+                        client: 'Internal Project',
+                        technologies: ['Roblox Studio', 'Luau', 'Systemic PvP'],
+                        links: {
+                            play: '',
+                            trailer: '',
+                            article: '',
+                            group: '',
+                            showcase: ''
+                        },
+                        reporting: {
+                            collectMetrics: false,
+                            includeInHeroProjectCount: false,
+                            includeInHeroVisitTotal: false
+                        },
+                        metrics: {
+                            visits: null,
+                            playing: null,
+                            favorites: null,
+                            likeRatio: null,
+                            updatedAt: null
+                        }
                     }
                 ];
                 const summary = buildProjectSummary(fallbackAll, null);

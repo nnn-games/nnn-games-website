@@ -233,6 +233,7 @@ const ProjectRenderer = {
         const statusBadge = this.getStatusBadge(project.status, lang);
         const categoryBadge = this.getCategoryBadge(project.category);
         const learnMore = this.t(lang, 'learn_more', 'Learn More →');
+        const detailLink = project.showDetailLinkInProjects === false ? '' : project.detailPage;
 
         const metricBadges = [
             typeof metrics.visits === 'number' ? this.formatMetricBadge('visits', metrics.visits, lang) : '',
@@ -257,7 +258,7 @@ const ProjectRenderer = {
                     <span class="launch-date">${project.launchDate}</span>
                 </div>
                 ${metricBadges ? `<div class="project-metrics">${metricBadges}</div>` : ''}
-                <a href="${project.detailPage}" class="learn-more" data-key="learn_more" data-cta="project-card-list" data-project-id="${project.id}" data-cta-origin="projects-list">${learnMore}</a>
+                ${detailLink ? `<a href="${detailLink}" class="learn-more" data-key="learn_more" data-cta="project-card-list" data-project-id="${project.id}" data-cta-origin="projects-list">${learnMore}</a>` : ''}
             </div>
         `;
 
