@@ -40,19 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-<<<<<<< HEAD
-        "visits": 3482026,
-        "playing": 428,
-        "favorites": 223839,
-        "likeRatio": 0.5412371134020618,
-        "updatedAt": "2026-03-12T04:32:13.314Z"
-=======
-        "visits": 3322592,
-        "playing": 695,
-        "favorites": 215792,
-        "likeRatio": 0.55119825708061,
-        "updatedAt": "2026-03-11T03:08:42.397Z"
->>>>>>> cbb5ff115b46f2108b0ed2008d61debc1eb73041
+        "visits": 3488771,
+        "playing": 371,
+        "favorites": 224137,
+        "likeRatio": 0.5417095777548918,
+        "updatedAt": "2026-03-12T06:23:16.532Z"
       }
     },
     {
@@ -93,19 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-<<<<<<< HEAD
-        "visits": 97012,
-        "playing": 0,
+        "visits": 97018,
+        "playing": 1,
         "favorites": 543,
         "likeRatio": 0.8656716417910447,
-        "updatedAt": "2026-03-12T04:32:13.314Z"
-=======
-        "visits": 96859,
-        "playing": 0,
-        "favorites": 541,
-        "likeRatio": 0.8654708520179372,
-        "updatedAt": "2026-03-11T03:08:42.397Z"
->>>>>>> cbb5ff115b46f2108b0ed2008d61debc1eb73041
+        "updatedAt": "2026-03-12T06:23:16.532Z"
       }
     },
     {
@@ -146,19 +130,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-<<<<<<< HEAD
         "visits": 49912,
         "playing": 0,
         "favorites": 202,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-03-12T04:32:13.314Z"
-=======
-        "visits": 49911,
-        "playing": 0,
-        "favorites": 202,
-        "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-03-11T03:08:42.397Z"
->>>>>>> cbb5ff115b46f2108b0ed2008d61debc1eb73041
+        "updatedAt": "2026-03-12T06:23:16.532Z"
       }
     },
     {
@@ -310,21 +286,13 @@
         "korean-spa",
         "legendary-dj-gear"
       ],
-<<<<<<< HEAD
-      "totalVisits": 3628950,
-=======
-      "totalVisits": 3469362,
->>>>>>> cbb5ff115b46f2108b0ed2008d61debc1eb73041
+      "totalVisits": 3635701,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
         "legendary-dj-gear"
       ],
-<<<<<<< HEAD
-      "updatedAt": "2026-03-12T04:32:13.314Z"
-=======
-      "updatedAt": "2026-03-11T03:08:42.397Z"
->>>>>>> cbb5ff115b46f2108b0ed2008d61debc1eb73041
+      "updatedAt": "2026-03-12T06:23:16.532Z"
     }
   }
 }
