@@ -12,9 +12,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 28183,
+      "memberCount": 36769,
       "icon": "https://tr.rbxcdn.com/180DAY-bff276669a9e4f042bbf6da9d8283def/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-03-06T15:23:13.657Z"
+      "updatedAt": "2026-03-12T04:32:13.314Z"
     },
     {
       "id": "937186626",
@@ -28,9 +28,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 3,
+      "memberCount": 5,
       "icon": "https://tr.rbxcdn.com/180DAY-1d0faa02bd011ee15f3b59a17a3e38ab/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-03-06T15:23:13.657Z"
+      "updatedAt": "2026-03-12T04:32:13.314Z"
     },
     {
       "id": "34453707",
@@ -44,9 +44,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 6388,
-      "icon": "https://tr.rbxcdn.com/180DAY-2a71dcda55951c090bc74a494c0f9fe8/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-03-06T15:23:13.657Z"
+      "memberCount": 6390,
+      "icon": "https://tr.rbxcdn.com/180DAY-ad505ccb7ae1b3c6c443a77a589249a5/150/150/Image/Png/noFilter",
+      "updatedAt": "2026-03-12T04:32:13.314Z"
     },
     {
       "id": "916094546",
@@ -60,13 +60,13 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 192,
+      "memberCount": 191,
       "icon": "https://tr.rbxcdn.com/180DAY-b5ff86583c7205da1f4d54a94fa60aab/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-03-06T15:23:13.657Z"
+      "updatedAt": "2026-03-12T04:32:13.314Z"
     }
   ],
   "totals": {
-    "heroSubscriberCount": 34766,
+    "heroSubscriberCount": 43355,
     "homepageGroupIds": [
       "294985728",
       "937186626",
@@ -74,6 +74,6 @@
       "916094546"
     ]
   },
-  "totalMembers": 34766,
-  "updatedAt": "2026-03-06T15:23:13.657Z"
+  "totalMembers": 43355,
+  "updatedAt": "2026-03-12T04:32:13.314Z"
 }
