@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 4046993,
-        "playing": 576,
-        "favorites": 251491,
-        "likeRatio": 0.5381083562901745,
-        "updatedAt": "2026-03-16T02:17:58.229Z"
+        "visits": 4057177,
+        "playing": 370,
+        "favorites": 252048,
+        "likeRatio": 0.5385321100917431,
+        "updatedAt": "2026-03-16T04:37:42.089Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 97567,
-        "playing": 2,
+        "visits": 97581,
+        "playing": 0,
         "favorites": 544,
         "likeRatio": 0.8662704309063893,
-        "updatedAt": "2026-03-16T02:17:58.229Z"
+        "updatedAt": "2026-03-16T04:37:42.089Z"
       }
     },
     {
@@ -134,7 +134,7 @@
         "playing": 0,
         "favorites": 202,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-03-16T02:17:58.229Z"
+        "updatedAt": "2026-03-16T04:37:42.089Z"
       }
     },
     {
@@ -162,13 +162,14 @@
         "Luau",
         "Live Arena Systems"
       ],
-      "placeId": null,
+      "placeId": "109322674605513",
+      "universeId": "9867900121",
       "links": {
         "play": "",
         "trailer": "",
         "article": "",
         "group": "",
-        "showcase": ""
+        "showcase": "https://www.roblox.com/ko/games/109322674605513/Fruit-Battles"
       },
       "reporting": {
         "collectMetrics": false,
@@ -335,13 +336,13 @@
         "korean-spa",
         "legendary-dj-gear"
       ],
-      "totalVisits": 4194473,
+      "totalVisits": 4204671,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
         "legendary-dj-gear"
       ],
-      "updatedAt": "2026-03-16T02:17:58.229Z"
+      "updatedAt": "2026-03-16T04:37:42.089Z"
     }
   }
 }

@@ -208,12 +208,14 @@ const ProjectManager = {
                         platform: 'Roblox',
                         client: 'Internal Project',
                         technologies: ['Roblox Studio', 'Luau', 'Live Arena Systems'],
+                        placeId: '109322674605513',
+                        universeId: '9867900121',
                         links: {
                             play: '',
                             trailer: '',
                             article: '',
                             group: '',
-                            showcase: ''
+                            showcase: 'https://www.roblox.com/ko/games/109322674605513/Fruit-Battles'
                         },
                         reporting: {
                             collectMetrics: false,

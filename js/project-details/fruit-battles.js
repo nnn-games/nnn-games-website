@@ -27,7 +27,7 @@ window.ProjectDetailConfigs['fruit-battles'] = {
             en: 'A fast-paced Roblox arena PvP project built around instant entry, slap-and-skill combat, and loot that fuels upgrades and collection.',
             ja: 'すぐに戦場へ飛び込み、戦利品を集めて強化とコレクションへつなげる、テンポの速いRobloxアリーナPvPプロジェクトです。'
         },
-        ogImage: 'images/gt-main.jpg'
+        ogImage: 'images/fruit-battles-main.jpg'
     },
     hero: {
         title: {
@@ -56,14 +56,24 @@ window.ProjectDetailConfigs['fruit-battles'] = {
             ja: 'プラットフォーム: Roblox'
         }
     },
-    ctaButtons: [],
+    ctaButtons: [
+        {
+            type: 'showcase',
+            style: 'primary',
+            text: {
+                ko: 'Roblox 프로젝트 페이지 보기',
+                en: 'View Roblox Project Page',
+                ja: 'Robloxプロジェクトページを見る'
+            }
+        }
+    ],
     media: {
         type: 'image',
-        src: 'images/gt-main.jpg',
+        src: 'images/fruit-battles-main.jpg',
         alt: {
-            ko: 'Fruit Battles 임시 대표 이미지',
-            en: 'Fruit Battles temporary key visual',
-            ja: 'Fruit Battles 仮のキービジュアル'
+            ko: 'Fruit Battles 대표 이미지',
+            en: 'Fruit Battles key visual',
+            ja: 'Fruit Battles キービジュアル'
         }
     },
     overview: [
@@ -203,55 +213,15 @@ window.ProjectDetailConfigs['fruit-battles'] = {
             }
         }
     ],
-    links: [],
-    gallery: [
+    links: [
         {
-            src: 'images/gt-gallery-0.jpg',
-            alt: {
-                ko: 'Fruit Battles 임시 갤러리 이미지 0',
-                en: 'Fruit Battles temporary gallery image 0',
-                ja: 'Fruit Battles 仮ギャラリー画像 0'
-            }
-        },
-        {
-            src: 'images/gt-gallery-1.jpg',
-            alt: {
-                ko: 'Fruit Battles 임시 갤러리 이미지 1',
-                en: 'Fruit Battles temporary gallery image 1',
-                ja: 'Fruit Battles 仮ギャラリー画像 1'
-            }
-        },
-        {
-            src: 'images/gt-gallery-2.jpg',
-            alt: {
-                ko: 'Fruit Battles 임시 갤러리 이미지 2',
-                en: 'Fruit Battles temporary gallery image 2',
-                ja: 'Fruit Battles 仮ギャラリー画像 2'
-            }
-        },
-        {
-            src: 'images/gt-gallery-3.jpg',
-            alt: {
-                ko: 'Fruit Battles 임시 갤러리 이미지 3',
-                en: 'Fruit Battles temporary gallery image 3',
-                ja: 'Fruit Battles 仮ギャラリー画像 3'
-            }
-        },
-        {
-            src: 'images/gt-gallery-4.jpg',
-            alt: {
-                ko: 'Fruit Battles 임시 갤러리 이미지 4',
-                en: 'Fruit Battles temporary gallery image 4',
-                ja: 'Fruit Battles 仮ギャラリー画像 4'
-            }
-        },
-        {
-            src: 'images/gt-gallery-5.jpg',
-            alt: {
-                ko: 'Fruit Battles 임시 갤러리 이미지 5',
-                en: 'Fruit Battles temporary gallery image 5',
-                ja: 'Fruit Battles 仮ギャラリー画像 5'
+            type: 'showcase',
+            text: {
+                ko: 'Roblox 프로젝트 페이지 바로가기',
+                en: 'Open the Roblox project page',
+                ja: 'Robloxプロジェクトページを開く'
             }
         }
-    ]
+    ],
+    gallery: []
 };
