@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 3899212,
-        "playing": 666,
-        "favorites": 244468,
-        "likeRatio": 0.5413105413105413,
-        "updatedAt": "2026-03-15T01:13:03.725Z"
+        "visits": 4046993,
+        "playing": 576,
+        "favorites": 251491,
+        "likeRatio": 0.5381083562901745,
+        "updatedAt": "2026-03-16T02:17:58.229Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 97389,
-        "playing": 1,
-        "favorites": 543,
-        "likeRatio": 0.8656716417910447,
-        "updatedAt": "2026-03-15T01:13:03.725Z"
+        "visits": 97567,
+        "playing": 2,
+        "favorites": 544,
+        "likeRatio": 0.8662704309063893,
+        "updatedAt": "2026-03-16T02:17:58.229Z"
       }
     },
     {
@@ -134,7 +134,54 @@
         "playing": 0,
         "favorites": 202,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-03-15T01:13:03.725Z"
+        "updatedAt": "2026-03-16T02:17:58.229Z"
+      }
+    },
+    {
+      "id": "fruit-battles",
+      "title": {
+        "ko": "Fruit Battles",
+        "en": "Fruit Battles",
+        "ja": "Fruit Battles"
+      },
+      "description": {
+        "ko": "과일 스킬과 슬랩 액션으로 싸우고, 전리품으로 성장하는 Roblox 실시간 아레나 PvP 게임.",
+        "en": "A Roblox real-time arena PvP game where fruit skills, slap combat, and loot-driven growth come together.",
+        "ja": "フルーツスキルとスラップアクションで戦い、戦利品で成長するRobloxリアルタイムアリーナPvPゲーム。"
+      },
+      "image": "images/fruit-battls-preview.jpg",
+      "detailPage": "fruit-battles.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "launchDate": "2026-03",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "Live Arena Systems"
+      ],
+      "placeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
       }
     },
     {
@@ -197,6 +244,7 @@
       },
       "image": "images/gt-preview.jpg",
       "detailPage": "great-tower-reset.html",
+      "showInProjectsList": false,
       "showDetailLinkInProjects": false,
       "category": "roblox",
       "status": "development",
@@ -244,6 +292,7 @@
       },
       "image": "images/projectk-preview.jpg",
       "detailPage": "hacker-vs-security.html",
+      "showInProjectsList": false,
       "showDetailLinkInProjects": false,
       "category": "roblox",
       "status": "development",
@@ -286,13 +335,13 @@
         "korean-spa",
         "legendary-dj-gear"
       ],
-      "totalVisits": 4046514,
+      "totalVisits": 4194473,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
         "legendary-dj-gear"
       ],
-      "updatedAt": "2026-03-15T01:13:03.725Z"
+      "updatedAt": "2026-03-16T02:17:58.229Z"
     }
   }
 }

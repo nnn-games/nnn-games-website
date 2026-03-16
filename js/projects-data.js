@@ -192,6 +192,44 @@ const ProjectManager = {
                         }
                     },
                     {
+                        id: 'fruit-battles',
+                        title: { ko: 'Fruit Battles', en: 'Fruit Battles', ja: 'Fruit Battles' },
+                        description: {
+                            ko: '과일 스킬과 슬랩 액션으로 싸우고, 전리품으로 성장하는 Roblox 실시간 아레나 PvP 게임.',
+                            en: 'A Roblox real-time arena PvP game where fruit skills, slap combat, and loot-driven growth come together.',
+                            ja: 'フルーツスキルとスラップアクションで戦い、戦利品で成長するRobloxリアルタイムアリーナPvPゲーム。'
+                        },
+                        image: 'images/fruit-battls-preview.jpg',
+                        detailPage: 'fruit-battles.html',
+                        category: 'roblox',
+                        status: 'development',
+                        featured: true,
+                        launchDate: '2026-03',
+                        platform: 'Roblox',
+                        client: 'Internal Project',
+                        technologies: ['Roblox Studio', 'Luau', 'Live Arena Systems'],
+                        links: {
+                            play: '',
+                            trailer: '',
+                            article: '',
+                            group: '',
+                            showcase: ''
+                        },
+                        reporting: {
+                            collectMetrics: false,
+                            includeInHomePreview: true,
+                            includeInHeroProjectCount: false,
+                            includeInHeroVisitTotal: false
+                        },
+                        metrics: {
+                            visits: null,
+                            playing: null,
+                            favorites: null,
+                            likeRatio: null,
+                            updatedAt: null
+                        }
+                    },
+                    {
                         id: 'nnn-ugc',
                         title: { ko: 'NNN UGC', en: 'NNN UGC', ja: 'NNN UGC' },
                         description: {
@@ -238,6 +276,7 @@ const ProjectManager = {
                         },
                         image: 'images/gt-preview.jpg',
                         detailPage: 'great-tower-reset.html',
+                        showInProjectsList: false,
                         showDetailLinkInProjects: false,
                         category: 'roblox',
                         status: 'development',
@@ -276,6 +315,7 @@ const ProjectManager = {
                         },
                         image: 'images/projectk-preview.jpg',
                         detailPage: 'hacker-vs-security.html',
+                        showInProjectsList: false,
                         showDetailLinkInProjects: false,
                         category: 'roblox',
                         status: 'development',

@@ -338,6 +338,9 @@
   .btn-ghost {
     @apply inline-flex items-center justify-center px-4 py-2.5 rounded-lg border border-gray-200 text-brand-secondary font-semibold hover:border-brand-primary hover:text-brand-primary transition;
   }
+  .project-header .btn-ghost {
+    @apply border-white/35 bg-white/10 text-white hover:border-white hover:bg-white/20 hover:text-white;
+  }
 
   /* Project controls */
   .project-controls {

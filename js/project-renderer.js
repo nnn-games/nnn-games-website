@@ -2,6 +2,12 @@
 const ProjectRenderer = {
     filtersBound: false,
     _kwTimer: null,
+    projectDisplayOrder: [
+        'fruit-battles',
+        'tower-flood-race',
+        'korean-spa',
+        'legendary-dj-gear'
+    ],
 
     // 현재 언어 가져오기 (localStorage와 동기화)
     getCurrentLanguage: function () {
@@ -80,6 +86,23 @@ const ProjectRenderer = {
         }
     },
 
+    sortProjectsForDisplay: function (projects = []) {
+        const orderMap = new Map(this.projectDisplayOrder.map((id, index) => [id, index]));
+        return projects
+            .map((project, index) => ({ project, index }))
+            .sort((a, b) => {
+                const aOrder = orderMap.has(a.project.id) ? orderMap.get(a.project.id) : Number.MAX_SAFE_INTEGER;
+                const bOrder = orderMap.has(b.project.id) ? orderMap.get(b.project.id) : Number.MAX_SAFE_INTEGER;
+
+                if (aOrder !== bOrder) {
+                    return aOrder - bOrder;
+                }
+
+                return a.index - b.index;
+            })
+            .map(({ project }) => project);
+    },
+
     // 메인 페이지 프로젝트 카드 렌더링
     renderFeaturedProjects: function (containerId = 'project-grid') {
         const container = document.querySelector(`.${containerId}`) || document.querySelector(`#${containerId}`);
@@ -92,14 +115,17 @@ const ProjectRenderer = {
         const projects = ((ProjectManager.getFeatured && ProjectManager.getFeatured()) || (ProjectManager.getFeaturedProjects && ProjectManager.getFeaturedProjects()) || projectsData.featured || [])
             .filter((project) => {
                 const reporting = project && typeof project.reporting === 'object' && project.reporting ? project.reporting : {};
-                const includeInHomePreview = typeof reporting.includeInHeroProjectCount === 'boolean'
-                    ? reporting.includeInHeroProjectCount
+                const includeInHomePreview = typeof reporting.includeInHomePreview === 'boolean'
+                    ? reporting.includeInHomePreview
+                    : typeof reporting.includeInHeroProjectCount === 'boolean'
+                        ? reporting.includeInHeroProjectCount
                     : true;
-                return project && project.status === 'active' && includeInHomePreview;
+                return project && includeInHomePreview;
             });
+        const sortedProjects = this.sortProjectsForDisplay(projects);
 
         container.innerHTML = '';
-        projects.forEach(project => {
+        sortedProjects.forEach(project => {
             const projectCard = this.createProjectCard(project, currentLang);
             container.appendChild(projectCard);
         });
@@ -194,8 +220,13 @@ const ProjectRenderer = {
 
         const currentLang = this.getCurrentLanguage();
         const projects = (ProjectManager.getAll && ProjectManager.getAll()) || projectsData.all || [];
-        const primaryProjects = projects.filter(project => project.id !== 'nnn-ugc');
-        const specialProjects = projects.filter(project => project.id === 'nnn-ugc');
+        const isVisibleInProjectsList = (project) => (
+            !project || typeof project.showInProjectsList !== 'boolean' || project.showInProjectsList
+        );
+        const primaryProjects = this.sortProjectsForDisplay(
+            projects.filter(project => project.id !== 'nnn-ugc' && isVisibleInProjectsList(project))
+        );
+        const specialProjects = projects.filter(project => project.id === 'nnn-ugc' && isVisibleInProjectsList(project));
 
         container.innerHTML = '';
         primaryProjects.forEach(project => {
