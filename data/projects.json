@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 4544519,
-        "playing": 184,
-        "favorites": 271401,
-        "likeRatio": 0.5355004277159966,
-        "updatedAt": "2026-03-24T01:10:04.002Z"
+        "visits": 4613585,
+        "playing": 88,
+        "favorites": 273817,
+        "likeRatio": 0.5352591333899746,
+        "updatedAt": "2026-03-26T08:33:41.443Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 98628,
+        "visits": 98851,
         "playing": 0,
         "favorites": 549,
         "likeRatio": 0.8653846153846154,
-        "updatedAt": "2026-03-24T01:10:04.002Z"
+        "updatedAt": "2026-03-26T08:33:41.443Z"
       }
     },
     {
@@ -130,11 +130,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 49919,
+        "visits": 49921,
         "playing": 0,
         "favorites": 203,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-03-24T01:10:04.002Z"
+        "updatedAt": "2026-03-26T08:33:41.443Z"
       }
     },
     {
@@ -336,13 +336,13 @@
         "korean-spa",
         "legendary-dj-gear"
       ],
-      "totalVisits": 4693066,
+      "totalVisits": 4762357,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
         "legendary-dj-gear"
       ],
-      "updatedAt": "2026-03-24T01:10:04.002Z"
+      "updatedAt": "2026-03-26T08:33:41.443Z"
     }
   }
 }
