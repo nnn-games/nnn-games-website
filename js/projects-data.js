@@ -202,26 +202,26 @@ const ProjectManager = {
                         image: 'images/fruit-battls-preview.jpg',
                         detailPage: 'fruit-battles.html',
                         category: 'roblox',
-                        status: 'development',
+                        status: 'active',
                         featured: true,
-                        launchDate: '2026-03',
+                        launchDate: '2026-04',
                         platform: 'Roblox',
                         client: 'Internal Project',
                         technologies: ['Roblox Studio', 'Luau', 'Live Arena Systems'],
                         placeId: '109322674605513',
                         universeId: '9867900121',
                         links: {
-                            play: '',
+                            play: 'https://www.roblox.com/ko/games/109322674605513/',
                             trailer: '',
                             article: '',
                             group: '',
-                            showcase: 'https://www.roblox.com/ko/games/109322674605513/Fruit-Battles'
+                            showcase: 'https://www.roblox.com/ko/games/109322674605513/'
                         },
                         reporting: {
-                            collectMetrics: false,
+                            collectMetrics: true,
                             includeInHomePreview: true,
-                            includeInHeroProjectCount: false,
-                            includeInHeroVisitTotal: false
+                            includeInHeroProjectCount: true,
+                            includeInHeroVisitTotal: true
                         },
                         metrics: {
                             visits: null,

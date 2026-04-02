@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 4827294,
-        "playing": 134,
-        "favorites": 283057,
+        "visits": 4828475,
+        "playing": 120,
+        "favorites": 283120,
         "likeRatio": 0.5338912133891214,
-        "updatedAt": "2026-04-02T04:45:24.767Z"
+        "updatedAt": "2026-04-02T05:51:13.142Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 99823,
-        "playing": 0,
+        "visits": 99826,
+        "playing": 1,
         "favorites": 554,
         "likeRatio": 0.8657817109144543,
-        "updatedAt": "2026-04-02T04:45:24.767Z"
+        "updatedAt": "2026-04-02T05:51:13.142Z"
       }
     },
     {
@@ -134,7 +134,7 @@
         "playing": 0,
         "favorites": 203,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-04-02T04:45:24.767Z"
+        "updatedAt": "2026-04-02T05:51:13.142Z"
       }
     },
     {
@@ -152,9 +152,9 @@
       "image": "images/fruit-battls-preview.jpg",
       "detailPage": "fruit-battles.html",
       "category": "roblox",
-      "status": "development",
+      "status": "active",
       "featured": true,
-      "launchDate": "2026-03",
+      "launchDate": "2026-04",
       "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [
@@ -165,24 +165,24 @@
       "placeId": "109322674605513",
       "universeId": "9867900121",
       "links": {
-        "play": "",
+        "play": "https://www.roblox.com/ko/games/109322674605513/",
         "trailer": "",
         "article": "",
         "group": "",
-        "showcase": "https://www.roblox.com/ko/games/109322674605513/Fruit-Battles"
+        "showcase": "https://www.roblox.com/ko/games/109322674605513/"
       },
       "reporting": {
-        "collectMetrics": false,
+        "collectMetrics": true,
         "includeInHomePreview": true,
-        "includeInHeroProjectCount": false,
-        "includeInHeroVisitTotal": false
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
+        "visits": 10,
+        "playing": 2,
+        "favorites": 3,
+        "likeRatio": 1,
+        "updatedAt": "2026-04-02T05:51:13.142Z"
       }
     },
     {
@@ -330,19 +330,21 @@
   ],
   "summary": {
     "hero": {
-      "projectCount": 3,
+      "projectCount": 4,
       "projectIds": [
         "tower-flood-race",
         "korean-spa",
-        "legendary-dj-gear"
+        "legendary-dj-gear",
+        "fruit-battles"
       ],
-      "totalVisits": 4977042,
+      "totalVisits": 4978236,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
-        "legendary-dj-gear"
+        "legendary-dj-gear",
+        "fruit-battles"
       ],
-      "updatedAt": "2026-04-02T04:45:24.767Z"
+      "updatedAt": "2026-04-02T05:51:13.142Z"
     }
   }
 }

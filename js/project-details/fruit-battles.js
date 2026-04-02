@@ -41,9 +41,9 @@ window.ProjectDetailConfigs['fruit-battles'] = {
             ja: 'フルーツスキルとスラップアクションで戦い、戦利品で次の戦闘を準備していくRobloxリアルタイムアリーナPvPゲームです。'
         },
         status: {
-            ko: '출시 준비 중',
-            en: 'Preparing for Launch',
-            ja: 'リリース準備中'
+            ko: '라이브 운영 중',
+            en: 'Live Now',
+            ja: 'ライブ運営中'
         },
         genre: {
             ko: '장르: 실시간 아레나 PvP 액션',
@@ -143,14 +143,14 @@ window.ProjectDetailConfigs['fruit-battles'] = {
     ],
     snapshot: {
         launch: {
-            ko: '2026년 3월 예정',
-            en: 'Planned for March 2026',
-            ja: '2026年3月予定'
+            ko: '2026년 4월 2일 출시',
+            en: 'Launched on April 2, 2026',
+            ja: '2026年4月2日リリース'
         },
         status: {
-            ko: '출시 준비 중',
-            en: 'Preparing for launch',
-            ja: 'リリース準備中'
+            ko: '라이브 운영 중',
+            en: 'Live Now',
+            ja: 'ライブ運営中'
         },
         client: {
             ko: '내부 프로젝트',
