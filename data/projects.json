@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 4828475,
-        "playing": 120,
-        "favorites": 283120,
-        "likeRatio": 0.5338912133891214,
-        "updatedAt": "2026-04-02T05:51:13.142Z"
+        "visits": 4863054,
+        "playing": 154,
+        "favorites": 284815,
+        "likeRatio": 0.5337781484570475,
+        "updatedAt": "2026-04-03T03:52:28.722Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 99826,
+        "visits": 99902,
         "playing": 1,
-        "favorites": 554,
+        "favorites": 555,
         "likeRatio": 0.8657817109144543,
-        "updatedAt": "2026-04-02T05:51:13.142Z"
+        "updatedAt": "2026-04-03T03:52:28.722Z"
       }
     },
     {
@@ -134,7 +134,7 @@
         "playing": 0,
         "favorites": 203,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-04-02T05:51:13.142Z"
+        "updatedAt": "2026-04-03T03:52:28.722Z"
       }
     },
     {
@@ -178,11 +178,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 10,
-        "playing": 2,
+        "visits": 42,
+        "playing": 0,
         "favorites": 3,
         "likeRatio": 1,
-        "updatedAt": "2026-04-02T05:51:13.142Z"
+        "updatedAt": "2026-04-03T03:52:28.722Z"
       }
     },
     {
@@ -337,14 +337,14 @@
         "legendary-dj-gear",
         "fruit-battles"
       ],
-      "totalVisits": 4978236,
+      "totalVisits": 5012923,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
         "legendary-dj-gear",
         "fruit-battles"
       ],
-      "updatedAt": "2026-04-02T05:51:13.142Z"
+      "updatedAt": "2026-04-03T03:52:28.722Z"
     }
   }
 }
