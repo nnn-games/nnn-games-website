@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 4971826,
-        "playing": 102,
-        "favorites": 289585,
-        "likeRatio": 0.5321782178217822,
-        "updatedAt": "2026-04-06T09:20:39.607Z"
+        "visits": 5042453,
+        "playing": 129,
+        "favorites": 292600,
+        "likeRatio": 0.531326281529699,
+        "updatedAt": "2026-04-08T23:17:27.999Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 100234,
-        "playing": 0,
-        "favorites": 556,
-        "likeRatio": 0.865979381443299,
-        "updatedAt": "2026-04-06T09:20:39.607Z"
+        "visits": 100515,
+        "playing": 1,
+        "favorites": 557,
+        "likeRatio": 0.8661764705882353,
+        "updatedAt": "2026-04-08T23:17:27.999Z"
       }
     },
     {
@@ -130,11 +130,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 49927,
+        "visits": 49929,
         "playing": 0,
         "favorites": 203,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-04-06T09:20:39.607Z"
+        "updatedAt": "2026-04-08T23:17:27.999Z"
       }
     },
     {
@@ -178,11 +178,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 1114,
-        "playing": 5,
-        "favorites": 12,
-        "likeRatio": 0.6666666666666666,
-        "updatedAt": "2026-04-06T09:20:39.607Z"
+        "visits": 1394,
+        "playing": 0,
+        "favorites": 17,
+        "likeRatio": 0.5714285714285714,
+        "updatedAt": "2026-04-08T23:17:27.999Z"
       }
     },
     {
@@ -337,14 +337,14 @@
         "legendary-dj-gear",
         "fruit-battles"
       ],
-      "totalVisits": 5123101,
+      "totalVisits": 5194291,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
         "legendary-dj-gear",
         "fruit-battles"
       ],
-      "updatedAt": "2026-04-06T09:20:39.607Z"
+      "updatedAt": "2026-04-08T23:17:27.999Z"
     }
   }
 }
