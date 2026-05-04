@@ -149,13 +149,9 @@
   }
 
   /* Grids & Cards */
-  .feature-grid,
   .project-grid,
   .image-gallery {
     @apply grid gap-6;
-  }
-  .feature-grid {
-    @apply md:grid-cols-3;
   }
   .project-grid {
     @apply md:grid-cols-2 lg:grid-cols-3;
@@ -168,9 +164,7 @@
   .community-grid::-webkit-scrollbar {
     display: none;
   }
-  .feature-item,
-  .project-card,
-  .award-item {
+  .project-card {
     @apply bg-white border border-gray-100 rounded-xl shadow-sm p-5 transition hover:-translate-y-0.5 hover:shadow-lg;
   }
   .project-card {

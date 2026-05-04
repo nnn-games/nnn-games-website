@@ -18,6 +18,8 @@
     <meta name="twitter:image" content="images/nnn-logo.png">
     <link rel="icon" href="images/nnn-logo.png" type="image/png" sizes="256x256">
     <meta name="theme-color" content="#1F242B">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
@@ -61,15 +63,15 @@
                     </div>
                     <div class="hero-stats">
                         <article class="hero-stat">
-                            <strong data-hero-project-count>3</strong>
+                            <strong data-hero-project-count>--</strong>
                             <span data-key="hero_stat_projects">운영 프로젝트</span>
                         </article>
                         <article class="hero-stat">
-                            <strong data-hero-total-visits>2.3M+</strong>
+                            <strong data-hero-total-visits>--</strong>
                             <span data-key="hero_stat_visits">누적 방문 수</span>
                         </article>
                         <article class="hero-stat">
-                            <strong data-hero-community-count>34.3K+</strong>
+                            <strong data-hero-community-count>--</strong>
                             <span data-key="hero_stat_communities">커뮤니티 구독자</span>
                         </article>
                     </div>
@@ -99,7 +101,7 @@
             <div class="container">
                 <div class="ugc-spotlight-shell" id="home-ugc-spotlight">
                     <div class="ugc-spotlight-media">
-                        <img src="images/nnnugc-main.jpg" alt="NNN UGC" data-home-ugc-image>
+                        <img src="images/nnnugc-main.jpg" alt="NNN UGC" data-home-ugc-image loading="lazy">
                     </div>
                     <div class="ugc-spotlight-content">
                         <p class="section-kicker">UGC</p>
@@ -129,8 +131,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 data-key="footer_about_title">NNN-GAMES</h3>
-                    <p data-key="footer_about_text">혁신과 재미를 추구하는 게임 개발사. 우리는 플레이어에게 최고의 경험을 선사하기 위해 끊임없이 도전합니다.</p>
+                    <h3 data-key="footer_about_title">NNN GAMES</h3>
+                    <p data-key="footer_about_text">NNN GAMES는 Roblox 기반의 UGC와 게임 콘텐츠로 전 세계 유저에게 재미와 가치를 전달하는 프리미엄 스튜디오입니다.</p>
                 </div>
                 <div class="footer-section">
                     <h3 data-key="footer_links_title">바로가기</h3>
@@ -151,10 +153,11 @@
         </div>
     </footer>
 
-    <script src="js/projects-data.js"></script>
-    <script src="js/project-renderer.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/main.js"></script>
+    <script defer src="js/utils.js"></script>
+    <script defer src="js/projects-data.js"></script>
+    <script defer src="js/project-renderer.js"></script>
+    <script defer src="js/i18n.js"></script>
+    <script defer src="js/main.js"></script>
 </body>
 
 </html>

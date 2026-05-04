@@ -1,35 +1,17 @@
-// 모바일 메뉴 토글 기능
-document.addEventListener('DOMContentLoaded', function() {
+// 모바일 메뉴 토글 + 커뮤니티/프로젝트 데이터 연동
+document.addEventListener('DOMContentLoaded', function () {
+    const U = window.NNNUtils;
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const header = document.querySelector('.main-header');
-    const getCurrentLang = () => document.documentElement.lang || 'ko';
-    const getTranslationValue = (key, fallback) => {
-        try {
-            const source = (typeof window !== 'undefined' && window.translations) || translations || {};
-            return (source[getCurrentLang()] && source[getCurrentLang()][key]) || fallback;
-        } catch (_error) {
-            return fallback;
-        }
-    };
-    const formatCompactNumber = (value, lang) => {
-        if (typeof value !== 'number') return '--';
-        try {
-            return new Intl.NumberFormat(lang, {
-                notation: 'compact',
-                maximumFractionDigits: 1
-            }).format(value);
-        } catch (_error) {
-            return value.toLocaleString();
-        }
-    };
+
     const updateMenuToggleLabel = () => {
         if (!menuToggle || !mainNav) return;
         const isOpen = mainNav.classList.contains('active');
         const key = isOpen ? 'nav_menu_close' : 'nav_menu_open';
         const fallback = isOpen ? 'Close menu' : 'Open menu';
         menuToggle.setAttribute('data-key-aria-label', key);
-        menuToggle.setAttribute('aria-label', getTranslationValue(key, fallback));
+        menuToggle.setAttribute('aria-label', U.t(U.getCurrentLanguage(), key, fallback));
     };
     const setMenuState = (isOpen) => {
         if (!menuToggle || !mainNav) return;
@@ -43,29 +25,29 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle && mainNav) {
         setMenuState(false);
 
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             setMenuState(!mainNav.classList.contains('active'));
         });
 
-        mainNav.addEventListener('click', function(event) {
+        mainNav.addEventListener('click', function (event) {
             if (window.matchMedia('(max-width: 767px)').matches && event.target.closest('a')) {
                 closeMenu();
             }
         });
 
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             if (!mainNav.classList.contains('active')) return;
             if (mainNav.contains(event.target) || menuToggle.contains(event.target)) return;
             closeMenu();
         });
 
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 closeMenu();
             }
         });
 
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             if (window.matchMedia('(min-width: 768px)').matches) {
                 closeMenu();
             }
@@ -74,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 스크롤 시 헤더 스타일 변경
     if (header) {
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
@@ -82,13 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // 부드러운 스크롤 효과 (앵커 링크용)
+
+    // 부드러운 스크롤 (앵커 링크)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const href = anchor.getAttribute('href');
         if (!href || href === '#') return;
-
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             let target = null;
             try {
                 target = document.querySelector(this.getAttribute('href'));
@@ -97,62 +78,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
-    
-    // 이미지 지연 로딩
-    const images = document.querySelectorAll('img[data-src]');
-    const imageOptions = {
-        threshold: 0,
-        rootMargin: '0px 0px 300px 0px'
-    };
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.getAttribute('data-src');
-                    img.removeAttribute('data-src');
-                    imageObserver.unobserve(img);
-                }
-            });
-        }, imageOptions);
-        
-        images.forEach(img => imageObserver.observe(img));
-    } else {
-        // Fallback for browsers that don't support IntersectionObserver
-        images.forEach(img => {
-            img.src = img.getAttribute('data-src');
-            img.removeAttribute('data-src');
-        });
-    }
-    
+
     // 페이지 로드 시 애니메이션
     const animateElements = document.querySelectorAll('.animate-on-scroll');
-    const animateOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-    
     if ('IntersectionObserver' in window && animateElements.length > 0) {
-        const animateObserver = new IntersectionObserver(function(entries) {
+        const animateObserver = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animated');
                 }
             });
-        }, animateOptions);
-        
+        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
         animateElements.forEach(el => animateObserver.observe(el));
     }
 
-    // CTA 추적 설정 및 스키마 (메타태그/전역 설정으로 엔드포인트 오버라이드 가능)
+    // CTA 추적 설정
     const CTA_DEFAULT_ENDPOINT = '/analytics/cta';
     const CTA_DEFAULT_SCHEMA = 'v1';
     const CTA_CONFIG = (() => {
@@ -165,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     })();
 
-    // CTA 추적: data-cta가 있는 요소 클릭 시 sendBeacon 우선, 실패 시 fetch
     const trackCta = (_event, target) => {
         const payload = {
             v: CTA_CONFIG.schemaVersion,
@@ -184,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         const body = JSON.stringify(payload);
-
         const sendWithBeacon = () => {
             if (!navigator.sendBeacon) return false;
             try {
@@ -194,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
         };
-
         if (!sendWithBeacon()) {
             fetch(CTA_CONFIG.endpoint, {
                 method: 'POST',
@@ -202,13 +143,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 body,
                 keepalive: true
             }).catch(() => {
-                // 네트워크 실패 시 콘솔에만 남김 (정적 페이지 특성상 재시도 없음)
                 console.debug('[cta-failed]', payload);
             });
         }
     };
 
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         const target = e.target.closest('[data-cta]');
         if (!target) return;
         trackCta(e, target);
@@ -262,25 +202,24 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const formatMemberCount = (count, lang) => {
-        if (typeof count !== 'number') return lang === 'ja' ? '加入者情報なし' : lang === 'en' ? 'Subscribers n/a' : '가입자 정보 없음';
-        const label = lang === 'ja' ? '加入者' : (lang === 'en' ? 'subscribers' : '명 가입자');
+        if (typeof count !== 'number') {
+            return U.t(lang, 'community_members_unknown',
+                lang === 'ja' ? '加入者情報なし' : (lang === 'en' ? 'Subscribers n/a' : '가입자 정보 없음'));
+        }
+        const label = U.t(lang, 'community_members_label',
+            lang === 'ja' ? '加入者' : (lang === 'en' ? 'subscribers' : '명 가입자'));
         return `${count.toLocaleString()} ${label}`;
     };
 
     const getCommunityVisitLabel = (lang) => {
-        const fallback = lang === 'ja' ? 'コミュニ티へ' : (lang === 'en' ? 'Visit community' : '커뮤니티 방문');
-        try {
-            const t = window.translations || translations;
-            return (t && t[lang] && t[lang].community_visit_cta) || fallback;
-        } catch (_e) {
-            return fallback;
-        }
+        const fallback = lang === 'ja' ? 'コミュニティへ' : (lang === 'en' ? 'Visit community' : '커뮤니티 방문');
+        return U.t(lang, 'community_visit_cta', fallback);
     };
 
     const updateHeroCommunityMetric = (total, lang) => {
         const metricEl = document.querySelector('[data-hero-community-count]');
         if (!metricEl || typeof total !== 'number') return;
-        metricEl.textContent = formatCompactNumber(total, lang);
+        metricEl.textContent = U.formatCompactNumber(total, lang);
     };
 
     const setCommunityTotal = (total, lang) => {
@@ -299,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         ProjectManager.loadProjectsData()
             .then(() => {
-                const lang = getCurrentLang();
+                const lang = U.getCurrentLanguage();
                 const heroSummary = (ProjectManager.getHeroSummary && ProjectManager.getHeroSummary()) || {};
                 const projectCount = typeof heroSummary.projectCount === 'number' ? heroSummary.projectCount : 0;
                 const totalVisits = typeof heroSummary.totalVisits === 'number' ? heroSummary.totalVisits : 0;
@@ -308,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     projectCountEl.textContent = projectCount.toLocaleString(lang);
                 }
                 if (totalVisitsEl) {
-                    totalVisitsEl.textContent = formatCompactNumber(totalVisits, lang);
+                    totalVisitsEl.textContent = U.formatCompactNumber(totalVisits, lang);
                 }
             })
             .catch(() => {});
@@ -325,11 +264,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return res.json();
     };
     const appendCommunityCard = (grid, group, lang) => {
-        const name = getCommunityDisplayName(group, lang);
+        const name = U.escapeHtml(getCommunityDisplayName(group, lang));
         const memberCount = typeof group.memberCount === 'number' ? group.memberCount : null;
-        const icon = group.icon || COMMUNITY_FALLBACK_ICON;
-        const url = group.url || '#';
-        const visitLabel = getCommunityVisitLabel(lang);
+        const icon = U.escapeHtml(group.icon || COMMUNITY_FALLBACK_ICON);
+        const url = U.escapeHtml(group.url || '#');
+        const visitLabel = U.escapeHtml(getCommunityVisitLabel(lang));
+        const memberLine = U.escapeHtml(formatMemberCount(memberCount, lang));
+        const groupId = U.escapeHtml(group.id || '');
 
         const card = document.createElement('div');
         card.className = 'community-card';
@@ -337,8 +278,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <img class="community-thumb" src="${icon}" alt="${name}">
             <div class="community-body">
                 <h3>${name}</h3>
-                <p class="community-members">${formatMemberCount(memberCount, lang)}</p>
-                <a class="btn-ghost community-link" href="${url}" target="_blank" rel="noreferrer" data-cta="community" data-cta-origin="home-community" data-project-id="${group.id}">
+                <p class="community-members">${memberLine}</p>
+                <a class="btn-ghost community-link" href="${url}" target="_blank" rel="noreferrer" data-cta="community" data-cta-origin="home-community" data-project-id="${groupId}">
                     ${visitLabel}
                 </a>
             </div>
@@ -350,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const grid = document.getElementById('community-grid');
         if (!grid) return;
 
-        const lang = document.documentElement.lang || 'ko';
+        const lang = U.getCurrentLanguage();
         grid.innerHTML = '';
         try {
             // 1) 정적 JSON (npm run update:metrics 결과) 우선 시도
@@ -412,11 +353,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         } catch (err) {
             console.debug('community render failed', err);
-            grid.innerHTML = `<p class="community-error">커뮤니티 정보를 불러오지 못했습니다.</p>`;
+            grid.innerHTML = `<p class="community-error">${U.escapeHtml(U.t(lang, 'community_load_error', '커뮤니티 정보를 불러오지 못했습니다.'))}</p>`;
         }
     };
 
-    // 언어 변경 시 커뮤니티 섹션도 재렌더
+    // 언어 변경 시 재렌더
     document.addEventListener('languageChanged', function () {
         updateMenuToggleLabel();
         renderHeroStats();
@@ -430,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function() {
         applyProjectLinks();
     });
 
-    // 상세 페이지 헤더 지표 표시 (visits, likeRatio)
+    // 상세 페이지 헤더 지표 (visits, likeRatio)
     const renderHeaderMetrics = () => {
         if (!(window.ProjectManager && ProjectManager.loadProjectsData)) return;
         const metricsBox = document.querySelector('.project-metrics-header');
@@ -441,13 +382,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const likeEl = metricsBox.querySelector('[data-metric="likeRatio"]');
 
         ProjectManager.loadProjectsData().then(() => {
+            const lang = U.getCurrentLanguage();
             const all = (ProjectManager.getAll && ProjectManager.getAll()) || [];
             const project = all.find(p => p.id === projectId);
             if (!project || !project.metrics) return;
             const { visits, likeRatio } = project.metrics;
             if (visitEl) {
                 if (typeof visits === 'number') {
-                    const visitLabel = getTranslationValue('metric_visits', 'Visits');
+                    const visitLabel = U.t(lang, 'metric_visits', 'Visits');
                     visitEl.textContent = `${visitLabel} ${visits.toLocaleString()}`;
                     visitEl.classList.remove('hidden');
                 } else {
@@ -456,8 +398,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             if (likeEl) {
                 if (typeof likeRatio === 'number') {
-                    const pct = Math.round(likeRatio * 1000) / 10; // one decimal
-                    const likeLabel = getTranslationValue('metric_like', 'Like');
+                    const pct = Math.round(likeRatio * 1000) / 10;
+                    const likeLabel = U.t(lang, 'metric_like', 'Like');
                     likeEl.textContent = `${likeLabel} ${pct}%`;
                     likeEl.classList.remove('hidden');
                 } else {
@@ -517,8 +459,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
 
-                const lang = getCurrentLang();
-                const title = (project.title && (project.title[lang] || project.title.ko || project.title.en || project.title.ja)) || 'NNN UGC';
+                const lang = U.getCurrentLanguage();
+                const title = U.pickLocalized(project.title, lang) || 'NNN UGC';
                 const imageEl = spotlight.querySelector('[data-home-ugc-image]');
                 const detailLink = spotlight.querySelector('[data-home-ugc-detail]');
 
@@ -526,7 +468,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     imageEl.setAttribute('src', project.image);
                     imageEl.setAttribute('alt', title);
                 }
-
                 if (detailLink && project.detailPage) {
                     detailLink.setAttribute('href', project.detailPage);
                 }

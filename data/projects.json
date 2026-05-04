@@ -48,6 +48,149 @@
       }
     },
     {
+      "id": "star-reach",
+      "title": {
+        "ko": "Star Reach",
+        "en": "Star Reach",
+        "ja": "Star Reach"
+      },
+      "description": {
+        "ko": "Star Reach 프로젝트 소개를 준비 중입니다.",
+        "en": "Star Reach project introduction is in preparation.",
+        "ja": "Star Reachプロジェクトの紹介を準備中です。"
+      },
+      "image": "images/nnn-logo.png",
+      "detailPage": "star-reach.html",
+      "showInProjectsList": false,
+      "showDetailLinkInProjects": false,
+      "category": "roblox",
+      "status": "development",
+      "featured": false,
+      "launchDate": "TBD",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "hacker-vs-security",
+      "title": {
+        "ko": "Hacker vs Security",
+        "en": "Hacker vs Security",
+        "ja": "Hacker vs Security"
+      },
+      "description": {
+        "ko": "침투와 방어의 읽기 싸움을 중심으로 한 Roblox 비대칭 전략 PvP 프로젝트.",
+        "en": "A Roblox asymmetric strategy PvP project centered on infiltration and defensive counterplay.",
+        "ja": "侵入と防衛の読み合いを軸にしたRoblox非対称戦略PvPプロジェクト。"
+      },
+      "image": "images/projectk-preview.jpg",
+      "detailPage": "hacker-vs-security.html",
+      "showInProjectsList": false,
+      "showDetailLinkInProjects": false,
+      "category": "roblox",
+      "status": "development",
+      "featured": false,
+      "launchDate": "2026-Q3",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "Systemic PvP"
+      ],
+      "placeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "fruit-battles",
+      "title": {
+        "ko": "Fruit Battles",
+        "en": "Fruit Battles",
+        "ja": "Fruit Battles"
+      },
+      "description": {
+        "ko": "과일 스킬과 슬랩 액션으로 싸우고, 전리품으로 성장하는 Roblox 실시간 아레나 PvP 게임.",
+        "en": "A Roblox real-time arena PvP game where fruit skills, slap combat, and loot-driven growth come together.",
+        "ja": "フルーツスキルとスラップアクションで戦い、戦利品で成長するRobloxリアルタイムアリーナPvPゲーム。"
+      },
+      "image": "images/fruit-battls-preview.jpg",
+      "detailPage": "fruit-battles.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "launchDate": "2026-04",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "Live Arena Systems"
+      ],
+      "placeId": "109322674605513",
+      "universeId": "9867900121",
+      "links": {
+        "play": "https://www.roblox.com/ko/games/109322674605513/",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": "https://www.roblox.com/ko/games/109322674605513/"
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 34419,
+        "playing": 1,
+        "favorites": 195,
+        "likeRatio": 0.5333333333333333,
+        "updatedAt": "2026-05-02T03:10:38.225Z"
+      }
+    },
+    {
       "id": "korean-spa",
       "title": {
         "ko": "Korean Spa",
@@ -138,54 +281,6 @@
       }
     },
     {
-      "id": "fruit-battles",
-      "title": {
-        "ko": "Fruit Battles",
-        "en": "Fruit Battles",
-        "ja": "Fruit Battles"
-      },
-      "description": {
-        "ko": "과일 스킬과 슬랩 액션으로 싸우고, 전리품으로 성장하는 Roblox 실시간 아레나 PvP 게임.",
-        "en": "A Roblox real-time arena PvP game where fruit skills, slap combat, and loot-driven growth come together.",
-        "ja": "フルーツスキルとスラップアクションで戦い、戦利品で成長するRobloxリアルタイムアリーナPvPゲーム。"
-      },
-      "image": "images/fruit-battls-preview.jpg",
-      "detailPage": "fruit-battles.html",
-      "category": "roblox",
-      "status": "active",
-      "featured": true,
-      "launchDate": "2026-04",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "Live Arena Systems"
-      ],
-      "placeId": "109322674605513",
-      "universeId": "9867900121",
-      "links": {
-        "play": "https://www.roblox.com/ko/games/109322674605513/",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": "https://www.roblox.com/ko/games/109322674605513/"
-      },
-      "reporting": {
-        "collectMetrics": true,
-        "includeInHomePreview": true,
-        "includeInHeroProjectCount": true,
-        "includeInHeroVisitTotal": true
-      },
-      "metrics": {
-        "visits": 34419,
-        "playing": 1,
-        "favorites": 195,
-        "likeRatio": 0.5333333333333333,
-        "updatedAt": "2026-05-02T03:10:38.225Z"
-      }
-    },
-    {
       "id": "nnn-ugc",
       "title": {
         "ko": "NNN UGC",
@@ -215,7 +310,7 @@
         "play": "",
         "trailer": "",
         "article": "",
-        "group": "https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about",
+        "group": "https://www.roblox.com/communities/34453707/NNN-UGC#!/about",
         "showcase": ""
       },
       "reporting": {
@@ -278,54 +373,6 @@
         "likeRatio": null,
         "updatedAt": null
       }
-    },
-    {
-      "id": "hacker-vs-security",
-      "title": {
-        "ko": "Hacker vs Security",
-        "en": "Hacker vs Security",
-        "ja": "Hacker vs Security"
-      },
-      "description": {
-        "ko": "침투와 방어의 읽기 싸움을 중심으로 한 Roblox 비대칭 전략 PvP 프로젝트.",
-        "en": "A Roblox asymmetric strategy PvP project centered on infiltration and defensive counterplay.",
-        "ja": "侵入と防衛の読み合いを軸にしたRoblox非対称戦略PvPプロジェクト。"
-      },
-      "image": "images/projectk-preview.jpg",
-      "detailPage": "hacker-vs-security.html",
-      "showInProjectsList": false,
-      "showDetailLinkInProjects": false,
-      "category": "roblox",
-      "status": "development",
-      "featured": false,
-      "launchDate": "2026-Q3",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "Systemic PvP"
-      ],
-      "placeId": null,
-      "links": {
-        "play": "",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
-      },
-      "reporting": {
-        "collectMetrics": false,
-        "includeInHeroProjectCount": false,
-        "includeInHeroVisitTotal": false
-      },
-      "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
-      }
     }
   ],
   "summary": {
@@ -333,16 +380,16 @@
       "projectCount": 4,
       "projectIds": [
         "tower-flood-race",
+        "fruit-battles",
         "korean-spa",
-        "legendary-dj-gear",
-        "fruit-battles"
+        "legendary-dj-gear"
       ],
       "totalVisits": 6391560,
       "visitProjectIds": [
         "tower-flood-race",
+        "fruit-battles",
         "korean-spa",
-        "legendary-dj-gear",
-        "fruit-battles"
+        "legendary-dj-gear"
       ],
       "updatedAt": "2026-05-02T03:10:38.225Z"
     }

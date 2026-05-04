@@ -1,29 +1,23 @@
-// 프로젝트 렌더링 관련 함수들
+// 프로젝트 카드 렌더링
 const ProjectRenderer = {
     filtersBound: false,
     _kwTimer: null,
     projectDisplayOrder: [
-        'fruit-battles',
         'tower-flood-race',
+        'star-reach',
+        'hacker-vs-security',
+        'fruit-battles',
         'korean-spa',
-        'legendary-dj-gear'
+        'legendary-dj-gear',
+        'great-tower-reset'
     ],
 
-    // 현재 언어 가져오기 (localStorage와 동기화)
-    getCurrentLanguage: function () {
-        return localStorage.getItem('language') || document.documentElement.lang || 'ko';
-    },
-
-    t: function (lang, key, fallback = '') {
-        try {
-            const source = (typeof window !== 'undefined' && window.translations) || translations || {};
-            return (source[lang] && source[lang][key]) || fallback || key;
-        } catch (_error) {
-            return fallback || key;
-        }
+    _u: function () {
+        return window.NNNUtils;
     },
 
     formatMetricBadge: function (type, value, lang = 'ko') {
+        const U = this._u();
         const labels = {
             visits: 'metric_visits',
             playing: 'metric_playing',
@@ -34,56 +28,28 @@ const ProjectRenderer = {
             playing: 'media',
             favorites: 'ugc'
         };
-
-        const label = this.t(lang, labels[type], type);
-        return `<span class="badge-metric ${classes[type]}">${label} ${value.toLocaleString()}</span>`;
-    },
-
-    formatMetricValue: function (value, lang = 'ko') {
-        if (typeof value !== 'number') return '--';
-
-        try {
-            return new Intl.NumberFormat(lang, {
-                notation: 'compact',
-                maximumFractionDigits: 1
-            }).format(value);
-        } catch (_error) {
-            return value.toLocaleString(lang);
-        }
+        const label = U.escapeHtml(U.t(lang, labels[type], type));
+        const safeValue = U.escapeHtml(value.toLocaleString());
+        const cls = U.escapeHtml(classes[type] || '');
+        return `<span class="badge-metric ${cls}">${label} ${safeValue}</span>`;
     },
 
     createMetricPanelItem: function (type, value, lang = 'ko') {
+        const U = this._u();
         const labels = {
             visits: 'metric_visits',
             playing: 'metric_playing',
             favorites: 'metric_favorites'
         };
-        const label = this.t(lang, labels[type], type);
-        const displayValue = this.formatMetricValue(value, lang);
-
+        const label = U.escapeHtml(U.t(lang, labels[type], type));
+        const displayValue = U.escapeHtml(U.formatMetricValue(value, lang));
+        const safeType = U.escapeHtml(type);
         return `
-            <div class="project-kpi" data-project-kpi="${type}">
+            <div class="project-kpi" data-project-kpi="${safeType}">
                 <span class="project-kpi-label">${label}</span>
-                <strong class="project-kpi-value" data-project-kpi-value="${type}">${displayValue}</strong>
+                <strong class="project-kpi-value" data-project-kpi-value="${safeType}">${displayValue}</strong>
             </div>
         `;
-    },
-
-    formatUpdatedAt: function (value, lang = 'ko') {
-        if (!value) return null;
-
-        const date = new Date(value);
-        if (Number.isNaN(date.getTime())) return null;
-
-        try {
-            return new Intl.DateTimeFormat(lang, {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-            }).format(date);
-        } catch (_error) {
-            return date.toISOString().slice(0, 10);
-        }
     },
 
     sortProjectsForDisplay: function (projects = []) {
@@ -93,11 +59,9 @@ const ProjectRenderer = {
             .sort((a, b) => {
                 const aOrder = orderMap.has(a.project.id) ? orderMap.get(a.project.id) : Number.MAX_SAFE_INTEGER;
                 const bOrder = orderMap.has(b.project.id) ? orderMap.get(b.project.id) : Number.MAX_SAFE_INTEGER;
-
                 if (aOrder !== bOrder) {
                     return aOrder - bOrder;
                 }
-
                 return a.index - b.index;
             })
             .map(({ project }) => project);
@@ -106,12 +70,9 @@ const ProjectRenderer = {
     // 메인 페이지 프로젝트 카드 렌더링
     renderFeaturedProjects: function (containerId = 'project-grid') {
         const container = document.querySelector(`.${containerId}`) || document.querySelector(`#${containerId}`);
-        if (!container) {
-            console.error(`Container ${containerId} not found`);
-            return;
-        }
+        if (!container) return;
 
-        const currentLang = this.getCurrentLanguage();
+        const currentLang = this._u().getCurrentLanguage();
         const projects = ((ProjectManager.getFeatured && ProjectManager.getFeatured()) || (ProjectManager.getFeaturedProjects && ProjectManager.getFeaturedProjects()) || projectsData.featured || [])
             .filter((project) => {
                 const reporting = project && typeof project.reporting === 'object' && project.reporting ? project.reporting : {};
@@ -119,7 +80,7 @@ const ProjectRenderer = {
                     ? reporting.includeInHomePreview
                     : typeof reporting.includeInHeroProjectCount === 'boolean'
                         ? reporting.includeInHeroProjectCount
-                    : true;
+                        : true;
                 return project && includeInHomePreview;
             });
         const sortedProjects = this.sortProjectsForDisplay(projects);
@@ -132,8 +93,9 @@ const ProjectRenderer = {
         this.syncFeaturedProjectCards(containerId, currentLang);
     },
 
-    // 개별 프로젝트 카드 생성
+    // 개별 프로젝트 카드 생성 (홈)
     createProjectCard: function (project, lang = 'ko') {
+        const U = this._u();
         const card = document.createElement('div');
         card.className = 'project-card home-project-card';
         card.setAttribute('data-project-id', project.id);
@@ -141,24 +103,30 @@ const ProjectRenderer = {
         const platformData = this.getPlatformInfo(project);
         card.setAttribute('data-platform', platformData.key);
 
-        const title = project.title[lang] || project.title.ko;
-        const description = project.description[lang] || project.description.ko;
-        const learnMore = this.t(lang, 'learn_more', 'Learn More →');
+        const title = U.escapeHtml(U.pickLocalized(project.title, lang));
+        const description = U.escapeHtml(U.pickLocalized(project.description, lang));
+        const learnMore = U.escapeHtml(U.t(lang, 'learn_more', 'Learn More →'));
         const metrics = project.metrics || {};
         const statusBadge = this.getStatusBadge(project.status, lang);
         const metaItems = [project.platform, project.launchDate].filter(Boolean)
-            .map((value) => `<span>${value}</span>`)
+            .map((value) => `<span>${U.escapeHtml(value)}</span>`)
             .join('');
-        const updatedAt = this.formatUpdatedAt(metrics.updatedAt, lang);
-        const updatedLabel = this.t(lang, 'project_updated_label', 'Updated');
+        const updatedAt = U.formatUpdatedAt(metrics.updatedAt, lang);
+        const updatedLabel = U.escapeHtml(U.t(lang, 'project_updated_label', 'Updated'));
+        const safeUpdated = U.escapeHtml(updatedAt || '--');
+        const safeImage = U.escapeHtml(project.image || '');
+        const safeId = U.escapeHtml(project.id);
+        const safeDetailPage = U.escapeHtml(project.detailPage || '#');
+        const platformLabel = U.escapeHtml(platformData.label);
+        const platformKey = U.escapeHtml(platformData.key);
 
         card.innerHTML = `
             <div class="project-image-wrapper">
-                <div class="platform-badge platform-${platformData.key}">${platformData.label}</div>
+                <div class="platform-badge platform-${platformKey}">${platformLabel}</div>
                 <div class="project-badges">
                     ${statusBadge}
                 </div>
-                <img src="${project.image}" alt="${title}">
+                <img src="${safeImage}" alt="${title}" loading="lazy">
             </div>
             <div class="project-info">
                 <h3>${title}</h3>
@@ -169,29 +137,28 @@ const ProjectRenderer = {
                     ${this.createMetricPanelItem('playing', metrics.playing, lang)}
                     ${this.createMetricPanelItem('favorites', metrics.favorites, lang)}
                 </div>
-                <p class="project-updated" data-project-updated>${updatedLabel} ${updatedAt || '--'}</p>
-                <a href="${project.detailPage}" class="learn-more" data-key="learn_more" data-cta="project-card-featured" data-project-id="${project.id}" data-cta-origin="home-featured">${learnMore}</a>
+                <p class="project-updated" data-project-updated>${updatedLabel} ${safeUpdated}</p>
+                <a href="${safeDetailPage}" class="learn-more" data-key="learn_more" data-cta="project-card-featured" data-project-id="${safeId}" data-cta-origin="home-featured">${learnMore}</a>
             </div>
         `;
-
         return card;
     },
 
     syncHomeProjectCardMetrics: function (card, project, lang = 'ko') {
         if (!card || !project) return;
-
+        const U = this._u();
         const metrics = project.metrics || {};
         ['visits', 'playing', 'favorites'].forEach((type) => {
             const valueEl = card.querySelector(`[data-project-kpi-value="${type}"]`);
             if (valueEl) {
-                valueEl.textContent = this.formatMetricValue(metrics[type], lang);
+                valueEl.textContent = U.formatMetricValue(metrics[type], lang);
             }
         });
 
         const updatedEl = card.querySelector('[data-project-updated]');
         if (updatedEl) {
-            const updatedLabel = this.t(lang, 'project_updated_label', 'Updated');
-            const updatedAt = this.formatUpdatedAt(metrics.updatedAt, lang) || '--';
+            const updatedLabel = U.t(lang, 'project_updated_label', 'Updated');
+            const updatedAt = U.formatUpdatedAt(metrics.updatedAt, lang) || '--';
             updatedEl.textContent = `${updatedLabel} ${updatedAt}`;
         }
     },
@@ -210,15 +177,12 @@ const ProjectRenderer = {
     // 프로젝트 페이지 전체 목록 렌더링
     renderAllProjects: function (containerId = 'all-projects-grid') {
         const container = document.querySelector(`.${containerId}`) || document.querySelector(`#${containerId}`);
-        if (!container) {
-            console.error(`Container ${containerId} not found`);
-            return;
-        }
+        if (!container) return;
 
         const specialContainer = document.getElementById('special-projects-grid');
         const specialSection = document.getElementById('specialProjectSection');
 
-        const currentLang = this.getCurrentLanguage();
+        const currentLang = this._u().getCurrentLanguage();
         const projects = (ProjectManager.getAll && ProjectManager.getAll()) || projectsData.all || [];
         const isVisibleInProjectsList = (project) => (
             !project || typeof project.showInProjectsList !== 'boolean' || project.showInProjectsList
@@ -247,8 +211,9 @@ const ProjectRenderer = {
         }
     },
 
-    // 상세 정보가 포함된 프로젝트 카드 생성
+    // 상세 정보가 포함된 프로젝트 카드 (프로젝트 목록)
     createDetailedProjectCard: function (project, lang = 'ko') {
+        const U = this._u();
         const card = document.createElement('div');
         card.className = 'project-card detailed';
         card.setAttribute('data-project-id', project.id);
@@ -258,13 +223,20 @@ const ProjectRenderer = {
         const platformData = this.getPlatformInfo(project);
         card.setAttribute('data-platform', platformData.key);
 
-        const title = project.title[lang] || project.title.ko;
-        const description = project.description[lang] || project.description.ko;
+        const title = U.escapeHtml(U.pickLocalized(project.title, lang));
+        const description = U.escapeHtml(U.pickLocalized(project.description, lang));
         const metrics = project.metrics || {};
         const statusBadge = this.getStatusBadge(project.status, lang);
         const categoryBadge = this.getCategoryBadge(project.category);
-        const learnMore = this.t(lang, 'learn_more', 'Learn More →');
+        const learnMore = U.escapeHtml(U.t(lang, 'learn_more', 'Learn More →'));
         const detailLink = project.showDetailLinkInProjects === false ? '' : project.detailPage;
+        const safeImage = U.escapeHtml(project.image || '');
+        const safeId = U.escapeHtml(project.id);
+        const safeDetailLink = U.escapeHtml(detailLink || '');
+        const platformLabel = U.escapeHtml(platformData.label);
+        const platformKey = U.escapeHtml(platformData.key);
+        const safePlatform = U.escapeHtml(project.platform || '');
+        const safeLaunch = U.escapeHtml(project.launchDate || '');
 
         const metricBadges = [
             typeof metrics.visits === 'number' ? this.formatMetricBadge('visits', metrics.visits, lang) : '',
@@ -274,58 +246,46 @@ const ProjectRenderer = {
 
         card.innerHTML = `
             <div class="project-image-wrapper">
-                <div class="platform-badge platform-${platformData.key}">${platformData.label}</div>
+                <div class="platform-badge platform-${platformKey}">${platformLabel}</div>
                 <div class="project-badges">
                     ${statusBadge}
                     ${categoryBadge}
                 </div>
-                <img src="${project.image}" alt="${title}">
+                <img src="${safeImage}" alt="${title}" loading="lazy">
             </div>
             <div class="project-info">
                 <h3>${title}</h3>
                 <p>${description}</p>
                 <div class="project-meta">
-                    <span class="platform">${project.platform}</span>
-                    <span class="launch-date">${project.launchDate}</span>
+                    <span class="platform">${safePlatform}</span>
+                    <span class="launch-date">${safeLaunch}</span>
                 </div>
                 ${metricBadges ? `<div class="project-metrics">${metricBadges}</div>` : ''}
-                ${detailLink ? `<a href="${detailLink}" class="learn-more" data-key="learn_more" data-cta="project-card-list" data-project-id="${project.id}" data-cta-origin="projects-list">${learnMore}</a>` : ''}
+                ${detailLink ? `<a href="${safeDetailLink}" class="learn-more" data-key="learn_more" data-cta="project-card-list" data-project-id="${safeId}" data-cta-origin="projects-list">${learnMore}</a>` : ''}
             </div>
         `;
-
         return card;
     },
 
-    // 상태 배지 생성
     getStatusBadge: function (status, lang = 'ko') {
-        const statusLabels = {
-            active: { ko: '운영 중', en: 'Live', ja: '運営中' },
-            development: { ko: '개발 중', en: 'In Development', ja: '開発中' },
-            completed: { ko: '완료', en: 'Completed', ja: '完了' },
-            paused: { ko: '일시중단', en: 'Paused', ja: '一時停止' }
-        };
-
-        const label = statusLabels[status] ? statusLabels[status][lang] || statusLabels[status].ko : status;
-        return `<span class="status-badge status-${status}">${label}</span>`;
+        const U = this._u();
+        const label = U.escapeHtml(U.getStatusLabel(status, lang));
+        const safeStatus = U.escapeHtml(status || '');
+        return `<span class="status-badge status-${safeStatus}">${label}</span>`;
     },
 
-    // 카테고리 배지 생성
     getCategoryBadge: function (category) {
-        const categoryLabels = {
-            roblox: 'ROBLOX'
-        };
-
-        const label = categoryLabels[category] || category.toUpperCase();
-        return `<span class="category-badge category-${category}">${label}</span>`;
+        const U = this._u();
+        const categoryLabels = { roblox: 'ROBLOX' };
+        const rawLabel = categoryLabels[category] || (category || '').toUpperCase();
+        const label = U.escapeHtml(rawLabel);
+        const safeCategory = U.escapeHtml(category || '');
+        return `<span class="category-badge category-${safeCategory}">${label}</span>`;
     },
 
-    // 플랫폼 정보 가져오기
     getPlatformInfo: function (project) {
+        const platformMap = { roblox: { key: 'roblox', label: 'ROBLOX' } };
         const category = (project.category || '').toLowerCase();
-        const platformMap = {
-            roblox: { key: 'roblox', label: 'ROBLOX' }
-        };
-
         if (platformMap[category]) return platformMap[category];
         const platform = (project.platform || '').toLowerCase();
         if (platformMap[platform]) return platformMap[platform];
@@ -336,7 +296,6 @@ const ProjectRenderer = {
         const categoryEl = document.getElementById('categoryFilter');
         const statusEl = document.getElementById('statusFilter');
         const keywordEl = document.getElementById('keywordFilter');
-
         return {
             category: categoryEl ? categoryEl.value : 'all',
             status: statusEl ? statusEl.value : 'all',
@@ -358,19 +317,18 @@ const ProjectRenderer = {
     },
 
     updateFilterFeedback: function (visibleCount, totalCount, lang = 'ko') {
+        const U = this._u();
         const resultsEl = document.getElementById('projectResultsText');
         const emptyEl = document.getElementById('projectEmptyState');
 
         if (resultsEl) {
             if (visibleCount === 0) {
-                resultsEl.textContent = this.t(lang, 'projects_filter_results_none', 'No projects match the current filters.');
+                resultsEl.textContent = U.t(lang, 'projects_filter_results_none', 'No projects match the current filters.');
             } else if (visibleCount === totalCount) {
-                resultsEl.textContent = this.t(lang, 'projects_filter_results_default', 'Showing all projects.');
+                resultsEl.textContent = U.t(lang, 'projects_filter_results_default', 'Showing all projects.');
             } else {
-                const template = this.t(lang, 'projects_filter_results', '{{visible}} / {{total}}');
-                resultsEl.textContent = template
-                    .replace('{{visible}}', String(visibleCount))
-                    .replace('{{total}}', String(totalCount));
+                const template = U.t(lang, 'projects_filter_results', '{{visible}} / {{total}}');
+                resultsEl.textContent = U.interpolate(template, { visible: visibleCount, total: totalCount });
             }
         }
 
@@ -398,9 +356,7 @@ const ProjectRenderer = {
             const visible = matchCategory && matchStatus && matchKeyword;
 
             card.style.display = visible ? '' : 'none';
-            if (visible) {
-                visibleCount += 1;
-            }
+            if (visible) visibleCount += 1;
         });
 
         const specialSection = document.getElementById('specialProjectSection');
@@ -410,14 +366,13 @@ const ProjectRenderer = {
             specialSection.classList.toggle('hidden', !hasVisibleSpecialCards);
         }
 
-        this.updateFilterFeedback(visibleCount, cards.length, this.getCurrentLanguage());
+        this.updateFilterFeedback(visibleCount, cards.length, this._u().getCurrentLanguage());
     },
 
     applyCurrentFilters: function () {
         this.applyFilters(this.getCurrentFilterState());
     },
 
-    // 필터 UI 바인딩
     bindFilters: function () {
         if (this.filtersBound) return;
 
@@ -427,9 +382,7 @@ const ProjectRenderer = {
         const resetEl = document.getElementById('resetFilters');
         if (!categoryEl && !statusEl && !keywordEl && !resetEl) return;
 
-        const apply = () => {
-            this.applyCurrentFilters();
-        };
+        const apply = () => this.applyCurrentFilters();
 
         if (categoryEl) categoryEl.addEventListener('change', apply);
         if (statusEl) statusEl.addEventListener('change', apply);
@@ -451,13 +404,11 @@ const ProjectRenderer = {
         this.filtersBound = true;
     },
 
-    // 언어 변경 시 프로젝트 업데이트
-    updateLanguage: function (_lang) {
+    updateLanguage: function () {
         const featuredContainer = document.querySelector('.project-preview .project-grid:not(#all-projects-grid)');
         if (featuredContainer) {
             this.renderFeaturedProjects('project-grid');
         }
-
         const allProjectsContainer = document.querySelector('#all-projects-grid');
         if (allProjectsContainer) {
             this.renderAllProjects('all-projects-grid');
@@ -466,7 +417,6 @@ const ProjectRenderer = {
     }
 };
 
-// DOM이 로드되면 프로젝트 렌더링
 document.addEventListener('DOMContentLoaded', function () {
     const renderAfterLoad = function () {
         if (document.querySelector('.project-preview .project-grid:not(#all-projects-grid)')) {
@@ -483,10 +433,8 @@ document.addEventListener('DOMContentLoaded', function () {
     loader.then(renderAfterLoad).catch(renderAfterLoad);
 });
 
-// 언어 변경 이벤트 리스너
 document.addEventListener('languageChanged', function (event) {
     ProjectRenderer.updateLanguage(event.detail.language);
 });
 
-// 전역에서 사용할 수 있도록 노출
 window.ProjectRenderer = ProjectRenderer;
