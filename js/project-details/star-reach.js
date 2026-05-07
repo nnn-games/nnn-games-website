@@ -1,58 +1,59 @@
+// Star Reach — 개발 중 페이지 (project-detail-development.js 렌더러 사용)
+// 표시 항목: 제목 / 한 줄 소개 / 장르 / 플랫폼 / 출시 예정일 / 프리뷰 이미지
+// 프리뷰 이미지 업로드 후 media.src 를 `assets/starreach/sr-preview.jpg` 로 활성화하세요.
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
 window.ProjectDetailConfigs['star-reach'] = {
     seo: {
-        title: { ko: 'Star Reach - NNN GAMES', en: 'Star Reach - NNN GAMES', ja: 'Star Reach - NNN GAMES' },
+        title: {
+            ko: 'Star Reach - NNN GAMES',
+            en: 'Star Reach - NNN GAMES',
+            ja: 'Star Reach - NNN GAMES'
+        },
         description: {
-            ko: 'NNN GAMES가 개발 중인 신규 Roblox 프로젝트 Star Reach 소개를 준비 중입니다.',
-            en: 'Star Reach is a new Roblox project in development at NNN GAMES; details are being prepared.',
-            ja: 'NNN GAMESが開発中の新規Robloxプロジェクト、Star Reachの紹介を準備中です。'
-        },
-        keywords: {
-            ko: 'Roblox, Star Reach, NNN GAMES',
-            en: 'Roblox, Star Reach, NNN GAMES',
-            ja: 'Roblox, Star Reach, NNN GAMES'
-        },
-        ogTitle: { ko: 'Star Reach | NNN GAMES', en: 'Star Reach | NNN GAMES', ja: 'Star Reach | NNN GAMES' },
-        ogDescription: {
-            ko: 'NNN GAMES가 개발 중인 신규 Roblox 프로젝트입니다. 자세한 정보는 추후 공개됩니다.',
+            ko: 'NNN GAMES 가 개발 중인 신규 Roblox 프로젝트입니다. 자세한 내용은 추후 공개됩니다.',
             en: 'A new Roblox project in development at NNN GAMES. More details will be shared soon.',
             ja: 'NNN GAMESが開発中の新規Robloxプロジェクトです。詳細は後日公開予定です。'
-        },
-        ogImage: 'images/nnn-logo.png'
+        }
+        // ogImage: 프리뷰 업로드 후 'assets/starreach/sr-preview.jpg' 로 설정
     },
     hero: {
-        title: { ko: 'Star Reach', en: 'Star Reach', ja: 'Star Reach' },
-        tagline: {
-            ko: 'NNN GAMES가 준비 중인 신규 Roblox 프로젝트.',
-            en: 'A new Roblox project in development at NNN GAMES.',
-            ja: 'NNN GAMESが準備中の新規Robloxプロジェクト。'
+        title: {
+            ko: 'Star Reach',
+            en: 'Star Reach',
+            ja: 'Star Reach'
         },
-        status: { ko: '개발 중', en: 'In Development', ja: '開発中' },
-        genre: { ko: '장르: 추후 공개', en: 'Genre: TBA', ja: 'ジャンル: 後日公開' },
-        platform: { ko: '플랫폼: Roblox', en: 'Platform: Roblox', ja: 'プラットフォーム: Roblox' }
-    },
-    ctaButtons: [],
-    media: {
-        type: 'image',
-        src: 'images/nnn-logo.png',
-        alt: { ko: 'Star Reach 프로젝트 이미지', en: 'Star Reach project image', ja: 'Star Reach プロジェクト画像' }
-    },
-    overview: [
-        {
-            ko: 'Star Reach는 NNN GAMES가 개발 중인 신규 Roblox 프로젝트입니다. 콘셉트와 핵심 플레이는 정리 단계에 있으며, 추후 공식 발표를 통해 자세한 내용을 공유할 예정입니다.',
-            en: 'Star Reach is a new Roblox project in development at NNN GAMES. Concept and core gameplay are being finalized; full details will follow in an upcoming announcement.',
-            ja: 'Star ReachはNNN GAMESが開発中の新規Robloxプロジェクトです。コンセプトとコアプレイは整理中で、詳細は今後の公式発表でお伝えします。'
+        tagline: {
+            ko: '준비 중인 신규 Roblox 프로젝트로, 자세한 컨셉은 추후 공개됩니다.',
+            en: 'A new Roblox project in development. Concept details will be shared as we approach launch.',
+            ja: '準備中の新規Robloxプロジェクト。コンセプトは後日公開予定です。'
+        },
+        genre: {
+            ko: '장르: 추후 공개',
+            en: 'Genre: TBA',
+            ja: 'ジャンル: 後日公開'
+        },
+        platform: {
+            ko: '플랫폼: Roblox',
+            en: 'Platform: Roblox',
+            ja: 'プラットフォーム: Roblox'
         }
-    ],
-    highlights: [],
-    snapshot: {
-        launch: { ko: '추후 공개', en: 'TBA', ja: '後日公開' },
-        status: { ko: '개발 중', en: 'In development', ja: '開発中' },
-        client: { ko: '내부 프로젝트', en: 'Internal project', ja: '内部プロジェクト' },
-        stack: { ko: 'Roblox Studio / Luau', en: 'Roblox Studio / Luau', ja: 'Roblox Studio / Luau' }
     },
-    features: [],
-    links: [],
-    gallery: []
+    snapshot: {
+        launch: {
+            ko: '출시일 추후 공개',
+            en: 'Launch: TBA',
+            ja: 'リリース日: 後日公開'
+        }
+    }
+    // media: 프리뷰 업로드 후 아래 블록 활성화
+    // media: {
+    //     type: 'image',
+    //     src: 'assets/starreach/sr-preview.jpg',
+    //     alt: {
+    //         ko: 'Star Reach 프리뷰 이미지',
+    //         en: 'Star Reach preview image',
+    //         ja: 'Star Reach プレビュー画像'
+    //     }
+    // }
 };
