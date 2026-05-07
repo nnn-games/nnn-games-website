@@ -293,11 +293,9 @@
       },
       "image": "images/projectk-preview.jpg",
       "detailPage": "hacker-vs-security.html",
-      "showInProjectsList": false,
-      "showDetailLinkInProjects": false,
       "category": "roblox",
       "status": "development",
-      "featured": false,
+      "featured": true,
       "launchDate": "2026-Q3",
       "platform": "Roblox",
       "client": "Internal Project",
@@ -433,24 +431,21 @@
         "ja": "Star Reach"
       },
       "description": {
-        "ko": "한국어 더미 텍스트입니다.",
-        "en": "Placeholder description for this project.",
-        "ja": "プレースホルダー説明です。"
+        "ko": "NNN GAMES가 개발 중인 신규 Roblox 프로젝트 Star Reach 소개를 준비 중입니다.",
+        "en": "Star Reach is a new Roblox project in development at NNN GAMES; details are being prepared.",
+        "ja": "NNN GAMESが開発中の新規Robloxプロジェクト、Star Reachの紹介を準備中です。"
       },
       "image": "images/nnn-logo.png",
       "detailPage": "star-reach.html",
-      "category": "mobile",
-      "mobilePlatform": [
-        "ios",
-        "android"
-      ],
+      "category": "roblox",
       "status": "development",
-      "featured": false,
-      "launchDate": "(미정)",
-      "platform": "iOS / Android",
+      "featured": true,
+      "launchDate": "TBD",
+      "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [
-        "Mobile"
+        "Roblox Studio",
+        "Luau"
       ],
       "placeId": null,
       "universeId": null,
@@ -458,8 +453,8 @@
         "play": "",
         "trailer": "",
         "article": "",
-        "appStore": "",
-        "playStore": ""
+        "group": "",
+        "showcase": ""
       },
       "reporting": {
         "collectMetrics": false,
