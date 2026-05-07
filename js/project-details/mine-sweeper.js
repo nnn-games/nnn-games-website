@@ -1,19 +1,19 @@
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
-window.ProjectDetailConfigs['star-reach'] = {
+window.ProjectDetailConfigs['mine-sweeper'] = {
     seo: {
-        title: { ko: 'Star Reach - NNN GAMES', en: 'Star Reach - NNN GAMES', ja: 'Star Reach - NNN GAMES' },
+        title: { ko: 'Mine Sweeper - NNN GAMES', en: 'Mine Sweeper - NNN GAMES', ja: 'Mine Sweeper - NNN GAMES' },
         description: {
             ko: '한국어 더미 텍스트입니다.',
             en: 'Placeholder description for this project.',
             ja: 'プレースホルダー説明です。'
         },
         keywords: {
-            ko: 'Mobile, Star Reach, NNN GAMES',
-            en: 'Mobile, Star Reach, NNN GAMES',
-            ja: 'Mobile, Star Reach, NNN GAMES'
+            ko: 'Mobile, Mine Sweeper, NNN GAMES',
+            en: 'Mobile, Mine Sweeper, NNN GAMES',
+            ja: 'Mobile, Mine Sweeper, NNN GAMES'
         },
-        ogTitle: { ko: 'Star Reach | NNN GAMES', en: 'Star Reach | NNN GAMES', ja: 'Star Reach | NNN GAMES' },
+        ogTitle: { ko: 'Mine Sweeper | NNN GAMES', en: 'Mine Sweeper | NNN GAMES', ja: 'Mine Sweeper | NNN GAMES' },
         ogDescription: {
             ko: '한국어 더미 텍스트입니다.',
             en: 'Placeholder description for this project.',
@@ -22,7 +22,7 @@ window.ProjectDetailConfigs['star-reach'] = {
         ogImage: 'images/nnn-logo.png'
     },
     hero: {
-        title: { ko: 'Star Reach', en: 'Star Reach', ja: 'Star Reach' },
+        title: { ko: 'Mine Sweeper', en: 'Mine Sweeper', ja: 'Mine Sweeper' },
         tagline: {
             ko: '한국어 더미 텍스트입니다.',
             en: 'Placeholder description for this project.',
@@ -36,7 +36,7 @@ window.ProjectDetailConfigs['star-reach'] = {
     media: {
         type: 'image',
         src: 'images/nnn-logo.png',
-        alt: { ko: 'Star Reach 더미 이미지', en: 'Star Reach placeholder image', ja: 'Star Reach プレースホルダー画像' }
+        alt: { ko: 'Mine Sweeper 더미 이미지', en: 'Mine Sweeper placeholder image', ja: 'Mine Sweeper プレースホルダー画像' }
     },
     overview: [
         { ko: '한국어 더미 텍스트입니다.', en: 'Placeholder description for this project.', ja: 'プレースホルダー説明です。' },
@@ -65,7 +65,7 @@ window.ProjectDetailConfigs['star-reach'] = {
     gallery: [
         {
             src: 'images/nnn-logo.png',
-            alt: { ko: 'Star Reach 갤러리 더미', en: 'Star Reach gallery placeholder', ja: 'Star Reach ギャラリー プレースホルダー' }
+            alt: { ko: 'Mine Sweeper 갤러리 더미', en: 'Mine Sweeper gallery placeholder', ja: 'Mine Sweeper ギャラリー プレースホルダー' }
         }
     ]
 };

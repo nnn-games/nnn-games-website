@@ -7,7 +7,7 @@
 - 변경 관리: 모든 수정은 PR + 코드리뷰 1인 이상. PR 템플릿에 변경 요약, 테스트 결과, 리스크를 명시하고 스크린샷/미리보기 링크를 첨부.
 
 ## 2. 정보 구조 & 코드베이스
-- 정적 페이지: `index.html`, `projects.html`, 개별 프로젝트 상세(`get-train.html` 등), `contact.html` (소개 페이지는 제거됨).
+- 정적 페이지: `index.html`, `projects-roblox.html`, 개별 프로젝트 상세(`get-train.html` 등), `contact.html` (소개 페이지는 제거됨).
 - 데이터 소스: `js/projects-data.js`에서 프로젝트 메타를 관리하고 `js/project-renderer.js`로 카드/배지를 생성.
 - 다국어: `js/i18n.js` + `data-key` 속성. KO/EN/JA 유지, 새 텍스트는 세 언어 모두 추가.
 - 공통 자산: `css/style.css`, `images/` 썸네일·갤러리, `js/main.js`(네비/애니메이션/지연 로딩/CTA 추적 스텁).

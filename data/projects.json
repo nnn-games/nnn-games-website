@@ -40,108 +40,101 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 6195254,
-        "playing": 433,
-        "favorites": 341592,
-        "likeRatio": 0.5364412344057781,
-        "updatedAt": "2026-05-02T03:10:38.225Z"
+        "visits": 6550610,
+        "playing": 168,
+        "favorites": 354821,
+        "likeRatio": 0.5388471177944862,
+        "updatedAt": "2026-05-07T07:47:03.990Z"
       }
     },
     {
-      "id": "star-reach",
+      "id": "korean-spa",
       "title": {
-        "ko": "Star Reach",
-        "en": "Star Reach",
-        "ja": "Star Reach"
+        "ko": "Korean Spa",
+        "en": "Korean Spa",
+        "ja": "Korean Spa"
       },
       "description": {
-        "ko": "Star Reach 프로젝트 소개를 준비 중입니다.",
-        "en": "Star Reach project introduction is in preparation.",
-        "ja": "Star Reachプロジェクトの紹介を準備中です。"
+        "ko": "작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.",
+        "en": "A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.",
+        "ja": "小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。"
       },
-      "image": "images/nnn-logo.png",
-      "detailPage": "star-reach.html",
-      "showInProjectsList": true,
-      "showDetailLinkInProjects": true,
+      "image": "images/ks-preview.jpg",
+      "detailPage": "korean-spa.html",
       "category": "roblox",
-      "status": "development",
+      "status": "active",
       "featured": true,
-      "launchDate": "TBD",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau"
-      ],
-      "placeId": null,
-      "links": {
-        "play": "",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
-      },
-      "reporting": {
-        "collectMetrics": false,
-        "includeInHomePreview": true,
-        "includeInHeroProjectCount": false,
-        "includeInHeroVisitTotal": false
-      },
-      "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
-      }
-    },
-    {
-      "id": "hacker-vs-security",
-      "title": {
-        "ko": "Hacker vs Security",
-        "en": "Hacker vs Security",
-        "ja": "Hacker vs Security"
-      },
-      "description": {
-        "ko": "침투와 방어의 읽기 싸움을 중심으로 한 Roblox 비대칭 전략 PvP 프로젝트.",
-        "en": "A Roblox asymmetric strategy PvP project centered on infiltration and defensive counterplay.",
-        "ja": "侵入と防衛の読み合いを軸にしたRoblox非対称戦略PvPプロジェクト。"
-      },
-      "image": "images/projectk-preview.jpg",
-      "detailPage": "hacker-vs-security.html",
-      "showInProjectsList": true,
-      "showDetailLinkInProjects": true,
-      "category": "roblox",
-      "status": "development",
-      "featured": true,
-      "launchDate": "2026-Q3",
+      "launchDate": "2025-12",
       "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [
         "Roblox Studio",
         "Luau",
-        "Systemic PvP"
+        "UGC Creation"
       ],
-      "placeId": null,
+      "placeId": "90029482000377",
+      "universeId": "8508024007",
       "links": {
-        "play": "",
+        "play": "https://www.roblox.com/games/90029482000377/Grubby",
         "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
+        "article": ""
       },
       "reporting": {
-        "collectMetrics": false,
-        "includeInHomePreview": true,
-        "includeInHeroProjectCount": false,
-        "includeInHeroVisitTotal": false
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
+        "visits": 115236,
+        "playing": 1,
+        "favorites": 622,
+        "likeRatio": 0.8681626928471248,
+        "updatedAt": "2026-05-07T07:47:03.990Z"
+      }
+    },
+    {
+      "id": "legendary-dj-gear",
+      "title": {
+        "ko": "Legendary DJ Gear",
+        "en": "Legendary DJ Gear",
+        "ja": "Legendary DJ Gear"
+      },
+      "description": {
+        "ko": "음악과 코스튬을 수집하며 나만의 플레이리스트를 완성하는 로블록스 수집형 게임.",
+        "en": "A Roblox collection game where you gather music and costumes to create your own playlist.",
+        "ja": "音楽とコスチュームを収集して自分だけのプレイリストを完成させるRobloxコレクションゲーム。"
+      },
+      "image": "images/ldg-preview.jpg",
+      "detailPage": "legendary-dj-gear.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "launchDate": "2024-11",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "UI Design"
+      ],
+      "placeId": "110796735931100",
+      "universeId": "7661096144",
+      "links": {
+        "play": "https://www.roblox.com/games/110796735931100/Legendary-DJ-Gear",
+        "trailer": "https://www.youtube.com/watch?v=0cEj3Tnb-No",
+        "article": ""
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 49950,
+        "playing": 0,
+        "favorites": 203,
+        "likeRatio": 0.532258064516129,
+        "updatedAt": "2026-05-07T07:47:03.990Z"
       }
     },
     {
@@ -185,101 +178,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 34419,
+        "visits": 37608,
         "playing": 1,
-        "favorites": 195,
-        "likeRatio": 0.5333333333333333,
-        "updatedAt": "2026-05-02T03:10:38.225Z"
-      }
-    },
-    {
-      "id": "korean-spa",
-      "title": {
-        "ko": "Korean Spa",
-        "en": "Korean Spa",
-        "ja": "Korean Spa"
-      },
-      "description": {
-        "ko": "작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.",
-        "en": "A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.",
-        "ja": "小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。"
-      },
-      "image": "images/ks-preview.jpg",
-      "detailPage": "korean-spa.html",
-      "category": "roblox",
-      "status": "active",
-      "featured": true,
-      "launchDate": "2025-12",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "UGC Creation"
-      ],
-      "placeId": "90029482000377",
-      "universeId": "8508024007",
-      "links": {
-        "play": "https://www.roblox.com/games/90029482000377/Grubby",
-        "trailer": "",
-        "article": ""
-      },
-      "reporting": {
-        "collectMetrics": true,
-        "includeInHeroProjectCount": true,
-        "includeInHeroVisitTotal": true
-      },
-      "metrics": {
-        "visits": 111938,
-        "playing": 3,
-        "favorites": 613,
-        "likeRatio": 0.8688293370944993,
-        "updatedAt": "2026-05-02T03:10:38.225Z"
-      }
-    },
-    {
-      "id": "legendary-dj-gear",
-      "title": {
-        "ko": "Legendary DJ Gear",
-        "en": "Legendary DJ Gear",
-        "ja": "Legendary DJ Gear"
-      },
-      "description": {
-        "ko": "음악과 코스튬을 수집하며 나만의 플레이리스트를 완성하는 로블록스 수집형 게임.",
-        "en": "A Roblox collection game where you gather music and costumes to create your own playlist.",
-        "ja": "音楽とコスチュームを収集して自分だけのプレイリストを完成させるRobloxコレクションゲーム。"
-      },
-      "image": "images/ldg-preview.jpg",
-      "detailPage": "legendary-dj-gear.html",
-      "category": "roblox",
-      "status": "active",
-      "featured": true,
-      "launchDate": "2024-11",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "UI Design"
-      ],
-      "placeId": "110796735931100",
-      "universeId": "7661096144",
-      "links": {
-        "play": "https://www.roblox.com/games/110796735931100/Legendary-DJ-Gear",
-        "trailer": "https://www.youtube.com/watch?v=0cEj3Tnb-No",
-        "article": ""
-      },
-      "reporting": {
-        "collectMetrics": true,
-        "includeInHeroProjectCount": true,
-        "includeInHeroVisitTotal": true
-      },
-      "metrics": {
-        "visits": 49949,
-        "playing": 0,
-        "favorites": 203,
-        "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-05-02T03:10:38.225Z"
+        "favorites": 205,
+        "likeRatio": 0.5294117647058824,
+        "updatedAt": "2026-05-07T07:47:03.990Z"
       }
     },
     {
@@ -312,7 +215,7 @@
         "play": "",
         "trailer": "",
         "article": "",
-        "group": "https://www.roblox.com/communities/34453707/NNN-UGC#!/about",
+        "group": "https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about",
         "showcase": ""
       },
       "reporting": {
@@ -329,21 +232,21 @@
       }
     },
     {
-      "id": "great-tower-reset",
+      "id": "reset-tower",
       "title": {
-        "ko": "The Great Tower Reset",
-        "en": "The Great Tower Reset",
-        "ja": "The Great Tower Reset"
+        "ko": "Reset Tower",
+        "en": "Reset Tower",
+        "ja": "Reset Tower"
       },
       "description": {
         "ko": "리셋 성장과 타워 돌파를 결합한 Roblox 메타 진행형 프로젝트.",
         "en": "A Roblox progression project built around tower pushes and reset-driven growth.",
         "ja": "タワー攻略とリセット成長を組み合わせたRobloxメタ進行型プロジェクト。"
       },
-      "image": "images/gt-preview.jpg",
-      "detailPage": "great-tower-reset.html",
-      "showInProjectsList": false,
-      "showDetailLinkInProjects": false,
+      "image": "images/rt-preview.jpg",
+      "detailPage": "reset-tower.html",
+      "showInProjectsList": true,
+      "showDetailLinkInProjects": true,
       "category": "roblox",
       "status": "development",
       "featured": false,
@@ -375,6 +278,293 @@
         "likeRatio": null,
         "updatedAt": null
       }
+    },
+    {
+      "id": "hacker-vs-security",
+      "title": {
+        "ko": "Hacker vs Security",
+        "en": "Hacker vs Security",
+        "ja": "Hacker vs Security"
+      },
+      "description": {
+        "ko": "침투와 방어의 읽기 싸움을 중심으로 한 Roblox 비대칭 전략 PvP 프로젝트.",
+        "en": "A Roblox asymmetric strategy PvP project centered on infiltration and defensive counterplay.",
+        "ja": "侵入と防衛の読み合いを軸にしたRoblox非対称戦略PvPプロジェクト。"
+      },
+      "image": "images/projectk-preview.jpg",
+      "detailPage": "hacker-vs-security.html",
+      "showInProjectsList": false,
+      "showDetailLinkInProjects": false,
+      "category": "roblox",
+      "status": "development",
+      "featured": false,
+      "launchDate": "2026-Q3",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "Systemic PvP"
+      ],
+      "placeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "sweet-forest",
+      "title": {
+        "ko": "Sweet Forest",
+        "en": "Sweet Forest",
+        "ja": "Sweet Forest"
+      },
+      "description": {
+        "ko": "한국어 더미 텍스트입니다.",
+        "en": "Placeholder description for this project.",
+        "ja": "プレースホルダー説明です。"
+      },
+      "image": "images/nnn-logo.png",
+      "detailPage": "sweet-forest.html",
+      "category": "mobile",
+      "mobilePlatform": [
+        "ios",
+        "android"
+      ],
+      "status": "development",
+      "featured": false,
+      "launchDate": "(미정)",
+      "platform": "iOS / Android",
+      "client": "Internal Project",
+      "technologies": [
+        "Mobile"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "appStore": "",
+        "playStore": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "mine-sweeper",
+      "title": {
+        "ko": "Mine Sweeper",
+        "en": "Mine Sweeper",
+        "ja": "Mine Sweeper"
+      },
+      "description": {
+        "ko": "한국어 더미 텍스트입니다.",
+        "en": "Placeholder description for this project.",
+        "ja": "プレースホルダー説明です。"
+      },
+      "image": "images/nnn-logo.png",
+      "detailPage": "mine-sweeper.html",
+      "category": "mobile",
+      "mobilePlatform": [
+        "ios",
+        "android"
+      ],
+      "status": "development",
+      "featured": false,
+      "launchDate": "(미정)",
+      "platform": "iOS / Android",
+      "client": "Internal Project",
+      "technologies": [
+        "Mobile"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "appStore": "",
+        "playStore": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "star-reach",
+      "title": {
+        "ko": "Star Reach",
+        "en": "Star Reach",
+        "ja": "Star Reach"
+      },
+      "description": {
+        "ko": "한국어 더미 텍스트입니다.",
+        "en": "Placeholder description for this project.",
+        "ja": "プレースホルダー説明です。"
+      },
+      "image": "images/nnn-logo.png",
+      "detailPage": "star-reach.html",
+      "category": "mobile",
+      "mobilePlatform": [
+        "ios",
+        "android"
+      ],
+      "status": "development",
+      "featured": false,
+      "launchDate": "(미정)",
+      "platform": "iOS / Android",
+      "client": "Internal Project",
+      "technologies": [
+        "Mobile"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "appStore": "",
+        "playStore": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "new-roblox-project",
+      "title": {
+        "ko": "New Roblox Project",
+        "en": "New Roblox Project",
+        "ja": "New Roblox Project"
+      },
+      "description": {
+        "ko": "한국어 더미 텍스트입니다.",
+        "en": "Placeholder description for this project.",
+        "ja": "プレースホルダー説明です。"
+      },
+      "image": "images/nnn-logo.png",
+      "detailPage": "new-roblox-project.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": false,
+      "launchDate": "(미정)",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "universeId": "8296982488",
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": 143978,
+        "playing": 33,
+        "favorites": 6480,
+        "likeRatio": 0.7777777777777778,
+        "updatedAt": "2026-05-07T07:47:03.990Z"
+      }
+    },
+    {
+      "id": "watermelon-farm",
+      "title": {
+        "ko": "Watermelon Farm",
+        "en": "Watermelon Farm",
+        "ja": "Watermelon Farm"
+      },
+      "description": {
+        "ko": "한국어 더미 텍스트입니다.",
+        "en": "Placeholder description for this project.",
+        "ja": "プレースホルダー説明です。"
+      },
+      "image": "images/nnn-logo.png",
+      "detailPage": "watermelon-farm.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": false,
+      "launchDate": "(미정)",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
     }
   ],
   "summary": {
@@ -382,18 +572,18 @@
       "projectCount": 4,
       "projectIds": [
         "tower-flood-race",
-        "fruit-battles",
         "korean-spa",
-        "legendary-dj-gear"
+        "legendary-dj-gear",
+        "fruit-battles"
       ],
-      "totalVisits": 6391560,
+      "totalVisits": 6753404,
       "visitProjectIds": [
         "tower-flood-race",
-        "fruit-battles",
         "korean-spa",
-        "legendary-dj-gear"
+        "legendary-dj-gear",
+        "fruit-battles"
       ],
-      "updatedAt": "2026-05-02T03:10:38.225Z"
+      "updatedAt": "2026-05-07T07:47:03.990Z"
     }
   }
 }

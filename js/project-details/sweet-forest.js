@@ -1,19 +1,19 @@
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
-window.ProjectDetailConfigs['star-reach'] = {
+window.ProjectDetailConfigs['sweet-forest'] = {
     seo: {
-        title: { ko: 'Star Reach - NNN GAMES', en: 'Star Reach - NNN GAMES', ja: 'Star Reach - NNN GAMES' },
+        title: { ko: 'Sweet Forest - NNN GAMES', en: 'Sweet Forest - NNN GAMES', ja: 'Sweet Forest - NNN GAMES' },
         description: {
             ko: '한국어 더미 텍스트입니다.',
             en: 'Placeholder description for this project.',
             ja: 'プレースホルダー説明です。'
         },
         keywords: {
-            ko: 'Mobile, Star Reach, NNN GAMES',
-            en: 'Mobile, Star Reach, NNN GAMES',
-            ja: 'Mobile, Star Reach, NNN GAMES'
+            ko: 'Mobile, Sweet Forest, NNN GAMES',
+            en: 'Mobile, Sweet Forest, NNN GAMES',
+            ja: 'Mobile, Sweet Forest, NNN GAMES'
         },
-        ogTitle: { ko: 'Star Reach | NNN GAMES', en: 'Star Reach | NNN GAMES', ja: 'Star Reach | NNN GAMES' },
+        ogTitle: { ko: 'Sweet Forest | NNN GAMES', en: 'Sweet Forest | NNN GAMES', ja: 'Sweet Forest | NNN GAMES' },
         ogDescription: {
             ko: '한국어 더미 텍스트입니다.',
             en: 'Placeholder description for this project.',
@@ -22,7 +22,7 @@ window.ProjectDetailConfigs['star-reach'] = {
         ogImage: 'images/nnn-logo.png'
     },
     hero: {
-        title: { ko: 'Star Reach', en: 'Star Reach', ja: 'Star Reach' },
+        title: { ko: 'Sweet Forest', en: 'Sweet Forest', ja: 'Sweet Forest' },
         tagline: {
             ko: '한국어 더미 텍스트입니다.',
             en: 'Placeholder description for this project.',
@@ -36,7 +36,7 @@ window.ProjectDetailConfigs['star-reach'] = {
     media: {
         type: 'image',
         src: 'images/nnn-logo.png',
-        alt: { ko: 'Star Reach 더미 이미지', en: 'Star Reach placeholder image', ja: 'Star Reach プレースホルダー画像' }
+        alt: { ko: 'Sweet Forest 더미 이미지', en: 'Sweet Forest placeholder image', ja: 'Sweet Forest プレースホルダー画像' }
     },
     overview: [
         { ko: '한국어 더미 텍스트입니다.', en: 'Placeholder description for this project.', ja: 'プレースホルダー説明です。' },
@@ -65,7 +65,7 @@ window.ProjectDetailConfigs['star-reach'] = {
     gallery: [
         {
             src: 'images/nnn-logo.png',
-            alt: { ko: 'Star Reach 갤러리 더미', en: 'Star Reach gallery placeholder', ja: 'Star Reach ギャラリー プレースホルダー' }
+            alt: { ko: 'Sweet Forest 갤러리 더미', en: 'Sweet Forest gallery placeholder', ja: 'Sweet Forest ギャラリー プレースホルダー' }
         }
     ]
 };

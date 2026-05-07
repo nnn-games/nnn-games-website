@@ -165,6 +165,14 @@ document.addEventListener('DOMContentLoaded', function () {
             : true;
         return isActiveCommunity(group) && include;
     };
+    const byMemberCountDesc = (a, b) => {
+        const av = typeof a?.memberCount === 'number' ? a.memberCount : -1;
+        const bv = typeof b?.memberCount === 'number' ? b.memberCount : -1;
+        if (av !== bv) return bv - av;
+        const an = (a?.names && a.names.ko) || a?.name || a?.id || '';
+        const bn = (b?.names && b.names.ko) || b?.name || b?.id || '';
+        return an.localeCompare(bn);
+    };
     const getCommunityDisplayName = (group, lang) => {
         const names = group && group.names ? group.names : null;
         if (names && (names[lang] || names.ko || names.en || names.ja)) {
@@ -303,7 +311,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (communityData && Array.isArray(communityData.groups) && communityData.groups.length > 0) {
-                const groups = communityData.groups.filter(shouldShowCommunityOnHomepage);
+                const groups = communityData.groups
+                    .filter(shouldShowCommunityOnHomepage)
+                    .slice()
+                    .sort(byMemberCountDesc);
                 const heroSubscriberCount = communityData.totals && typeof communityData.totals.heroSubscriberCount === 'number'
                     ? communityData.totals.heroSubscriberCount
                     : communityData.groups.reduce((sum, group) => {
@@ -347,8 +358,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 0);
             setCommunityTotal(heroSubscriberCount, lang);
 
-            homepageGroups.forEach(group => {
-                const merged = mergedGroups.find(item => item.id === group.id) || group;
+            const sortedHomepageGroups = homepageGroups
+                .map(group => mergedGroups.find(item => item.id === group.id) || group)
+                .slice()
+                .sort(byMemberCountDesc);
+            sortedHomepageGroups.forEach(merged => {
                 appendCommunityCard(grid, merged, lang);
             });
         } catch (err) {

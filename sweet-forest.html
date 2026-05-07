@@ -4,29 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Great Tower Reset - NNN GAMES</title>
-    <meta name="description" content="리셋 성장과 타워 돌파를 결합한 Roblox 개발 프로젝트 The Great Tower Reset을 소개합니다.">
-    <meta name="keywords" content="Roblox, The Great Tower Reset, tower progression, reset loop">
-    <meta property="og:title" content="The Great Tower Reset | Roblox Progression Project">
-    <meta property="og:description" content="타워 공략, 리셋 선택, 영구 성장 보상을 중심으로 설계된 Roblox 신규 프로젝트입니다.">
+    <title>Sweet Forest - NNN GAMES</title>
+    <meta name="description" content="Placeholder description for this project.">
+    <meta name="keywords" content="Mobile project detail, NNN GAMES">
+    <meta property="og:title" content="Sweet Forest - NNN GAMES">
+    <meta property="og:description" content="Placeholder description for this project.">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="images/gt-main.jpg">
+    <meta property="og:image" content="images/nnn-logo.png">
     <meta property="og:site_name" content="NNN GAMES">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Great Tower Reset | Roblox Progression Project">
-    <meta name="twitter:description" content="타워 공략, 리셋 선택, 영구 성장 보상을 중심으로 설계된 Roblox 신규 프로젝트입니다.">
-    <meta name="twitter:image" content="images/gt-main.jpg">
+    <meta name="twitter:title" content="Sweet Forest - NNN GAMES">
+    <meta name="twitter:description" content="Placeholder description for this project.">
+    <meta name="twitter:image" content="images/nnn-logo.png">
     <link rel="icon" href="images/nnn-logo.png" type="image/png" sizes="256x256">
     <meta name="theme-color" content="#1F242B">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body data-project-id="great-tower-reset">
+<body data-project-id="sweet-forest">
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo">
@@ -36,13 +34,16 @@
             <nav class="main-nav" id="site-navigation">
                 <ul>
                     <li><a href="index.html" data-key="nav_home">홈</a></li>
-                    <li><a href="projects.html" class="active" data-key="nav_projects">프로젝트</a></li>
+                    <li class="has-dropdown"><a href="projects-roblox.html" class="active" data-key="nav_projects">프로젝트</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="projects-roblox.html" data-key="nav_projects_roblox">Roblox</a></li>
+                            <li><a href="projects-mobile.html" class="active" data-key="nav_projects_mobile">Mobile</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html" data-key="nav_contact">문의</a></li>
                     <li class="lang-switcher">
                         <a href="#" data-lang="ko" class="lang-btn active">한국어</a>
-                        <span class="lang-divider" aria-hidden="true">|</span>
                         <a href="#" data-lang="en" class="lang-btn">English</a>
-                        <span class="lang-divider" aria-hidden="true">|</span>
                         <a href="#" data-lang="ja" class="lang-btn">日本語</a>
                     </li>
                 </ul>
@@ -66,7 +67,7 @@
             <div class="footer-section">
                 <h3 data-key="footer_links_title">바로가기</h3>
                 <a href="index.html" data-key="nav_home">홈</a><br>
-                <a href="projects.html" data-key="nav_projects">프로젝트</a><br>
+                <a href="projects-roblox.html" data-key="nav_projects">프로젝트</a><br>
                 <a href="contact.html" data-key="nav_contact">문의</a>
             </div>
             <div class="footer-section">
@@ -81,12 +82,11 @@
         </div>
     </footer>
 
-    <script defer src="js/utils.js"></script>
-    <script defer src="js/projects-data.js"></script>
-    <script defer src="js/i18n.js"></script>
-    <script defer src="js/project-details/great-tower-reset.js"></script>
-    <script defer src="js/project-detail.js"></script>
-    <script defer src="js/main.js"></script>
+    <script src="js/projects-data.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/project-details/sweet-forest.js"></script>
+    <script src="js/project-detail.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

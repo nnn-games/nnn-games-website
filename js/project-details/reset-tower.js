@@ -1,39 +1,39 @@
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
-window.ProjectDetailConfigs['great-tower-reset'] = {
+window.ProjectDetailConfigs['reset-tower'] = {
     seo: {
         title: {
-            ko: 'The Great Tower Reset - NNN GAMES',
-            en: 'The Great Tower Reset - NNN GAMES',
-            ja: 'The Great Tower Reset - NNN GAMES'
+            ko: 'Reset Tower - NNN GAMES',
+            en: 'Reset Tower - NNN GAMES',
+            ja: 'Reset Tower - NNN GAMES'
         },
         description: {
-            ko: '리셋 성장과 타워 돌파를 결합한 Roblox 개발 프로젝트 The Great Tower Reset을 소개합니다.',
-            en: 'The Great Tower Reset is a Roblox project in development built around tower clearing and reset-driven progression.',
-            ja: 'タワー攻略とリセット成長を組み合わせた開発中のRobloxプロジェクト、The Great Tower Resetを紹介します。'
+            ko: '리셋 성장과 타워 돌파를 결합한 Roblox 개발 프로젝트 Reset Tower을 소개합니다.',
+            en: 'Reset Tower is a Roblox project in development built around tower clearing and reset-driven progression.',
+            ja: 'タワー攻略とリセット成長を組み合わせた開発中のRobloxプロジェクト、Reset Towerを紹介します。'
         },
         keywords: {
-            ko: 'Roblox, The Great Tower Reset, tower progression, reset loop',
-            en: 'Roblox, The Great Tower Reset, tower progression, reset loop',
-            ja: 'Roblox, The Great Tower Reset, tower progression, reset loop'
+            ko: 'Roblox, Reset Tower, tower progression, reset loop',
+            en: 'Roblox, Reset Tower, tower progression, reset loop',
+            ja: 'Roblox, Reset Tower, tower progression, reset loop'
         },
         ogTitle: {
-            ko: 'The Great Tower Reset | Roblox Progression Project',
-            en: 'The Great Tower Reset | Roblox Progression Project',
-            ja: 'The Great Tower Reset | Roblox Progression Project'
+            ko: 'Reset Tower | Roblox Progression Project',
+            en: 'Reset Tower | Roblox Progression Project',
+            ja: 'Reset Tower | Roblox Progression Project'
         },
         ogDescription: {
             ko: '타워 공략, 리셋 선택, 영구 성장 보상을 중심으로 설계된 Roblox 신규 프로젝트입니다.',
             en: 'A new Roblox project built around tower pushes, reset choices, and permanent progression rewards.',
             ja: 'タワー攻略、リセット判断、恒久成長報酬を軸に設計された新規Robloxプロジェクトです。'
         },
-        ogImage: 'images/gt-main.jpg'
+        ogImage: 'images/rt-main.jpg'
     },
     hero: {
         title: {
-            ko: 'The Great Tower Reset',
-            en: 'The Great Tower Reset',
-            ja: 'The Great Tower Reset'
+            ko: 'Reset Tower',
+            en: 'Reset Tower',
+            ja: 'Reset Tower'
         },
         tagline: {
             ko: '타워를 끝까지 밀어붙인 뒤 리셋을 통해 더 강한 다음 런을 준비하는 메타 성장형 Roblox 프로젝트입니다.',
@@ -59,18 +59,18 @@ window.ProjectDetailConfigs['great-tower-reset'] = {
     ctaButtons: [],
     media: {
         type: 'image',
-        src: 'images/gt-main.jpg',
+        src: 'images/rt-main.jpg',
         alt: {
-            ko: 'The Great Tower Reset 대표 이미지',
-            en: 'The Great Tower Reset key visual',
-            ja: 'The Great Tower Reset キービジュアル'
+            ko: 'Reset Tower 대표 이미지',
+            en: 'Reset Tower key visual',
+            ja: 'Reset Tower キービジュアル'
         }
     },
     overview: [
         {
-            ko: 'The Great Tower Reset은 단일 런의 성취와 메타 성장을 연결하는 Roblox 타워 프로젝트입니다. 플레이어는 매번 더 높은 구간을 돌파하고, 적절한 시점에 리셋을 선택해 다음 시도에서 더 강한 시작점을 확보합니다.',
-            en: 'The Great Tower Reset is a Roblox tower project that connects one-run achievements to long-term account growth. Players climb higher, choose when to reset, and convert that decision into a stronger starting position for the next push.',
-            ja: 'The Great Tower Resetは、1回のラン成果と長期成長を結び付けるRobloxタワープロジェクトです。より高い区間を攻略し、最適なタイミングでリセットすることで、次の挑戦の初期条件を強化していきます。'
+            ko: 'Reset Tower은 단일 런의 성취와 메타 성장을 연결하는 Roblox 타워 프로젝트입니다. 플레이어는 매번 더 높은 구간을 돌파하고, 적절한 시점에 리셋을 선택해 다음 시도에서 더 강한 시작점을 확보합니다.',
+            en: 'Reset Tower is a Roblox tower project that connects one-run achievements to long-term account growth. Players climb higher, choose when to reset, and convert that decision into a stronger starting position for the next push.',
+            ja: 'Reset Towerは、1回のラン成果と長期成長を結び付けるRobloxタワープロジェクトです。より高い区間を攻略し、最適なタイミングでリセットすることで、次の挑戦の初期条件を強化していきます。'
         },
         {
             ko: '리셋은 실패가 아니라 전략 선택으로 해석되며, 반복 세션의 의미를 키우는 방향으로 설계했습니다. 짧은 도전의 축적이 명확한 영구 보상으로 이어져 꾸준한 재도전을 유도합니다.',
@@ -206,59 +206,59 @@ window.ProjectDetailConfigs['great-tower-reset'] = {
     links: [],
     gallery: [
         {
-            src: 'images/gt-gallery-0.jpg',
+            src: 'images/rt-gallery-0.jpg',
             alt: {
-                ko: 'The Great Tower Reset 갤러리 0',
-                en: 'The Great Tower Reset gallery 0',
-                ja: 'The Great Tower Reset ギャラリー 0'
+                ko: 'Reset Tower 갤러리 0',
+                en: 'Reset Tower gallery 0',
+                ja: 'Reset Tower ギャラリー 0'
             }
         },
         {
-            src: 'images/gt-gallery-1.jpg',
+            src: 'images/rt-gallery-1.jpg',
             alt: {
-                ko: 'The Great Tower Reset 갤러리 1',
-                en: 'The Great Tower Reset gallery 1',
-                ja: 'The Great Tower Reset ギャラリー 1'
+                ko: 'Reset Tower 갤러리 1',
+                en: 'Reset Tower gallery 1',
+                ja: 'Reset Tower ギャラリー 1'
             }
         },
         {
-            src: 'images/gt-gallery-2.jpg',
+            src: 'images/rt-gallery-2.jpg',
             alt: {
-                ko: 'The Great Tower Reset 갤러리 2',
-                en: 'The Great Tower Reset gallery 2',
-                ja: 'The Great Tower Reset ギャラリー 2'
+                ko: 'Reset Tower 갤러리 2',
+                en: 'Reset Tower gallery 2',
+                ja: 'Reset Tower ギャラリー 2'
             }
         },
         {
-            src: 'images/gt-gallery-3.jpg',
+            src: 'images/rt-gallery-3.jpg',
             alt: {
-                ko: 'The Great Tower Reset 갤러리 3',
-                en: 'The Great Tower Reset gallery 3',
-                ja: 'The Great Tower Reset ギャラリー 3'
+                ko: 'Reset Tower 갤러리 3',
+                en: 'Reset Tower gallery 3',
+                ja: 'Reset Tower ギャラリー 3'
             }
         },
         {
-            src: 'images/gt-gallery-4.jpg',
+            src: 'images/rt-gallery-4.jpg',
             alt: {
-                ko: 'The Great Tower Reset 갤러리 4',
-                en: 'The Great Tower Reset gallery 4',
-                ja: 'The Great Tower Reset ギャラリー 4'
+                ko: 'Reset Tower 갤러리 4',
+                en: 'Reset Tower gallery 4',
+                ja: 'Reset Tower ギャラリー 4'
             }
         },
         {
-            src: 'images/gt-gallery-5.jpg',
+            src: 'images/rt-gallery-5.jpg',
             alt: {
-                ko: 'The Great Tower Reset 갤러리 5',
-                en: 'The Great Tower Reset gallery 5',
-                ja: 'The Great Tower Reset ギャラリー 5'
+                ko: 'Reset Tower 갤러리 5',
+                en: 'Reset Tower gallery 5',
+                ja: 'Reset Tower ギャラリー 5'
             }
         },
         {
-            src: 'images/gt-gallery-6.jpg',
+            src: 'images/rt-gallery-6.jpg',
             alt: {
-                ko: 'The Great Tower Reset 갤러리 6',
-                en: 'The Great Tower Reset gallery 6',
-                ja: 'The Great Tower Reset ギャラリー 6'
+                ko: 'Reset Tower 갤러리 6',
+                en: 'Reset Tower gallery 6',
+                ja: 'Reset Tower ギャラリー 6'
             }
         }
     ]

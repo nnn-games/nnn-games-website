@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="projects_mobile_page_title">모바일 프로젝트 - NNN GAMES</title>
+    <meta name="description" content="Explore NNN GAMES mobile projects across iOS and Android.">
+    <meta name="keywords" content="Mobile projects, iOS, Android, NNN GAMES">
+    <meta property="og:title" content="Mobile Projects | NNN GAMES Mobile Portfolio">
+    <meta property="og:description" content="Browse mobile projects by NNN GAMES across iOS and Android.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/nnn-logo.png">
+    <meta property="og:site_name" content="NNN GAMES">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mobile Projects | NNN GAMES Mobile Portfolio">
+    <meta name="twitter:description" content="Browse mobile projects by NNN GAMES across iOS and Android.">
+    <meta name="twitter:image" content="images/nnn-logo.png">
+    <link rel="icon" href="images/nnn-logo.png" type="image/png" sizes="256x256">
+    <meta name="theme-color" content="#1F242B">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;700&family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-projects-scope="mobile">
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/nnn-logo.png" alt="NNN GAMES">
+                <span class="logo-text">NNN GAMES</span>
+            </a>
+            <nav class="main-nav" id="site-navigation">
+                <ul>
+                    <li><a href="index.html" data-key="nav_home">홈</a></li>
+                    <li class="has-dropdown"><a href="projects-roblox.html" class="active" data-key="nav_projects">프로젝트</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="projects-roblox.html" data-key="nav_projects_roblox">Roblox</a></li>
+                            <li><a href="projects-mobile.html" class="active" data-key="nav_projects_mobile">Mobile</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" data-key="nav_contact">문의</a></li>
+                    <li class="lang-switcher">
+                        <a href="#" data-lang="ko" class="lang-btn active">한국어</a>
+                        <a href="#" data-lang="en" class="lang-btn">English</a>
+                        <a href="#" data-lang="ja" class="lang-btn">日本語</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="메뉴 열기" data-key-aria-label="nav_menu_open">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <nav class="projects-switcher" aria-label="프로젝트 카테고리">
+            <div class="projects-switcher-inner">
+                <a href="projects-roblox.html" class="projects-switch-tab" data-key="nav_projects_roblox">Roblox</a>
+                <a href="projects-mobile.html" class="projects-switch-tab active" data-key="nav_projects_mobile">Mobile</a>
+            </div>
+        </nav>
+        <section class="page-header">
+            <div class="container">
+                <h1 data-key="projects_mobile_page_header">모바일 프로젝트</h1>
+                <p data-key="project_preview_title">진행 중인 프로젝트</p>
+            </div>
+        </section>
+
+        <!-- 필터/검색 -->
+        <section class="project-controls container">
+            <div class="project-controls-header">
+                <div>
+                    <p class="section-kicker" data-key="projects_filter_kicker">Portfolio Explorer</p>
+                    <h2 data-key="projects_filter_title">필터로 맞는 프로젝트를 빠르게 찾기</h2>
+                    <p data-key="projects_filter_desc">카테고리, 진행 상태, 키워드로 포트폴리오를 바로 좁힐 수 있습니다.</p>
+                </div>
+                <button id="resetFilters" type="button" class="btn-ghost" data-key="projects_filter_reset">필터 초기화</button>
+            </div>
+            <div class="project-filters grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center">
+                <div class="filter-field space-y-1">
+                    <label for="categoryFilter" class="block font-semibold text-brand-secondary" data-key="projects_filter_category_label">카테고리</label>
+                    <select id="categoryFilter" class="w-full px-3 py-2.5 border border-gray-200 rounded-lg bg-white text-sm text-brand-secondary focus:border-brand-primary focus:ring focus:ring-brand-primary/20">
+                        <option value="all" data-key="projects_filter_option_all">전체</option>
+                        <option value="ios" data-key="projects_mobile_filter_ios">iOS</option>
+                        <option value="android" data-key="projects_mobile_filter_android">Android</option>
+                    </select>
+                </div>
+                <div class="filter-field space-y-1">
+                    <label for="statusFilter" class="block font-semibold text-brand-secondary" data-key="projects_filter_status_label">상태</label>
+                    <select id="statusFilter" class="w-full px-3 py-2.5 border border-gray-200 rounded-lg bg-white text-sm text-brand-secondary focus:border-brand-primary focus:ring focus:ring-brand-primary/20">
+                        <option value="all" data-key="projects_filter_option_all">전체</option>
+                        <option value="active" data-key="projects_filter_option_active">운영 중</option>
+                        <option value="development" data-key="projects_filter_option_development">개발 중</option>
+                        <option value="completed" data-key="projects_filter_option_completed">완료</option>
+                        <option value="paused" data-key="projects_filter_option_paused">일시중단</option>
+                    </select>
+                </div>
+                <div class="filter-field space-y-1">
+                    <label for="keywordFilter" class="block font-semibold text-brand-secondary" data-key="projects_filter_keyword_label">검색</label>
+                    <input id="keywordFilter" type="text" placeholder="프로젝트 검색" data-key-placeholder="projects_filter_keyword_placeholder" class="w-full px-3 py-2.5 border border-gray-200 rounded-lg bg-white text-sm text-brand-secondary focus:border-brand-primary focus:ring focus:ring-brand-primary/20">
+                </div>
+            </div>
+            <div class="project-filter-summary">
+                <p id="projectResultsText" data-key="projects_filter_results_default">전체 프로젝트를 표시하고 있습니다.</p>
+            </div>
+        </section>
+
+        <!-- 현재 진행 중인 프로젝트 -->
+        <section class="project-preview container">
+            <div class="project-grid" id="all-projects-grid">
+                <!-- 프로젝트 카드들은 project-renderer.js에 의해 동적으로 생성됩니다 -->
+            </div>
+            <p id="projectEmptyState" class="project-empty hidden" data-key="projects_mobile_empty_state">조건에 맞는 모바일 프로젝트가 없습니다.</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-key="footer_about_title">NNN GAMES</h3>
+                    <p data-key="footer_about_text">NNN GAMES는 ZEPETO와 Roblox 기반의 UGC와 게임 콘텐츠를 통해, 전 세계 유저에게 재미와 가치를 동시에
+                        전달하는 인터랙티브 콘텐츠를 만들어갑니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-key="footer_links_title">바로가기</h3>
+                    <a href="index.html" data-key="nav_home">홈</a><br>
+                    <a href="projects-roblox.html" data-key="nav_projects">프로젝트</a><br>
+                    <a href="contact.html" data-key="nav_contact">문의</a>
+                </div>
+                <div class="footer-section">
+                    <h3 data-key="footer_contact_title">연락처</h3>
+                    <p>Email: developer@triplengames.com</p>
+                    <p data-key="footer_address">주소 : (13449) 경기도 성남시 수정구 창업로 54, 판교 제2테크노밸리 LH기업성장센터, 804B호</p>
+                    <p data-key="footer_business_number">사업자등록번호: 629-87-01849</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-key="footer_copyright">© 2026 Triple N Games Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/projects-data.js"></script>
+    <script src="js/project-renderer.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

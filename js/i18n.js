@@ -9,6 +9,8 @@ const translations = {
         // 네비게이션
         nav_home: "홈",
         nav_projects: "프로젝트",
+        nav_projects_roblox: "Roblox",
+        nav_projects_mobile: "모바일",
         nav_contact: "문의",
         nav_menu_open: "메뉴 열기",
         nav_menu_close: "메뉴 닫기",
@@ -37,6 +39,13 @@ const translations = {
 
         // 프로젝트 페이지/필터
         projects_page_header: "프로젝트",
+        projects_roblox_page_title: "Roblox 프로젝트 - NNN GAMES",
+        projects_roblox_page_header: "Roblox 프로젝트",
+        projects_mobile_page_title: "모바일 프로젝트 - NNN GAMES",
+        projects_mobile_page_header: "모바일 프로젝트",
+        projects_mobile_filter_ios: "iOS",
+        projects_mobile_filter_android: "Android",
+        projects_mobile_empty_state: "조건에 맞는 모바일 프로젝트가 없습니다.",
         projects_filter_kicker: "Portfolio Explorer",
         projects_filter_title: "필터로 맞는 프로젝트를 빠르게 찾기",
         projects_filter_desc: "카테고리, 진행 상태, 키워드로 포트폴리오를 바로 좁힐 수 있습니다.",
@@ -117,6 +126,8 @@ const translations = {
 
         nav_home: "Home",
         nav_projects: "Projects",
+        nav_projects_roblox: "Roblox",
+        nav_projects_mobile: "Mobile",
         nav_contact: "Contact",
         nav_menu_open: "Open menu",
         nav_menu_close: "Close menu",
@@ -141,6 +152,13 @@ const translations = {
         project_updated_label: "Updated",
 
         projects_page_header: "Projects",
+        projects_roblox_page_title: "Roblox Projects - NNN GAMES",
+        projects_roblox_page_header: "Roblox Projects",
+        projects_mobile_page_title: "Mobile Projects - NNN GAMES",
+        projects_mobile_page_header: "Mobile Projects",
+        projects_mobile_filter_ios: "iOS",
+        projects_mobile_filter_android: "Android",
+        projects_mobile_empty_state: "No mobile projects match the current filters.",
         projects_filter_kicker: "Portfolio Explorer",
         projects_filter_title: "Find the right project faster",
         projects_filter_desc: "Narrow the portfolio immediately by category, status, and keyword.",
@@ -215,6 +233,8 @@ const translations = {
 
         nav_home: "ホーム",
         nav_projects: "プロジェクト",
+        nav_projects_roblox: "Roblox",
+        nav_projects_mobile: "モバイル",
         nav_contact: "お問い合わせ",
         nav_menu_open: "メニューを開く",
         nav_menu_close: "メニューを閉じる",
@@ -239,6 +259,13 @@ const translations = {
         project_updated_label: "更新日",
 
         projects_page_header: "プロジェクト",
+        projects_roblox_page_title: "Robloxプロジェクト - NNN GAMES",
+        projects_roblox_page_header: "Robloxプロジェクト",
+        projects_mobile_page_title: "モバイルプロジェクト - NNN GAMES",
+        projects_mobile_page_header: "モバイルプロジェクト",
+        projects_mobile_filter_ios: "iOS",
+        projects_mobile_filter_android: "Android",
+        projects_mobile_empty_state: "条件に合うモバイルプロジェクトはありません。",
         projects_filter_kicker: "Portfolio Explorer",
         projects_filter_title: "条件に合うプロジェクトを素早く探す",
         projects_filter_desc: "カテゴリ、進行状況、キーワードでポートフォリオをすぐ絞り込めます。",

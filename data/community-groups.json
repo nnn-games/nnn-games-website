@@ -47,6 +47,18 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true
+    },
+    {
+      "id": "844932134",
+      "url": "https://www.roblox.com/ko/communities/844932134/Tomato-Lab#!/about",
+      "names": {
+        "ko": "Tomato Lab",
+        "en": "Tomato Lab",
+        "ja": "Tomato Lab"
+      },
+      "status": "active",
+      "showOnHomepage": true,
+      "includeInHeroSubscriberTotal": true
     }
   ]
 }

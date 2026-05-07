@@ -5,7 +5,7 @@
 ## 1. 제품 개요
 - **제품 목적**: Roblox 게임·UGC 전문 스튜디오 NNN GAMES의 역량, 진행/운영 중인 Roblox 프로젝트, 연락 채널을 명확히 전달하는 마케팅·세일즈용 웹사이트.
 - **핵심 메시지**: Roblox 네이티브 제작력, 리텐션 중심 시스템/라이브옵스, 브랜드/수익을 연결하는 설계 역량.
-- **운영 형태**: 정적 HTML/CSS/JS 기반 (파일 경로: `index.html`, `projects.html`, 개별 프로젝트 상세 페이지, `js/*.js`, `css/style.css`).
+- **운영 형태**: 정적 HTML/CSS/JS 기반 (파일 경로: `index.html`, `projects-roblox.html`, 개별 프로젝트 상세 페이지, `js/*.js`, `css/style.css`).
 
 ## 2. 주요 사용자와 목표
 - **브랜드/파트너 담당자**: 협업·수주 문의, Roblox 제작 역량과 레퍼런스 확인 → `contact.html` 내 이메일/주소 노출.
@@ -14,12 +14,12 @@
 
 ## 3. 정보 구조 (현재 구현)
 - **홈(`index.html`)**
-  - Hero: Roblox 전문 스튜디오 메시지, CTA는 `projects.html`.
+  - Hero: Roblox 전문 스튜디오 메시지, CTA는 `projects-roblox.html`.
   - 커뮤니티 포털: `data/community-groups.json`에 정의된 활성 Roblox 그룹의 아이콘/멤버 수를 표시. `npm run update:metrics`가 `status/showOnHomepage/includeInHeroSubscriberTotal` 플래그 기준으로 `data/communities.json`을 생성/갱신하고, 프런트는 이 JSON을 우선 사용하며 실패 시 설정 JSON + Roblox 공개 API로 폴백한다. 각 링크는 Roblox share/community URL로 연결.
   - 프로젝트 프리뷰: `projects-data.js`의 featured 목록을 `project-renderer.js`로 동적 렌더.
-- **프로젝트 목록(`projects.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
+- **프로젝트 목록(`projects-roblox.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
 - **프로젝트 상세**
-  - 표준화된 공통 셸 + 설정 파일 구조: `tower-flood-race.html`, `korean-spa.html`, `legendary-dj-gear.html`, `great-tower-reset.html`, `hacker-vs-security.html`
+  - 표준화된 공통 셸 + 설정 파일 구조: `tower-flood-race.html`, `korean-spa.html`, `legendary-dj-gear.html`, `reset-tower.html`, `hacker-vs-security.html`
   - 기존 정적 상세 페이지: `nnn-ugc.html`
 - **문의(`contact.html`)**: 이메일, 주소, 사업자등록번호, 지도 iframe.
 - **공통 UI**: 헤더/푸터, 모바일 메뉴 토글(`js/main.js`), 이미지 지연 로딩 및 스크롤 애니메이션, CTA 추적(sendBeacon 우선 → fetch 폴백, payload v/schema/cta/origin/projectId/href/text/viewport 포함). `meta[name="cta-endpoint"]`/전역 `window.CTA_CONFIG.endpoint`로 엔드포인트 오버라이드 가능, 기본 `/analytics/cta`, 스키마 버전은 `cta-schema-version` 메타 또는 전역 설정으로 덮어씀(기본 `v1`).

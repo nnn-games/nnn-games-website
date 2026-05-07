@@ -4,13 +4,23 @@ const ProjectRenderer = {
     _kwTimer: null,
     projectDisplayOrder: [
         'tower-flood-race',
-        'star-reach',
         'hacker-vs-security',
         'fruit-battles',
         'korean-spa',
         'legendary-dj-gear',
-        'great-tower-reset'
+        'reset-tower',
+        'new-roblox-project',
+        'watermelon-farm',
+        'sweet-forest',
+        'mine-sweeper',
+        'star-reach'
     ],
+
+    getProjectsScope: function () {
+        const body = document.body;
+        const scope = body && body.getAttribute ? body.getAttribute('data-projects-scope') : null;
+        return scope || 'roblox';
+    },
 
     _u: function () {
         return window.NNNUtils;
@@ -183,14 +193,16 @@ const ProjectRenderer = {
         const specialSection = document.getElementById('specialProjectSection');
 
         const currentLang = this._u().getCurrentLanguage();
+        const scope = this.getProjectsScope();
         const projects = (ProjectManager.getAll && ProjectManager.getAll()) || projectsData.all || [];
         const isVisibleInProjectsList = (project) => (
             !project || typeof project.showInProjectsList !== 'boolean' || project.showInProjectsList
         );
+        const isInScope = (project) => (project && project.category === scope);
         const primaryProjects = this.sortProjectsForDisplay(
-            projects.filter(project => project.id !== 'nnn-ugc' && isVisibleInProjectsList(project))
+            projects.filter(project => project.id !== 'nnn-ugc' && isVisibleInProjectsList(project) && isInScope(project))
         );
-        const specialProjects = projects.filter(project => project.id === 'nnn-ugc' && isVisibleInProjectsList(project));
+        const specialProjects = projects.filter(project => project.id === 'nnn-ugc' && isVisibleInProjectsList(project) && isInScope(project));
 
         container.innerHTML = '';
         primaryProjects.forEach(project => {
@@ -217,7 +229,10 @@ const ProjectRenderer = {
         const card = document.createElement('div');
         card.className = 'project-card detailed';
         card.setAttribute('data-project-id', project.id);
-        card.setAttribute('data-category', project.category);
+        const cardCategoryValue = project.category === 'mobile' && Array.isArray(project.mobilePlatform) && project.mobilePlatform.length > 0
+            ? project.mobilePlatform.join(',')
+            : project.category;
+        card.setAttribute('data-category', cardCategoryValue);
         card.setAttribute('data-status', project.status);
 
         const platformData = this.getPlatformInfo(project);
@@ -276,7 +291,7 @@ const ProjectRenderer = {
 
     getCategoryBadge: function (category) {
         const U = this._u();
-        const categoryLabels = { roblox: 'ROBLOX' };
+        const categoryLabels = { roblox: 'ROBLOX', mobile: 'MOBILE' };
         const rawLabel = categoryLabels[category] || (category || '').toUpperCase();
         const label = U.escapeHtml(rawLabel);
         const safeCategory = U.escapeHtml(category || '');
@@ -284,7 +299,10 @@ const ProjectRenderer = {
     },
 
     getPlatformInfo: function (project) {
-        const platformMap = { roblox: { key: 'roblox', label: 'ROBLOX' } };
+        const platformMap = {
+            roblox: { key: 'roblox', label: 'ROBLOX' },
+            mobile: { key: 'mobile', label: 'MOBILE' }
+        };
         const category = (project.category || '').toLowerCase();
         if (platformMap[category]) return platformMap[category];
         const platform = (project.platform || '').toLowerCase();
@@ -350,7 +368,8 @@ const ProjectRenderer = {
             const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
             const desc = (card.querySelector('p')?.textContent || '').toLowerCase();
 
-            const matchCategory = category === 'all' || cardCategory === category;
+            const cardCategoryValues = (cardCategory || '').split(',').map(value => value.trim()).filter(Boolean);
+            const matchCategory = category === 'all' || cardCategoryValues.includes(category);
             const matchStatus = status === 'all' || cardStatus === status;
             const matchKeyword = !kw || title.includes(kw) || desc.includes(kw);
             const visible = matchCategory && matchStatus && matchKeyword;

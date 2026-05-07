@@ -68,6 +68,51 @@
   .main-nav.active .lang-switcher {
     @apply pl-0 pt-2 border-0;
   }
+  .main-nav .has-dropdown {
+    @apply relative;
+  }
+  .main-nav .nav-dropdown {
+    @apply hidden absolute left-0 top-full mt-2 min-w-[10rem] flex-col gap-1 rounded-xl border border-gray-100 bg-white p-2 shadow-xl;
+  }
+  .main-nav .has-dropdown:hover .nav-dropdown,
+  .main-nav .has-dropdown:focus-within .nav-dropdown {
+    @apply flex;
+  }
+  .main-nav .nav-dropdown a {
+    @apply block px-3 py-2 rounded-md text-sm font-semibold text-brand-secondary hover:bg-gray-50 hover:text-brand-primary;
+  }
+  .main-nav .nav-dropdown a.active {
+    @apply text-brand-primary bg-gray-50;
+  }
+  .main-nav.active .nav-dropdown {
+    @apply static flex mt-1 ml-4 border-0 shadow-none p-0 bg-transparent;
+  }
+  .main-nav.active .nav-dropdown a {
+    @apply px-2 py-1;
+  }
+
+  /* Projects page sub-switcher (header-area dropdown/tabs) */
+  .projects-switcher {
+    @apply mt-16 bg-brand-secondary border-b border-gray-800;
+  }
+  .projects-switcher-inner {
+    @apply max-w-6xl mx-auto px-4 flex gap-1 overflow-x-auto;
+  }
+  .projects-switcher-inner::-webkit-scrollbar {
+    display: none;
+  }
+  .projects-switch-tab {
+    @apply inline-flex items-center px-4 py-3 text-sm font-semibold text-white/70 border-b-2 border-transparent transition whitespace-nowrap;
+  }
+  .projects-switch-tab:hover {
+    @apply text-white;
+  }
+  .projects-switch-tab.active {
+    @apply text-white border-white;
+  }
+  .projects-switcher + .page-header {
+    @apply mt-0;
+  }
 
   /* Hero */
   .hero {
