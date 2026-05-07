@@ -19,7 +19,7 @@ window.ProjectDetailConfigs['tomato-splatter-simulator'] = {
             en: 'A Roblox simulation project from NNN GAMES where you toss and splatter tomatoes.',
             ja: 'トマトを投げて飛び散らせるNNN GAMESのRobloxシミュレーションプロジェクト。'
         },
-        ogImage: 'images/nnn-logo.png'
+        ogImage: 'assets/tomatosplattersimulator/tss-main.jpg'
     },
     hero: {
         title: { ko: 'Tomato Splatter Simulator', en: 'Tomato Splatter Simulator', ja: 'Tomato Splatter Simulator' },
@@ -42,8 +42,8 @@ window.ProjectDetailConfigs['tomato-splatter-simulator'] = {
     ],
     media: {
         type: 'image',
-        src: 'images/nnn-logo.png',
-        alt: { ko: 'Tomato Splatter Simulator 이미지', en: 'Tomato Splatter Simulator image', ja: 'Tomato Splatter Simulator 画像' }
+        src: 'assets/tomatosplattersimulator/tss-main.jpg',
+        alt: { ko: 'Tomato Splatter Simulator 대표 이미지', en: 'Tomato Splatter Simulator key visual', ja: 'Tomato Splatter Simulator キービジュアル' }
     },
     overview: [
         {
@@ -67,5 +67,26 @@ window.ProjectDetailConfigs['tomato-splatter-simulator'] = {
             external: true
         }
     ],
-    gallery: []
+    gallery: [
+        {
+            src: 'assets/tomatosplattersimulator/tss-gallery-0.jpg',
+            alt: { ko: 'Tomato Splatter Simulator 갤러리 0', en: 'Tomato Splatter Simulator gallery 0', ja: 'Tomato Splatter Simulator ギャラリー 0' }
+        },
+        {
+            src: 'assets/tomatosplattersimulator/tss-gallery-1.jpg',
+            alt: { ko: 'Tomato Splatter Simulator 갤러리 1', en: 'Tomato Splatter Simulator gallery 1', ja: 'Tomato Splatter Simulator ギャラリー 1' }
+        },
+        {
+            src: 'assets/tomatosplattersimulator/tss-gallery-2.jpg',
+            alt: { ko: 'Tomato Splatter Simulator 갤러리 2', en: 'Tomato Splatter Simulator gallery 2', ja: 'Tomato Splatter Simulator ギャラリー 2' }
+        },
+        {
+            src: 'assets/tomatosplattersimulator/tss-gallery-3.jpg',
+            alt: { ko: 'Tomato Splatter Simulator 갤러리 3', en: 'Tomato Splatter Simulator gallery 3', ja: 'Tomato Splatter Simulator ギャラリー 3' }
+        },
+        {
+            src: 'assets/tomatosplattersimulator/tss-gallery-4.jpg',
+            alt: { ko: 'Tomato Splatter Simulator 갤러리 4', en: 'Tomato Splatter Simulator gallery 4', ja: 'Tomato Splatter Simulator ギャラリー 4' }
+        }
+    ]
 };
