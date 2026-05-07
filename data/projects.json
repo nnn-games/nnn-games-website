@@ -477,16 +477,16 @@
         "ja": "Tomato Splatter Simulator"
       },
       "description": {
-        "ko": "토마토를 던지고 튀기며 즐기는 NNN GAMES의 Roblox 시뮬레이션 게임.",
-        "en": "A Roblox simulation game from NNN GAMES where you toss and splatter tomatoes.",
-        "ja": "トマトを投げて飛び散らせるNNN GAMESのRobloxシミュレーションゲーム。"
+        "ko": "농장에서 깨어난 토마토를 시원하게 썰고 캐릭터를 성장시키며 스트레스를 해소하는 NNN GAMES의 Roblox 액션 시뮬레이터.",
+        "en": "Slice through swarms of awakened tomatoes, grow your character, and blow off steam — NNN GAMES' Roblox action simulator.",
+        "ja": "農場で目覚めたトマトを爽快に斬り、キャラクターを成長させながらストレスも解消するNNN GAMESのRobloxアクションシミュレーター。"
       },
       "image": "assets/tomatosplattersimulator/tss-preview.jpg",
       "detailPage": "tomato-splatter-simulator.html",
       "category": "roblox",
       "status": "active",
       "featured": true,
-      "launchDate": "2026",
+      "launchDate": "2026-04",
       "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [
