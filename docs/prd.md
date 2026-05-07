@@ -67,7 +67,7 @@
 - 성능: 이미지 지연 로딩, IntersectionObserver 사용.
 - 접근성/언어: `<html lang>` 업데이트, 3개 국어 번역 유지.
 - 호스팅: 정적 사이트 (CNAME 포함)로 GitHub Pages/정적 호스팅 대응.
-- SEO/OG: 모든 주요 페이지에 meta description/keywords, OG/Twitter 카드, 파비콘 적용(로블록스 키워드 중심).
+- SEO/OG: 모든 주요 페이지에 meta description/keywords, OG/Twitter 카드, 파비콘 적용(Roblox 키워드 중심).
 
 ## 8. 향후 개선 및 로드맵
 - 개선·신규 작업 항목은 `docs/development_roadmap.md`에서 통합 관리한다.  

@@ -16,7 +16,7 @@ const translations = {
         nav_menu_close: "메뉴 닫기",
 
         // 히어로
-        hero_eyebrow: "로블록스 전문 개발 스튜디오",
+        hero_eyebrow: "Roblox 전문 개발 스튜디오",
         hero_title: "더 나은 Roblox 게임을 만듭니다.",
         hero_subtitle: "새로운 재미를 설계하고, 돋보이는 완성도를 구현하며, 민첩하게 실행합니다.",
         hero_cta: "프로젝트 보기",
