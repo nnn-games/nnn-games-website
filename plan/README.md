@@ -8,10 +8,7 @@
 ## 페이지 목록
 
 ### Roblox
-- [`korean-spa.md`](korean-spa.md) — Korean Spa
-- [`legendary-dj-gear.md`](legendary-dj-gear.md) — Legendary DJ Gear
 - [`fruit-battles.md`](fruit-battles.md) — Fruit Battles
-- [`tomato-splatter-simulator.md`](tomato-splatter-simulator.md) — Tomato Splatter Simulator
 - [`hacker-vs-security.md`](hacker-vs-security.md) — Hacker vs Security
 - [`reset-tower.md`](reset-tower.md) — Reset Tower
 - [`star-reach.md`](star-reach.md) — Star Reach
