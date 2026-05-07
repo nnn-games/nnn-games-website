@@ -34,10 +34,9 @@ window.ProjectDetailConfigs['tomato-splatter-simulator'] = {
     },
     ctaButtons: [
         {
-            href: 'https://www.roblox.com/ko/games/98363496512711/Tomato-Splatter-Simulator',
-            label: { ko: 'Roblox에서 플레이', en: 'Play on Roblox', ja: 'Robloxでプレイ' },
-            variant: 'primary',
-            external: true
+            type: 'play',
+            style: 'primary',
+            text: { ko: 'Roblox에서 플레이', en: 'Play on Roblox', ja: 'Robloxでプレイ' }
         }
     ],
     media: {
@@ -62,9 +61,8 @@ window.ProjectDetailConfigs['tomato-splatter-simulator'] = {
     features: [],
     links: [
         {
-            href: 'https://www.roblox.com/ko/games/98363496512711/Tomato-Splatter-Simulator',
-            label: { ko: 'Roblox 게임 페이지', en: 'Roblox game page', ja: 'Robloxゲームページ' },
-            external: true
+            type: 'play',
+            text: { ko: 'Tomato Splatter Simulator 플레이하기', en: 'Play Tomato Splatter Simulator', ja: 'Tomato Splatter Simulatorをプレイ' }
         }
     ],
     gallery: [
