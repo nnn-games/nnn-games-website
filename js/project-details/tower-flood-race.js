@@ -27,7 +27,7 @@ window.ProjectDetailConfigs['tower-flood-race'] = {
             en: 'A competitive Roblox project built around random towers, fast rounds, and rising water pressure.',
             ja: 'ランダムタワー、短いラウンド、上昇する水位を組み合わせた競争型Robloxプロジェクトです。'
         },
-        ogImage: 'images/tfr-main.jpg'
+        ogImage: 'assets/towerfloodrace/tfr-main.jpg'
     },
     hero: {
         title: {
@@ -259,7 +259,7 @@ window.ProjectDetailConfigs['tower-flood-race'] = {
     ],
     gallery: [
         {
-            src: 'images/tfr-gallery-1.jpg',
+            src: 'assets/towerfloodrace/tfr-gallery-1.jpg',
             alt: {
                 ko: 'Tower Flood Race 갤러리 1',
                 en: 'Tower Flood Race gallery 1',
@@ -267,7 +267,7 @@ window.ProjectDetailConfigs['tower-flood-race'] = {
             }
         },
         {
-            src: 'images/tfr-gallery-2.jpg',
+            src: 'assets/towerfloodrace/tfr-gallery-2.jpg',
             alt: {
                 ko: 'Tower Flood Race 갤러리 2',
                 en: 'Tower Flood Race gallery 2',
@@ -275,7 +275,7 @@ window.ProjectDetailConfigs['tower-flood-race'] = {
             }
         },
         {
-            src: 'images/tfr-gallery-3.jpg',
+            src: 'assets/towerfloodrace/tfr-gallery-3.jpg',
             alt: {
                 ko: 'Tower Flood Race 갤러리 3',
                 en: 'Tower Flood Race gallery 3',
