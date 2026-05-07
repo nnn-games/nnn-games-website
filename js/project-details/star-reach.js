@@ -1,6 +1,5 @@
 // Star Reach — 개발 중 페이지 (project-detail-development.js 렌더러 사용)
 // 표시 항목: 제목 / 한 줄 소개 / 장르 / 플랫폼 / 출시 예정일 / 프리뷰 이미지
-// 프리뷰 이미지 업로드 후 media.src 를 `assets/starreach/sr-preview.jpg` 로 활성화하세요.
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
 window.ProjectDetailConfigs['star-reach'] = {
@@ -11,11 +10,11 @@ window.ProjectDetailConfigs['star-reach'] = {
             ja: 'Star Reach - NNN GAMES'
         },
         description: {
-            ko: 'NNN GAMES 가 개발 중인 신규 Roblox 프로젝트입니다. 자세한 내용은 추후 공개됩니다.',
-            en: 'A new Roblox project in development at NNN GAMES. More details will be shared soon.',
-            ja: 'NNN GAMESが開発中の新規Robloxプロジェクトです。詳細は後日公開予定です。'
-        }
-        // ogImage: 프리뷰 업로드 후 'assets/starreach/sr-preview.jpg' 로 설정
+            ko: 'Starship X 의 로켓 엔지니어가 되어 다른 플레이어와 함께 로켓을 대기권에서 심우주까지 점점 더 높이 쏘아 올리는 시뮬레이터입니다.',
+            en: 'Become a Starship X rocket engineer and team up with other players to send rockets higher and higher — from atmosphere to deep space.',
+            ja: 'Starship Xのロケットエンジニアとなり、他のプレイヤーと協力してロケットを大気圏から深宇宙までより高く打ち上げていくシミュレーターです。'
+        },
+        ogImage: 'assets/starreach/sr-preview.jpg'
     },
     hero: {
         title: {
@@ -24,14 +23,14 @@ window.ProjectDetailConfigs['star-reach'] = {
             ja: 'Star Reach'
         },
         tagline: {
-            ko: '준비 중인 신규 Roblox 프로젝트로, 자세한 컨셉은 추후 공개됩니다.',
-            en: 'A new Roblox project in development. Concept details will be shared as we approach launch.',
-            ja: '準備中の新規Robloxプロジェクト。コンセプトは後日公開予定です。'
+            ko: 'Starship X 의 로켓 엔지니어가 되어 다른 플레이어와 함께 로켓을 대기권에서 심우주까지 더 높이 쏘아 올리는 시뮬레이터.',
+            en: 'Become a Starship X rocket engineer and team up with other players to send rockets higher and higher — from atmosphere to deep space.',
+            ja: 'Starship Xのロケットエンジニアとなり、他のプレイヤーと協力してロケットを大気圏から深宇宙へとより高く打ち上げていくシミュレーター。'
         },
         genre: {
-            ko: '장르: 추후 공개',
-            en: 'Genre: TBA',
-            ja: 'ジャンル: 後日公開'
+            ko: '장르: 시뮬레이션 / 인크리멘탈 시뮬레이터',
+            en: 'Genre: Simulation / Incremental Simulator',
+            ja: 'ジャンル: シミュレーション / インクリメンタルシミュレーター'
         },
         platform: {
             ko: '플랫폼: Roblox',
@@ -41,19 +40,18 @@ window.ProjectDetailConfigs['star-reach'] = {
     },
     snapshot: {
         launch: {
-            ko: '출시일 추후 공개',
-            en: 'Launch: TBA',
-            ja: 'リリース日: 後日公開'
+            ko: '2026년 5월 예정',
+            en: 'Planned for May 2026',
+            ja: '2026年5月予定'
+        }
+    },
+    media: {
+        type: 'image',
+        src: 'assets/starreach/sr-preview.jpg',
+        alt: {
+            ko: 'Star Reach 프리뷰 이미지',
+            en: 'Star Reach preview image',
+            ja: 'Star Reach プレビュー画像'
         }
     }
-    // media: 프리뷰 업로드 후 아래 블록 활성화
-    // media: {
-    //     type: 'image',
-    //     src: 'assets/starreach/sr-preview.jpg',
-    //     alt: {
-    //         ko: 'Star Reach 프리뷰 이미지',
-    //         en: 'Star Reach preview image',
-    //         ja: 'Star Reach プレビュー画像'
-    //     }
-    // }
 };

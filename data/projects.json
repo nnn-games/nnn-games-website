@@ -239,9 +239,9 @@
         "ja": "Reset Tower"
       },
       "description": {
-        "ko": "리셋 성장과 타워 돌파를 결합한 Roblox 메타 진행형 프로젝트.",
-        "en": "A Roblox progression project built around tower pushes and reset-driven growth.",
-        "ja": "タワー攻略とリセット成長を組み合わせたRobloxメタ進行型プロジェクト。"
+        "ko": "타워를 오르고 자신만의 스타일로 타워를 초기화하며 다른 플레이어와 경쟁하는 타워 오비 게임.",
+        "en": "A competitive tower-obby game where you climb to the top, reset the tower in your own style, and race against other players.",
+        "ja": "タワーを登りきり、自分のスタイルでタワーをリセットしながら他のプレイヤーと競い合うタワーObbyゲーム。"
       },
       "image": "assets/resettower/rt-preview.jpg",
       "detailPage": "reset-tower.html",
@@ -250,7 +250,7 @@
       "category": "roblox",
       "status": "development",
       "featured": false,
-      "launchDate": "2026-Q2",
+      "launchDate": "2026-05",
       "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [
@@ -287,16 +287,16 @@
         "ja": "Hacker vs Security"
       },
       "description": {
-        "ko": "침투와 방어의 읽기 싸움을 중심으로 한 Roblox 비대칭 전략 PvP 프로젝트.",
-        "en": "A Roblox asymmetric strategy PvP project centered on infiltration and defensive counterplay.",
-        "ja": "侵入と防衛の読み合いを軸にしたRoblox非対称戦略PvPプロジェクト。"
+        "ko": "확률 기반 해킹 판정으로 공격과 방어가 맞붙는 해커 vs 보안팀 캐주얼 배틀 시뮬레이터.",
+        "en": "A casual hacker-vs-security battle simulator where probability-based hack rolls decide every offensive and defensive exchange.",
+        "ja": "確率ベースのハッキング判定で攻防が決まる、ハッカー対セキュリティチームのカジュアルバトルシミュレーター。"
       },
       "image": "assets/hackervssecurity/hvs-preview.jpg",
       "detailPage": "hacker-vs-security.html",
       "category": "roblox",
       "status": "development",
       "featured": true,
-      "launchDate": "2026-Q3",
+      "launchDate": "2026-06",
       "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [
@@ -431,16 +431,16 @@
         "ja": "Star Reach"
       },
       "description": {
-        "ko": "NNN GAMES가 개발 중인 신규 Roblox 프로젝트 Star Reach 소개를 준비 중입니다.",
-        "en": "Star Reach is a new Roblox project in development at NNN GAMES; details are being prepared.",
-        "ja": "NNN GAMESが開発中の新規Robloxプロジェクト、Star Reachの紹介を準備中です。"
+        "ko": "Starship X 의 로켓 엔지니어가 되어 다른 플레이어와 함께 로켓을 대기권에서 심우주까지 점점 더 높이 쏘아 올리는 시뮬레이터.",
+        "en": "Become a Starship X rocket engineer and team up with other players to send rockets higher and higher — from atmosphere to deep space.",
+        "ja": "Starship Xのロケットエンジニアとなり、他のプレイヤーと協力してロケットを大気圏から深宇宙へとより高く打ち上げていくシミュレーター。"
       },
-      "image": "images/nnn-logo.png",
+      "image": "assets/starreach/sr-preview.jpg",
       "detailPage": "star-reach.html",
       "category": "roblox",
       "status": "development",
       "featured": true,
-      "launchDate": "TBD",
+      "launchDate": "2026-05",
       "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [
@@ -523,16 +523,16 @@
         "ja": "Watermelon Farm"
       },
       "description": {
-        "ko": "한국어 더미 텍스트입니다.",
-        "en": "Placeholder description for this project.",
-        "ja": "プレースホルダー説明です。"
+        "ko": "수박 농장을 경영하며 최고의 수박을 키우고 서리꾼들로부터 농장을 지켜내는 시뮬레이션 타이쿤.",
+        "en": "A simulation tycoon where you run a watermelon farm, raise champion melons, and defend the field from raiders.",
+        "ja": "スイカ農場を経営し、最高のスイカを育てながら盗賊から農場を守り抜くシミュレーションタイクーン。"
       },
-      "image": "images/nnn-logo.png",
+      "image": "assets/watermelonfarm/wf-preview.jpg",
       "detailPage": "watermelon-farm.html",
       "category": "roblox",
       "status": "development",
       "featured": false,
-      "launchDate": "(미정)",
+      "launchDate": "2026-06",
       "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [

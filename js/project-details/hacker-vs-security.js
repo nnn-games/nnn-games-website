@@ -10,9 +10,9 @@ window.ProjectDetailConfigs['hacker-vs-security'] = {
             ja: 'Hacker vs Security - NNN GAMES'
         },
         description: {
-            ko: '침투와 방어의 심리전을 다루는 비대칭 전략 PvP Roblox 프로젝트입니다.',
-            en: 'A Roblox asymmetric strategy PvP project where infiltration and defense play out as a mind game.',
-            ja: '侵入と防衛の読み合いを軸にした非対称戦略PvPのRobloxプロジェクトです。'
+            ko: '확률 기반 해킹 판정으로 공격과 방어가 맞붙는 해커 vs 보안팀 캐주얼 배틀 시뮬레이터입니다.',
+            en: 'A casual hacker-vs-security battle simulator where probability-based hack rolls decide every offensive and defensive exchange.',
+            ja: '確率ベースのハッキング判定で攻防が決まる、ハッカー対セキュリティチームのカジュアルバトルシミュレーターです。'
         },
         ogImage: 'assets/hackervssecurity/hvs-preview.jpg'
     },
@@ -23,14 +23,14 @@ window.ProjectDetailConfigs['hacker-vs-security'] = {
             ja: 'Hacker vs Security'
         },
         tagline: {
-            ko: '침투와 방어의 심리전을 다루는 비대칭 전략 PvP 프로젝트.',
-            en: 'An asymmetric strategy PvP project built around infiltration and defensive mind games.',
-            ja: '侵入と防衛の読み合いを軸にした非対称戦略PvPプロジェクト。'
+            ko: '확률 기반 해킹 판정으로 공격과 방어가 맞붙는 해커 vs 보안팀 캐주얼 배틀 시뮬레이터.',
+            en: 'A casual hacker-vs-security battle simulator where probability-based hack rolls decide every offensive and defensive exchange.',
+            ja: '確率ベースのハッキング判定で攻防が決まる、ハッカー対セキュリティチームのカジュアルバトルシミュレーター。'
         },
         genre: {
-            ko: '장르: 비대칭 전략 PvP',
-            en: 'Genre: Asymmetric Strategy PvP',
-            ja: 'ジャンル: 非対称戦略PvP'
+            ko: '장르: 시뮬레이션 / 인크리멘탈 시뮬레이터',
+            en: 'Genre: Simulation / Incremental Simulator',
+            ja: 'ジャンル: シミュレーション / インクリメンタルシミュレーター'
         },
         platform: {
             ko: '플랫폼: Roblox',
@@ -40,9 +40,9 @@ window.ProjectDetailConfigs['hacker-vs-security'] = {
     },
     snapshot: {
         launch: {
-            ko: '2026년 3분기 예정',
-            en: 'Planned for Q3 2026',
-            ja: '2026年第3四半期予定'
+            ko: '2026년 6월 예정',
+            en: 'Planned for June 2026',
+            ja: '2026年6月予定'
         }
     },
     media: {

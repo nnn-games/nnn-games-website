@@ -1,6 +1,5 @@
 // Watermelon Farm — 개발 중 페이지 (project-detail-development.js 렌더러 사용)
 // 표시 항목: 제목 / 한 줄 소개 / 장르 / 플랫폼 / 출시 예정일 / 프리뷰 이미지
-// 프리뷰 이미지 업로드 후 media.src 를 `assets/watermelonfarm/wmf-preview.jpg` 로 활성화하세요.
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
 window.ProjectDetailConfigs['watermelon-farm'] = {
@@ -11,11 +10,11 @@ window.ProjectDetailConfigs['watermelon-farm'] = {
             ja: 'Watermelon Farm - NNN GAMES'
         },
         description: {
-            ko: 'NNN GAMES 가 개발 중인 신규 Roblox 프로젝트입니다. 자세한 내용은 추후 공개됩니다.',
-            en: 'A new Roblox project in development at NNN GAMES. More details will be shared soon.',
-            ja: 'NNN GAMESが開発中の新規Robloxプロジェクトです。詳細は後日公開予定です。'
-        }
-        // ogImage: 프리뷰 업로드 후 'assets/watermelonfarm/wmf-preview.jpg' 로 설정
+            ko: '수박 농장을 경영하며 최고의 수박을 키우고 서리꾼들로부터 농장을 지켜내는 시뮬레이션 타이쿤입니다.',
+            en: 'A simulation tycoon where you run a watermelon farm, raise champion melons, and defend the field from raiders.',
+            ja: 'スイカ農場を経営し、最高のスイカを育てながら盗賊から農場を守り抜くシミュレーションタイクーンです。'
+        },
+        ogImage: 'assets/watermelonfarm/wf-preview.jpg'
     },
     hero: {
         title: {
@@ -24,14 +23,14 @@ window.ProjectDetailConfigs['watermelon-farm'] = {
             ja: 'Watermelon Farm'
         },
         tagline: {
-            ko: '준비 중인 신규 Roblox 프로젝트로, 자세한 컨셉은 추후 공개됩니다.',
-            en: 'A new Roblox project in development. Concept details will be shared as we approach launch.',
-            ja: '準備中の新規Robloxプロジェクト。コンセプトは後日公開予定です。'
+            ko: '수박 농장을 경영하며 씨를 심고 물을 줘 최고의 수박을 키우고, 서리꾼들로부터 농장을 지켜내는 시뮬레이션 타이쿤.',
+            en: 'A simulation tycoon where you run a watermelon farm — plant seeds, water them, raise champion melons, and defend the field from raiders.',
+            ja: 'スイカ農場を経営し、種をまき水を与えて最高のスイカを育てつつ、農場を狙う盗賊から守り抜くシミュレーションタイクーン。'
         },
         genre: {
-            ko: '장르: 추후 공개',
-            en: 'Genre: TBA',
-            ja: 'ジャンル: 後日公開'
+            ko: '장르: 시뮬레이션 / 타이쿤',
+            en: 'Genre: Simulation / Tycoon',
+            ja: 'ジャンル: シミュレーション / タイクーン'
         },
         platform: {
             ko: '플랫폼: Roblox',
@@ -41,19 +40,18 @@ window.ProjectDetailConfigs['watermelon-farm'] = {
     },
     snapshot: {
         launch: {
-            ko: '출시일 추후 공개',
-            en: 'Launch: TBA',
-            ja: 'リリース日: 後日公開'
+            ko: '2026년 6월 예정',
+            en: 'Planned for June 2026',
+            ja: '2026年6月予定'
+        }
+    },
+    media: {
+        type: 'image',
+        src: 'assets/watermelonfarm/wf-preview.jpg',
+        alt: {
+            ko: 'Watermelon Farm 프리뷰 이미지',
+            en: 'Watermelon Farm preview image',
+            ja: 'Watermelon Farm プレビュー画像'
         }
     }
-    // media: 프리뷰 업로드 후 아래 블록 활성화
-    // media: {
-    //     type: 'image',
-    //     src: 'assets/watermelonfarm/wmf-preview.jpg',
-    //     alt: {
-    //         ko: 'Watermelon Farm 프리뷰 이미지',
-    //         en: 'Watermelon Farm preview image',
-    //         ja: 'Watermelon Farm プレビュー画像'
-    //     }
-    // }
 };

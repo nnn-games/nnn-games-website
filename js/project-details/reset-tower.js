@@ -10,9 +10,9 @@ window.ProjectDetailConfigs['reset-tower'] = {
             ja: 'Reset Tower - NNN GAMES'
         },
         description: {
-            ko: '리셋 성장과 타워 돌파를 결합한 메타 진행형 Roblox 프로젝트입니다.',
-            en: 'A Roblox progression project that ties tower pushes to reset-driven meta growth.',
-            ja: 'タワー攻略とリセット成長を組み合わせたメタ進行型Robloxプロジェクトです。'
+            ko: '타워를 오르고 자신만의 스타일로 타워를 초기화하며 다른 플레이어와 경쟁하는 타워 오비 게임입니다.',
+            en: 'A competitive tower-obby game where you climb to the top, reset the tower in your own style, and race against other players.',
+            ja: 'タワーを登りきり、自分のスタイルでタワーをリセットしながら他のプレイヤーと競い合うタワーObbyゲームです。'
         },
         ogImage: 'assets/resettower/rt-preview.jpg'
     },
@@ -23,14 +23,14 @@ window.ProjectDetailConfigs['reset-tower'] = {
             ja: 'Reset Tower'
         },
         tagline: {
-            ko: '타워 돌파와 리셋 성장을 결합한 메타 진행형 프로젝트.',
-            en: 'A progression project that converts each tower push into reset-driven meta growth.',
-            ja: 'タワー攻略とリセット成長を組み合わせたメタ進行型プロジェクト。'
+            ko: '타워를 끝까지 오르고, 자신만의 스타일로 타워를 초기화하며 다른 플레이어와 경쟁하는 타워 오비 게임.',
+            en: 'A competitive tower-obby game where you climb to the top, reset the tower in your own style, and race against other players.',
+            ja: 'タワーを登りきり、自分のスタイルでタワーをリセットしながら他のプレイヤーと競い合うタワーObbyゲーム。'
         },
         genre: {
-            ko: '장르: 타워 로그라이크 & 리셋 성장',
-            en: 'Genre: Tower Roguelite & Reset Progression',
-            ja: 'ジャンル: タワーローグライト & リセット成長'
+            ko: '장르: 오비 / 타워 오비',
+            en: 'Genre: Obby / Tower Obby',
+            ja: 'ジャンル: Obby / タワーObby'
         },
         platform: {
             ko: '플랫폼: Roblox',
@@ -40,9 +40,9 @@ window.ProjectDetailConfigs['reset-tower'] = {
     },
     snapshot: {
         launch: {
-            ko: '2026년 2분기 예정',
-            en: 'Planned for Q2 2026',
-            ja: '2026年第2四半期予定'
+            ko: '2026년 5월 예정',
+            en: 'Planned for May 2026',
+            ja: '2026年5月予定'
         }
     },
     media: {
