@@ -59,7 +59,7 @@
         "en": "A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.",
         "ja": "小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。"
       },
-      "image": "images/ks-preview.jpg",
+      "image": "assets/koreanspa/ks-preview.jpg",
       "detailPage": "korean-spa.html",
       "category": "roblox",
       "status": "active",
@@ -481,7 +481,7 @@
         "en": "A Roblox simulation game from NNN GAMES where you toss and splatter tomatoes.",
         "ja": "トマトを投げて飛び散らせるNNN GAMESのRobloxシミュレーションゲーム。"
       },
-      "image": "images/nnn-logo.png",
+      "image": "assets/tomatosplattersimulator/tss-preview.jpg",
       "detailPage": "tomato-splatter-simulator.html",
       "category": "roblox",
       "status": "active",

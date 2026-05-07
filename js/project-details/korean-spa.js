@@ -27,7 +27,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
             en: 'Explore Korean Spa, a project built around giant-scale environments, exploration puzzles, and collectible rewards.',
             ja: '巨大な空間スケール、探索パズル、収集報酬ループを備えたKorean Spaプロジェクトを紹介します。'
         },
-        ogImage: 'images/ks-main.jpg'
+        ogImage: 'assets/koreanspa/ks-main.jpg'
     },
     hero: {
         title: {
@@ -87,7 +87,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
     ],
     media: {
         type: 'image',
-        src: 'images/ks-main.jpg',
+        src: 'assets/koreanspa/ks-main.jpg',
         alt: {
             ko: 'Korean Spa 대표 이미지',
             en: 'Korean Spa key visual',
@@ -259,7 +259,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
     ],
     gallery: [
         {
-            src: 'images/ks-gallery-0.jpg',
+            src: 'assets/koreanspa/ks-gallery-0.jpg',
             alt: {
                 ko: 'Korean Spa 갤러리 0',
                 en: 'Korean Spa gallery 0',
@@ -267,7 +267,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
             }
         },
         {
-            src: 'images/ks-gallery-1.jpg',
+            src: 'assets/koreanspa/ks-gallery-1.jpg',
             alt: {
                 ko: 'Korean Spa 갤러리 1',
                 en: 'Korean Spa gallery 1',
@@ -275,7 +275,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
             }
         },
         {
-            src: 'images/ks-gallery-2.jpg',
+            src: 'assets/koreanspa/ks-gallery-2.jpg',
             alt: {
                 ko: 'Korean Spa 갤러리 2',
                 en: 'Korean Spa gallery 2',
@@ -283,7 +283,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
             }
         },
         {
-            src: 'images/ks-gallery-3.jpg',
+            src: 'assets/koreanspa/ks-gallery-3.jpg',
             alt: {
                 ko: 'Korean Spa 갤러리 3',
                 en: 'Korean Spa gallery 3',
@@ -291,7 +291,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
             }
         },
         {
-            src: 'images/ks-gallery-4.jpg',
+            src: 'assets/koreanspa/ks-gallery-4.jpg',
             alt: {
                 ko: 'Korean Spa 갤러리 4',
                 en: 'Korean Spa gallery 4',
@@ -299,7 +299,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
             }
         },
         {
-            src: 'images/ks-gallery-5.jpg',
+            src: 'assets/koreanspa/ks-gallery-5.jpg',
             alt: {
                 ko: 'Korean Spa 갤러리 5',
                 en: 'Korean Spa gallery 5',
@@ -307,7 +307,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
             }
         },
         {
-            src: 'images/ks-gallery-6.jpg',
+            src: 'assets/koreanspa/ks-gallery-6.jpg',
             alt: {
                 ko: 'Korean Spa 갤러리 6',
                 en: 'Korean Spa gallery 6',
@@ -315,7 +315,7 @@ window.ProjectDetailConfigs['korean-spa'] = {
             }
         },
         {
-            src: 'images/ks-gallery-7.jpg',
+            src: 'assets/koreanspa/ks-gallery-7.jpg',
             alt: {
                 ko: 'Korean Spa 갤러리 7',
                 en: 'Korean Spa gallery 7',
