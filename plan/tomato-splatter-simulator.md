@@ -27,9 +27,9 @@
   - trailer / article / group: 미정 (확보되면 추가)
 - reporting: `collectMetrics: true`, `includeInHeroProjectCount: true`, `includeInHeroVisitTotal: true`
 - description (카드 문구)
-  - ko: 농장에서 깨어난 토마토를 시원하게 썰고 캐릭터를 성장시키며 스트레스를 해소하는 NNN GAMES의 Roblox 액션 시뮬레이터.
-  - en: Slice through swarms of awakened tomatoes, grow your character, and blow off steam — NNN GAMES' Roblox action simulator.
-  - ja: 農場で目覚めたトマトを爽快に斬り、キャラクターを成長させながらストレスも解消するNNN GAMESのRobloxアクションシミュレーター。
+  - ko: 농장에서 깨어난 토마토를 시원하게 썰고 캐릭터를 성장시키며 스트레스를 해소하는 액션 시뮬레이터.
+  - en: Slice through swarms of awakened tomatoes, grow your character, and blow off steam in this action simulator.
+  - ja: 農場で目覚めたトマトを爽快に斬り、キャラクターを成長させながらストレスも解消するアクションシミュレーター。
 
 ## 1. SEO — 적용 완료
 - description
