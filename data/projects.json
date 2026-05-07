@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 6550610,
-        "playing": 168,
-        "favorites": 354821,
-        "likeRatio": 0.5388471177944862,
-        "updatedAt": "2026-05-07T07:47:03.990Z"
+        "visits": 6553306,
+        "playing": 206,
+        "favorites": 354911,
+        "likeRatio": 0.5391358797745773,
+        "updatedAt": "2026-05-07T09:11:28.681Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 115236,
-        "playing": 1,
+        "visits": 115261,
+        "playing": 0,
         "favorites": 622,
-        "likeRatio": 0.8681626928471248,
-        "updatedAt": "2026-05-07T07:47:03.990Z"
+        "likeRatio": 0.8683473389355743,
+        "updatedAt": "2026-05-07T09:11:28.681Z"
       }
     },
     {
@@ -134,7 +134,7 @@
         "playing": 0,
         "favorites": 203,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-05-07T07:47:03.990Z"
+        "updatedAt": "2026-05-07T09:11:28.681Z"
       }
     },
     {
@@ -178,11 +178,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 37608,
-        "playing": 1,
+        "visits": 37642,
+        "playing": 0,
         "favorites": 205,
         "likeRatio": 0.5294117647058824,
-        "updatedAt": "2026-05-07T07:47:03.990Z"
+        "updatedAt": "2026-05-07T09:11:28.681Z"
       }
     },
     {
@@ -475,49 +475,49 @@
       }
     },
     {
-      "id": "new-roblox-project",
+      "id": "tomato-splatter-simulator",
       "title": {
-        "ko": "New Roblox Project",
-        "en": "New Roblox Project",
-        "ja": "New Roblox Project"
+        "ko": "Tomato Splatter Simulator",
+        "en": "Tomato Splatter Simulator",
+        "ja": "Tomato Splatter Simulator"
       },
       "description": {
-        "ko": "한국어 더미 텍스트입니다.",
-        "en": "Placeholder description for this project.",
-        "ja": "プレースホルダー説明です。"
+        "ko": "토마토를 던지고 튀기며 즐기는 NNN GAMES의 Roblox 시뮬레이션 게임.",
+        "en": "A Roblox simulation game from NNN GAMES where you toss and splatter tomatoes.",
+        "ja": "トマトを投げて飛び散らせるNNN GAMESのRobloxシミュレーションゲーム。"
       },
       "image": "images/nnn-logo.png",
-      "detailPage": "new-roblox-project.html",
+      "detailPage": "tomato-splatter-simulator.html",
       "category": "roblox",
-      "status": "development",
-      "featured": false,
-      "launchDate": "(미정)",
+      "status": "active",
+      "featured": true,
+      "launchDate": "2026",
       "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [
         "Roblox Studio",
         "Luau"
       ],
-      "placeId": null,
+      "placeId": "98363496512711",
       "universeId": "8296982488",
       "links": {
-        "play": "",
+        "play": "https://www.roblox.com/ko/games/98363496512711/Tomato-Splatter-Simulator",
         "trailer": "",
         "article": "",
         "group": "",
-        "showcase": ""
+        "showcase": "https://www.roblox.com/ko/games/98363496512711/Tomato-Splatter-Simulator"
       },
       "reporting": {
         "collectMetrics": true,
-        "includeInHeroProjectCount": false,
-        "includeInHeroVisitTotal": false
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 143978,
-        "playing": 33,
-        "favorites": 6480,
+        "visits": 144455,
+        "playing": 34,
+        "favorites": 6505,
         "likeRatio": 0.7777777777777778,
-        "updatedAt": "2026-05-07T07:47:03.990Z"
+        "updatedAt": "2026-05-07T09:11:28.681Z"
       }
     },
     {
@@ -569,21 +569,23 @@
   ],
   "summary": {
     "hero": {
-      "projectCount": 4,
+      "projectCount": 5,
       "projectIds": [
         "tower-flood-race",
         "korean-spa",
         "legendary-dj-gear",
-        "fruit-battles"
+        "fruit-battles",
+        "tomato-splatter-simulator"
       ],
-      "totalVisits": 6753404,
+      "totalVisits": 6900614,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
         "legendary-dj-gear",
-        "fruit-battles"
+        "fruit-battles",
+        "tomato-splatter-simulator"
       ],
-      "updatedAt": "2026-05-07T07:47:03.990Z"
+      "updatedAt": "2026-05-07T09:11:28.681Z"
     }
   }
 }

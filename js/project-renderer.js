@@ -9,7 +9,7 @@ const ProjectRenderer = {
         'korean-spa',
         'legendary-dj-gear',
         'reset-tower',
-        'new-roblox-project',
+        'tomato-splatter-simulator',
         'watermelon-farm',
         'sweet-forest',
         'mine-sweeper',
