@@ -256,31 +256,5 @@ window.ProjectDetailConfigs['tower-flood-race'] = {
                 ja: '運営グループを見る'
             }
         }
-    ],
-    gallery: [
-        {
-            src: 'assets/towerfloodrace/tfr-gallery-1.jpg',
-            alt: {
-                ko: 'Tower Flood Race 갤러리 1',
-                en: 'Tower Flood Race gallery 1',
-                ja: 'Tower Flood Race ギャラリー 1'
-            }
-        },
-        {
-            src: 'assets/towerfloodrace/tfr-gallery-2.jpg',
-            alt: {
-                ko: 'Tower Flood Race 갤러리 2',
-                en: 'Tower Flood Race gallery 2',
-                ja: 'Tower Flood Race ギャラリー 2'
-            }
-        },
-        {
-            src: 'assets/towerfloodrace/tfr-gallery-3.jpg',
-            alt: {
-                ko: 'Tower Flood Race 갤러리 3',
-                en: 'Tower Flood Race gallery 3',
-                ja: 'Tower Flood Race ギャラリー 3'
-            }
-        }
     ]
 };

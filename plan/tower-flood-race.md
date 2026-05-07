@@ -97,9 +97,9 @@
 - "Race Up. Water Rises." 핵심 카피와 시너지 — 빠른 라운드와 긴장감을 영상으로 직관 전달.
 
 ### 12.2 핵심 사용자 시나리오
-1. 방문자가 상세 페이지 진입 → 갤러리 아래 새 섹션 **Community Highlights**로 스크롤.
-2. **Long-form / Short-form** 탭으로 형식 선택, 정렬(최신 / 인기) 옵션 선택.
-3. 그리드 카드를 클릭 → 모달 플레이어에서 임베드 재생 (페이지 이탈 없음).
+1. 방문자가 상세 페이지 진입 → (기존 갤러리 자리에) **Community Highlights — 롱폼 그리드**가 노출.
+2. 그 아래 **Shorts — 숏폼 가로 스크롤러**로 짧은 클립을 좌우 스와이프/스크롤로 탐색.
+3. 카드 클릭 → 모달 플레이어에서 임베드 재생 (페이지 이탈 없음).
 4. 더 보고 싶을 때 **원본 보기** 링크로 YouTube/TikTok 이동.
 
 ### 12.3 데이터 모델 (런타임 산출, per video)
@@ -185,50 +185,46 @@ https://www.tiktok.com/@user/video/7891234567890
 
 ### 12.6 UI 와이어프레임
 
-#### (A) 섹션 헤더 + 형식 탭 + 정렬
-```
-┌─────────────────────────────────────────────────────────────────┐
-│ Community Highlights                                            │
-│ 크리에이터들의 Tower Flood Race 플레이 영상                          │
-│                                                                 │
-│ [ Long-form (12) ] [ Short-form (38) ]      [ Sort: Latest ▼ ]  │
-└─────────────────────────────────────────────────────────────────┘
-```
+> **결정**: 탭 구조 제거. 갤러리 자리에 두 섹션 (롱폼 그리드 → 숏폼 가로 스크롤러) 순서로 배치.
 
-#### (B) Long-form 그리드 — 16:9, desktop 4-col / tablet 2-col / mobile 1-col
+#### (A) 롱폼 섹션 — 16:9 그리드 (desktop 4-col / tablet 2-col / mobile 1-col)
 ```
+Community Highlights
+크리에이터들의 플레이 영상
+
 ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
-│ [YT]   12:34│ │ [YT]   05:12│ │ [YT]   08:45│ │ [YT]   03:21│
+│ [YT]        │ │ [YT]        │ │ [YT]        │ │ [YT]        │
 │   ▣ thumb   │ │   ▣ thumb   │ │   ▣ thumb   │ │   ▣ thumb   │
 ├─────────────┤ ├─────────────┤ ├─────────────┤ ├─────────────┤
 │ Title…      │ │ Title…      │ │ Title…      │ │ Title…      │
 │ @Creator    │ │ @Creator    │ │ @Creator    │ │ @Creator    │
-│ ▶ 1.2M · 2d │ │ ▶ 540K · 1w │ │ ▶ 88K · 2w  │ │ ▶ 21K · 1mo │
 └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘
 ```
 
-#### (C) Short-form 그리드 — 9:16, desktop 6-col / tablet 4-col / mobile 3-col
+#### (B) 숏폼 섹션 — 9:16 가로 스크롤러
 ```
-┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐
-│[TT]│ │[TT]│ │[YT]│ │[TT]│ │[YT]│ │[TT]│
-│    │ │    │ │    │ │    │ │    │ │    │
-│thmb│ │thmb│ │thmb│ │thmb│ │thmb│ │thmb│
-│    │ │    │ │    │ │    │ │    │ │    │
-│0:42│ │0:18│ │0:55│ │0:30│ │0:12│ │0:45│
-├────┤ ├────┤ ├────┤ ├────┤ ├────┤ ├────┤
-│@usr│ │@usr│ │@usr│ │@usr│ │@usr│ │@usr│
-│▶12K│ │▶8K │ │▶5K │ │▶3K │ │▶2K │ │▶1K │
-└────┘ └────┘ └────┘ └────┘ └────┘ └────┘
-```
+Shorts
+숏폼 클립 (좌우 스크롤)
 
-#### (D) 카드 공통 구성
+  ‹ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ›
+    │[TT]│ │[TT]│ │[YT]│ │[TT]│ │[YT]│ │[TT]│  ←  스크롤 →
+    │thmb│ │thmb│ │thmb│ │thmb│ │thmb│ │thmb│
+    ├────┤ ├────┤ ├────┤ ├────┤ ├────┤ ├────┤
+    │@usr│ │@usr│ │@usr│ │@usr│ │@usr│ │@usr│
+    └────┘ └────┘ └────┘ └────┘ └────┘ └────┘
+```
+- 카드 폭 고정 (모바일 150px / 데스크톱 180px), `scroll-snap-type: x mandatory`
+- 좌우 둥근 화살표 버튼 (`hover` 환경에서만 노출 — 터치 디바이스 자동 숨김)
+- 양 끝 그라디언트 페이드 — `data-can-prev/next` 가 true 일 때만 표시
+- 네이티브 스와이프·휠 가로 스크롤 모두 지원
+
+#### (C) 카드 공통 구성
 - 좌측 상단: 플랫폼 뱃지 (`YT` / `TT`)
-- 우측 상단(또는 우측 하단): duration 라벨 (`mm:ss`)
 - 썸네일 hover 시: 살짝 확대 + 그림자, focusable, `aria-label`
-- 카드 본문: title (1~2줄 ellipsis) → creator → views · published(상대시간)
-- pinned 영상: 좌측 위 별 아이콘 + 카드 외곽 강조
+- 카드 본문: title (1~2줄 ellipsis) → creator
+- 클릭 시 모달 오픈
 
-#### (E) 모달 플레이어 (클릭 시)
+#### (D) 모달 플레이어 (클릭 시)
 ```
 ┌────────────── overlay (ESC 닫기) ──────────────┐
 │                                          [×]   │
@@ -247,7 +243,6 @@ https://www.tiktok.com/@user/video/7891234567890
 ```
 
 - 배경 dim + 클릭/ESC 닫기, focus trap, 닫을 때 영상 정지(postMessage `pauseVideo`).
-- 좌·우 키 또는 화살표 버튼으로 동일 탭 내 prev/next 탐색.
 - 모바일에서는 풀스크린 시트 형태로 변형.
 
 #### (F) 빈 상태 / 오류 상태
@@ -270,7 +265,9 @@ https://www.tiktok.com/@user/video/7891234567890
 ### 12.8 i18n 키 (KO / EN / JA)
 - `community_highlights_title`
 - `community_highlights_subtitle`
-- `tab_longform`, `tab_shortform`
+- `community_long_kicker`, `community_long_title`, `community_long_subtitle`
+- `community_shorts_kicker`, `community_shorts_title`, `community_shorts_subtitle`
+- `community_prev`, `community_next`
 - `sort_latest`, `sort_popular`
 - `card_views_label` (예: "{count} views")
 - `cta_open_on_youtube`, `cta_open_on_tiktok`, `cta_share`
@@ -279,7 +276,8 @@ https://www.tiktok.com/@user/video/7891234567890
 
 ### 12.9 작업 분해 (구현 현황)
 - [x] `assets/towerfloodrace/videos.txt` 텍스트 파일 (URL 한 줄씩, 주석 지원)
-- [x] `js/project-details/tower-flood-race-videos.js` 런타임 파싱 + oEmbed 보강 + localStorage 캐시 + 탭/그리드/모달
+- [x] `js/project-details/tower-flood-race-videos.js` 런타임 파싱 + oEmbed 보강 + localStorage 캐시 + 롱폼 그리드 + 숏폼 가로 스크롤러 + 모달
+- [x] 기존 갤러리 데이터 제거 (`tower-flood-race.js` `gallery` 배열 삭제)
 - [x] `tower-flood-race.html` 에 렌더러 스크립트 추가
 - [x] CLI / JSON 데이터파일 / `add-video` npm 스크립트 제거
 - [ ] 시드 URL 추가 (`videos.txt` 에 5~10개 붙여넣기)
@@ -289,13 +287,14 @@ https://www.tiktok.com/@user/video/7891234567890
 ### 12.10 검증 체크리스트
 - [ ] `videos.txt` 에 YouTube 일반/Shorts/TikTok URL 추가 후 새로고침 시 카드 렌더 확인
 - [ ] 주석(`#`)·빈 줄·중복 URL 처리 정상
-- [ ] Long/Short 탭 전환 시 그리드 레이아웃 (16:9 ↔ 9:16) 정상
+- [ ] 롱폼 그리드 16:9 + 숏폼 가로 스크롤러 9:16 레이아웃 정상
 - [ ] YouTube 일반·Shorts·TikTok 임베드 재생 정상
 - [ ] 모달 닫기(ESC / 배경 클릭 / × 버튼) 시 영상 정지
 - [ ] oEmbed 응답으로 제목·작성자 보강 성공 (또는 실패 시 카드가 깨지지 않음)
 - [ ] localStorage 캐시 hit/miss 정상 (동일 URL 재방문 시 즉시 표시)
 - [ ] 외부 링크 `rel="noopener noreferrer"` 적용
-- [ ] 키보드만으로 탭/카드/모달 접근 가능
+- [ ] 가로 스크롤러 prev/next 버튼 동작 (양 끝에서 자동 hide), 터치 디바이스에서 버튼 미노출
+- [ ] 키보드만으로 카드/모달 접근 가능
 
 ### 12.11 Open Questions
 - oEmbed CORS 가 실제 운영 환경에서 안정적으로 동작하는가? (실패 시 카드 fallback 으로 충분한지 결정)

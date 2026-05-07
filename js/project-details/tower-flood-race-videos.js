@@ -12,37 +12,46 @@
 
     const I18N = {
         ko: {
-            kicker: 'Community Highlights',
-            title: '크리에이터들의 플레이 영상',
-            subtitle: '유저들이 직접 올린 Tower Flood Race 영상을 한 곳에서 감상해 보세요.',
-            tabLong: '롱폼',
-            tabShort: '숏폼',
+            longKicker: 'Community Highlights',
+            longTitle: '크리에이터들의 플레이 영상',
+            longSubtitle: '유저들이 직접 올린 Tower Flood Race 롱폼 플레이 영상입니다.',
+            shortsKicker: 'Shorts',
+            shortsTitle: '숏폼 클립',
+            shortsSubtitle: '짧고 임팩트 있는 숏폼 영상을 좌우로 스크롤하며 감상해 보세요.',
             empty: '아직 등록된 영상이 없습니다.',
             openOriginal: '원본 보기',
             close: '닫기',
-            untitled: '(제목 없음)'
+            untitled: '(제목 없음)',
+            prev: '이전',
+            next: '다음'
         },
         en: {
-            kicker: 'Community Highlights',
-            title: 'Play videos from creators',
-            subtitle: 'Watch Tower Flood Race videos uploaded by the community in one place.',
-            tabLong: 'Long-form',
-            tabShort: 'Short-form',
+            longKicker: 'Community Highlights',
+            longTitle: 'Play videos from creators',
+            longSubtitle: 'Long-form Tower Flood Race videos uploaded by the community.',
+            shortsKicker: 'Shorts',
+            shortsTitle: 'Short clips',
+            shortsSubtitle: 'Quick, punchy short-form clips — scroll horizontally to browse.',
             empty: 'No videos yet.',
             openOriginal: 'View original',
             close: 'Close',
-            untitled: '(untitled)'
+            untitled: '(untitled)',
+            prev: 'Previous',
+            next: 'Next'
         },
         ja: {
-            kicker: 'Community Highlights',
-            title: 'クリエイターのプレイ動画',
-            subtitle: 'ユーザーが投稿した Tower Flood Race の動画をここでまとめて楽しめます。',
-            tabLong: 'ロング',
-            tabShort: 'ショート',
+            longKicker: 'Community Highlights',
+            longTitle: 'クリエイターのプレイ動画',
+            longSubtitle: 'ユーザーが投稿した Tower Flood Race のロング動画です。',
+            shortsKicker: 'Shorts',
+            shortsTitle: 'ショート動画',
+            shortsSubtitle: '短くて印象的なショート動画を左右にスクロールしてご覧ください。',
             empty: '登録された動画はまだありません。',
             openOriginal: '元動画を見る',
             close: '閉じる',
-            untitled: '(無題)'
+            untitled: '(無題)',
+            prev: '前へ',
+            next: '次へ'
         }
     };
 
@@ -55,24 +64,59 @@
 }
 .tfr-videos-header h2 { font-size: 1.5rem; font-weight: 700; color: #111827; margin: 0; }
 .tfr-videos-header p { margin: 0.5rem 0 0; color: #6b7280; font-size: 0.875rem; }
-.tfr-tabs { display: flex; gap: 0.5rem; border-bottom: 1px solid #e5e7eb; margin-bottom: 1.25rem; }
-.tfr-tab-btn {
-    padding: 0.5rem 1rem; margin-bottom: -1px;
-    border: 0; border-bottom: 2px solid transparent;
-    background: transparent; font-size: 0.875rem; font-weight: 600;
-    color: #64748b; cursor: pointer;
-}
-.tfr-tab-btn[aria-selected="true"] { border-bottom-color: #2563EB; color: #2563EB; }
-.tfr-tab-count { margin-left: 0.25rem; font-size: 0.75rem; color: #94a3b8; font-weight: 500; }
 .tfr-grid { display: grid; gap: 1rem; }
 .tfr-grid-long { grid-template-columns: 1fr; }
 @media (min-width: 640px)  { .tfr-grid-long { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .tfr-grid-long { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 1280px) { .tfr-grid-long { grid-template-columns: repeat(4, 1fr); } }
-.tfr-grid-short { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-@media (min-width: 640px) { .tfr-grid-short { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 768px) { .tfr-grid-short { grid-template-columns: repeat(4, 1fr); } }
-@media (min-width: 1024px){ .tfr-grid-short { grid-template-columns: repeat(6, 1fr); } }
+
+/* 숏폼 가로 스크롤러 */
+.tfr-shorts-scroller { position: relative; }
+.tfr-shorts-track {
+    display: flex; gap: 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0.25rem 0.25rem 0.75rem;
+    -ms-overflow-style: none; scrollbar-width: none;
+}
+.tfr-shorts-track::-webkit-scrollbar { display: none; }
+.tfr-shorts-track .tfr-card {
+    flex: 0 0 150px; width: 150px;
+    scroll-snap-align: start;
+}
+@media (min-width: 768px) {
+    .tfr-shorts-track .tfr-card { flex: 0 0 180px; width: 180px; }
+}
+.tfr-scroll-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    z-index: 2;
+    width: 2.5rem; height: 2.5rem;
+    border-radius: 9999px;
+    background: #fff; color: #2563EB;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.12);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; font-weight: 700; line-height: 1;
+    transition: opacity 0.15s ease, background 0.15s ease;
+}
+.tfr-scroll-btn:hover { background: #2563EB; color: #fff; border-color: #2563EB; }
+.tfr-scroll-btn:disabled {
+    opacity: 0; pointer-events: none;
+}
+.tfr-scroll-prev { left: -0.75rem; }
+.tfr-scroll-next { right: -0.75rem; }
+@media (hover: none) { .tfr-scroll-btn { display: none; } }
+.tfr-shorts-scroller::before,
+.tfr-shorts-scroller::after {
+    content: ''; position: absolute; top: 0; bottom: 0.75rem; width: 2.5rem; z-index: 1;
+    pointer-events: none; opacity: 0; transition: opacity 0.15s ease;
+}
+.tfr-shorts-scroller::before { left: 0; background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0) 100%); }
+.tfr-shorts-scroller::after  { right: 0; background: linear-gradient(to left,  #fff 0%, rgba(255,255,255,0) 100%); }
+.tfr-shorts-scroller[data-can-prev="true"]::before { opacity: 1; }
+.tfr-shorts-scroller[data-can-next="true"]::after  { opacity: 1; }
 .tfr-card {
     position: relative; display: block; width: 100%; text-align: left;
     background: #fff; border: 1px solid #e2e8f0; border-radius: 1rem;
@@ -357,51 +401,68 @@
         `;
     }
 
-    function renderGrid(records, format, lang) {
-        if (!records.length) {
-            return `<div class="tfr-grid tfr-grid-${format}"><div class="tfr-empty">${escapeHtml(t(lang, 'empty'))}</div></div>`;
-        }
-        return `<div class="tfr-grid tfr-grid-${format}">${records.map((r) => renderCard(r, lang)).join('')}</div>`;
-    }
-
-    function renderSection(records, lang) {
-        const longs = records.filter((r) => r.format !== 'short');
-        const shorts = records.filter((r) => r.format === 'short');
-
+    function renderLongs(records, lang) {
+        if (!records.length) return '';
+        const grid = `<div class="tfr-grid tfr-grid-long">${records.map((r) => renderCard(r, lang)).join('')}</div>`;
         return `
-            <section class="tfr-videos-section detail-section" id="${SECTION_ID}">
+            <section class="tfr-videos-section detail-section">
                 <div class="tfr-videos-header">
-                    <span class="kicker">${escapeHtml(t(lang, 'kicker'))}</span>
-                    <h2>${escapeHtml(t(lang, 'title'))}</h2>
-                    <p>${escapeHtml(t(lang, 'subtitle'))}</p>
+                    <span class="kicker">${escapeHtml(t(lang, 'longKicker'))}</span>
+                    <h2>${escapeHtml(t(lang, 'longTitle'))}</h2>
+                    <p>${escapeHtml(t(lang, 'longSubtitle'))}</p>
                 </div>
-                <div class="tfr-tabs" role="tablist">
-                    <button type="button" class="tfr-tab-btn" role="tab" data-tab="long" aria-selected="true">
-                        ${escapeHtml(t(lang, 'tabLong'))}<span class="tfr-tab-count">(${longs.length})</span>
-                    </button>
-                    <button type="button" class="tfr-tab-btn" role="tab" data-tab="short" aria-selected="false">
-                        ${escapeHtml(t(lang, 'tabShort'))}<span class="tfr-tab-count">(${shorts.length})</span>
-                    </button>
-                </div>
-                <div data-pane="long">${renderGrid(longs, 'long', lang)}</div>
-                <div data-pane="short" hidden>${renderGrid(shorts, 'short', lang)}</div>
+                ${grid}
             </section>
         `;
     }
 
-    function attachTabs(section) {
-        const tabs = section.querySelectorAll('.tfr-tab-btn');
-        const panes = section.querySelectorAll('[data-pane]');
-        tabs.forEach((tab) => {
-            tab.addEventListener('click', () => {
-                const target = tab.getAttribute('data-tab');
-                tabs.forEach((tt) => tt.setAttribute('aria-selected', tt === tab ? 'true' : 'false'));
-                panes.forEach((p) => {
-                    if (p.getAttribute('data-pane') === target) p.removeAttribute('hidden');
-                    else p.setAttribute('hidden', '');
-                });
-            });
-        });
+    function renderShorts(records, lang) {
+        if (!records.length) return '';
+        const cards = records.map((r) => renderCard(r, lang)).join('');
+        return `
+            <section class="tfr-videos-section detail-section">
+                <div class="tfr-videos-header">
+                    <span class="kicker">${escapeHtml(t(lang, 'shortsKicker'))}</span>
+                    <h2>${escapeHtml(t(lang, 'shortsTitle'))}</h2>
+                    <p>${escapeHtml(t(lang, 'shortsSubtitle'))}</p>
+                </div>
+                <div class="tfr-shorts-scroller" data-can-prev="false" data-can-next="false">
+                    <button type="button" class="tfr-scroll-btn tfr-scroll-prev" aria-label="${escapeHtml(t(lang, 'prev'))}" disabled>‹</button>
+                    <button type="button" class="tfr-scroll-btn tfr-scroll-next" aria-label="${escapeHtml(t(lang, 'next'))}">›</button>
+                    <div class="tfr-shorts-track">${cards}</div>
+                </div>
+            </section>
+        `;
+    }
+
+    function setupScrollButtons(scroller) {
+        const track = scroller.querySelector('.tfr-shorts-track');
+        const prevBtn = scroller.querySelector('.tfr-scroll-prev');
+        const nextBtn = scroller.querySelector('.tfr-scroll-next');
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const update = () => {
+            const canPrev = track.scrollLeft > 4;
+            const canNext = track.scrollLeft + track.clientWidth < track.scrollWidth - 4;
+            prevBtn.disabled = !canPrev;
+            nextBtn.disabled = !canNext;
+            scroller.setAttribute('data-can-prev', canPrev ? 'true' : 'false');
+            scroller.setAttribute('data-can-next', canNext ? 'true' : 'false');
+        };
+
+        const stepBy = (dir) => {
+            const card = track.querySelector('.tfr-card');
+            const cardWidth = card ? card.offsetWidth + 12 : 200;
+            track.scrollBy({ left: dir * cardWidth * 2, behavior: 'smooth' });
+        };
+
+        prevBtn.addEventListener('click', () => stepBy(-1));
+        nextBtn.addEventListener('click', () => stepBy(1));
+        track.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        // 이미지 로드 후 scrollWidth 가 늘어날 수 있어 한 박자 뒤 재계산
+        setTimeout(update, 0);
+        setTimeout(update, 300);
     }
 
     function buildEmbedUrl(record) {
@@ -507,27 +568,33 @@
         if (!root) return;
 
         ensureStyle();
-        const existing = document.getElementById(SECTION_ID);
-        if (existing) existing.remove();
+        // 이전 렌더의 섹션 제거 (언어 변경 등 재렌더 대응)
+        document.querySelectorAll('#' + SECTION_ID + ', .tfr-videos-section').forEach((el) => el.remove());
 
         const records = await loadRecords();
         const lang = getLang();
+        const longs = records.filter((r) => r.format !== 'short');
+        const shorts = records.filter((r) => r.format === 'short');
 
         const wrapper = document.createElement('div');
-        wrapper.innerHTML = renderSection(records, lang);
-        const section = wrapper.firstElementChild;
-        root.appendChild(section);
+        wrapper.innerHTML = renderLongs(longs, lang) + renderShorts(shorts, lang);
+        const sections = Array.from(wrapper.children);
+        if (!sections.length) return; // 영상 0개면 아무것도 추가하지 않음
+        sections[0].id = SECTION_ID;
+        sections.forEach((s) => root.appendChild(s));
 
-        attachTabs(section);
-
-        // Mutable lookup so modal opens with enriched data when available
+        // 모달 오픈 시 보강 데이터를 사용하도록 mutable lookup 유지
         const lookup = enrichInBackground(records);
-        section.querySelectorAll('.tfr-card').forEach((card) => {
-            card.addEventListener('click', () => {
-                const id = card.getAttribute('data-video-id');
-                const rec = lookup.get(id);
-                if (rec) openModal(rec);
+        sections.forEach((section) => {
+            section.querySelectorAll('.tfr-card').forEach((card) => {
+                card.addEventListener('click', () => {
+                    const id = card.getAttribute('data-video-id');
+                    const rec = lookup.get(id);
+                    if (rec) openModal(rec);
+                });
             });
+            const scroller = section.querySelector('.tfr-shorts-scroller');
+            if (scroller) setupScrollButtons(scroller);
         });
     }
 
