@@ -249,7 +249,7 @@
       "showDetailLinkInProjects": true,
       "category": "roblox",
       "status": "development",
-      "featured": false,
+      "featured": true,
       "launchDate": "2026-05",
       "platform": "Roblox",
       "client": "Internal Project",
@@ -268,6 +268,7 @@
       },
       "reporting": {
         "collectMetrics": false,
+        "includeInHomePreview": true,
         "includeInHeroProjectCount": false,
         "includeInHeroVisitTotal": false
       },
@@ -314,6 +315,7 @@
       },
       "reporting": {
         "collectMetrics": false,
+        "includeInHomePreview": true,
         "includeInHeroProjectCount": false,
         "includeInHeroVisitTotal": false
       },
@@ -458,6 +460,7 @@
       },
       "reporting": {
         "collectMetrics": false,
+        "includeInHomePreview": true,
         "includeInHeroProjectCount": false,
         "includeInHeroVisitTotal": false
       },
@@ -531,7 +534,7 @@
       "detailPage": "watermelon-farm.html",
       "category": "roblox",
       "status": "development",
-      "featured": false,
+      "featured": true,
       "launchDate": "2026-06",
       "platform": "Roblox",
       "client": "Internal Project",
@@ -550,6 +553,7 @@
       },
       "reporting": {
         "collectMetrics": false,
+        "includeInHomePreview": true,
         "includeInHeroProjectCount": false,
         "includeInHeroVisitTotal": false
       },
