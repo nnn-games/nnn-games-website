@@ -209,8 +209,31 @@
   .project-grid {
     @apply md:grid-cols-2 lg:grid-cols-3;
   }
+  .community-scroller {
+    @apply relative;
+  }
+  .community-scroller::before,
+  .community-scroller::after {
+    content: '';
+    @apply pointer-events-none absolute top-0 bottom-2 w-12 z-10 opacity-0 transition-opacity;
+  }
+  .community-scroller::before {
+    @apply left-0 bg-gradient-to-r from-gray-50 to-transparent;
+  }
+  .community-scroller::after {
+    @apply right-0 bg-gradient-to-l from-gray-50 to-transparent;
+  }
+  .community-scroller[data-can-scroll-prev="true"]::before,
+  .community-scroller[data-can-scroll-next="true"]::after {
+    @apply opacity-100;
+  }
+  .community-scroll-btn {
+    @apply absolute top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-brand-primary text-sm transition hover:bg-brand-primary hover:text-white hover:border-brand-primary disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-brand-primary disabled:hover:border-gray-200;
+  }
+  .community-scroll-prev { @apply left-1; }
+  .community-scroll-next { @apply right-1; }
   .community-grid {
-    @apply flex gap-6 overflow-x-auto pb-2;
+    @apply flex gap-6 overflow-x-auto pb-2 scroll-smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }

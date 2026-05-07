@@ -369,7 +369,50 @@ document.addEventListener('DOMContentLoaded', function () {
             console.debug('community render failed', err);
             grid.innerHTML = `<p class="community-error">${U.escapeHtml(U.t(lang, 'community_load_error', '커뮤니티 정보를 불러오지 못했습니다.'))}</p>`;
         }
+        updateCommunityScrollState();
     };
+
+    const getCommunityScrollStep = (grid) => {
+        const card = grid.querySelector('.community-card');
+        if (!card) return grid.clientWidth;
+        const styles = window.getComputedStyle(grid);
+        const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+        return card.getBoundingClientRect().width + gap;
+    };
+
+    const updateCommunityScrollState = () => {
+        const scroller = document.querySelector('[data-community-scroller]');
+        const grid = document.getElementById('community-grid');
+        if (!scroller || !grid) return;
+        const overflow = grid.scrollWidth - grid.clientWidth > 1;
+        const canPrev = overflow && grid.scrollLeft > 1;
+        const canNext = overflow && grid.scrollLeft < grid.scrollWidth - grid.clientWidth - 1;
+        scroller.setAttribute('data-can-scroll-prev', String(canPrev));
+        scroller.setAttribute('data-can-scroll-next', String(canNext));
+        scroller.querySelectorAll('[data-community-scroll]').forEach((btn) => {
+            const dir = btn.getAttribute('data-community-scroll');
+            const enabled = overflow && (dir === 'prev' ? canPrev : canNext);
+            btn.hidden = !overflow;
+            btn.disabled = !enabled;
+        });
+    };
+
+    const bindCommunityScroller = () => {
+        const scroller = document.querySelector('[data-community-scroller]');
+        const grid = document.getElementById('community-grid');
+        if (!scroller || !grid) return;
+        scroller.querySelectorAll('[data-community-scroll]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const step = getCommunityScrollStep(grid);
+                const direction = btn.getAttribute('data-community-scroll') === 'prev' ? -1 : 1;
+                grid.scrollBy({ left: step * direction, behavior: 'smooth' });
+            });
+        });
+        grid.addEventListener('scroll', updateCommunityScrollState, { passive: true });
+        window.addEventListener('resize', updateCommunityScrollState);
+    };
+
+    bindCommunityScroller();
 
     // 언어 변경 시 재렌더
     document.addEventListener('languageChanged', function () {

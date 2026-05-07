@@ -31,6 +31,8 @@ const translations = {
         community_members_label: "명 가입자",
         community_members_unknown: "가입자 정보 없음",
         community_load_error: "커뮤니티 정보를 불러오지 못했습니다.",
+        community_scroll_prev: "이전 커뮤니티",
+        community_scroll_next: "다음 커뮤니티",
 
         // 프로젝트 카드/목록
         project_preview_title: "진행 중인 프로젝트",
@@ -146,6 +148,8 @@ const translations = {
         community_members_label: "subscribers",
         community_members_unknown: "Subscribers n/a",
         community_load_error: "Failed to load community information.",
+        community_scroll_prev: "Previous communities",
+        community_scroll_next: "Next communities",
 
         project_preview_title: "Ongoing Projects",
         learn_more: "Learn More →",
@@ -253,6 +257,8 @@ const translations = {
         community_members_label: "加入者",
         community_members_unknown: "加入者情報なし",
         community_load_error: "コミュニティ情報を読み込めませんでした。",
+        community_scroll_prev: "前のコミュニティ",
+        community_scroll_next: "次のコミュニティ",
 
         project_preview_title: "進行中のプロジェクト",
         learn_more: "詳細を見る →",
