@@ -71,6 +71,14 @@
   .main-nav .has-dropdown {
     @apply relative;
   }
+  .main-nav .has-dropdown::after {
+    content: '';
+    @apply hidden absolute left-0 right-0 top-full h-2;
+  }
+  .main-nav .has-dropdown:hover::after,
+  .main-nav .has-dropdown:focus-within::after {
+    @apply block;
+  }
   .main-nav .nav-dropdown {
     @apply hidden absolute left-0 top-full mt-2 min-w-[10rem] flex-col gap-1 rounded-xl border border-gray-100 bg-white p-2 shadow-xl;
   }
