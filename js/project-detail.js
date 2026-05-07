@@ -73,6 +73,7 @@
     const buildHeroActions = function (buttons, project, lang) {
         const u = U();
         const projectId = project ? project.id : '';
+        const backUrl = project && project.category === 'mobile' ? 'projects-mobile.html' : 'projects-roblox.html';
         const items = (buttons || [])
             .map((button) => {
                 const url = button.url || (project && project.links ? project.links[button.type] : '');
@@ -95,7 +96,7 @@
         return `
             <div class="detail-hero-actions">
                 ${items}
-                <a href="projects.html" class="btn-ghost" data-cta="detail-back" data-project-id="${u.escapeHtml(projectId)}" data-cta-origin="detail-header">
+                <a href="${backUrl}" class="btn-ghost" data-cta="detail-back" data-project-id="${u.escapeHtml(projectId)}" data-cta-origin="detail-header">
                     ${u.escapeHtml(u.t(lang, 'project_detail_back_to_projects', 'Back to Projects'))}
                 </a>
             </div>
