@@ -13,11 +13,7 @@
     const I18N = {
         ko: {
             longKicker: 'Community Highlights',
-            longTitle: '크리에이터들의 플레이 영상',
-            longSubtitle: '유저들이 직접 올린 Tower Flood Race 롱폼 플레이 영상입니다.',
             shortsKicker: 'Shorts',
-            shortsTitle: '숏폼 클립',
-            shortsSubtitle: '짧고 임팩트 있는 숏폼 영상을 좌우로 스크롤하며 감상해 보세요.',
             empty: '아직 등록된 영상이 없습니다.',
             openOriginal: '원본 보기',
             close: '닫기',
@@ -27,11 +23,7 @@
         },
         en: {
             longKicker: 'Community Highlights',
-            longTitle: 'Play videos from creators',
-            longSubtitle: 'Long-form Tower Flood Race videos uploaded by the community.',
             shortsKicker: 'Shorts',
-            shortsTitle: 'Short clips',
-            shortsSubtitle: 'Quick, punchy short-form clips — scroll horizontally to browse.',
             empty: 'No videos yet.',
             openOriginal: 'View original',
             close: 'Close',
@@ -41,11 +33,7 @@
         },
         ja: {
             longKicker: 'Community Highlights',
-            longTitle: 'クリエイターのプレイ動画',
-            longSubtitle: 'ユーザーが投稿した Tower Flood Race のロング動画です。',
             shortsKicker: 'Shorts',
-            shortsTitle: 'ショート動画',
-            shortsSubtitle: '短くて印象的なショート動画を左右にスクロールしてご覧ください。',
             empty: '登録された動画はまだありません。',
             openOriginal: '元動画を見る',
             close: '閉じる',
@@ -57,13 +45,11 @@
 
     const STYLE_CSS = `
 .tfr-videos-section { margin-top: 2.5rem; }
-.tfr-videos-header { margin-bottom: 1.25rem; }
+.tfr-videos-header { margin-bottom: 1rem; }
 .tfr-videos-header .kicker {
     display: inline-block; font-size: 11px; font-weight: 600;
-    color: #2563EB; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.5rem;
+    color: #2563EB; letter-spacing: 0.18em; text-transform: uppercase;
 }
-.tfr-videos-header h2 { font-size: 1.5rem; font-weight: 700; color: #111827; margin: 0; }
-.tfr-videos-header p { margin: 0.5rem 0 0; color: #6b7280; font-size: 0.875rem; }
 .tfr-grid { display: grid; gap: 1rem; }
 .tfr-grid-long { grid-template-columns: 1fr; }
 @media (min-width: 640px)  { .tfr-grid-long { grid-template-columns: repeat(2, 1fr); } }
@@ -408,8 +394,6 @@
             <section class="tfr-videos-section detail-section">
                 <div class="tfr-videos-header">
                     <span class="kicker">${escapeHtml(t(lang, 'longKicker'))}</span>
-                    <h2>${escapeHtml(t(lang, 'longTitle'))}</h2>
-                    <p>${escapeHtml(t(lang, 'longSubtitle'))}</p>
                 </div>
                 ${grid}
             </section>
@@ -423,8 +407,6 @@
             <section class="tfr-videos-section detail-section">
                 <div class="tfr-videos-header">
                     <span class="kicker">${escapeHtml(t(lang, 'shortsKicker'))}</span>
-                    <h2>${escapeHtml(t(lang, 'shortsTitle'))}</h2>
-                    <p>${escapeHtml(t(lang, 'shortsSubtitle'))}</p>
                 </div>
                 <div class="tfr-shorts-scroller" data-can-prev="false" data-can-next="false">
                     <button type="button" class="tfr-scroll-btn tfr-scroll-prev" aria-label="${escapeHtml(t(lang, 'prev'))}" disabled>‹</button>
@@ -577,7 +559,7 @@
         const shorts = records.filter((r) => r.format === 'short');
 
         const wrapper = document.createElement('div');
-        wrapper.innerHTML = renderLongs(longs, lang) + renderShorts(shorts, lang);
+        wrapper.innerHTML = renderShorts(shorts, lang) + renderLongs(longs, lang);
         const sections = Array.from(wrapper.children);
         if (!sections.length) return; // 영상 0개면 아무것도 추가하지 않음
         sections[0].id = SECTION_ID;

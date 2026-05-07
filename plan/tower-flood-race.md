@@ -97,8 +97,8 @@
 - "Race Up. Water Rises." 핵심 카피와 시너지 — 빠른 라운드와 긴장감을 영상으로 직관 전달.
 
 ### 12.2 핵심 사용자 시나리오
-1. 방문자가 상세 페이지 진입 → (기존 갤러리 자리에) **Community Highlights — 롱폼 그리드**가 노출.
-2. 그 아래 **Shorts — 숏폼 가로 스크롤러**로 짧은 클립을 좌우 스와이프/스크롤로 탐색.
+1. 방문자가 상세 페이지 진입 → (기존 갤러리 자리에) **Shorts — 숏폼 가로 스크롤러**로 짧은 클립을 좌우 스와이프/스크롤 탐색.
+2. 그 아래 **Community Highlights — 롱폼 그리드**가 노출.
 3. 카드 클릭 → 모달 플레이어에서 임베드 재생 (페이지 이탈 없음).
 4. 더 보고 싶을 때 **원본 보기** 링크로 YouTube/TikTok 이동.
 
@@ -185,12 +185,23 @@ https://www.tiktok.com/@user/video/7891234567890
 
 ### 12.6 UI 와이어프레임
 
-> **결정**: 탭 구조 제거. 갤러리 자리에 두 섹션 (롱폼 그리드 → 숏폼 가로 스크롤러) 순서로 배치.
+> **결정**: 탭 구조 제거. 갤러리 자리에 두 섹션을 (1) 숏폼 가로 스크롤러 → (2) 롱폼 그리드 순서로 배치. 각 섹션은 작은 키커(`Shorts` / `Community Highlights`)만 표시하고 별도 타이틀·서브타이틀 없음.
 
-#### (A) 롱폼 섹션 — 16:9 그리드 (desktop 4-col / tablet 2-col / mobile 1-col)
+#### (A) 숏폼 섹션 — 9:16 가로 스크롤러
+```
+Shorts
+
+  ‹ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ›
+    │[TT]│ │[TT]│ │[YT]│ │[TT]│ │[YT]│ │[TT]│  ←  스크롤 →
+    │thmb│ │thmb│ │thmb│ │thmb│ │thmb│ │thmb│
+    ├────┤ ├────┤ ├────┤ ├────┤ ├────┤ ├────┤
+    │@usr│ │@usr│ │@usr│ │@usr│ │@usr│ │@usr│
+    └────┘ └────┘ └────┘ └────┘ └────┘ └────┘
+```
+
+#### (B) 롱폼 섹션 — 16:9 그리드 (desktop 4-col / tablet 2-col / mobile 1-col)
 ```
 Community Highlights
-크리에이터들의 플레이 영상
 
 ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
 │ [YT]        │ │ [YT]        │ │ [YT]        │ │ [YT]        │
@@ -199,19 +210,6 @@ Community Highlights
 │ Title…      │ │ Title…      │ │ Title…      │ │ Title…      │
 │ @Creator    │ │ @Creator    │ │ @Creator    │ │ @Creator    │
 └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘
-```
-
-#### (B) 숏폼 섹션 — 9:16 가로 스크롤러
-```
-Shorts
-숏폼 클립 (좌우 스크롤)
-
-  ‹ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ›
-    │[TT]│ │[TT]│ │[YT]│ │[TT]│ │[YT]│ │[TT]│  ←  스크롤 →
-    │thmb│ │thmb│ │thmb│ │thmb│ │thmb│ │thmb│
-    ├────┤ ├────┤ ├────┤ ├────┤ ├────┤ ├────┤
-    │@usr│ │@usr│ │@usr│ │@usr│ │@usr│ │@usr│
-    └────┘ └────┘ └────┘ └────┘ └────┘ └────┘
 ```
 - 카드 폭 고정 (모바일 150px / 데스크톱 180px), `scroll-snap-type: x mandatory`
 - 좌우 둥근 화살표 버튼 (`hover` 환경에서만 노출 — 터치 디바이스 자동 숨김)
@@ -265,8 +263,7 @@ Shorts
 ### 12.8 i18n 키 (KO / EN / JA)
 - `community_highlights_title`
 - `community_highlights_subtitle`
-- `community_long_kicker`, `community_long_title`, `community_long_subtitle`
-- `community_shorts_kicker`, `community_shorts_title`, `community_shorts_subtitle`
+- `community_long_kicker`, `community_shorts_kicker`
 - `community_prev`, `community_next`
 - `sort_latest`, `sort_popular`
 - `card_views_label` (예: "{count} views")
