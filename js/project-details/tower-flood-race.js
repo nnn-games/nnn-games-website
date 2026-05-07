@@ -86,12 +86,12 @@ window.ProjectDetailConfigs['tower-flood-race'] = {
         }
     ],
     media: {
-        type: 'image',
-        src: 'https://img.youtube.com/vi/5g11rbdF4_I/maxresdefault.jpg',
-        alt: {
-            ko: 'Tower Flood Race 대표 이미지',
-            en: 'Tower Flood Race key visual',
-            ja: 'Tower Flood Race キービジュアル'
+        type: 'youtube',
+        src: 'https://www.youtube.com/embed/fYQe2D-4TTw?rel=0&modestbranding=1&playsinline=1',
+        title: {
+            ko: 'Tower Flood Race 대표 영상',
+            en: 'Tower Flood Race main video',
+            ja: 'Tower Flood Race メイン動画'
         }
     },
     overview: [
