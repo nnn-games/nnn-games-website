@@ -16,5 +16,5 @@
 - [`nnn-ugc.md`](nnn-ugc.md) — NNN UGC
 
 ### Mobile
-- [`sweet-forest.md`](sweet-forest.md) — Sweet Forest
+- [`forest-workshop.md`](forest-workshop.md) — Forest Workshop
 - [`mine-sweeper.md`](mine-sweeper.md) — Mine Sweeper

@@ -11,7 +11,7 @@ const ProjectRenderer = {
         'reset-tower',
         'tomato-splatter-simulator',
         'watermelon-farm',
-        'sweet-forest',
+        'forest-workshop',
         'mine-sweeper',
         'star-reach'
     ],

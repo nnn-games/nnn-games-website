@@ -328,31 +328,33 @@
       }
     },
     {
-      "id": "sweet-forest",
+      "id": "forest-workshop",
       "title": {
-        "ko": "Sweet Forest",
-        "en": "Sweet Forest",
-        "ja": "Sweet Forest"
+        "ko": "Forest Workshop",
+        "en": "Forest Workshop",
+        "ja": "Forest Workshop"
       },
       "description": {
-        "ko": "한국어 더미 텍스트입니다.",
-        "en": "Placeholder description for this project.",
-        "ja": "プレースホルダー説明です。"
+        "ko": "숲속 동물 친구를 모으고 공방을 운영하는 모바일 방치형 수집 게임. 2026년 9월 정식 출시 예정.",
+        "en": "A mobile idle collection game about gathering animal friends and running your forest workshop. Launching September 2026.",
+        "ja": "森の動物フレンドを集めて工房を運営するモバイル放置系コレクションゲーム。2026年9月正式リリース予定。"
       },
-      "image": "images/nnn-logo.png",
-      "detailPage": "sweet-forest.html",
+      "image": "assets/forestworkshop/fw-preview.jpg",
+      "detailPage": "forest-workshop.html",
       "category": "mobile",
       "mobilePlatform": [
         "ios",
         "android"
       ],
       "status": "development",
-      "featured": false,
-      "launchDate": "(미정)",
+      "featured": true,
+      "launchDate": "2026-09",
       "platform": "iOS / Android",
       "client": "Internal Project",
       "technologies": [
-        "Mobile"
+        "Mobile",
+        "iOS",
+        "Android"
       ],
       "placeId": null,
       "universeId": null,
@@ -361,7 +363,8 @@
         "trailer": "",
         "article": "",
         "appStore": "",
-        "playStore": ""
+        "playStore": "",
+        "preRegister": ""
       },
       "reporting": {
         "collectMetrics": false,

@@ -351,6 +351,14 @@
         const root = document.getElementById('project-detail-root');
         if (!projectId || !root) return;
 
+        if (window.ProjectDetailReady && typeof window.ProjectDetailReady.then === 'function') {
+            try {
+                await window.ProjectDetailReady;
+            } catch (_error) {
+                // Loader 실패 시 아래에서 config === null로 처리되어 renderError로 폴백
+            }
+        }
+
         const lang = U().getCurrentLanguage();
         const config = getProjectConfig(projectId);
         if (!config) {

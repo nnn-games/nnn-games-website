@@ -1,9 +1,9 @@
-# Sweet Forest 상세 페이지 작업 계획
+# Forest Workshop 상세 페이지 작업 계획
 
-- **slug**: `sweet-forest`
-- **HTML**: `sweet-forest.html`
-- **콘텐츠 설정 파일**: `js/project-details/sweet-forest.js`
-- **카드 메타 위치**: `data/projects.json` (id: `sweet-forest`)
+- **slug**: `forest-workshop`
+- **HTML**: `forest-workshop.html`
+- **콘텐츠 설정 파일**: `js/project-details/forest-workshop.js`
+- **카드 메타 위치**: `data/projects.json` (id: `forest-workshop`)
 
 > 사용자에게 노출되는 모든 텍스트 필드는 KO / EN / JA 3개 언어로 채워야 합니다.
 
@@ -83,7 +83,7 @@
 
 ## 11. 체크리스트
 - [ ] `data/projects.json` 메타·링크·리포팅 갱신
-- [ ] `js/project-details/sweet-forest.js` 콘텐츠 입력 (KO / EN / JA)
+- [ ] `js/project-details/forest-workshop.js` 콘텐츠 입력 (KO / EN / JA)
 - [ ] 이미지 에셋 준비 (preview / main / og / gallery)
 - [ ] 외부 링크 유효성 확인 (https)
 - [ ] i18n 누락 키 확인

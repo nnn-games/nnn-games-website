@@ -1,0 +1,272 @@
+{
+    "seo": {
+        "title": {
+            "ko": "Forest Workshop - NNN GAMES",
+            "en": "Forest Workshop - NNN GAMES",
+            "ja": "Forest Workshop - NNN GAMES"
+        },
+        "description": {
+            "ko": "Forest Workshop은 숲속 동물 친구들을 모으고 공방을 키워가는 모바일 방치형 수집 게임입니다. 2026년 9월 정식 출시 예정.",
+            "en": "Forest Workshop is a mobile idle collection game where you gather forest animal friends and grow your woodland workshop. Launching September 2026.",
+            "ja": "Forest Workshopは、森の動物フレンドを集めて工房を育てるモバイル放置系コレクションゲームです。2026年9月正式リリース予定。"
+        },
+        "keywords": {
+            "ko": "Forest Workshop, 모바일 게임, 방치형, 수집형, 캐주얼, 힐링, 숲, 동물, NNN GAMES, TripleN Games",
+            "en": "Forest Workshop, mobile game, idle, collection, casual, cozy, forest, animals, NNN GAMES, TripleN Games",
+            "ja": "Forest Workshop, モバイルゲーム, 放置系, コレクション, カジュアル, 癒し, 森, 動物, NNN GAMES, TripleN Games"
+        },
+        "ogTitle": {
+            "ko": "Forest Workshop | 귀여운 친구들과 만드는 숲속 공방 라이프",
+            "en": "Forest Workshop | Build your cozy forest workshop",
+            "ja": "Forest Workshop | 可愛い友達と作る森の工房ライフ"
+        },
+        "ogDescription": {
+            "ko": "캐릭터 수집과 자동 생산으로 천천히 키워가는 나만의 숲속 공방. 2026년 9월 모바일 출시.",
+            "en": "Collect adorable animal friends, automate production, and grow your own forest workshop. Mobile launch September 2026.",
+            "ja": "キャラクター収集と自動生産で、自分だけの森の工房を育てよう。2026年9月モバイル配信予定。"
+        },
+        "ogImage": "assets/forestworkshop/fw-main.jpg"
+    },
+    "hero": {
+        "title": {
+            "ko": "Forest Workshop",
+            "en": "Forest Workshop",
+            "ja": "Forest Workshop"
+        },
+        "tagline": {
+            "ko": "귀여운 친구들과 함께 만드는 나만의 숲속 공방 라이프.",
+            "en": "Build your own forest workshop life with adorable animal friends.",
+            "ja": "可愛い友達と一緒に作る、自分だけの森の工房ライフ。"
+        },
+        "status": {
+            "ko": "개발 중 · 2026 인디크래프트 출품작",
+            "en": "In Development · 2026 IndieCraft Showcase",
+            "ja": "開発中 · 2026 IndieCraft出展作品"
+        },
+        "genre": {
+            "ko": "장르: 방치형 수집 / 캐주얼",
+            "en": "Genre: Idle Collection / Casual",
+            "ja": "ジャンル: 放置系コレクション / カジュアル"
+        },
+        "platform": {
+            "ko": "플랫폼: iOS / Android",
+            "en": "Platform: iOS / Android",
+            "ja": "プラットフォーム: iOS / Android"
+        }
+    },
+    "ctaButtons": [
+        {
+            "type": "preRegister",
+            "style": "primary",
+            "text": {
+                "ko": "사전 예약 알림 받기",
+                "en": "Notify Me at Launch",
+                "ja": "事前登録の通知を受ける"
+            }
+        },
+        {
+            "type": "trailer",
+            "style": "ghost",
+            "text": {
+                "ko": "트레일러 보기",
+                "en": "Watch Trailer",
+                "ja": "トレーラーを見る"
+            }
+        }
+    ],
+    "media": {
+        "type": "youtube",
+        "src": "https://www.youtube.com/embed/mOjb3UOq2oc?rel=0&modestbranding=1&playsinline=1",
+        "title": {
+            "ko": "Forest Workshop 대표 영상",
+            "en": "Forest Workshop main video",
+            "ja": "Forest Workshop メイン動画"
+        },
+        "alt": {
+            "ko": "노을 진 숲속에 자리한 작은 공방과 동물 친구들이 모여 있는 Forest Workshop 메인 비주얼",
+            "en": "Forest Workshop key art showing animal friends gathered around small workshops at sunset",
+            "ja": "夕暮れの森に佇む小さな工房と動物のフレンドたちが集うForest Workshopのメインビジュアル"
+        }
+    },
+    "overview": [
+        {
+            "ko": "Forest Workshop은 숲속 동물 친구들을 모으고 공방에 배치해 음식을 생산하며 성장시키는 모바일 싱글플레이 방치형 수집 게임입니다. 친구를 공방에 배치하면 생산 효율이 상승하고, 숲을 찾아오는 손님의 주문을 완료하며 코인·보석·하트를 모아 자신만의 숲속 공방을 천천히 키워갑니다.",
+            "en": "Forest Workshop is a single-player mobile idle collection game where you gather forest animal friends, place them in your workshops to produce food, and let your village grow. Each friend you assign boosts production, and fulfilling the orders of visiting customers steadily rewards you with the coins, gems, and hearts needed to expand your own woodland workshop.",
+            "ja": "Forest Workshopは、森の動物のフレンドを集めて工房に配置し、食べ物を生産しながら成長させていく、モバイル向けのシングルプレイ放置系コレクションゲームです。フレンドを工房に配置すると生産効率が上がり、森を訪れるお客様の注文を完成させてコイン・宝石・ハートを集めながら、自分だけの森の工房をゆっくりと育てていきます。"
+        },
+        {
+            "ko": "경쟁이나 약탈 없이 캐릭터 수집·배치 최적화·자동 생산·주문 완료만으로 편안한 성장 재미를 느낄 수 있도록 설계했습니다. 짧은 세션과 자동 진행 구조 덕분에 출퇴근길이나 휴식 시간에도 부담 없이 즐길 수 있는 따뜻한 톤의 캐주얼 게임입니다.",
+            "en": "There is no PvP and no raiding — the entire experience is built around collecting friends, optimizing placements, automating production, and completing orders, so progression always feels gentle and rewarding. Short sessions and persistent idle production make Forest Workshop easy to dip into during a commute, a coffee break, or any quiet moment of the day.",
+            "ja": "競争や略奪のないキャラクター収集・配置の最適化・自動生産・注文完了だけで、心地よい成長感が味わえるよう設計されています。短時間プレイと放置進行のおかげで、通勤途中や休憩時間にも気軽に楽しめる、温かなトーンのカジュアルゲームです。"
+        }
+    ],
+    "highlights": [
+        {
+            "eyebrow": {
+                "ko": "Strategy",
+                "en": "Strategy",
+                "ja": "Strategy"
+            },
+            "title": {
+                "ko": "수집이 그대로 생산 전략이 되는 배치",
+                "en": "Collection becomes your production strategy",
+                "ja": "コレクションがそのまま生産戦略になる配置"
+            },
+            "description": {
+                "ko": "친구를 공방에 배치하면 생산 효율이 상승합니다. 다양한 조합으로 자신만의 최적 라인업을 설계해보세요.",
+                "en": "Assigning friends to workshops boosts production efficiency, so every roster choice shapes your own optimal layout.",
+                "ja": "工房にフレンドを配置すると生産効率がアップ。多彩な組み合わせから、あなただけの最適ラインを設計しましょう。"
+            }
+        },
+        {
+            "eyebrow": {
+                "ko": "Loop",
+                "en": "Loop",
+                "ja": "Loop"
+            },
+            "title": {
+                "ko": "생산→수집→주문→보상으로 이어지는 짧고 명확한 루프",
+                "en": "Produce, collect, deliver — a clear loop that rewards every minute",
+                "ja": "生産→収集→注文→報酬と続く、短く明確なループ"
+            },
+            "description": {
+                "ko": "짧은 한 사이클마다 즉시 보상이 따라옵니다. 가볍게 한 판을 끝낼 수 있는 호흡으로 설계되어 있습니다.",
+                "en": "Every cycle ends with an immediate reward, designed so a single session always feels complete in just a few minutes.",
+                "ja": "短いサイクルごとに即座に報酬がついてきます。気軽に1ラウンドを締めくくれるリズムで設計されています。"
+            }
+        },
+        {
+            "eyebrow": {
+                "ko": "Explore",
+                "en": "Explore",
+                "ja": "Explore"
+            },
+            "title": {
+                "ko": "탐험으로 친구와 재료를 모아 공방을 확장",
+                "en": "Exploration unlocks new friends, materials, and workshop space",
+                "ja": "探検でフレンドと素材を集め、工房を拡張"
+            },
+            "description": {
+                "ko": "숲을 탐험하며 새로운 친구와 재료를 발견하고, 그 보상이 곧 공방 레벨업과 슬롯 확장으로 이어집니다.",
+                "en": "Venturing into new forest regions reveals friends and resources that feed directly back into workshop upgrades and new slots.",
+                "ja": "森を探検して新しいフレンドや素材を発見し、その報酬がそのまま工房のレベルアップとスロット拡張につながります。"
+            }
+        }
+    ],
+    "snapshot": {
+        "launch": {
+            "ko": "2026년 9월 정식 출시 예정 (7월 소프트런치)",
+            "en": "September 2026 launch · soft launch in July",
+            "ja": "2026年9月正式リリース予定 · 7月ソフトローンチ"
+        },
+        "status": {
+            "ko": "개발 중",
+            "en": "In development",
+            "ja": "開発中"
+        },
+        "client": {
+            "ko": "TripleN Games 자체 IP",
+            "en": "TripleN Games IP",
+            "ja": "TripleN Games自社IP"
+        },
+        "stack": {
+            "ko": "iOS / Android / 방치형 수집",
+            "en": "iOS / Android / Idle Collection",
+            "ja": "iOS / Android / 放置系コレクション"
+        }
+    },
+    "features": [
+        {
+            "title": {
+                "ko": "132종의 동물 친구 수집",
+                "en": "132 collectible animal friends",
+                "ja": "132種の動物フレンドコレクション"
+            },
+            "description": {
+                "ko": "Common부터 Legendary까지 다양한 등급의 캐릭터를 모으고 레벨업하며 도감을 채워보세요.",
+                "en": "Collect characters across rarity tiers from Common to Legendary, level them up, and complete your encyclopedia.",
+                "ja": "コモンからレジェンダリーまで、多彩なレアリティのキャラクターを集めてレベルアップし、図鑑を埋めていきましょう。"
+            }
+        },
+        {
+            "title": {
+                "ko": "5종의 공방 운영과 업그레이드",
+                "en": "Five workshop types to run and upgrade",
+                "ja": "5種類の工房運営とアップグレード"
+            },
+            "description": {
+                "ko": "수집 공방, 베이커리 공방 등 5종의 공방을 열고 친구를 배치해 생산량과 슬롯을 키워갑니다.",
+                "en": "Open and upgrade five workshop types — gathering, bakery, and more — and grow output and slot capacity by assigning the right friends.",
+                "ja": "収集工房、ベーカリー工房など5種類の工房を開放し、フレンドを配置して生産量とスロットを拡張していきます。"
+            }
+        },
+        {
+            "title": {
+                "ko": "자동 생산과 주문 완료 보상",
+                "en": "Auto-production with order rewards",
+                "ja": "自動生産と注文完了報酬"
+            },
+            "description": {
+                "ko": "공방에서 자동 생산된 아이템을 수집해 손님의 주문을 완료하고 코인·보석·하트 등 다양한 보상을 획득하세요.",
+                "en": "Collect items as they auto-produce, fulfill customer orders, and earn coins, gems, hearts, and other rewards.",
+                "ja": "工房で自動的に生産されるアイテムを集め、お客様の注文を完成させてコイン・宝石・ハートなど多彩な報酬を獲得しましょう。"
+            }
+        },
+        {
+            "title": {
+                "ko": "80개의 탐험 맵",
+                "en": "80 exploration maps",
+                "ja": "80種類の探検マップ"
+            },
+            "description": {
+                "ko": "다양한 숲 구역을 탐험하며 새로운 친구와 재료를 발견하고, 공방을 점점 더 넓혀가세요.",
+                "en": "Wander through distinct forest regions, uncover new friends and materials, and keep expanding your workshop.",
+                "ja": "様々な森のエリアを探検しながら新しいフレンドや素材を発見し、工房をどんどん広げていきましょう。"
+            }
+        }
+    ],
+    "links": [
+        {
+            "type": "preRegister",
+            "text": {
+                "ko": "사전 예약 알림 받기",
+                "en": "Get pre-launch notifications",
+                "ja": "事前登録の通知を受け取る"
+            }
+        },
+        {
+            "type": "trailer",
+            "text": {
+                "ko": "공식 트레일러",
+                "en": "Watch the official trailer",
+                "ja": "公式トレーラーを見る"
+            }
+        }
+    ],
+    "gallery": [
+        {
+            "src": "assets/forestworkshop/fw-gallery-1.jpg",
+            "alt": {
+                "ko": "공방과 동물 친구들, 손님의 주문 패널이 한눈에 보이는 메인 플레이 화면",
+                "en": "Main play view showing workshops, animal friends, and an active customer order panel",
+                "ja": "工房と動物のフレンド、お客様の注文パネルが一望できるメインプレイ画面"
+            }
+        },
+        {
+            "src": "assets/forestworkshop/fw-gallery-2.jpg",
+            "alt": {
+                "ko": "Common부터 Legendary까지 등급별로 정리된 동물 친구 컬렉션 화면",
+                "en": "Character collection screen organized by rarity from Common through Legendary",
+                "ja": "コモンからレジェンダリーまでレアリティ別に整理された動物フレンドのコレクション画面"
+            }
+        },
+        {
+            "src": "assets/forestworkshop/fw-gallery-3.jpg",
+            "alt": {
+                "ko": "다양한 숲 구역과 보상, 등장 친구가 표시된 숲 탐험 지도",
+                "en": "Forest exploration map showing regions, rewards, and unlockable friends",
+                "ja": "様々な森のエリアと報酬、登場するフレンドが表示された探検マップ"
+            }
+        }
+    ]
+}
