@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 7388112,
-        "playing": 335,
-        "favorites": 384592,
-        "likeRatio": 0.5475113122171946,
-        "updatedAt": "2026-05-23T02:24:43.855Z"
+        "visits": 7550849,
+        "playing": 170,
+        "favorites": 390191,
+        "likeRatio": 0.5491169977924945,
+        "updatedAt": "2026-05-26T04:43:15.269Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 123085,
+        "visits": 124252,
         "playing": 0,
-        "favorites": 634,
-        "likeRatio": 0.869625520110957,
-        "updatedAt": "2026-05-23T02:24:43.855Z"
+        "favorites": 643,
+        "likeRatio": 0.8703448275862069,
+        "updatedAt": "2026-05-26T04:43:15.269Z"
       }
     },
     {
@@ -130,11 +130,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 49954,
+        "visits": 49956,
         "playing": 0,
         "favorites": 203,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-05-23T02:24:43.855Z"
+        "updatedAt": "2026-05-26T04:43:15.269Z"
       }
     },
     {
@@ -178,11 +178,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 44728,
-        "playing": 1,
-        "favorites": 226,
+        "visits": 45740,
+        "playing": 0,
+        "favorites": 227,
         "likeRatio": 0.5294117647058824,
-        "updatedAt": "2026-05-23T02:24:43.855Z"
+        "updatedAt": "2026-05-26T04:43:15.269Z"
       }
     },
     {
@@ -514,11 +514,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 316358,
-        "playing": 47,
-        "favorites": 10877,
-        "likeRatio": 0.7923076923076923,
-        "updatedAt": "2026-05-23T02:24:43.855Z"
+        "visits": 360247,
+        "playing": 30,
+        "favorites": 10932,
+        "likeRatio": 0.8014184397163121,
+        "updatedAt": "2026-05-26T04:43:15.269Z"
       }
     },
     {
@@ -579,7 +579,7 @@
         "fruit-battles",
         "tomato-splatter-simulator"
       ],
-      "totalVisits": 7922237,
+      "totalVisits": 8131044,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
@@ -587,7 +587,7 @@
         "fruit-battles",
         "tomato-splatter-simulator"
       ],
-      "updatedAt": "2026-05-23T02:24:43.855Z"
+      "updatedAt": "2026-05-26T04:43:15.269Z"
     }
   }
 }
