@@ -12,9 +12,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 57737,
+      "memberCount": 58077,
       "icon": "https://tr.rbxcdn.com/180DAY-bff276669a9e4f042bbf6da9d8283def/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-05-31T00:41:34.419Z"
+      "updatedAt": "2026-06-01T03:23:49.575Z"
     },
     {
       "id": "937186626",
@@ -30,7 +30,7 @@
       "includeInHeroSubscriberTotal": true,
       "memberCount": 5,
       "icon": "https://tr.rbxcdn.com/180DAY-1d0faa02bd011ee15f3b59a17a3e38ab/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-05-31T00:41:34.419Z"
+      "updatedAt": "2026-06-01T03:23:49.575Z"
     },
     {
       "id": "34453707",
@@ -44,9 +44,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 6864,
+      "memberCount": 6871,
       "icon": "https://tr.rbxcdn.com/180DAY-ad505ccb7ae1b3c6c443a77a589249a5/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-05-31T00:41:34.419Z"
+      "updatedAt": "2026-06-01T03:23:49.575Z"
     },
     {
       "id": "916094546",
@@ -62,7 +62,7 @@
       "includeInHeroSubscriberTotal": true,
       "memberCount": 182,
       "icon": "https://tr.rbxcdn.com/180DAY-b5ff86583c7205da1f4d54a94fa60aab/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-05-31T00:41:34.419Z"
+      "updatedAt": "2026-06-01T03:23:49.575Z"
     },
     {
       "id": "844932134",
@@ -76,13 +76,13 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 2964,
+      "memberCount": 2993,
       "icon": "https://tr.rbxcdn.com/180DAY-e81d02139a0ae5779543282f14c2cf9e/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-05-31T00:41:34.419Z"
+      "updatedAt": "2026-06-01T03:23:49.575Z"
     }
   ],
   "totals": {
-    "heroSubscriberCount": 67752,
+    "heroSubscriberCount": 68128,
     "homepageGroupIds": [
       "294985728",
       "937186626",
@@ -91,6 +91,6 @@
       "844932134"
     ]
   },
-  "totalMembers": 67752,
-  "updatedAt": "2026-05-31T00:41:34.419Z"
+  "totalMembers": 68128,
+  "updatedAt": "2026-06-01T03:23:49.575Z"
 }
