@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 8663179,
-        "playing": 122,
-        "favorites": 424809,
-        "likeRatio": 0.5582970488630866,
-        "updatedAt": "2026-06-19T13:47:05.186Z"
+        "visits": 8963201,
+        "playing": 100,
+        "favorites": 434597,
+        "likeRatio": 0.5727149932462855,
+        "updatedAt": "2026-07-11T18:56:58.749Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 134187,
+        "visits": 137287,
         "playing": 0,
-        "favorites": 678,
-        "likeRatio": 0.8661417322834646,
-        "updatedAt": "2026-06-19T13:47:05.186Z"
+        "favorites": 703,
+        "likeRatio": 0.8649681528662421,
+        "updatedAt": "2026-07-11T18:56:58.749Z"
       }
     },
     {
@@ -134,7 +134,7 @@
         "playing": 0,
         "favorites": 203,
         "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-06-19T13:47:05.186Z"
+        "updatedAt": "2026-07-11T18:56:58.749Z"
       }
     },
     {
@@ -178,11 +178,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 51927,
+        "visits": 52629,
         "playing": 0,
         "favorites": 233,
         "likeRatio": 0.5555555555555556,
-        "updatedAt": "2026-06-19T13:47:05.186Z"
+        "updatedAt": "2026-07-11T18:56:58.749Z"
       }
     },
     {
@@ -413,11 +413,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 765212,
-        "playing": 61,
-        "favorites": 11541,
-        "likeRatio": 0.7902439024390244,
-        "updatedAt": "2026-06-19T13:47:05.186Z"
+        "visits": 993212,
+        "playing": 16,
+        "favorites": 11876,
+        "likeRatio": 0.7844036697247706,
+        "updatedAt": "2026-07-11T18:56:58.749Z"
       }
     },
     {
@@ -478,7 +478,7 @@
         "fruit-battles",
         "tomato-splatter-simulator"
       ],
-      "totalVisits": 9664472,
+      "totalVisits": 10196296,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
@@ -486,7 +486,7 @@
         "fruit-battles",
         "tomato-splatter-simulator"
       ],
-      "updatedAt": "2026-06-19T13:47:05.186Z"
+      "updatedAt": "2026-07-11T18:56:58.749Z"
     }
   }
 }
