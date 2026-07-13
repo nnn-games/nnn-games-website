@@ -279,53 +279,6 @@
       }
     },
     {
-      "id": "watermelon-farm",
-      "title": {
-        "ko": "Watermelon Farm",
-        "en": "Watermelon Farm",
-        "ja": "Watermelon Farm"
-      },
-      "description": {
-        "ko": "수박 농장을 경영하며 최고의 수박을 키우고 서리꾼들로부터 농장을 지켜내는 시뮬레이션 타이쿤.",
-        "en": "A simulation tycoon where you run a watermelon farm, raise champion melons, and defend the field from raiders.",
-        "ja": "スイカ農場を経営し、最高のスイカを育てながら盗賊から農場を守り抜くシミュレーションタイクーン。"
-      },
-      "image": "assets/watermelonfarm/wf-preview.jpg",
-      "detailPage": "watermelon-farm.html",
-      "category": "roblox",
-      "status": "development",
-      "featured": true,
-      "launchDate": "2026-06",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau"
-      ],
-      "placeId": null,
-      "universeId": null,
-      "links": {
-        "play": "",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
-      },
-      "reporting": {
-        "collectMetrics": false,
-        "includeInHomePreview": true,
-        "includeInHeroProjectCount": false,
-        "includeInHeroVisitTotal": false
-      },
-      "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
-      }
-    },
-    {
       "id": "afk-or",
       "title": {
         "ko": "[Free UGC] AFK or arcade game",
@@ -417,6 +370,100 @@
         "favorites": 224,
         "likeRatio": 0.7,
         "updatedAt": "2026-07-13T05:46:25.166Z"
+      }
+    },
+    {
+      "id": "ducky-merge-farm",
+      "title": {
+        "ko": "Ducky Merge Farm [RNG]",
+        "en": "Ducky Merge Farm [RNG]",
+        "ja": "Ducky Merge Farm [RNG]"
+      },
+      "description": {
+        "ko": "더키를 합치고 농장을 키우며 행운(RNG)으로 희귀 더키를 노리는 Roblox 머지 팜 게임.",
+        "en": "A Roblox merge-farm game where you merge Duckies, grow your farm, and chase rare Duckies through RNG.",
+        "ja": "ダッキーを合成し農場を育て、運（RNG）でレアなダッキーを狙うRobloxマージファームゲーム。"
+      },
+      "image": "assets/duckymergefarm/dmf-preview.jpg",
+      "detailPage": "ducky-merge-farm.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "launchDate": "2026",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "enchanted-weapon",
+      "title": {
+        "ko": "Enchanted Weapon",
+        "en": "Enchanted Weapon",
+        "ja": "Enchanted Weapon"
+      },
+      "description": {
+        "ko": "무기를 수집하고 마법을 부여해 나만의 최강 무기를 완성하는 Roblox 무기 강화 게임.",
+        "en": "A Roblox weapon-enhancement game about collecting weapons and enchanting them into your ultimate arsenal.",
+        "ja": "武器を集めてエンチャントし、最強の武器を作り上げるRoblox武器強化ゲーム。"
+      },
+      "image": "assets/enchantedweapon/ew-preview.jpg",
+      "detailPage": "enchanted-weapon.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "launchDate": "2026",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
       }
     }
   ],

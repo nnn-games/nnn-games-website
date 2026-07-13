@@ -9,7 +9,8 @@ const ProjectRenderer = {
         'tomato-splatter-simulator',
         'afk-or',
         'free-ugc-rng',
-        'watermelon-farm',
+        'ducky-merge-farm',
+        'enchanted-weapon',
         'forest-workshop',
         'mine-sweeper',
         'star-reach'
@@ -61,21 +62,24 @@ const ProjectRenderer = {
         `;
     },
 
+    // 표시 순서: 동접(playing) 스냅샷 내림차순 → projectDisplayOrder → 원본 순서
+    // playing 값은 data/projects.json 기준(npm run update:metrics 실행 시점의 스냅샷).
+    // playing 이 없는(null) 개발 중 프로젝트는 뒤로 밀리고 projectDisplayOrder 로 정렬됩니다.
     sortProjectsForDisplay: function (projects = []) {
         const orderMap = new Map(this.projectDisplayOrder.map((id, index) => [id, index]));
-        const getVisits = (project) => {
-            const visits = project && project.metrics ? project.metrics.visits : null;
-            return typeof visits === 'number' ? visits : null;
+        const getPlaying = (project) => {
+            const playing = project && project.metrics ? project.metrics.playing : null;
+            return typeof playing === 'number' ? playing : null;
         };
         return projects
             .map((project, index) => ({ project, index }))
             .sort((a, b) => {
-                const aVisits = getVisits(a.project);
-                const bVisits = getVisits(b.project);
-                if (aVisits !== null && bVisits === null) return -1;
-                if (aVisits === null && bVisits !== null) return 1;
-                if (aVisits !== null && bVisits !== null && aVisits !== bVisits) {
-                    return bVisits - aVisits;
+                const aPlaying = getPlaying(a.project);
+                const bPlaying = getPlaying(b.project);
+                if (aPlaying !== null && bPlaying === null) return -1;
+                if (aPlaying === null && bPlaying !== null) return 1;
+                if (aPlaying !== null && bPlaying !== null && aPlaying !== bPlaying) {
+                    return bPlaying - aPlaying;
                 }
                 const aOrder = orderMap.has(a.project.id) ? orderMap.get(a.project.id) : Number.MAX_SAFE_INTEGER;
                 const bOrder = orderMap.has(b.project.id) ? orderMap.get(b.project.id) : Number.MAX_SAFE_INTEGER;

@@ -10,7 +10,6 @@
 ### Roblox
 - [`hacker-vs-security.md`](hacker-vs-security.md) — Hacker vs Security
 - [`star-reach.md`](star-reach.md) — Star Reach
-- [`watermelon-farm.md`](watermelon-farm.md) — Watermelon Farm
 - [`nnn-ugc.md`](nnn-ugc.md) — NNN UGC
 
 ### Mobile
