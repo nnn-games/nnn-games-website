@@ -59,6 +59,18 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true
+    },
+    {
+      "id": "35735121",
+      "url": "https://www.roblox.com/communities/35735121/BlockyUGC#!/about",
+      "names": {
+        "ko": "BlockyUGC",
+        "en": "BlockyUGC",
+        "ja": "BlockyUGC"
+      },
+      "status": "active",
+      "showOnHomepage": true,
+      "includeInHeroSubscriberTotal": true
     }
   ]
 }
