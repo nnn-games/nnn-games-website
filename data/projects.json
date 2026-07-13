@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 8963201,
-        "playing": 100,
-        "favorites": 434597,
-        "likeRatio": 0.5727149932462855,
-        "updatedAt": "2026-07-11T18:56:58.749Z"
+        "visits": 9004444,
+        "playing": 88,
+        "favorites": 435629,
+        "likeRatio": 0.5721949038891372,
+        "updatedAt": "2026-07-13T05:34:48.783Z"
       }
     },
     {
@@ -85,104 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 137287,
+        "visits": 137427,
         "playing": 0,
-        "favorites": 703,
-        "likeRatio": 0.8649681528662421,
-        "updatedAt": "2026-07-11T18:56:58.749Z"
-      }
-    },
-    {
-      "id": "legendary-dj-gear",
-      "title": {
-        "ko": "Legendary DJ Gear",
-        "en": "Legendary DJ Gear",
-        "ja": "Legendary DJ Gear"
-      },
-      "description": {
-        "ko": "음악과 코스튬을 수집하며 나만의 플레이리스트를 완성하는 Roblox 수집형 게임.",
-        "en": "A Roblox collection game where you gather music and costumes to create your own playlist.",
-        "ja": "音楽とコスチュームを収集して自分だけのプレイリストを完成させるRobloxコレクションゲーム。"
-      },
-      "image": "images/ldg-preview.jpg",
-      "detailPage": "legendary-dj-gear.html",
-      "category": "roblox",
-      "status": "active",
-      "featured": true,
-      "launchDate": "2024-11",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "UI Design"
-      ],
-      "placeId": "110796735931100",
-      "universeId": "7661096144",
-      "links": {
-        "play": "https://www.roblox.com/games/110796735931100/Legendary-DJ-Gear",
-        "trailer": "https://www.youtube.com/watch?v=0cEj3Tnb-No",
-        "article": ""
-      },
-      "reporting": {
-        "collectMetrics": true,
-        "includeInHeroProjectCount": true,
-        "includeInHeroVisitTotal": true
-      },
-      "metrics": {
-        "visits": 49967,
-        "playing": 0,
-        "favorites": 203,
-        "likeRatio": 0.532258064516129,
-        "updatedAt": "2026-07-11T18:56:58.749Z"
-      }
-    },
-    {
-      "id": "fruit-battles",
-      "title": {
-        "ko": "Fruit Battles",
-        "en": "Fruit Battles",
-        "ja": "Fruit Battles"
-      },
-      "description": {
-        "ko": "과일 스킬과 슬랩 액션으로 싸우고, 전리품으로 성장하는 Roblox 실시간 아레나 PvP 게임.",
-        "en": "A Roblox real-time arena PvP game where fruit skills, slap combat, and loot-driven growth come together.",
-        "ja": "フルーツスキルとスラップアクションで戦い、戦利品で成長するRobloxリアルタイムアリーナPvPゲーム。"
-      },
-      "image": "images/fruit-battls-preview.jpg",
-      "detailPage": "fruit-battles.html",
-      "category": "roblox",
-      "status": "active",
-      "featured": true,
-      "launchDate": "2026-04",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "Live Arena Systems"
-      ],
-      "placeId": "109322674605513",
-      "universeId": "9867900121",
-      "links": {
-        "play": "https://www.roblox.com/ko/games/109322674605513/",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": "https://www.roblox.com/ko/games/109322674605513/"
-      },
-      "reporting": {
-        "collectMetrics": true,
-        "includeInHomePreview": true,
-        "includeInHeroProjectCount": true,
-        "includeInHeroVisitTotal": true
-      },
-      "metrics": {
-        "visits": 52629,
-        "playing": 0,
-        "favorites": 233,
-        "likeRatio": 0.5555555555555556,
-        "updatedAt": "2026-07-11T18:56:58.749Z"
+        "favorites": 705,
+        "likeRatio": 0.8651399491094147,
+        "updatedAt": "2026-07-13T05:34:48.783Z"
       }
     },
     {
@@ -220,55 +127,6 @@
       },
       "reporting": {
         "collectMetrics": false,
-        "includeInHeroProjectCount": false,
-        "includeInHeroVisitTotal": false
-      },
-      "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
-      }
-    },
-    {
-      "id": "reset-tower",
-      "title": {
-        "ko": "Reset Tower",
-        "en": "Reset Tower",
-        "ja": "Reset Tower"
-      },
-      "description": {
-        "ko": "타워를 오르고 자신만의 스타일로 타워를 초기화하며 다른 플레이어와 경쟁하는 타워 오비 게임.",
-        "en": "A competitive tower-obby game where you climb to the top, reset the tower in your own style, and race against other players.",
-        "ja": "タワーを登りきり、自分のスタイルでタワーをリセットしながら他のプレイヤーと競い合うタワーObbyゲーム。"
-      },
-      "image": "assets/resettower/rt-preview.jpg",
-      "detailPage": "reset-tower.html",
-      "showInProjectsList": true,
-      "showDetailLinkInProjects": true,
-      "category": "roblox",
-      "status": "development",
-      "featured": true,
-      "launchDate": "2026-05",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "Progression Systems"
-      ],
-      "placeId": null,
-      "links": {
-        "play": "",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
-      },
-      "reporting": {
-        "collectMetrics": false,
-        "includeInHomePreview": true,
         "includeInHeroProjectCount": false,
         "includeInHeroVisitTotal": false
       },
@@ -413,11 +271,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 993212,
-        "playing": 16,
-        "favorites": 11876,
-        "likeRatio": 0.7844036697247706,
-        "updatedAt": "2026-07-11T18:56:58.749Z"
+        "visits": 1001253,
+        "playing": 11,
+        "favorites": 11885,
+        "likeRatio": 0.7808219178082192,
+        "updatedAt": "2026-07-13T05:34:48.783Z"
       }
     },
     {
@@ -466,6 +324,100 @@
         "likeRatio": null,
         "updatedAt": null
       }
+    },
+    {
+      "id": "afk-or",
+      "title": {
+        "ko": "[Free UGC] AFK or arcade game",
+        "en": "[Free UGC] AFK or arcade game",
+        "ja": "[Free UGC] AFK or arcade game"
+      },
+      "description": {
+        "ko": "게임을 즐기며 코인을 모아 무료 한정 UGC를 수집하는 Roblox 아케이드·수집 게임.",
+        "en": "A Roblox arcade-and-collection game where you play, earn coins, and collect free limited UGC.",
+        "ja": "ゲームを楽しみながらコインを貯め、無料の限定UGCを集めるRobloxアーケード＆コレクションゲーム。"
+      },
+      "image": "assets/afkor/afk-preview.jpg",
+      "detailPage": "afk-or.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "launchDate": "2026-05",
+      "platform": "Roblox",
+      "client": "BlockyUGC",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "UGC Economy"
+      ],
+      "placeId": "116369674521067",
+      "universeId": "10239007666",
+      "links": {
+        "play": "https://www.roblox.com/games/116369674521067/AFK-or",
+        "trailer": "",
+        "article": "",
+        "group": "https://www.roblox.com/communities/35735121/BlockyUGC#!/about",
+        "showcase": "https://www.roblox.com/games/116369674521067/AFK-or"
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 22393,
+        "playing": 105,
+        "favorites": 448,
+        "likeRatio": 0.9631578947368421,
+        "updatedAt": "2026-07-13T05:34:48.783Z"
+      }
+    },
+    {
+      "id": "free-ugc-rng",
+      "title": {
+        "ko": "🎁 FREE UGC RNG",
+        "en": "🎁 FREE UGC RNG",
+        "ja": "🎁 FREE UGC RNG"
+      },
+      "description": {
+        "ko": "무료로 굴려 귀여운 더키를 수집하고 행운을 키우며 한정 UGC를 획득하는 Roblox RNG 수집 게임.",
+        "en": "A Roblox RNG collector where you roll for free, collect Duckies, grow your luck, and claim limited UGC.",
+        "ja": "無料で回して可愛いダッキーを集め、運を育てながら限定UGCを獲得するRoblox RNGコレクションゲーム。"
+      },
+      "image": "assets/freeugcrng/fur-preview.jpg",
+      "detailPage": "free-ugc-rng.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "launchDate": "2026-05",
+      "platform": "Roblox",
+      "client": "NNN UGC",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "RNG Systems"
+      ],
+      "placeId": "123520570013325",
+      "universeId": "10225655315",
+      "links": {
+        "play": "https://www.roblox.com/games/123520570013325/FREE-UGC-RNG",
+        "trailer": "",
+        "article": "",
+        "group": "https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about",
+        "showcase": "https://www.roblox.com/games/123520570013325/FREE-UGC-RNG"
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 8069,
+        "playing": 17,
+        "favorites": 223,
+        "likeRatio": 0.7,
+        "updatedAt": "2026-07-13T05:34:48.783Z"
+      }
     }
   ],
   "summary": {
@@ -474,19 +426,19 @@
       "projectIds": [
         "tower-flood-race",
         "korean-spa",
-        "legendary-dj-gear",
-        "fruit-battles",
-        "tomato-splatter-simulator"
+        "tomato-splatter-simulator",
+        "afk-or",
+        "free-ugc-rng"
       ],
-      "totalVisits": 10196296,
+      "totalVisits": 10173586,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
-        "legendary-dj-gear",
-        "fruit-battles",
-        "tomato-splatter-simulator"
+        "tomato-splatter-simulator",
+        "afk-or",
+        "free-ugc-rng"
       ],
-      "updatedAt": "2026-07-11T18:56:58.749Z"
+      "updatedAt": "2026-07-13T05:34:48.783Z"
     }
   }
 }

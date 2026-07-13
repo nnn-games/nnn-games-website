@@ -8,9 +8,7 @@
 ## 페이지 목록
 
 ### Roblox
-- [`fruit-battles.md`](fruit-battles.md) — Fruit Battles
 - [`hacker-vs-security.md`](hacker-vs-security.md) — Hacker vs Security
-- [`reset-tower.md`](reset-tower.md) — Reset Tower
 - [`star-reach.md`](star-reach.md) — Star Reach
 - [`watermelon-farm.md`](watermelon-farm.md) — Watermelon Farm
 - [`nnn-ugc.md`](nnn-ugc.md) — NNN UGC

@@ -5,11 +5,10 @@ const ProjectRenderer = {
     projectDisplayOrder: [
         'tower-flood-race',
         'hacker-vs-security',
-        'fruit-battles',
         'korean-spa',
-        'legendary-dj-gear',
-        'reset-tower',
         'tomato-splatter-simulator',
+        'afk-or',
+        'free-ugc-rng',
         'watermelon-farm',
         'forest-workshop',
         'mine-sweeper',
