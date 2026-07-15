@@ -296,29 +296,32 @@
     @apply text-xs font-medium text-gray-500;
   }
 
-  /* Badges */
+  /* Badges — 썸네일 위에서도 또렷하게 읽히도록 솔리드 배경 + 드롭 섀도로 대비 확보.
+     흰색 글자 기준 WCAG AA(>=4.5:1)를 만족하는 색상만 사용. 크기/텍스트는 기존과 동일. */
   .platform-badge,
   .status-badge,
   .category-badge {
     @apply inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   }
   .status-active {
-    @apply bg-emerald-100 text-emerald-700;
+    @apply bg-emerald-700 text-white;
   }
   .status-development {
-    @apply bg-amber-100 text-amber-700;
+    @apply bg-amber-700 text-white;
   }
   .status-completed {
-    @apply bg-blue-100 text-blue-700;
+    @apply bg-blue-600 text-white;
   }
   .status-paused {
-    @apply bg-gray-200 text-gray-700;
+    @apply bg-gray-600 text-white;
   }
   .platform-badge {
     @apply bg-brand-secondary text-white;
   }
   .category-badge {
-    @apply bg-gray-100 text-brand-secondary;
+    @apply bg-white text-brand-secondary;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.08);
   }
   .badge-metric {
     @apply inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-full bg-gray-900 text-white;
