@@ -12,9 +12,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 69452,
+      "memberCount": 69461,
       "icon": "https://tr.rbxcdn.com/180DAY-5c2570efb659dadb1f3e725c2d462e95/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-07-17T12:01:36.666Z"
+      "updatedAt": "2026-07-17T12:50:00.377Z"
     },
     {
       "id": "937186626",
@@ -30,7 +30,7 @@
       "includeInHeroSubscriberTotal": true,
       "memberCount": 6,
       "icon": "https://tr.rbxcdn.com/180DAY-1d0faa02bd011ee15f3b59a17a3e38ab/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-07-17T12:01:36.666Z"
+      "updatedAt": "2026-07-17T12:50:00.377Z"
     },
     {
       "id": "34453707",
@@ -44,9 +44,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 12518,
+      "memberCount": 12592,
       "icon": "https://tr.rbxcdn.com/180DAY-ad505ccb7ae1b3c6c443a77a589249a5/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-07-17T12:01:36.666Z"
+      "updatedAt": "2026-07-17T12:50:00.377Z"
     },
     {
       "id": "916094546",
@@ -62,7 +62,7 @@
       "includeInHeroSubscriberTotal": true,
       "memberCount": 178,
       "icon": "https://tr.rbxcdn.com/180DAY-b5ff86583c7205da1f4d54a94fa60aab/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-07-17T12:01:36.666Z"
+      "updatedAt": "2026-07-17T12:50:00.377Z"
     },
     {
       "id": "844932134",
@@ -78,7 +78,7 @@
       "includeInHeroSubscriberTotal": true,
       "memberCount": 3272,
       "icon": "https://tr.rbxcdn.com/180DAY-e81d02139a0ae5779543282f14c2cf9e/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-07-17T12:01:36.666Z"
+      "updatedAt": "2026-07-17T12:50:00.377Z"
     },
     {
       "id": "35735121",
@@ -92,13 +92,13 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 2518,
+      "memberCount": 2547,
       "icon": "https://tr.rbxcdn.com/180DAY-d9403ebae949a84200da917a4c9dfcbc/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-07-17T12:01:36.666Z"
+      "updatedAt": "2026-07-17T12:50:00.377Z"
     }
   ],
   "totals": {
-    "heroSubscriberCount": 87944,
+    "heroSubscriberCount": 88056,
     "homepageGroupIds": [
       "294985728",
       "937186626",
@@ -108,6 +108,6 @@
       "35735121"
     ]
   },
-  "totalMembers": 87944,
-  "updatedAt": "2026-07-17T12:01:36.666Z"
+  "totalMembers": 88056,
+  "updatedAt": "2026-07-17T12:50:00.377Z"
 }
