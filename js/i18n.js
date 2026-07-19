@@ -116,7 +116,7 @@ const translations = {
         footer_about_text: "NNN GAMES는 Roblox 기반의 UGC와 게임 콘텐츠로 전 세계 유저에게 재미와 가치를 전달하는 프리미엄 스튜디오입니다.",
         footer_links_title: "바로가기",
         footer_contact_title: "연락처",
-        footer_address: "주소 : (13449) 경기도 성남시 수정구 창업로 54, 판교 제2테크노밸리 LH기업성장센터, 804B호",
+        footer_address: "주소 : (18469) 경기도 화성시 동탄구 동탄순환대로 878 (영천동, 동탄 IT 타워), 311호",
         footer_business_number: "사업자등록번호: 629-87-01849",
         footer_copyright: "© 2026 Triple N Games Inc. All Rights Reserved."
     },
@@ -225,7 +225,7 @@ const translations = {
         footer_about_text: "NNN GAMES is a premium studio delivering fun and value to global players through Roblox-native games and UGC.",
         footer_links_title: "Quick Links",
         footer_contact_title: "Contact",
-        footer_address: "Address: 804B, LH Global Game Hub Center, 54 Changeop-ro, Sujeong-gu, Seongnam-si, Gyeonggi-do, Republic of Korea",
+        footer_address: "Address: 311, 878, Dongtansunhwan-daero, Dongtan-gu, Hwaseong-si, Gyeonggi-do 18469, Republic of Korea",
         footer_business_number: "Business Registration No: 629-87-01849",
         footer_copyright: "© 2026 Triple N Games Inc. All Rights Reserved."
     },
@@ -334,7 +334,7 @@ const translations = {
         footer_about_text: "NNN GAMESは、RobloxネイティブのUGCとゲームコンテンツで、世界中のユーザーに楽しさと価値を届けるプレミアムスタジオです。",
         footer_links_title: "クイックリンク",
         footer_contact_title: "連絡先",
-        footer_address: "住所：〒13449 韓国 京畿道 城南市 修正区 スタートアップ路54 LH企業成長センター 804B号室",
+        footer_address: "住所：〒18469 韓国 京畿道 華城市 東灘区 東灘循環大路878 東灘ITタワー 311号室",
         footer_business_number: "事業者登録番号: 629-87-01849",
         footer_copyright: "© 2026 Triple N Games Inc. All Rights Reserved."
     }
