@@ -40,11 +40,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 9223098,
-        "playing": 141,
-        "favorites": 440970,
-        "likeRatio": 0.573414422241529,
-        "updatedAt": "2026-07-20T20:27:45.088Z"
+        "visits": 9236546,
+        "playing": 84,
+        "favorites": 441297,
+        "likeRatio": 0.5732870771899393,
+        "updatedAt": "2026-07-21T09:56:27.666Z"
       }
     },
     {
@@ -85,11 +85,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 137929,
+        "visits": 137962,
         "playing": 0,
         "favorites": 711,
         "likeRatio": 0.8656527249683144,
-        "updatedAt": "2026-07-20T20:27:45.088Z"
+        "updatedAt": "2026-07-21T09:56:27.666Z"
       }
     },
     {
@@ -271,11 +271,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 1035107,
-        "playing": 13,
-        "favorites": 11955,
+        "visits": 1036622,
+        "playing": 6,
+        "favorites": 11959,
         "likeRatio": 0.7847533632286996,
-        "updatedAt": "2026-07-20T20:27:45.088Z"
+        "updatedAt": "2026-07-21T09:56:27.666Z"
       }
     },
     {
@@ -318,11 +318,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 80521,
-        "playing": 132,
-        "favorites": 1345,
-        "likeRatio": 0.9752240379546653,
-        "updatedAt": "2026-07-20T20:27:45.088Z"
+        "visits": 87747,
+        "playing": 206,
+        "favorites": 1446,
+        "likeRatio": 0.9752787203102278,
+        "updatedAt": "2026-07-21T09:56:27.666Z"
       }
     },
     {
@@ -365,11 +365,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 48314,
-        "playing": 25,
-        "favorites": 905,
-        "likeRatio": 0.7711864406779662,
-        "updatedAt": "2026-07-20T20:27:45.088Z"
+        "visits": 51775,
+        "playing": 52,
+        "favorites": 971,
+        "likeRatio": 0.7786885245901639,
+        "updatedAt": "2026-07-21T09:56:27.666Z"
       }
     },
     {
@@ -477,7 +477,7 @@
         "afk-or",
         "free-ugc-rng"
       ],
-      "totalVisits": 10524969,
+      "totalVisits": 10550652,
       "visitProjectIds": [
         "tower-flood-race",
         "korean-spa",
@@ -485,7 +485,7 @@
         "afk-or",
         "free-ugc-rng"
       ],
-      "updatedAt": "2026-07-20T20:27:45.088Z"
+      "updatedAt": "2026-07-21T09:56:27.666Z"
     }
   }
 }
