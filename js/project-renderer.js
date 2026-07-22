@@ -71,6 +71,10 @@ const ProjectRenderer = {
             const playing = project && project.metrics ? project.metrics.playing : null;
             return typeof playing === 'number' ? playing : null;
         };
+        const getVisits = (project) => {
+            const visits = project && project.metrics ? project.metrics.visits : null;
+            return typeof visits === 'number' ? visits : null;
+        };
         return projects
             .map((project, index) => ({ project, index }))
             .sort((a, b) => {
@@ -80,6 +84,13 @@ const ProjectRenderer = {
                 if (aPlaying === null && bPlaying !== null) return 1;
                 if (aPlaying !== null && bPlaying !== null && aPlaying !== bPlaying) {
                     return bPlaying - aPlaying;
+                }
+                const aVisits = getVisits(a.project);
+                const bVisits = getVisits(b.project);
+                if (aVisits !== null && bVisits === null) return -1;
+                if (aVisits === null && bVisits !== null) return 1;
+                if (aVisits !== null && bVisits !== null && aVisits !== bVisits) {
+                    return bVisits - aVisits;
                 }
                 const aOrder = orderMap.has(a.project.id) ? orderMap.get(a.project.id) : Number.MAX_SAFE_INTEGER;
                 const bOrder = orderMap.has(b.project.id) ? orderMap.get(b.project.id) : Number.MAX_SAFE_INTEGER;
