@@ -1,0 +1,1643 @@
+/* =============================================================
+ * NNN GAMES 회사 소개 덱 (/nnn)
+ * 기존 사이트의 css/style.css 와 완전히 분리된 독립 스타일시트.
+ *
+ * 스케일 규칙: 디자인 캔버스 1280 x 720 을 기준으로 1rem = 20 디자인 px.
+ *   → html 의 font-size 를 뷰포트에서 역산하므로, 내부 값은 전부 rem 으로 쓴다.
+ *   → 상/하단 컨트롤 바만 px 고정 (역산식의 상수로 쓰인다).
+ * ============================================================= */
+
+:root {
+    --nnn-orange: #F5A623;
+    --nnn-orange-ink: #9A5F0B;
+    /* 종이 배경 위에서 대비를 확보한 오렌지 계열 텍스트색 */
+    --nnn-ink: #1F242B;
+    --nnn-navy: #3D4A5C;
+    --nnn-paper: #F7F6F3;
+    --nnn-line: #D8D5CE;
+    --nnn-muted: #4A5568;
+
+    --acc-red: #D0342C;
+    --acc-blue: #1D4ED8;
+    --acc-green: #3F9E52;
+    --acc-yellow: #EFC03B;
+
+    --chrome: 123px;
+    /* 상단바 44 + 하단바 60 + 레일 3 + 뷰포트 여백 16 */
+    --shell: #15181C;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-size: clamp(8px, min(calc((100vw - 40px) / 64), calc((100vh - var(--chrome)) / 36)), 26px);
+}
+
+@supports (height: 100svh) {
+    html {
+        font-size: clamp(8px, min(calc((100vw - 40px) / 64), calc((100svh - var(--chrome)) / 36)), 26px);
+    }
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    background: var(--shell);
+    color: var(--nnn-ink);
+    font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+html[lang="ja"] body {
+    font-family: 'Noto Sans JP', 'Noto Sans KR', 'Inter', system-ui, sans-serif;
+}
+
+html[lang="en"] body {
+    font-family: 'Inter', 'Noto Sans KR', system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dd,
+dt,
+ul,
+ol,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ---------------------------------------------- 셸 / 컨트롤 */
+
+.deck {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.deck-rail {
+    flex: 0 0 3px;
+    background: #23272C;
+}
+
+.deck-rail-fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--nnn-orange);
+    transition: width .22s ease;
+}
+
+.deck-bar {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 14px;
+}
+
+.deck-bar-top {
+    height: 44px;
+}
+
+.deck-bar-bottom {
+    height: 60px;
+}
+
+.deck-wordmark {
+    font: 700 12px/1 'Poppins', sans-serif;
+    letter-spacing: .2em;
+    color: #868D96;
+}
+
+.deck-langs {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.deck-lang {
+    border: 0;
+    background: none;
+    padding: 5px 9px;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #868D96;
+    font: 600 12px/1 'Inter', sans-serif;
+    letter-spacing: .04em;
+}
+
+.deck-lang:hover {
+    color: #E4E7EB;
+}
+
+.deck-lang.is-active {
+    background: var(--nnn-orange);
+    color: #1F242B;
+}
+
+.deck-lang-sep {
+    color: #3A4149;
+    font-size: 11px;
+}
+
+.deck-viewport {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    place-items: center;
+    padding: 8px 0;
+    overflow: hidden;
+}
+
+.deck-stage {
+    position: relative;
+    width: 64rem;
+    height: 36rem;
+    box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, .45);
+}
+
+.deck-center {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.deck-dots {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.deck-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #39404880;
+    cursor: pointer;
+    transition: background .18s ease, transform .18s ease;
+}
+
+.deck-dot:hover {
+    background: #5A626B;
+}
+
+.deck-dot.is-active {
+    background: var(--nnn-orange);
+    transform: scale(1.3);
+}
+
+.deck-counter {
+    font: 600 11px/1 'Inter', sans-serif;
+    letter-spacing: .1em;
+    color: #767D86;
+}
+
+.deck-counter b {
+    color: #E6E9ED;
+}
+
+.deck-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    padding: 0 17px;
+    border-radius: 999px;
+    border: 1px solid #333A42;
+    background: #1D2126;
+    color: #D6DAE0;
+    font: 600 13px/1 'Inter', 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    transition: background .16s ease, border-color .16s ease, opacity .16s ease;
+}
+
+.deck-nav:hover:not(:disabled) {
+    background: #262B31;
+    border-color: #454D56;
+}
+
+.deck-nav-primary {
+    background: var(--nnn-orange);
+    border-color: var(--nnn-orange);
+    color: #1F242B;
+}
+
+.deck-nav-primary:hover:not(:disabled) {
+    background: #FFB937;
+    border-color: #FFB937;
+}
+
+.deck-nav:disabled {
+    opacity: .32;
+    cursor: default;
+}
+
+.deck-nav:focus-visible,
+.deck-dot:focus-visible,
+.deck-lang:focus-visible {
+    outline: 2px solid var(--nnn-orange);
+    outline-offset: 3px;
+}
+
+.deck-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ---------------------------------------------- 슬라이드 공통 */
+
+.slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(.4rem);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+}
+
+.slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.slide[data-theme="paper"] {
+    padding: 2.3rem 2.9rem 2.1rem;
+    background-color: var(--nnn-paper);
+    background-image: url('assets/paper-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    color: var(--nnn-ink);
+}
+
+.slide[data-theme="paper"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: url('assets/frame-border.svg') center / 100% 100% no-repeat;
+}
+
+.slide[data-theme="paper"]::after {
+    content: 'NNN GAMES';
+    position: absolute;
+    left: 2rem;
+    bottom: 1rem;
+    z-index: 2;
+    font: 600 .5rem/1 'Poppins', sans-serif;
+    letter-spacing: .06em;
+    color: var(--nnn-navy);
+    opacity: .8;
+}
+
+.slide[data-theme="orange"] {
+    padding: 3rem 4.2rem;
+    background-color: var(--nnn-orange);
+    background-image: url('assets/paper-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec-label {
+    flex: 0 0 auto;
+    font: 700 .92rem/1.2 'Poppins', 'Noto Sans KR', sans-serif;
+    letter-spacing: .01em;
+    color: var(--nnn-navy);
+}
+
+.slide-title {
+    flex: 0 0 auto;
+    margin-top: .95rem;
+    font: 700 1.6rem/1.25 'Poppins', 'Noto Sans KR', sans-serif;
+    letter-spacing: -.01em;
+}
+
+.slide-lead {
+    flex: 0 0 auto;
+    margin-top: .55rem;
+    font-size: .8rem;
+    line-height: 1.55;
+    color: var(--nnn-muted);
+}
+
+.rule {
+    display: block;
+    width: 12rem;
+    height: .2rem;
+    background: var(--nnn-ink);
+}
+
+/* ---------------------------------------------- S1 표지 / S10 클로징 공통 */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.contact-link {
+    width: fit-content;
+    font-size: .76rem;
+    color: #123E9B;
+    text-decoration: underline;
+    text-underline-offset: .16em;
+}
+
+.contact-addr {
+    font-size: .76rem;
+    color: var(--nnn-ink);
+}
+
+.slide-cover {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+.cover-body {
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.6rem 0;
+}
+
+.cover-title {
+    font: 700 3.55rem/1 'Poppins', sans-serif;
+    letter-spacing: -.015em;
+    color: #fff;
+}
+
+.cover-head .rule {
+    margin: 1.15rem 0 .95rem;
+}
+
+.cover-sub {
+    font: 700 1rem/1.3 'Poppins', 'Noto Sans KR', sans-serif;
+    color: #fff;
+}
+
+.cover-grid {
+    flex: 0 0 25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .35rem;
+}
+
+/* img 의 width/height 속성이 height 프레젠테이션 힌트를 만들어 aspect-ratio 를 무력화한다.
+ * aspect-ratio 로 비율을 잡는 이미지에는 반드시 height:auto 를 함께 준다. */
+.cover-grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.slide-closing {
+    justify-content: space-between;
+}
+
+.closing-title {
+    font: 700 2.4rem/1.15 'Poppins', sans-serif;
+    letter-spacing: -.01em;
+    color: #fff;
+}
+
+.closing-head .rule {
+    margin: 1.1rem 0 .9rem;
+}
+
+.closing-sub {
+    font: 700 1rem/1.3 'Poppins', 'Noto Sans KR', sans-serif;
+    color: #fff;
+}
+
+.closing-body {
+    margin-top: 1rem;
+    max-width: 36rem;
+    font-size: .82rem;
+    line-height: 1.65;
+    color: #2A2A2A;
+}
+
+.closing-foot {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.closing-nnn {
+    font: 700 2.2rem/1 'Poppins', sans-serif;
+    color: var(--nnn-ink);
+}
+
+.closing-slogan {
+    margin-top: .8rem;
+    font: 700 1.35rem/1 'Poppins', sans-serif;
+    color: var(--nnn-ink);
+}
+
+/* ---------------------------------------------- S2 ABOUT */
+
+.slide-about {
+    flex-direction: row;
+    gap: 2.4rem;
+}
+
+.about-left,
+.about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.about-right {
+    border-left: 1px solid var(--nnn-navy);
+    padding-left: 2.2rem;
+}
+
+.about-headline {
+    margin-top: 1.4rem;
+    font: 700 1.55rem/1.3 'Poppins', 'Noto Sans KR', sans-serif;
+    letter-spacing: -.01em;
+}
+
+.about-lead {
+    margin-top: 1.1rem;
+    padding-left: 1.2rem;
+    font-size: .78rem;
+    line-height: 1.6;
+    color: #2E3540;
+}
+
+.about-period {
+    margin-top: auto;
+    font: 700 .85rem/1 'Poppins', 'Noto Sans KR', sans-serif;
+}
+
+.stats {
+    display: flex;
+    gap: 2.4rem;
+    margin-top: 1.1rem;
+    padding-left: .6rem;
+}
+
+.stats li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .45rem;
+}
+
+.stats b {
+    font: 700 1.75rem/1 'Poppins', sans-serif;
+    letter-spacing: -.02em;
+}
+
+.stats span {
+    font-size: .62rem;
+    color: #3F4855;
+}
+
+.about-bullet {
+    margin-top: 1.6rem;
+    margin-bottom: .4rem;
+    padding-left: 1.6rem;
+    position: relative;
+    font-size: .74rem;
+}
+
+.about-bullet::before {
+    content: '•';
+    position: absolute;
+    left: .5rem;
+}
+
+.about-cap-title {
+    font: 700 1.35rem/1.2 'Poppins', 'Noto Sans KR', sans-serif;
+}
+
+.about-cap-lead {
+    margin-top: .9rem;
+    font-size: .66rem;
+    line-height: 1.5;
+    color: var(--nnn-muted);
+}
+
+.caps {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: .85rem;
+    margin-top: 1.1rem;
+}
+
+.cap {
+    border-top: 1px solid var(--nnn-line);
+    border-left: .16rem solid #2E4A7D;
+    padding: .5rem 0 .55rem .75rem;
+}
+
+.cap-head {
+    font: 700 .95rem/1.2 'Poppins', 'Noto Sans KR', sans-serif;
+}
+
+.cap-no {
+    margin-right: .55rem;
+    font-size: .62rem;
+    color: #2E4A7D;
+    vertical-align: .1em;
+}
+
+.cap-desc {
+    margin-top: .35rem;
+    font-size: .66rem;
+    line-height: 1.45;
+    color: var(--nnn-muted);
+}
+
+.pipeline {
+    margin-top: auto;
+    padding-top: .9rem;
+}
+
+.pipeline-badge {
+    padding: .62rem 0;
+    text-align: center;
+    border: 1px solid var(--nnn-line);
+    background: #E9EAEC;
+    font: 700 .98rem/1 'Poppins', sans-serif;
+    letter-spacing: .01em;
+}
+
+.pipeline-caption {
+    margin-top: .45rem;
+    text-align: center;
+    font-size: .58rem;
+    color: var(--nnn-muted);
+}
+
+/* ---------------------------------------------- S3 PEOPLE */
+
+.avatars {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    padding: .8rem 0 .4rem;
+}
+
+.avatar-card {
+    flex: 0 1 18rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* 세 아바타는 같은 크롭 박스로 내보낸 동일 캔버스(1200x1145, 비율 1.048)다.
+ * 프레임 비율을 캔버스에 맞추면 여백 없이 채워지고, 세 장의 크기·발 위치가 자동으로 정렬된다. */
+.avatar-frame {
+    position: relative;
+    flex: 0 1 auto;
+    aspect-ratio: 1200 / 1145;
+    min-height: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .5);
+}
+
+.avatar-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+}
+
+.avatar-frame[data-placeholder] {
+    border: .09rem dashed var(--nnn-line);
+}
+
+.avatar-frame[data-placeholder] span {
+    font: 700 1rem/1 'Poppins', sans-serif;
+    letter-spacing: .16em;
+    color: var(--nnn-line);
+}
+
+/* text-align 은 블록에 걸어야 한다. .avatar-name 은 인라인(<b>) 이라 직접 주면 먹지 않는다. */
+.avatar-card figcaption {
+    text-align: center;
+}
+
+.avatar-name {
+    display: block;
+    margin-top: .7rem;
+    font: 700 .92rem/1.2 'Poppins', sans-serif;
+    min-height: 1.1rem;
+}
+
+.avatar-role {
+    display: block;
+    margin-top: .22rem;
+    font-size: .64rem;
+    color: var(--nnn-navy);
+}
+
+.avatar-card::after {
+    content: '';
+    height: .14rem;
+    margin-top: .6rem;
+    border-radius: 1rem;
+    background: var(--nnn-orange);
+}
+
+.people-badge {
+    flex: 0 0 auto;
+    align-self: center;
+    margin-top: .3rem;
+    padding: .5rem 1.4rem;
+    border: 1px solid var(--nnn-line);
+    background: #E9EAEC;
+    border-radius: 999px;
+    font: 700 .72rem/1 'Poppins', 'Noto Sans KR', sans-serif;
+}
+
+/* ---------------------------------------------- S4 HISTORY */
+
+.eras {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto;
+    /* 수상 경력 영역의 유무와 관계없이 타임라인이 세로 중앙에 놓이도록 한다. */
+    align-content: center;
+    column-gap: 1.2rem;
+    row-gap: .45rem;
+    margin-top: 1rem;
+}
+
+.era {
+    display: contents;
+}
+
+/* 슬롯 수에 맞춰 16:9 이미지가 왜곡 없이 들어가는 높이를 미리 잡는다.
+ * (4열 기준 한 칸 폭 ≈ 13.6rem) */
+/* 블록 높이는 4개 시대가 공통이어야 한다 — 타임라인 노드 축 정렬의 기준이다.
+ * 2슬롯은 이 높이를 16:9 두 칸으로 정확히 채운다. */
+.era-works {
+    grid-row: 1;
+    height: 15.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+/* 슬롯 수가 2가 아니면 칸을 16:9 로 고정하고 블록 위쪽에 붙인다.
+ * 높이를 슬롯 수마다 바꾸면 시대 간 축이 어긋나므로 블록 높이는 그대로 두고,
+ * 위로 붙여 네 시대 이미지의 윗변을 한 줄로 맞춘다. */
+.era-works[data-count="1"],
+.era-works[data-count="3"],
+.era-works[data-count="4"] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+}
+
+.era-works[data-count="1"] {
+    grid-template-columns: 1fr;
+}
+
+.era-works[data-count="3"] .era-work:first-child {
+    grid-column: span 2;
+}
+
+.era-works[data-count="1"] .era-work,
+.era-works[data-count="3"] .era-work,
+.era-works[data-count="4"] .era-work {
+    flex: none;
+    aspect-ratio: 16 / 9;
+}
+
+/* 수상 경력 영역이 켜지면 세로 여유가 줄어드므로 이미지 블록을 낮춘다.
+ * (deck.js 가 awards 를 렌더할 때 슬라이드에 data-has-awards 를 붙인다)
+ *
+ * 주의: 이 상태에서 2슬롯은 16:9 를 다 담을 높이가 안 나와 좌우에 여백이 생긴다.
+ * 수상 경력을 넣을 때는 시대별 슬롯을 1개로 줄이는 편이 낫다(1슬롯은 축소 불필요). */
+.slide[data-has-awards] .era-works {
+    height: 12rem;
+}
+
+.era-works[data-count="3"] .era-work:first-child {
+    grid-column: span 2;
+}
+
+.era-work {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    border-radius: .3rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .55);
+}
+
+/* 대표작 스크린샷은 비율이 제각각이다(세로 모바일 캡처, 16:9 게임 화면 등).
+ * cover 로 잘라내면 타이틀·UI 가 사라지므로 contain 으로 전체를 보여준다. */
+.era-work img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.era-work[data-placeholder] {
+    display: grid;
+    place-items: center;
+    border: 1px dashed var(--nnn-line);
+    background: rgba(255, 255, 255, .45);
+}
+
+.era-work[data-placeholder] span {
+    font: 600 .58rem/1 'Poppins', sans-serif;
+    letter-spacing: .14em;
+    color: #C6C2B9;
+}
+
+.era-node {
+    grid-row: 2;
+    position: relative;
+    height: 1.4rem;
+    display: grid;
+    place-items: center;
+}
+
+.era-node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -.6rem;
+    right: -.6rem;
+    height: .12rem;
+    transform: translateY(-50%);
+    background: var(--nnn-line);
+}
+
+.era-dot {
+    position: relative;
+    z-index: 1;
+    width: .52rem;
+    height: .52rem;
+    border-radius: 50%;
+    background: #fff;
+    border: .13rem solid var(--nnn-line);
+}
+
+.era-text {
+    grid-row: 3;
+    text-align: center;
+}
+
+.era-platform {
+    font: 700 .92rem/1.2 'Poppins', sans-serif;
+    letter-spacing: .04em;
+}
+
+.era-period {
+    margin-top: .15rem;
+    font: 600 .64rem/1.2 'Inter', 'Noto Sans KR', sans-serif;
+    color: var(--nnn-navy);
+}
+
+.era-desc {
+    margin-top: .4rem;
+    font-size: .62rem;
+    line-height: 1.5;
+    color: var(--nnn-muted);
+}
+
+.era:nth-child(1)>* {
+    grid-column: 1;
+}
+
+.era:nth-child(2)>* {
+    grid-column: 2;
+}
+
+.era:nth-child(3)>* {
+    grid-column: 3;
+}
+
+.era:nth-child(4)>* {
+    grid-column: 4;
+}
+
+.era:first-child .era-node::before {
+    left: 50%;
+}
+
+.era:last-child .era-node::before {
+    right: 50%;
+}
+
+.era:nth-child(2) .era-node::before {
+    background: linear-gradient(90deg, var(--nnn-line), #EBC589);
+}
+
+.era:nth-child(3) .era-node::before {
+    background: linear-gradient(90deg, #EBC589, #F2B75F);
+}
+
+.era:nth-child(4) .era-node::before {
+    background: linear-gradient(90deg, #F2B75F, var(--nnn-orange));
+}
+
+.era:nth-child(2) .era-dot {
+    width: .62rem;
+    height: .62rem;
+}
+
+.era:nth-child(3) .era-dot {
+    width: .74rem;
+    height: .74rem;
+}
+
+.era[data-current] .era-dot {
+    width: .95rem;
+    height: .95rem;
+    background: var(--nnn-orange);
+    border-color: var(--nnn-orange);
+    box-shadow: 0 0 0 .24rem rgba(245, 166, 35, .22);
+}
+
+.era[data-current] .era-platform {
+    color: var(--nnn-orange-ink);
+}
+
+.era[data-current] .era-period {
+    color: var(--nnn-orange-ink);
+    font-weight: 700;
+}
+
+/* 클래스의 display 가 UA 의 [hidden] 규칙을 이기므로 숨김을 따로 명시한다. */
+.awards[hidden] {
+    display: none;
+}
+
+.awards {
+    flex: 0 0 auto;
+    margin-top: .9rem;
+    padding-top: .7rem;
+    border-top: 1px solid var(--nnn-line);
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.awards-label {
+    flex: 0 0 auto;
+    font: 700 .6rem/1 'Poppins', 'Noto Sans KR', sans-serif;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--nnn-navy);
+}
+
+.awards-list {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+}
+
+.award {
+    border-left: .16rem solid var(--nnn-orange);
+    padding-left: .75rem;
+}
+
+.award-year {
+    font: 600 .58rem/1 'Inter', sans-serif;
+    color: var(--nnn-navy);
+}
+
+.award-name {
+    margin-top: .18rem;
+    font-size: .78rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.award-org {
+    margin-top: .12rem;
+    font-size: .6rem;
+    color: #5A6473;
+}
+
+/* ---------------------------------------------- S5 주요 게임 */
+
+.games {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.2rem 2.8rem;
+    margin-top: .9rem;
+}
+
+.game {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas: "shot meta" "name name" "genre genre";
+    column-gap: 1rem;
+}
+
+.game-shot {
+    grid-area: shot;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: .2rem;
+}
+
+.game-meta {
+    grid-area: meta;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .32rem;
+}
+
+.game-meta dt {
+    font-size: .56rem;
+    color: #6A7280;
+}
+
+.game-meta dd {
+    font: 700 .95rem/1.1 'Poppins', sans-serif;
+}
+
+.game-new dd {
+    font: 700 italic .95rem/1.1 'Poppins', sans-serif;
+    color: var(--acc-green);
+}
+
+.game-name {
+    grid-area: name;
+    margin-top: .55rem;
+    text-align: center;
+    font: 700 .92rem/1.2 'Poppins', sans-serif;
+}
+
+.game-genre {
+    grid-area: genre;
+    margin-top: .22rem;
+    text-align: center;
+    font-size: .62rem;
+    color: #5A6473;
+}
+
+/* ---------------------------------------------- S6 / S7 2단 구성 */
+
+.split {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.8rem;
+    margin-top: 1.1rem;
+}
+
+.split::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -.4rem;
+    bottom: 0;
+    width: 1px;
+    background: var(--nnn-navy);
+    opacity: .5;
+}
+
+.split-col {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.split-shot {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: .2rem;
+}
+
+.split-name {
+    margin-top: .85rem;
+    font: 700 .95rem/1.2 'Poppins', sans-serif;
+}
+
+.split-sub {
+    margin-top: .38rem;
+    font-size: .7rem;
+    color: #333B47;
+}
+
+.split-list {
+    margin-top: .65rem;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.split-list li {
+    position: relative;
+    font-size: .66rem;
+    line-height: 1.45;
+}
+
+.split-list li::before {
+    content: '';
+    position: absolute;
+    left: -.85rem;
+    top: .42rem;
+    width: .22rem;
+    height: .22rem;
+    border-radius: 50%;
+    background: var(--nnn-ink);
+}
+
+/* ---------------------------------------------- S8 라이브 운영 */
+
+.liveops {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1.06fr 1fr;
+    /* 행을 확정해야 오른쪽 배너가 남은 높이를 정확히 채운다. */
+    grid-template-rows: minmax(0, 1fr);
+    gap: 2.2rem;
+}
+
+.liveops-left {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.quads {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: space-evenly;
+    gap: 1.5rem 1.6rem;
+    margin-top: 1.2rem;
+}
+
+.quad {
+    border-left: .2rem solid var(--acc, var(--nnn-line));
+    padding-left: .8rem;
+}
+
+.quad[data-accent="red"] {
+    --acc: var(--acc-red);
+}
+
+.quad[data-accent="blue"] {
+    --acc: var(--acc-blue);
+}
+
+.quad[data-accent="green"] {
+    --acc: var(--acc-green);
+}
+
+.quad[data-accent="yellow"] {
+    --acc: var(--acc-yellow);
+}
+
+.quad h3 {
+    font: 700 .74rem/1.2 'Poppins', sans-serif;
+    letter-spacing: .01em;
+}
+
+.quad p {
+    margin-top: .3rem;
+    font-size: .66rem;
+    line-height: 1.35;
+    color: var(--nnn-muted);
+}
+
+.quad p+p {
+    margin-top: .1rem;
+}
+
+.liveops-right {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    min-height: 0;
+}
+
+.liveops-right img {
+    width: 100%;
+    height: auto;
+    flex: 1;
+    min-height: 0;
+    object-fit: cover;
+    border-radius: .25rem;
+}
+
+/* ---------------------------------------------- S9 글로벌 프로젝트 */
+
+.global-title {
+    margin-top: 1.3rem;
+    font: 700 1.5rem/1.25 'Poppins', sans-serif;
+    letter-spacing: -.01em;
+}
+
+.global-descs {
+    margin-top: .85rem;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    padding-left: .6rem;
+}
+
+.global-descs p {
+    font-size: .7rem;
+    line-height: 1.5;
+    color: #333B47;
+}
+
+.global-body {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 2.4fr 1fr;
+    grid-template-rows: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: stretch;
+    margin-top: 1rem;
+}
+
+/* height:100% 는 1fr 트랙 위에서 해석되지 않아 콜라주가 콘텐츠 높이로 부풀어 오른다.
+ * 그리드 기본 stretch 로 늘리고 min-height:0 으로 축소를 허용한다. */
+.collage {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1.2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: .25rem;
+}
+
+/* 이미지에 직접 height:100% 를 주면 1fr 트랙 위에서 해석되지 않아 셀을 넘친다.
+ * 래퍼를 그리드 영역에 늘린 뒤 이미지를 절대 배치해 확실히 가둔다. */
+.collage-cell {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.collage-cell img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collage .c1 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.collage .c2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.collage .c3 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.collage .c4 {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+.global-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.1rem;
+}
+
+.global-stats dt {
+    font-size: .72rem;
+    color: var(--nnn-muted);
+}
+
+.global-stats dd {
+    margin-top: .1rem;
+    font: 700 1.75rem/1 'Poppins', sans-serif;
+    letter-spacing: -.02em;
+}
+
+/* ---------------------------------------------- 모바일 세로 */
+
+/* 세로 리플로우는 화면 전용이다. 인쇄는 항상 고정 캔버스를 쓴다. */
+@media screen and (max-width: 767px) {
+    html {
+        font-size: clamp(13px, 3.9vw, 17px);
+    }
+
+    .deck-viewport {
+        place-items: stretch;
+        padding: 0;
+    }
+
+    .deck-stage {
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+    }
+
+    .deck-bar {
+        padding: 0 10px;
+    }
+
+    .deck-counter {
+        display: none;
+    }
+
+    .slide {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .slide[data-theme="paper"] {
+        padding: 1.6rem 1.3rem 2.4rem;
+    }
+
+    .slide[data-theme="orange"] {
+        padding: 2rem 1.5rem 2.4rem;
+    }
+
+    .slide[data-theme="paper"]::before {
+        display: none;
+    }
+
+    .slide[data-theme="paper"]::after {
+        display: none;
+    }
+
+    .slide-cover,
+    .slide-about,
+    .liveops,
+    .split,
+    .games,
+    .global-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+    }
+
+    /* 세로 스크롤 화면에서는 어떤 블록도 눌리면 안 된다.
+     * (데스크톱의 flex:1 이 남아 있으면 카드끼리 겹친다) */
+    .slide>*,
+    .slide-cover>*,
+    .slide-about>*,
+    .liveops>*,
+    .split>*,
+    .games>*,
+    .global-body>*,
+    .caps,
+    .quads {
+        flex: 0 0 auto;
+    }
+
+    .cover-body {
+        padding: 0;
+        gap: 1.6rem;
+    }
+
+    .cover-title {
+        font-size: 2.6rem;
+    }
+
+    .cover-grid {
+        flex: 0 0 auto;
+    }
+
+    .about-right {
+        border-left: 0;
+        border-top: 1px solid var(--nnn-navy);
+        padding-left: 0;
+        padding-top: 1.4rem;
+    }
+
+    .about-period,
+    .pipeline {
+        margin-top: 1.2rem;
+    }
+
+    .stats {
+        gap: 1.4rem;
+        justify-content: space-between;
+    }
+
+    /* 콘텐츠가 짧은 슬라이드는 세로 중앙에 둔다.
+     * safe 키워드가 있어 내용이 넘칠 때는 start 로 되돌아가므로 위가 잘리지 않는다. */
+    .slide-people {
+        justify-content: safe center;
+    }
+
+    .avatars {
+        gap: .7rem;
+        padding: .8rem 0;
+    }
+
+    .avatar-card {
+        flex: 1 1 0;
+    }
+
+    .avatar-frame {
+        flex: 0 0 auto;
+    }
+
+    .avatar-name {
+        font-size: .72rem;
+    }
+
+    .eras {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+    }
+
+    .era {
+        display: grid;
+        grid-template-columns: 1.1rem 1fr;
+        grid-template-rows: auto auto;
+        column-gap: .9rem;
+    }
+
+    /* 데스크톱의 .era:nth-child(n) > * 규칙과 특정도를 맞춰야 열 배치를 되돌릴 수 있다. */
+    .era:nth-child(n)>* {
+        grid-column: 2;
+    }
+
+    .era:nth-child(n)>.era-node {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        height: auto;
+        align-items: start;
+        padding-top: .3rem;
+    }
+
+    .era-node::before {
+        top: 0;
+        bottom: -1.6rem;
+        left: 50%;
+        right: auto;
+        width: .12rem;
+        height: auto;
+        transform: translateX(-50%);
+    }
+
+    /* 축이 세로로 바뀌므로 가로 그라디언트를 세로로 다시 잡는다. */
+    .era:nth-child(n) .era-node::before {
+        background: linear-gradient(180deg, var(--nnn-line), #EFC98F);
+    }
+
+    .era:last-child .era-node::before {
+        bottom: 50%;
+        right: auto;
+        background: linear-gradient(180deg, #F2B75F, var(--nnn-orange));
+    }
+
+    .era:first-child .era-node::before {
+        left: 50%;
+        top: .3rem;
+    }
+
+    .era-text {
+        grid-row: 1;
+        text-align: left;
+    }
+
+    .era-works {
+        grid-row: 2;
+        height: auto;
+        margin-top: .7rem;
+        flex-direction: row;
+    }
+
+    .era-work {
+        flex: 1;
+        aspect-ratio: 16 / 9;
+    }
+
+    .game {
+        grid-template-columns: 1.4fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .game-shot {
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+
+    .split::before {
+        display: none;
+    }
+
+    .split-shot {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .quads {
+        gap: 1.1rem;
+    }
+
+    .liveops-right img {
+        flex: 0 0 auto;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .collage {
+        height: auto;
+        aspect-ratio: 16 / 7;
+    }
+
+    .global-stats {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: .8rem;
+    }
+
+    .global-stats dd {
+        font-size: 1.3rem;
+    }
+
+    .closing-foot {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.4rem;
+    }
+
+    .closing-title {
+        font-size: 1.75rem;
+    }
+
+    .awards-list {
+        grid-template-columns: 1fr;
+        gap: .8rem;
+    }
+
+    .awards {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .7rem;
+    }
+
+    .awards-list {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .avatars {
+        flex-direction: column;
+    }
+}
+
+/* ---------------------------------------------- 모션 축소 */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .slide,
+    .deck-rail-fill,
+    .deck-dot,
+    .deck-nav {
+        transition: none !important;
+    }
+
+    .slide {
+        transform: none !important;
+    }
+}
+
+/* ---------------------------------------------- 인쇄 (PDF 재출력) */
+
+/* 디자인 캔버스(1280x720)를 그대로 한 페이지로 잡아 슬라이드가 잘리지 않게 한다. */
+@page {
+    size: 1280px 720px;
+    margin: 0;
+}
+
+@media print {
+    html {
+        /* 1rem = 20 디자인 px — 뷰포트 역산식을 쓰지 않는다. */
+        font-size: 20px;
+    }
+
+    body {
+        height: auto;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .deck-bar,
+    .deck-rail,
+    .deck-sr {
+        display: none !important;
+    }
+
+    .deck-viewport {
+        display: block;
+        overflow: visible;
+        padding: 0;
+    }
+
+    .deck-stage {
+        width: 1280px;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .slide {
+        position: relative;
+        inset: auto;
+        width: 1280px;
+        height: 720px;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        break-after: page;
+        page-break-after: always;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .slide:last-child {
+        break-after: auto;
+        page-break-after: auto;
+    }
+}
