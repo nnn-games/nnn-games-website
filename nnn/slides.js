@@ -3,8 +3,22 @@
  * 기획서: plan/company/company-intro-site.md
  *
  * 규칙
- *  - 수치(9.3M, 2.2K 등), 아바타 네임, 플랫폼명은 번역 대상이 아니므로 i18n 키를 만들지 않는다.
+ *  - 수치(9.4M, 2.2K 등), 아바타 네임, 플랫폼명은 번역 대상이 아니므로 i18n 키를 만들지 않는다.
  *  - 번역 텍스트는 DECK_I18N 에만 두고, 마크업에는 data-deck-key 로 연결한다.
+ *
+ * 지표 갱신 (마지막 반영: 2026-07-30, 데이터 기준일 2026-07-29 23:55 UTC)
+ *  출처: `npm run update:metrics` 가 갱신하는 data/projects.json, data/communities.json
+ *   - S2 누적 방문   ← projects.json  summary.hero.totalVisits
+ *   - S2 커뮤니티 멤버 ← communities.json totalMembers
+ *   - S2 운영 프로젝트 ← projects.json  summary.hero.projectCount
+ *   - S5 게임별 Total visits ← all[].metrics.visits
+ *   - S5 Rating            ← all[].metrics.likeRatio
+ *  위 값은 index.html 에 그대로 적혀 있다(번역 대상이 아니므로 i18n 키 없음).
+ *  과대 표기를 피하려고 항상 내림해서 쓴다. 예: 11,228,586 → 11.2M+
+ *
+ *  데이터로 채울 수 없는 값 — 갱신 시 그대로 두거나 별도로 확인해야 한다.
+ *   - S5 Peak CCU (2.2K / 164): Roblox API 는 현재 접속자(playing)만 주고 최고 기록은 없다.
+ *   - 부록 Get Train (2.5M / 600K WAU): 종료된 ZEPETO 프로젝트라 확정값이다.
  */
 
 const DECK_SLIDES = [
@@ -30,9 +44,13 @@ const DECK_SLIDES = [
     {
         id: 'people',
         theme: 'paper',
+        backdropMarks: [
+            { image: 'claude-icon.png', side: 'left' },
+            { image: 'chatgpt-icon.png', side: 'right' }
+        ],
         avatars: [
             { image: 'people-oneshot.webp', name: 'ONESHOT' },
-            { image: 'people-jeff.webp', name: 'JEFF' },
+            { image: 'people-jeff.webp', name: 'JEFF', featured: true },
             { image: 'people-papaslime.webp', name: 'PAPASLIME' }
         ]
     },
@@ -59,17 +77,45 @@ const DECK_SLIDES = [
             { platform: 'ZEPETO', period: '2023 ~ 2025', descKey: 'history_era_zepeto', works: ['zepeto-sc1.webp', 'zepeto-sc2.webp'] },
             // 제공받은 roblox-sc1~4 는 S1/S5/S7 에서 쓰는 파일과 바이트 단위로 동일했다.
             // 사본을 늘리지 않고 기존 에셋을 그대로 참조한다(추가 다운로드 0KB).
-            { platform: 'ROBLOX', periodKey: 'history_period_roblox', descKey: 'history_era_roblox', works: ['game-tfr.jpg', 'game-tomato.jpg', 'ugc-afk.jpg', 'ugc-rng.jpg'], current: true }
+            { platform: 'ROBLOX', periodKey: 'history_period_roblox', descKey: 'history_era_roblox', works: ['game-tfr.jpg', 'game-tomato.jpg', 'ugc-afk.jpg', 'ugc-rng.jpg', 'roblox-korean-spa.jpg', 'roblox-fruit-battles.jpg'], current: true }
         ],
         awards: []
     },
 
     { id: 'titles', theme: 'paper' },
+
+    /* ---------------------------------------------------------------------
+     * S6 UGC 제작
+     * works: UGC 제작물 썸네일 12장 (3열 x 4행).
+     *   원본이 150x150 카탈로그 썸네일이라 셀을 그보다 크게 잡지 않는다(확대 시 흐려진다).
+     *   배경이 투명한 PNG 라 흰 카드 위에 contain 으로 얹는다(deck.css).
+     *   순서는 이 배열 그대로 왼쪽→오른쪽, 위→아래로 놓인다.
+     * ------------------------------------------------------------------- */
+    {
+        id: 'ugcworks',
+        theme: 'paper',
+        works: [
+            'ugc-1.png', 'ugc-2.png', 'ugc-3.png',
+            'ugc-4.png', 'ugc-5.png', 'ugc-6.png',
+            'ugc-7.png', 'ugc-8.png', 'ugc-9.png',
+            'ugc-10.png', 'ugc-11.png', 'ugc-12.png'
+        ]
+    },
+
     { id: 'case', theme: 'paper' },
     { id: 'ugc', theme: 'paper' },
     { id: 'liveops', theme: 'paper' },
-    { id: 'global', theme: 'paper' },
-    { id: 'closing', theme: 'orange' }
+    { id: 'development', theme: 'paper' },
+    { id: 'planning', theme: 'paper' },
+    { id: 'closing', theme: 'orange' },
+
+    /* ---------------------------------------------------------------------
+     * 부록 — appendix: true
+     * 질문이 들어올 때만 펼치는 자료라 본편 흐름에서 빼고 클로징 뒤에 둔다.
+     * 카운터/진행 바는 본편 장수(12장)만 세고, 도트는 경계를 띄워 구분한다(deck.js).
+     * 부록을 늘릴 때는 아래에 같은 플래그로 추가하면 번호가 자동으로 이어진다.
+     * ------------------------------------------------------------------- */
+    { id: 'global', theme: 'paper', appendix: true }
 ];
 
 const DECK_I18N = {
@@ -78,9 +124,14 @@ const DECK_I18N = {
         ui_prev: '이전',
         ui_next: '다음',
         ui_lang_group: '언어 선택',
+        ui_fullscreen: '전체화면',
+        ui_fullscreen_exit: '전체화면 종료',
         ui_deck_label: 'NNN GAMES 회사 소개 슬라이드',
         ui_dot: '{{n}}번 슬라이드로 이동',
+        ui_dot_appendix: '부록 {{n}}번 슬라이드로 이동',
         ui_slide_position: '{{current}} / {{total}} 슬라이드',
+        ui_appendix: '부록',
+        ui_appendix_position: '부록 {{current}} / {{total}}',
 
         // S1 표지
         cover_subtitle: 'ROBLOX Game & UGC Development Studio',
@@ -102,19 +153,18 @@ const DECK_I18N = {
         about_pipeline_caption: '기획 및 개발 → 출시 → 라이브 운영 → 데이터 기반 개선',
 
         // S3 PEOPLE
-        people_title: '게임을 만드는 사람들',
-        people_lead: '기획·개발·아트·운영이 한 팀에서 함께 일합니다. 작은 조직이 빠르게 판단하고 바로 반영합니다.',
+        people_title: 'NNN Team',
+        people_lead: '작은 조직이 빠르게 결정하고, 곧바로 실행합니다.',
         people_badge: '기획 → 개발 → 아트 → 운영, 한 팀에서',
         people_avatar_alt: 'NNN GAMES 팀원 로블록스 아바타 — {{name}}',
 
         // S4 HISTORY
-        history_title: '걸어온 길',
-        history_lead: '모바일 게임에서 출발해 메타버스 플랫폼을 거쳐, 지금은 ROBLOX에서 자체 게임을 만들고 운영합니다.',
+        history_title: '여러 플랫폼에서 쌓은 경험, 이제 Roblox로',
         history_period_roblox: '2026 ~ 현재',
-        history_era_mobile: '모바일 게임 개발 — iOS/Android 기반 게임 제작으로 시작',
-        history_era_ifland: '메타버스 플랫폼 콘텐츠 제작 — 이용자 참여형 공간·이벤트 구축',
-        history_era_zepeto: '제페토 월드 개발·운영 — JR EAST × NAVER Z Get Train 포함',
-        history_era_roblox: '자체 게임 개발·라이브 운영 체제 전환 — 6개 프로젝트, 누적 10M+ 방문',
+        history_era_mobile: 'iOS와 Android 게임을 출시했습니다.',
+        history_era_ifland: '참여형 공간과 이벤트를 만들었습니다.',
+        history_era_zepeto: 'Get Train 등 브랜드 월드를 만들고 운영했습니다.',
+        history_era_roblox: '6개 프로젝트를 운영하며 누적 방문 1,120만 회를 넘겼습니다.',
         history_awards_label: '수상 경력',
 
         // S5 주요 ROBLOX 게임
@@ -124,8 +174,14 @@ const DECK_I18N = {
         titles_genre_tomato: '시뮬레이션 / 인크리멘탈 시뮬레이터',
         titles_genre_rng: '시뮬레이션 / 인크리멘탈 시뮬레이터',
 
-        // S6 CASE STUDIES
-        case_title: '자체 개발·운영 게임',
+        // S6 UGC 제작
+        ugcworks_title: '고퀄리티 UGC 직접 제작',
+        ugcworks_p1: '제작 난이도가 높은 고품질 UGC 제작',
+        ugcworks_p2: '다양한 부위와 소재, 애니메이션까지 제작',
+        ugcworks_p3: '게임과 연동한 UGC 판매 프로세스 구축',
+
+        // S7 CASE STUDIES
+        case_title: '다양한 장르의 게임을 개발·운영하며, 로블록스 플레이어의 취향과 경험을 연구 중',
         case_tfr_sub: '멀티플레이 경쟁 · 라이브 운영',
         case_tfr_1: '상승하는 물을 피해 타워를 오르는 멀티플레이 레이스',
         case_tfr_2: '순위 경쟁과 Slap·아이템을 활용한 플레이어 간 견제',
@@ -137,7 +193,7 @@ const DECK_I18N = {
         case_tomato_3: '성장 변화를 직접 체감하는 액션 플레이',
         case_tomato_4: '간단한 조작과 반복 강화를 결합한 플레이 구조',
 
-        // S7 UGC x GAMEPLAY
+        // S8 UGC x GAMEPLAY
         ugc_title: '무료 UGC를 게임 루프의 일부로 설계',
         ugc_afk_sub: '클래식 미니게임과 UGC 수집을 결합한 캐주얼 아케이드',
         ugc_afk_1: '클래식 미니게임 플레이',
@@ -150,18 +206,38 @@ const DECK_I18N = {
         ugc_rng_3: 'Coin으로 Limited UGC 획득',
         ugc_rng_4: '이벤트 기반 희귀 보상 수집',
 
-        // S8 라이브 운영
+        // S9 라이브 운영
         liveops_label: '실제 라이브 운영 사례',
         liveops_title: '출시 이후 운영',
         liveops_lead: '출시 이후의 운영까지 게임 개발의 일부로 봅니다.',
         liveops_seasonal_desc: '기간 한정 경쟁 콘텐츠',
 
-        // S9 글로벌 프로젝트
+        // S10 개발 중인 게임
+        development_title: '개발 중인 게임',
+        development_town_1: '거대한 타워 빌딩이 있는 마을 탐험',
+        development_town_2: 'AFK·타워 OBBY·FINDING으로 코인 수집 및 UGC 교환',
+        development_tower_1: '로블록스 정통 R6 타워 OBBY',
+        development_tower_2: '타워를 오르고 포인트를 모아 UGC로 교환',
+        development_ducky_1: '주사위를 굴려 오리를 수집하고, 함께 점프해 장애물 돌파',
+        development_ducky_2: '착용 오리 수에 따라 스피드·점프 횟수 증가',
+        development_weapon_1: '몬스터 처치 후 코인으로 무기와 주문서 구매',
+        development_weapon_2: '+10 강화 성공 시 실제 UGC 무기로 교환',
+
+        // S11 기획 단계 게임
+        planning_title: '기획 중인 게임',
+        planning_hvs_1: '해커·시큐리티 두 진영의 경쟁',
+        planning_hvs_2: '상대 진영의 보안 시스템 해킹',
+        planning_star_1: '성공과 실패를 반복하는 로켓 발사 도전',
+        planning_star_2: '화성 도달 후 인류의 새 정착지 개척',
+        planning_tomato_1: 'TOMATO SPLATTER SIMULATOR의 확장판',
+        planning_tomato_2: '디아블로식 액션 RPG와 다양한 옵션 장비 성장',
+
+        // S12 클로징
+        closing_body: '트리플엔게임즈는 자체 게임 개발과 라이브 운영 경험을 바탕으로, 파트너와 함께 지속적으로 성장하는 ROBLOX 게임을 만들어갑니다.',
+
+        // 부록 A1 글로벌 프로젝트
         global_desc1: 'JR동일본, 네이버제트와 함께 진행한 도쿄 야마노테선을 배경으로 제작된 게임형 체험 프로젝트',
         global_desc2: 'JRE WALLET(블록체인 기반 전자지갑) 연동 이벤트 시스템 개발 및 운영',
-
-        // S10 클로징
-        closing_body: '트리플엔게임즈는 자체 게임 개발과 라이브 운영 경험을 바탕으로, 파트너와 함께 지속적으로 성장하는 ROBLOX 게임을 만들어갑니다.',
 
         // 이미지 대체 텍스트
         alt_game_tfr: 'TOWER FLOOD RACE 게임 썸네일',
@@ -174,10 +250,18 @@ const DECK_I18N = {
         alt_ugc_rng: 'FREE UGC RNG 수집 플레이 화면',
         alt_event_top100: '2-Week Top 100 Challenge 이벤트 배너',
         alt_event_ducky: 'Golden Ducky Drop 이벤트 배너',
+        alt_development_town: 'FREE UGC TOWN 게임 아트',
+        alt_development_tower: 'FREE UGC TOWER 게임 아트',
+        alt_development_ducky: 'DUCKY RNG 게임 아트',
+        alt_development_weapon: 'ENCHANTED WEAPON 게임 아트',
+        alt_planning_hvs: 'HACKER VS SECURITY 게임 아트',
+        alt_planning_star: 'STAR REACH 게임 아트',
+        alt_planning_tomato: 'TOMATO SPLATTER 2 게임 아트',
         alt_global_1: 'Get Train 월드 플레이 화면',
         alt_global_2: 'Get Train × JRE WALLET 앱 연동 캠페인 배너',
         alt_global_3: 'Get Train × JRE WALLET 연동 5ZEM 증정 캠페인 배너',
-        alt_global_4: 'Get Train 무료 위시 아이템 배너'
+        alt_global_4: 'Get Train 무료 위시 아이템 배너',
+        alt_ugcworks: 'NNN GAMES 제작 UGC 아이템 {{n}}'
     },
 
     en: {
@@ -185,9 +269,14 @@ const DECK_I18N = {
         ui_prev: 'Prev',
         ui_next: 'Next',
         ui_lang_group: 'Select language',
+        ui_fullscreen: 'Fullscreen',
+        ui_fullscreen_exit: 'Exit fullscreen',
         ui_deck_label: 'NNN GAMES company introduction slides',
         ui_dot: 'Go to slide {{n}}',
+        ui_dot_appendix: 'Go to appendix slide {{n}}',
         ui_slide_position: 'Slide {{current}} of {{total}}',
+        ui_appendix: 'Appendix',
+        ui_appendix_position: 'Appendix {{current}} of {{total}}',
 
         cover_subtitle: 'ROBLOX Game & UGC Development Studio',
         cover_ceo: 'CEO: Hyunseok Oh, nnnceo@triplengames.com',
@@ -206,18 +295,17 @@ const DECK_I18N = {
         about_cap3_desc: 'Connecting Free/Limited UGC to gameplay and reward loops',
         about_pipeline_caption: 'Plan & Build → Launch → Live Ops → Data-driven Improvement',
 
-        people_title: 'The People Behind the Games',
-        people_lead: 'Design, engineering, art, and operations sit in one team. A small org decides fast and ships the decision immediately.',
+        people_title: 'NNN Team',
+        people_lead: 'A lean team makes decisions quickly and puts them into action right away.',
         people_badge: 'Design → Build → Art → Operate, in one team',
         people_avatar_alt: 'NNN GAMES team member Roblox avatar — {{name}}',
 
-        history_title: 'Our Track Record',
-        history_lead: 'Starting from mobile games, moving through metaverse platforms, and now building and operating our own titles on ROBLOX.',
+        history_title: 'Proven Across Platforms. Now Building on Roblox.',
         history_period_roblox: '2026 – Present',
-        history_era_mobile: 'Mobile game development — began with iOS/Android titles',
-        history_era_ifland: 'Metaverse platform content — built participatory spaces and events',
-        history_era_zepeto: 'ZEPETO world development and operations — including JR EAST × NAVER Z Get Train',
-        history_era_roblox: 'Shifted to in-house development and live operations — 6 projects, 10M+ total visits',
+        history_era_mobile: 'Shipped games on iOS and Android.',
+        history_era_ifland: 'Created interactive spaces and events.',
+        history_era_zepeto: 'Built and operated branded worlds, including Get Train.',
+        history_era_roblox: '6 live experiences. 11.2M+ visits.',
         history_awards_label: 'Awards',
 
         titles_title: 'Key ROBLOX Titles',
@@ -226,7 +314,12 @@ const DECK_I18N = {
         titles_genre_tomato: 'Simulation / Incremental Simulator',
         titles_genre_rng: 'Simulation / Incremental Simulator',
 
-        case_title: 'In-House Development & Live Ops',
+        ugcworks_title: 'High-Quality UGC, Made In-House',
+        ugcworks_p1: 'High-difficulty, high-quality UGC production',
+        ugcworks_p2: 'Every body slot and material — animation included',
+        ugcworks_p3: 'A UGC sales pipeline wired into our games',
+
+        case_title: 'We develop and operate games across genres to study Roblox players’ preferences and experiences.',
         case_tfr_sub: 'Multiplayer competition · Live operations',
         case_tfr_1: 'A multiplayer race up a tower while escaping rising water',
         case_tfr_2: 'Rank competition with Slap and item-based player interference',
@@ -255,10 +348,28 @@ const DECK_I18N = {
         liveops_lead: 'We treat post-launch operations as part of game development.',
         liveops_seasonal_desc: 'Limited-time competitive content',
 
-        global_desc1: "A game-style experience project set on Tokyo's Yamanote Line, produced with JR East and NAVER Z",
-        global_desc2: 'Development and operation of an event system integrated with JRE WALLET (a blockchain-based wallet)',
+        development_title: 'Games in Development',
+        development_town_1: 'Explore a town built around a giant tower',
+        development_town_2: 'Earn coins through AFK, tower obby, and finding play to trade for UGC',
+        development_tower_1: 'A classic Roblox R6 tower obby',
+        development_tower_2: 'Climb towers, earn points, and trade them for UGC',
+        development_ducky_1: 'Roll dice to collect Duckies, then jump with them to clear obstacles',
+        development_ducky_2: 'More equipped Duckies boost speed and jump count',
+        development_weapon_1: 'Defeat monsters to earn coins for weapons and spellbooks',
+        development_weapon_2: 'Successful +10 upgrades trade for actual UGC weapons',
+
+        planning_title: 'Games in Planning',
+        planning_hvs_1: 'Compete as Hackers or Security',
+        planning_hvs_2: 'Hack the opposing side’s security systems',
+        planning_star_1: 'Repeat rocket launches through success and failure',
+        planning_star_2: 'Reach Mars and establish humanity’s next settlement',
+        planning_tomato_1: 'An expansion of TOMATO SPLATTER SIMULATOR',
+        planning_tomato_2: 'Diablo-style action RPG play with growth through gear options',
 
         closing_body: 'Backed by in-house development and live operations experience, Triple N Games builds ROBLOX games that keep growing alongside our partners.',
+
+        global_desc1: "A game-style experience project set on Tokyo's Yamanote Line, produced with JR East and NAVER Z",
+        global_desc2: 'Development and operation of an event system integrated with JRE WALLET (a blockchain-based wallet)',
 
         alt_game_tfr: 'TOWER FLOOD RACE game thumbnail',
         alt_game_tomato: 'TOMATO SPLATTER SIMULATOR game thumbnail',
@@ -270,10 +381,18 @@ const DECK_I18N = {
         alt_ugc_rng: 'FREE UGC RNG collection gameplay screenshot',
         alt_event_top100: '2-Week Top 100 Challenge event banner',
         alt_event_ducky: 'Golden Ducky Drop event banner',
+        alt_development_town: 'FREE UGC TOWN game art',
+        alt_development_tower: 'FREE UGC TOWER game art',
+        alt_development_ducky: 'DUCKY RNG game art',
+        alt_development_weapon: 'ENCHANTED WEAPON game art',
+        alt_planning_hvs: 'HACKER VS SECURITY game art',
+        alt_planning_star: 'STAR REACH game art',
+        alt_planning_tomato: 'TOMATO SPLATTER 2 game art',
         alt_global_1: 'Get Train world gameplay screenshot',
         alt_global_2: 'Get Train × JRE WALLET app-linking campaign banner',
         alt_global_3: 'Get Train × JRE WALLET 5ZEM giveaway campaign banner',
-        alt_global_4: 'Get Train free wish item banner'
+        alt_global_4: 'Get Train free wish item banner',
+        alt_ugcworks: 'UGC item {{n}} produced by NNN GAMES'
     },
 
     ja: {
@@ -281,9 +400,14 @@ const DECK_I18N = {
         ui_prev: '前へ',
         ui_next: '次へ',
         ui_lang_group: '言語を選択',
+        ui_fullscreen: '全画面表示',
+        ui_fullscreen_exit: '全画面表示を終了',
         ui_deck_label: 'NNN GAMES 会社紹介スライド',
         ui_dot: 'スライド{{n}}へ移動',
+        ui_dot_appendix: '付録スライド{{n}}へ移動',
         ui_slide_position: '{{total}}枚中{{current}}枚目',
+        ui_appendix: '付録',
+        ui_appendix_position: '付録 {{current}} / {{total}}',
 
         cover_subtitle: 'ROBLOX Game & UGC Development Studio',
         cover_ceo: '代表 : オ・ヒョンソク, nnnceo@triplengames.com',
@@ -302,18 +426,17 @@ const DECK_I18N = {
         about_cap3_desc: 'Free/Limited UGCをゲームプレイと報酬ループに接続',
         about_pipeline_caption: '企画・開発 → リリース → ライブ運営 → データに基づく改善',
 
-        people_title: 'ゲームをつくる人たち',
-        people_lead: '企画・開発・アート・運営が一つのチームに同居しています。小さな組織が素早く判断し、すぐに反映します。',
+        people_title: 'NNN Team',
+        people_lead: '少人数のチームだからこそ、素早く意思決定し、すぐに実行に移します。',
         people_badge: '企画 → 開発 → アート → 運営、ワンチームで',
         people_avatar_alt: 'NNN GAMESチームメンバーのRobloxアバター — {{name}}',
 
-        history_title: 'これまでの歩み',
-        history_lead: 'モバイルゲームから出発し、メタバースプラットフォームを経て、現在はROBLOXで自社ゲームを開発・運営しています。',
+        history_title: '複数のプラットフォームで培った経験を、Robloxへ。',
         history_period_roblox: '2026 ~ 現在',
-        history_era_mobile: 'モバイルゲーム開発 — iOS/Androidタイトルからスタート',
-        history_era_ifland: 'メタバースプラットフォームコンテンツ制作 — 参加型スペース・イベントを構築',
-        history_era_zepeto: 'ZEPETOワールドの開発・運営 — JR EAST × NAVER Z Get Train を含む',
-        history_era_roblox: '自社ゲーム開発・ライブ運営体制へ移行 — 6プロジェクト、累計1,000万+訪問',
+        history_era_mobile: 'iOS・Android向けゲームをリリース。',
+        history_era_ifland: '参加型スペースとイベントを制作。',
+        history_era_zepeto: 'Get Trainを含むブランドワールドを開発・運営。',
+        history_era_roblox: '6つのプロジェクトを運営。累計1,120万回以上の訪問。',
         history_awards_label: '受賞歴',
 
         titles_title: '主要ROBLOXゲーム',
@@ -322,7 +445,12 @@ const DECK_I18N = {
         titles_genre_tomato: 'シミュレーション / インクリメンタルシミュレーター',
         titles_genre_rng: 'シミュレーション / インクリメンタルシミュレーター',
 
-        case_title: '自社開発・運営ゲーム',
+        ugcworks_title: 'ハイクオリティUGCを自社制作',
+        ugcworks_p1: '制作難易度の高い高品質UGCを制作',
+        ugcworks_p2: '多様な部位と素材、アニメーションまで制作',
+        ugcworks_p3: 'ゲームと連動したUGC販売プロセスを構築',
+
+        case_title: '多彩なジャンルのゲームを開発・運営しながら、Robloxプレイヤーの好みとゲーム体験を研究しています。',
         case_tfr_sub: 'マルチプレイ競争・ライブ運営',
         case_tfr_1: '上昇する水を避けてタワーを登るマルチプレイレース',
         case_tfr_2: '順位競争とSlap・アイテムを活用したプレイヤー間の牽制',
@@ -351,10 +479,28 @@ const DECK_I18N = {
         liveops_lead: 'リリース後の運営までをゲーム開発の一部と捉えています。',
         liveops_seasonal_desc: '期間限定の競争コンテンツ',
 
-        global_desc1: 'JR東日本、NAVER Zと共に進めた、東京・山手線を舞台にしたゲーム型体験プロジェクト',
-        global_desc2: 'JRE WALLET（ブロックチェーン基盤の電子ウォレット）連携イベントシステムの開発・運営',
+        development_title: '開発中のゲーム',
+        development_town_1: '巨大なタワービルがそびえる街を探索',
+        development_town_2: 'AFK・タワーObby・探索でコインを集め、UGCと交換',
+        development_tower_1: 'Roblox定番のR6タワーObby',
+        development_tower_2: 'タワーを登ってポイントを集め、UGCと交換',
+        development_ducky_1: 'サイコロを振ってダッキーを集め、一緒にジャンプして障害物を突破',
+        development_ducky_2: '装備するダッキーの数に応じて速度とジャンプ回数が増加',
+        development_weapon_1: 'モンスターを倒してコインを獲得し、武器とスペルブックを購入',
+        development_weapon_2: '+10強化の成功で実際のUGC武器と交換',
+
+        planning_title: '企画中のゲーム',
+        planning_hvs_1: 'ハッカーとセキュリティ、二つの陣営で競う',
+        planning_hvs_2: '敵陣営のセキュリティシステムをハッキング',
+        planning_star_1: '成功と失敗を繰り返すロケット打ち上げへの挑戦',
+        planning_star_2: '火星に到達し、人類の新たな定住地を開拓',
+        planning_tomato_1: 'TOMATO SPLATTER SIMULATORの拡張版',
+        planning_tomato_2: 'ディアブロ風アクションRPGと多彩なオプション装備による成長',
 
         closing_body: 'トリプルエヌゲームズは、自社ゲーム開発とライブ運営の経験をもとに、パートナーと共に成長し続けるROBLOXゲームを作っていきます。',
+
+        global_desc1: 'JR東日本、NAVER Zと共に進めた、東京・山手線を舞台にしたゲーム型体験プロジェクト',
+        global_desc2: 'JRE WALLET（ブロックチェーン基盤の電子ウォレット）連携イベントシステムの開発・運営',
 
         alt_game_tfr: 'TOWER FLOOD RACE ゲームサムネイル',
         alt_game_tomato: 'TOMATO SPLATTER SIMULATOR ゲームサムネイル',
@@ -366,10 +512,18 @@ const DECK_I18N = {
         alt_ugc_rng: 'FREE UGC RNG の収集プレイ画面',
         alt_event_top100: '2-Week Top 100 Challenge イベントバナー',
         alt_event_ducky: 'Golden Ducky Drop イベントバナー',
+        alt_development_town: 'FREE UGC TOWN ゲームアート',
+        alt_development_tower: 'FREE UGC TOWER ゲームアート',
+        alt_development_ducky: 'DUCKY RNG ゲームアート',
+        alt_development_weapon: 'ENCHANTED WEAPON ゲームアート',
+        alt_planning_hvs: 'HACKER VS SECURITY ゲームアート',
+        alt_planning_star: 'STAR REACH ゲームアート',
+        alt_planning_tomato: 'TOMATO SPLATTER 2 ゲームアート',
         alt_global_1: 'Get Train ワールドのプレイ画面',
         alt_global_2: 'Get Train × JRE WALLET アプリ連携キャンペーンバナー',
         alt_global_3: 'Get Train × JRE WALLET 連携 5ZEM プレゼントキャンペーンバナー',
-        alt_global_4: 'Get Train 無料ウィッシュアイテムバナー'
+        alt_global_4: 'Get Train 無料ウィッシュアイテムバナー',
+        alt_ugcworks: 'NNN GAMES制作のUGCアイテム{{n}}'
     }
 };
 

@@ -11,6 +11,7 @@
     var LANGS = ['ko', 'en', 'ja'];
     var STORE_KEY = 'language';
     var SWIPE_MIN = 60;
+    var IDLE_MS = 2600;   // 전체화면에서 컨트롤을 감추기까지의 무입력 시간
 
     var slidesData = window.DECK_SLIDES || [];
     var i18n = window.DECK_I18N || {};
@@ -22,8 +23,12 @@
     var dotsBox = document.getElementById('deckDots');
     var railFill = document.getElementById('deckRail');
     var curEl = document.getElementById('deckCurrent');
+    var sepEl = document.getElementById('deckSep');
     var totalEl = document.getElementById('deckTotal');
+    var nextLabel = document.getElementById('deckNextLabel');
     var announcer = document.getElementById('deckAnnounce');
+    var fullBtn = document.getElementById('deckFull');
+    var root = document.documentElement;
 
     var params = new URLSearchParams(window.location.search);
     var showAll = params.get('preview') === 'all';
@@ -33,6 +38,11 @@
     var dots = [];
     var updaters = [];    // 스크립트로 생성한 노드의 다국어 갱신자
     var index = 0;
+    var mainTotal = 0;      // 본편 장수 (부록 제외)
+    var appendixTotal = 0;  // 부록 장수
+    var faux = false;     // 전체화면 요청이 거부됐을 때의 대체 모드
+    var canFull = supportsFull();
+    var idleTimer = null;
 
     /* ------------------------------------------------------------------ 언어 */
 
@@ -104,6 +114,8 @@
             btn.setAttribute('aria-pressed', String(btn.getAttribute('data-lang') === lang));
         });
 
+        labelFull();
+        labelNav();
         labelSlides();
     }
 
@@ -125,18 +137,27 @@
                 el.remove();
                 return;
             }
-            slides.push({ data: data, el: el });
+            slides.push({ data: data, el: el, appendix: data.appendix === true });
+        });
+
+        // 본편과 부록은 번호를 따로 센다 — 카운터/진행 바/라벨이 모두 이 번호를 쓴다.
+        slides.forEach(function (slide) {
+            slide.num = slide.appendix ? ++appendixTotal : ++mainTotal;
+            if (slide.appendix) slide.el.setAttribute('data-appendix', '');
         });
 
         slides.forEach(function (slide) {
             var target = slide.el.querySelector('[data-deck-render="avatars"]');
-            if (target) renderAvatars(target, slide.data.avatars || []);
+            if (target) renderAvatars(target, slide.data.avatars || [], slide.data.backdropMarks || []);
 
             target = slide.el.querySelector('[data-deck-render="eras"]');
             if (target) renderEras(target, slide.data.eras || []);
 
             target = slide.el.querySelector('[data-deck-render="awards"]');
             if (target) renderAwards(target, slide.data.awards || []);
+
+            target = slide.el.querySelector('[data-deck-render="ugcworks"]');
+            if (target) renderUgcWorks(target, slide.data.works || []);
         });
     }
 
@@ -154,11 +175,24 @@
         return box;
     }
 
-    function renderAvatars(root, avatars) {
+    function renderAvatars(root, avatars, backdropMarks) {
         root.textContent = '';
+
+        backdropMarks.forEach(function (mark) {
+            if (!mark.image) return;
+
+            var image = new Image();
+            image.className = 'people-emblem people-emblem-' + (mark.side || 'left');
+            image.src = 'assets/' + mark.image;
+            image.alt = '';
+            image.loading = 'lazy';
+            image.setAttribute('aria-hidden', 'true');
+            root.appendChild(image);
+        });
 
         avatars.forEach(function (person) {
             var card = el('figure', 'avatar-card');
+            if (person.featured) card.classList.add('avatar-card-featured');
             var frame;
 
             if (person.image) {
@@ -294,12 +328,34 @@
         root.appendChild(list);
     }
 
+    /* S6 — UGC 썸네일 그리드. 파일명만 데이터로 두고 대체 텍스트는 번호로 붙인다. */
+    function renderUgcWorks(root, works) {
+        root.textContent = '';
+
+        works.forEach(function (file, i) {
+            if (!file) {
+                root.appendChild(placeholder('ugc-cell', 'UGC'));
+                return;
+            }
+            var cell = el('div', 'ugc-cell');
+            var img = new Image();
+            img.src = 'assets/' + file;
+            img.loading = 'lazy';
+            img.alt = t('alt_ugcworks', { n: i + 1 });
+            updaters.push(function () { img.alt = t('alt_ugcworks', { n: i + 1 }); });
+            cell.appendChild(img);
+            root.appendChild(cell);
+        });
+    }
+
     function buildDots() {
         dotsBox.textContent = '';
         dots = slides.map(function (slide, i) {
             var dot = document.createElement('button');
             dot.type = 'button';
             dot.className = 'deck-dot';
+            // 부록 도트는 속을 비우고 앞에 간격을 둬 본편과의 경계를 보이게 한다(deck.css).
+            if (slide.appendix) dot.classList.add('deck-dot-appendix');
             dot.addEventListener('click', function () { go(i); });
             dotsBox.appendChild(dot);
             return dot;
@@ -312,16 +368,29 @@
         return n < 10 ? '0' + n : String(n);
     }
 
+    /* 위치 문구는 본편/부록을 따로 센다. 예: '3 / 9 슬라이드' vs '부록 1 / 1' */
+    function position(slide) {
+        return t(slide.appendix ? 'ui_appendix_position' : 'ui_slide_position', {
+            current: slide.num,
+            total: slide.appendix ? appendixTotal : mainTotal
+        });
+    }
+
     function labelSlides() {
-        slides.forEach(function (slide, i) {
-            slide.el.setAttribute('aria-label', t('ui_slide_position', {
-                current: i + 1,
-                total: slides.length
-            }));
+        slides.forEach(function (slide) {
+            slide.el.setAttribute('aria-label', position(slide));
         });
         dots.forEach(function (dot, i) {
-            dot.setAttribute('aria-label', t('ui_dot', { n: i + 1 }));
+            var slide = slides[i];
+            dot.setAttribute('aria-label', t(slide.appendix ? 'ui_dot_appendix' : 'ui_dot', { n: slide.num }));
         });
+    }
+
+    /* 본편 마지막에서는 다음 버튼이 부록으로 넘어간다는 것을 미리 알려 준다. */
+    function labelNav() {
+        var next = slides[index + 1];
+        var toAppendix = !!next && next.appendix && !slides[index].appendix;
+        nextLabel.textContent = t(toAppendix ? 'ui_appendix' : 'ui_next');
     }
 
     function go(next, options) {
@@ -344,17 +413,25 @@
             dot.setAttribute('aria-current', i === index ? 'true' : 'false');
         });
 
+        var slide = slides[index];
+
         prevBtn.disabled = index === 0;
         nextBtn.disabled = index === slides.length - 1;
-        curEl.textContent = pad(index + 1);
-        railFill.style.width = ((index + 1) / slides.length * 100) + '%';
+        labelNav();
+
+        // 부록에서는 '01 / 09' 대신 라벨만 남긴다(2장 이상이면 '부록 1 / 2').
+        curEl.textContent = slide.appendix
+            ? (appendixTotal > 1 ? position(slide) : t('ui_appendix'))
+            : pad(slide.num);
+        sepEl.hidden = slide.appendix;
+        totalEl.hidden = slide.appendix;
+
+        // 진행 바는 본편 기준이다 — 클로징에서 100% 가 되고 부록에서도 그대로 둔다.
+        railFill.style.width = (slide.appendix ? 100 : slide.num / (mainTotal || 1) * 100) + '%';
 
         if (!opts.silent) {
-            var heading = slides[index].el.querySelector('h1, h2, .sec-label');
-            announcer.textContent = t('ui_slide_position', {
-                current: index + 1,
-                total: slides.length
-            }) + (heading ? ' — ' + heading.textContent : '');
+            var heading = slide.el.querySelector('h1, h2, .sec-label');
+            announcer.textContent = position(slide) + (heading ? ' — ' + heading.textContent : '');
         }
 
         // 첫 진입(1번 슬라이드, 해시 없음)에서는 URL 을 건드리지 않는다.
@@ -372,11 +449,112 @@
         return isNaN(n) ? 0 : Math.max(0, Math.min(n, slides.length - 1));
     }
 
+    /* -------------------------------------------------------------- 전체화면 */
+
+    function fullEl() {
+        return document.fullscreenElement || document.webkitFullscreenElement || null;
+    }
+
+    function isFull() {
+        return !!fullEl() || faux;
+    }
+
+    /* iPhone Safari 처럼 요소 전체화면이 아예 없는 환경, iframe 삽입처럼 정책으로 막힌
+     * 환경에서는 버튼을 노출하지 않는다(눌러도 아무 일도 일어나지 않기 때문). */
+    function supportsFull() {
+        if (!(document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen)) {
+            return false;
+        }
+        var allowed = document.fullscreenEnabled;
+        if (allowed === undefined) allowed = document.webkitFullscreenEnabled;
+        return allowed !== false;
+    }
+
+    function labelFull() {
+        var text = t(isFull() ? 'ui_fullscreen_exit' : 'ui_fullscreen');
+        fullBtn.setAttribute('aria-label', text);
+        fullBtn.setAttribute('title', text);
+        fullBtn.setAttribute('aria-pressed', String(isFull()));
+    }
+
+    function syncFull() {
+        // CSS 가 이 클래스를 보고 컨트롤을 띄우고 캔버스 상한을 푼다(deck.css).
+        root.classList.toggle('is-fullscreen', isFull());
+        labelFull();
+        wake();
+    }
+
+    function enterFaux() {
+        // 요청이 거부된 경우 — 컨트롤만 접어 창 안에서 최대한 넓게 쓴다.
+        faux = true;
+        syncFull();
+    }
+
+    function toggleFull() {
+        if (!canFull) return;
+
+        if (isFull()) {
+            var exit = document.exitFullscreen || document.webkitExitFullscreen;
+            if (fullEl() && exit) exit.call(document);
+            // 대체 모드는 알려 줄 이벤트가 없으므로 여기서 직접 되돌린다.
+            if (faux) {
+                faux = false;
+                syncFull();
+            }
+            return;
+        }
+
+        var request = root.requestFullscreen || root.webkitRequestFullscreen;
+        var pending;
+        try {
+            pending = request.call(root);
+        } catch (e) {
+            enterFaux();
+            return;
+        }
+        // 성공하면 fullscreenchange 가 상태를 반영한다. 거부되면 대체 모드로 넘어간다.
+        if (pending && typeof pending.catch === 'function') pending.catch(enterFaux);
+    }
+
+    function onFullChange() {
+        if (fullEl()) faux = false;
+        syncFull();
+    }
+
+    /* 무입력이 이어지면 컨트롤과 커서를 감춘다. 아무 입력이 들어오면 곧바로 되돌린다. */
+    function wake() {
+        if (idleTimer) {
+            window.clearTimeout(idleTimer);
+            idleTimer = null;
+        }
+        root.classList.remove('is-idle');
+        if (!isFull()) return;
+
+        idleTimer = window.setTimeout(function () {
+            idleTimer = null;
+            root.classList.add('is-idle');
+        }, IDLE_MS);
+    }
+
     /* ------------------------------------------------------------------ 조작 */
 
     function bind() {
         prevBtn.addEventListener('click', function () { go(index - 1); });
         nextBtn.addEventListener('click', function () { go(index + 1); });
+        fullBtn.addEventListener('click', function () {
+            toggleFull();
+            // 초점이 남아 있으면 Space 가 슬라이드 넘김 대신 전체화면 토글로 먹힌다.
+            fullBtn.blur();
+        });
+
+        document.addEventListener('fullscreenchange', onFullChange);
+        document.addEventListener('webkitfullscreenchange', onFullChange);
+
+        ['pointermove', 'pointerdown', 'keydown', 'touchstart', 'wheel'].forEach(function (type) {
+            document.addEventListener(type, function () {
+                if (isFull()) wake();
+            }, { passive: true });
+        });
 
         document.querySelectorAll('.deck-lang').forEach(function (btn) {
             btn.addEventListener('click', function () {
@@ -409,6 +587,18 @@
                 case 'End':
                     e.preventDefault();
                     go(slides.length - 1);
+                    break;
+                case 'f':
+                case 'F':
+                    e.preventDefault();
+                    toggleFull();
+                    break;
+                case 'Escape':
+                    // 네이티브 전체화면은 브라우저가 닫아 준다. 대체 모드만 직접 처리한다.
+                    if (faux) {
+                        e.preventDefault();
+                        toggleFull();
+                    }
                     break;
             }
         });
@@ -450,7 +640,8 @@
 
     buildDots();
     bind();
-    totalEl.textContent = String(slides.length);
+    fullBtn.hidden = !canFull;
+    totalEl.textContent = pad(mainTotal);
     applyLang();
     go(fromHash(), { silent: true });
 })();

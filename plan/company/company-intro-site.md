@@ -1,7 +1,7 @@
 # 회사 소개 페이지(`/nnn`) 구축 기획서
 
 > 원본: `plan/company/company_intro.pdf` (8슬라이드, 16:9)
-> 확장: 원본 ABOUT 슬라이드 뒤에 **People / History** 2장을 신규 추가 → 총 10슬라이드
+> 확장: 원본 ABOUT 슬라이드 뒤에 **People / History** 2장을 신규 추가 → 본편 10장 + 부록 1장 = 총 11슬라이드
 > 산출물: `https://www.triplengames.com/nnn` 로 접근하는 파워포인트 형식의 회사 소개 페이지
 > 노출 텍스트는 KO / EN / JA 3개 언어를 모두 채운다.
 
@@ -15,7 +15,7 @@
 | 기존 사이트 연결 | **없음** — 헤더/푸터/사이트맵/네비게이션 어디에도 링크하지 않음 |
 | 표현 형식 | PPT 형식(1화면 = 1슬라이드), "다음" 버튼으로 페이지 전환 |
 | 다국어 | KO / EN / JA, 사이트 언어 설정에 맞춰 자동 적용 |
-| 슬라이드 수 | **10장** = 원본 PDF 8장 + 신규 People / History 2장 (ABOUT 다음 위치) |
+| 슬라이드 수 | **11장** = **본편 10장 + 부록 1장**<br>원본 PDF 8장 + 신규 People / History 2장(ABOUT 다음) + 신규 UGC PRODUCTION 1장(주요 게임 다음)<br>GLOBAL PROJECT EXPERIENCE 만 클로징 뒤 부록으로 이동(2026-07-30) |
 
 ---
 
@@ -27,7 +27,7 @@
 nnn/
   index.html      ← /nnn 및 /nnn/ 모두 이 파일로 서빙됨
   deck.css        ← 슬라이드 전용 스타일 (Tailwind 빌드와 분리)
-  deck.js         ← 슬라이드 전환 / 언어 / 키보드 / 스와이프 컨트롤러
+  deck.js         ← 슬라이드 전환 / 언어 / 키보드 / 스와이프 / 전체화면 컨트롤러
   slides.js       ← 슬라이드 콘텐츠 데이터 (KO/EN/JA)
   assets/         ← 슬라이드 이미지 (PDF에서 추출)
 ```
@@ -74,10 +74,27 @@ nnn/
   - 하단 도트 인디케이터 클릭 → 해당 슬라이드로 점프
 - 전환 애니메이션: 200ms 크로스페이드 + 8px 슬라이드업. `prefers-reduced-motion: reduce` 시 애니메이션 제거.
 
+### 부록 (appendix)
+- 질문이 들어올 때만 펼치는 자료는 본편 흐름에서 빼고 클로징 뒤에 둔다. `slides.js` 의 `appendix: true` 로 지정.
+- 카운터는 본편만 센다(`04 / 10`). 부록 슬라이드에서는 숫자 대신 `부록 1 / 2` 라벨만 표시(부록이 1장이면 `부록`).
+- 진행 바는 클로징에서 100% 가 되고 부록에서도 100% 를 유지한다.
+- 도트는 본편과 부록 사이에 간격을 두고, 부록 도트는 속을 비운다.
+- 본편 마지막(클로징)의 `다음` 버튼 라벨이 `부록` 으로 바뀌어 다음이 본편이 아님을 알린다.
+- 슬라이드에는 `APPENDIX` 알약 라벨 + 하단 워터마크 `NNN GAMES · APPENDIX` 를 붙인다.
+- 해시 딥링크는 전체 순번 그대로다(부록 A1 = `#/11`).
+- 현재 부록: `A1` GLOBAL PROJECT EXPERIENCE 1장.
+
+### 전체화면
+- 상단바 우측 `⛶` 버튼 / 키보드 `F` 로 토글. 종료는 같은 조작 또는 `Esc`(브라우저 기본).
+- 진입하면 상·하단 바와 진행 바를 슬라이드 위로 띄우고, 16:9 캔버스가 화면을 꽉 채운다(1rem 상한 해제).
+- 2.6초간 입력이 없으면 컨트롤과 마우스 커서를 감춘다. 아무 입력이 들어오면 즉시 복귀.
+- 모바일 세로 화면에서는 컨트롤을 흐름에 그대로 둔다(슬라이드가 스크롤되므로 본문을 가리면 안 된다).
+- 전체화면 API 가 없거나 정책으로 막힌 환경(iPhone Safari, iframe 등)에서는 버튼을 노출하지 않는다.
+
 ### 상태 / 딥링크
 - URL 해시 `#/2` 형태로 현재 슬라이드 반영 (`history.replaceState`, 뒤로가기 오염 방지)
 - 새로고침 시 해당 슬라이드 복원
-- 하단에 `03 / 10` 카운터 + 상단 얇은 진행 바
+- 하단에 `03 / 10` 카운터(본편 기준, 부록은 §부록 참조) + 상단 얇은 진행 바
 
 ### 레이아웃
 - 한 슬라이드 = 정확히 1뷰포트. 스크롤 없음(`overflow: hidden`).
@@ -104,7 +121,7 @@ nnn/
 | `--nnn-navy` | `#3D4A5C` | 섹션 라벨(ABOUT NNN GAMES 등) |
 | `--nnn-paper` | `#F7F6F3` | 내지 배경 (종이 질감) |
 | `--nnn-line` | `#D8D5CE` | 구분선 |
-| 액센트 4색 | `#D0342C` / `#1D4ED8` / `#3F9E52` / `#EFC03B` | 슬라이드 6의 4분면 바 |
+| 액센트 4색 | `#D0342C` / `#1D4ED8` / `#3F9E52` / `#EFC03B` | S9 라이브 운영의 4분면 바 (S6 강조 3항목도 같은 카드를 쓴다) |
 
 - 내지 상하좌우의 손그림 오렌지 테두리는 CSS 의사요소 + SVG 테두리로 재현하거나, 원본에서 잘라낸 프레임 PNG를 `background`로 사용.
 - 각 내지 좌하단에 `NNN GAMES` 워터마크 텍스트.
@@ -138,8 +155,8 @@ nnn/
   | 값 | KO | EN | JA |
   |---|---|---|---|
   | `6` | 운영 프로젝트 | Live Projects | 運営プロジェクト |
-  | `10M +` | 누적 방문 | Total Visits | 累計訪問数 |
-  | `100K+` | 커뮤니티 멤버 | Community Members | コミュニティメンバー |
+  | `11.2M+` | 누적 방문 | Total Visits | 累計訪問数 |
+  | `130K+` | 커뮤니티 멤버 | Community Members | コミュニティメンバー |
 - **불릿**: `Original Games / Brand & IP / UGC-driven Content` (공통)
 - **우측 "핵심 역량"** — 제목 KO `핵심 역량` / EN `Core Capabilities` / JA `コア能力`
   - 리드: KO `ROBLOX 게임 개발부터 출시 이후 운영과 UGC 보상 설계까지 하나의 흐름으로 연결합니다.` / EN `From ROBLOX game development to post-launch operations and UGC reward design — connected as one pipeline.` / JA `ROBLOXゲーム開発から、リリース後の運営とUGC報酬設計までを一つの流れでつなぎます。`
@@ -273,14 +290,35 @@ nnn/
 
 | 게임 | 출시 | 지표 | 장르 (KO / EN / JA) |
 |---|---|---|---|
-| TOWER FLOOD RACE | 2026.01.24 | 9.3M visits, 2.2K CCU | 오비 & 플랫포머 / 타워 오비 · Obby & Platformer / Tower Obby · オビー＆プラットフォーマー / タワーオビー |
-| [FREE UGC] AFK or ARCADE GAME `NEW` | 2026.07.04 | 108K visits, 97% rating | 파티 & 캐주얼 / 미니게임 · Party & Casual / Minigame · パーティー＆カジュアル / ミニゲーム |
-| TOMATO SPLATTER SIMULATOR | 2026.04.10 | 1M visits, 164 CCU | 시뮬레이션 / 인크리멘탈 · Simulation / Incremental Simulator · シミュレーション / インクリメンタル |
-| FREE UGC RNG `NEW` | 2026.07.07 | 64K visits | 시뮬레이션 / 인크리멘탈 · Simulation / Incremental Simulator · シミュレーション / インクリメンタル |
+| TOWER FLOOD RACE | 2026.01.24 | 9.4M visits, 2.2K CCU | 오비 & 플랫포머 / 타워 오비 · Obby & Platformer / Tower Obby · オビー＆プラットフォーマー / タワーオビー |
+| [FREE UGC] AFK or ARCADE GAME `NEW` | 2026.07.04 | 375K visits, 97% rating | 파티 & 캐주얼 / 미니게임 · Party & Casual / Minigame · パーティー＆カジュアル / ミニゲーム |
+| TOMATO SPLATTER SIMULATOR | 2026.04.10 | 1.05M visits, 164 CCU | 시뮬레이션 / 인크리멘탈 · Simulation / Incremental Simulator · シミュレーション / インクリメンタル |
+| FREE UGC RNG `NEW` | 2026.07.07 | 113K visits | 시뮬레이션 / 인크리멘탈 · Simulation / Incremental Simulator · シミュレーション / インクリメンタル |
 
-> 지표는 **정적 값**으로 시작한다. 이후 `scripts/update-metrics.js`가 생성하는 데이터와 연동해 자동 갱신하는 것은 2차 과제(§9).
+> 지표는 **정적 값**이다. `scripts/update-metrics.js` 산출물과 연동한 자동 갱신은 2차 과제(§9).
+>
+> **마지막 갱신: 2026-07-30** (데이터 기준일 2026-07-29 23:55 UTC). 출처와 갱신 절차는 `nnn/slides.js` 상단 주석에 정리해 두었다.
+> 갱신 규칙: 과대 표기를 피하려고 항상 내림한다(11,228,586 → `11.2M+`).
+> 데이터로 채울 수 없는 값 — `Peak CCU`(Roblox API 는 현재 접속자만 제공, 최고 기록 없음), 부록 A1 `Get Train` 지표(종료된 ZEPETO 프로젝트로 확정값).
 
-### S6 — CASE STUDIES: 자체 개발·운영 게임
+### S6 — UGC PRODUCTION
+
+> 2026-07-30 신설. 부록으로 만들었다가 같은 날 본편 6번(주요 게임 다음)으로 올렸다 — 자체 제작 역량은 먼저 보여줄 내용이라는 판단.
+
+- 섹션 라벨 `UGC PRODUCTION` (공통)
+- 제목
+  KO `고퀄리티 UGC 직접 제작` / EN `High-Quality UGC, Made In-House` / JA `ハイクオリティUGCを自社制作`
+- 기간 표기: `Since 2024.06` (3개 언어 공통 — 문장 대신 한 줄로 끝낸다)
+- 강조 3항목 (제목은 영문 공통, 설명만 번역)
+  - `HIGH QUALITY` — KO `제작 난이도가 높은 고품질 UGC 제작` / EN `High-difficulty, high-quality UGC production` / JA `制作難易度の高い高品質UGCを制作`
+  - `WIDE COVERAGE` — KO `다양한 부위와 소재, 애니메이션까지 제작` / EN `Every body slot and material — animation included` / JA `多様な部位と素材、アニメーションまで制作`
+  - `IN-GAME SALES` — KO `게임과 연동한 UGC 판매 프로세스 구축` / EN `A UGC sales pipeline wired into our games` / JA `ゲームと連動したUGC販売プロセスを構築`
+- 우측: 제작물 썸네일 **3열 × 4행 = 12장** (`assets/ugc-1.png` ~ `ugc-12.png`, `slides.js` 의 `works` 배열)
+  - 원본이 150×150 카탈로그 썸네일이라 셀을 그보다 크게 잡지 않는다(확대하면 흐려진다).
+  - 배경이 투명한 컷아웃이므로 흰 카드 위에 `object-fit: contain` 으로 얹는다.
+  - 대체 텍스트는 `alt_ugcworks` 한 키에 번호를 채워 쓴다(12개 키를 만들지 않는다).
+
+### S7 — CASE STUDIES: 자체 개발·운영 게임
 - 섹션 라벨: `CASE STUDIES` / 제목 KO `자체 개발·운영 게임` · EN `In-House Development & Live Ops` · JA `自社開発・運営ゲーム`
 - **TOWER FLOOD RACE** — 부제 KO `멀티플레이 경쟁 · 라이브 운영` / EN `Multiplayer competition · Live operations` / JA `マルチプレイ競争・ライブ運営`
   1. KO `상승하는 물을 피해 타워를 오르는 멀티플레이 레이스` / EN `A multiplayer race up a tower while escaping rising water` / JA `上昇する水を避けてタワーを登るマルチプレイレース`
@@ -293,7 +331,7 @@ nnn/
   3. KO `성장 변화를 직접 체감하는 액션 플레이` / EN `Action play where progression is immediately felt` / JA `成長の変化を直接体感するアクションプレイ`
   4. KO `간단한 조작과 반복 강화를 결합한 플레이 구조` / EN `Simple controls paired with repeatable upgrade loops` / JA `簡単な操作と反復強化を組み合わせたプレイ構造`
 
-### S7 — UGC x GAMEPLAY
+### S8 — UGC x GAMEPLAY
 - 섹션 라벨 `UGC x GAMEPLAY` / 제목 KO `무료 UGC를 게임 루프의 일부로 설계` · EN `Designing Free UGC as Part of the Game Loop` · JA `無料UGCをゲームループの一部として設計`
 - **[FREE UGC] AFK OR ARCADE GAME** — 부제 KO `클래식 미니게임과 UGC 수집을 결합한 캐주얼 아케이드` / EN `A casual arcade blending classic minigames with UGC collection` / JA `クラシックミニゲームとUGC収集を組み合わせたカジュアルアーケード`
   1. KO `클래식 미니게임 플레이` / EN `Classic minigame play` / JA `クラシックミニゲームプレイ`
@@ -306,7 +344,7 @@ nnn/
   3. KO `Coin으로 Limited UGC 획득` / EN `Acquiring Limited UGC with coins` / JA `コインでLimited UGCを獲得`
   4. KO `이벤트 기반 희귀 보상 수집` / EN `Event-driven rare reward collection` / JA `イベントベースのレア報酬収集`
 
-### S8 — 실제 라이브 운영 사례
+### S9 — 실제 라이브 운영 사례
 - 섹션 라벨 KO `실제 라이브 운영 사례` / EN `Live Operations in Practice` / JA `実際のライブ運営事例`
 - 제목 KO `출시 이후 운영` / EN `Post-Launch Operations` / JA `リリース後の運営`
 - 리드 KO `출시 이후의 운영까지 게임 개발의 일부로 봅니다.` / EN `We treat post-launch operations as part of game development.` / JA `リリース後の運営までをゲーム開発の一部と捉えています。`
@@ -316,19 +354,6 @@ nnn/
   - `UGC REWARDS` — `Limited UGC` / `Event Rewards` / `Collection`
   - `CONTINUOUS ITERATION` — `Player Data` / `Balance` / `Content Updates`
 - 우측: 2-Week Top 100 Challenge 배너 + Golden Ducky Drop 배너
-
-### S9 — GLOBAL PROJECT EXPERIENCE
-- 섹션 라벨 `GLOBAL PROJECT EXPERIENCE` (공통)
-- 제목 `JR EAST × NAVER Z "Get Train" (2024.09 ~ 2025.12)` (공통)
-- 설명 1
-  KO `JR동일본, 네이버제트와 함께 진행한 도쿄 야마노테선을 배경으로 제작된 게임형 체험 프로젝트`
-  EN `A game-style experience project set on Tokyo's Yamanote Line, produced with JR East and NAVER Z`
-  JA `JR東日本、NAVER Zと共に進めた、東京・山手線を舞台にしたゲーム型体験プロジェクト`
-- 설명 2
-  KO `JRE WALLET(블록체인 기반 전자지갑) 연동 이벤트 시스템 개발 및 운영`
-  EN `Development and operation of an event system integrated with JRE WALLET (a blockchain-based wallet)`
-  JA `JRE WALLET（ブロックチェーン基盤の電子ウォレット）連携イベントシステムの開発・運営`
-- 지표: `Release date 2025.02.26` / `Total visits 2.5M` / `Peak WAU 600K`
 
 ### S10 — 클로징 (오렌지 풀블리드)
 - 타이틀 `LET'S BUILD THE NEXT ROBLOX GAME.` (공통)
@@ -340,6 +365,23 @@ nnn/
 - 브랜드 슬로건 `NNN` / `Novelty · Notable · Nimble` (공통)
 - 연락처 블록: S1과 동일 (동일 i18n 키 재사용)
 - CTA: `nnnceo@triplengames.com` mailto 링크 + `https://triplengames.com` 링크 (여기만 외부 링크 허용 — 기존 사이트로의 네비게이션 링크는 두지 않음)
+
+### A1 (부록) — GLOBAL PROJECT EXPERIENCE
+
+> 본편 흐름에서 빼 클로징 뒤에 두는 참고 자료다(2026-07-30 결정). 질문이 들어올 때만 펼친다.
+> 덱 동작은 §3 [부록](#부록-appendix) 규칙을 따른다.
+
+- 섹션 라벨 `APPENDIX` 알약 + `GLOBAL PROJECT EXPERIENCE` (공통)
+- 제목 `JR EAST × NAVER Z "Get Train" (2024.09 ~ 2025.12)` (공통)
+- 설명 1
+  KO `JR동일본, 네이버제트와 함께 진행한 도쿄 야마노테선을 배경으로 제작된 게임형 체험 프로젝트`
+  EN `A game-style experience project set on Tokyo's Yamanote Line, produced with JR East and NAVER Z`
+  JA `JR東日本、NAVER Zと共に進めた、東京・山手線を舞台にしたゲーム型体験プロジェクト`
+- 설명 2
+  KO `JRE WALLET(블록체인 기반 전자지갑) 연동 이벤트 시스템 개발 및 운영`
+  EN `Development and operation of an event system integrated with JRE WALLET (a blockchain-based wallet)`
+  JA `JRE WALLET（ブロックチェーン基盤の電子ウォレット）連携イベントシステムの開発・運営`
+- 지표: `Release date 2025.02.26` / `Total visits 2.5M` / `Peak WAU 600K`
 
 ---
 
@@ -423,10 +465,11 @@ PDF에서 추출해 `nnn/assets/`에 저장한다. (PyMuPDF 또는 원본 PPTX�
 | `ifland-sc1.webp`, `ifland-sc2.webp` | 제공받은 JPG 2장 (1200×680 → 0.7% 중앙 크롭) | S4 IFLAND 대표작 — 640×360 WebP, 81KB |
 | `zepeto-sc1.webp`, `zepeto-sc2.webp` | 제공받은 JPG/PNG 2장 | S4 ZEPETO 대표작 — 640×360 WebP, 90KB |
 | `game-tfr.jpg`, `game-afk.jpg`, `game-tomato.jpg`, `game-rng.jpg` | S5 카드 | 게임 카드 |
-| `case-tfr.jpg`, `case-tomato.jpg` | S6 | 케이스 스터디 스크린샷 |
-| `ugc-afk.jpg`, `ugc-rng.jpg` | S7 | UGC 인게임 스크린샷 |
-| `event-top100.jpg`, `event-golden-ducky.jpg` | S8 | 이벤트 배너 |
-| `global-gettrain-*.jpg` (4장) | S9 | Get Train 콜라주 |
+| `case-tfr.jpg`, `case-tomato.jpg` | S7 | 케이스 스터디 스크린샷 |
+| `ugc-afk.jpg`, `ugc-rng.jpg` | S8 | UGC 인게임 스크린샷 |
+| `event-top100.jpg`, `event-golden-ducky.jpg` | S9 | 이벤트 배너 |
+| `ugc-1.png` ~ `ugc-12.png` (12장) | S6 | UGC 제작물 썸네일 — 150×150 투명 PNG(카탈로그 썸네일), 합계 160KB |
+| `global-gettrain-*.jpg` (4장) | A1 | Get Train 콜라주 |
 | `frame-border.svg` (선택) | 내지 테두리 | 손그림 오렌지 프레임 |
 
 - 포맷: 사진성 이미지는 JPEG(품질 82), 가로 최대 1600px. 전체 합계 1.5MB 이하 목표.
@@ -438,7 +481,7 @@ PDF에서 추출해 `nnn/assets/`에 저장한다. (PyMuPDF 또는 원본 PPTX�
 ## 8. 구현 단계
 
 1. **골격** — `nnn/index.html` 10개 섹션 + `deck.css` 16:9 캔버스/테마 토큰/`avatar-row`·`era-timeline` 레이아웃 + noindex 메타
-2. **컨트롤러** — `deck.js`: 슬라이드 인덱스 상태, 다음/이전 버튼, 키보드, 스와이프, 도트, 해시 동기화
+2. **컨트롤러** — `deck.js`: 슬라이드 인덱스 상태, 다음/이전 버튼, 키보드, 스와이프, 도트, 해시 동기화, 전체화면
 3. **다국어** — `DECK_I18N` 3개 언어 입력, `localStorage.language` 연동, `?lang=` 처리, 미니 스위처
 4. **콘텐츠** — §5 확정본을 슬라이드별로 마크업에 반영
 5. **에셋** — §7 이미지 추출·최적화·삽입, alt 3개 언어. S4 대표작은 플레이스홀더 상태로 두고 파일 확보 시 `eras[].works`만 갱신
@@ -463,13 +506,13 @@ PDF에서 추출해 `nnn/assets/`에 저장한다. (PyMuPDF 또는 원본 PPTX�
 - [x] `/nnn` 및 `/nnn/` 두 경로 모두 정상 표시 (GitHub Pages 디렉터리 인덱스)
 - [x] 기존 사이트(헤더·푸터·index·projects·contact) 어디에도 `/nnn` 링크가 없음
 - [x] `<meta name="robots" content="noindex, nofollow">` 적용
-- [x] `다음` 버튼만으로 10장 전부 순회 가능, 마지막에서 다음 비활성
+- [x] `다음` 버튼만으로 11장(본편 10 + 부록 1) 전부 순회 가능, 마지막에서 다음 비활성
 - [x] 슬라이드 순서가 표지 → ABOUT → People → History → 주요 게임 → … 순으로 배치됨
-- [x] S3 PEOPLE 슬라이드가 3번 위치에 노출됨 (총 10장)
+- [x] S3 PEOPLE 슬라이드가 3번 위치에 노출됨 (본편 10장 중 3번)
 - [x] S3 아바타 3장의 크기·발 위치가 정렬되어 카드가 어긋나 보이지 않음 (공통 크롭 박스 + 동일 캔버스)
 - [x] S3 아바타 네임이 3개 언어에서 동일하게(원문 그대로) 표시됨 — 좌 ONESHOT / 가운데 JEFF / 우 PAPASLIME
 - [x] S4 연대기 4개 시대(`~2021` MOBILE / `2022` IFLAND / `2023~2025` ZEPETO / `2026~` ROBLOX)가 균등 폭으로 배치되고 마지막 노드만 강조됨
-- [x] S4의 ZEPETO 시기 서술이 S9(Get Train 상세)과 모순되지 않음
+- [x] S4의 ZEPETO 시기 서술이 A1(Get Train 상세)과 모순되지 않음
 - [x] S4 대표작 이미지가 시대별 1~3장 가변으로 렌더되고, 슬롯이 비면 플레이스홀더로 표시됨 (MOBILE·IFLAND·ZEPETO 실제 이미지 6장 + ROBLOX 플레이스홀더 2장 혼재 상태로 확인, 노드 4개 y좌표 동일)
 - [x] 플레이스홀더가 CSS만으로 구성되어 더미 이미지 파일이 커밋되지 않음
 - [x] 이미지 파일을 `nnn/assets/`에 넣고 `eras[].works`에 파일명만 추가하면 교체가 끝남
@@ -511,8 +554,8 @@ nnn/
    - `[]` (빈 배열) → 그 시대의 이미지 영역 자체를 렌더하지 않음
    현재 기본값은 시대별 `[null, null]` (2슬롯).
 2. **`.era-works` 높이를 슬롯 수별 고정값으로 잡았다** (1장 7.7rem / 2장 13rem / 3장 11.7rem). 4개 시대의 축(노드)이 같은 높이에 정렬되어야 하고, 수상경력 영역이 켜졌을 때도 세로로 넘치지 않아야 해서다. 실제 이미지가 들어오면 슬롯 수에 맞춰 이 값만 조정하면 된다.
-3. **S3 PEOPLE 은 자료 없이도 노출한다** — 아바타 렌더 3장과 네임이 미확보지만 슬라이드는 덱에 포함해 **10장**으로 배포한다. 카드는 플레이스홀더 프레임으로 보이고, 자료가 들어오면 `slides.js` 의 `avatars[].image` / `.name` 만 채우면 끝난다. (`enabled: false` 로 특정 슬라이드를 빼는 스위치와 `?preview=all` 로 되살리는 경로는 그대로 남아 있다.)
-4. **S4 ZEPETO 설명에서 수치를 뺐다** — 기획서 §5 표에는 `(2.5M 방문, Peak WAU 600K)` 가 있었으나, 4열 레이아웃에서 설명은 2줄 이내여야 하고 상세 지표는 S9 담당이라는 메모 결정과도 맞다. 시대 단위 서술만 남겼다.
+3. **S3 PEOPLE 은 자료 없이도 노출한다** — 아바타 렌더 3장과 네임이 미확보지만 슬라이드는 덱에 포함해 배포한다. 카드는 플레이스홀더 프레임으로 보이고, 자료가 들어오면 `slides.js` 의 `avatars[].image` / `.name` 만 채우면 끝난다. (`enabled: false` 로 특정 슬라이드를 빼는 스위치와 `?preview=all` 로 되살리는 경로는 그대로 남아 있다.)
+4. **S4 ZEPETO 설명에서 수치를 뺐다** — 기획서 §5 표에는 `(2.5M 방문, Peak WAU 600K)` 가 있었으나, 4열 레이아웃에서 설명은 2줄 이내여야 하고 상세 지표는 부록 A1 담당이라는 메모 결정과도 맞다. 시대 단위 서술만 남겼다.
 5. **표지 썸네일은 S5 게임 카드 이미지를 공유한다** — 별도 `cover-*.jpg` 를 두면 같은 그림이 두 벌이 되어 약 190KB 를 낭비한다. `game-*.jpg` 4장을 양쪽에서 쓴다.
 6. **이미지 비율 처리** — 콜라주·연대기·아바타는 래퍼 `<div>` 안에 `position:absolute; inset:0` 로 이미지를 가둔다. 그리드 `1fr` 트랙 위에서는 `height:100%` 가 해석되지 않아 셀을 넘치고, `<img>` 의 `width/height` 속성이 `aspect-ratio` 를 무력화하기 때문이다(둘 다 실제로 겪은 버그).
 7. **모바일 미디어쿼리를 `screen and (max-width: 767px)` 로 한정했다** — 인쇄 시 페이지 폭이 좁게 평가되면 세로 리플로우가 적용되어 출력이 깨진다. 인쇄는 `@page { size: 1280px 720px }` 로 디자인 캔버스를 그대로 한 페이지에 싣는다.
@@ -524,10 +567,11 @@ nnn/
 
 ## 메모 / 결정 사항
 
-- 원본 PDF는 34페이지가 아닌 **8슬라이드**다(PyMuPDF 기준). 8장은 1:1 매핑하고, 여기에 People / History 2장을 ABOUT 뒤에 삽입해 총 10장으로 확정.
+- 원본 PDF는 34페이지가 아닌 **8슬라이드**다(PyMuPDF 기준). 8장은 1:1 매핑하고, 여기에 People / History 2장을 ABOUT 뒤에 삽입해 총 10장으로 확정. 이후 GLOBAL 을 부록으로 옮기고 UGC PRODUCTION 1장을 S6 으로 신설해 본편 10장 + 부록 1장이 됐다(2026-07-30).
 - People / History를 ABOUT 직후에 둔 이유: "회사가 무엇을 하는가(ABOUT) → 누가 하는가(People) → 어떻게 여기까지 왔는가(History) → 무엇을 만들었는가(게임·케이스)" 순으로 신뢰 근거를 먼저 쌓고 실적을 제시하는 흐름이다.
-- History는 개별 출시 이벤트 나열이 아니라 **플랫폼 전환 연대기**(모바일 → IFLAND → ZEPETO → ROBLOX)로 구성한다. 개별 타이틀 실적은 S5·S9가 이미 담당하므로 중복을 피하고, "플랫폼이 바뀌어도 계속 만들어온 팀"이라는 서사에 집중시키는 편이 낫다.
-- ZEPETO 시기(2023~2025)와 S9의 `Get Train`(2024.09~2025.12)은 같은 사업의 다른 축척이다. S4는 시대 단위로만 언급하고 상세 지표는 S9에 남긴다.
+- History는 개별 출시 이벤트 나열이 아니라 **플랫폼 전환 연대기**(모바일 → IFLAND → ZEPETO → ROBLOX)로 구성한다. 개별 타이틀 실적은 S5·A1이 이미 담당하므로 중복을 피하고, "플랫폼이 바뀌어도 계속 만들어온 팀"이라는 서사에 집중시키는 편이 낫다.
+- ZEPETO 시기(2023~2025)와 부록 A1의 `Get Train`(2024.09~2025.12)은 같은 사업의 다른 축척이다. S4는 시대 단위로만 언급하고 상세 지표는 A1에 남긴다.
+- **미해결: AFK or ARCADE GAME / FREE UGC RNG 출시일 불일치.** 덱은 원본 PDF 기준 `2026.07.04` / `2026.07.07` 인데, 사이트 데이터 두 곳(`data/projects.json` 의 `launchDate`, `js/project-details/*.js` 의 `snapshot.launch`)은 모두 **2026년 5월**로 적혀 있다. 어느 쪽이 정식 출시일인지 확인 후 한쪽으로 통일해야 한다. 지표 갱신에서는 날짜를 임의로 바꾸지 않고 PDF 표기를 유지했다.
 - ROBLOX 시대에 제공받은 `roblox-sc1~4.jpg` 는 S1/S5/S7 에서 쓰는 파일과 **바이트 단위로 동일**했다(`game-tfr`, `game-tomato`, `ugc-afk`, `ugc-rng`). 사본을 늘리지 않고 기존 에셋을 참조하도록 해 추가 다운로드는 0KB 다. 대신 같은 그림이 S1·S4·S5 에 세 번, S4·S7 에 두 번 나온다는 점은 감수한 결과다.
 - 대표작 이미지는 `object-fit: contain` 으로 그린다. 스크린샷 비율이 제각각이라 `cover` 로 잘라내면 게임 타이틀·UI 가 사라진다. 대신 내보내는 단계에서 16:9 캔버스에 맞춰 두면 여백이 보이지 않는다.
 - 아바타는 **WebP** 로 내보냈다. 투명도가 필요해 PNG 를 쓰면 3장 합계 3.0MB 로 페이지 예산(2MB)을 넘긴다. WebP 는 알파를 지원하면서 191KB 로 끝난다.

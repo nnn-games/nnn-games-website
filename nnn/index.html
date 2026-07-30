@@ -24,12 +24,22 @@
 
         <div class="deck-bar deck-bar-top">
             <span class="deck-wordmark">NNN GAMES</span>
-            <div class="deck-langs" role="group" aria-label="언어 선택" data-deck-key-aria-label="ui_lang_group">
-                <button type="button" class="deck-lang" data-lang="ko">KO</button>
-                <span class="deck-lang-sep" aria-hidden="true">|</span>
-                <button type="button" class="deck-lang" data-lang="en">EN</button>
-                <span class="deck-lang-sep" aria-hidden="true">|</span>
-                <button type="button" class="deck-lang" data-lang="ja">JA</button>
+            <div class="deck-tools">
+                <div class="deck-langs" role="group" aria-label="언어 선택" data-deck-key-aria-label="ui_lang_group">
+                    <button type="button" class="deck-lang" data-lang="ko">KO</button>
+                    <span class="deck-lang-sep" aria-hidden="true">|</span>
+                    <button type="button" class="deck-lang" data-lang="en">EN</button>
+                    <span class="deck-lang-sep" aria-hidden="true">|</span>
+                    <button type="button" class="deck-lang" data-lang="ja">JA</button>
+                </div>
+                <button type="button" class="deck-tool" id="deckFull" aria-pressed="false" aria-label="전체화면">
+                    <svg class="deck-tool-icon" data-icon="enter" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />
+                    </svg>
+                    <svg class="deck-tool-icon" data-icon="exit" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5" />
+                    </svg>
+                </button>
             </div>
         </div>
 
@@ -79,8 +89,8 @@
                         <p class="about-period" data-deck-key="about_period">2026.01 ~ 현재</p>
                         <ul class="stats">
                             <li><b>6</b><span data-deck-key="about_stat_projects">운영 프로젝트</span></li>
-                            <li><b>10M +</b><span data-deck-key="about_stat_visits">누적 방문</span></li>
-                            <li><b>100K+</b><span data-deck-key="about_stat_members">커뮤니티 멤버</span></li>
+                            <li><b>11.2M+</b><span data-deck-key="about_stat_visits">누적 방문</span></li>
+                            <li><b>130K+</b><span data-deck-key="about_stat_members">커뮤니티 멤버</span></li>
                         </ul>
                         <p class="about-bullet">Original Games / Brand &amp; IP / UGC-driven Content</p>
                     </div>
@@ -116,20 +126,16 @@
                 <section class="slide slide-people" data-slide="people" data-theme="paper" role="region"
                     aria-roledescription="slide">
                     <p class="sec-label">PEOPLE</p>
-                    <h2 class="slide-title" data-deck-key="people_title">게임을 만드는 사람들</h2>
-                    <p class="slide-lead" data-deck-key="people_lead">기획·개발·아트·운영이 한 팀에서 함께 일합니다. 작은 조직이 빠르게 판단하고 바로
-                        반영합니다.</p>
+                    <h2 class="slide-title" data-deck-key="people_title">NNN Team</h2>
+                    <p class="slide-lead" data-deck-key="people_lead">작은 조직이 빠르게 결정하고, 곧바로 실행합니다.</p>
                     <div class="avatars" data-deck-render="avatars"></div>
-                    <p class="people-badge" data-deck-key="people_badge">기획 → 개발 → 아트 → 운영, 한 팀에서</p>
                 </section>
 
                 <!-- ================= S4 HISTORY ================= -->
                 <section class="slide slide-history" data-slide="history" data-theme="paper" role="region"
                     aria-roledescription="slide">
-                    <p class="sec-label">HISTORY</p>
-                    <h2 class="slide-title" data-deck-key="history_title">걸어온 길</h2>
-                    <p class="slide-lead" data-deck-key="history_lead">모바일 게임에서 출발해 메타버스 플랫폼을 거쳐, 지금은 ROBLOX에서 자체 게임을
-                        만들고 운영합니다.</p>
+                    <p class="sec-label">OUR JOURNEY</p>
+                    <h2 class="slide-title" data-deck-key="history_title">여러 플랫폼에서 쌓은 경험, 이제 Roblox로</h2>
                     <div class="eras" data-deck-render="eras"></div>
                     <div class="awards" data-deck-render="awards" hidden></div>
                 </section>
@@ -144,7 +150,7 @@
                                 alt="TOWER FLOOD RACE 게임 썸네일" data-deck-key-alt="alt_game_tfr" loading="lazy">
                             <dl class="game-meta">
                                 <div><dt>Release date</dt><dd>2026.01.24</dd></div>
-                                <div><dt>Total visits</dt><dd>9.3M</dd></div>
+                                <div><dt>Total visits</dt><dd>9.4M</dd></div>
                                 <div><dt>Peak CCU</dt><dd>2.2K</dd></div>
                             </dl>
                             <h3 class="game-name">TOWER FLOOD RACE</h3>
@@ -156,7 +162,7 @@
                                 loading="lazy">
                             <dl class="game-meta">
                                 <div><dt>Release date</dt><dd>2026.07.04</dd></div>
-                                <div><dt>Total visits</dt><dd>108K</dd></div>
+                                <div><dt>Total visits</dt><dd>375K</dd></div>
                                 <div><dt>Rating</dt><dd>97%</dd></div>
                                 <div class="game-new"><dd>NEW</dd></div>
                             </dl>
@@ -169,7 +175,7 @@
                                 loading="lazy">
                             <dl class="game-meta">
                                 <div><dt>Release date</dt><dd>2026.04.10</dd></div>
-                                <div><dt>Total visits</dt><dd>1M</dd></div>
+                                <div><dt>Total visits</dt><dd>1.05M</dd></div>
                                 <div><dt>Peak CCU</dt><dd>164</dd></div>
                             </dl>
                             <h3 class="game-name">TOMATO SPLATTER SIMULATOR</h3>
@@ -180,7 +186,7 @@
                                 alt="FREE UGC RNG 게임 썸네일" data-deck-key-alt="alt_game_rng" loading="lazy">
                             <dl class="game-meta">
                                 <div><dt>Release date</dt><dd>2026.07.07</dd></div>
-                                <div><dt>Total visits</dt><dd>64K</dd></div>
+                                <div><dt>Total visits</dt><dd>113K</dd></div>
                                 <div class="game-new"><dd>NEW</dd></div>
                             </dl>
                             <h3 class="game-name">FREE UGC RNG</h3>
@@ -189,11 +195,40 @@
                     </div>
                 </section>
 
-                <!-- ================= S6 CASE STUDIES ================= -->
+                <!-- ================= S6 UGC 제작 =================
+                     썸네일 12장은 slides.js 의 works 배열에서 렌더한다. -->
+                <section class="slide slide-ugcworks" data-slide="ugcworks" data-theme="paper" role="region"
+                    aria-roledescription="slide">
+                    <p class="sec-label">UGC PRODUCTION</p>
+                    <div class="ugcworks">
+                        <div class="ugcworks-left">
+                            <h2 class="slide-title" data-deck-key="ugcworks_title">고퀄리티 UGC 직접 제작</h2>
+                            <!-- 기간 표기는 3개 언어 공통이라 i18n 키를 두지 않는다. -->
+                            <p class="ugc-since">Since 2024.06</p>
+                            <ul class="ugc-points">
+                                <li class="quad" data-accent="red">
+                                    <h3>HIGH QUALITY</h3>
+                                    <p data-deck-key="ugcworks_p1">제작 난이도가 높은 고품질 UGC 제작</p>
+                                </li>
+                                <li class="quad" data-accent="blue">
+                                    <h3>WIDE COVERAGE</h3>
+                                    <p data-deck-key="ugcworks_p2">다양한 부위와 소재, 애니메이션까지 제작</p>
+                                </li>
+                                <li class="quad" data-accent="green">
+                                    <h3>IN-GAME SALES</h3>
+                                    <p data-deck-key="ugcworks_p3">게임과 연동한 UGC 판매 프로세스 구축</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ugc-grid" data-deck-render="ugcworks"></div>
+                    </div>
+                </section>
+
+                <!-- ================= S7 CASE STUDIES ================= -->
                 <section class="slide slide-case" data-slide="case" data-theme="paper" role="region"
                     aria-roledescription="slide">
-                    <p class="sec-label">CASE STUDIES</p>
-                    <h2 class="slide-title" data-deck-key="case_title">자체 개발·운영 게임</h2>
+                    <p class="sec-label">LIVE GAMES</p>
+                    <h2 class="slide-title" data-deck-key="case_title">다양한 장르의 게임을 개발·운영하며, 로블록스 플레이어의 취향과 경험을 연구 중</h2>
                     <div class="split">
                         <article class="split-col">
                             <img class="split-shot" src="assets/case-tfr.jpg" width="1100" height="588"
@@ -223,10 +258,10 @@
                     </div>
                 </section>
 
-                <!-- ================= S7 UGC x GAMEPLAY ================= -->
+                <!-- ================= S8 UGC x GAMEPLAY ================= -->
                 <section class="slide slide-ugc" data-slide="ugc" data-theme="paper" role="region"
                     aria-roledescription="slide">
-                    <p class="sec-label">UGC x GAMEPLAY</p>
+                    <p class="sec-label">LIVE GAMES</p>
                     <h2 class="slide-title" data-deck-key="ugc_title">무료 UGC를 게임 루프의 일부로 설계</h2>
                     <div class="split">
                         <article class="split-col">
@@ -257,7 +292,7 @@
                     </div>
                 </section>
 
-                <!-- ================= S8 라이브 운영 ================= -->
+                <!-- ================= S9 라이브 운영 ================= -->
                 <section class="slide slide-liveops" data-slide="liveops" data-theme="paper" role="region"
                     aria-roledescription="slide">
                     <p class="sec-label" data-deck-key="liveops_label">실제 라이브 운영 사례</p>
@@ -301,10 +336,135 @@
                     </div>
                 </section>
 
-                <!-- ================= S9 글로벌 프로젝트 ================= -->
+                <!-- ================= S10 개발 중인 게임 ================= -->
+                <section class="slide slide-development" data-slide="development" data-theme="paper" role="region"
+                    aria-roledescription="slide">
+                    <p class="sec-label">IN DEVELOPMENT</p>
+                    <h2 class="slide-title" data-deck-key="development_title">개발 중인 게임</h2>
+                    <div class="pipeline-games">
+                        <article class="pipeline-game" data-accent="red">
+                            <img class="pipeline-art pipeline-art--image" src="assets/roblox-free-ugc-town.png" width="1200"
+                                height="680" alt="FREE UGC TOWN 게임 아트" data-deck-key-alt="alt_development_town"
+                                loading="lazy">
+                            <div class="pipeline-copy">
+                                <h3>FREE UGC TOWN</h3>
+                                <ul class="pipeline-features">
+                                    <li data-deck-key="development_town_1">거대한 타워 빌딩이 있는 마을 탐험</li>
+                                    <li data-deck-key="development_town_2">AFK·타워 OBBY·FINDING으로 코인 수집 및 UGC 교환</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="pipeline-game" data-accent="blue">
+                            <img class="pipeline-art pipeline-art--image" src="assets/roblox-free-ugc-tower.png" width="1200"
+                                height="680" alt="FREE UGC TOWER 게임 아트" data-deck-key-alt="alt_development_tower"
+                                loading="lazy">
+                            <div class="pipeline-copy">
+                                <h3>FREE UGC TOWER</h3>
+                                <ul class="pipeline-features">
+                                    <li data-deck-key="development_tower_1">로블록스 정통 R6 타워 OBBY</li>
+                                    <li data-deck-key="development_tower_2">타워를 오르고 포인트를 모아 UGC로 교환</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="pipeline-game" data-accent="green">
+                            <img class="pipeline-art pipeline-art--image" src="assets/roblox-ducky-rng.png" width="1200" height="680"
+                                alt="DUCKY RNG 게임 아트" data-deck-key-alt="alt_development_ducky" loading="lazy">
+                            <div class="pipeline-copy">
+                                <h3>DUCKY RNG</h3>
+                                <ul class="pipeline-features">
+                                    <li data-deck-key="development_ducky_1">주사위를 굴려 오리를 수집하고, 함께 점프해 장애물 돌파</li>
+                                    <li data-deck-key="development_ducky_2">착용 오리 수에 따라 스피드·점프 횟수 증가</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="pipeline-game" data-accent="yellow">
+                            <img class="pipeline-art pipeline-art--image" src="assets/roblox-enchant-weapon.png" width="1200"
+                                height="680" alt="ENCHANTED WEAPON 게임 아트" data-deck-key-alt="alt_development_weapon"
+                                loading="lazy">
+                            <div class="pipeline-copy">
+                                <h3>ENCHANTED WEAPON</h3>
+                                <ul class="pipeline-features">
+                                    <li data-deck-key="development_weapon_1">몬스터 처치 후 코인으로 무기와 주문서 구매</li>
+                                    <li data-deck-key="development_weapon_2">+10 강화 성공 시 실제 UGC 무기로 교환</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- ================= S11 기획 단계 게임 ================= -->
+                <section class="slide slide-planning" data-slide="planning" data-theme="paper" role="region"
+                    aria-roledescription="slide">
+                    <p class="sec-label">IN PLANNING</p>
+                    <h2 class="slide-title" data-deck-key="planning_title">기획 중인 게임</h2>
+                    <div class="pipeline-games pipeline-games--planning">
+                        <article class="pipeline-game" data-accent="red">
+                            <img class="pipeline-art pipeline-art--image" src="assets/roblox-hvs.jpg" width="960" height="600"
+                                alt="HACKER VS SECURITY 게임 아트" data-deck-key-alt="alt_planning_hvs" loading="lazy">
+                            <div class="pipeline-copy">
+                                <h3>HACKER VS SECURITY</h3>
+                                <ul class="pipeline-features">
+                                    <li data-deck-key="planning_hvs_1">해커·시큐리티 두 진영의 경쟁</li>
+                                    <li data-deck-key="planning_hvs_2">상대 진영의 보안 시스템 해킹</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="pipeline-game" data-accent="blue">
+                            <img class="pipeline-art pipeline-art--image" src="assets/roblox-sr.jpg" width="960" height="540"
+                                alt="STAR REACH 게임 아트" data-deck-key-alt="alt_planning_star" loading="lazy">
+                            <div class="pipeline-copy">
+                                <h3>STAR REACH</h3>
+                                <ul class="pipeline-features">
+                                    <li data-deck-key="planning_star_1">성공과 실패를 반복하는 로켓 발사 도전</li>
+                                    <li data-deck-key="planning_star_2">화성 도달 후 인류의 새 정착지 개척</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="pipeline-game" data-accent="green">
+                            <img class="pipeline-art pipeline-art--image" src="assets/roblox-tomato-splatter2.jpg" width="1200"
+                                height="680" alt="TOMATO SPLATTER 2 게임 아트" data-deck-key-alt="alt_planning_tomato"
+                                loading="lazy">
+                            <div class="pipeline-copy">
+                                <h3>TOMATO SPLATTER 2</h3>
+                                <ul class="pipeline-features">
+                                    <li data-deck-key="planning_tomato_1">TOMATO SPLATTER SIMULATOR의 확장판</li>
+                                    <li data-deck-key="planning_tomato_2">디아블로식 액션 RPG와 다양한 옵션 장비 성장</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- ================= S12 클로징 (본편 마지막) ================= -->
+                <section class="slide slide-closing" data-slide="closing" data-theme="orange" role="region"
+                    aria-roledescription="slide">
+                    <div class="closing-head">
+                        <h2 class="closing-title">LET’S BUILD THE NEXT ROBLOX GAME.</h2>
+                        <span class="rule" aria-hidden="true"></span>
+                        <p class="closing-sub">Game Development · Brand &amp; IP · Live Operations · UGC</p>
+                        <p class="closing-body" data-deck-key="closing_body">트리플엔게임즈는 자체 게임 개발과 라이브 운영 경험을 바탕으로, 파트너와
+                            함께 지속적으로 성장하는 ROBLOX 게임을 만들어갑니다.</p>
+                    </div>
+                    <div class="closing-foot">
+                        <div class="closing-brand">
+                            <p class="closing-nnn">NNN</p>
+                            <p class="closing-slogan">Novelty · Notable · Nimble</p>
+                        </div>
+                        <div class="contact">
+                            <a class="contact-link" href="https://triplengames.com" target="_blank"
+                                rel="noopener">https://triplengames.com</a>
+                            <a class="contact-link contact-mail" href="mailto:nnnceo@triplengames.com"
+                                data-deck-key="cover_ceo">대표 : 오현석, nnnceo@triplengames.com</a>
+                            <p class="contact-addr" data-deck-key="cover_address">경기도 화성시 동탄구 동탄순환대로 878 (영천동), 311호
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= A1 부록 — 글로벌 프로젝트 ================= -->
                 <section class="slide slide-global" data-slide="global" data-theme="paper" role="region"
                     aria-roledescription="slide">
-                    <p class="sec-label">GLOBAL PROJECT EXPERIENCE</p>
+                    <p class="sec-label"><span class="appendix-tag">APPENDIX</span>GLOBAL PROJECT EXPERIENCE</p>
                     <h2 class="global-title">JR EAST × NAVER Z “Get Train” (2024.09 ~ 2025.12)</h2>
                     <div class="global-descs">
                         <p data-deck-key="global_desc1">JR동일본, 네이버제트와 함께 진행한 도쿄 야마노테선을 배경으로 제작된 게임형 체험 프로젝트</p>
@@ -339,32 +499,6 @@
                     </div>
                 </section>
 
-                <!-- ================= S10 클로징 ================= -->
-                <section class="slide slide-closing" data-slide="closing" data-theme="orange" role="region"
-                    aria-roledescription="slide">
-                    <div class="closing-head">
-                        <h2 class="closing-title">LET’S BUILD THE NEXT ROBLOX GAME.</h2>
-                        <span class="rule" aria-hidden="true"></span>
-                        <p class="closing-sub">Game Development · Brand &amp; IP · Live Operations · UGC</p>
-                        <p class="closing-body" data-deck-key="closing_body">트리플엔게임즈는 자체 게임 개발과 라이브 운영 경험을 바탕으로, 파트너와
-                            함께 지속적으로 성장하는 ROBLOX 게임을 만들어갑니다.</p>
-                    </div>
-                    <div class="closing-foot">
-                        <div class="closing-brand">
-                            <p class="closing-nnn">NNN</p>
-                            <p class="closing-slogan">Novelty · Notable · Nimble</p>
-                        </div>
-                        <div class="contact">
-                            <a class="contact-link" href="https://triplengames.com" target="_blank"
-                                rel="noopener">https://triplengames.com</a>
-                            <a class="contact-link contact-mail" href="mailto:nnnceo@triplengames.com"
-                                data-deck-key="cover_ceo">대표 : 오현석, nnnceo@triplengames.com</a>
-                            <p class="contact-addr" data-deck-key="cover_address">경기도 화성시 동탄구 동탄순환대로 878 (영천동), 311호
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
             </div>
         </div>
 
@@ -374,11 +508,13 @@
             </button>
             <div class="deck-center">
                 <div class="deck-dots" id="deckDots"></div>
-                <p class="deck-counter"><b id="deckCurrent">01</b><span aria-hidden="true"> / </span><span
-                        id="deckTotal">10</span></p>
+                <!-- 부록 슬라이드에서는 deck.js 가 구분자/총장수를 감추고 '부록' 라벨만 남긴다. -->
+                <p class="deck-counter"><b id="deckCurrent">01</b><span id="deckSep" aria-hidden="true"> / </span><span
+                        id="deckTotal">12</span></p>
             </div>
             <button type="button" class="deck-nav deck-nav-primary" id="deckNext">
-                <span data-deck-key="ui_next">다음</span><span aria-hidden="true">→</span>
+                <!-- 라벨은 deck.js 가 채운다(본편 마지막에서는 '부록'). -->
+                <span id="deckNextLabel">다음</span><span aria-hidden="true">→</span>
             </button>
         </div>
 
