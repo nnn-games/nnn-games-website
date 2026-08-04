@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F5F2EC"/>
+  <text x="800" y="85" font-family="Arial, sans-serif" font-size="48" font-weight="700" text-anchor="middle" fill="#241714">V1 실제 자료 삽입 가이드</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="90" y="155" width="650" height="520" rx="28" fill="#DDD4C8" stroke="#9B8E80" stroke-width="4" stroke-dasharray="16 12"/>
+    <text x="415" y="370" text-anchor="middle" fill="#5B4B47" font-size="37" font-weight="700">V1 실제 전투 캡처</text>
+    <text x="415" y="420" text-anchor="middle" fill="#71635E" font-size="25">휠윈드 · 타격 · VFX가 함께 보이는 장면</text>
+    <rect x="790" y="155" width="720" height="235" rx="28" fill="#FFFFFF" stroke="#9B8E80" stroke-width="4" stroke-dasharray="16 12"/>
+    <text x="1150" y="260" text-anchor="middle" fill="#5B4B47" font-size="34" font-weight="700">Roblox 라이브 상태 캡처</text>
+    <text x="1150" y="310" text-anchor="middle" fill="#71635E" font-size="24">실제 게임 페이지 또는 출시 증빙</text>
+    <rect x="790" y="440" width="720" height="235" rx="28" fill="#FFFFFF" stroke="#9B8E80" stroke-width="4" stroke-dasharray="16 12"/>
+    <text x="1150" y="545" text-anchor="middle" fill="#5B4B47" font-size="34" font-weight="700">실제 제작물 비교</text>
+    <text x="1150" y="595" text-anchor="middle" fill="#71635E" font-size="24">모델링 · 애니메이션 · VFX 파이프라인</text>
+    <rect x="300" y="745" width="1000" height="85" rx="26" fill="#7C1712"/>
+    <text x="800" y="799" text-anchor="middle" fill="white" font-size="29" font-weight="700">생성 이미지나 추정 수치로 대체하지 않는다.</text>
+  </g>
+</svg>

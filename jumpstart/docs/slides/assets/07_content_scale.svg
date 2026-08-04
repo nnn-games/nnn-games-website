@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#160F0E"/>
+  <text x="800" y="90" font-family="Arial, sans-serif" font-size="50" font-weight="700" text-anchor="middle" fill="#FFFFFF">4개 마을이 12개 전투장과 240개 웨이브로 이어진다</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(110,170)"><rect width="280" height="125" rx="28" fill="#E8422E"/><text x="140" y="58" fill="white" font-size="34" font-weight="700">마을 1</text><text x="140" y="94" fill="#FFD7CF" font-size="23">전투장 1 · 2 · 3</text></g>
+    <g transform="translate(475,170)"><rect width="280" height="125" rx="28" fill="#D96B26"/><text x="140" y="58" fill="white" font-size="34" font-weight="700">마을 2</text><text x="140" y="94" fill="#FFE2CF" font-size="23">전투장 4 · 5 · 6</text></g>
+    <g transform="translate(840,170)"><rect width="280" height="125" rx="28" fill="#67A844"/><text x="140" y="58" fill="white" font-size="34" font-weight="700">마을 3</text><text x="140" y="94" fill="#E6F6D2" font-size="23">전투장 7 · 8 · 9</text></g>
+    <g transform="translate(1205,170)"><rect width="280" height="125" rx="28" fill="#536FD6"/><text x="140" y="58" fill="white" font-size="34" font-weight="700">마을 4</text><text x="140" y="94" fill="#DDE4FF" font-size="23">전투장 10 · 11 · 12</text></g>
+    <g fill="#2A1D1B" stroke="#FFC94A" stroke-width="3">
+      <rect x="110" y="375" width="1375" height="135" rx="30"/>
+    </g>
+    <text x="800" y="430" fill="#FFC94A" font-size="38" font-weight="700">각 전투장 = 20 Waves + Boss + Tier Weapon</text>
+    <text x="800" y="478" fill="white" font-size="26">클리어 후 1~20 웨이브 사이클 반복 · 더 높은 등급 추적</text>
+    <g font-weight="700">
+      <g><circle cx="280" cy="675" r="115" fill="#FFC94A"/><text x="280" y="665" fill="#38240A" font-size="54">25</text><text x="280" y="710" fill="#38240A" font-size="25">무기 모델</text></g>
+      <g><circle cx="625" cy="675" r="115" fill="#55D8FF"/><text x="625" y="665" fill="#173C48" font-size="54">10</text><text x="625" y="710" fill="#173C48" font-size="25">발동 스킬</text></g>
+      <g><circle cx="970" cy="675" r="115" fill="#67A844"/><text x="970" y="655" fill="white" font-size="48">32 / 96</text><text x="970" y="710" fill="white" font-size="25">펫 / 변형</text></g>
+      <g><circle cx="1315" cy="675" r="115" fill="#A36BFF"/><text x="1315" y="665" fill="white" font-size="54">50</text><text x="1315" y="710" fill="white" font-size="25">리버스 단계</text></g>
+    </g>
+  </g>
+</svg>

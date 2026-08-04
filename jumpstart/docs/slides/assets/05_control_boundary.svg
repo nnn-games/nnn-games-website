@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F6F1E9"/>
+  <text x="800" y="95" font-family="Arial, sans-serif" font-size="52" font-weight="700" text-anchor="middle" fill="#241714">맡길 수 있는 전투, 맡기지 않는 성장</text>
+  <rect x="100" y="170" width="610" height="590" rx="32" fill="#231817"/>
+  <rect x="890" y="170" width="610" height="590" rx="32" fill="#FFFFFF" stroke="#E8422E" stroke-width="5"/>
+  <text x="405" y="245" font-family="Arial, sans-serif" font-size="38" font-weight="700" text-anchor="middle" fill="#FFC94A">자동 전투</text>
+  <text x="1195" y="245" font-family="Arial, sans-serif" font-size="38" font-weight="700" text-anchor="middle" fill="#E8422E">플레이어의 성장 플레이</text>
+  <g font-family="Arial, sans-serif" font-size="33">
+    <text x="175" y="340" fill="white">01  이동</text><text x="175" y="425" fill="white">02  적 무리 추적</text><text x="175" y="510" fill="white">03  반복 공격</text><text x="175" y="595" fill="white">04  전리품 획득</text>
+    <text x="960" y="340" fill="#241714">01  아이템 평가</text><text x="960" y="425" fill="#241714">02  강화 · 합성 · 분해</text><text x="960" y="510" fill="#241714">03  보석 배치</text><text x="960" y="595" fill="#241714">04  포인트 투자 · 펫 합성</text>
+  </g>
+  <path d="M700 465 L890 465" stroke="#E8422E" stroke-width="12"/>
+  <polygon points="890,465 850,440 850,490" fill="#E8422E"/>
+  <rect x="675" y="400" width="250" height="58" rx="29" fill="#FFC94A"/>
+  <text x="800" y="440" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#38240A">획득 → 검토</text>
+  <text x="800" y="830" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#7C1712">전투 조작은 줄여도, 성장의 선택과 결과는 줄이지 않는다.</text>
+</svg>

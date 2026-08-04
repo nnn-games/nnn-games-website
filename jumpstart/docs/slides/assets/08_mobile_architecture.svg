@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F5F2EC"/>
+  <text x="800" y="90" font-family="Arial, sans-serif" font-size="50" font-weight="700" text-anchor="middle" fill="#241714">적 무리의 인상은 유지하고, 연산과 메모리 비용은 통제한다</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(100,180)"><rect width="940" height="150" rx="30" fill="#E8422E"/><text x="55" y="62" fill="white" font-size="36" font-weight="700">01  전투장 구조</text><text x="55" y="108" fill="#FFE3DD" font-size="27">플레이어별 개인 전투장 · 필요한 공간만 스트리밍</text></g>
+    <g transform="translate(100,365)"><rect width="940" height="150" rx="30" fill="#D58526"/><text x="55" y="62" fill="white" font-size="36" font-weight="700">02  적과 서버</text><text x="55" y="108" fill="#FFF0D6" font-size="27">거리 기반 활성화 · 직선 추적 · 활성 개체 수 관리</text></g>
+    <g transform="translate(100,550)"><rect width="940" height="150" rx="30" fill="#4D78B8"/><text x="55" y="62" fill="white" font-size="36" font-weight="700">03  클라이언트 표현</text><text x="55" y="108" fill="#DFEAFA" font-size="27">VFX 풀링 · 화면 상한 · 디바이스별 품질 단계</text></g>
+    <path d="M1080 255 L1195 255 L1195 625 L1080 625" fill="none" stroke="#241714" stroke-width="8"/>
+    <rect x="1190" y="200" width="320" height="500" rx="34" fill="#241714"/>
+    <text x="1350" y="265" fill="#FFC94A" font-size="34" font-weight="700" text-anchor="middle">수직 슬라이스 검증</text>
+    <g fill="white" font-size="29"><text x="1250" y="355">• 프레임</text><text x="1250" y="425">• 메모리</text><text x="1250" y="495">• 장시간 안정성</text><text x="1250" y="565">• 8인 서버 최악 조건</text></g>
+    <text x="800" y="810" fill="#7C1712" font-size="31" font-weight="700" text-anchor="middle">적의 수를 줄이는 것이 아니라, 많은 적을 가능하게 하는 구조를 먼저 설계한다.</text>
+  </g>
+</svg>

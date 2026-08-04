@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <text x="800" y="90" font-family="Arial, sans-serif" font-size="50" font-weight="700" text-anchor="middle" fill="#241714">검증 순서와 작업자 산정으로 캘린더를 만든다</text>
+  <line x1="150" y1="390" x2="1450" y2="390" stroke="#D8CEC3" stroke-width="18" stroke-linecap="round"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g><circle cx="180" cy="390" r="74" fill="#E8422E"/><text x="180" y="405" fill="white" font-size="35" font-weight="700">M0</text><text x="180" y="520" fill="#241714" font-size="28" font-weight="700">기술·수치 검증</text><text x="180" y="560" fill="#6C5B56" font-size="22">성능 상한·경제 시트</text></g>
+    <g><circle cx="430" cy="390" r="74" fill="#D96B26"/><text x="430" y="405" fill="white" font-size="35" font-weight="700">M1</text><text x="430" y="520" fill="#241714" font-size="28" font-weight="700">수직 슬라이스</text><text x="430" y="560" fill="#6C5B56" font-size="22">전투장 1개 전체 루프</text></g>
+    <g><circle cx="680" cy="390" r="74" fill="#FFC94A"/><text x="680" y="405" fill="#38240A" font-size="35" font-weight="700">M2</text><text x="680" y="520" fill="#241714" font-size="28" font-weight="700">아이템·경제</text><text x="680" y="560" fill="#6C5B56" font-size="22">직접 성장과 장기 파밍</text></g>
+    <g><circle cx="930" cy="390" r="74" fill="#67A844"/><text x="930" y="405" fill="white" font-size="35" font-weight="700">M3</text><text x="930" y="520" fill="#241714" font-size="28" font-weight="700">출시 콘텐츠</text><text x="930" y="560" fill="#6C5B56" font-size="22">마을 4·전투장 12</text></g>
+    <g><circle cx="1180" cy="390" r="74" fill="#55A5D8"/><text x="1180" y="405" fill="white" font-size="35" font-weight="700">M4</text><text x="1180" y="520" fill="#241714" font-size="28" font-weight="700">소프트 런치</text><text x="1180" y="560" fill="#6C5B56" font-size="22">UI·온보딩·성능 조정</text></g>
+    <g><circle cx="1420" cy="390" r="74" fill="#7552B8"/><text x="1420" y="405" fill="white" font-size="35" font-weight="700">M5</text><text x="1420" y="520" fill="#241714" font-size="28" font-weight="700">출시·라이브</text><text x="1420" y="560" fill="#6C5B56" font-size="22">첫 업데이트 준비</text></g>
+    <rect x="260" y="675" width="1080" height="100" rx="30" fill="#241714"/>
+    <text x="800" y="737" fill="#FFC94A" font-size="31" font-weight="700">각 단계의 날짜는 담당자의 작업 분해·소요 시간·가용 일정 취합 후 입력</text>
+  </g>
+</svg>

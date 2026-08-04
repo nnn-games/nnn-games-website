@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <text x="800" y="90" font-family="Arial, sans-serif" font-size="52" font-weight="700" text-anchor="middle" fill="#241714">더 깊은 웨이브가 더 좋은 파밍 효율이 된다</text>
+  <line x1="190" y1="730" x2="1440" y2="730" stroke="#342724" stroke-width="5"/>
+  <line x1="190" y1="730" x2="190" y2="170" stroke="#342724" stroke-width="5"/>
+  <text x="820" y="820" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" fill="#5B4B47">Wave Depth</text>
+  <text x="65" y="465" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" fill="#5B4B47" transform="rotate(-90 65 465)">Farming Efficiency</text>
+  <path d="M210 690 C420 675 520 625 660 560 C820 485 920 390 1040 305 C1160 220 1280 185 1410 165" fill="none" stroke="#E8422E" stroke-width="16" stroke-linecap="round"/>
+  <path d="M210 690 C420 675 520 625 660 560 C820 485 920 390 1040 305 C1160 220 1280 185 1410 165 L1410 730 L210 730 Z" fill="#E8422E" opacity="0.10"/>
+  <g font-family="Arial, sans-serif" font-size="27" font-weight="700">
+    <g><circle cx="480" cy="640" r="18" fill="#FFC94A"/><rect x="330" y="520" width="260" height="70" rx="20" fill="#FFF2C7"/><text x="460" y="565" text-anchor="middle" fill="#38240A">공격력 · 처치 속도</text></g>
+    <g><circle cx="735" cy="525" r="18" fill="#67A844"/><rect x="625" y="400" width="250" height="70" rx="20" fill="#E7F2D7"/><text x="750" y="445" text-anchor="middle" fill="#2C491B">HP · 체류 깊이</text></g>
+    <g><circle cx="1000" cy="335" r="18" fill="#55D8FF"/><rect x="865" y="215" width="295" height="70" rx="20" fill="#DDF6FF"/><text x="1012" y="260" text-anchor="middle" fill="#173C48">이동속도 · 무리 접근</text></g>
+    <g><circle cx="1270" cy="205" r="18" fill="#A36BFF"/><rect x="1180" y="310" width="220" height="70" rx="20" fill="#EEE4FF"/><text x="1290" y="355" text-anchor="middle" fill="#3F276A">행운 · 드랍 등급</text></g>
+  </g>
+  <rect x="480" y="755" width="640" height="92" rx="28" fill="#241714"/>
+  <text x="800" y="814" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle" fill="#FFC94A">훈련은 입장권이고, 무기는 클리어권이다.</text>
+</svg>

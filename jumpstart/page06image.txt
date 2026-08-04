@@ -1,0 +1,12 @@
+
+  ### 통합 이미지 생성 프롬프트
+
+  > Three connected cinematic gameplay scenes from an original stylized isometric action RPG, featuring the same
+  > rugged barbarian hero fighting crowds of cartoon tomato monsters with different weapons. Left scene: a massive
+  > two-handed war hammer smashing into the ground with a powerful impact wave. Center scene: a broad battle axe
+  > sweeping through a dense group of enemies in one wide arc. Right scene: two different one-handed weapons
+  > delivering a rapid chain of attacks. Clearly readable sword, axe and hammer silhouettes, dramatically different
+  > attack rhythms, exaggerated enemy reactions, strong motion arcs, flying debris and satisfying impact effects.
+  > Bright red ketchup condiment splashes from defeated tomato monsters, clearly presented as tomato sauce rather than
+  > blood, playful and non-gory. Dark medieval dungeon, warm torchlight, high contrast, polished game concept art, no
+  > interface, no text, no logo.

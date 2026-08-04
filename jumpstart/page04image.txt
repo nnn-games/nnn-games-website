@@ -1,0 +1,144 @@
+• 세 이미지는 각각 공격 → 적중 → 보상이라는 서로 다른 순간으로 생성하는 것이 좋습니다. 디아블로 이미지는 카메라와 화면
+  밀도만 참고하고, 고유 캐릭터·몬스터·UI·맵·VFX는 복제하지 않도록 명시했습니다.
+
+  각 프롬프트에서:
+
+  - Image 1: 해당 장면과 가까운 디아블로 게임 화면
+  - Image 2: 현재 Tomato Splatter 콘셉트 이미지
+  - Image 3: 먼저 완성된 01 이미지. 02·03 제작 시 일관성 참고용으로 추가
+
+  ### 01 · 무리를 휩쓰는 휠윈드
+
+  Use case: stylized-concept
+  Asset type: standalone 4:3 combat thumbnail for a Tomato Splatter Jumpstart pitch deck
+
+  Input images:
+  Image 1 is a Diablo gameplay screenshot used only as a semantic reference for the elevated gameplay camera, enemy
+  density, combat readability and visual hierarchy. Do not reproduce its exact composition, characters, monsters,
+  environment, equipment, UI, ability effects or proprietary designs.
+  Image 2 is the Tomato Splatter identity reference. Preserve its Roblox R15 Bacon Hair avatar, tomato enemies, dark
+  neutral arena, ivory-gold Whirlwind and polished adult action-RPG presentation.
+
+  Primary request:
+  Create an original Tomato Splatter gameplay scene showing one premium-quality Roblox R15 Bacon Hair avatar cutting
+  through a dense tomato horde with a powerful 360-degree Whirlwind.
+
+  Scene/backdrop:
+  A compact dark neutral combat arena with a matte ground surface and minimal background detail. No farm, village,
+  dungeon architecture or narrative props.
+
+  Subject and action:
+  Place the avatar near the center of the frame, surrounded by dozens of tomato enemies. Show the complete circular
+  Whirlwind radius. Tomatoes touching the attack ring are knocked back, compressed or sliced, while intact enemies
+  outside the ring continue closing in. The scene must clearly read as one sweeping attack cutting through a large
+  horde.
+
+  Style/medium:
+  Polished high-fidelity stylized 3D Roblox gameplay visual for an adult action-RPG audience. Authentic R15
+  proportions with premium materials and lighting. Sophisticated and achievable as a real-time game target; not a
+  cinematic illustration.
+
+  Composition/framing:
+  Elevated three-quarter gameplay camera. Keep the avatar, complete Whirlwind radius and reacting tomato horde inside
+  the central 80% of the image. Strong silhouette separation and immediate readability at thumbnail size.
+
+  VFX and color:
+  One broad ivory-gold circular trail with controlled sparks. Small amounts of ketchup may appear at contact points,
+  but the Whirlwind and collapsing enemy formation must remain the focus.
+
+  Constraints:
+  Create an original scene. Do not copy Diablo characters, monsters, maps, weapons, skill effects, UI, typography,
+  icons or exact staging. No blood, gore, human anatomy, horror, text, HUD, logos or watermark. No cute emoji faces,
+  toy rendering, voxel art or photorealistic human character.
+
+  ### 02 · 피 대신 터지는 케첩
+
+  Use case: stylized-concept
+  Asset type: standalone 4:3 combat-impact thumbnail for a Tomato Splatter Jumpstart pitch deck
+
+  Input images:
+  Image 1 is a Diablo combat-impact screenshot used only as a semantic reference for camera angle, hit timing, impact
+  density and action readability. Do not reproduce its monsters, gore effects, environment, character, weapon, UI or
+  exact composition.
+  Image 2 is the Tomato Splatter identity reference.
+  Image 3, if provided, is the approved 01 Whirlwind image and should be used only to preserve the same avatar, tomato
+  designs, arena, lighting and rendering quality.
+
+  Primary request:
+  Create an original close gameplay view of the Tomato Splatter avatar's Whirlwind striking several tomato enemies at
+  the same moment. The image must make it immediately clear that the red impact effect is ketchup and tomato pulp,
+  never blood.
+
+  Scene/backdrop:
+  The same dark neutral private combat arena used in the other Tomato Splatter images.
+
+  Subject and action:
+  Show the Bacon Hair R15 avatar and part of the Whirlwind arc. At the active edge of the attack, several tomatoes
+  burst on impact. Keep a few intact tomatoes nearby so the before-and-after state is easy to understand.
+
+  Impact treatment:
+  Every red splash must be unmistakably food: thick glossy ketchup, visible tomato seeds, soft pulp, pieces of tomato
+  skin and green calyx leaves. The ketchup should splash widely across the ground and through the air, creating a
+  strong and satisfying hit moment without resembling injury.
+
+  Style/medium:
+  Polished high-fidelity stylized 3D Roblox gameplay visual for an adult action-RPG audience. Strong material
+  definition, crisp authored VFX shapes and controlled dramatic lighting.
+
+  Composition/framing:
+  Elevated three-quarter gameplay camera with a tighter crop than Image 01. Place the active hit zone prominently in
+  the center. Preserve enough of the avatar, weapon arc and surrounding enemies to make the combat action clear.
+
+  Constraints:
+  Ketchup and tomato pulp instead of blood. Do not generate flesh, organs, wounds, bones, severed anatomy, realistic
+  blood spray or horror imagery. Do not merely recolor a gore effect; create original food-based tomato impact VFX. No
+  Diablo characters, monsters, environment, UI or proprietary designs. No text, HUD, logos or watermark.
+
+  ### 03 · 쏟아지는 전리품
+
+  Use case: stylized-concept
+  Asset type: standalone 4:3 loot-drop thumbnail for a Tomato Splatter Jumpstart pitch deck
+
+  Input images:
+  Image 1 is a Diablo loot-drop screenshot used only as a semantic reference for the elevated gameplay camera,
+  abundant loot, rarity hierarchy and the excitement of inspecting drops after combat. Do not reproduce its items,
+  labels, UI, inventory, environment, characters or exact composition.
+  Image 2 is the Tomato Splatter identity reference.
+  Image 3, if provided, is the approved 01 Whirlwind image and should be used only to preserve the same avatar, arena,
+  tomato enemies, lighting and rendering style.
+
+  Primary request:
+  Create an original Tomato Splatter scene immediately after a large tomato horde has been defeated. The Bacon Hair
+  R15 avatar stands beside a wide area covered with newly dropped items and looks toward the loot, ready to inspect
+  it.
+
+  Scene/backdrop:
+  The same dark neutral combat arena. A fading ivory-gold Whirlwind trail and scattered ketchup residue show that
+  combat has just ended. A few surviving tomato enemies may remain near the outer edge, but the loot must be the main
+  subject.
+
+  Loot composition:
+  Scatter many drops naturally across the cleared ground where enemies were defeated. Most drops are ordinary crafting
+  materials, Coins and common equipment. Include several uncommon weapons or gems, one rare item marked by a
+  restrained violet beam and exactly one legendary weapon marked by a taller warm golden-orange beam.
+
+  The large number of ordinary drops and the few strong rarity signals must communicate random loot probability
+  without using text or UI. The viewer should immediately understand that every battle can produce anything from basic
+  materials to legendary equipment.
+
+  Style/medium:
+  Polished high-fidelity stylized 3D Roblox gameplay visual for an adult loot-action-RPG audience. Detailed, rewarding
+  and readable rather than visually cluttered.
+
+  Composition/framing:
+  Elevated three-quarter gameplay camera. Place the avatar slightly away from the center so the cleared ground and
+  abundant loot remain visible. Keep common items, rare items and the legendary beam separated clearly at thumbnail
+  size.
+
+  Constraints:
+  Items must appear as drops from defeated enemies, not goods arranged in a shop, inventory screen, treasure chest or
+  crafting station. No floating item names, numerical stats, UI panels or text. Do not copy Diablo item models, rarity
+  effects, environments, characters, UI or exact staging. No blood, gore, logos or watermark.
+
+  imagegen 지침에 따라 참조 이미지의 역할, 유지할 Tomato Splatter 요소, 복제하면 안 되는 요소를 분리했습니다. 이번에는
+  프롬프트만 작성했으며 이미지는 생성하지 않았습니다.

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#160F0E"/>
+  <text x="800" y="110" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="54" font-weight="700" text-anchor="middle">전투의 만족이 다음 선택으로 이어진다</text>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#FFC94A"/></marker></defs>
+  <path d="M490 280 C650 150 950 150 1110 280" fill="none" stroke="#FFC94A" stroke-width="8" marker-end="url(#arrow)"/>
+  <path d="M1210 390 C1320 510 1230 680 1060 700" fill="none" stroke="#FFC94A" stroke-width="8" marker-end="url(#arrow)"/>
+  <path d="M930 750 C710 820 470 760 390 620" fill="none" stroke="#FFC94A" stroke-width="8" marker-end="url(#arrow)"/>
+  <path d="M330 500 C270 390 320 300 450 250" fill="none" stroke="#FFC94A" stroke-width="8" marker-end="url(#arrow)"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g><circle cx="410" cy="300" r="118" fill="#E8422E"/><text x="410" y="287" fill="white" font-size="34" font-weight="700">토마토 무리를</text><text x="410" y="331" fill="white" font-size="34" font-weight="700">쓸어버린다</text></g>
+    <g><circle cx="1190" cy="300" r="118" fill="#FFC94A"/><text x="1190" y="287" fill="#38240A" font-size="34" font-weight="700">희귀 전리품을</text><text x="1190" y="331" fill="#38240A" font-size="34" font-weight="700">발견한다</text></g>
+    <g><circle cx="1110" cy="680" r="118" fill="#55D8FF"/><text x="1110" y="667" fill="#10252B" font-size="34" font-weight="700">아이템으로</text><text x="1110" y="711" fill="#10252B" font-size="34" font-weight="700">빌드를 바꾼다</text></g>
+    <g><circle cx="410" cy="650" r="118" fill="#67A844"/><text x="410" y="637" fill="white" font-size="34" font-weight="700">더 깊은 웨이브에</text><text x="410" y="681" fill="white" font-size="34" font-weight="700">도달한다</text></g>
+    <text x="800" y="450" fill="#FFFFFF" font-size="56" font-weight="700">압도</text>
+    <text x="800" y="510" fill="#FFC94A" font-size="34">발견 · 성장</text>
+  </g>
+</svg>
