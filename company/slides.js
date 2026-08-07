@@ -6,19 +6,22 @@
  *  - 수치(9.8M, 2.2K 등), 아바타 네임, 플랫폼명은 번역 대상이 아니므로 i18n 키를 만들지 않는다.
  *  - 번역 텍스트는 DECK_I18N 에만 두고, 마크업에는 data-deck-key 로 연결한다.
  *
- * 지표 갱신 (마지막 반영: 2026-08-07, 데이터 기준일 2026-08-06 16:42 UTC)
+ * 지표 갱신 (마지막 반영: 2026-08-07, 데이터 기준일 2026-08-06 23:43 UTC)
  *  출처: `npm run update:metrics` 가 갱신하는 data/projects.json, data/communities.json
  *   - S2 누적 방문   ← projects.json  summary.hero.totalVisits
  *   - S2 커뮤니티 멤버 ← communities.json totalMembers
  *   - S2 운영 프로젝트 ← projects.json  summary.hero.projectCount
  *   - S6 게임별 Total visits ← all[].metrics.visits
- *   - S6 Rating            ← all[].metrics.likeRatio
+ *   - S6 Rating            ← all[].metrics.likeRatio (반올림. 예: 0.9694 → 97%)
+ *   - S11 NNN UGC 멤버 수  ← communities.json groups[id=34453707].memberCount
  *  위 값은 index.html 에 그대로 적혀 있다(번역 대상이 아니므로 i18n 키 없음).
- *  과대 표기를 피하려고 항상 내림해서 쓴다. 예: 11,803,942 → 11.8M+
+ *  방문/멤버 수는 과대 표기를 피하려고 항상 내림해서 쓴다. 예: 11,826,975 → 11.8M+
  *
  *  데이터로 채울 수 없는 값 — 갱신 시 그대로 두거나 별도로 확인해야 한다.
  *   - S6 Peak CCU (2.2K / 164): Roblox API 는 현재 접속자(playing)만 주고 최고 기록은 없다.
  *   - S5 Get Train (2.5M / 600K WAU): 종료된 ZEPETO 프로젝트라 확정값이다.
+ *   - S10 ICONIX & FREEGROUND (7,566): 타사 그룹이라 update:metrics 대상이 아니다.
+ *     groups.roblox.com/v1/groups/547372251 의 memberCount 를 직접 확인해 적는다.
  */
 
 const DECK_SLIDES = [
@@ -210,7 +213,7 @@ const DECK_I18N = {
         ugc_rng_4: '이벤트 기반 희귀 보상 수집',
 
         // S10 쿵야 진입 전략
-        kungya_entry_title: '데이터와 커뮤니티 구축이 선행이 필수.',
+        kungya_entry_title: '커뮤니티 구축과 타깃 데이터 확보 먼저',
         kungya_entry_step_1_title: '캐릭터와 세계관 전달이 먼저',
         kungya_entry_step_1_desc: 'Roblox 이용자에게 소개된 적 없는 IP는 캐릭터와 세계관이 먼저 전달돼야 IP의 효과가 발생합니다.',
         kungya_entry_step_2_title: '관심 수요층과 행동 데이터 확보',
@@ -233,7 +236,7 @@ const DECK_I18N = {
         kungya_community_proof_desc: '자사 RNG 게임 출시 후 1개월 동안 약 5만 명의 커뮤니티를 구축한 사례가 있습니다.',
 
         // S12 KPI별 확장
-        kungya_expansion_title: '로블록스 커뮤니티와 데이터를 기반으로 브랜드와 IP의 목적에 맞게 활용.',
+        kungya_expansion_title: '커뮤니티와 데이터를 기반으로 브랜드와 IP의 목적에 맞게 활용.',
         kungya_expansion_brand_title: '브랜드·IP 홍보',
         kungya_expansion_brand_desc: '구축된 커뮤니티를 기반으로 브랜드와 IP의 목적에 따라 홍보와 마케팅에 활용',
         kungya_expansion_content_title: '수익형 게임 콘텐츠 제작',
@@ -242,7 +245,7 @@ const DECK_I18N = {
         kungya_expansion_events_desc: '커뮤니티를 온라인·오프라인 이벤트와 연계해 브랜드와 IP의 목적에 맞는 로블록스 유저들의 행위 유도',
 
         // S13 보유 기술
-        tech_title: '로블록스 커뮤니티 운영 시스템 구축.',
+        tech_title: 'NNN 보유 기술',
         tech_lead: '운영 업무를 자동화, 빠르고 안정적인 라이브 서비스',
         tech_ugc_title: 'UGC 자동 지급 및 관리 시스템',
         tech_ugc_desc: '퀘스트·포인트·랭킹·이벤트 등을 통해 다수의 유저들에게 UGC를 자동으로 지급해주는 운영 및 보안 시스템 구축.',
@@ -374,7 +377,7 @@ const DECK_I18N = {
         ugc_rng_3: 'Acquiring Limited UGC with coins',
         ugc_rng_4: 'Event-driven rare reward collection',
 
-        kungya_entry_title: 'Building data and community must come first.',
+        kungya_entry_title: 'Build the community and secure target data first',
         kungya_entry_step_1_title: 'Delivering the characters and world comes first',
         kungya_entry_step_1_desc: 'An IP not yet introduced on Roblox only creates real impact once its characters and world are delivered to players first.',
         kungya_entry_step_2_title: 'Secure audience-demand and behavior data',
@@ -395,7 +398,7 @@ const DECK_I18N = {
         kungya_community_proof_title: 'Community members built',
         kungya_community_proof_desc: 'One of our RNG game launches built a community of approximately 50,000 members within its first month.',
 
-        kungya_expansion_title: 'Use Roblox community and data to serve the brand\'s and IP\'s goals.',
+        kungya_expansion_title: "Use community and data to serve the brand's and IP's goals.",
         kungya_expansion_brand_title: 'Brand & IP promotion',
         kungya_expansion_brand_desc: "Use the community that's already been built for promotion and marketing aligned with the brand's and IP's goals.",
         kungya_expansion_content_title: 'Build monetizable game content',
@@ -403,7 +406,7 @@ const DECK_I18N = {
         kungya_expansion_events_title: 'Connect online & offline events',
         kungya_expansion_events_desc: "Link the community to online and offline events to drive Roblox user actions aligned with the brand's and IP's goals.",
 
-        tech_title: 'Building a Roblox community operations system.',
+        tech_title: 'NNN Core Technology',
         tech_lead: 'Automated operations. Fast, reliable live service.',
         tech_ugc_title: 'Automated UGC grant & management system',
         tech_ugc_desc: 'An operations and security system that automatically grants UGC to large numbers of users through quests, points, rankings, events, and more.',
@@ -532,7 +535,7 @@ const DECK_I18N = {
         ugc_rng_3: 'コインでLimited UGCを獲得',
         ugc_rng_4: 'イベントベースのレア報酬収集',
 
-        kungya_entry_title: 'データとコミュニティ構築が先行必須。',
+        kungya_entry_title: 'コミュニティ構築とターゲットデータ確保が先',
         kungya_entry_step_1_title: 'キャラクターと世界観の伝達が先',
         kungya_entry_step_1_desc: 'Robloxでまだ紹介されていないIPは、キャラクターと世界観を先に伝えてこそ効果が生まれます。',
         kungya_entry_step_2_title: '関心層と行動データを確保',
@@ -553,7 +556,7 @@ const DECK_I18N = {
         kungya_community_proof_title: 'コミュニティメンバーを構築',
         kungya_community_proof_desc: '自社RNGゲームのリリース後、1か月で約5万人のコミュニティを構築した事例があります。',
 
-        kungya_expansion_title: 'Robloxコミュニティとデータを基盤に、ブランドとIPの目的に合わせて活用。',
+        kungya_expansion_title: 'コミュニティとデータを基盤に、ブランドとIPの目的に合わせて活用。',
         kungya_expansion_brand_title: 'ブランド・IPプロモーション',
         kungya_expansion_brand_desc: '構築されたコミュニティを基盤に、ブランドとIPの目的に応じてプロモーションとマーケティングに活用。',
         kungya_expansion_content_title: '収益型ゲームコンテンツ制作',
@@ -561,7 +564,7 @@ const DECK_I18N = {
         kungya_expansion_events_title: 'オン・オフラインイベント連携',
         kungya_expansion_events_desc: 'コミュニティをオンライン・オフラインイベントと連携させ、ブランドとIPの目的に合ったRobloxユーザーの行動を誘導。',
 
-        tech_title: 'Robloxコミュニティ運営システムを構築。',
+        tech_title: 'NNN保有技術',
         tech_lead: '運営業務を自動化、速く安定したライブサービス',
         tech_ugc_title: 'UGC自動支給・管理システム',
         tech_ugc_desc: 'クエスト・ポイント・ランキング・イベントなどを通じて多数のユーザーにUGCを自動支給する運営・セキュリティシステムを構築。',
