@@ -6,7 +6,7 @@
  *  - 수치(9.8M, 2.2K 등), 아바타 네임, 플랫폼명은 번역 대상이 아니므로 i18n 키를 만들지 않는다.
  *  - 번역 텍스트는 DECK_I18N 에만 두고, 마크업에는 data-deck-key 로 연결한다.
  *
- * 지표 갱신 (마지막 반영: 2026-08-07, 데이터 기준일 2026-08-06 23:43 UTC)
+ * 지표 갱신 (마지막 반영: 2026-08-11, 데이터 기준일 2026-08-10 21:09 UTC)
  *  출처: `npm run update:metrics` 가 갱신하는 data/projects.json, data/communities.json
  *   - S2 누적 방문   ← projects.json  summary.hero.totalVisits
  *   - S2 커뮤니티 멤버 ← communities.json totalMembers
@@ -20,8 +20,6 @@
  *  데이터로 채울 수 없는 값 — 갱신 시 그대로 두거나 별도로 확인해야 한다.
  *   - S6 Peak CCU (2.2K / 164): Roblox API 는 현재 접속자(playing)만 주고 최고 기록은 없다.
  *   - S5 Get Train (2.5M / 600K WAU): 종료된 ZEPETO 프로젝트라 확정값이다.
- *   - S10 ICONIX & FREEGROUND (7,566): 타사 그룹이라 update:metrics 대상이 아니다.
- *     groups.roblox.com/v1/groups/547372251 의 memberCount 를 직접 확인해 적는다.
  */
 
 const DECK_SLIDES = [
@@ -274,11 +272,8 @@ const DECK_I18N = {
         alt_case_tomato: 'TOMATO SPLATTER SIMULATOR 인게임 플레이 화면',
         alt_ugc_afk: '[FREE UGC] AFK or ARCADE GAME 아케이드 마을 화면',
         alt_ugc_rng: 'FREE UGC RNG 수집 플레이 화면',
-        alt_kungya_case_tayo: 'Tayo Bus Simulator Roblox 게임 썸네일',
-        alt_kungya_case_pororo: 'Pororo Village Tycoon Roblox 게임 썸네일',
         alt_kungya_runaway_duffy: 'Runaway: Duffy 게임 아트',
         alt_kungya_ugc_group: 'NNN UGC 커뮤니티 아이콘',
-        alt_kungya_iconix_group: 'Iconix & Freeground 커뮤니티 아이콘',
         alt_kungya_expansion_content: '수익화 게임 콘텐츠 예시 화면',
         alt_kungya_expansion_brand: '브랜드·IP 홍보 소재 예시 화면',
         alt_kungya_expansion_events: '온오프라인 연계 이벤트 예시 화면',
@@ -432,11 +427,8 @@ const DECK_I18N = {
         alt_case_tomato: 'TOMATO SPLATTER SIMULATOR in-game screenshot',
         alt_ugc_afk: '[FREE UGC] AFK or ARCADE GAME arcade town screenshot',
         alt_ugc_rng: 'FREE UGC RNG collection gameplay screenshot',
-        alt_kungya_case_tayo: 'Tayo Bus Simulator Roblox game thumbnail',
-        alt_kungya_case_pororo: 'Pororo Village Tycoon Roblox game thumbnail',
         alt_kungya_runaway_duffy: 'Runaway: Duffy game art',
         alt_kungya_ugc_group: 'NNN UGC community icon',
-        alt_kungya_iconix_group: 'Iconix & Freeground community icon',
         alt_kungya_expansion_content: 'Example monetized game content screenshot',
         alt_kungya_expansion_brand: 'Example brand & IP promotional material',
         alt_kungya_expansion_events: 'Example online-offline linked event screen',
@@ -590,11 +582,8 @@ const DECK_I18N = {
         alt_case_tomato: 'TOMATO SPLATTER SIMULATOR のゲーム画面',
         alt_ugc_afk: '[FREE UGC] AFK or ARCADE GAME のアーケード街の画面',
         alt_ugc_rng: 'FREE UGC RNG の収集プレイ画面',
-        alt_kungya_case_tayo: 'Tayo Bus Simulator の Robloxゲームサムネイル',
-        alt_kungya_case_pororo: 'Pororo Village Tycoon の Robloxゲームサムネイル',
         alt_kungya_runaway_duffy: 'Runaway: Duffy のゲームアート',
         alt_kungya_ugc_group: 'NNN UGC コミュニティアイコン',
-        alt_kungya_iconix_group: 'Iconix & Freeground コミュニティアイコン',
         alt_kungya_expansion_content: '収益化ゲームコンテンツの例示画面',
         alt_kungya_expansion_brand: 'ブランド・IPプロモーション素材の例示画面',
         alt_kungya_expansion_events: 'オン・オフライン連携イベントの例示画面',

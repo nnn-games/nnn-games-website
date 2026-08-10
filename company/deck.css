@@ -1981,7 +1981,7 @@ img.pipeline-art--image {
     flex: 1;
     min-height: 0;
     display: grid;
-    grid-template-columns: 1.72fr .88fr;
+    grid-template-columns: 1fr;
     gap: .75rem;
     margin-top: 1rem;
 }
@@ -1989,14 +1989,14 @@ img.pipeline-art--image {
 .entry-path {
     min-height: 0;
     display: grid;
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    gap: .48rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .6rem;
 }
 
 .entry-step {
     position: relative;
     min-width: 0;
-    padding: .72rem .8rem .65rem 3.15rem;
+    padding: 3.1rem 1.05rem 1.1rem;
     border: 1px solid var(--nnn-line);
     background: rgba(255, 255, 255, .68);
 }
@@ -2004,9 +2004,9 @@ img.pipeline-art--image {
 .entry-step::before {
     content: attr(data-step);
     position: absolute;
-    left: .8rem;
-    top: .75rem;
-    font: 700 1.45rem/1 'Poppins', sans-serif;
+    left: 1.05rem;
+    top: 1.05rem;
+    font: 700 1.75rem/1 'Poppins', sans-serif;
     color: var(--nnn-orange);
 }
 
@@ -2017,80 +2017,16 @@ img.pipeline-art--image {
 }
 
 .entry-step h3 {
-    margin-top: .3rem;
-    font-size: .75rem;
-    line-height: 1.32;
+    margin-top: .32rem;
+    font-size: .82rem;
+    line-height: 1.34;
 }
 
 .entry-step p {
-    margin-top: .27rem;
-    font-size: .58rem;
-    line-height: 1.44;
+    margin-top: .4rem;
+    font-size: .62rem;
+    line-height: 1.5;
     color: var(--nnn-muted);
-}
-
-.entry-risk {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 0;
-    padding: 1rem;
-    border-left: .3rem solid var(--acc-red);
-    background: var(--nnn-ink);
-    color: #fff;
-}
-
-.entry-risk-label {
-    font: 700 .53rem/1.25 'Poppins', sans-serif;
-    letter-spacing: .07em;
-    color: #F49A8E;
-}
-
-.entry-risk-compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .6rem;
-    margin-top: .8rem;
-}
-
-.entry-risk-games {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    min-width: 0;
-}
-
-.entry-case {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    text-decoration: none;
-    color: inherit;
-}
-
-/* img 의 width/height 속성이 height 프레젠테이션 힌트를 만들어 aspect-ratio 를 무력화한다.
- * aspect-ratio 로 비율을 잡는 이미지에는 반드시 height:auto 를 함께 준다. */
-.entry-case img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: .2rem;
-    outline: 1px solid rgba(255, 255, 255, .22);
-    outline-offset: -1px;
-    transition: outline-color .15s ease, transform .15s ease;
-}
-
-.entry-case:hover img,
-.entry-case:focus-visible img {
-    outline-color: var(--nnn-orange);
-    transform: translateY(-.1rem);
-}
-
-.entry-case span {
-    margin-top: .42rem;
-    font: 600 .56rem/1.32 'Inter', 'Noto Sans KR', sans-serif;
-    color: #C9CDD2;
 }
 
 /* ---------------------------------------------- S11 쿵야 커뮤니티 */
