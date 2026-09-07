@@ -40,3 +40,4 @@ PROJECT-MANAGEMENT-GUIDE.md
 
 # Build output (CI 가 생성)
 dist/
+exports/

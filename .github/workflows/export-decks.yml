@@ -1,0 +1,50 @@
+# 덱 내보내기 (수동 실행)
+# - 레지스트리(decks/decks.json)의 배포 덱을 슬라이드별 PNG 와 언어별 PDF 로 만들어 아티팩트로 올린다.
+# - 저장소에 PDF 를 커밋하지 않기 위한 대체 수단. 아티팩트 보존 30일. 오래 보관하려면 Release 에 첨부한다.
+name: Export decks
+
+on:
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: '내보낼 덱 slug (공백 구분, 비우면 전체)'
+        required: false
+        default: ''
+      langs:
+        description: '언어 (쉼표 구분, 비우면 각 덱의 languages 전부)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: 빌드
+        run: npm run build
+
+      - name: Playwright Chromium 설치
+        run: npx playwright install --with-deps chromium
+
+      - name: 내보내기
+        run: |
+          ARGS="${{ github.event.inputs.slugs }}"
+          if [ -n "${{ github.event.inputs.langs }}" ]; then ARGS="$ARGS --lang ${{ github.event.inputs.langs }}"; fi
+          node scripts/export-deck.js $ARGS
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deck-exports-${{ github.run_number }}
+          path: exports/decks
+          retention-days: 30

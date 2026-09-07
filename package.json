@@ -22,7 +22,9 @@
     "check:links": "node scripts/check-links.js",
     "check:data": "node scripts/check-data.js",
     "check": "npm run build && npm run check:i18n && npm run check:links && npm run check:data && npm run lint",
-    "test": "npm run check"
+    "test": "npm run check",
+    "snapshot": "node scripts/snapshot.js",
+    "export:deck": "node scripts/export-deck.js"
   },
   "engines": {
     "node": ">=20"
@@ -45,6 +47,7 @@
     "eslint": "^9.39.5",
     "globals": "^16.5.0",
     "http-server": "^14.1.1",
+    "playwright": "^1.63.0",
     "postcss": "^8.5.6",
     "prettier": "^3.9.6",
     "tailwindcss": "^3.4.19"

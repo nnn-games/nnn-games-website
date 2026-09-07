@@ -1,0 +1,85 @@
+# PR 미리보기
+# - PR 마다 검증(npm run check) 후 dist 와 주요 페이지 스크린샷을 아티팩트로 올리고, PR 에 요약 코멘트를 남긴다.
+# - GitHub Pages 는 PR 미리보기 URL 을 제공하지 않으므로 아티팩트(zip)로 대신한다. 보존 기간 14일.
+name: PR preview
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: 빌드 + 검증
+        run: npm run check
+
+      - name: Playwright Chromium 설치
+        run: npx playwright install --with-deps chromium
+
+      - name: 주요 페이지 스크린샷 (ko)
+        run: npm run snapshot
+
+      - name: dist 아티팩트
+        uses: actions/upload-artifact@v4
+        id: dist
+        with:
+          name: site-preview-pr${{ github.event.pull_request.number }}
+          path: dist
+          retention-days: 14
+
+      - name: 스크린샷 아티팩트
+        uses: actions/upload-artifact@v4
+        id: shots
+        with:
+          name: screenshots-pr${{ github.event.pull_request.number }}
+          path: exports/site
+          retention-days: 14
+
+      - name: PR 코멘트
+        uses: actions/github-script@v7
+        env:
+          DIST_URL: ${{ steps.dist.outputs.artifact-url }}
+          SHOTS_URL: ${{ steps.shots.outputs.artifact-url }}
+        with:
+          script: |
+            const fs = require('fs');
+            const manifest = JSON.parse(fs.readFileSync('exports/site/manifest.json', 'utf8'));
+            const marker = '<!-- pr-preview -->';
+            const routes = manifest.routes.map((r) => `\`${r}\``).join(', ');
+            const body = [
+              marker,
+              '### PR 미리보기',
+              `- 검증: \`npm run check\` 통과 (커밋 ${context.payload.pull_request.head.sha.slice(0, 7)})`,
+              `- [dist 아티팩트](${process.env.DIST_URL}) — 압축을 풀고 \`npx http-server dist\` 로 로컬 확인`,
+              `- [스크린샷 ${manifest.files.length}장](${process.env.SHOTS_URL}) — 데스크톱 1280 / 모바일 390, 언어 ${manifest.lang}`,
+              `- 페이지: ${routes}`,
+              '',
+              `<sub>워크플로 실행: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}</sub>`
+            ].join('\n');
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, per_page: 100
+            });
+            const existing = comments.find((c) => c.body && c.body.startsWith(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner: context.repo.owner, repo: context.repo.repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, body });
+            }
