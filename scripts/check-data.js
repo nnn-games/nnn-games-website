@@ -13,6 +13,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
+const DATA = 'shared/data';
+const SITE = 'site';
 const LANGS = ['ko', 'en', 'ja'];
 const STATUSES = ['active', 'development', 'completed', 'paused'];
 const LINK_TYPES = ['play', 'trailer', 'article', 'group', 'showcase'];
@@ -59,8 +61,8 @@ function flag(project, key) {
 }
 
 // projects.json
-console.log('[data/projects.json]');
-const projects = readJson('data/projects.json');
+console.log(`[${DATA}/projects.json]`);
+const projects = readJson(`${DATA}/projects.json`);
 if (projects) {
   const all = Array.isArray(projects.all) ? projects.all : [];
   if (all.length === 0) fail('all 배열이 비어 있습니다.');
@@ -108,19 +110,19 @@ if (projects) {
       if (project.metrics.updatedAt != null && Number.isNaN(Date.parse(project.metrics.updatedAt))) fail(`${label}.metrics.updatedAt: ISO 날짜가 아닙니다.`);
     }
 
-    // 상세 페이지 셸과 설정 파일
+    // 상세 페이지 셸과 설정 파일 (소스는 site/ 아래, 경로 값은 배포 기준이므로 site/ 를 붙여 찾는다)
     if (hasText(project.detailPage)) {
-      const shell = path.join(ROOT, project.detailPage);
+      const shell = path.join(ROOT, SITE, project.detailPage);
       if (!fs.existsSync(shell)) {
-        fail(`${label}: detailPage '${project.detailPage}' 파일이 없습니다.`);
+        fail(`${label}: detailPage '${project.detailPage}' 파일이 ${SITE}/ 에 없습니다.`);
       } else {
         const html = fs.readFileSync(shell, 'utf8');
         const bodyId = (html.match(/<body[^>]*data-project-id="([^"]+)"/) || [])[1];
         if (bodyId && bodyId !== project.id) fail(`${project.detailPage}: body[data-project-id]='${bodyId}' 가 id '${project.id}' 와 다릅니다.`);
         const config = `js/project-details/${project.id}.js`;
         if (html.includes('project-detail') && !html.includes(config)) fail(`${project.detailPage}: '${config}' 스크립트를 로드하지 않습니다.`);
-        if (fs.existsSync(path.join(ROOT, config))) {
-          const source = fs.readFileSync(path.join(ROOT, config), 'utf8');
+        if (fs.existsSync(path.join(ROOT, SITE, config))) {
+          const source = fs.readFileSync(path.join(ROOT, SITE, config), 'utf8');
           if (!source.includes(`ProjectDetailConfigs['${project.id}']`) && !source.includes(`ProjectDetailConfigs["${project.id}"]`)) {
             fail(`${config}: ProjectDetailConfigs['${project.id}'] 를 정의하지 않습니다.`);
           }
@@ -146,8 +148,8 @@ if (projects) {
 }
 
 // community-groups.json
-console.log('[data/community-groups.json]');
-const groupConfig = readJson('data/community-groups.json');
+console.log(`[${DATA}/community-groups.json]`);
+const groupConfig = readJson(`${DATA}/community-groups.json`);
 const configIds = new Set();
 if (groupConfig) {
   const groups = Array.isArray(groupConfig.groups) ? groupConfig.groups : [];
@@ -167,8 +169,8 @@ if (groupConfig) {
 }
 
 // communities.json
-console.log('[data/communities.json]');
-const communities = readJson('data/communities.json');
+console.log(`[${DATA}/communities.json]`);
+const communities = readJson(`${DATA}/communities.json`);
 if (communities && groupConfig) {
   const groups = Array.isArray(communities.groups) ? communities.groups : [];
   const configGroups = Array.isArray(groupConfig.groups) ? groupConfig.groups : [];

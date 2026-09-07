@@ -7,10 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "npm run build:css && http-server . -p 8080 -c-1 -o",
-    "serve": "npm run build:css && http-server . -p 8080 -c-1",
-    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./css/style.css --minify",
-    "dev:css": "tailwindcss -i ./src/styles/tailwind.css -o ./css/style.css --watch",
+    "dev": "node scripts/build.js --watch --serve",
+    "serve": "node scripts/build.js --serve",
+    "build": "node scripts/build.js",
+    "build:css": "tailwindcss -i ./site/styles/tailwind.css -o ./dist/css/style.css --minify",
+    "dev:css": "tailwindcss -i ./site/styles/tailwind.css -o ./dist/css/style.css --watch",
     "update:metrics": "node scripts/update-metrics.js",
     "build:all": "npm run update:metrics && npm run build",
     "lint": "eslint .",
@@ -20,9 +21,8 @@
     "check:i18n": "node scripts/check-i18n.js",
     "check:links": "node scripts/check-links.js",
     "check:data": "node scripts/check-data.js",
-    "check": "npm run build:css && npm run check:i18n && npm run check:links && npm run check:data && npm run lint",
-    "test": "npm run check",
-    "build": "npm run build:css && node scripts/build.js"
+    "check": "npm run build && npm run check:i18n && npm run check:links && npm run check:data && npm run lint",
+    "test": "npm run check"
   },
   "engines": {
     "node": ">=20"

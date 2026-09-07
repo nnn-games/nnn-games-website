@@ -34,11 +34,8 @@ jobs:
 
       - run: npm ci
 
-      - name: 검증 (i18n / links / data / lint)
+      - name: 빌드 + 검증 (dist 조립, Tailwind, i18n / links / data / lint)
         run: npm run check
-
-      - name: 빌드 (Tailwind + dist 조립)
-        run: npm run build
 
       - uses: actions/configure-pages@v5
 

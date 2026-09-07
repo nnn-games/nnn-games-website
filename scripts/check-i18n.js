@@ -14,6 +14,8 @@ const path = require('path');
 const vm = require('vm');
 
 const ROOT = path.join(__dirname, '..');
+const SITE = 'site';
+const DECKS_DIR = 'decks';
 const LANGS = ['ko', 'en', 'ja'];
 const DECKS = ['company', 'nnn', 'jumpstart'];
 
@@ -99,21 +101,23 @@ function checkHtmlKeys(relPath, attrPrefix, known, label) {
 }
 
 // 1~2. 사이트 i18n
-console.log('[site] js/i18n.js');
-const translations = evalBrowserScript('js/i18n.js', 'typeof translations !== "undefined" ? translations : window.translations');
-const siteKeys = compareLangKeys('js/i18n.js', translations, LANGS).keys;
+const i18nFile = `${SITE}/js/i18n.js`;
+console.log(`[site] ${i18nFile}`);
+const translations = evalBrowserScript(i18nFile, 'typeof translations !== "undefined" ? translations : window.translations');
+const siteKeys = compareLangKeys(i18nFile, translations, LANGS).keys;
 
 const rootHtml = fs
-  .readdirSync(ROOT)
+  .readdirSync(path.join(ROOT, SITE))
   .filter((name) => name.endsWith('.html'))
-  .sort();
+  .sort()
+  .map((name) => `${SITE}/${name}`);
 let htmlKeyCount = 0;
-for (const file of rootHtml) htmlKeyCount += checkHtmlKeys(file, 'data-key', siteKeys, 'js/i18n.js');
+for (const file of rootHtml) htmlKeyCount += checkHtmlKeys(file, 'data-key', siteKeys, i18nFile);
 console.log(`  HTML ${rootHtml.length}개, data-key ${htmlKeyCount}개 확인`);
 
 // 3. JS 에서 NNNUtils.t(lang, 'key') 형태로 참조하는 키 (동적 키는 잡지 못하므로 경고만)
 //    파일 안에서 자체 정의한 t() 는 대상이 아니므로 `.t(` 멤버 호출만 본다.
-const jsDir = path.join(ROOT, 'js');
+const jsDir = path.join(ROOT, SITE, 'js');
 const jsFiles = [];
 (function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -126,14 +130,14 @@ const keyRef = /\.t\(\s*[^,()]+,\s*'([a-z0-9_]+)'/g;
 for (const file of jsFiles) {
   const source = fs.readFileSync(file, 'utf8');
   for (const match of source.matchAll(keyRef)) {
-    if (!siteKeys.has(match[1])) warn(`${path.relative(ROOT, file)}: t() 키 '${match[1]}' 가 js/i18n.js 에 없습니다.`);
+    if (!siteKeys.has(match[1])) warn(`${path.relative(ROOT, file)}: t() 키 '${match[1]}' 가 ${i18nFile} 에 없습니다.`);
   }
 }
 
 // 4. 덱 i18n
 for (const deck of DECKS) {
-  const slides = `${deck}/slides.js`;
-  const index = `${deck}/index.html`;
+  const slides = `${DECKS_DIR}/${deck}/slides.js`;
+  const index = `${DECKS_DIR}/${deck}/index.html`;
   if (!fs.existsSync(path.join(ROOT, slides))) {
     warn(`${slides} 없음, 건너뜀`);
     continue;

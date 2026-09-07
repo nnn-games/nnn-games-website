@@ -8,8 +8,8 @@ description: Roblox 공개 API로 프로젝트 방문 수·플레이 수·즐겨
 평소에는 `.github/workflows/metrics.yml`이 매일 12:00 KST 에 자동으로 갱신·커밋·재배포한다. 이 절차는 사용자가 즉시 갱신을 원하거나 집계 대상을 바꿀 때 쓴다. 로컬 실행 대신 `gh workflow run metrics.yml`로 CI 를 수동 실행해도 된다.
 
 ## 1. 집계 대상 확인
-- `data/projects.json`: `reporting.collectMetrics: true`이고 `universeId`가 있는 프로젝트만 수집된다.
-- `data/community-groups.json`: `status`, `showOnHomepage`, `includeInHeroSubscriberTotal` 값이 홈 노출과 히어로 합계를 결정한다.
+- `shared/data/projects.json`: `reporting.collectMetrics: true`이고 `universeId`가 있는 프로젝트만 수집된다.
+- `shared/data/community-groups.json`: `status`, `showOnHomepage`, `includeInHeroSubscriberTotal` 값이 홈 노출과 히어로 합계를 결정한다.
 - 대상을 바꾸려는 요청이면 이 두 파일의 플래그만 수정한다. 수치는 절대 손으로 고치지 않는다.
 
 ## 2. 실행
@@ -21,9 +21,9 @@ npm run update:metrics
 ## 3. 검증
 ```
 npm run check:data
-git diff --stat data/
+git diff --stat shared/data/
 ```
-- 변경이 `data/projects.json`, `data/communities.json` 두 파일에만 있어야 한다.
+- 변경이 `shared/data/projects.json`, `shared/data/communities.json` 두 파일에만 있어야 한다.
 - `summary.hero.projectCount`, `totalVisits`, `totals.heroSubscriberCount`가 플래그 기준과 일치하는지 `check:data`가 확인한다.
 - 방문 수가 이전보다 줄어든 프로젝트가 있으면 API 응답 이상일 수 있으니 보고한다.
 

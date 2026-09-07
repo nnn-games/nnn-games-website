@@ -1,6 +1,6 @@
 ---
 name: new-deck
-description: slides/shared 공용 런타임을 사용하는 새 웹 슬라이드 덱을 만든다. 디렉터리, index.html 셸, slides.js(DECK_SLIDES, DECK_I18N), deck.css 를 생성하고 검증한다. "새 덱", "슬라이드 만들어줘", "제안서 웹 슬라이드" 요청에 사용.
+description: decks/shared 공용 런타임을 사용하는 새 웹 슬라이드 덱을 decks/<slug>/ 에 만든다. 디렉터리, index.html 셸, slides.js(DECK_SLIDES, DECK_I18N), deck.css 를 생성하고 검증한다. "새 덱", "슬라이드 만들어줘", "제안서 웹 슬라이드" 요청에 사용.
 ---
 
 # 새 덱 생성 절차
@@ -8,7 +8,7 @@ description: slides/shared 공용 런타임을 사용하는 새 웹 슬라이드
 인자: `$ARGUMENTS` (덱 slug 와 주제. 없으면 사용자에게 slug, 대상 청중, 슬라이드 개요를 묻는다)
 
 ## 0. 사전 확인
-- slug 는 kebab-case 디렉터리명이며 `/ <slug>/` 가 URL 이 된다. 기존 `company`, `nnn`, `jumpstart`와 겹치지 않아야 한다.
+- slug 는 kebab-case 디렉터리명이며 `decks/<slug>/` 에 만들고 URL 은 `/<slug>/` 가 된다. `scripts/build.js`의 `MAP`에 `['decks/<slug>', '<slug>']` 를 추가해야 배포된다(사용자에게 먼저 알린다). 기존 `company`, `nnn`, `jumpstart`와 겹치지 않아야 한다.
 - 슬라이드 개요(제목, 순서, 테마)를 먼저 표로 사용자에게 확인받는다. 확인 전에는 파일을 만들지 않는다.
 
 ## 1. 디렉터리
@@ -21,7 +21,7 @@ description: slides/shared 공용 런타임을 사용하는 새 웹 슬라이드
 ```
 
 ## 2. index.html
-- `<link rel="stylesheet" href="../slides/shared/deck.css">` 와 `<script src="../slides/shared/deck.js">`를 유지한다. `deck.js` 사본을 만들지 않는다.
+- `<link rel="stylesheet" href="../slides/shared/deck.css">` 와 `<script src="../slides/shared/deck.js">`를 유지한다 (배포 시 `decks/shared` → `/slides/shared`). `deck.js` 사본을 만들지 않는다.
 - 슬라이드마다 `<section class="slide" data-slide="<id>" data-theme="paper|dark|image" role="region" aria-roledescription="slide">`.
 - 문구는 `data-deck-key="<key>"`, 이미지 alt 는 `data-deck-key-alt`, 버튼 라벨은 `data-deck-key-aria-label`.
 - 아이콘 경로는 `../images/nnn-logo.png`.
@@ -32,7 +32,7 @@ description: slides/shared 공용 런타임을 사용하는 새 웹 슬라이드
 - 모든 키를 세 언어에 넣는다. 번역이 준비되지 않았으면 KO 문구를 넣고 보고에 "번역 필요" 목록을 남긴다.
 
 ## 4. 데이터 인용
-- 지표 숫자는 `data/projects.json`, `data/communities.json`에서 읽어 넣고 갱신일을 함께 적는다. 파일은 수정하지 않는다.
+- 지표 숫자는 `shared/data/projects.json`, `shared/data/communities.json`에서 읽어 넣고 갱신일을 함께 적는다. 파일은 수정하지 않는다.
 
 ## 5. 검증
 ```
@@ -42,7 +42,7 @@ npm run dev      # http://localhost:8080/<slug>/
 - 키보드(← →), 해시 딥링크(`#<slide-id>`), 언어 전환, 전체화면, 모바일 폭, 인쇄 미리보기를 확인한다.
 
 ## 6. 문서
-- `slides/README.md`의 덱 목록에 추가한다.
+- `decks/README.md`의 덱 목록에 추가한다.
 
 ## 보고
 슬라이드 id 목록, 번역 필요 키, 사용자가 채워야 할 이미지 자리, 실행한 검증 명령을 적는다.

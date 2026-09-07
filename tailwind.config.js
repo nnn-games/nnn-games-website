@@ -3,9 +3,8 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./*.html",
-    "./js/**/*.js",
-    "./docs/**/*.{md,html}",
+    "./site/**/*.html",
+    "./site/js/**/*.js",
   ],
   // 상태 배지 클래스는 JS에서 `status-${status}` 로 동적 생성되어 정적 스캔에 잡히지 않으므로
   // purge 방지를 위해 명시적으로 safelist 에 등록한다.

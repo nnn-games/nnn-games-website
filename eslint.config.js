@@ -27,10 +27,10 @@ const commonRules = {
 
 module.exports = [
   {
-    ignores: ['node_modules/**', 'dist/**', 'css/**', '_archive/**', 'package-lock.json'],
+    ignores: ['node_modules/**', 'dist/**', '_archive/**', 'package-lock.json'],
   },
   {
-    files: ['js/**/*.js', 'slides/**/*.js', 'company/**/*.js', 'nnn/**/*.js', 'jumpstart/**/*.js', 'privacy/**/*.js'],
+    files: ['site/**/*.js', 'decks/**/*.js'],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'script',

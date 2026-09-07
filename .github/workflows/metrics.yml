@@ -1,5 +1,5 @@
 # Roblox 지표 자동 갱신
-# - 매일 12:00 KST(03:00 UTC) 와 수동 실행 시 data/projects.json, data/communities.json 을 갱신해 main 에 커밋한다.
+# - 매일 12:00 KST(03:00 UTC) 와 수동 실행 시 shared/data/projects.json, shared/data/communities.json 을 갱신해 main 에 커밋한다.
 # - 변경이 있을 때만 커밋하고, 커밋 후 deploy.yml 을 호출해 사이트를 다시 배포한다.
 #   (GITHUB_TOKEN 으로 푸시한 커밋은 push 이벤트 워크플로를 자동으로 트리거하지 않으므로 직접 호출한다.)
 # - 저장소가 60일간 활동이 없으면 GitHub 이 schedule 을 자동 비활성화한다. 그때는 Actions 탭에서 다시 켠다.
@@ -45,14 +45,14 @@ jobs:
       - name: 변경이 있으면 커밋
         id: commit
         run: |
-          if git diff --quiet -- data/projects.json data/communities.json; then
+          if git diff --quiet -- shared/data/projects.json shared/data/communities.json; then
             echo "지표 변경 없음"
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/projects.json data/communities.json
+          git add shared/data/projects.json shared/data/communities.json
           git commit -m "data: metrics $(TZ=Asia/Seoul date +%y%m%d)"
           git push origin HEAD:main
           echo "changed=true" >> "$GITHUB_OUTPUT"
