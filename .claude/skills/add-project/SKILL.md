@@ -17,7 +17,10 @@ description: 홈페이지에 새 Roblox 프로젝트를 추가한다. shared/dat
 
 ## 2. 데이터 (`shared/data/projects.json`)
 - `all` 배열에 항목 추가. 기존 항목 하나를 복사해 필드 구조를 그대로 유지한다.
-- 필수: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status`, `featured`, `launchDate`, `platform`, `technologies`, `links{play,trailer,article,group,showcase}`, `reporting{collectMetrics,includeInHeroProjectCount,includeInHeroVisitTotal}`.
+- 필수: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status`, `featured`, `order`, `launchDate`, `platform`, `technologies`, `links{play,trailer,article,group,showcase}`, `reporting{collectMetrics,includeInHeroProjectCount,includeInHeroVisitTotal}`.
+- `order`: 홈/목록 표시 순서(양의 정수, 중복 금지). 지표가 있는 운영 프로젝트는 동접·방문 수로 먼저 정렬되므로 `order`는 지표 없는 프로젝트끼리의 순서다. 기존 값 사이에 10 단위로 넣는다.
+- `detailRenderer`: 보통 생략(상태에서 유추: development→개발 중 렌더러, 그 외→운영 렌더러). 예외일 때만 `"standard"`/`"development"`.
+- 개발 중이면 `reporting`의 세 플래그를 모두 `false`로 둔다. 활성화 시 `/activate-project`가 켠다.
 - `image`, `detailPage` 값은 배포 구조 기준(`assets/...`, `<slug>.html`)으로 적는다. `shared/`, `site/`를 붙이지 않는다.
 - `metrics`는 비워 두고(`null` 값) `npm run update:metrics`가 채우게 한다. `summary.hero`도 스크립트가 다시 계산한다.
 
@@ -29,10 +32,7 @@ description: 홈페이지에 새 Roblox 프로젝트를 추가한다. shared/dat
 - 같은 상태의 기존 파일을 복사해 `window.ProjectDetailConfigs['<slug>']`를 채운다. 모든 문구는 `{ko, en, ja}` 객체다.
 - 운영 중: `seo`, `hero`, `ctaButtons`, `overview`, `highlights`, `snapshot`, `features`, `gallery`. 개발 중 렌더러는 필드가 다르므로 `project-detail-development.js`를 읽고 맞춘다.
 
-## 5. 표시 순서
-- `site/js/project-renderer.js`의 `projectDisplayOrder`에 slug 를 원하는 위치에 넣는다.
-
-## 6. 검증
+## 5. 검증
 ```
 npm run update:metrics     # active 프로젝트일 때
 npm run check
@@ -40,7 +40,7 @@ npm run dev                # /<slug>.html, /projects-roblox.html, / 확인
 ```
 - KO/EN/JA 전환, 모바일 메뉴, CTA 링크(play/group), 갤러리 이미지 로딩을 확인한다.
 
-## 7. 문서
+## 6. 문서
 - `docs/prd.md` 3장 상세 페이지 목록에 추가. `plan/README.md` 목록에 계획서 링크 추가.
 
 ## 보고

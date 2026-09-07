@@ -2,19 +2,6 @@
 const ProjectRenderer = {
     filtersBound: false,
     _kwTimer: null,
-    projectDisplayOrder: [
-        'tower-flood-race',
-        'hacker-vs-security',
-        'korean-spa',
-        'tomato-splatter-simulator',
-        'afk-or',
-        'free-ugc-rng',
-        'ducky-merge-farm',
-        'enchanted-weapon',
-        'forest-workshop',
-        'mine-sweeper',
-        'star-reach'
-    ],
 
     getProjectsScope: function () {
         const body = document.body;
@@ -62,11 +49,15 @@ const ProjectRenderer = {
         `;
     },
 
-    // 표시 순서: 동접(playing) 스냅샷 내림차순 → projectDisplayOrder → 원본 순서
+    // 표시 순서: 동접(playing) 스냅샷 내림차순 → 방문 수 → data/projects.json 의 order 오름차순 → 원본 순서
     // playing 값은 data/projects.json 기준(npm run update:metrics 실행 시점의 스냅샷).
-    // playing 이 없는(null) 개발 중 프로젝트는 뒤로 밀리고 projectDisplayOrder 로 정렬됩니다.
+    // playing 이 없는(null) 개발 중 프로젝트는 뒤로 밀리고 order 값으로 정렬됩니다. order 가 없으면 맨 뒤.
     sortProjectsForDisplay: function (projects = []) {
-        const orderMap = new Map(this.projectDisplayOrder.map((id, index) => [id, index]));
+        const orderMap = new Map(
+            projects
+                .filter((project) => project && typeof project.order === 'number')
+                .map((project) => [project.id, project.order])
+        );
         const getPlaying = (project) => {
             const playing = project && project.metrics ? project.metrics.playing : null;
             return typeof playing === 'number' ? playing : null;

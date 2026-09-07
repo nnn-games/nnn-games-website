@@ -10,7 +10,7 @@ TripleN Games(NNN GAMES)의 정적 회사 홈페이지와 웹 슬라이드 덱�
 | `site` | 회사 홈페이지, 프로젝트 목록/상세, 프로젝트·커뮤니티 지표 데이터 | `site/`, `shared/data/`(스크립트 경유), `docs/`, `plan/` | `.claude/agents/site.md` |
 | `decks` | 회사 소개 및 프로젝트 소개용 웹 슬라이드 | `decks/` | `.claude/agents/decks.md` |
 
-작업을 시작하면 먼저 어느 역할인지 판단하고 해당 정의 파일을 따른다. 두 영역에 걸치는 작업(공유 에셋 변경, 빌드 매핑 변경)은 사용자에게 확인한 뒤 진행한다.
+작업을 시작하면 먼저 어느 역할인지 판단하고 해당 정의 파일을 따른다. 반복 작업은 `.claude/skills/`의 스킬을 쓴다: 프로젝트 `add-project`/`activate-project`/`update-project`/`retire-project`/`refresh-metrics`, 덱 `new-deck`. 두 영역에 걸치는 작업(공유 에셋 변경, 빌드 매핑 변경)은 사용자에게 확인한 뒤 진행한다.
 
 ## 2. 저장소 지도와 배포 매핑
 
@@ -80,7 +80,7 @@ dist/                                                     빌드 산출물 (git 
 | `npm run build` | `dist/` 조립 + Tailwind 빌드 + sitemap. 배포 대상 누락 여부를 확인할 때 쓴다 |
 | `npm run check:i18n` | `site/js/i18n.js` KO/EN/JA 일치, `site/*.html` `data-key` 존재, 덱 `DECK_I18N`·언어 버튼·슬라이드 id 일치 |
 | `npm run check:links` | **dist/ 기준**으로 HTML/CSS/JSON/상세 설정의 내부 링크·에셋 경로 존재 여부. 빌드가 먼저 필요 |
-| `npm run check:data` | `shared/data/*.json` 스키마와 집계 규칙 일치, 상세 셸·설정 파일 존재 |
+| `npm run check:data` | `shared/data/*.json` 스키마, 집계 규칙, `order` 유일성, 상태↔렌더러 일치, 상태별 규칙(중단 프로젝트는 featured 불가 등) |
 | `npm run lint` | ESLint (`site/`, `decks/`, `scripts/`) |
 | `npm run format` | Prettier 검사(변경하지 않음). `format:write`는 사용자 요청 시에만 |
 | `npm run update:metrics` | Roblox API로 지표 갱신. 평소에는 CI 가 매일 실행하므로 수동 실행은 요청이 있을 때만 |

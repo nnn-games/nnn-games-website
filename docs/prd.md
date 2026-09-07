@@ -28,7 +28,7 @@
 
 ## 4. 데이터 및 렌더링 구조
 - **데이터 소스**: `data/projects.json` (정적 JSON) + `js/projects-data.js` (fallback)
-  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`, `placeId`, `universeId`, `links{play,trailer,article,group,showcase}`, `reporting{collectMetrics,includeInHeroProjectCount,includeInHeroVisitTotal}`, `metrics{visits,playing,favorites,likeRatio,updatedAt}`, `summary.hero`.
+  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`, `order`(표시 순서), `detailRenderer`(선택, 렌더러 예외), `placeId`, `universeId`, `links{play,trailer,article,group,showcase}`, `reporting{collectMetrics,includeInHeroProjectCount,includeInHeroVisitTotal}`, `metrics{visits,playing,favorites,likeRatio,updatedAt}`, `summary.hero`.
 - **렌더링**: `js/project-renderer.js`
   - JSON 로드 후 카드 동적 생성, 플랫폼/상태/카테고리 배지, 언어 변경 시 실시간 텍스트 교체, 목록 카드에 visits/playing/favorites 배지 노출.
 - **상세 페이지 지표/링크 주입**: `js/main.js`

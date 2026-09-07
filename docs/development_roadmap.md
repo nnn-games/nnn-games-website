@@ -23,4 +23,6 @@
 | N-06 | 에이전트 기반 개발환경 1단계: 루트 `CLAUDE.md`, 역할별 에이전트(site/decks), 스킬(add-project/refresh-metrics/new-deck), 검증 스크립트(`npm run check`: i18n/links/data/lint), ESLint/Prettier/EditorConfig, 로컬 서버(`npm run dev`) | Completed | `CLAUDE.md`, `.claude/`, `scripts/check-*.js`, `eslint.config.js`, `package.json` |
 | N-07 | 개발환경 2단계: `npm run build` 로 `dist/` 조립(sitemap/robots 포함), GitHub Actions 로 main 푸시 시 검증·빌드·Pages 배포, 매일 12:00 KST 지표 자동 갱신 커밋, `css/style.css` 추적 해제 | Completed | `scripts/build.js`, `.github/workflows/deploy.yml`, `.github/workflows/metrics.yml`, `robots.txt` |
 | N-08 | 개발환경 3단계: 소스를 `site/`(홈페이지), `decks/`(슬라이드), `shared/`(data/images/assets) 로 재배치. 빌드가 배포 URL 구조로 매핑하므로 소스 내부 상대 경로와 서비스 URL 은 그대로 유지. `npm run dev` 가 dist 감시 서비스, `check:links` 는 dist 기준 검사 | Completed | `scripts/build.js`, `scripts/check-*.js`, `site/`, `decks/`, `shared/` |
+| N-10 | 에이전트 운영 1단계: 표시 순서를 `projects.json`의 `order`로 이동, `detailRenderer` 예외 필드, `check:data` 상태별 규칙(order 유일성, 상태↔렌더러, 중단 시 featured 금지, launchDate 형식), 스킬 `activate-project`/`update-project`/`retire-project` 추가 | Completed | `shared/data/projects.json`, `site/js/project-renderer.js`, `scripts/check-data.js`, `.claude/skills/` |
+| N-11 | 에이전트 운영 2단계: `decks/decks.json` 레지스트리와 빌드 연동, `update-deck`/`archive-deck` 스킬 | Pending | - |
 | N-09 | 개발환경 4단계: 덱 런타임 통합, 상세 렌더러 통합, 헤더/푸터 템플릿화 | Pending | - |

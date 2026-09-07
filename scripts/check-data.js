@@ -19,11 +19,27 @@ const LANGS = ['ko', 'en', 'ja'];
 const STATUSES = ['active', 'development', 'completed', 'paused'];
 const LINK_TYPES = ['play', 'trailer', 'article', 'group', 'showcase'];
 
+const RENDERERS = { standard: 'js/project-detail.js', development: 'js/project-detail-development.js' };
+const LAUNCH_DATE = /^\d{4}(-(0[1-9]|1[0-2])|-Q[1-4])?$/;
+
 let errors = 0;
+let warnings = 0;
 
 function fail(message) {
   errors += 1;
   console.error(`  [ERROR] ${message}`);
+}
+
+function warn(message) {
+  warnings += 1;
+  console.warn(`  [WARN]  ${message}`);
+}
+
+// 상세 셸이 로드해야 하는 렌더러: detailRenderer 가 있으면 그 값, 없으면 status 로 유추.
+// development 만 개발용 렌더러이고, active/paused/completed 는 운영용 셸을 그대로 쓴다.
+function expectedRenderer(project) {
+  if (project.detailRenderer) return project.detailRenderer;
+  return project.status === 'development' ? 'development' : 'standard';
 }
 
 function readJson(relPath) {
@@ -67,6 +83,7 @@ if (projects) {
   const all = Array.isArray(projects.all) ? projects.all : [];
   if (all.length === 0) fail('all 배열이 비어 있습니다.');
   const ids = new Set();
+  const orders = new Map();
   for (const project of all) {
     const label = `project '${project.id || '(id 없음)'}'`;
     if (!hasText(project.id) || !/^[a-z0-9-]+$/.test(project.id)) fail(`${label}: id 는 kebab-case 문자열이어야 합니다.`);
@@ -80,6 +97,25 @@ if (projects) {
     if (!hasText(project.category)) fail(`${label}: category 누락`);
     if (!STATUSES.includes(project.status)) fail(`${label}: status '${project.status}' 는 ${STATUSES.join('/')} 중 하나여야 합니다.`);
     if (typeof project.featured !== 'boolean') fail(`${label}: featured 는 boolean 이어야 합니다.`);
+    if (typeof project.order !== 'number' || !Number.isInteger(project.order) || project.order <= 0) {
+      fail(`${label}: order 는 양의 정수여야 합니다 (홈/목록 표시 순서, 10 단위 권장).`);
+    } else if (orders.has(project.order)) {
+      fail(`${label}: order ${project.order} 가 '${orders.get(project.order)}' 와 중복됩니다.`);
+    } else {
+      orders.set(project.order, project.id);
+    }
+    if (project.detailRenderer != null && !(project.detailRenderer in RENDERERS)) fail(`${label}: detailRenderer 는 standard/development 중 하나여야 합니다.`);
+    if (project.launchDate != null && !LAUNCH_DATE.test(String(project.launchDate))) fail(`${label}: launchDate 는 YYYY, YYYY-MM, YYYY-Qn 형식이어야 합니다.`);
+    // 상태별 규칙
+    if (isActive(project) && (!project.metrics || typeof project.metrics.visits !== 'number')) {
+      warn(`${label}: active 인데 metrics.visits 가 없습니다. npm run update:metrics 를 실행하세요.`);
+    }
+    if ((project.status === 'paused' || project.status === 'completed') && project.featured) {
+      fail(`${label}: ${project.status} 상태는 featured 일 수 없습니다 (홈 노출 제외).`);
+    }
+    if (!isActive(project) && project.reporting && (project.reporting.includeInHeroProjectCount === true || project.reporting.includeInHeroVisitTotal === true)) {
+      warn(`${label}: ${project.status} 상태에서 히어로 집계 플래그가 true 입니다. 집계에는 영향 없지만 false 로 정리하세요.`);
+    }
     if (!Array.isArray(project.technologies)) fail(`${label}: technologies 는 배열이어야 합니다.`);
 
     if (project.links && typeof project.links === 'object') {
@@ -121,6 +157,11 @@ if (projects) {
         if (bodyId && bodyId !== project.id) fail(`${project.detailPage}: body[data-project-id]='${bodyId}' 가 id '${project.id}' 와 다릅니다.`);
         const config = `js/project-details/${project.id}.js`;
         if (html.includes('project-detail') && !html.includes(config)) fail(`${project.detailPage}: '${config}' 스크립트를 로드하지 않습니다.`);
+        const renderer = expectedRenderer(project);
+        const loaded = (html.match(/src="(js\/project-detail(?:-development)?\.js)"/) || [])[1];
+        if (loaded && renderer in RENDERERS && loaded !== RENDERERS[renderer]) {
+          fail(`${project.detailPage}: status '${project.status}' (renderer ${renderer}) 이면 '${RENDERERS[renderer]}' 를 로드해야 하는데 '${loaded}' 를 로드합니다. 예외라면 detailRenderer 필드를 명시하세요.`);
+        }
         if (fs.existsSync(path.join(ROOT, SITE, config))) {
           const source = fs.readFileSync(path.join(ROOT, SITE, config), 'utf8');
           if (!source.includes(`ProjectDetailConfigs['${project.id}']`) && !source.includes(`ProjectDetailConfigs["${project.id}"]`)) {
@@ -202,7 +243,7 @@ if (communities && groupConfig) {
 
 console.log('');
 if (errors > 0) {
-  console.error(`check:data 실패 — 오류 ${errors}건`);
+  console.error(`check:data 실패 — 오류 ${errors}건, 경고 ${warnings}건`);
   process.exit(1);
 }
-console.log('check:data 통과');
+console.log(`check:data 통과 — 경고 ${warnings}건`);
