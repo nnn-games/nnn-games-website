@@ -12,6 +12,9 @@
  *   --out <dir>   출력 디렉터리 (기본 exports/site)
  */
 
+/* global window */
+// window 는 context.addInitScript 콜백(브라우저에서 실행) 안에서만 쓰인다.
+
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');

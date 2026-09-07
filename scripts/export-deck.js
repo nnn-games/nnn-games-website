@@ -15,6 +15,9 @@
  * 사전: npm run build (dist 가 없으면 자동 빌드), Playwright Chromium (npx playwright install chromium)
  */
 
+/* global window, document, HashChangeEvent */
+// 위 전역은 page.evaluate / waitForFunction 콜백(브라우저에서 실행) 안에서만 쓰인다.
+
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
