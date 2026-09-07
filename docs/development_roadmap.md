@@ -20,3 +20,7 @@
 | N-03 | 인라인 스타일 제거 후 Tailwind 공용 적용 | Completed | `tower-flood-race.html`, `js/main.js` |
 | N-04 | CTA 추적 엔드포인트/스키마 확정 및 적용 | Completed | `js/main.js`, `docs/prd.md` |
 | N-05 | 히어로/커뮤니티 집계 규칙을 status/flag 기반으로 명시화 | Completed | `data/projects.json`, `data/community-groups.json`, `data/communities.json`, `js/projects-data.js`, `js/main.js`, `scripts/update-metrics.js`, `docs/metric.md`, `docs/dev_plan.md` |
+| N-06 | 에이전트 기반 개발환경 1단계: 루트 `CLAUDE.md`, 역할별 에이전트(site/decks), 스킬(add-project/refresh-metrics/new-deck), 검증 스크립트(`npm run check`: i18n/links/data/lint), ESLint/Prettier/EditorConfig, 로컬 서버(`npm run dev`) | Completed | `CLAUDE.md`, `.claude/`, `scripts/check-*.js`, `eslint.config.js`, `package.json` |
+| N-07 | 개발환경 2단계: `dist/` 빌드 + GitHub Actions(지표 스케줄 갱신, CSS 빌드, Pages 배포), `css/style.css` 추적 해제 | Pending | - |
+| N-08 | 개발환경 3단계: `site/`, `decks/`, `shared/` 디렉터리 재배치 | Pending | - |
+| N-09 | 개발환경 4단계: 덱 런타임 통합, 상세 렌더러 통합, 헤더/푸터 템플릿화 | Pending | - |

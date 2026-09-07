@@ -14,13 +14,11 @@ node_modules/
 .env.example
 .mcp.json
 .mcp
-CLAUDE.md
 PROJECT-MANAGEMENT-GUIDE.md
 
 # Editor directories and files
 .idea
 .vscode
-.claude
 .cursor
 .taskmaster
 *.suo
@@ -35,3 +33,7 @@ PROJECT-MANAGEMENT-GUIDE.md
 # Task files
 # tasks.json
 # tasks/ 
+
+# Claude Code (settings.local.json 은 개인 설정이므로 제외)
+.claude/settings.local.json
+.claude/*.local.*

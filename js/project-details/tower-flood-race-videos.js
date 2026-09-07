@@ -268,7 +268,7 @@
             format = 'short';
             const m = u.pathname.match(/\/video\/(\d+)/);
             if (m) videoId = m[1];
-            const handleMatch = u.pathname.match(/\/@([^\/]+)/);
+            const handleMatch = u.pathname.match(/\/@([^/]+)/);
             if (handleMatch) creatorHandle = '@' + handleMatch[1];
         }
 

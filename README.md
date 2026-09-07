@@ -2,6 +2,18 @@
 
 TripleN Games Inc. Website
 
+## 개발 환경
+
+에이전트 작업 규칙과 저장소 구조는 `CLAUDE.md`, 역할별 정의는 `.claude/agents/`(site, decks), 반복 작업 절차는 `.claude/skills/`를 참고합니다.
+
+```bash
+npm install
+npm run dev          # http://localhost:8080 (fetch 가 file:// 에서 동작하지 않으므로 서버 필수)
+npm run check        # i18n 키, 내부 링크, 데이터 규칙, ESLint 검사 (커밋 전 필수)
+npm run build:css    # src/styles/tailwind.css 수정 시 실행하고 css/style.css 를 함께 커밋
+npm run update:metrics
+```
+
 ## 홈페이지 지표 업데이트 절차
 
 1. 프로젝트 집계 대상을 확인합니다.

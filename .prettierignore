@@ -1,0 +1,7 @@
+node_modules/
+css/style.css
+_archive/
+data/
+package-lock.json
+**/pdf/
+**/*.min.js
