@@ -22,13 +22,17 @@ const INCLUDE_DIRS = ['css', 'js', 'data', 'images', 'assets', 'slides', 'compan
 const INCLUDE_FILES = ['CNAME', 'robots.txt'];
 // 포함 디렉터리 안에서도 제외할 것: 문서/원고 디렉터리, 문서·메모 파일, 숨김 파일
 const EXCLUDED_SEGMENTS = new Set(['docs', 'node_modules']);
-const EXCLUDED_EXT = new Set(['.md', '.txt', '.psd', '.ai', '.sketch', '.fig']);
+// 주의: .txt 는 전역 제외하지 않는다. assets/towerfloodrace/videos.txt 처럼 런타임에 fetch 되는 파일이 있다.
+const EXCLUDED_EXT = new Set(['.md', '.psd', '.ai', '.sketch', '.fig']);
+// 개별 제외 파일 (루트 기준). 서비스에 필요 없는 원고 메모.
+const EXCLUDED_PATHS = new Set(['jumpstart/page04image.txt', 'jumpstart/page06image.txt']);
 
 function shouldCopy(absPath) {
   const rel = path.relative(ROOT, absPath);
   if (rel === '') return true;
   const segments = rel.split(path.sep);
   if (segments.some((seg) => EXCLUDED_SEGMENTS.has(seg) || seg.startsWith('.'))) return false;
+  if (EXCLUDED_PATHS.has(segments.join('/'))) return false;
   if (fs.statSync(absPath).isFile() && EXCLUDED_EXT.has(path.extname(rel).toLowerCase())) return false;
   return true;
 }
