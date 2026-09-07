@@ -5,6 +5,8 @@ description: Roblox 공개 API로 프로젝트 방문 수·플레이 수·즐겨
 
 # 지표 갱신 절차
 
+평소에는 `.github/workflows/metrics.yml`이 매일 12:00 KST 에 자동으로 갱신·커밋·재배포한다. 이 절차는 사용자가 즉시 갱신을 원하거나 집계 대상을 바꿀 때 쓴다. 로컬 실행 대신 `gh workflow run metrics.yml`로 CI 를 수동 실행해도 된다.
+
 ## 1. 집계 대상 확인
 - `data/projects.json`: `reporting.collectMetrics: true`이고 `universeId`가 있는 프로젝트만 수집된다.
 - `data/community-groups.json`: `status`, `showOnHomepage`, `includeInHeroSubscriberTotal` 값이 홈 노출과 히어로 합계를 결정한다.

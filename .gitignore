@@ -37,3 +37,7 @@ PROJECT-MANAGEMENT-GUIDE.md
 # Claude Code (settings.local.json 은 개인 설정이므로 제외)
 .claude/settings.local.json
 .claude/*.local.*
+
+# Build output (CI 가 생성)
+dist/
+css/style.css

@@ -27,7 +27,7 @@ const commonRules = {
 
 module.exports = [
   {
-    ignores: ['node_modules/**', 'css/**', '_archive/**', 'package-lock.json'],
+    ignores: ['node_modules/**', 'dist/**', 'css/**', '_archive/**', 'package-lock.json'],
   },
   {
     files: ['js/**/*.js', 'slides/**/*.js', 'company/**/*.js', 'nnn/**/*.js', 'jumpstart/**/*.js', 'privacy/**/*.js'],

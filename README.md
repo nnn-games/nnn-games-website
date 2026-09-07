@@ -10,9 +10,15 @@ TripleN Games Inc. Website
 npm install
 npm run dev          # http://localhost:8080 (fetch 가 file:// 에서 동작하지 않으므로 서버 필수)
 npm run check        # i18n 키, 내부 링크, 데이터 규칙, ESLint 검사 (커밋 전 필수)
-npm run build:css    # src/styles/tailwind.css 수정 시 실행하고 css/style.css 를 함께 커밋
+npm run build        # Tailwind 빌드 + dist/ 조립 (배포 산출물, git 추적 안 함)
 npm run update:metrics
 ```
+
+### 배포
+
+- `main` 에 푸시하면 `.github/workflows/deploy.yml` 이 검증 → 빌드 → GitHub Pages 배포를 수행합니다. 저장소 Settings > Pages > Source 를 **GitHub Actions** 로 설정해야 합니다.
+- `.github/workflows/metrics.yml` 이 매일 12:00 KST 에 지표를 갱신해 `data: metrics YYMMDD` 커밋을 만들고 재배포합니다. 수동 실행: `gh workflow run metrics.yml`.
+- `css/style.css` 는 더 이상 커밋하지 않습니다. 새로 클론하면 `npm install && npm run build:css` 를 먼저 실행하세요.
 
 ## 홈페이지 지표 업데이트 절차
 

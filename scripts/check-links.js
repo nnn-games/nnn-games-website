@@ -55,7 +55,7 @@ function checkRefs(relFile, refs, baseDir = path.dirname(path.join(ROOT, relFile
 
 function listFiles(dir, predicate, acc = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (entry.name === 'node_modules' || entry.name === '.git' || entry.name === '_archive') continue;
+    if (['node_modules', '.git', '_archive', 'dist'].includes(entry.name)) continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) listFiles(full, predicate, acc);
     else if (predicate(entry.name)) acc.push(path.relative(ROOT, full));
