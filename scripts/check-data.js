@@ -19,7 +19,10 @@ const LANGS = ['ko', 'en', 'ja'];
 const STATUSES = ['active', 'development', 'completed', 'paused'];
 const LINK_TYPES = ['play', 'trailer', 'article', 'group', 'showcase'];
 
-const RENDERERS = { standard: 'js/project-detail.js', development: 'js/project-detail-development.js' };
+// 상세 셸은 모두 js/project-detail.js 하나를 로드하고, 렌더러가 status/detailRenderer 로 모드를 고른다.
+const DETAIL_SCRIPT = 'js/project-detail.js';
+const LEGACY_DETAIL_SCRIPT = 'js/project-detail-development.js';
+const RENDERERS = { standard: DETAIL_SCRIPT, development: DETAIL_SCRIPT };
 const LAUNCH_DATE = /^\d{4}(-(0[1-9]|1[0-2])|-Q[1-4])?$/;
 
 let errors = 0;
@@ -159,9 +162,8 @@ if (projects) {
         if (html.includes('project-detail') && !html.includes(config)) fail(`${project.detailPage}: '${config}' 스크립트를 로드하지 않습니다.`);
         const renderer = expectedRenderer(project);
         const loaded = (html.match(/src="(js\/project-detail(?:-development)?\.js)"/) || [])[1];
-        if (loaded && renderer in RENDERERS && loaded !== RENDERERS[renderer]) {
-          fail(`${project.detailPage}: status '${project.status}' (renderer ${renderer}) 이면 '${RENDERERS[renderer]}' 를 로드해야 하는데 '${loaded}' 를 로드합니다. 예외라면 detailRenderer 필드를 명시하세요.`);
-        }
+        if (loaded === LEGACY_DETAIL_SCRIPT) fail(`${project.detailPage}: 옛 렌더러 '${LEGACY_DETAIL_SCRIPT}' 를 로드합니다. '${DETAIL_SCRIPT}' 로 바꾸세요 (모드는 status/detailRenderer 로 결정).`);
+        else if (loaded && renderer in RENDERERS && loaded !== RENDERERS[renderer]) fail(`${project.detailPage}: '${RENDERERS[renderer]}' 를 로드해야 하는데 '${loaded}' 를 로드합니다.`);
         if (fs.existsSync(path.join(ROOT, SITE, config))) {
           const source = fs.readFileSync(path.join(ROOT, SITE, config), 'utf8');
           if (!source.includes(`ProjectDetailConfigs['${project.id}']`) && !source.includes(`ProjectDetailConfigs["${project.id}"]`)) {

@@ -30,7 +30,7 @@ description: 홈페이지에 새 Roblox 프로젝트를 추가한다. shared/dat
 
 ## 4. 콘텐츠 설정 (`site/js/project-details/<slug>.js`)
 - 같은 상태의 기존 파일을 복사해 `window.ProjectDetailConfigs['<slug>']`를 채운다. 모든 문구는 `{ko, en, ja}` 객체다.
-- 운영 중: `seo`, `hero`, `ctaButtons`, `overview`, `highlights`, `snapshot`, `features`, `gallery`. 개발 중 렌더러는 필드가 다르므로 `project-detail-development.js`를 읽고 맞춘다.
+- 운영 중(standard 모드): `seo`, `hero`, `ctaButtons`, `overview`, `highlights`, `snapshot`, `features`, `gallery`. 개발 중(development 모드)은 `seo`, `hero`(title/tagline/status/genre/platform), `media`, `snapshot.launch`, `ctaButtons`만 쓴다. 모드는 `project-detail.js`가 status 로 고른다.
 
 ## 5. 검증
 ```

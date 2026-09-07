@@ -15,8 +15,8 @@ tools: Read, Edit, Write, Grep, Glob, Bash
 - 각 덱은 `index.html`의 `<section class="slide" data-slide="<id>" data-theme="<theme>">` 마크업과 `slides.js`의 `window.DECK_SLIDES`(순서, 테마, 부록 여부), `window.DECK_I18N`(KO/EN/JA 문구)으로 구성된다.
 - 문구는 `data-deck-key`, `data-deck-key-alt`, `data-deck-key-aria-label` 속성으로 바인딩된다. 런타임이 언어 전환 시 치환한다.
 - 런타임(`deck.js`)은 내비게이션, 해시 딥링크, 언어 선택, 전체화면, 접근성 상태, 모바일, 인쇄를 담당한다.
-- 배포 시 `decks/shared`는 `/slides/shared`로, 각 덱은 `/company`, `/nnn`, `/jumpstart`로 매핑된다(`scripts/build.js`). 그래서 HTML 의 `../slides/shared/deck.js`, `../images/...` 같은 상대 경로는 소스 위치가 아니라 배포 구조 기준으로 쓴다.
-- `jumpstart/`는 `../slides/shared/deck.js`를 쓰고, `company/`와 `nnn/`은 자기 디렉터리의 `deck.js` 사본을 쓴다. 두 사본은 서로 동일하지만 공용 버전과는 갈라져 있다. 런타임 동작을 바꿀 때는 어느 파일을 고치는지 사용자에게 먼저 알린다. 통합은 4단계 작업이다.
+- 배포 시 `decks/shared`는 `/slides/shared`로, 각 덱은 `/company`, `/nnn`, `/jumpstart`로 매핑된다(`scripts/build.js`). 그래서 HTML 의 `../slides/shared/deck.js`, `../images/...` 같은 상대 경로는 소스 위치가 아니라 배포 구조 기준으로 쓴다.
+- 모든 덱이 `decks/shared/deck.js` 하나를 쓴다. 덱 전용 동적 슬라이드는 `[data-deck-render="<name>"]` 요소와 `window.DECK_RENDERERS[name](target, slideData, ctx)` 렌더러로 만든다. 회사 덱의 렌더러(아바타·연혁·수상·UGC)는 `decks/shared/company-renderers.js`에 있고 `company`, `nnn`이 `slides.js` 다음, `deck.js` 앞에 로드한다. 런타임 사본을 다시 만들지 않는다.
 - 덱 URL은 `/company/`, `/nnn/`, `/jumpstart/` 이며 홈페이지와 같은 도메인에서 서비스된다.
 
 ## 데이터 사용

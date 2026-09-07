@@ -76,6 +76,9 @@ const translations = {
         // 상세 페이지 공통
         gallery_title: "갤러리",
         project_detail_kicker: "Project Detail",
+        project_detail_dev_kicker: "개발 중인 프로젝트",
+        project_detail_dev_note: "자세한 정보는 출시에 맞춰 공개될 예정입니다.",
+        project_detail_launch_tba: "출시일 미정",
         project_detail_overview_eyebrow: "Overview",
         project_detail_overview_title: "프로젝트 개요",
         project_detail_highlights_eyebrow: "Highlights",
@@ -189,6 +192,9 @@ const translations = {
 
         gallery_title: "Gallery",
         project_detail_kicker: "Project Detail",
+        project_detail_dev_kicker: "In Development",
+        project_detail_dev_note: "Detailed information will be revealed as we approach launch.",
+        project_detail_launch_tba: "Launch: TBA",
         project_detail_overview_eyebrow: "Overview",
         project_detail_overview_title: "Project Overview",
         project_detail_highlights_eyebrow: "Highlights",
@@ -298,6 +304,9 @@ const translations = {
 
         gallery_title: "ギャラリー",
         project_detail_kicker: "Project Detail",
+        project_detail_dev_kicker: "開発中プロジェクト",
+        project_detail_dev_note: "詳細情報はリリースに合わせて公開予定です。",
+        project_detail_launch_tba: "リリース日未定",
         project_detail_overview_eyebrow: "Overview",
         project_detail_overview_title: "プロジェクト概要",
         project_detail_highlights_eyebrow: "Highlights",

@@ -54,7 +54,8 @@ function buildMap(decks) {
 }
 // 매핑된 디렉터리 안에서도 제외할 것: 문서/원고 디렉터리, 문서·디자인 원본, 숨김 파일, Tailwind 소스
 // 주의: .txt 는 전역 제외하지 않는다. shared/assets/towerfloodrace/videos.txt 처럼 런타임에 fetch 되는 파일이 있다.
-const EXCLUDED_SEGMENTS = new Set(['docs', 'node_modules', 'styles']);
+// _partials 는 빌드 시 인라인되므로 배포하지 않고, pdf 디렉터리는 export-decks 워크플로가 대체한다.
+const EXCLUDED_SEGMENTS = new Set(['docs', 'node_modules', 'styles', '_partials', 'pdf']);
 const EXCLUDED_EXT = new Set(['.md', '.psd', '.ai', '.sketch', '.fig']);
 // 개별 제외 파일 (루트 기준, 슬래시 구분). 서비스에 필요 없는 원고·메모.
 const EXCLUDED_PATHS = new Set(['decks/jumpstart/page04image.txt', 'decks/jumpstart/page06image.txt']);
@@ -94,6 +95,38 @@ function copyMapped(srcRel, destRel) {
 function runBin(pkgBin, args, options = {}) {
   const bin = require.resolve(pkgBin, { paths: [ROOT] });
   return spawn(process.execPath, [bin, ...args], { cwd: ROOT, stdio: 'inherit', ...options });
+}
+
+// ---- HTML 파셜 인라인 ----
+// site/*.html 의 `<!-- @include name key="value" -->` 를 site/_partials/<name>.html 로 치환한다.
+// 파셜 안의 `{{if key=value}}...{{/if}}` 는 마커의 속성과 일치할 때만 남는다 (예: 활성 메뉴).
+const PARTIALS_DIR = path.join(ROOT, 'site', '_partials');
+const INCLUDE_RE = /<!--\s*@include\s+([a-z0-9-]+)((?:\s+[a-z]+="[^"]*")*)\s*-->/g;
+
+function renderPartial(name, attrs) {
+  const file = path.join(PARTIALS_DIR, `${name}.html`);
+  if (!fs.existsSync(file)) throw new Error(`파셜이 없습니다: site/_partials/${name}.html`);
+  const vars = {};
+  for (const m of attrs.matchAll(/([a-z]+)="([^"]*)"/g)) vars[m[1]] = m[2];
+  return fs
+    .readFileSync(file, 'utf8')
+    .replace(/\r\n/g, '\n')
+    .replace(/\{\{if ([a-z]+)=([^}]+)\}\}([\s\S]*?)\{\{\/if\}\}/g, (_m, key, value, body) => (vars[key] === value ? body : ''));
+}
+
+function inlinePartials() {
+  if (!fs.existsSync(PARTIALS_DIR)) return 0;
+  let count = 0;
+  for (const name of fs.readdirSync(DIST).filter((n) => n.endsWith('.html'))) {
+    const file = path.join(DIST, name);
+    const html = fs.readFileSync(file, 'utf8');
+    const out = html.replace(INCLUDE_RE, (_m, partial, attrs) => {
+      count += 1;
+      return renderPartial(partial, attrs).replace(/^\s+/, '');
+    });
+    if (out !== html) fs.writeFileSync(file, out);
+  }
+  return count;
 }
 
 function buildCss() {
@@ -141,13 +174,14 @@ function build({ clean }) {
   if (clean) fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
   for (const [srcRel, destRel] of buildMap(decks)) copyMapped(srcRel, destRel);
+  const includes = inlinePartials();
   buildCss();
   fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
   const { pages, urls } = writeSitemap(decks);
   const files = walkFiles(DIST);
   const bytes = files.reduce((sum, file) => sum + fs.statSync(file).size, 0);
   console.log(
-    `dist/ 생성 완료: 파일 ${files.length}개, ${(bytes / 1048576).toFixed(1)} MB, 페이지 ${pages}개, 덱 ${decks.length}개(${decks.map((d) => d.slug).join(', ')}), sitemap ${urls}개 URL (${Date.now() - started}ms)`
+    `dist/ 생성 완료: 파일 ${files.length}개, ${(bytes / 1048576).toFixed(1)} MB, 페이지 ${pages}개(파셜 ${includes}건 인라인), 덱 ${decks.length}개(${decks.map((d) => d.slug).join(', ')}), sitemap ${urls}개 URL (${Date.now() - started}ms)`
   );
 }
 

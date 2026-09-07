@@ -14,10 +14,10 @@ tools: Read, Edit, Write, Grep, Glob, Bash
 - 문서: `docs/**`, `plan/**`, `README.md`
 
 ## 구조 이해
-- 페이지 본문 대부분은 JS가 렌더한다. 홈/목록은 `project-renderer.js`가 `data/projects.json`을 읽어 카드를 만들고, 상세는 `project-detail.js`(운영 중) 또는 `project-detail-development.js`(개발 중)가 `js/project-details/<slug>.js`의 `window.ProjectDetailConfigs['<slug>']`를 읽어 렌더한다. 이 파일들은 모두 `site/js/` 아래에 있다.
-- 상세 HTML은 헤더/푸터/스크립트 태그만 있는 셸이다. `body[data-project-id]`가 slug 를 지정한다.
+- 페이지 본문 대부분은 JS가 렌더한다. 홈/목록은 `project-renderer.js`가 `data/projects.json`을 읽어 카드를 만들고, 상세는 `project-detail.js`(standard 모드=운영 중 레이아웃, development 모드=개발 중 간소 레이아웃)가 `js/project-details/<slug>.js`의 `window.ProjectDetailConfigs['<slug>']`를 읽어 렌더한다. 이 파일들은 모두 `site/js/` 아래에 있다.
+- 상세 HTML은 include 마커와 스크립트 태그만 있는 셸이다. `body[data-project-id]`가 slug 를 지정하고, 모든 셸이 같은 `js/project-detail.js`를 로드한다.
 - 홈/목록 표시 순서는 동접 → 방문 수 → `projects.json`의 `order` 순이다. 코드가 아니라 데이터로 순서를 바꾼다.
-- 상세 셸이 로드하는 렌더러는 `status`에서 유추된다(development→`project-detail-development.js`, 그 외→`project-detail.js`). 예외는 `detailRenderer` 필드로 명시하며 `check:data`가 일치를 검사한다.
+- 상세 레이아웃 모드는 `detailRenderer`(있으면) → `status`(development 이면 개발 중 레이아웃) 순으로 정해진다. 셸의 스크립트를 바꿀 일은 없다.
 - 히어로 집계(프로젝트 수, 방문 수)는 `status === 'active'`와 `reporting.*` 플래그로 결정된다. 규칙은 `docs/metric.md`.
 - 전역 객체: `window.NNNUtils`(포맷/i18n 헬퍼), `window.ProjectManager`(데이터 접근), `window.translations`(i18n). 새 스크립트도 같은 방식(IIFE + window 노출)을 따른다. ES 모듈로 바꾸지 않는다.
 - 상태 배지 클래스 `status-*`는 JS에서 동적 생성되므로 `tailwind.config.js`의 `safelist`에 있어야 한다.
