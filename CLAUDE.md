@@ -10,7 +10,7 @@ TripleN Games(NNN GAMES)의 정적 회사 홈페이지와 웹 슬라이드 덱�
 | `site` | 회사 홈페이지, 프로젝트 목록/상세, 프로젝트·커뮤니티 지표 데이터 | `site/`, `shared/data/`(스크립트 경유), `docs/`, `plan/` | `.claude/agents/site.md` |
 | `decks` | 회사 소개 및 프로젝트 소개용 웹 슬라이드 | `decks/` | `.claude/agents/decks.md` |
 
-작업을 시작하면 먼저 어느 역할인지 판단하고 해당 정의 파일을 따른다. 반복 작업은 `.claude/skills/`의 스킬을 쓴다: 프로젝트 `add-project`/`activate-project`/`update-project`/`retire-project`/`refresh-metrics`, 덱 `new-deck`/`update-deck`/`archive-deck`/`export-deck`. 두 영역에 걸치는 작업(공유 에셋 변경, 빌드 매핑 변경)은 사용자에게 확인한 뒤 진행한다.
+작업을 시작하면 먼저 어느 역할인지 판단하고 해당 정의 파일을 따른다. 반복 작업은 `.claude/skills/`의 스킬을 쓴다: 프로젝트 `add-project`/`activate-project`/`update-project`/`retire-project`/`refresh-metrics`, 덱 `new-deck`/`update-deck`/`archive-deck`/`export-deck`, 점검 `audit-site`. 두 영역에 걸치는 작업(공유 에셋 변경, 빌드 매핑 변경)은 사용자에게 확인한 뒤 진행한다.
 
 ## 2. 저장소 지도와 배포 매핑
 
@@ -87,6 +87,7 @@ dist/                                                     빌드 산출물 (git 
 | `npm run update:metrics` | Roblox API로 지표 갱신. 평소에는 CI 가 매일 실행하므로 수동 실행은 요청이 있을 때만 |
 | `npm run snapshot` | 주요 페이지(홈·목록·문의·상세 2개·덱 표지)를 데스크톱/모바일로 스크린샷 → `exports/site/`. 화면 변경 검증과 PR 미리보기에 쓴다. 최초 1회 `npx playwright install chromium` |
 | `npm run export:deck` | 덱을 슬라이드별 PNG·언어별 PDF 로 → `exports/decks/`. 저장소에 커밋하지 않는다 |
+| `npm run audit` | 정기 점검 보고서 → `exports/audit/`. 지표 신선도, 외부 링크, 번역 누락 의심, 덱 수치 대조, 에셋 위생. CI 가 매주 월요일 실행해 `audit` 라벨 이슈로 올린다 |
 
 작업 완료 기준: `npm run check` 통과, `npm run dev` 또는 `npm run snapshot`으로 변경 페이지를 KO/EN/JA 와 모바일 폭(768px 미만)에서 확인, 결과 요약에 실행한 검증 명령을 명시. 화면이 바뀐 작업은 스크린샷을 첨부한다.
 
@@ -97,6 +98,7 @@ dist/                                                     빌드 산출물 (git 
 - 저장소 Settings > Pages > Source 는 **GitHub Actions** 다 (2026-09-07 전환 완료).
 - PR 을 열면 `preview.yml`이 검증 후 `dist` 와 스크린샷을 아티팩트로 올리고 PR 에 요약 코멘트를 남긴다. 사용자는 이 코멘트로 검토한다.
 - 덱 파일 전달은 `export-decks.yml`(수동 실행) 아티팩트로 한다. PDF 를 저장소에 커밋하지 않는다.
+- 매주 월요일 10:00 KST → `audit.yml`: 점검 보고서를 `audit` 라벨 이슈로 생성·갱신한다. 조치는 `audit-site` 스킬의 매핑표를 따른다.
 - 배포 실패는 Actions 로그를 읽고 원인을 보고한다.
 
 ## 7. 문서 동기화
