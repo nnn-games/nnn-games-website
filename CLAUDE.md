@@ -89,6 +89,7 @@ dist/                                                     빌드 산출물 (git 
 | `npm run update:metrics` | Roblox API로 지표 갱신. 평소에는 CI 가 매일 실행하므로 수동 실행은 요청이 있을 때만 |
 | `npm run snapshot` | 주요 페이지(홈·목록·문의·상세 2개·덱 표지)를 데스크톱/모바일로 스크린샷 → `exports/site/`. 화면 변경 검증과 PR 미리보기에 쓴다. 최초 1회 `npx playwright install chromium` |
 | `npm run export:deck` | 덱을 슬라이드별 PNG·언어별 PDF 로 → `exports/decks/`. 저장소에 커밋하지 않는다 |
+| `npm run optimize:images -- <files> [--update-refs <dir>]` | 이미지를 WebP 로 재인코딩(선택: `--max-width`), 참조 갱신과 원본 삭제까지. 2MB 초과 이미지 조치에 쓴다 |
 | `npm run audit` | 정기 점검 보고서 → `exports/audit/`. 지표 신선도, 외부 링크, 번역 누락 의심, 덱 수치 대조, 에셋 위생. CI 가 매주 월요일 실행해 `audit` 라벨 이슈로 올린다 |
 
 작업 완료 기준: `npm run check` 통과, `npm run dev` 또는 `npm run snapshot`으로 변경 페이지를 KO/EN/JA 와 모바일 폭(768px 미만)에서 확인, 결과 요약에 실행한 검증 명령을 명시. 화면이 바뀐 작업은 스크린샷을 첨부한다.
