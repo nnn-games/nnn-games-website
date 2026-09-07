@@ -2,6 +2,8 @@
 
 `decks/shared/` (served at `/slides/shared/`) contains the presentation runtime and the responsive 16:9 shell shared by all new decks. It owns navigation, deep links, language selection, fullscreen mode, accessibility state, mobile handling, and print output.
 
+Every deck is registered in `decks/decks.json` (slug, title, audience, status, languages, linked project). The build copies and lists decks from that registry, so adding or archiving a deck never touches `scripts/build.js`.
+
 Each deck keeps only page-specific concerns in its own directory:
 
 ```text

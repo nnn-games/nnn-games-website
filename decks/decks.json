@@ -1,0 +1,46 @@
+{
+  "decks": [
+    {
+      "slug": "company",
+      "title": {
+        "ko": "NNN GAMES 회사 소개",
+        "en": "NNN GAMES Company Introduction",
+        "ja": "NNN GAMES 会社紹介"
+      },
+      "audience": "partner",
+      "status": "active",
+      "languages": ["ko", "en", "ja"],
+      "runtime": "local",
+      "project": null,
+      "note": "2026-08 최신 회사 소개 덱. nnn 덱의 후속 버전."
+    },
+    {
+      "slug": "nnn",
+      "title": {
+        "ko": "NNN GAMES 회사 소개 (2026-07)",
+        "en": "NNN GAMES Company Introduction (2026-07)",
+        "ja": "NNN GAMES 会社紹介 (2026-07)"
+      },
+      "audience": "partner",
+      "status": "active",
+      "languages": ["ko", "en", "ja"],
+      "runtime": "local",
+      "project": null,
+      "note": "2026-07 버전 회사 소개 덱. company 덱으로 대체됨. 외부 공유 링크가 남아 있을 수 있어 유지 중이며, 정리 시 /archive-deck 사용."
+    },
+    {
+      "slug": "jumpstart",
+      "title": {
+        "ko": "Tomato Splatter | Jumpstart 제안",
+        "en": "Tomato Splatter | Jumpstart Proposal",
+        "ja": "Tomato Splatter | Jumpstart 提案"
+      },
+      "audience": "publisher",
+      "status": "active",
+      "languages": ["ko", "en"],
+      "runtime": "shared",
+      "project": "tomato-splatter-simulator",
+      "note": "Roblox Jumpstart 프로그램 제안 덱. KO/EN 만 제공."
+    }
+  ]
+}

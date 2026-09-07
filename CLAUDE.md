@@ -10,11 +10,11 @@ TripleN Games(NNN GAMES)의 정적 회사 홈페이지와 웹 슬라이드 덱�
 | `site` | 회사 홈페이지, 프로젝트 목록/상세, 프로젝트·커뮤니티 지표 데이터 | `site/`, `shared/data/`(스크립트 경유), `docs/`, `plan/` | `.claude/agents/site.md` |
 | `decks` | 회사 소개 및 프로젝트 소개용 웹 슬라이드 | `decks/` | `.claude/agents/decks.md` |
 
-작업을 시작하면 먼저 어느 역할인지 판단하고 해당 정의 파일을 따른다. 반복 작업은 `.claude/skills/`의 스킬을 쓴다: 프로젝트 `add-project`/`activate-project`/`update-project`/`retire-project`/`refresh-metrics`, 덱 `new-deck`. 두 영역에 걸치는 작업(공유 에셋 변경, 빌드 매핑 변경)은 사용자에게 확인한 뒤 진행한다.
+작업을 시작하면 먼저 어느 역할인지 판단하고 해당 정의 파일을 따른다. 반복 작업은 `.claude/skills/`의 스킬을 쓴다: 프로젝트 `add-project`/`activate-project`/`update-project`/`retire-project`/`refresh-metrics`, 덱 `new-deck`/`update-deck`/`archive-deck`. 두 영역에 걸치는 작업(공유 에셋 변경, 빌드 매핑 변경)은 사용자에게 확인한 뒤 진행한다.
 
 ## 2. 저장소 지도와 배포 매핑
 
-소스는 역할별로 나뉘어 있지만 **서비스 URL 은 예전 단일 루트 구조 그대로**다. `scripts/build.js`의 `MAP`이 소스 → `dist/` 매핑을 정의한다.
+소스는 역할별로 나뉘어 있지만 **서비스 URL 은 예전 단일 루트 구조 그대로**다. `scripts/build.js`의 `MAP`이 소스 → `dist/` 매핑을 정의하고, 덱 항목은 `decks/decks.json`에서 자동으로 추가된다.
 
 ```
 소스                                  배포 URL            설명
@@ -32,6 +32,7 @@ shared/                                                   공유 자산 (site �
   data/community-groups.json          /data/             커뮤니티 집계 설정 (사람이 편집)
   images/, assets/<project>/          /images, /assets    이미지 (양쪽에서 참조)
 decks/                                                    슬라이드 (decks 소유)
+  decks.json                                              덱 레지스트리: slug, 제목, 대상, status(active/draft/archived), 언어, 연결 프로젝트. 빌드 MAP 과 sitemap 이 이걸 읽는다
   shared/deck.js, deck.css            /slides/shared/     공용 덱 런타임 (jumpstart 사용)
   company/, nnn/                      /company/, /nnn/    회사 소개 덱 (각자 deck.js 사본, 통합 예정)
   jumpstart/                          /jumpstart/         프로젝트 제안 덱
@@ -49,7 +50,7 @@ _archive/                                                 보관용, 수정·배
 dist/                                                     빌드 산출물 (git 추적 안 함)
 ```
 
-**경로 작성 규칙:** HTML/JS/CSS/JSON 안의 상대 경로는 소스 위치가 아니라 **배포 구조 기준**으로 쓴다. 예: `site/index.html`은 `css/style.css`, `images/...`를 쓰고, `decks/jumpstart/index.html`은 `../slides/shared/deck.js`, `../images/...`를 쓴다. `site/`, `shared/`, `decks/`를 경로에 붙이지 않는다. 새 최상위 디렉터리를 서비스하려면 `build.js`의 `MAP`에 추가한다.
+**경로 작성 규칙:** HTML/JS/CSS/JSON 안의 상대 경로는 소스 위치가 아니라 **배포 구조 기준**으로 쓴다. 예: `site/index.html`은 `css/style.css`, `images/...`를 쓰고, `decks/jumpstart/index.html`은 `../slides/shared/deck.js`, `../images/...`를 쓴다. `site/`, `shared/`, `decks/`를 경로에 붙이지 않는다. 새 덱은 `decks/decks.json`에 등록하면 되고, 그 밖의 새 최상위 디렉터리는 `build.js`의 `MAP`에 추가한다.
 
 ## 3. 소유권 규칙
 
@@ -80,7 +81,7 @@ dist/                                                     빌드 산출물 (git 
 | `npm run build` | `dist/` 조립 + Tailwind 빌드 + sitemap. 배포 대상 누락 여부를 확인할 때 쓴다 |
 | `npm run check:i18n` | `site/js/i18n.js` KO/EN/JA 일치, `site/*.html` `data-key` 존재, 덱 `DECK_I18N`·언어 버튼·슬라이드 id 일치 |
 | `npm run check:links` | **dist/ 기준**으로 HTML/CSS/JSON/상세 설정의 내부 링크·에셋 경로 존재 여부. 빌드가 먼저 필요 |
-| `npm run check:data` | `shared/data/*.json` 스키마, 집계 규칙, `order` 유일성, 상태↔렌더러 일치, 상태별 규칙(중단 프로젝트는 featured 불가 등) |
+| `npm run check:data` | `shared/data/*.json` 스키마, 집계 규칙, `order` 유일성, 상태↔렌더러 일치, 상태별 규칙(중단 프로젝트는 featured 불가 등), `decks/decks.json` 레지스트리(디렉터리·런타임·언어·연결 프로젝트) |
 | `npm run lint` | ESLint (`site/`, `decks/`, `scripts/`) |
 | `npm run format` | Prettier 검사(변경하지 않음). `format:write`는 사용자 요청 시에만 |
 | `npm run update:metrics` | Roblox API로 지표 갱신. 평소에는 CI 가 매일 실행하므로 수동 실행은 요청이 있을 때만 |

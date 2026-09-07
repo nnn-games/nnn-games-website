@@ -8,7 +8,7 @@
  *
  *   site/*.html, site/js, site/privacy   ->  /            (홈페이지)
  *   shared/images, assets, data          ->  /images, /assets, /data
- *   decks/company, nnn, jumpstart        ->  /company, /nnn, /jumpstart
+ *   decks/<slug>  (decks/decks.json 에서 status != archived 인 덱)  ->  /<slug>
  *   decks/shared                         ->  /slides/shared   (덱 공용 런타임, 기존 URL 유지)
  *   CNAME, robots.txt                    ->  /
  *   site/styles/tailwind.css  --(tailwind)-->  /css/style.css
@@ -30,18 +30,28 @@ const SITE_URL = 'https://www.triplengames.com';
 const PORT = process.env.PORT || 8080;
 
 // [소스(루트 기준), dist 안의 대상] 매핑. 새 최상위 디렉터리를 서비스하려면 여기에 추가한다.
-const MAP = [
+// 덱(decks/<slug>)은 여기 적지 않는다. decks/decks.json 레지스트리에서 status 가 archived 가 아닌 덱이 자동으로 추가된다.
+const STATIC_MAP = [
   ['site', '.'],
   ['shared/images', 'images'],
   ['shared/assets', 'assets'],
   ['shared/data', 'data'],
-  ['decks/company', 'company'],
-  ['decks/nnn', 'nnn'],
-  ['decks/jumpstart', 'jumpstart'],
   ['decks/shared', 'slides/shared'],
   ['CNAME', 'CNAME'],
   ['robots.txt', 'robots.txt']
 ];
+const DECK_REGISTRY = path.join(ROOT, 'decks', 'decks.json');
+
+// 레지스트리를 읽어 배포할 덱 목록을 돌려준다. { slug, status }[]
+function readDeckRegistry() {
+  const registry = JSON.parse(fs.readFileSync(DECK_REGISTRY, 'utf8'));
+  const decks = Array.isArray(registry.decks) ? registry.decks : [];
+  return decks.filter((deck) => deck && typeof deck.slug === 'string' && deck.status !== 'archived');
+}
+
+function buildMap(decks) {
+  return [...STATIC_MAP, ...decks.map((deck) => [`decks/${deck.slug}`, deck.slug])];
+}
 // 매핑된 디렉터리 안에서도 제외할 것: 문서/원고 디렉터리, 문서·디자인 원본, 숨김 파일, Tailwind 소스
 // 주의: .txt 는 전역 제외하지 않는다. shared/assets/towerfloodrace/videos.txt 처럼 런타임에 fetch 되는 파일이 있다.
 const EXCLUDED_SEGMENTS = new Set(['docs', 'node_modules', 'styles']);
@@ -105,14 +115,16 @@ function walkFiles(dir, acc = []) {
   return acc;
 }
 
-function writeSitemap() {
+// sitemap: 루트 페이지 + privacy + status 가 active 인 덱 (draft 덱은 배포되지만 sitemap 에 싣지 않는다)
+function writeSitemap(decks) {
   const urls = [];
   const rootHtml = fs
     .readdirSync(DIST)
     .filter((name) => name.endsWith('.html'))
     .sort();
   for (const file of rootHtml) urls.push(file === 'index.html' ? `${SITE_URL}/` : `${SITE_URL}/${file}`);
-  for (const dir of ['company', 'nnn', 'jumpstart', 'privacy']) {
+  const listedDirs = ['privacy', ...decks.filter((deck) => deck.status === 'active').map((deck) => deck.slug)];
+  for (const dir of listedDirs) {
     if (fs.existsSync(path.join(DIST, dir, 'index.html'))) urls.push(`${SITE_URL}/${dir}/`);
   }
   const body = urls.map((loc) => `  <url><loc>${loc}</loc></url>`).join('\n');
@@ -125,16 +137,17 @@ function writeSitemap() {
 
 function build({ clean }) {
   const started = Date.now();
+  const decks = readDeckRegistry();
   if (clean) fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
-  for (const [srcRel, destRel] of MAP) copyMapped(srcRel, destRel);
+  for (const [srcRel, destRel] of buildMap(decks)) copyMapped(srcRel, destRel);
   buildCss();
   fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
-  const { pages, urls } = writeSitemap();
+  const { pages, urls } = writeSitemap(decks);
   const files = walkFiles(DIST);
   const bytes = files.reduce((sum, file) => sum + fs.statSync(file).size, 0);
   console.log(
-    `dist/ 생성 완료: 파일 ${files.length}개, ${(bytes / 1048576).toFixed(1)} MB, 페이지 ${pages}개, sitemap ${urls}개 URL (${Date.now() - started}ms)`
+    `dist/ 생성 완료: 파일 ${files.length}개, ${(bytes / 1048576).toFixed(1)} MB, 페이지 ${pages}개, 덱 ${decks.length}개(${decks.map((d) => d.slug).join(', ')}), sitemap ${urls}개 URL (${Date.now() - started}ms)`
   );
 }
 

@@ -7,6 +7,7 @@ tools: Read, Edit, Write, Grep, Glob, Bash
 너는 NNN GAMES의 웹 슬라이드 덱 제작자다. 루트 `CLAUDE.md`의 공통 규칙을 전제로 아래를 따른다.
 
 ## 담당 파일
+- 레지스트리: `decks/decks.json` (덱 목록·상태·언어·연결 프로젝트). 빌드와 검사가 이 파일을 읽는다
 - 공용 런타임: `slides/shared/deck.js`, `slides/shared/deck.css`, `slides/README.md`
 - 덱: `company/`, `nnn/`, `jumpstart/` 각각의 `index.html`, `slides.js`, `deck.css`, `assets/` 또는 `img/`, `docs/`
 
@@ -31,8 +32,14 @@ tools: Read, Edit, Write, Grep, Glob, Bash
 5. `npm run dev`로 `http://localhost:8080/<deck>/`를 열어 슬라이드 이동, 언어 전환, 모바일 폭, 인쇄 미리보기를 확인한다.
 6. 완료 보고에 변경 슬라이드 id, 실행한 검증, 남은 리스크를 적는다.
 
-## 새 덱 생성
-`/new-deck` 스킬(`.claude/skills/new-deck/SKILL.md`)을 따른다. 새 덱은 반드시 `slides/shared/` 런타임을 사용한다.
+## 덱 생명주기 스킬
+| 요청 | 스킬 |
+| --- | --- |
+| 새 덱 만들기 | `/new-deck` (디렉터리 생성 + `decks.json` 등록. `build.js`는 건드리지 않는다) |
+| 슬라이드 추가·순서 변경·문구·이미지 수정 | `/update-deck` |
+| 덱 내리기 / 다시 올리기 | `/archive-deck` (`status` 전환만으로 배포 포함·제외) |
+
+`decks.json`의 `status`가 `archived`면 빌드에서 빠지고, `draft`면 배포되지만 sitemap 에 실리지 않는다. 새 덱은 반드시 `decks/shared/` 런타임을 사용한다.
 
 ## 금지
 - site 영역(`site/`)과 공유 영역(`shared/`) 파일 수정

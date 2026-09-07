@@ -17,7 +17,16 @@ const ROOT = path.join(__dirname, '..');
 const SITE = 'site';
 const DECKS_DIR = 'decks';
 const LANGS = ['ko', 'en', 'ja'];
-const DECKS = ['company', 'nnn', 'jumpstart'];
+// 덱 목록은 decks/decks.json 레지스트리에서 읽는다 (archived 포함: 소스가 남아 있는 한 검사한다)
+const DECKS = (() => {
+  try {
+    const registry = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'decks', 'decks.json'), 'utf8'));
+    return (registry.decks || []).filter((deck) => deck && typeof deck.slug === 'string');
+  } catch (error) {
+    console.error(`decks/decks.json 읽기 실패: ${error.message}`);
+    process.exit(1);
+  }
+})();
 
 let errors = 0;
 let warnings = 0;
@@ -136,10 +145,10 @@ for (const file of jsFiles) {
 
 // 4. 덱 i18n
 for (const deck of DECKS) {
-  const slides = `${DECKS_DIR}/${deck}/slides.js`;
-  const index = `${DECKS_DIR}/${deck}/index.html`;
+  const slides = `${DECKS_DIR}/${deck.slug}/slides.js`;
+  const index = `${DECKS_DIR}/${deck.slug}/index.html`;
   if (!fs.existsSync(path.join(ROOT, slides))) {
-    warn(`${slides} 없음, 건너뜀`);
+    fail(`${slides} 없음 (decks.json 에 등록된 덱 '${deck.slug}')`);
     continue;
   }
   console.log(`[deck] ${slides}`);
@@ -154,6 +163,10 @@ for (const deck of DECKS) {
     const buttonLangs = [...new Set([...html.matchAll(/data-lang="([a-z]+)"/g)].map((m) => m[1]))].sort();
     if (buttonLangs.length && buttonLangs.join(',') !== deckLangs.slice().sort().join(',')) {
       fail(`${index}: 언어 버튼 [${buttonLangs.join(',')}] 과 DECK_I18N 언어 [${deckLangs.join(',')}] 이 다릅니다.`);
+    }
+    const registryLangs = Array.isArray(deck.languages) ? deck.languages.slice().sort() : [];
+    if (registryLangs.join(',') !== deckLangs.slice().sort().join(',')) {
+      fail(`decks.json '${deck.slug}': languages [${registryLangs.join(',')}] 이 DECK_I18N 언어 [${deckLangs.join(',')}] 과 다릅니다.`);
     }
     const slideIds = new Set([...html.matchAll(/data-slide="([^"]+)"/g)].map((m) => m[1]));
     for (const slide of deckSlides || []) {

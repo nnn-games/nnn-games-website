@@ -241,6 +241,50 @@ if (communities && groupConfig) {
   console.log(`  그룹 ${groups.length}개, 히어로 구독자 합계 ${heroTotal.toLocaleString()}`);
 }
 
+// decks/decks.json (덱 레지스트리)
+console.log('[decks/decks.json]');
+const DECK_STATUSES = ['active', 'draft', 'archived'];
+const DECK_AUDIENCES = ['partner', 'publisher', 'investor', 'internal', 'public'];
+const DECK_RUNTIMES = { shared: '../slides/shared/deck.js', local: 'deck.js' };
+const registry = readJson('decks/decks.json');
+if (registry) {
+  const decks = Array.isArray(registry.decks) ? registry.decks : [];
+  const slugs = new Set();
+  const projectIds = new Set(((projects && projects.all) || []).map((p) => p.id));
+  for (const deck of decks) {
+    const label = `deck '${deck.slug || '(slug 없음)'}'`;
+    if (!hasText(deck.slug) || !/^[a-z0-9-]+$/.test(deck.slug)) fail(`${label}: slug 는 kebab-case 여야 합니다.`);
+    if (slugs.has(deck.slug)) fail(`${label}: slug 중복`);
+    slugs.add(deck.slug);
+    checkLocalized(`${label}.title`, deck.title);
+    if (!DECK_STATUSES.includes(deck.status)) fail(`${label}: status 는 ${DECK_STATUSES.join('/')} 중 하나여야 합니다.`);
+    if (!DECK_AUDIENCES.includes(deck.audience)) fail(`${label}: audience 는 ${DECK_AUDIENCES.join('/')} 중 하나여야 합니다.`);
+    if (!Array.isArray(deck.languages) || deck.languages.length === 0 || !deck.languages.includes('ko') || deck.languages.some((l) => !LANGS.includes(l))) {
+      fail(`${label}: languages 는 ko 를 포함한 ${LANGS.join('/')} 의 배열이어야 합니다.`);
+    }
+    if (!(deck.runtime in DECK_RUNTIMES)) fail(`${label}: runtime 은 shared/local 중 하나여야 합니다.`);
+    if (deck.project != null && !projectIds.has(deck.project)) fail(`${label}: project '${deck.project}' 가 projects.json 에 없습니다.`);
+
+    const dir = path.join(ROOT, 'decks', String(deck.slug));
+    const index = path.join(dir, 'index.html');
+    if (!fs.existsSync(index) || !fs.existsSync(path.join(dir, 'slides.js'))) {
+      fail(`${label}: decks/${deck.slug}/index.html 과 slides.js 가 있어야 합니다.`);
+    } else if (deck.runtime in DECK_RUNTIMES) {
+      const html = fs.readFileSync(index, 'utf8');
+      const expected = DECK_RUNTIMES[deck.runtime];
+      if (!html.includes(`src="${expected}`)) fail(`decks/${deck.slug}/index.html: runtime '${deck.runtime}' 이면 '${expected}' 를 로드해야 합니다.`);
+      if (deck.runtime === 'shared' && fs.existsSync(path.join(dir, 'deck.js'))) warn(`${label}: runtime 이 shared 인데 deck.js 사본이 남아 있습니다.`);
+    }
+  }
+  // 레지스트리에 없는 덱 디렉터리
+  for (const entry of fs.readdirSync(path.join(ROOT, 'decks'), { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name === 'shared') continue;
+    if (!slugs.has(entry.name)) fail(`decks/${entry.name}/ 가 decks.json 에 등록되어 있지 않습니다 (배포되지 않음). /new-deck 절차로 등록하세요.`);
+  }
+  const byStatus = DECK_STATUSES.map((s) => `${s} ${decks.filter((d) => d.status === s).length}`).join(', ');
+  console.log(`  덱 ${decks.length}개 (${byStatus})`);
+}
+
 console.log('');
 if (errors > 0) {
   console.error(`check:data 실패 — 오류 ${errors}건, 경고 ${warnings}건`);
