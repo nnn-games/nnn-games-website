@@ -659,3 +659,8 @@
     @apply rounded-xl overflow-hidden shadow;
   }
 }
+
+  /* 개발 중 프로젝트 상세 안내문 (project-detail.js development 모드) */
+  .detail-dev-note {
+    @apply mt-7 px-6 py-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-slate-600 text-center text-[0.95rem] leading-relaxed;
+  }

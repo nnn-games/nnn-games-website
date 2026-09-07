@@ -1,10 +1,23 @@
+// 프로젝트 상세 페이지 렌더러 (운영 중 + 개발 중 통합)
+// - 데이터 소스: js/project-details/<slug>.js (config) + data/projects.json (project)
+// - 모드: project.detailRenderer > config.mode > status (development 이면 간소화 레이아웃, 그 외 표준 레이아웃)
+//   standard    : 히어로 / 미디어 / 개요 / 핵심 포인트 / 링크 / 스냅샷 / 특징 / 갤러리
+//   development : 히어로(제목·한 줄 소개·장르·플랫폼·출시 예정) / 프리뷰 이미지 / 안내문
 (function () {
     window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
+
+    const FALLBACK_IMAGE = 'images/nnn-logo.png';
 
     const U = function () { return window.NNNUtils; };
 
     const renderText = function (value, lang) {
         return U().escapeHtml(U().pickLocalized(value, lang)).replace(/\n/g, '<br>');
+    };
+
+    const resolveMode = function (config, project) {
+        if (project && (project.detailRenderer === 'standard' || project.detailRenderer === 'development')) return project.detailRenderer;
+        if (config && (config.mode === 'standard' || config.mode === 'development')) return config.mode;
+        return project && project.status === 'development' ? 'development' : 'standard';
     };
 
     const ensureMeta = function (selector, attribute, value) {
@@ -22,16 +35,23 @@
         node.setAttribute('content', value);
     };
 
-    const updateSeo = function (config, lang) {
+    const updateSeo = function (config, project, lang) {
         const u = U();
-        const title = u.pickLocalized(config.seo && config.seo.title, lang)
-            || `${u.pickLocalized(config.hero && config.hero.title, lang)} - NNN GAMES`;
+        const heroTitle = u.pickLocalized(config.hero && config.hero.title, lang)
+            || (project && u.pickLocalized(project.title, lang))
+            || 'Project';
+        const title = u.pickLocalized(config.seo && config.seo.title, lang) || `${heroTitle} - NNN GAMES`;
         const description = u.pickLocalized(config.seo && config.seo.description, lang)
-            || u.pickLocalized(config.hero && config.hero.tagline, lang);
+            || u.pickLocalized(config.hero && config.hero.tagline, lang)
+            || (project && u.pickLocalized(project.description, lang))
+            || '';
         const keywords = u.pickLocalized(config.seo && config.seo.keywords, lang);
         const ogTitle = u.pickLocalized(config.seo && config.seo.ogTitle, lang) || title;
         const ogDescription = u.pickLocalized(config.seo && config.seo.ogDescription, lang) || description;
-        const ogImage = (config.seo && config.seo.ogImage) || 'images/nnn-logo.png';
+        const ogImage = (config.seo && config.seo.ogImage)
+            || (config.media && config.media.type !== 'youtube' && config.media.src)
+            || (project && project.image)
+            || FALLBACK_IMAGE;
 
         document.title = title;
         ensureMeta('meta[name="description"]', 'name', description);
@@ -70,11 +90,10 @@
         `;
     };
 
-    const buildHeroActions = function (buttons, project, lang) {
+    const buildCtaButtons = function (buttons, project, lang) {
         const u = U();
         const projectId = project ? project.id : '';
-        const backUrl = project && project.category === 'mobile' ? 'projects-mobile.html' : 'projects-roblox.html';
-        const items = (buttons || [])
+        return (buttons || [])
             .map((button) => {
                 const url = button.url || (project && project.links ? project.links[button.type] : '');
                 if (!url) return '';
@@ -92,10 +111,15 @@
             })
             .filter(Boolean)
             .join('');
+    };
 
+    const buildHeroActions = function (buttons, project, lang) {
+        const u = U();
+        const projectId = project ? project.id : '';
+        const backUrl = project && project.category === 'mobile' ? 'projects-mobile.html' : 'projects-roblox.html';
         return `
             <div class="detail-hero-actions">
-                ${items}
+                ${buildCtaButtons(buttons, project, lang)}
                 <a href="${backUrl}" class="btn-ghost" data-cta="detail-back" data-project-id="${u.escapeHtml(projectId)}" data-cta-origin="detail-header">
                     ${u.escapeHtml(u.t(lang, 'project_detail_back_to_projects', 'Back to Projects'))}
                 </a>
@@ -257,7 +281,8 @@
         `;
     };
 
-    const buildPage = function (config, project, lang) {
+    // 운영 중(표준) 레이아웃
+    const buildStandardPage = function (config, project, lang) {
         const u = U();
         const title = u.pickLocalized(config.hero && config.hero.title, lang)
             || (project && u.pickLocalized(project.title, lang))
@@ -318,6 +343,53 @@
         `;
     };
 
+    // 개발 중 레이아웃: 제목 / 한 줄 소개 / 상태·장르·플랫폼·출시 예정 / 프리뷰 이미지 / 안내문
+    const buildDevelopmentPage = function (config, project, lang) {
+        const u = U();
+        const title = u.pickLocalized(config.hero && config.hero.title, lang)
+            || (project && u.pickLocalized(project.title, lang))
+            || 'Project';
+        const tagline = u.pickLocalized(config.hero && config.hero.tagline, lang)
+            || (project && u.pickLocalized(project.description, lang))
+            || '';
+        const previewSrc = (config.media && config.media.type !== 'youtube' && config.media.src)
+            || (project && project.image)
+            || FALLBACK_IMAGE;
+        const previewAlt = u.pickLocalized(config.media && config.media.alt, lang) || title;
+        const genre = u.pickLocalized(config.hero && config.hero.genre, lang) || '';
+        const platform = u.pickLocalized(config.hero && config.hero.platform, lang)
+            || ((project && project.platform) ? `Platform: ${project.platform}` : 'Platform: Roblox');
+        const launch = u.pickLocalized(config.snapshot && config.snapshot.launch, lang)
+            || (project && project.launchDate)
+            || u.t(lang, 'project_detail_launch_tba', 'Launch: TBA');
+        const statusLabel = u.pickLocalized(config.hero && config.hero.status, lang)
+            || u.getStatusLabel('development', lang);
+
+        return `
+            <section class="project-header">
+                <div class="container detail-hero-shell">
+                    <p class="section-kicker detail-project-kicker">${u.escapeHtml(u.t(lang, 'project_detail_dev_kicker', 'In Development'))}</p>
+                    <h1>${u.escapeHtml(title)}</h1>
+                    <p class="detail-hero-summary">${u.escapeHtml(tagline)}</p>
+                    <div class="project-meta-info detail-hero-badges">
+                        <span class="badge-metric play">${u.escapeHtml(statusLabel)}</span>
+                        <span class="badge-metric ugc">${u.escapeHtml(genre)}</span>
+                        <span class="badge-metric media">${u.escapeHtml(platform)}</span>
+                        <span class="badge-metric play">${u.escapeHtml(launch)}</span>
+                    </div>
+                    ${buildHeroActions(config.ctaButtons, project, lang)}
+                </div>
+            </section>
+
+            <section class="project-main detail-project-main">
+                <div class="detail-media-shell">
+                    <img src="${u.escapeHtml(previewSrc)}" alt="${u.escapeHtml(previewAlt)}" class="detail-media-image" loading="lazy">
+                </div>
+                <p class="detail-dev-note">${u.escapeHtml(u.t(lang, 'project_detail_dev_note', 'Detailed information will be revealed as we approach launch.'))}</p>
+            </section>
+        `;
+    };
+
     const getProjectConfig = function (projectId) {
         return window.ProjectDetailConfigs && window.ProjectDetailConfigs[projectId]
             ? window.ProjectDetailConfigs[projectId]
@@ -360,17 +432,26 @@
         }
 
         const lang = U().getCurrentLanguage();
-        const config = getProjectConfig(projectId);
+        const project = await getProjectData(projectId);
+        let config = getProjectConfig(projectId);
+        const mode = resolveMode(config, project);
+
+        // 개발 중 모드는 config 없이도 projects.json 만으로 렌더할 수 있다.
         if (!config) {
-            renderError(root, lang);
-            return;
+            if (mode !== 'development') {
+                renderError(root, lang);
+                return;
+            }
+            config = {};
         }
 
-        const project = await getProjectData(projectId);
-        root.innerHTML = buildPage(config, project || { id: projectId, links: {} }, lang);
-        updateSeo(config, lang);
+        const projectOrStub = project || { id: projectId, links: {} };
+        root.innerHTML = mode === 'development'
+            ? buildDevelopmentPage(config, projectOrStub, lang)
+            : buildStandardPage(config, projectOrStub, lang);
+        updateSeo(config, project, lang);
         document.dispatchEvent(new CustomEvent('projectDetailRendered', {
-            detail: { projectId }
+            detail: { projectId, mode }
         }));
     };
 

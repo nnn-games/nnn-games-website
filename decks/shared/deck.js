@@ -4,6 +4,10 @@
  * deep links, keyboard and swipe navigation, fullscreen, a11y state, and
  * presenter-friendly idle controls. Individual decks define DECK_SLIDES and
  * DECK_I18N before this file is loaded.
+ *
+ * Optional: a deck can register window.DECK_RENDERERS = { name: fn(target, slideData, ctx) }
+ * before this file loads. Elements with `data-deck-render="name"` inside a slide are
+ * rendered once at startup; ctx.onLanguage(fn) re-runs fn on every language change.
  */
 (function () {
     'use strict';
@@ -14,6 +18,8 @@
     var IDLE_MS = 2600;
     var slidesData = window.DECK_SLIDES || [];
     var i18n = window.DECK_I18N || {};
+    var renderers = window.DECK_RENDERERS || {};
+    var updaters = []; // 스크립트로 생성한 노드의 다국어 갱신자
 
     var stage = document.getElementById('deckStage');
     var viewport = document.getElementById('deckViewport');
@@ -76,6 +82,44 @@
         return value;
     }
 
+    function pick(value) {
+        // { ko:'…', en:'…', ja:'…' } 형태의 데이터에서 현재 언어를 고른다.
+        if (!value) return '';
+        if (typeof value === 'string') return value;
+        return value[lang] || value.ko || value.en || value.ja || '';
+    }
+
+    function el(tag, className, text) {
+        var node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text !== undefined && text !== null) node.textContent = text;
+        return node;
+    }
+
+    function placeholder(className, label) {
+        var box = el('div', className);
+        box.setAttribute('data-placeholder', '');
+        box.appendChild(el('span', null, label));
+        return box;
+    }
+
+    var rendererContext = {
+        t: t,
+        pick: pick,
+        el: el,
+        placeholder: placeholder,
+        onLanguage: function (fn) { updaters.push(fn); },
+        lang: function () { return lang; }
+    };
+
+    function runRenderers(slide) {
+        slide.element.querySelectorAll('[data-deck-render]').forEach(function (target) {
+            var name = target.getAttribute('data-deck-render');
+            var render = renderers[name];
+            if (typeof render === 'function') render(target, slide.data, rendererContext);
+        });
+    }
+
     function applyLanguage() {
         root.lang = lang;
         document.querySelectorAll('[data-deck-key]').forEach(function (node) {
@@ -87,6 +131,7 @@
         document.querySelectorAll('[data-deck-key-aria-label]').forEach(function (node) {
             node.setAttribute('aria-label', t(node.getAttribute('data-deck-key-aria-label')));
         });
+        updaters.forEach(function (fn) { fn(); });
         document.querySelectorAll('.deck-lang').forEach(function (button) {
             var active = button.getAttribute('data-lang') === lang;
             button.classList.toggle('is-active', active);
@@ -119,6 +164,8 @@
             slide.num = slide.appendix ? ++appendixTotal : ++mainTotal;
             if (slide.appendix) slide.element.setAttribute('data-appendix', '');
         });
+
+        slides.forEach(runRenderers);
     }
 
     function buildDots() {
@@ -194,7 +241,7 @@
         railFill.style.width = (slide.appendix ? 100 : slide.num / (mainTotal || 1) * 100) + '%';
 
         if (!opts.silent) {
-            var heading = slide.element.querySelector('h1, h2, .slide-kicker');
+            var heading = slide.element.querySelector('h1, h2, .slide-kicker, .sec-label');
             announcer.textContent = position(slide) + (heading ? ' — ' + heading.textContent : '');
         }
 

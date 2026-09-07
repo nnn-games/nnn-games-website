@@ -115,11 +115,12 @@ console.log(`[site] ${i18nFile}`);
 const translations = evalBrowserScript(i18nFile, 'typeof translations !== "undefined" ? translations : window.translations');
 const siteKeys = compareLangKeys(i18nFile, translations, LANGS).keys;
 
-const rootHtml = fs
-  .readdirSync(path.join(ROOT, SITE))
-  .filter((name) => name.endsWith('.html'))
-  .sort()
-  .map((name) => `${SITE}/${name}`);
+// 페이지와 파셜(헤더/푸터 등, 빌드 시 인라인) 모두 검사한다.
+const partialsDir = path.join(ROOT, SITE, '_partials');
+const rootHtml = [
+  ...fs.readdirSync(path.join(ROOT, SITE)).filter((name) => name.endsWith('.html')).sort().map((name) => `${SITE}/${name}`),
+  ...(fs.existsSync(partialsDir) ? fs.readdirSync(partialsDir).filter((name) => name.endsWith('.html')).sort().map((name) => `${SITE}/_partials/${name}`) : [])
+];
 let htmlKeyCount = 0;
 for (const file of rootHtml) htmlKeyCount += checkHtmlKeys(file, 'data-key', siteKeys, i18nFile);
 console.log(`  HTML ${rootHtml.length}개, data-key ${htmlKeyCount}개 확인`);

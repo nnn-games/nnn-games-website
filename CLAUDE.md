@@ -21,9 +21,10 @@ TripleN Games(NNN GAMES)의 정적 회사 홈페이지와 웹 슬라이드 덱�
 site/                                 /                   홈페이지 (site 소유)
   index.html, projects-roblox.html, contact.html          메인 페이지
   <slug>.html (11개)                                      프로젝트 상세 셸 (본문은 JS가 렌더)
+  _partials/head-common.html, header.html, footer.html    공통 마크업. 페이지의 `<!-- @include … -->` 마커에 빌드가 인라인 (배포 안 함)
   js/                                                     전역 객체 기반 스크립트 (ES 모듈 아님)
     utils.js, i18n.js, main.js, projects-data.js, project-renderer.js
-    project-detail.js / project-detail-development.js     운영 중 / 개발 중 상세 렌더러
+    project-detail.js                                     상세 렌더러 하나. status/detailRenderer 로 standard·development 모드 선택
     project-details/<slug>.js                             프로젝트별 콘텐츠 설정 (KO/EN/JA)
   styles/tailwind.css                 /css/style.css      Tailwind @apply 소스 (빌드가 생성, 배포 안 함)
   privacy/                            /privacy/           법무 검토 없이 수정 금지
@@ -33,10 +34,11 @@ shared/                                                   공유 자산 (site �
   images/, assets/<project>/          /images, /assets    이미지 (양쪽에서 참조)
 decks/                                                    슬라이드 (decks 소유)
   decks.json                                              덱 레지스트리: slug, 제목, 대상, status(active/draft/archived), 언어, 연결 프로젝트. 빌드 MAP 과 sitemap 이 이걸 읽는다
-  shared/deck.js, deck.css            /slides/shared/     공용 덱 런타임 (jumpstart 사용)
-  company/, nnn/                      /company/, /nnn/    회사 소개 덱 (각자 deck.js 사본, 통합 예정)
+  shared/deck.js, deck.css            /slides/shared/     공용 덱 런타임 (모든 덱이 사용). data-deck-render 훅 제공
+  shared/company-renderers.js         /slides/shared/     회사 소개 덱의 커스텀 슬라이드 렌더러 (아바타·연혁·수상·UGC)
+  company/, nnn/                      /company/, /nnn/    회사 소개 덱 (nnn 은 7월 버전)
   jumpstart/                          /jumpstart/         프로젝트 제안 덱
-  각 덱: index.html + slides.js(DECK_SLIDES, DECK_I18N) + deck.css + assets|img/
+  각 덱: index.html + slides.js(DECK_SLIDES, DECK_I18N) + deck.css + assets|img/. pdf/ 는 배포·커밋하지 않음 (export-decks 워크플로로 생성)
 scripts/                                                  빌드·검증·지표 (배포 안 함)
   build.js                                                MAP 대로 dist/ 조립, Tailwind 빌드, sitemap/.nojekyll 생성, --watch/--serve
   check-i18n.js, check-links.js, check-data.js            검증
@@ -58,7 +60,7 @@ dist/                                                     빌드 산출물 (git 
 - `shared/data/projects.json`, `communities.json`의 수치는 `npm run update:metrics`(CI 가 매일 실행)로만 갱신한다. 손으로 숫자를 고치지 않는다. 프로젝트 메타(제목, 링크, 플래그)는 site 가 편집한다.
 - decks 는 지표를 하드코딩하지 않는다. 슬라이드에 방문 수 등을 넣을 때는 `shared/data/projects.json` 값을 인용하고 갱신일(`metrics.updatedAt`)을 함께 적는다.
 - `shared/images/`, `shared/assets/`에 새 파일을 넣을 때: 웹용 압축(JPEG/WebP), 가로 1200px 이하 권장, 2MB 이하. 이름 변경·삭제는 덱 링크도 깨질 수 있으므로 `npm run check`로 확인한다. PDF 등 대용량 파일은 추가하지 않는다(기존 PDF 는 이후 단계에서 Git LFS 로 이전 예정).
-- 헤더/푸터는 `site/*.html` 14개에 복제되어 있다. 공통 UI를 바꿀 때는 `site/index.html`을 기준으로 모든 페이지에 동일하게 반영한다.
+- 헤더/푸터/공통 head 는 `site/_partials/`에 한 벌만 있다. 페이지에는 `<!-- @include header active="home|projects|contact" -->`, `<!-- @include footer -->`, `<!-- @include head-common -->` 마커만 둔다. 공통 UI 는 파셜만 고치고, 페이지 안에 헤더/푸터를 다시 복사하지 않는다.
 - `scripts/build.js`의 `MAP`과 워크플로 파일을 바꿀 때는 사용자에게 먼저 알린다.
 
 ## 4. 공통 규칙
@@ -112,4 +114,4 @@ dist/                                                     빌드 산출물 (git 
 1. 완료: 에이전트 컨텍스트, 역할 정의, 검증 스크립트
 2. 완료: `dist/` 빌드 + GitHub Actions(지표 스케줄 갱신, CSS 빌드, Pages 배포)
 3. 완료: `site/`, `decks/`, `shared/` 디렉터리 재배치 (빌드 매핑으로 URL·상대 경로 유지)
-4. 예정: 덱 런타임 3벌 통합(`decks/company`, `decks/nnn` → `decks/shared`), 상세 렌더러 2개 통합, 헤더/푸터 템플릿화, PDF Git LFS 이전
+4. 완료: 덱 런타임을 `decks/shared/deck.js` 하나로 통합(회사 덱 렌더러는 `company-renderers.js`로 분리), 상세 렌더러를 `project-detail.js` 하나로 통합, 헤더/푸터/공통 head 를 `site/_partials/`로 템플릿화, 덱 PDF(80MB) 저장소에서 제거(복구: `git checkout 11c6257 -- decks/company/pdf decks/jumpstart/pdf`)

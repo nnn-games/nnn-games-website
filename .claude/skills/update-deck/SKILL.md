@@ -28,7 +28,7 @@ description: 기존 웹 슬라이드 덱의 슬라이드 추가·삭제·순서 
 - 새 슬라이드 id 는 kebab-case, 기존 id 와 중복 금지. `DECK_SLIDES` 순서 = 마크업 순서.
 - 문구 키를 추가하면 `languages`의 모든 언어에 넣는다. 번역이 없으면 KO 문구를 넣고 보고에 "번역 필요"로 표시한다.
 - 언어를 추가하려면 `DECK_I18N` 블록, `index.html`의 `data-lang` 버튼, `decks.json`의 `languages` 세 곳을 함께 바꾼다. `check:i18n`이 셋의 일치를 검사한다.
-- `company`와 `nnn`은 자체 `deck.js` 사본을 쓴다. 런타임 동작을 바꿔야 하면 어느 파일을 고칠지 사용자에게 먼저 알린다.
+- 런타임은 `decks/shared/deck.js` 하나다. 동적 슬라이드(아바타·연혁·수상·UGC 그리드)는 `decks/shared/company-renderers.js`의 `DECK_RENDERERS`가 그리며 데이터는 `slides.js`의 `DECK_SLIDES` 항목(`avatars`, `eras`, `awards`, `works`)에 있다. 런타임·렌더러를 바꾸면 사용자에게 먼저 알린다.
 - 파일 전체 재포맷 금지. 수정한 줄만 바꾼다. 기존 캐시 버스터(`slides.js?v=YYYYMMDD-n`)가 있으면 값을 올린다.
 
 ## 3. 검증

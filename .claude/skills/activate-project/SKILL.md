@@ -20,7 +20,7 @@ description: 개발 중(development) 프로젝트를 운영 중(active)으로 �
 - `detailRenderer`가 있으면 제거한다(상태에서 유추). 운영용 렌더러를 쓰지 않는 예외만 `"standard"`/`"development"`를 명시.
 
 ## 2. 상세 셸 (`site/<slug>.html`)
-- `<script defer src="js/project-detail-development.js">`를 `js/project-detail.js`로 바꾼다. 나머지 셸 내용은 유지한다.
+- 스크립트는 바꾸지 않는다. `project-detail.js`가 `status: "active"`를 보고 표준 레이아웃으로 전환한다.
 - `<title>`, meta description, OG 문구에 "개발 중/Coming soon" 표현이 있으면 출시 문구로 바꾼다.
 
 ## 3. 콘텐츠 설정 (`site/js/project-details/<slug>.js`)
