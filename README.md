@@ -17,6 +17,7 @@ npm run update:metrics
 ### 배포
 
 - `main` 에 푸시하면 `.github/workflows/deploy.yml` 이 검증 → 빌드 → GitHub Pages 배포를 수행합니다. 저장소 Settings > Pages > Source 를 **GitHub Actions** 로 설정해야 합니다.
+- `.github/workflows/audit.yml` 이 매주 월요일 10:00 KST 에 점검 보고서를 `audit` 라벨 이슈로 올립니다.
 - `.github/workflows/metrics.yml` 이 매일 12:00 KST 에 지표를 갱신해 `data: metrics YYMMDD` 커밋을 만들고 재배포합니다. 수동 실행: `gh workflow run metrics.yml`.
 - `css/style.css` 는 더 이상 커밋하지 않습니다. 새로 클론하면 `npm install && npm run build:css` 를 먼저 실행하세요.
 

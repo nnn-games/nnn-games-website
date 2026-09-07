@@ -24,7 +24,8 @@
     "check": "npm run build && npm run check:i18n && npm run check:links && npm run check:data && npm run lint",
     "test": "npm run check",
     "snapshot": "node scripts/snapshot.js",
-    "export:deck": "node scripts/export-deck.js"
+    "export:deck": "node scripts/export-deck.js",
+    "audit": "node scripts/audit.js"
   },
   "engines": {
     "node": ">=20"
