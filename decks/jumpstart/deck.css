@@ -61,7 +61,7 @@
 .js-scene-head > p:last-child { margin-top: .45rem; color: #d9cfca; font-size: .7rem; }
 .js-callout { position: absolute; z-index: 4; padding: .38rem .7rem; border: 1px solid rgba(255,255,255,.52); border-radius: 999px; background: rgba(22,15,14,.7); box-shadow: 0 .35rem .8rem rgba(0,0,0,.35); color: #fff; font-size: .62rem; font-weight: 800; backdrop-filter: blur(8px); }
 .js-callout::after { position: absolute; top: 100%; left: 50%; width: 1px; height: 1.6rem; background: rgba(255,255,255,.55); content: ""; }
-/* 좌표는 hero-sc.png(1672×941) 기준 — 스테이지 64×36rem와 같은 16:9라 픽셀이 그대로 대응된다 */
+/* 좌표는 hero-sc.webp(1672×941) 기준 — 스테이지 64×36rem와 같은 16:9라 픽셀이 그대로 대응된다 */
 .js-callout-a { top: 20.3rem; left: 3.8rem; }
 .js-callout-b { top: 17.7rem; left: 23.9rem; border-color: var(--gold); color: var(--gold); }
 .js-callout-c { top: 23.6rem; left: 40.8rem; border-color: #c89bff; color: #dfc7ff; }
