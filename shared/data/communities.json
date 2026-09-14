@@ -12,9 +12,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 88636,
+      "memberCount": 88655,
       "icon": "https://tr.rbxcdn.com/180DAY-5c2570efb659dadb1f3e725c2d462e95/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-09-13T07:56:13.830Z"
+      "updatedAt": "2026-09-14T08:29:14.119Z"
     },
     {
       "id": "937186626",
@@ -30,7 +30,7 @@
       "includeInHeroSubscriberTotal": true,
       "memberCount": 6,
       "icon": "https://tr.rbxcdn.com/180DAY-4dba4c420424c25e2e25c6078a938244/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-09-13T07:56:13.830Z"
+      "updatedAt": "2026-09-14T08:29:14.119Z"
     },
     {
       "id": "34453707",
@@ -44,9 +44,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 78478,
+      "memberCount": 78905,
       "icon": "https://tr.rbxcdn.com/180DAY-ad505ccb7ae1b3c6c443a77a589249a5/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-09-13T07:56:13.830Z"
+      "updatedAt": "2026-09-14T08:29:14.119Z"
     },
     {
       "id": "916094546",
@@ -62,7 +62,7 @@
       "includeInHeroSubscriberTotal": true,
       "memberCount": 177,
       "icon": "https://tr.rbxcdn.com/180DAY-df40bc5c7519d4a97293df4d85f322d3/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-09-13T07:56:13.830Z"
+      "updatedAt": "2026-09-14T08:29:14.119Z"
     },
     {
       "id": "844932134",
@@ -76,9 +76,9 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 3548,
+      "memberCount": 3552,
       "icon": "https://tr.rbxcdn.com/180DAY-6ed8072f9b3b6c1ea9174b1e74b5f63d/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-09-13T07:56:13.830Z"
+      "updatedAt": "2026-09-14T08:29:14.119Z"
     },
     {
       "id": "35735121",
@@ -92,13 +92,13 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true,
-      "memberCount": 31087,
+      "memberCount": 31183,
       "icon": "https://tr.rbxcdn.com/180DAY-d9403ebae949a84200da917a4c9dfcbc/150/150/Image/Png/noFilter",
-      "updatedAt": "2026-09-13T07:56:13.830Z"
+      "updatedAt": "2026-09-14T08:29:14.119Z"
     }
   ],
   "totals": {
-    "heroSubscriberCount": 201932,
+    "heroSubscriberCount": 202478,
     "homepageGroupIds": [
       "294985728",
       "937186626",
@@ -108,6 +108,6 @@
       "35735121"
     ]
   },
-  "totalMembers": 201932,
-  "updatedAt": "2026-09-13T07:56:13.830Z"
+  "totalMembers": 202478,
+  "updatedAt": "2026-09-14T08:29:14.119Z"
 }
