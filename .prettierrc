@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "tabWidth": 4,
+  "printWidth": 120,
+  "trailingComma": "none",
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": ["scripts/**/*.js", "*.config.js", "*.json", "*.md", ".prettierrc"],
+      "options": { "tabWidth": 2 }
+    }
+  ]
+}

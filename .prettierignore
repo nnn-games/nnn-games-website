@@ -1,0 +1,8 @@
+node_modules/
+_archive/
+shared/data/
+package-lock.json
+**/pdf/
+**/*.min.js
+dist/
+exports/

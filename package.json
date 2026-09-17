@@ -7,14 +7,29 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./css/style.css --minify",
-    "dev:css": "tailwindcss -i ./src/styles/tailwind.css -o ./css/style.css --watch",
+    "dev": "node scripts/build.js --watch --serve",
+    "serve": "node scripts/build.js --serve",
+    "build": "node scripts/build.js",
+    "build:css": "tailwindcss -i ./site/styles/tailwind.css -o ./dist/css/style.css --minify",
+    "dev:css": "tailwindcss -i ./site/styles/tailwind.css -o ./dist/css/style.css --watch",
     "update:metrics": "node scripts/update-metrics.js",
-    "build:all": "npm run update:metrics && npm run build:css"
+    "build:all": "npm run update:metrics && npm run build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:write": "prettier --write .",
+    "check:i18n": "node scripts/check-i18n.js",
+    "check:links": "node scripts/check-links.js",
+    "check:data": "node scripts/check-data.js",
+    "check": "npm run build && npm run check:i18n && npm run check:links && npm run check:data && npm run lint",
+    "test": "npm run check",
+    "snapshot": "node scripts/snapshot.js",
+    "export:deck": "node scripts/export-deck.js",
+    "audit": "node scripts/audit.js",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "repository": {
     "type": "git",
@@ -29,8 +44,15 @@
   },
   "homepage": "https://github.com/nnn-games/nnn-games-website#readme",
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.5",
+    "globals": "^16.5.0",
+    "http-server": "^14.1.1",
+    "playwright": "^1.63.0",
     "postcss": "^8.5.6",
+    "prettier": "^3.9.6",
+    "sharp": "^0.35.4",
     "tailwindcss": "^3.4.19"
   }
 }

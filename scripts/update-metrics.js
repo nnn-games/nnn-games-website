@@ -2,7 +2,7 @@
 /**
  * Roblox metrics updater
  * - Fetches visits / playing / favorites / likeRatio for projects with universeId
- * - Updates data/projects.json in-place
+ * - Updates shared/data/projects.json in-place
  *
  * Usage: node scripts/update-metrics.js
  * Optional: add to build pipeline before static build
@@ -11,9 +11,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const DATA_PATH = path.join(__dirname, '..', 'data', 'projects.json');
-const COMMUNITY_PATH = path.join(__dirname, '..', 'data', 'communities.json');
-const COMMUNITY_CONFIG_PATH = path.join(__dirname, '..', 'data', 'community-groups.json');
+const DATA_PATH = path.join(__dirname, '..', 'shared', 'data', 'projects.json');
+const COMMUNITY_PATH = path.join(__dirname, '..', 'shared', 'data', 'communities.json');
+const COMMUNITY_CONFIG_PATH = path.join(__dirname, '..', 'shared', 'data', 'community-groups.json');
 const ROBLOX_API_BASE = 'https://games.roblox.com/v1/games';
 const GROUP_API_BASE = 'https://groups.roblox.com/v1/groups';
 const GROUP_ICON_API = 'https://thumbnails.roblox.com/v1/groups/icons';

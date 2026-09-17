@@ -1,0 +1,23 @@
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/nnn-logo.png" alt="NNN GAMES">
+                <span class="logo-text">NNN GAMES</span>
+            </a>
+            <nav class="main-nav" id="site-navigation">
+                <ul>
+                    <li><a href="index.html"{{if active=home}} class="active"{{/if}} data-key="nav_home">홈</a></li>
+                    <li><a href="projects-roblox.html"{{if active=projects}} class="active"{{/if}} data-key="nav_projects">프로젝트</a></li>
+                    <li><a href="contact.html"{{if active=contact}} class="active"{{/if}} data-key="nav_contact">문의</a></li>
+                    <li class="lang-switcher">
+                        <a href="#" data-lang="ko" class="lang-btn active">한국어</a>
+                        <span class="lang-divider" aria-hidden="true">|</span>
+                        <a href="#" data-lang="en" class="lang-btn">English</a>
+                        <span class="lang-divider" aria-hidden="true">|</span>
+                        <a href="#" data-lang="ja" class="lang-btn">日本語</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="메뉴 열기" data-key-aria-label="nav_menu_open">☰</button>
+        </div>
+    </header>

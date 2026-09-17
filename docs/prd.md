@@ -1,5 +1,7 @@
 # NNN GAMES 웹사이트 및 Roblox 전문 스튜디오 PRD
 
+> 2026-09 구조 변경: 홈페이지 소스는 `site/`, 덱은 `decks/`, 데이터·이미지·에셋은 `shared/` 아래에 있다. 이 문서의 경로 표기는 배포 URL 기준이며, 소스 위치와 매핑은 `scripts/build.js` 와 루트 `CLAUDE.md` 를 따른다.
+
 본 문서는 현재 코드베이스(정적 웹사이트)에서 구현된 내용과 제공 가치에 기반해 작성되었으며, 향후 기능/콘텐츠 확장을 위한 기준 문서로 계속 업데이트한다.
 
 ## 1. 제품 개요
@@ -26,7 +28,7 @@
 
 ## 4. 데이터 및 렌더링 구조
 - **데이터 소스**: `data/projects.json` (정적 JSON) + `js/projects-data.js` (fallback)
-  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`, `placeId`, `universeId`, `links{play,trailer,article,group,showcase}`, `reporting{collectMetrics,includeInHeroProjectCount,includeInHeroVisitTotal}`, `metrics{visits,playing,favorites,likeRatio,updatedAt}`, `summary.hero`.
+  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`, `order`(표시 순서), `detailRenderer`(선택, 렌더러 예외), `placeId`, `universeId`, `links{play,trailer,article,group,showcase}`, `reporting{collectMetrics,includeInHeroProjectCount,includeInHeroVisitTotal}`, `metrics{visits,playing,favorites,likeRatio,updatedAt}`, `summary.hero`.
 - **렌더링**: `js/project-renderer.js`
   - JSON 로드 후 카드 동적 생성, 플랫폼/상태/카테고리 배지, 언어 변경 시 실시간 텍스트 교체, 목록 카드에 visits/playing/favorites 배지 노출.
 - **상세 페이지 지표/링크 주입**: `js/main.js`

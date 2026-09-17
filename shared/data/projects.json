@@ -1,0 +1,553 @@
+{
+  "all": [
+    {
+      "id": "tower-flood-race",
+      "title": {
+        "ko": "타워 홍수 경주",
+        "en": "Tower Flood Race",
+        "ja": "タワー・フラッド・レース"
+      },
+      "description": {
+        "ko": "Race Up. Water Rises. – 물이 차오르는 가운데 랜덤 타워를 가장 빠르게 오르는 오비 레이스.",
+        "en": "Race up while the water keeps rising—an obby race to the top of random towers before the flood catches you.",
+        "ja": "水位が上がる中、ランダムなタワーを誰より速く登り切るObbyレース。"
+      },
+      "image": "assets/towerfloodrace/tfr-preview.jpg",
+      "detailPage": "tower-flood-race.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "order": 10,
+      "launchDate": "2026-01",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "Procedural Level"
+      ],
+      "placeId": "77732766603333",
+      "universeId": "8908746905",
+      "links": {
+        "play": "https://www.roblox.com/games/77732766603333",
+        "trailer": "https://youtu.be/5g11rbdF4_I",
+        "article": "",
+        "group": "https://www.roblox.com/groups/294985728",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 11342428,
+        "playing": 17,
+        "favorites": 524250,
+        "likeRatio": 0.6022280471821756,
+        "updatedAt": "2026-09-17T07:17:30.941Z"
+      }
+    },
+    {
+      "id": "fruit-battles",
+      "title": {
+        "ko": "Fruit Battles",
+        "en": "Fruit Battles",
+        "ja": "Fruit Battles"
+      },
+      "description": {
+        "ko": "과일 스킬과 슬랩 액션으로 싸우고, 전리품으로 성장하는 Roblox 실시간 아레나 PvP 게임.",
+        "en": "A Roblox real-time arena PvP game where fruit skills, slap combat, and loot-driven growth come together.",
+        "ja": "フルーツスキルとスラップアクションで戦い、戦利品で成長するRobloxリアルタイムアリーナPvPゲーム。"
+      },
+      "image": "images/fruit-battls-preview.jpg",
+      "detailPage": "fruit-battles.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "order": 100,
+      "launchDate": "2026-04",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "Live Arena Systems"
+      ],
+      "placeId": "109322674605513",
+      "universeId": "9867900121",
+      "links": {
+        "play": "https://www.roblox.com/games/109322674605513/",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": "https://www.roblox.com/games/109322674605513/"
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 57128,
+        "playing": 0,
+        "favorites": 249,
+        "likeRatio": 0.5555555555555556,
+        "updatedAt": "2026-09-17T07:17:30.941Z"
+      }
+    },
+    {
+      "id": "korean-spa",
+      "title": {
+        "ko": "Korean Spa",
+        "en": "Korean Spa",
+        "ja": "Korean Spa"
+      },
+      "description": {
+        "ko": "작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.",
+        "en": "A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.",
+        "ja": "小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。"
+      },
+      "image": "assets/koreanspa/ks-preview.jpg",
+      "detailPage": "korean-spa.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "order": 30,
+      "launchDate": "2025-12",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "UGC Creation"
+      ],
+      "placeId": "90029482000377",
+      "universeId": "8508024007",
+      "links": {
+        "play": "https://www.roblox.com/games/90029482000377/Grubby",
+        "trailer": "",
+        "article": ""
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 143913,
+        "playing": 0,
+        "favorites": 736,
+        "likeRatio": 0.8643649815043156,
+        "updatedAt": "2026-09-17T07:17:30.941Z"
+      }
+    },
+    {
+      "id": "nnn-ugc",
+      "title": {
+        "ko": "NNN UGC",
+        "en": "NNN UGC",
+        "ja": "NNN UGC"
+      },
+      "description": {
+        "ko": "트렌디한 아이템을 제작해 Roblox 유저에게 선보이는 UGC 제작 프로젝트.",
+        "en": "A UGC creation project delivering trendy items to Roblox users.",
+        "ja": "Robloxユーザー向けにトレンド感のあるUGCアイテムを制作・提供するプロジェクトです。"
+      },
+      "image": "images/nnnugc-preview.jpg",
+      "detailPage": "nnn-ugc.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 110,
+      "detailRenderer": "standard",
+      "launchDate": "2025-Q1",
+      "platform": "Roblox",
+      "client": "Confidential",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "UGC Creation"
+      ],
+      "placeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "hacker-vs-security",
+      "title": {
+        "ko": "Hacker vs Security",
+        "en": "Hacker vs Security",
+        "ja": "Hacker vs Security"
+      },
+      "description": {
+        "ko": "확률 기반 해킹 판정으로 공격과 방어가 맞붙는 해커 vs 보안팀 캐주얼 배틀 시뮬레이터.",
+        "en": "A casual hacker-vs-security battle simulator where probability-based hack rolls decide every offensive and defensive exchange.",
+        "ja": "確率ベースのハッキング判定で攻防が決まる、ハッカー対セキュリティチームのカジュアルバトルシミュレーター。"
+      },
+      "image": "assets/hackervssecurity/hvs-preview.jpg",
+      "detailPage": "hacker-vs-security.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 20,
+      "launchDate": "2026-06",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "Systemic PvP"
+      ],
+      "placeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "star-reach",
+      "title": {
+        "ko": "Star Reach",
+        "en": "Star Reach",
+        "ja": "Star Reach"
+      },
+      "description": {
+        "ko": "Starship X 의 로켓 엔지니어가 되어 다른 플레이어와 함께 로켓을 대기권에서 심우주까지 점점 더 높이 쏘아 올리는 시뮬레이터.",
+        "en": "Become a Starship X rocket engineer and team up with other players to send rockets higher and higher — from atmosphere to deep space.",
+        "ja": "Starship Xのロケットエンジニアとなり、他のプレイヤーと協力してロケットを大気圏から深宇宙へとより高く打ち上げていくシミュレーター。"
+      },
+      "image": "assets/starreach/sr-preview.jpg",
+      "detailPage": "star-reach.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 90,
+      "launchDate": "2026-05",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "tomato-splatter-simulator",
+      "title": {
+        "ko": "Tomato Splatter Simulator",
+        "en": "Tomato Splatter Simulator",
+        "ja": "Tomato Splatter Simulator"
+      },
+      "description": {
+        "ko": "농장에서 깨어난 토마토를 시원하게 썰고 캐릭터를 성장시키며 스트레스를 해소하는 액션 시뮬레이터.",
+        "en": "Slice through swarms of awakened tomatoes, grow your character, and blow off steam in this action simulator.",
+        "ja": "農場で目覚めたトマトを爽快に斬り、キャラクターを成長させながらストレスも解消するアクションシミュレーター。"
+      },
+      "image": "assets/tomatosplattersimulator/tss-preview.jpg",
+      "detailPage": "tomato-splatter-simulator.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "order": 40,
+      "launchDate": "2026-04",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": "98363496512711",
+      "universeId": "8296982488",
+      "links": {
+        "play": "https://www.roblox.com/ko/games/98363496512711/Tomato-Splatter-Simulator",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": "https://www.roblox.com/ko/games/98363496512711/Tomato-Splatter-Simulator"
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 1179795,
+        "playing": 6,
+        "favorites": 12255,
+        "likeRatio": 0.7702127659574468,
+        "updatedAt": "2026-09-17T07:17:30.941Z"
+      }
+    },
+    {
+      "id": "afk-or",
+      "title": {
+        "ko": "[Free UGC] AFK or arcade game",
+        "en": "[Free UGC] AFK or arcade game",
+        "ja": "[Free UGC] AFK or arcade game"
+      },
+      "description": {
+        "ko": "게임을 즐기며 코인을 모아 무료 한정 UGC를 수집하는 Roblox 아케이드·수집 게임.",
+        "en": "A Roblox arcade-and-collection game where you play, earn coins, and collect free limited UGC.",
+        "ja": "ゲームを楽しみながらコインを貯め、無料の限定UGCを集めるRobloxアーケード＆コレクションゲーム。"
+      },
+      "image": "assets/afkor/afk-preview.jpg",
+      "detailPage": "afk-or.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "order": 50,
+      "launchDate": "2026-05",
+      "platform": "Roblox",
+      "client": "BlockyUGC",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "UGC Economy"
+      ],
+      "placeId": "116369674521067",
+      "universeId": "10239007666",
+      "links": {
+        "play": "https://www.roblox.com/games/116369674521067/AFK-or",
+        "trailer": "",
+        "article": "",
+        "group": "https://www.roblox.com/communities/35735121/BlockyUGC#!/about",
+        "showcase": "https://www.roblox.com/games/116369674521067/AFK-or"
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 796683,
+        "playing": 22,
+        "favorites": 8461,
+        "likeRatio": 0.9694656488549618,
+        "updatedAt": "2026-09-17T07:17:30.941Z"
+      }
+    },
+    {
+      "id": "free-ugc-rng",
+      "title": {
+        "ko": "🎁 FREE UGC RNG",
+        "en": "🎁 FREE UGC RNG",
+        "ja": "🎁 FREE UGC RNG"
+      },
+      "description": {
+        "ko": "무료로 굴려 귀여운 더키를 수집하고 행운을 키우며 한정 UGC를 획득하는 Roblox RNG 수집 게임.",
+        "en": "A Roblox RNG collector where you roll for free, collect Duckies, grow your luck, and claim limited UGC.",
+        "ja": "無料で回して可愛いダッキーを集め、運を育てながら限定UGCを獲得するRoblox RNGコレクションゲーム。"
+      },
+      "image": "assets/freeugcrng/fur-preview.jpg",
+      "detailPage": "free-ugc-rng.html",
+      "category": "roblox",
+      "status": "active",
+      "featured": true,
+      "order": 60,
+      "launchDate": "2026-05",
+      "platform": "Roblox",
+      "client": "NNN UGC",
+      "technologies": [
+        "Roblox Studio",
+        "Luau",
+        "RNG Systems"
+      ],
+      "placeId": "123520570013325",
+      "universeId": "10225655315",
+      "links": {
+        "play": "https://www.roblox.com/games/123520570013325/FREE-UGC-RNG",
+        "trailer": "",
+        "article": "",
+        "group": "https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about",
+        "showcase": "https://www.roblox.com/games/123520570013325/FREE-UGC-RNG"
+      },
+      "reporting": {
+        "collectMetrics": true,
+        "includeInHeroProjectCount": true,
+        "includeInHeroVisitTotal": true
+      },
+      "metrics": {
+        "visits": 328211,
+        "playing": 15,
+        "favorites": 5224,
+        "likeRatio": 0.8293241695303551,
+        "updatedAt": "2026-09-17T07:17:30.941Z"
+      }
+    },
+    {
+      "id": "ducky-merge-farm",
+      "title": {
+        "ko": "Ducky Merge Farm [RNG]",
+        "en": "Ducky Merge Farm [RNG]",
+        "ja": "Ducky Merge Farm [RNG]"
+      },
+      "description": {
+        "ko": "더키를 합치고 농장을 키우며 행운(RNG)으로 희귀 더키를 노리는 Roblox 머지 팜 게임.",
+        "en": "A Roblox merge-farm game where you merge Duckies, grow your farm, and chase rare Duckies through RNG.",
+        "ja": "ダッキーを合成し農場を育て、運（RNG）でレアなダッキーを狙うRobloxマージファームゲーム。"
+      },
+      "image": "assets/duckymergefarm/dmf-preview.jpg",
+      "detailPage": "ducky-merge-farm.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 70,
+      "launchDate": "2026",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "enchanted-weapon",
+      "title": {
+        "ko": "Enchanted Weapon",
+        "en": "Enchanted Weapon",
+        "ja": "Enchanted Weapon"
+      },
+      "description": {
+        "ko": "무기를 수집하고 마법을 부여해 나만의 최강 무기를 완성하는 Roblox 무기 강화 게임.",
+        "en": "A Roblox weapon-enhancement game about collecting weapons and enchanting them into your ultimate arsenal.",
+        "ja": "武器を集めてエンチャントし、最強の武器を作り上げるRoblox武器強化ゲーム。"
+      },
+      "image": "assets/enchantedweapon/ew-preview.jpg",
+      "detailPage": "enchanted-weapon.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 80,
+      "launchDate": "2026",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    }
+  ],
+  "summary": {
+    "hero": {
+      "projectCount": 6,
+      "projectIds": [
+        "tower-flood-race",
+        "fruit-battles",
+        "korean-spa",
+        "tomato-splatter-simulator",
+        "afk-or",
+        "free-ugc-rng"
+      ],
+      "totalVisits": 13848158,
+      "visitProjectIds": [
+        "tower-flood-race",
+        "fruit-battles",
+        "korean-spa",
+        "tomato-splatter-simulator",
+        "afk-or",
+        "free-ugc-rng"
+      ],
+      "updatedAt": "2026-09-17T07:17:30.941Z"
+    }
+  }
+}
