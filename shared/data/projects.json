@@ -41,11 +41,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 11346116,
-        "playing": 15,
-        "favorites": 524365,
-        "likeRatio": 0.6022280471821756,
-        "updatedAt": "2026-09-18T07:55:04.708Z"
+        "visits": 11350296,
+        "playing": 31,
+        "favorites": 524497,
+        "likeRatio": 0.6024214659685864,
+        "updatedAt": "2026-09-19T07:45:40.781Z"
       }
     },
     {
@@ -90,11 +90,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 57132,
+        "visits": 57137,
         "playing": 0,
         "favorites": 249,
         "likeRatio": 0.5555555555555556,
-        "updatedAt": "2026-09-18T07:55:04.708Z"
+        "updatedAt": "2026-09-19T07:45:40.781Z"
       }
     },
     {
@@ -136,11 +136,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 143956,
+        "visits": 143973,
         "playing": 0,
-        "favorites": 736,
+        "favorites": 737,
         "likeRatio": 0.8643649815043156,
-        "updatedAt": "2026-09-18T07:55:04.708Z"
+        "updatedAt": "2026-09-19T07:45:40.781Z"
       }
     },
     {
@@ -327,11 +327,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 1184268,
+        "visits": 1187451,
         "playing": 4,
-        "favorites": 12269,
+        "favorites": 12280,
         "likeRatio": 0.7702127659574468,
-        "updatedAt": "2026-09-18T07:55:04.708Z"
+        "updatedAt": "2026-09-19T07:45:40.781Z"
       }
     },
     {
@@ -375,11 +375,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 799410,
+        "visits": 802551,
         "playing": 16,
-        "favorites": 8479,
-        "likeRatio": 0.969410569105691,
-        "updatedAt": "2026-09-18T07:55:04.708Z"
+        "favorites": 8501,
+        "likeRatio": 0.9694509286511722,
+        "updatedAt": "2026-09-19T07:45:40.781Z"
       }
     },
     {
@@ -423,11 +423,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 329450,
+        "visits": 330928,
         "playing": 10,
-        "favorites": 5239,
-        "likeRatio": 0.8299086757990868,
-        "updatedAt": "2026-09-18T07:55:04.708Z"
+        "favorites": 5309,
+        "likeRatio": 0.8303370786516854,
+        "updatedAt": "2026-09-19T07:45:40.781Z"
       }
     },
     {
@@ -538,7 +538,7 @@
         "afk-or",
         "free-ugc-rng"
       ],
-      "totalVisits": 13860332,
+      "totalVisits": 13872336,
       "visitProjectIds": [
         "tower-flood-race",
         "fruit-battles",
@@ -547,7 +547,7 @@
         "afk-or",
         "free-ugc-rng"
       ],
-      "updatedAt": "2026-09-18T07:55:04.708Z"
+      "updatedAt": "2026-09-19T07:45:40.781Z"
     }
   }
 }
