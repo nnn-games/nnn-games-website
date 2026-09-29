@@ -29,3 +29,11 @@
 | N-13 | 에이전트 운영 4단계: `npm run audit`(검증 결과, 지표 신선도, 외부 링크 생존, 번역 누락 의심, 덱 수치 대조, 에셋 위생) + 주간 `Site audit` 워크플로가 `audit` 라벨 이슈 생성·갱신, 스킬 `audit-site`(발견→조치 매핑) | Completed | `scripts/audit.js`, `.github/workflows/audit.yml`, `.claude/skills/audit-site/` |
 | N-14 | 에셋 정리: 미참조 이미지 24개 삭제, jumpstart 이미지 6개 PNG→WebP(각 2.0~2.8MB → 0.2~0.4MB), `npm run optimize:images` 스크립트(sharp) 추가 | Completed | `scripts/optimize-images.js`, `decks/jumpstart/img/` |
 | N-09 | 개발환경 4단계: 덱 런타임을 `decks/shared/deck.js` 하나로 통합(회사 덱 렌더러 `company-renderers.js` 분리, `data-deck-render` 훅), 상세 렌더러 `project-detail.js` 하나로 통합(standard/development 모드), 헤더·푸터·공통 head 를 `site/_partials/`로 템플릿화(빌드 인라인), 덱 PDF 80MB 저장소 제거(export-decks 로 대체, 복구는 커밋 11c6257) | Completed | `decks/shared/`, `site/js/project-detail.js`, `site/_partials/`, `scripts/build.js` |
+
+
+## 2026-09-29 프로젝트 정리
+- 완료: Ducky Merge Farm [RNG], Star Reach 페이지와 메타를 `_archive/projects/2026-09-29/`에 보관하고 사이트 등록에서 제외.
+- 완료: Enchanted Weapon → Enchant a Weapon (KO/EN/JA 제목·메타·상세 콘텐츠).
+- 완료: Hunt a slime, Tomato Splatter, ASMR UGC Town 개발 중 페이지 등록, 이름 기반 콘셉트 아트 3장 생성 및 카드/상세 이미지 반영, KO/EN/JA 소개 추가. 상단 4개 고정 및 라이브 6개 누적 방문 수 내림차순 정렬 반영.
+
+- 출시 일정 반영: Enchant a Weapon·ASMR UGC Town 2026-10, Hunt a slime 2026-11, Tomato Splatter 2027-02. 카드 데이터와 상세 페이지 KO/EN/JA 출시 예정 문구 동기화.

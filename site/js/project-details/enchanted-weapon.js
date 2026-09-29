@@ -1,14 +1,14 @@
-// Enchanted Weapon — 개발 중 페이지 (project-detail-development.js 렌더러 사용)
+// Enchant a Weapon — 개발 중 페이지 (project-detail-development.js 렌더러 사용)
 // 표시 항목: 제목 / 한 줄 소개 / 장르 / 플랫폼 / 출시 예정일 / 프리뷰 이미지
-// NOTE: 미출시 프로젝트. 카피/이미지/출시일은 임시값이며 확정 시 교체 예정.
+// NOTE: 미출시 프로젝트. 카피/이미지는 임시값이며 출시 예정 월은 사용자 지정 일정입니다.
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
 window.ProjectDetailConfigs['enchanted-weapon'] = {
     seo: {
         title: {
-            ko: 'Enchanted Weapon - NNN GAMES',
-            en: 'Enchanted Weapon - NNN GAMES',
-            ja: 'Enchanted Weapon - NNN GAMES'
+            ko: 'Enchant a Weapon - NNN GAMES',
+            en: 'Enchant a Weapon - NNN GAMES',
+            ja: 'Enchant a Weapon - NNN GAMES'
         },
         description: {
             ko: '무기를 수집하고 마법을 부여해 나만의 최강 무기를 완성해가는 Roblox 무기 강화 게임입니다.',
@@ -19,9 +19,9 @@ window.ProjectDetailConfigs['enchanted-weapon'] = {
     },
     hero: {
         title: {
-            ko: 'Enchanted Weapon',
-            en: 'Enchanted Weapon',
-            ja: 'Enchanted Weapon'
+            ko: 'Enchant a Weapon',
+            en: 'Enchant a Weapon',
+            ja: 'Enchant a Weapon'
         },
         tagline: {
             ko: '무기를 수집하고 마법을 부여해 나만의 최강 무기를 완성해가는 Roblox 무기 강화 게임입니다.',
@@ -41,18 +41,18 @@ window.ProjectDetailConfigs['enchanted-weapon'] = {
     },
     snapshot: {
         launch: {
-            ko: '출시 예정',
-            en: 'Coming soon',
-            ja: '公開予定'
+            ko: '2026년 10월 출시 예정',
+            en: 'Expected October 2026',
+            ja: '2026年10月公開予定'
         }
     },
     media: {
         type: 'image',
         src: 'assets/enchantedweapon/ew-preview.jpg',
         alt: {
-            ko: 'Enchanted Weapon 프리뷰 이미지',
-            en: 'Enchanted Weapon preview image',
-            ja: 'Enchanted Weapon プレビュー画像'
+            ko: 'Enchant a Weapon 프리뷰 이미지',
+            en: 'Enchant a Weapon preview image',
+            ja: 'Enchant a Weapon プレビュー画像'
         }
     }
 };

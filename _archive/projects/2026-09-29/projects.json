@@ -1,0 +1,100 @@
+{
+  "all": [
+    {
+      "id": "star-reach",
+      "title": {
+        "ko": "Star Reach",
+        "en": "Star Reach",
+        "ja": "Star Reach"
+      },
+      "description": {
+        "ko": "Starship X 의 로켓 엔지니어가 되어 다른 플레이어와 함께 로켓을 대기권에서 심우주까지 점점 더 높이 쏘아 올리는 시뮬레이터.",
+        "en": "Become a Starship X rocket engineer and team up with other players to send rockets higher and higher — from atmosphere to deep space.",
+        "ja": "Starship Xのロケットエンジニアとなり、他のプレイヤーと協力してロケットを大気圏から深宇宙へとより高く打ち上げていくシミュレーター。"
+      },
+      "image": "assets/starreach/sr-preview.jpg",
+      "detailPage": "star-reach.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 90,
+      "launchDate": "2026-05",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    },
+    {
+      "id": "ducky-merge-farm",
+      "title": {
+        "ko": "Ducky Merge Farm [RNG]",
+        "en": "Ducky Merge Farm [RNG]",
+        "ja": "Ducky Merge Farm [RNG]"
+      },
+      "description": {
+        "ko": "더키를 합치고 농장을 키우며 행운(RNG)으로 희귀 더키를 노리는 Roblox 머지 팜 게임.",
+        "en": "A Roblox merge-farm game where you merge Duckies, grow your farm, and chase rare Duckies through RNG.",
+        "ja": "ダッキーを合成し農場を育て、運（RNG）でレアなダッキーを狙うRobloxマージファームゲーム。"
+      },
+      "image": "assets/duckymergefarm/dmf-preview.jpg",
+      "detailPage": "ducky-merge-farm.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 70,
+      "launchDate": "2026",
+      "platform": "Roblox",
+      "client": "Internal Project",
+      "technologies": [
+        "Roblox Studio",
+        "Luau"
+      ],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      }
+    }
+  ]
+}

@@ -9,9 +9,14 @@
 
 ### Roblox
 - [`hacker-vs-security.md`](hacker-vs-security.md) — Hacker vs Security
-- [`star-reach.md`](star-reach.md) — Star Reach
+- [`star-reach.md`](star-reach.md) — Star Reach (2026-09-29 페이지 아카이브)
 - [`nnn-ugc.md`](nnn-ugc.md) — NNN UGC
 
 ### Mobile
 - [`forest-workshop.md`](forest-workshop.md) — Forest Workshop
 - [`mine-sweeper.md`](mine-sweeper.md) — Mine Sweeper
+
+### 신규 프로젝트 (2026-09-29 등록)
+- [`hunt-a-slime.md`](hunt-a-slime.md) — Hunt a slime
+- [`tomato-splatter.md`](tomato-splatter.md) — Tomato Splatter
+- [`asmr-ugc-town.md`](asmr-ugc-town.md) — ASMR UGC Town

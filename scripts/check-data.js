@@ -100,6 +100,7 @@ if (projects) {
     if (!hasText(project.category)) fail(`${label}: category 누락`);
     if (!STATUSES.includes(project.status)) fail(`${label}: status '${project.status}' 는 ${STATUSES.join('/')} 중 하나여야 합니다.`);
     if (typeof project.featured !== 'boolean') fail(`${label}: featured 는 boolean 이어야 합니다.`);
+    if (project.pinned != null && typeof project.pinned !== 'boolean') fail(`${label}: pinned 는 boolean 이어야 합니다.`);
     if (typeof project.order !== 'number' || !Number.isInteger(project.order) || project.order <= 0) {
       fail(`${label}: order 는 양의 정수여야 합니다 (홈/목록 표시 순서, 10 단위 권장).`);
     } else if (orders.has(project.order)) {

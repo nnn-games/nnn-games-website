@@ -49,46 +49,25 @@ const ProjectRenderer = {
         `;
     },
 
-    // 표시 순서: 동접(playing) 스냅샷 내림차순 → 방문 수 → data/projects.json 의 order 오름차순 → 원본 순서
-    // playing 값은 data/projects.json 기준(npm run update:metrics 실행 시점의 스냅샷).
-    // playing 이 없는(null) 개발 중 프로젝트는 뒤로 밀리고 order 값으로 정렬됩니다. order 가 없으면 맨 뒤.
+    // 고정 프로젝트(order) → 운영 중 프로젝트(누적 방문 수 내림차순) → 나머지(order).
+    // 동률은 order, 원본 순서로 정렬하며 지표가 갱신되면 운영 프로젝트 순서도 반영됩니다.
     sortProjectsForDisplay: function (projects = []) {
-        const orderMap = new Map(
-            projects
-                .filter((project) => project && typeof project.order === 'number')
-                .map((project) => [project.id, project.order])
-        );
-        const getPlaying = (project) => {
-            const playing = project && project.metrics ? project.metrics.playing : null;
-            return typeof playing === 'number' ? playing : null;
-        };
-        const getVisits = (project) => {
-            const visits = project && project.metrics ? project.metrics.visits : null;
-            return typeof visits === 'number' ? visits : null;
-        };
+        const getGroup = (project) => project.pinned === true ? 0 : project.status === 'active' ? 1 : 2;
+        const getOrder = (project) => Number.isFinite(project.order) ? project.order : Number.MAX_SAFE_INTEGER;
+        const getVisits = (project) => Number.isFinite(project.metrics && project.metrics.visits)
+            ? project.metrics.visits : -1;
         return projects
+            .filter(Boolean)
             .map((project, index) => ({ project, index }))
             .sort((a, b) => {
-                const aPlaying = getPlaying(a.project);
-                const bPlaying = getPlaying(b.project);
-                if (aPlaying !== null && bPlaying === null) return -1;
-                if (aPlaying === null && bPlaying !== null) return 1;
-                if (aPlaying !== null && bPlaying !== null && aPlaying !== bPlaying) {
-                    return bPlaying - aPlaying;
+                const aGroup = getGroup(a.project);
+                const bGroup = getGroup(b.project);
+                if (aGroup !== bGroup) return aGroup - bGroup;
+                if (aGroup === 1) {
+                    const visitsDifference = getVisits(b.project) - getVisits(a.project);
+                    if (visitsDifference !== 0) return visitsDifference;
                 }
-                const aVisits = getVisits(a.project);
-                const bVisits = getVisits(b.project);
-                if (aVisits !== null && bVisits === null) return -1;
-                if (aVisits === null && bVisits !== null) return 1;
-                if (aVisits !== null && bVisits !== null && aVisits !== bVisits) {
-                    return bVisits - aVisits;
-                }
-                const aOrder = orderMap.has(a.project.id) ? orderMap.get(a.project.id) : Number.MAX_SAFE_INTEGER;
-                const bOrder = orderMap.has(b.project.id) ? orderMap.get(b.project.id) : Number.MAX_SAFE_INTEGER;
-                if (aOrder !== bOrder) {
-                    return aOrder - bOrder;
-                }
-                return a.index - b.index;
+                return getOrder(a.project) - getOrder(b.project) || a.index - b.index;
             })
             .map(({ project }) => project);
     },

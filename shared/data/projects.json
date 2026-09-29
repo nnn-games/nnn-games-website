@@ -17,7 +17,7 @@
       "category": "roblox",
       "status": "active",
       "featured": true,
-      "order": 10,
+      "order": 50,
       "launchDate": "2026-01",
       "platform": "Roblox",
       "client": "Internal Project",
@@ -114,7 +114,7 @@
       "category": "roblox",
       "status": "active",
       "featured": true,
-      "order": 30,
+      "order": 90,
       "launchDate": "2025-12",
       "platform": "Roblox",
       "client": "Internal Project",
@@ -160,7 +160,7 @@
       "category": "roblox",
       "status": "development",
       "featured": true,
-      "order": 110,
+      "order": 120,
       "detailRenderer": "standard",
       "launchDate": "2025-Q1",
       "platform": "Roblox",
@@ -208,7 +208,7 @@
       "category": "roblox",
       "status": "development",
       "featured": true,
-      "order": 20,
+      "order": 110,
       "launchDate": "2026-06",
       "platform": "Roblox",
       "client": "Internal Project",
@@ -218,54 +218,6 @@
         "Systemic PvP"
       ],
       "placeId": null,
-      "links": {
-        "play": "",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
-      },
-      "reporting": {
-        "collectMetrics": false,
-        "includeInHomePreview": true,
-        "includeInHeroProjectCount": false,
-        "includeInHeroVisitTotal": false
-      },
-      "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
-      }
-    },
-    {
-      "id": "star-reach",
-      "title": {
-        "ko": "Star Reach",
-        "en": "Star Reach",
-        "ja": "Star Reach"
-      },
-      "description": {
-        "ko": "Starship X 의 로켓 엔지니어가 되어 다른 플레이어와 함께 로켓을 대기권에서 심우주까지 점점 더 높이 쏘아 올리는 시뮬레이터.",
-        "en": "Become a Starship X rocket engineer and team up with other players to send rockets higher and higher — from atmosphere to deep space.",
-        "ja": "Starship Xのロケットエンジニアとなり、他のプレイヤーと協力してロケットを大気圏から深宇宙へとより高く打ち上げていくシミュレーター。"
-      },
-      "image": "assets/starreach/sr-preview.jpg",
-      "detailPage": "star-reach.html",
-      "category": "roblox",
-      "status": "development",
-      "featured": true,
-      "order": 90,
-      "launchDate": "2026-05",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau"
-      ],
-      "placeId": null,
-      "universeId": null,
       "links": {
         "play": "",
         "trailer": "",
@@ -304,7 +256,7 @@
       "category": "roblox",
       "status": "active",
       "featured": true,
-      "order": 40,
+      "order": 60,
       "launchDate": "2026-04",
       "platform": "Roblox",
       "client": "Internal Project",
@@ -351,7 +303,7 @@
       "category": "roblox",
       "status": "active",
       "featured": true,
-      "order": 50,
+      "order": 70,
       "launchDate": "2026-05",
       "platform": "Roblox",
       "client": "BlockyUGC",
@@ -399,7 +351,7 @@
       "category": "roblox",
       "status": "active",
       "featured": true,
-      "order": 60,
+      "order": 80,
       "launchDate": "2026-05",
       "platform": "Roblox",
       "client": "NNN UGC",
@@ -431,59 +383,11 @@
       }
     },
     {
-      "id": "ducky-merge-farm",
-      "title": {
-        "ko": "Ducky Merge Farm [RNG]",
-        "en": "Ducky Merge Farm [RNG]",
-        "ja": "Ducky Merge Farm [RNG]"
-      },
-      "description": {
-        "ko": "더키를 합치고 농장을 키우며 행운(RNG)으로 희귀 더키를 노리는 Roblox 머지 팜 게임.",
-        "en": "A Roblox merge-farm game where you merge Duckies, grow your farm, and chase rare Duckies through RNG.",
-        "ja": "ダッキーを合成し農場を育て、運（RNG）でレアなダッキーを狙うRobloxマージファームゲーム。"
-      },
-      "image": "assets/duckymergefarm/dmf-preview.jpg",
-      "detailPage": "ducky-merge-farm.html",
-      "category": "roblox",
-      "status": "development",
-      "featured": true,
-      "order": 70,
-      "launchDate": "2026",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau"
-      ],
-      "placeId": null,
-      "universeId": null,
-      "links": {
-        "play": "",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
-      },
-      "reporting": {
-        "collectMetrics": false,
-        "includeInHomePreview": true,
-        "includeInHeroProjectCount": false,
-        "includeInHeroVisitTotal": false
-      },
-      "metrics": {
-        "visits": null,
-        "playing": null,
-        "favorites": null,
-        "likeRatio": null,
-        "updatedAt": null
-      }
-    },
-    {
       "id": "enchanted-weapon",
       "title": {
-        "ko": "Enchanted Weapon",
-        "en": "Enchanted Weapon",
-        "ja": "Enchanted Weapon"
+        "ko": "Enchant a Weapon",
+        "en": "Enchant a Weapon",
+        "ja": "Enchant a Weapon"
       },
       "description": {
         "ko": "무기를 수집하고 마법을 부여해 나만의 최강 무기를 완성하는 Roblox 무기 강화 게임.",
@@ -495,8 +399,8 @@
       "category": "roblox",
       "status": "development",
       "featured": true,
-      "order": 80,
-      "launchDate": "2026",
+      "order": 10,
+      "launchDate": "2026-10",
       "platform": "Roblox",
       "client": "Internal Project",
       "technologies": [
@@ -524,7 +428,146 @@
         "favorites": null,
         "likeRatio": null,
         "updatedAt": null
-      }
+      },
+      "pinned": true
+    },
+    {
+      "id": "hunt-a-slime",
+      "title": {
+        "ko": "Hunt a slime",
+        "en": "Hunt a slime",
+        "ja": "Hunt a slime"
+      },
+      "description": {
+        "ko": "말랑한 슬라임을 찾아 초록빛 세계로 떠나는 사냥 모험 콘셉트.",
+        "en": "A hunting adventure concept that follows bouncy slimes into a vibrant green world.",
+        "ja": "ぷるぷるのスライムを探し、緑豊かな世界へ出かけるハンティングアドベンチャーのコンセプト。"
+      },
+      "image": "assets/huntaslime/hunt-a-slime-preview.jpg",
+      "detailPage": "hunt-a-slime.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 30,
+      "launchDate": "2026-11",
+      "platform": "Roblox",
+      "client": "",
+      "technologies": [],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      },
+      "pinned": true
+    },
+    {
+      "id": "tomato-splatter",
+      "title": {
+        "ko": "Tomato Splatter",
+        "en": "Tomato Splatter",
+        "ja": "Tomato Splatter"
+      },
+      "description": {
+        "ko": "토마토가 팡팡 터지는 유쾌한 농장을 그린 캐주얼 액션 콘셉트.",
+        "en": "A casual action concept set on a cheerful farm bursting with tomato splashes.",
+        "ja": "トマトがはじける陽気な農場を描いたカジュアルアクションのコンセプト。"
+      },
+      "image": "assets/tomatosplatter/tomato-splatter-preview.jpg",
+      "detailPage": "tomato-splatter.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 40,
+      "launchDate": "2027-02",
+      "platform": "Roblox",
+      "client": "",
+      "technologies": [],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      },
+      "pinned": true
+    },
+    {
+      "id": "asmr-ugc-town",
+      "title": {
+        "ko": "ASMR UGC Town",
+        "en": "ASMR UGC Town",
+        "ja": "ASMR UGC Town"
+      },
+      "description": {
+        "ko": "포근한 소리와 아기자기한 UGC 아이템이 어우러지는 편안한 마을 콘셉트.",
+        "en": "A cozy town concept where soothing sounds meet playful UGC accessories.",
+        "ja": "心地よい音とかわいいUGCアイテムが調和する、くつろぎの街のコンセプト。"
+      },
+      "image": "assets/asmrugctown/asmr-ugc-town-preview.jpg",
+      "detailPage": "asmr-ugc-town.html",
+      "category": "roblox",
+      "status": "development",
+      "featured": true,
+      "order": 20,
+      "launchDate": "2026-10",
+      "platform": "Roblox",
+      "client": "",
+      "technologies": [],
+      "placeId": null,
+      "universeId": null,
+      "links": {
+        "play": "",
+        "trailer": "",
+        "article": "",
+        "group": "",
+        "showcase": ""
+      },
+      "reporting": {
+        "collectMetrics": false,
+        "includeInHomePreview": true,
+        "includeInHeroProjectCount": false,
+        "includeInHeroVisitTotal": false
+      },
+      "metrics": {
+        "visits": null,
+        "playing": null,
+        "favorites": null,
+        "likeRatio": null,
+        "updatedAt": null
+      },
+      "pinned": true
     }
   ],
   "summary": {

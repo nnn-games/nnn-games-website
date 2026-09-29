@@ -21,14 +21,14 @@
   - 프로젝트 프리뷰: `projects-data.js`의 featured 목록을 `project-renderer.js`로 동적 렌더.
 - **프로젝트 목록(`projects-roblox.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
 - **프로젝트 상세**
-  - 표준화된 공통 셸 + 설정 파일 구조: `tower-flood-race.html`, `korean-spa.html`, `legendary-dj-gear.html`, `reset-tower.html`, `hacker-vs-security.html`
-  - 기존 정적 상세 페이지: `nnn-ugc.html`
+  - 공통 HTML 셸과 `js/project-detail.js`, 프로젝트별 콘텐츠 설정으로 렌더합니다. 등록 페이지는 아래 프로젝트 파이프라인을 따릅니다.
+  - Ducky Merge Farm [RNG], Star Reach는 2026-09-29 아카이브하여 사이트와 사이트맵에서 제외했습니다. 원본은 `_archive/projects/2026-09-29/`에 보관합니다.
 - **문의(`contact.html`)**: 이메일, 주소, 사업자등록번호, 지도 iframe.
 - **공통 UI**: 헤더/푸터, 모바일 메뉴 토글(`js/main.js`), 이미지 지연 로딩 및 스크롤 애니메이션, CTA 추적(sendBeacon 우선 → fetch 폴백, payload v/schema/cta/origin/projectId/href/text/viewport 포함). `meta[name="cta-endpoint"]`/전역 `window.CTA_CONFIG.endpoint`로 엔드포인트 오버라이드 가능, 기본 `/analytics/cta`, 스키마 버전은 `cta-schema-version` 메타 또는 전역 설정으로 덮어씀(기본 `v1`).
 
 ## 4. 데이터 및 렌더링 구조
 - **데이터 소스**: `data/projects.json` (정적 JSON) + `js/projects-data.js` (fallback)
-  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`, `order`(표시 순서), `detailRenderer`(선택, 렌더러 예외), `placeId`, `universeId`, `links{play,trailer,article,group,showcase}`, `reporting{collectMetrics,includeInHeroProjectCount,includeInHeroVisitTotal}`, `metrics{visits,playing,favorites,likeRatio,updatedAt}`, `summary.hero`.
+  - 필드: `id`, `title{ko,en,ja}`, `description{ko,en,ja}`, `image`, `detailPage`, `category`, `status(active/development/...)`, `launchDate`, `platform`, `client`, `technologies`, `featured`, `order`(표시 순서), `pinned`(상단 고정 여부), `detailRenderer`(선택, 렌더러 예외), `placeId`, `universeId`, `links{play,trailer,article,group,showcase}`, `reporting{collectMetrics,includeInHeroProjectCount,includeInHeroVisitTotal}`, `metrics{visits,playing,favorites,likeRatio,updatedAt}`, `summary.hero`.
 - **렌더링**: `js/project-renderer.js`
   - JSON 로드 후 카드 동적 생성, 플랫폼/상태/카테고리 배지, 언어 변경 시 실시간 텍스트 교체, 목록 카드에 visits/playing/favorites 배지 노출.
 - **상세 페이지 지표/링크 주입**: `js/main.js`
@@ -48,10 +48,23 @@
 ## 5. 현재 프로젝트 파이프라인 (코드 기준)
 | 이름 | 플랫폼 | 상태 | 예정/출시 | 클라이언트 | 상세 페이지 |
 | --- | --- | --- | --- | --- | --- |
-| Tower Flood Race | ROBLOX | 운영 | 2026-01 | Internal | `tower-flood-race.html` |
-| Korean Spa | ROBLOX | 운영 | 2025-12 | Internal | `korean-spa.html` |
-| Legendary DJ Gear | ROBLOX | 운영 | 2024-11 | Internal | `legendary-dj-gear.html` |
-| NNN UGC | ROBLOX | 개발 | 2025-Q1 | Confidential | `nnn-ugc.html` |
+| Tower Flood Race | Roblox | 운영 | 2026-01 | Internal Project | `tower-flood-race.html` |
+| Hacker vs Security | Roblox | 개발 | 2026-06 | Internal Project | `hacker-vs-security.html` |
+| Korean Spa | Roblox | 운영 | 2025-12 | Internal Project | `korean-spa.html` |
+| Tomato Splatter Simulator | Roblox | 운영 | 2026-04 | Internal Project | `tomato-splatter-simulator.html` |
+| [Free UGC] AFK or arcade game | Roblox | 운영 | 2026-05 | BlockyUGC | `afk-or.html` |
+| 🎁 FREE UGC RNG | Roblox | 운영 | 2026-05 | NNN UGC | `free-ugc-rng.html` |
+| Enchant a Weapon | Roblox | 개발 | 2026-10 (예정) | Internal Project | `enchanted-weapon.html` |
+| Fruit Battles | Roblox | 운영 | 2026-04 | Internal Project | `fruit-battles.html` |
+| NNN UGC | Roblox | 개발 | 2025-Q1 | Confidential | `nnn-ugc.html` |
+| Hunt a slime | Roblox | 개발 | 2026-11 (예정) | 미정 | `hunt-a-slime.html` |
+| Tomato Splatter | Roblox | 개발 | 2027-02 (예정) | 미정 | `tomato-splatter.html` |
+| ASMR UGC Town | Roblox | 개발 | 2026-10 (예정) | 미정 | `asmr-ugc-town.html` |
+
+- Hunt a slime, Tomato Splatter, ASMR UGC Town: 개발 중으로 등록. 이름 기반 콘셉트 이미지·소개를 KO/EN/JA로 제공하며 임시 콘셉트 안내를 표시합니다. 출시 예정 월은 카드와 상세 페이지에 표시하며 외부 링크는 미정입니다.
+- 신규 3개의 카드 이미지는 640px, 상세·OG 이미지는 1200px JPEG입니다. `plan/project-concept-image-prompts.json`에 생성 프롬프트를 기록합니다.
+- 홈과 프로젝트 목록의 첫 4개는 Enchant a Weapon → ASMR UGC Town → Hunt a slime → Tomato Splatter 순으로 고정(`pinned: true`, `order: 10/20/30/40`). 이후 운영 중 6개는 누적 방문 수 내림차순, 나머지는 `order`순입니다. 동률은 `order`와 원본 순서로 정렬합니다. NNN UGC는 목록의 별도 UGC 섹션을 사용합니다.
+- Enchant a Weapon의 기존 URL `enchanted-weapon.html`과 내부 ID는 유지합니다.
 
 ### 진행 상태 메모
 - N-01(신규 프로젝트 추가: Tower Flood Race) 완료, 데이터/페이지/지표 연동 반영됨.

@@ -385,7 +385,7 @@
                 <div class="detail-media-shell">
                     <img src="${u.escapeHtml(previewSrc)}" alt="${u.escapeHtml(previewAlt)}" class="detail-media-image" loading="lazy">
                 </div>
-                <p class="detail-dev-note">${u.escapeHtml(u.t(lang, 'project_detail_dev_note', 'Detailed information will be revealed as we approach launch.'))}</p>
+                <p class="detail-dev-note">${u.escapeHtml(u.pickLocalized(config.developmentNote, lang) || u.t(lang, 'project_detail_dev_note', 'Detailed information will be revealed as we approach launch.'))}</p>
             </section>
         `;
     };
