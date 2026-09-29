@@ -37,3 +37,5 @@
 - 완료: Hunt a slime, Tomato Splatter, ASMR UGC Town 개발 중 페이지 등록, 이름 기반 콘셉트 아트 3장 생성 및 카드/상세 이미지 반영, KO/EN/JA 소개 추가. 상단 4개 고정 및 라이브 6개 누적 방문 수 내림차순 정렬 반영.
 
 - 출시 일정 반영: Enchant a Weapon·ASMR UGC Town 2026-10, Hunt a slime 2026-11, Tomato Splatter 2027-02. 카드 데이터와 상세 페이지 KO/EN/JA 출시 예정 문구 동기화.
+
+- 2026-09-29: NNNRPG(487193470) 커뮤니티 추가. 홈 노출·히어로 멤버 합계 포함, 공식 API 지표·아이콘 갱신. 신규 프로젝트 페이지는 이름 및 게임 정보 확인 대기.

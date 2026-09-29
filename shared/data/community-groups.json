@@ -71,6 +71,18 @@
       "status": "active",
       "showOnHomepage": true,
       "includeInHeroSubscriberTotal": true
+    },
+    {
+      "id": "487193470",
+      "url": "https://www.roblox.com/communities/487193470/NNNRPG#!/about",
+      "names": {
+        "ko": "NNNRPG",
+        "en": "NNNRPG",
+        "ja": "NNNRPG"
+      },
+      "status": "active",
+      "showOnHomepage": true,
+      "includeInHeroSubscriberTotal": true
     }
   ]
 }

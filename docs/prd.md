@@ -19,6 +19,7 @@
   - Hero: Roblox 전문 스튜디오 메시지, CTA는 `projects-roblox.html`.
   - 커뮤니티 포털: `data/community-groups.json`에 정의된 활성 Roblox 그룹의 아이콘/멤버 수를 표시. `npm run update:metrics`가 `status/showOnHomepage/includeInHeroSubscriberTotal` 플래그 기준으로 `data/communities.json`을 생성/갱신하고, 프런트는 이 JSON을 우선 사용하며 실패 시 설정 JSON + Roblox 공개 API로 폴백한다. 각 링크는 Roblox share/community URL로 연결.
   - 프로젝트 프리뷰: `projects-data.js`의 featured 목록을 `project-renderer.js`로 동적 렌더.
+  - NNNRPG 커뮤니티(`487193470`)를 홈 포털과 히어로 멤버 합계에 포함합니다.
 - **프로젝트 목록(`projects-roblox.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
 - **프로젝트 상세**
   - 공통 HTML 셸과 `js/project-detail.js`, 프로젝트별 콘텐츠 설정으로 렌더합니다. 등록 페이지는 아래 프로젝트 파이프라인을 따릅니다.
