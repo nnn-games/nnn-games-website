@@ -23,7 +23,7 @@
 - **프로젝트 목록(`projects-roblox.html`)**: 필터/검색 UI(카테고리/상태/검색) 적용, 카드 렌더.
 - **프로젝트 상세**
   - 공통 HTML 셸과 `js/project-detail.js`, 프로젝트별 콘텐츠 설정으로 렌더합니다. 등록 페이지는 아래 프로젝트 파이프라인을 따릅니다.
-  - Ducky Merge Farm [RNG], Star Reach는 2026-09-29 아카이브하여 사이트와 사이트맵에서 제외했습니다. 원본은 `_archive/projects/2026-09-29/`에 보관합니다.
+  - Ducky Merge Farm [RNG], Star Reach, Hacker vs Security는 2026-09-29 아카이브하여 사이트와 사이트맵에서 제외했습니다. 원본은 `_archive/projects/2026-09-29/`에 보관합니다.
 - **문의(`contact.html`)**: 이메일, 주소, 사업자등록번호, 지도 iframe.
 - **공통 UI**: 헤더/푸터, 모바일 메뉴 토글(`js/main.js`), 이미지 지연 로딩 및 스크롤 애니메이션, CTA 추적(sendBeacon 우선 → fetch 폴백, payload v/schema/cta/origin/projectId/href/text/viewport 포함). `meta[name="cta-endpoint"]`/전역 `window.CTA_CONFIG.endpoint`로 엔드포인트 오버라이드 가능, 기본 `/analytics/cta`, 스키마 버전은 `cta-schema-version` 메타 또는 전역 설정으로 덮어씀(기본 `v1`).
 
@@ -50,7 +50,6 @@
 | 이름 | 플랫폼 | 상태 | 예정/출시 | 클라이언트 | 상세 페이지 |
 | --- | --- | --- | --- | --- | --- |
 | Tower Flood Race | Roblox | 운영 | 2026-01 | Internal Project | `tower-flood-race.html` |
-| Hacker vs Security | Roblox | 개발 | 2026-06 | Internal Project | `hacker-vs-security.html` |
 | Korean Spa | Roblox | 운영 | 2025-12 | Internal Project | `korean-spa.html` |
 | Tomato Splatter Simulator | Roblox | 운영 | 2026-04 | Internal Project | `tomato-splatter-simulator.html` |
 | [Free UGC] AFK or arcade game | Roblox | 운영 | 2026-05 | BlockyUGC | `afk-or.html` |

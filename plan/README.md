@@ -8,7 +8,7 @@
 ## 페이지 목록
 
 ### Roblox
-- [`hacker-vs-security.md`](hacker-vs-security.md) — Hacker vs Security
+- [`hacker-vs-security.md`](hacker-vs-security.md) — Hacker vs Security (2026-09-29 페이지 아카이브)
 - [`star-reach.md`](star-reach.md) — Star Reach (2026-09-29 페이지 아카이브)
 - [`nnn-ugc.md`](nnn-ugc.md) — NNN UGC
 
