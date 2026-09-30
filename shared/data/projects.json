@@ -342,9 +342,9 @@
         "ja": "Enchant a Weapon"
       },
       "description": {
-        "ko": "무기를 수집하고 마법을 부여해 나만의 최강 무기를 완성하는 Roblox 무기 강화 게임.",
-        "en": "A Roblox weapon-enhancement game about collecting weapons and enchanting them into your ultimate arsenal.",
-        "ja": "武器を集めてエンチャントし、最強の武器を作り上げるRoblox武器強化ゲーム。"
+        "ko": "원하는 Limited UGC를 선택하고, 개인 Noob 자동 사냥으로 주문서를 모아 +10 무기 강화와 UGC 교환에 도전하는 Roblox AFK 시뮬레이터입니다.",
+        "en": "Choose your desired Limited UGC, farm scrolls through personal Noob auto-combat, and enchant a matching weapon to +10 to exchange it for your reward in this Roblox AFK simulator.",
+        "ja": "欲しいLimited UGCを選び、自分専用のNoobとの自動戦闘で巻物を集め、対応する武器を+10まで強化して報酬と交換するRobloxのAFKシミュレーターです。"
       },
       "image": "assets/enchantaweapon/eaw-preview.jpg",
       "detailPage": "enchanted-weapon.html",
