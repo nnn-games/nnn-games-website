@@ -483,9 +483,9 @@
         "ja": "ASMR UGC Town"
       },
       "description": {
-        "ko": "포근한 소리와 아기자기한 UGC 아이템이 어우러지는 편안한 마을 콘셉트.",
-        "en": "A cozy town concept where soothing sounds meet playful UGC accessories.",
-        "ja": "心地よい音とかわいいUGCアイテムが調和する、くつろぎの街のコンセプト。"
+        "ko": "ASMR 장애물이 있는 마을을 탐험하고, 모은 재화와 재료를 무료 UGC로 교환하는 캐주얼 Obby 게임.",
+        "en": "A casual Obby where you explore a town of ASMR obstacles and exchange collected currency and materials for free UGC.",
+        "ja": "ASMR障害物のある街を探索し、集めたゲーム内通貨や素材を無料UGCと交換するカジュアルObbyゲーム。"
       },
       "image": "assets/asmrugctown/asmr-ugc-town-preview.jpg",
       "detailPage": "asmr-ugc-town.html",
@@ -493,6 +493,7 @@
       "status": "development",
       "featured": true,
       "order": 20,
+      "detailRenderer": "standard",
       "launchDate": "2026-10",
       "platform": "Roblox",
       "client": "",

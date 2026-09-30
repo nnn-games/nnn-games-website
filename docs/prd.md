@@ -61,8 +61,9 @@
 | Tomato Splatter | Roblox | 개발 | 2027-02 (예정) | 미정 | `tomato-splatter.html` |
 | ASMR UGC Town | Roblox | 개발 | 2026-10 (예정) | 미정 | `asmr-ugc-town.html` |
 
-- Hunt a slime, Tomato Splatter, ASMR UGC Town: 개발 중으로 등록. 이름 기반 콘셉트 이미지·소개를 KO/EN/JA로 제공하며 임시 콘셉트 안내를 표시합니다. 출시 예정 월은 카드와 상세 페이지에 표시하며 외부 링크는 미정입니다.
-- 신규 3개의 카드 이미지는 640px, 상세·OG 이미지는 1200px JPEG입니다. `plan/project-concept-image-prompts.json`에 생성 프롬프트를 기록합니다.
+- Hunt a slime, Tomato Splatter: 개발 중으로 등록. 이름 기반 콘셉트 이미지·소개를 KO/EN/JA로 제공하며 임시 콘셉트 안내를 표시합니다. 출시 예정 월은 카드와 상세 페이지에 표시하며 외부 링크는 미정입니다.
+- ASMR UGC Town: ASMR 장애물이 있는 마을을 탐험하고 수집한 재화·재료를 무료 Roblox UGC로 교환하는 캐주얼 Obby. 개발 중 상태와 2026-10 출시 예정은 유지하며, `detailRenderer: standard`로 개요·핵심 포인트 3개·프로젝트 정보·특징 4개·갤러리 3장을 제공합니다. 본문·카드·SEO는 KO/EN/JA로 동기화하며 외부 링크는 미정입니다.
+- Hunt a slime, Tomato Splatter의 카드 이미지는 640px, 상세·OG 이미지는 1200px JPEG입니다. 최초 3개 프로젝트의 생성 프롬프트는 `plan/project-concept-image-prompts.json`에 기록되어 있으며, ASMR UGC Town은 현재 등록된 대표·카드·갤러리 이미지를 사용합니다.
 - 홈과 프로젝트 목록의 첫 4개는 Enchant a Weapon → ASMR UGC Town → Hunt a slime → Tomato Splatter 순으로 고정(`pinned: true`, `order: 10/20/30/40`). 이후 운영 중 6개는 누적 방문 수 내림차순, 나머지는 `order`순입니다. 동률은 `order`와 원본 순서로 정렬합니다. NNN UGC는 목록의 별도 UGC 섹션을 사용합니다.
 - Enchant a Weapon의 기존 URL `enchanted-weapon.html`과 내부 ID는 유지합니다.
 
