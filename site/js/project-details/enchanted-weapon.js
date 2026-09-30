@@ -1,4 +1,4 @@
-// Enchant a Weapon — GDD 기반 프로젝트 상세 콘텐츠 (KO / EN / JA).
+// Enchant a Weapon — 프로젝트 상세 콘텐츠 (KO / EN / JA).
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
 window.ProjectDetailConfigs['enchanted-weapon'] = {
@@ -9,15 +9,15 @@ window.ProjectDetailConfigs['enchanted-weapon'] = {
             "ja": "Enchant a Weapon - NNN GAMES"
         },
         "description": {
-            "ko": "원하는 Limited UGC를 선택하고, 개인 Noob 자동 사냥으로 주문서를 모아 +10 무기 강화와 UGC 교환에 도전하는 Roblox AFK 시뮬레이터입니다.",
-            "en": "Choose your desired Limited UGC, farm scrolls through personal Noob auto-combat, and enchant a matching weapon to +10 to exchange it for your reward in this Roblox AFK simulator.",
-            "ja": "欲しいLimited UGCを選び、自分専用のNoobとの自動戦闘で巻物を集め、対応する武器を+10まで強化して報酬と交換するRobloxのAFKシミュレーターです。"
+            "ko": "트리플엔게임즈의 첫 번째 RPG 프로젝트. 다양한 무기를 제작하고 강화하며 Roblox 최고의 무기 장인으로 성장하는 게임입니다.",
+            "en": "TripleN Games’ first RPG project. Craft and enhance a variety of weapons as you grow into the greatest weaponsmith on Roblox.",
+            "ja": "TripleN Games初のRPGプロジェクト。多彩な武器を製作・強化し、Roblox最高の武器職人を目指すゲームです。"
         },
         "ogImage": "assets/enchantaweapon/eaw-main.jpg",
         "keywords": {
-            "ko": "Roblox, Enchant a Weapon, AFK, Noob 사냥, 무기 강화, 주문서, Limited UGC, NNN GAMES",
-            "en": "Roblox, Enchant a Weapon, AFK, Noob hunting, weapon enhancement, scrolls, Limited UGC, NNN GAMES",
-            "ja": "Roblox, Enchant a Weapon, AFK, Noob狩り, 武器強化, 巻物, Limited UGC, NNN GAMES"
+            "ko": "Roblox, Enchant a Weapon, RPG, 무기 제작, 무기 강화, 광산, 던전, UGC, 트리플엔게임즈",
+            "en": "Roblox, Enchant a Weapon, RPG, weapon crafting, weapon enhancement, mines, dungeons, UGC, TripleN Games",
+            "ja": "Roblox, Enchant a Weapon, RPG, 武器製作, 武器強化, 鉱山, ダンジョン, UGC, TripleN Games"
         }
     },
     "hero": {
@@ -27,14 +27,14 @@ window.ProjectDetailConfigs['enchanted-weapon'] = {
             "ja": "Enchant a Weapon"
         },
         "tagline": {
-            "ko": "AFK 사냥으로 무기를 +10까지 강화하고, 원하는 Limited UGC로 교환하세요.",
-            "en": "Hunt AFK, enchant a weapon to +10, and exchange it for your desired Limited UGC.",
-            "ja": "AFK狩りで武器を+10まで強化し、欲しいLimited UGCと交換しよう。"
+            "ko": "다양한 무기를 제작하고 강화해, Roblox 최고의 무기 장인이 되어보세요.",
+            "en": "Craft and enhance a variety of weapons to become the greatest weaponsmith on Roblox.",
+            "ja": "多彩な武器を製作・強化し、Roblox最高の武器職人を目指そう。"
         },
         "genre": {
-            "ko": "장르: AFK · 시뮬레이터 · 무기 강화 · Limited UGC 수집",
-            "en": "Genre: AFK · Simulator · Weapon Enhancement · Limited UGC Collection",
-            "ja": "ジャンル: AFK・シミュレーター・武器強化・Limited UGC収集"
+            "ko": "장르: RPG",
+            "en": "Genre: RPG",
+            "ja": "ジャンル: RPG"
         },
         "platform": {
             "ko": "플랫폼: Roblox",
@@ -81,99 +81,46 @@ window.ProjectDetailConfigs['enchanted-weapon'] = {
     "mode": "standard",
     "overview": [
         {
-            "ko": "원하는 Limited UGC를 선택한 뒤, 개인 Noob 자동 사냥으로 포인트와 주문서를 모아 연결된 무기를 강화합니다. 일반·축복·저주 주문서를 활용해 +10에 도전하는 Roblox AFK 시뮬레이터입니다.",
-            "en": "Choose a Limited UGC, farm points and scrolls from personal Noobs, and enhance its matching weapon. Use normal, blessed, and cursed scrolls to reach +10 in this Roblox AFK simulator.",
-            "ja": "欲しいLimited UGCを選び、自分専用のNoobを自動で狩ってポイントと巻物を集め、対応武器を強化。通常・祝福・呪いの巻物で+10に挑むRobloxのAFKシミュレーターです。"
-        }
-    ],
-    "highlights": [
-        {
-            "eyebrow": {
-                "ko": "Choose Your UGC",
-                "en": "Choose Your UGC",
-                "ja": "Choose Your UGC"
-            },
-            "title": {
-                "ko": "보상 선택",
-                "en": "Choose a reward",
-                "ja": "報酬を選択"
-            },
-            "description": {
-                "ko": "남은 재고를 확인하고, 원하는 Limited UGC와 연결된 무기를 선택합니다.",
-                "en": "Check remaining stock and choose the weapon linked to your desired Limited UGC.",
-                "ja": "在庫を確認し、欲しいLimited UGCに対応する武器を選びます。"
-            }
-        },
-        {
-            "eyebrow": {
-                "ko": "AFK & Enchant",
-                "en": "AFK & Enchant",
-                "ja": "AFK & Enchant"
-            },
-            "title": {
-                "ko": "AFK 사냥과 강화",
-                "en": "AFK hunting & enchantment",
-                "ja": "AFK狩りと強化"
-            },
-            "description": {
-                "ko": "개인 Noob을 자동 사냥해 포인트를 모으고, 주문서를 구매해 무기를 강화합니다.",
-                "en": "Auto-hunt personal Noobs for points, buy scrolls, and enhance your weapon.",
-                "ja": "自分専用Noobの自動狩りでポイントを集め、巻物を購入して武器を強化します。"
-            }
-        },
-        {
-            "eyebrow": {
-                "ko": "+10 & Claim",
-                "en": "+10 & Claim",
-                "ja": "+10 & Claim"
-            },
-            "title": {
-                "ko": "+10 달성 후 교환",
-                "en": "Reach +10 and claim",
-                "ja": "+10達成で交換"
-            },
-            "description": {
-                "ko": "+10 무기는 추가 강화·사냥이 불가능한 교환권입니다. 재고가 있을 때 제출하면 무기가 소모되고 UGC를 받습니다.",
-                "en": "A +10 weapon becomes a ticket and cannot be enhanced or used in combat. Submit it while stock remains to consume it and receive the UGC.",
-                "ja": "+10武器は追加強化・戦闘ができない交換券です。在庫がある間に提出すると武器を消費し、UGCを受け取れます。"
-            }
+            "ko": "트리플엔게임즈의 첫 번째 RPG 프로젝트. 다양한 무기를 제작하고 강화하며 Roblox 최고의 무기 장인으로 성장하는 게임입니다.",
+            "en": "TripleN Games’ first RPG project. Craft and enhance a variety of weapons as you grow into the greatest weaponsmith on Roblox.",
+            "ja": "TripleN Games初のRPGプロジェクト。多彩な武器を製作・強化し、Roblox最高の武器職人を目指すゲームです。"
         }
     ],
     "features": [
         {
             "title": {
-                "ko": "주문서 전략과 강화 위험",
-                "en": "Scroll strategy & risk",
-                "ja": "巻物戦略と強化リスク"
+                "ko": "+10 강화로 얻는 UGC",
+                "en": "Earn UGC at +10",
+                "ja": "+10強化でUGCを獲得"
             },
             "description": {
-                "ko": "일반 주문서는 +6까지 확정 성공. +7을 노리는 시도부터 소멸 위험이 생기며, 축복·저주 주문서로 강화 전략을 세웁니다.",
-                "en": "Normal scrolls guarantee upgrades through +6. Attempts to reach +7 and beyond risk destruction; blessed and cursed scrolls add strategy.",
-                "ja": "通常の巻物は+6まで確実に成功。+7への挑戦から消滅リスクが生じ、祝福・呪いの巻物を使い分けます。"
+                "ko": "무기를 +10까지 강화해 UGC를 획득합니다.",
+                "en": "Enhance a weapon to +10 to earn UGC.",
+                "ja": "武器を+10まで強化してUGCを獲得します。"
             }
         },
         {
             "title": {
-                "ko": "물약과 강화방어권",
-                "en": "Potions & protection",
-                "ja": "ポーションと保護券"
+                "ko": "광산과 던전에서 시작하는 무기 제작",
+                "en": "Craft weapons with materials from mines and dungeons",
+                "ja": "鉱山とダンジョンの素材で武器製作"
             },
             "description": {
-                "ko": "물약은 사냥을 가속하고, 방어권은 1회 강화 시도의 소멸을 막습니다. 방어권은 성공률을 높이지 않습니다.",
-                "en": "Potions speed up hunting; a protection ticket prevents destruction for one attempt without increasing success rates.",
-                "ja": "ポーションは狩りを加速。保護券は1回の強化で消滅を防ぎますが、成功率は上がりません。"
+                "ko": "광산과 던전에서 얻은 재료로 다양한 무기를 만들고 도감을 채웁니다.",
+                "en": "Gather materials from mines and dungeons, craft a variety of weapons, and fill your collection.",
+                "ja": "鉱山やダンジョンで得た素材から多彩な武器を製作し、図鑑を埋めていきます。"
             }
         },
         {
             "title": {
-                "ko": "도감·업적·세 가지 랭킹",
-                "en": "Collection, achievements & rankings",
-                "ja": "図鑑・実績・ランキング"
+                "ko": "최고의 무기 장인으로 성장",
+                "en": "Become a master weaponsmith",
+                "ja": "最高の武器職人へ成長"
             },
             "description": {
-                "ko": "UGC 교환 완료 시 도감과 업적에 반영됩니다. 강화 성공·실패 소멸·UGC 획득 기록으로 세 가지 랭킹에 도전합니다.",
-                "en": "Completed UGC claims unlock collection entries and achievements. Compete in rankings for enchantment success, destruction, and UGC claims.",
-                "ja": "UGC交換完了で図鑑・実績に反映。強化成功・消滅による失敗・UGC獲得の3ランキングに挑戦します。"
+                "ko": "물약과 도구를 활용해 더 많은 무기를 제작하고 강화하며, 최고의 무기 장인으로 성장합니다.",
+                "en": "Use potions and tools to craft and enhance more weapons as you grow into a master weaponsmith.",
+                "ja": "ポーションや道具を活用してより多くの武器を製作・強化し、最高の武器職人へと成長します。"
             }
         }
     ],
