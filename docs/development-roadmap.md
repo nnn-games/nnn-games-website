@@ -1,10 +1,10 @@
 # 개발 로드맵 (NNN GAMES 랜딩 페이지)
-오늘부터 진행할 개발 계획과 진행 상황을 기록하는 문서다. 완료된 기능/콘텐츠는 검증 후 `docs/prd.md`에 반영한다.
+오늘부터 진행할 개발 계획과 진행 상황을 기록하는 문서다. 완료된 기능/콘텐츠는 검증 후 `docs/site/prd.md`에 반영한다.
 
 ## 1. 운영 원칙
 - PR 기반 변경, 1인 리뷰. PR 요약에 변경·테스트·리스크·스크린샷 포함.
 - i18n·접근성·CTA 링크·외부 링크(UTM/추적) 확인을 기본 체크리스트로 유지.
-- 완료 → 검증 → `docs/prd.md` 업데이트 순서 준수.
+- 완료 → 검증 → `docs/site/prd.md` 업데이트 순서 준수.
 
 ## 2. 진행 현황 요약
 - 현재 상태: 정적 웹사이트(다국어 KO/EN/JA) + 프로젝트 카드 동적 렌더 + 모바일 내비/지연 로딩 구현.
@@ -16,10 +16,11 @@
 ## 4. 작업 보드 (수시 업데이트)
 | ID | 항목 | 상태 | 산출물/링크 |
 | --- | --- | --- | --- |
+| N-15 | 1인 개발 편의 중심 구조 정리: 기획·원고·참고 자료를 docs/site·projects·decks로 통합, 도메인·검색 파일을 site로 이동, 오래된 작업 경로 수정. 단일 dev/check/build와 자동 배포 유지 | Completed | `README.md`, `docs/README.md`, `site/CNAME`, `site/robots.txt`, `scripts/build.js` |
 | N-02 | 히어로 섹션 하단에 현재 운영중인 커뮤니티 포탈 기능 개발. 커뮤니티는 계속 추가될 예정이며 각 커뮤니티의 인원을 공개 API를 이용해 가져와 합산하여 섹션에 잘 보이게 표시. `npm run update:metrics` 시 `data/communities.json`으로 정적 데이터 생성, 프런트는 JSON 우선 사용 후 API 폴백 | Completed | `index.html`, `js/i18n.js`, `js/main.js`, `src/styles/tailwind.css`, `scripts/update-metrics.js`, `data/communities.json` |
 | N-03 | 인라인 스타일 제거 후 Tailwind 공용 적용 | Completed | `tower-flood-race.html`, `js/main.js` |
-| N-04 | CTA 추적 엔드포인트/스키마 확정 및 적용 | Completed | `js/main.js`, `docs/prd.md` |
-| N-05 | 히어로/커뮤니티 집계 규칙을 status/flag 기반으로 명시화 | Completed | `data/projects.json`, `data/community-groups.json`, `data/communities.json`, `js/projects-data.js`, `js/main.js`, `scripts/update-metrics.js`, `docs/metric.md`, `docs/dev_plan.md` |
+| N-04 | CTA 추적 엔드포인트/스키마 확정 및 적용 | Completed | `js/main.js`, `docs/site/prd.md` |
+| N-05 | 히어로/커뮤니티 집계 규칙을 status/flag 기반으로 명시화 | Completed | `data/projects.json`, `data/community-groups.json`, `data/communities.json`, `js/projects-data.js`, `js/main.js`, `scripts/update-metrics.js`, `docs/site/metric.md`, `docs/site/dev-plan.md` |
 | N-06 | 에이전트 기반 개발환경 1단계: 루트 `CLAUDE.md`, 역할별 에이전트(site/decks), 스킬(add-project/refresh-metrics/new-deck), 검증 스크립트(`npm run check`: i18n/links/data/lint), ESLint/Prettier/EditorConfig, 로컬 서버(`npm run dev`) | Completed | `CLAUDE.md`, `.claude/`, `scripts/check-*.js`, `eslint.config.js`, `package.json` |
 | N-07 | 개발환경 2단계: `npm run build` 로 `dist/` 조립(sitemap/robots 포함), GitHub Actions 로 main 푸시 시 검증·빌드·Pages 배포, 매일 12:00 KST 지표 자동 갱신 커밋, `css/style.css` 추적 해제 | Completed | `scripts/build.js`, `.github/workflows/deploy.yml`, `.github/workflows/metrics.yml`, `robots.txt` |
 | N-08 | 개발환경 3단계: 소스를 `site/`(홈페이지), `decks/`(슬라이드), `shared/`(data/images/assets) 로 재배치. 빌드가 배포 URL 구조로 매핑하므로 소스 내부 상대 경로와 서비스 URL 은 그대로 유지. `npm run dev` 가 dist 감시 서비스, `check:links` 는 dist 기준 검사 | Completed | `scripts/build.js`, `scripts/check-*.js`, `site/`, `decks/`, `shared/` |

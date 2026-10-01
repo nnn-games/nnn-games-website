@@ -19,7 +19,7 @@ description: 기존 웹 슬라이드 덱의 슬라이드 추가·삭제·순서 
 | 슬라이드 순서·부록 여부·테마 | `slides.js`의 `DECK_SLIDES` (마크업 순서도 같이 맞춘다) |
 | 슬라이드 추가/삭제 | `index.html`의 `<section class="slide" data-slide="<id>" data-theme="…">` + `DECK_SLIDES` + `DECK_I18N` 문구 키 |
 | 문구 | `slides.js`의 `DECK_I18N` (`languages`에 있는 모든 언어). 마크업은 `data-deck-key`로만 바인딩하고 하드코딩하지 않는다 |
-| 이미지 | `decks/<slug>/assets/` 또는 `img/`에 추가, `alt`는 `data-deck-key-alt`. 프로젝트 이미지는 `shared/assets/<project>/`를 `../assets/...`로 재사용 |
+| 이미지 | `decks/<slug>/assets/` (기존 jumpstart는 `img/`)에 추가, `alt`는 `data-deck-key-alt`. 프로젝트 이미지는 `shared/assets/<project>/`를 `../assets/...`로 재사용 |
 | 덱 전용 스타일 | `decks/<slug>/deck.css`. 공용 동작 변경은 `decks/shared/`이며 사용자에게 먼저 알린다 |
 | 제목·대상·언어 메타 | `decks/decks.json` (`title`, `audience`, `languages`, `note`) |
 | 지표 인용 | `shared/data/projects.json`·`communities.json`에서 읽어 문구에 반영하고 갱신일을 함께 적는다. 데이터 파일은 수정하지 않는다 |

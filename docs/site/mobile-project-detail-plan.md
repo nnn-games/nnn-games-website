@@ -1,8 +1,8 @@
 # 모바일 게임 상세 페이지 사이트 기획서
 
-본 문서는 NNN GAMES 웹사이트(`projects-mobile.html` 하위)에서 운영하는 **모바일 게임 소개 상세 페이지**의 일반 기획 기준을 정의한다. 신규 모바일 프로젝트가 추가될 때 본 문서를 따라 IA·콘텐츠·에셋·기술 요구를 확정하고, 개별 프로젝트 계획은 `plan/<slug>.md`에서 구체화한다.
+본 문서는 NNN GAMES 웹사이트(`projects-mobile.html` 하위)에서 운영하는 **모바일 게임 소개 상세 페이지**의 일반 기획 기준을 정의한다. 신규 모바일 프로젝트가 추가될 때 본 문서를 따라 IA·콘텐츠·에셋·기술 요구를 확정하고, 개별 프로젝트 계획은 `docs/projects/<slug>/README.md`에서 구체화한다.
 
-> 적용 범위: iOS / Android(또는 단일 OS) 모바일 게임. Roblox/UGC 프로젝트는 별도 기획(`docs/prd.md` §3, `docs/project_templete.md`)을 따른다.
+> 적용 범위: iOS / Android(또는 단일 OS) 모바일 게임. Roblox/UGC 프로젝트는 별도 기획(`docs/site/prd.md` §3, `docs/site/project-template.md`)을 따른다.
 
 ---
 
@@ -108,7 +108,7 @@
 스튜디오 다른 프로젝트 카드 2~3개. 같은 카테고리(mobile) 우선, 부족 시 featured 카드로 폴백.
 
 ## 5. 데이터 스키마 (모바일 확장 필드)
-기존 `data/projects.json` 스키마(`docs/prd.md` §4)에 모바일 전용 필드를 추가/덮어쓴다.
+기존 `data/projects.json` 스키마(`docs/site/prd.md` §4)에 모바일 전용 필드를 추가/덮어쓴다.
 
 | 필드 | 타입 | 설명 |
 | --- | --- | --- |
@@ -134,7 +134,7 @@
 - **스크린샷**: WebP 우선, 폴백 JPG. 모든 이미지 `loading="lazy"`.
 - **디바이스 목업**: 동일 프로젝트 내 동일 기종(예: 모두 iPhone 15 Pro frame)으로 톤 일치.
 - **OG 이미지**: 1200×630, 텍스트는 좌측 정렬, 우측 50% 키 비주얼.
-- **저작권**: 폰트/사운드/외주 비주얼은 사용 라이선스 확인 후 `plan/<slug>.md`에 기록.
+- **저작권**: 폰트/사운드/외주 비주얼은 사용 라이선스 확인 후 `docs/projects/<slug>/README.md`에 기록.
 
 ## 7. 다국어 (i18n)
 - `KO / EN / JA` 3개 언어를 모든 사용자 노출 텍스트에 적용 (`js/i18n.js` + `data-key`).
@@ -151,7 +151,7 @@
   - `name`, `genre`, `gamePlatform: ["iOS", "Android"]`, `applicationCategory: "GameApplication"`, `operatingSystem`, `offers`(가격), `aggregateRating`(있을 때).
 
 ## 9. CTA 추적 / 분석
-- 모든 CTA에 `data-cta`, `data-project-id`, `data-cta-origin` 부여 (`docs/guideline.md` §4).
+- 모든 CTA에 `data-cta`, `data-project-id`, `data-cta-origin` 부여 (`docs/site/guideline.md` §4).
 - 모바일 전용 origin 키:
   - `detail-hero-mobile` (Hero CTA)
   - `detail-snapshot-store` (사이드바 스토어 배지)
@@ -180,7 +180,7 @@
 - Lighthouse 모바일 Performance ≥ 80, Accessibility ≥ 90 목표.
 
 ## 13. 운영 / 콘텐츠 업데이트 프로세스
-1. `plan/<slug>.md` 작성 (본 문서 §3·§4를 채워 확정안 정리)
+1. `docs/projects/<slug>/README.md` 작성 (본 문서 §3·§4를 채워 확정안 정리)
 2. 에셋 준비 (`assets/<slug>/`) — 명명 규칙 `<prefix>-main.jpg`, `<prefix>-gallery-<n>.jpg`
 3. 데이터 입력 (`data/projects.json`) — §5 필드 누락 확인
 4. 상세 카피 입력 (`js/project-details/<slug>.js`) — KO/EN/JA 모두
@@ -211,4 +211,4 @@
 
 ---
 
-본 문서는 신규 모바일 프로젝트가 추가될 때마다 부족한 항목·예외 케이스를 반영해 업데이트한다. 변경 시 `docs/prd.md` §3·§4, `docs/guideline.md` §3과 일관성을 유지할 것.
+본 문서는 신규 모바일 프로젝트가 추가될 때마다 부족한 항목·예외 케이스를 반영해 업데이트한다. 변경 시 `docs/site/prd.md` §3·§4, `docs/site/guideline.md` §3과 일관성을 유지할 것.

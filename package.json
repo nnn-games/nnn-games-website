@@ -21,7 +21,7 @@
     "check:i18n": "node scripts/check-i18n.js",
     "check:links": "node scripts/check-links.js",
     "check:data": "node scripts/check-data.js",
-    "check": "npm run build && npm run check:i18n && npm run check:links && npm run check:data && npm run lint",
+    "check": "npm run build && npm run check:i18n && npm run check:links && npm run check:data && npm run lint && node --test scripts/tests/deck-policy.test.js",
     "test": "npm run check",
     "snapshot": "node scripts/snapshot.js",
     "export:deck": "node scripts/export-deck.js",

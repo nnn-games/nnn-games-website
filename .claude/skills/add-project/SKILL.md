@@ -10,7 +10,7 @@ description: 홈페이지에 새 Roblox 프로젝트를 추가한다. shared/dat
 ## 0. 사전 확인
 - slug 는 kebab-case, 기존 `shared/data/projects.json`의 `id`와 겹치지 않아야 한다.
 - 상태가 `active`이면 `universeId`가 필요하다(지표 수집). 개발 중이면 `development`.
-- `plan/<slug>.md` 계획서가 있으면 그 내용을 콘텐츠 원천으로 쓴다. 없으면 `plan/_template.md`를 복사해 먼저 채우고 사용자 확인을 받는다.
+- `docs/projects/<slug>/README.md` 계획서가 있으면 그 내용을 콘텐츠 원천으로 쓴다. 없으면 `docs/projects/_template.md`를 복사해 먼저 채우고 사용자 확인을 받는다.
 
 ## 1. 에셋
 - `shared/assets/<slug-without-dash>/`에 미리보기(`*-preview.jpg`), 메인(`*-main.jpg`), 갤러리 이미지를 넣는다. 가로 1200px 이하, 2MB 이하.
@@ -41,7 +41,7 @@ npm run dev                # /<slug>.html, /projects-roblox.html, / 확인
 - KO/EN/JA 전환, 모바일 메뉴, CTA 링크(play/group), 갤러리 이미지 로딩을 확인한다.
 
 ## 6. 문서
-- `docs/prd.md` 3장 상세 페이지 목록에 추가. `plan/README.md` 목록에 계획서 링크 추가.
+- `docs/site/prd.md` 3장 상세 페이지 목록에 추가. `docs/projects/README.md` 목록에 계획서 링크 추가.
 
 ## 보고
 변경 파일 목록, 실행한 검증 명령, 사용자가 채워야 할 빈 값(링크, 이미지)을 적는다.

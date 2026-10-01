@@ -1,6 +1,6 @@
 /*
  * NNN GAMES 회사 소개 덱 — 슬라이드 데이터 + 다국어 문자열
- * 기획서: plan/company/company-intro-site.md
+ * 기획서: docs/decks/company/company-intro.md
  *
  * 규칙
  *  - 수치(9.8M, 2.2K 등), 아바타 네임, 플랫폼명은 번역 대상이 아니므로 i18n 키를 만들지 않는다.

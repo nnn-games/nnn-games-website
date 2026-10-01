@@ -2,7 +2,7 @@
 /**
  * 덱 내보내기: 슬라이드별 PNG 스크린샷 + 언어별 PDF
  *
- * decks/decks.json 레지스트리를 읽어 status 가 archived 가 아닌 덱을 dist/ 에서 렌더한다.
+ * decks/decks.json 레지스트리를 읽어 status 가 active 인 덱을 dist/ 에서 렌더한다.
  * 덱 런타임의 `?lang=` 파라미터와 `#/<n>` 딥링크, 인쇄 CSS(@page 1280x720)를 그대로 사용한다.
  *
  * Usage:
@@ -38,10 +38,10 @@ const doPng = !flag('--pdf-only');
 
 function loadDecks() {
   const registry = JSON.parse(fs.readFileSync(path.join(ROOT, 'decks', 'decks.json'), 'utf8'));
-  let decks = (registry.decks || []).filter((d) => d && d.status !== 'archived');
+  let decks = (registry.decks || []).filter((d) => d && d.status === 'active');
   if (slugsArg.length) {
     const unknown = slugsArg.filter((s) => !decks.some((d) => d.slug === s));
-    if (unknown.length) throw new Error(`레지스트리에 없거나 archived 인 덱: ${unknown.join(', ')}`);
+    if (unknown.length) throw new Error(`레지스트리에 없거나 active 상태가 아닌 덱: ${unknown.join(', ')}`);
     decks = decks.filter((d) => slugsArg.includes(d.slug));
   }
   return decks;

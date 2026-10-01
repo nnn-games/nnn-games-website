@@ -41,7 +41,7 @@ function defaultPages() {
   if (active) pages.push(`/${active.detailPage}`);
   if (development) pages.push(`/${development.detailPage}`);
   const decks = JSON.parse(fs.readFileSync(path.join(ROOT, 'decks', 'decks.json'), 'utf8')).decks || [];
-  for (const deck of decks) if (deck.status !== 'archived') pages.push(`/${deck.slug}/`);
+  for (const deck of decks) if (deck.status === 'active') pages.push(`/${deck.slug}/`);
   return pages;
 }
 

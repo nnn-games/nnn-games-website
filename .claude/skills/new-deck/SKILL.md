@@ -8,13 +8,13 @@ description: decks/shared 공용 런타임을 사용하는 새 웹 슬라이드 
 인자: `$ARGUMENTS` (덱 slug 와 주제. 없으면 사용자에게 slug, 대상 청중, 슬라이드 개요를 묻는다)
 
 ## 0. 사전 확인
-- slug 는 kebab-case 디렉터리명이며 `decks/<slug>/` 에 만들고 URL 은 `/<slug>/` 가 된다. 배포 여부는 `decks/decks.json` 등록으로 결정되며 `scripts/build.js`는 건드리지 않는다. 기존 `company`, `nnn`, `jumpstart`와 겹치지 않아야 한다.
+- slug 는 kebab-case 디렉터리명이며 `decks/<slug>/` 에 만들고 URL 은 `/<slug>/` 가 된다. 배포 여부는 `decks/decks.json`의 `status`로 결정되며 `scripts/build.js`는 건드리지 않는다. 기존 `company`, `nnn`, `jumpstart`와 겹치지 않아야 한다.
 - 슬라이드 개요(제목, 순서, 테마)를 먼저 표로 사용자에게 확인받는다. 확인 전에는 파일을 만들지 않는다.
 
 ## 1. 디렉터리
 ```
 <slug>/
-  index.html     jumpstart/index.html 을 복사해 시작 (공용 런타임을 쓰는 유일한 최신 예시)
+  index.html     jumpstart/index.html 을 복사해 시작 (공용 런타임 사용 예시)
   slides.js      jumpstart/slides.js 구조를 따름
   deck.css       덱 전용 스타일 (비어 있어도 됨)
   assets/        이미지
@@ -33,7 +33,7 @@ description: decks/shared 공용 런타임을 사용하는 새 웹 슬라이드 
 
 ## 4. 레지스트리 등록 (`decks/decks.json`)
 - `decks` 배열에 항목을 추가한다. 기존 항목을 복사해 구조를 맞춘다.
-  - `slug`, `title{ko,en,ja}`(제목은 세 언어 모두), `audience`(partner/publisher/investor/internal/public), `status`(검토 중이면 `draft`, 공개 시 `active`), `languages`(DECK_I18N 과 언어 버튼에 있는 언어와 정확히 일치), `runtime: "shared"`, `project`(관련 프로젝트 id 또는 null), `note`.
+  - `slug`, `title{ko,en,ja}`(제목은 세 언어 모두), `audience`(partner/publisher/investor/internal/public), `status`(검토 중이면 `draft`: dev에서만 확인, 공개 시 `active`: 자동 배포), `languages`(DECK_I18N 과 언어 버튼에 있는 언어와 정확히 일치), `runtime: "shared"`, `project`(관련 프로젝트 id 또는 null), `note`.
 - `check:data`가 디렉터리·런타임·언어·프로젝트 연결을 검사하고, 등록되지 않은 `decks/<dir>/`는 오류로 잡는다.
 
 ## 5. 데이터 인용
@@ -47,6 +47,7 @@ npm run dev      # http://localhost:8080/<slug>/
 - 키보드(← →), 해시 딥링크(`#<slide-id>`), 언어 전환, 전체화면, 모바일 폭, 인쇄 미리보기를 확인한다.
 
 ## 7. 문서
+- 원고·기획·디자인 원본은 `docs/decks/<slug>/`에 둔다. 실행 코드 폴더에는 웹에서 사용하는 파일만 둔다.
 - `decks/README.md`의 덱 목록에 추가한다. 공개(`active`) 전환은 `/archive-deck`으로 처리한다.
 
 ## 보고

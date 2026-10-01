@@ -1,6 +1,6 @@
 # 회사 소개 페이지(`/nnn`) 구축 기획서
 
-> 원본: `plan/company/company_intro.pdf` (8슬라이드, 16:9)
+> 원본: `docs/decks/company/company_intro.pdf` (8슬라이드, 16:9)
 > 확장: 원본 ABOUT 슬라이드 뒤에 **People / History** 2장을 신규 추가 → 본편 10장 + 부록 1장 = 총 11슬라이드
 > 산출물: `https://www.triplengames.com/nnn` 로 접근하는 파워포인트 형식의 회사 소개 페이지
 > 노출 텍스트는 KO / EN / JA 3개 언어를 모두 채운다.

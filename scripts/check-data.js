@@ -5,7 +5,7 @@
  * - community-groups.json: 필수 필드
  * - communities.json: 그룹 id 일치, totals.heroSubscriberCount 재계산 일치
  *
- * 규칙 원천: docs/metric.md, scripts/update-metrics.js
+ * 규칙 원천: docs/site/metric.md, scripts/update-metrics.js
  * Usage: node scripts/check-data.js
  */
 

@@ -8,47 +8,41 @@
  *
  *   site/*.html, site/js, site/privacy   ->  /            (홈페이지)
  *   shared/images, assets, data          ->  /images, /assets, /data
- *   decks/<slug>  (decks/decks.json 에서 status != archived 인 덱)  ->  /<slug>
+ *   decks/<slug>  (decks/decks.json 에서 active 인 덱)  ->  /<slug>
  *   decks/shared                         ->  /slides/shared   (덱 공용 런타임, 기존 URL 유지)
- *   CNAME, robots.txt                    ->  /
+ *   site/CNAME, site/robots.txt          ->  / (site 매핑에 포함)
  *   site/styles/tailwind.css  --(tailwind)-->  /css/style.css
  *   생성: sitemap.xml, .nojekyll
  *
  * Usage:
  *   node scripts/build.js            전체 빌드 (dist 초기화)
- *   node scripts/build.js --watch    변경 감시하며 증분 재빌드
+ *   node scripts/build.js --watch    변경 감시하며 재빌드 (삭제·공개 철회 반영)
  *   node scripts/build.js --serve    dist/ 를 http://localhost:8080 으로 서비스 (보통 --watch 와 함께)
  */
 
 const fs = require('fs');
 const path = require('path');
 const { spawn, spawnSync } = require('child_process');
+const { loadDecks } = require('./lib/deck-policy');
 
 const ROOT = path.join(__dirname, '..');
-const DIST = path.join(ROOT, 'dist');
+const args = new Set(process.argv.slice(2));
+const isWatch = args.has('--watch');
+const isServe = args.has('--serve');
+const OUTPUT = 'dist';
+const DIST = path.join(ROOT, OUTPUT);
 const SITE_URL = 'https://www.triplengames.com';
 const PORT = process.env.PORT || 8080;
 
 // [소스(루트 기준), dist 안의 대상] 매핑. 새 최상위 디렉터리를 서비스하려면 여기에 추가한다.
-// 덱(decks/<slug>)은 여기 적지 않는다. decks/decks.json 레지스트리에서 status 가 archived 가 아닌 덱이 자동으로 추가된다.
+// 덱(decks/<slug>)은 여기 적지 않는다. decks/decks.json 레지스트리의 공개 정책으로 선택한다.
 const STATIC_MAP = [
   ['site', '.'],
   ['shared/images', 'images'],
   ['shared/assets', 'assets'],
   ['shared/data', 'data'],
-  ['decks/shared', 'slides/shared'],
-  ['CNAME', 'CNAME'],
-  ['robots.txt', 'robots.txt']
+  ['decks/shared', 'slides/shared']
 ];
-const DECK_REGISTRY = path.join(ROOT, 'decks', 'decks.json');
-
-// 레지스트리를 읽어 배포할 덱 목록을 돌려준다. { slug, status }[]
-function readDeckRegistry() {
-  const registry = JSON.parse(fs.readFileSync(DECK_REGISTRY, 'utf8'));
-  const decks = Array.isArray(registry.decks) ? registry.decks : [];
-  return decks.filter((deck) => deck && typeof deck.slug === 'string' && deck.status !== 'archived');
-}
-
 function buildMap(decks) {
   return [...STATIC_MAP, ...decks.map((deck) => [`decks/${deck.slug}`, deck.slug])];
 }
@@ -57,20 +51,14 @@ function buildMap(decks) {
 // _partials 는 빌드 시 인라인되므로 배포하지 않고, pdf 디렉터리는 export-decks 워크플로가 대체한다.
 const EXCLUDED_SEGMENTS = new Set(['docs', 'node_modules', 'styles', '_partials', 'pdf']);
 const EXCLUDED_EXT = new Set(['.md', '.psd', '.ai', '.sketch', '.fig']);
-// 개별 제외 파일 (루트 기준, 슬래시 구분). 서비스에 필요 없는 원고·메모.
-const EXCLUDED_PATHS = new Set(['decks/jumpstart/page04image.txt', 'decks/jumpstart/page06image.txt']);
 const WATCH_DIRS = ['site', 'shared', 'decks'];
-
-const args = new Set(process.argv.slice(2));
-const isWatch = args.has('--watch');
-const isServe = args.has('--serve');
+const WATCH_FILES = ['tailwind.config.js', 'postcss.config.js'];
 
 function shouldCopy(absPath) {
   const rel = path.relative(ROOT, absPath);
   if (rel === '') return true;
   const segments = rel.split(path.sep);
   if (segments.some((seg) => EXCLUDED_SEGMENTS.has(seg) || seg.startsWith('.'))) return false;
-  if (EXCLUDED_PATHS.has(segments.join('/'))) return false;
   if (fs.statSync(absPath).isFile() && EXCLUDED_EXT.has(path.extname(rel).toLowerCase())) return false;
   return true;
 }
@@ -133,7 +121,7 @@ function buildCss() {
   const bin = require.resolve('tailwindcss/lib/cli.js', { paths: [ROOT] });
   const result = spawnSync(
     process.execPath,
-    [bin, '-i', 'site/styles/tailwind.css', '-o', 'dist/css/style.css', '--minify'],
+    [bin, '-i', 'site/styles/tailwind.css', '-o', `${OUTPUT}/css/style.css`, '--minify'],
     { cwd: ROOT, stdio: 'inherit' }
   );
   if (result.status !== 0) throw new Error('Tailwind 빌드 실패');
@@ -148,15 +136,28 @@ function walkFiles(dir, acc = []) {
   return acc;
 }
 
-// sitemap: 루트 페이지 + privacy + status 가 active 인 덱 (draft 덱은 배포되지만 sitemap 에 싣지 않는다)
-function writeSitemap(decks) {
+// 발표자료는 검색에서 제외한다. robots 메타와 sitemap을 함께 맞춘다.
+function applyDeckRobots(decks) {
+  for (const deck of decks) {
+    const file = path.join(DIST, deck.slug, 'index.html');
+    const html = fs.readFileSync(file, 'utf8');
+    const robots = 'noindex, nofollow';
+    const meta = `<meta name="robots" content="${robots}">`;
+    const withoutRobots = html.replace(/<meta\b[^>]*\bname\s*=\s*["']robots["'][^>]*>/gi, '');
+    if (!/<\/head\s*>/i.test(withoutRobots)) throw new Error(`deck '${deck.slug}': head 종료 태그가 없습니다.`);
+    fs.writeFileSync(file, withoutRobots.replace(/<\/head\s*>/i, `    ${meta}\n</head>`));
+  }
+}
+
+// sitemap: 회사 홈페이지만 포함한다. 발표자료는 모두 검색에서 제외한다.
+function writeSitemap() {
   const urls = [];
   const rootHtml = fs
     .readdirSync(DIST)
     .filter((name) => name.endsWith('.html'))
     .sort();
   for (const file of rootHtml) urls.push(file === 'index.html' ? `${SITE_URL}/` : `${SITE_URL}/${file}`);
-  const listedDirs = ['privacy', ...decks.filter((deck) => deck.status === 'active').map((deck) => deck.slug)];
+  const listedDirs = ['privacy'];
   for (const dir of listedDirs) {
     if (fs.existsSync(path.join(DIST, dir, 'index.html'))) urls.push(`${SITE_URL}/${dir}/`);
   }
@@ -170,18 +171,19 @@ function writeSitemap(decks) {
 
 function build({ clean }) {
   const started = Date.now();
-  const decks = readDeckRegistry();
+  const decks = loadDecks(ROOT, { includeDraft: isWatch });
   if (clean) fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
   for (const [srcRel, destRel] of buildMap(decks)) copyMapped(srcRel, destRel);
   const includes = inlinePartials();
+  applyDeckRobots(decks);
   buildCss();
   fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
-  const { pages, urls } = writeSitemap(decks);
+  const { pages, urls } = writeSitemap();
   const files = walkFiles(DIST);
   const bytes = files.reduce((sum, file) => sum + fs.statSync(file).size, 0);
   console.log(
-    `dist/ 생성 완료: 파일 ${files.length}개, ${(bytes / 1048576).toFixed(1)} MB, 페이지 ${pages}개(파셜 ${includes}건 인라인), 덱 ${decks.length}개(${decks.map((d) => d.slug).join(', ')}), sitemap ${urls}개 URL (${Date.now() - started}ms)`
+    `${OUTPUT}/ 생성 완료: 파일 ${files.length}개, ${(bytes / 1048576).toFixed(1)} MB, 페이지 ${pages}개(파셜 ${includes}건 인라인), 덱 ${decks.length}개(${decks.map((d) => d.slug).join(', ')}), sitemap ${urls}개 URL (${Date.now() - started}ms)`
   );
 }
 
@@ -193,7 +195,7 @@ function watch() {
     timer = setTimeout(() => {
       console.log(`\n[watch] ${file || event} 변경 -> 재빌드`);
       try {
-        build({ clean: false });
+        build({ clean: true });
       } catch (error) {
         console.error(`[watch] 재빌드 실패: ${error.message}`);
       }
@@ -203,13 +205,17 @@ function watch() {
     const abs = path.join(ROOT, dir);
     if (fs.existsSync(abs)) fs.watch(abs, { recursive: true }, trigger);
   }
-  console.log(`[watch] ${WATCH_DIRS.join(', ')} 감시 중 (Ctrl+C 로 종료)`);
+  for (const file of WATCH_FILES) {
+    const abs = path.join(ROOT, file);
+    if (fs.existsSync(abs)) fs.watch(abs, (event) => trigger(event, file));
+  }
+  console.log(`[watch] ${[...WATCH_DIRS, ...WATCH_FILES].join(', ')} 감시 중 (Ctrl+C 로 종료)`);
 }
 
 function serve() {
-  const child = runBin('http-server/bin/http-server', ['dist', '-p', String(PORT), '-c-1', '-s']);
+  const child = runBin('http-server/bin/http-server', [OUTPUT, '-p', String(PORT), '-c-1', '-s']);
   child.on('exit', (code) => process.exit(code || 0));
-  console.log(`[serve] http://localhost:${PORT}  (dist/ 서비스)`);
+  console.log(`[serve] http://localhost:${PORT}  (${OUTPUT}/ 서비스)`);
 }
 
 try {

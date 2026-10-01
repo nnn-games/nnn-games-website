@@ -35,7 +35,7 @@ npm run dev              # /, /projects-roblox.html (상태 필터), /<slug>.htm
 - 홈 미리보기에서 카드가 빠졌는지, 목록에서 상태 배지가 바뀌었는지 확인한다.
 
 ## 4. 문서
-- `docs/prd.md` 상세 목록의 상태를 갱신하고, 종료 사유가 있으면 `docs/development_roadmap.md`에 한 줄 남긴다.
+- `docs/site/prd.md` 상세 목록의 상태를 갱신하고, 종료 사유가 있으면 `docs/development-roadmap.md`에 한 줄 남긴다.
 
 ## 보고
 전환 전후 `summary.hero`, 변경 파일, 실행한 검증, 사용자가 확인할 외부 상태(Roblox 게임 비공개 여부)를 적는다. 브랜치 `site/retire-<slug>`, 커밋 접두어 `site:`.
