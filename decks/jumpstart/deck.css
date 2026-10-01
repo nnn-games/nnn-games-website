@@ -350,27 +350,36 @@
 .js-progress-summary .js-progress-grid p { font-size: .65rem; }
 .js-progress-project { display: block; margin-top: .5rem; color: var(--project-color); font: 800 1rem/1.3 Inter, sans-serif; }
 .js-timeline { margin-top: auto; }
-.js-timeline > h3 { margin-bottom: .65rem; color: var(--deck-ink); font-size: .95rem; }
+.js-progress-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .6rem; }
+.js-progress-card-top img { display: block; width: 4.5rem; height: auto; }
+.js-timeline-heading { display: flex; align-items: center; justify-content: space-between; gap: .8rem; margin-bottom: .65rem; }
+.js-timeline-heading h3 { color: var(--deck-ink); font-size: .95rem; }
+.js-timeline-heading > b { color: var(--deck-muted); font-size: .6rem; }
 .js-timeline-axis, .js-timeline-row { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1rem; align-items: center; }
 .js-timeline-axis > div, .js-timeline-track { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
 .js-timeline-axis b { color: var(--deck-muted); font: 700 .65rem/1.5 Inter, sans-serif; text-align: center; }
 .js-timeline-row { margin-top: .45rem; }
 .js-timeline-row > b { color: var(--project-color); font: 800 .75rem/1.3 Inter, sans-serif; }
-.js-timeline-cell, .js-timeline-launch { min-height: 2.4rem; border-left: 1px solid var(--deck-line); background: rgba(255,255,255,.5); }
-.js-timeline-launch { display: flex; flex-direction: column; justify-content: center; gap: .25rem; padding: .3rem .5rem; border-top: 2px solid var(--project-color); color: var(--project-color); }
-.js-timeline-launch strong { font: 900 .9rem/1 Inter, sans-serif; }
-.js-timeline-launch progress { display: block; width: 100%; height: .3rem; border: 0; border-radius: 0; background: var(--deck-line); color: var(--project-color); accent-color: var(--project-color); appearance: none; }
-.js-timeline-launch progress::-webkit-progress-bar { background: var(--deck-line); }
-.js-timeline-launch progress::-webkit-progress-value { background: var(--project-color); }
-.js-timeline-launch progress::-moz-progress-bar { background: var(--project-color); }
+/* 시작·현재·출시 위치는 달력, 백분율은 현재 개발 상황을 나타낸다. */
+.js-timeline-track { min-height: 2.4rem; background: repeating-linear-gradient(90deg, var(--deck-line) 0 1px, transparent 1px calc(100% / 6)); }
+.js-timeline-period { position: relative; display: flex; align-items: center; justify-content: flex-end; min-height: 2.4rem; padding: .3rem .55rem; border: 1px solid var(--project-color); border-radius: .25rem; background: color-mix(in srgb, var(--project-color) 10%, var(--deck-paper)); color: var(--project-color); }
+.js-timeline-period-2 { grid-column: 1 / span 2; --period-months: 2; }
+.js-timeline-period-3 { grid-column: 1 / span 3; --period-months: 3; }
+.js-timeline-period-6 { grid-column: 1 / span 6; --period-months: 6; }
+.js-timeline-start { position: absolute; left: -.15rem; top: 50%; width: .3rem; height: .3rem; border-radius: 50%; background: var(--project-color); transform: translateY(-50%); }
+.js-timeline-current-progress { position: absolute; left: calc(103.23% / var(--period-months)); top: 50%; transform: translate(-50%, -50%); padding: .35rem .45rem; border-radius: .2rem; background: var(--project-color); color: #fff; font: 900 .8rem/1 Inter, sans-serif; }
+.js-timeline-release { font-size: .55rem; font-weight: 700; }
 .js-timeline-note { margin-top: .65rem; color: var(--deck-muted); font-size: .5rem; line-height: 1.5; }
 
 /* 단계별 목표와 프로젝트 이미지 */
 .js-stage-layout { display: grid; grid-template-columns: 1fr 1.25fr; align-items: center; gap: 2rem; margin: auto 0; padding: 1.5rem 0; }
 .js-stage-goal-list { display: grid; gap: 1.2rem; margin: 0; padding: 0; list-style: none; }
 .js-stage-goal-list li { display: flex; align-items: baseline; gap: .8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--deck-line); }
-.js-stage-goal-list span { flex-shrink: 0; white-space: nowrap; color: var(--tomato); font: 800 .75rem/1.4 Inter, sans-serif; }
+.js-stage-goal-list li > span { flex-shrink: 0; white-space: nowrap; color: var(--tomato); font: 800 .75rem/1.4 Inter, sans-serif; }
 .js-stage-goal-list p { font-size: 1rem; font-weight: 700; line-height: 1.5; }
+.js-stage-goal-list .js-stage-goal-complete, .js-stage-goal-list .js-stage-goal-complete > span { color: #287044; }
+.js-stage-goal-status { display: block; margin-top: .3rem; font-size: .6rem; font-weight: 700; }
+.js-stage-goal-pending .js-stage-goal-status { color: var(--deck-muted); }
 .js-stage-image { min-width: 0; margin: 0; }
 .js-stage-image img { display: block; width: 100%; height: auto; }
 .js-stage-image figcaption { margin-top: .7rem; color: var(--deck-muted); font: 700 .75rem/1.4 Inter, sans-serif; }
@@ -388,18 +397,16 @@
 
 /* 연구 근거와 적용 실험 */
 .js-research-lead { max-width: 52rem; margin-top: .7rem; color: var(--deck-muted); font-size: .85rem; line-height: 1.5; }
-.js-research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin: 1rem 0; }
-.js-research-grid article { display: flex; flex-direction: column; padding: 1rem; border: 1px solid var(--deck-line); border-radius: .5rem; background: rgba(255,255,255,.5); }
+.js-research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: .7rem 0; }
+.js-research-grid article { display: flex; flex-direction: column; padding: .7rem; border: 1px solid var(--deck-line); border-radius: .5rem; background: rgba(255,255,255,.5); }
 .js-research-grid h3 { color: var(--ketchup); font-size: .95rem; }
-.js-research-grid article > p { margin: .5rem 0 .7rem; font-size: .72rem; line-height: 1.5; }
-.js-research-refs { display: flex; flex-wrap: wrap; gap: .35rem .8rem; margin-top: auto; }
-.js-research-refs a { color: #255bbc; font: 700 .6rem/1.5 Inter, sans-serif; text-decoration: underline; text-underline-offset: .15rem; }
-.js-research-flow { margin-top: auto; padding: .7rem 1rem; background: var(--night); color: var(--gold); font-size: .7rem; font-weight: 700; line-height: 1.5; text-align: center; }
+.js-research-grid article > p { margin: .45rem 0 .65rem; font-size: .65rem; line-height: 1.5; }
+.js-research-bib { margin: auto 0 0; padding: .65rem; background: #ebe5dc; color: #51443e; font: .56rem/1.4 ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
 .js-research-status { margin-top: .55rem; color: var(--deck-muted); font-size: .55rem; line-height: 1.5; }
 
 @media screen and (max-width: 767px) {
     .js-research-grid { grid-template-columns: 1fr; }
-    .js-research-refs a { font-size: .7rem; }
+    .js-research-bib { font-size: .65rem; }
     .js-research-status { font-size: .65rem; }
 
     .js-timeline { margin-top: 1rem; }
@@ -407,7 +414,11 @@
     .js-timeline-axis > span { display: none; }
     .js-timeline-axis b { font-size: .55rem; }
     .js-timeline-row { margin-top: .8rem; }
-    .js-timeline-launch { padding: .3rem; }
+    .js-timeline-heading { align-items: flex-start; flex-direction: column; gap: .3rem; }
+    .js-timeline-period { padding: .25rem .2rem; }
+    .js-timeline-current-progress { padding: .3rem; font-size: .65rem; }
+    .js-timeline-track { margin-bottom: .9rem; }
+    .js-timeline-release { position: absolute; top: calc(100% + .2rem); right: 0; font-size: .55rem; white-space: nowrap; }
     .js-timeline-note { font-size: .6rem; }
 
     .js-stage-layout { grid-template-columns: 1fr; gap: 1.5rem; }
