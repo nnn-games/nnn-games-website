@@ -400,11 +400,15 @@
 .js-research-notes { margin: 1.2rem 0; padding: 0; list-style: none; }
 .js-research-notes li { display: flex; align-items: baseline; gap: 1.2rem; padding: .8rem 0; border-bottom: 1px solid var(--deck-line); font-size: .78rem; line-height: 1.5; }
 .js-research-notes time { flex: 0 0 2.5rem; color: var(--deck-muted); font-weight: 700; }
-.js-research-notes span { min-width: 0; }
+.js-research-note-body { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex: 1; min-width: 0; }
+.js-research-note-body > span { min-width: 0; }
+.js-research-area { flex: 0 0 9.5rem; color: var(--ketchup); font-size: .6rem; font-weight: 700; text-align: right; }
 .js-research-status { margin-top: auto; color: var(--deck-muted); font-size: .65rem; line-height: 1.5; }
 
 @media screen and (max-width: 767px) {
     .js-research-notes li { gap: .7rem; font-size: .8rem; }
+    .js-research-note-body { flex-direction: column; gap: .3rem; }
+    .js-research-area { flex: none; text-align: left; font-size: .65rem; }
     .js-research-status { font-size: .65rem; }
 
     .js-timeline { margin-top: 1rem; }
