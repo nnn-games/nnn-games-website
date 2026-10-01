@@ -95,4 +95,18 @@ tmp/           임시 작업 파일 (Git 제외)
 
 사이트 주소, 발표 공유 주소와 자동 배포 방식은 유지합니다. 배포 설정은 `.github/workflows/`, 도메인·검색 설정은 `site/CNAME`·`site/robots.txt`에 있습니다. 빌드 결과와 내보내기 결과는 커밋하지 않습니다.
 
-작업 지침은 [CLAUDE.md](CLAUDE.md), 문서 목록과 개발 기록은 [docs/README.md](docs/README.md)를 참고합니다.
+작업 지침은 [AGENTS.md](AGENTS.md), 문서 목록과 개발 기록은 [docs/README.md](docs/README.md)를 참고합니다.
+
+## 에이전트로 개발하기
+
+OpenAI 공식 자료를 기준으로 구성한 [에이전트 개발환경](docs/agent-development.md)에는 홈페이지·덱 작업용 공용 스킬 12개와 준비·생성·브라우저 검증 하네스가 있습니다. Codex와 Claude가 같은 지침과 스킬을 사용합니다.
+
+```bash
+npm run agent:setup                 # 새 환경: lockfile 설치·Chromium·빌드·진단
+npm run agent:doctor                # 환경 확인
+npm run agent:smoke -- --pages /,/company/  # 다국어·모바일·슬라이드·화면 증거
+npm run deck:new -- proposal --title "제안서" --langs ko,en
+npm run agent:check                 # 정적·회귀·환경·실제 브라우저 전체 검증
+```
+
+덱 골격은 draft로 등록됩니다. 초안도 `agent:smoke`와 `export:deck`에서 운영 상태를 바꾸지 않고 확인할 수 있습니다. 두 명령은 별도 임시 빌드를 사용하며 보고서·이미지·PDF는 `exports/`에 생성됩니다.

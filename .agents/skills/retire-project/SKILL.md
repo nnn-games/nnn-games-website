@@ -5,7 +5,7 @@ description: 운영 중 프로젝트를 일시중단(paused) 또는 완료(compl
 
 # 프로젝트 중단/완료 절차
 
-인자: `$ARGUMENTS` (slug, `paused` 또는 `completed`, 사유·시점)
+입력: 사용자 요청 (slug, `paused` 또는 `completed`, 사유·시점)
 
 ## 0. 사전 확인
 - 대상의 현재 `status`가 `active`인지 확인한다. `development` 프로젝트를 접는 경우는 `completed`가 아니라 사용자와 상의해 `paused`로 두거나 `_archive/` 이동(별도 작업)을 제안한다.

@@ -34,6 +34,21 @@ jobs:
       - name: Playwright Chromium 설치
         run: npx playwright install --with-deps chromium
 
+      - name: 에이전트 하네스 회귀 검사
+        run: npm run agent:test
+
+      - name: 실제 브라우저 검증 (ko, PC·모바일)
+        run: npm run agent:smoke -- --lang ko --widths 1280,390 --offline
+
+      - name: 브라우저 검증 증거
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-qa-pr${{ github.event.pull_request.number }}
+          path: exports/agent
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: 주요 페이지 스크린샷 (ko)
         run: npm run snapshot
 

@@ -5,10 +5,10 @@ description: 기존 웹 슬라이드 덱의 슬라이드 추가·삭제·순서 
 
 # 덱 수정 절차
 
-인자: `$ARGUMENTS` (덱 slug 와 바꿀 내용)
+입력: 사용자 요청 (덱 slug 와 바꿀 내용)
 
 ## 0. 사전 확인
-- `decks/decks.json`에서 대상 덱의 `status`, `languages`, `runtime`, `project`를 확인한다. `archived` 덱을 고치려면 먼저 `/archive-deck`으로 되살릴지 사용자에게 묻는다.
+- `decks/decks.json`에서 대상 덱의 `status`, `languages`, `runtime`, `project`를 확인한다. `archived` 덱은 소스를 수정할 수 있다. 배포 상태는 상태 전환 요청이 있을 때만 바꾼다.
 - `decks/<slug>/index.html`의 `data-slide` 목록과 `slides.js`의 `DECK_SLIDES`를 읽어 현재 슬라이드 순서를 표로 정리한다.
 - 덱을 내리거나 올리는 요청은 `/archive-deck`으로 안내한다. 새 덱은 `/new-deck`.
 
@@ -26,7 +26,7 @@ description: 기존 웹 슬라이드 덱의 슬라이드 추가·삭제·순서 
 
 ## 2. 규칙
 - 새 슬라이드 id 는 kebab-case, 기존 id 와 중복 금지. `DECK_SLIDES` 순서 = 마크업 순서.
-- 문구 키를 추가하면 `languages`의 모든 언어에 넣는다. 번역이 없으면 KO 문구를 넣고 보고에 "번역 필요"로 표시한다.
+- 문구 키를 추가하면 `languages`의 모든 언어에 넣는다. 제공할 언어의 번역을 작성하고 검토가 필요한 표현만 보고한다.
 - 언어를 추가하려면 `DECK_I18N` 블록, `index.html`의 `data-lang` 버튼, `decks.json`의 `languages` 세 곳을 함께 바꾼다. `check:i18n`이 셋의 일치를 검사한다.
 - 런타임은 `decks/shared/deck.js` 하나다. 동적 슬라이드(아바타·연혁·수상·UGC 그리드)는 `decks/shared/company-renderers.js`의 `DECK_RENDERERS`가 그리며 데이터는 `slides.js`의 `DECK_SLIDES` 항목(`avatars`, `eras`, `awards`, `works`)에 있다. 런타임·렌더러를 바꾸면 사용자에게 먼저 알린다.
 - 파일 전체 재포맷 금지. 수정한 줄만 바꾼다. 기존 캐시 버스터(`slides.js?v=YYYYMMDD-n`)가 있으면 값을 올린다.
@@ -34,7 +34,8 @@ description: 기존 웹 슬라이드 덱의 슬라이드 추가·삭제·순서 
 ## 3. 검증
 ```
 npm run check
-npm run dev      # http://localhost:8080/<slug>/  ← → 이동, #<slide-id> 딥링크, 언어 전환, 전체화면, 모바일 폭, 인쇄 미리보기
+npm run dev      # http://localhost:8080/<slug>/  ← → 이동, #/<n> 딥링크, 언어 전환, 전체화면, 모바일 폭, 인쇄 미리보기
+npm run agent:smoke -- --pages /<slug>/
 ```
 
 ## 보고

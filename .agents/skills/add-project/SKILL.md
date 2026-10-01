@@ -1,16 +1,16 @@
 ---
 name: add-project
-description: 홈페이지에 새 Roblox 프로젝트를 추가한다. shared/data/projects.json 메타, site/<slug>.html 셸, site/js/project-details/<slug>.js 콘텐츠, 표시 순서, 에셋을 순서대로 만들고 검증한다. "프로젝트 추가", "새 게임 페이지", "상세 페이지 만들어줘" 요청에 사용.
+description: 홈페이지에 새 Roblox 프로젝트 상세 페이지를 추가하고 메타·다국어 콘텐츠·표시 순서·이미지를 등록한다. 프로젝트 추가, 새 게임 페이지, 상세 페이지 만들어줘 요청에 사용한다.
 ---
 
 # 프로젝트 추가 절차
 
-인자: `$ARGUMENTS` (slug 와 프로젝트 정보. 없으면 사용자에게 slug, 상태, placeId/universeId, 링크를 묻는다)
+입력: 사용자 요청 (slug 와 프로젝트 정보. 없으면 사용자에게 slug, 상태, placeId/universeId, 링크를 묻는다)
 
 ## 0. 사전 확인
 - slug 는 kebab-case, 기존 `shared/data/projects.json`의 `id`와 겹치지 않아야 한다.
 - 상태가 `active`이면 `universeId`가 필요하다(지표 수집). 개발 중이면 `development`.
-- `docs/projects/<slug>/README.md` 계획서가 있으면 그 내용을 콘텐츠 원천으로 쓴다. 없으면 `docs/projects/_template.md`를 복사해 먼저 채우고 사용자 확인을 받는다.
+- `docs/projects/<slug>/README.md` 계획서가 있으면 그 내용을 콘텐츠 원천으로 쓴다. 없으면 `docs/projects/_template.md`로 확인된 내용을 정리한다. 이미 받은 정보로 진행하고 필요한 사실만 질문한다.
 
 ## 1. 에셋
 - `shared/assets/<slug-without-dash>/`에 미리보기(`*-preview.jpg`), 메인(`*-main.jpg`), 갤러리 이미지를 넣는다. 가로 1200px 이하, 2MB 이하.
@@ -25,7 +25,7 @@ description: 홈페이지에 새 Roblox 프로젝트를 추가한다. shared/dat
 - `metrics`는 비워 두고(`null` 값) `npm run update:metrics`가 채우게 한다. `summary.hero`도 스크립트가 다시 계산한다.
 
 ## 3. 상세 셸 HTML (`<slug>.html`)
-- 상태가 `active`이면 `korean-spa.html`, `development`이면 `hacker-vs-security.html`을 복사한다(둘 다 최신 헤더 변형).
+- 상태가 `active`이면 `korean-spa.html`, `development`이면 `hunt-a-slime.html`을 복사한다(둘 다 최신 헤더 변형).
 - `<title>`, meta description/keywords, OG/Twitter 메타, `body[data-project-id]`, `<script src="js/project-details/<slug>.js">`를 바꾼다.
 
 ## 4. 콘텐츠 설정 (`site/js/project-details/<slug>.js`)

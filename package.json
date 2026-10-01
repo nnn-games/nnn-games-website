@@ -26,7 +26,13 @@
     "snapshot": "node scripts/snapshot.js",
     "export:deck": "node scripts/export-deck.js",
     "audit": "node scripts/audit.js",
-    "optimize:images": "node scripts/optimize-images.js"
+    "optimize:images": "node scripts/optimize-images.js",
+    "agent:setup": "node scripts/agent/setup.js",
+    "agent:doctor": "node scripts/agent/doctor.js",
+    "agent:smoke": "node scripts/agent/smoke.js",
+    "agent:test": "node --test scripts/tests/agent-harness.test.js",
+    "agent:check": "npm run check && npm run agent:test && npm run agent:doctor && npm run agent:smoke",
+    "deck:new": "node scripts/agent/new-deck.js"
   },
   "engines": {
     "node": ">=20"

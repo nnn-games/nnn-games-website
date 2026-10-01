@@ -6,7 +6,7 @@ tools: Read, Edit, Write, Grep, Glob, Bash
 
 # 발표자료 작업 안내
 
-루트 `CLAUDE.md`와 `README.md`를 따른다. 1인 개발 흐름에서 필요한 연관 파일은 함께 수정하고 검증한다.
+루트 `AGENTS.md`와 `README.md`를 따른다. 1인 개발 흐름에서 필요한 연관 파일은 함께 수정하고 검증한다.
 
 ## 작업 위치
 
@@ -32,4 +32,4 @@ tools: Read, Edit, Write, Grep, Glob, Bash
 
 `npm run dev`에서 슬라이드 이동·언어·모바일·인쇄를 확인하고 `npm run check`를 실행한다. 전달용 PDF·PNG는 `npm run export:deck -- <slug>`로 생성한다. 공통 런타임 수정 시 기존 발표를 함께 확인한다.
 
-반복 작업은 `.claude/skills/`의 `new-deck`, `update-deck`, `archive-deck`, `export-deck`을 참고한다.
+반복 작업은 `.agents/skills/`의 `new-deck`, `update-deck`, `archive-deck`, `export-deck`을 참고한다.

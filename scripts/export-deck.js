@@ -2,7 +2,7 @@
 /**
  * 덱 내보내기: 슬라이드별 PNG 스크린샷 + 언어별 PDF
  *
- * decks/decks.json 레지스트리를 읽어 status 가 active 인 덱을 dist/ 에서 렌더한다.
+ * 레지스트리의 active 덱, 또는 명시한 draft 덱을 최신 소스로 임시 빌드해 렌더한다.
  * 덱 런타임의 `?lang=` 파라미터와 `#/<n>` 딥링크, 인쇄 CSS(@page 1280x720)를 그대로 사용한다.
  *
  * Usage:
@@ -12,7 +12,7 @@
  *   --out <dir>      출력 디렉터리 (기본 exports/decks)
  *
  * 출력: exports/decks/<slug>/<slug>-<lang>.pdf, exports/decks/<slug>/<lang>/<nn>-<slide-id>.png, manifest.json
- * 사전: npm run build (dist 가 없으면 자동 빌드), Playwright Chromium (npx playwright install chromium)
+ * 사전: Playwright Chromium (npx playwright install chromium). 운영 dist/ 는 변경하지 않는다.
  */
 
 /* global window, document, HashChangeEvent */
@@ -38,10 +38,10 @@ const doPng = !flag('--pdf-only');
 
 function loadDecks() {
   const registry = JSON.parse(fs.readFileSync(path.join(ROOT, 'decks', 'decks.json'), 'utf8'));
-  let decks = (registry.decks || []).filter((d) => d && d.status === 'active');
+  let decks = (registry.decks || []).filter((d) => d && (d.status === 'active' || (slugsArg.length && d.status === 'draft')));
   if (slugsArg.length) {
     const unknown = slugsArg.filter((s) => !decks.some((d) => d.slug === s));
-    if (unknown.length) throw new Error(`레지스트리에 없거나 active 상태가 아닌 덱: ${unknown.join(', ')}`);
+    if (unknown.length) throw new Error(`레지스트리에 없거나 archived 상태인 덱: ${unknown.join(', ')}`);
     decks = decks.filter((d) => slugsArg.includes(d.slug));
   }
   return decks;
@@ -92,10 +92,19 @@ async function exportDeck(page, baseUrl, deck, lang) {
 async function main() {
   const decks = loadDecks();
   if (decks.length === 0) throw new Error('내보낼 덱이 없습니다.');
-  const srv = await server.start();
-  const browser = await chromium.launch();
+  for (const deck of decks) {
+    if (langFilter.length && !langFilter.some((lang) => deck.languages.includes(lang))) {
+      throw new Error(`${deck.slug}: 요청한 언어를 지원하지 않습니다.`);
+    }
+  }
+  fs.mkdirSync(path.join(ROOT, 'tmp'), { recursive: true });
+  const directory = fs.mkdtempSync(path.join(ROOT, 'tmp/deck-export-'));
+  let srv;
+  let browser;
   const manifest = { generatedAt: new Date().toISOString(), decks: [] };
   try {
+    srv = await server.start({ directory, rebuild: true, includeDraft: true });
+    browser = await chromium.launch();
     const context = await browser.newContext({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1 });
     const page = await context.newPage();
     for (const deck of decks) {
@@ -108,8 +117,9 @@ async function main() {
       }
     }
   } finally {
-    await browser.close();
-    srv.stop();
+    if (browser) await browser.close();
+    if (srv) srv.stop();
+    fs.rmSync(directory, { recursive: true, force: true });
   }
   fs.mkdirSync(OUT, { recursive: true });
   fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');

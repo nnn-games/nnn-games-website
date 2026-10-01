@@ -5,7 +5,7 @@ description: 개발 중(development) 프로젝트를 운영 중(active)으로 �
 
 # 프로젝트 활성화 절차
 
-인자: `$ARGUMENTS` (slug, placeId/universeId, 출시일, 플레이/그룹 링크. 없으면 사용자에게 묻는다)
+입력: 사용자 요청 (slug, placeId/universeId, 출시일, 플레이/그룹 링크. 없으면 사용자에게 묻는다)
 
 ## 0. 사전 확인
 - `shared/data/projects.json`에서 대상의 `status`가 `development`인지 확인한다. 이미 `active`면 중단하고 보고한다.

@@ -1,0 +1,30 @@
+/* 생성 골격의 기본 레이아웃. 덱의 청중과 주제에 맞춰 발전시킨다. */
+.starter-slide {
+    padding: 3.2rem 4.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+}
+.starter-slide h1,
+.starter-slide h2 {
+    margin: 0;
+    max-width: 100%;
+    font-size: 3.2rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+.starter-kicker {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+}
+.starter-lead {
+    max-width: 46rem;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    white-space: pre-line;
+}
+.starter-slide[data-theme='dark'] {
+    color: #fff;
+    background: #172327;
+}

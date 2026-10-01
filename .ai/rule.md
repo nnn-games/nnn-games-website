@@ -1,3 +1,3 @@
-# 이 문서는 루트 CLAUDE.md 로 대체되었습니다.
+# 공통 에이전트 지침
 
-에이전트 역할·규칙·검증 절차는 `CLAUDE.md`, 역할별 정의는 `.claude/agents/`, 반복 작업 절차는 `.claude/skills/` 를 참고하세요.
+작업 규칙은 루트 `AGENTS.md`, 명령은 `README.md`, 반복 작업은 `.agents/skills/`, 환경 설정은 `docs/agent-development.md`를 참고하세요.

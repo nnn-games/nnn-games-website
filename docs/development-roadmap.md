@@ -48,3 +48,13 @@
 - 완료: 사용자 제공 게임 설명을 바탕으로 개발 중 간소 페이지를 표준 상세 구성으로 확장. 개요·핵심 포인트 3개·프로젝트 정보·특징 4개·기존 갤러리 3장 반영.
 - 완료: 홈·목록 카드, HTML 메타, 상세 SEO·본문·이미지 대체 텍스트를 KO/EN/JA로 동기화. 개발 중 상태, 2026-10 출시 예정, 집계·지표 유지.
 - 검증: `npm run check` 통과, KO/EN/JA × PC/모바일 스크린샷 6장 확인, Playwright로 1280/390/320px 상세·언어 전환·이미지·가로 넘침·메뉴·목록 이동 확인.
+
+
+## 2026-10-01 OpenAI 기반 에이전트 개발환경
+
+- 공식 OpenAI 문서 조사: Codex 권장 작업 방식, AGENTS.md, 저장소 스킬, 프로젝트 config, Docs MCP, 환경 준비·worktree. 출처와 적용 판단은 `docs/agent-development.md`에 기록.
+- 공통 규칙을 `AGENTS.md`로 통합하고 기존 스킬 10개를 `.agents/skills/`로 이동. 홈페이지 개발·브라우저 QA 스킬 2개를 추가해 총 12개 구성. Claude 호환 링크 유지.
+- `agent:setup`, `agent:doctor`, `deck:new`, `agent:smoke`, `agent:test`, `agent:check` 추가. 새 덱은 공통 런타임·다국어 UI·원고·draft 등록까지 생성하고 기존 파일·URL 충돌을 거부.
+- 브라우저 검증·덱 내보내기는 개별 임시 빌드와 포트를 사용. draft도 상태 변경 없이 검증·PNG/PDF 내보내기 가능. PR preview에 하네스 회귀·KO PC/모바일 검증·증거 아티팩트 추가.
+- 검증 중 발견한 company·nnn 덱의 모바일 하단 컨트롤 넘침을 슬라이드 표시 폭 제한으로 수정.
+- 검증: 환경 준비·진단, 스킬 12개 공식 validator, 기존 검사·배포 회귀 4개, 하네스 회귀 4개 통과. `agent:check`의 KO/EN/JA × 1280/390/320px 69개 조합 통과, 화면 증거 465장. 새 덱 골격 9개 조합도 별도 확인. 외부 미디어·폰트 요청 실패는 warnings에 기록.

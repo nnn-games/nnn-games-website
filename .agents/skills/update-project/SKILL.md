@@ -5,7 +5,7 @@ description: 기존 프로젝트의 문구·링크·갤러리·메타·표시 �
 
 # 프로젝트 수정 절차
 
-인자: `$ARGUMENTS` (slug 와 바꿀 내용)
+입력: 사용자 요청 (slug 와 바꿀 내용)
 
 ## 0. 사전 확인
 - `shared/data/projects.json`에서 대상을 찾고 현재 `status`, `featured`, `order`, `links`를 확인한다.

@@ -5,14 +5,16 @@ const fs = require('fs');
 const path = require('path');
 const net = require('net');
 const { spawn, spawnSync } = require('child_process');
+const { resolveBuildOutput } = require('./build-output');
 
 const ROOT = path.join(__dirname, '..', '..');
 const DIST = path.join(ROOT, 'dist');
 
-function ensureDist() {
-  if (fs.existsSync(path.join(DIST, 'index.html'))) return;
-  console.log('dist/ 가 없어 먼저 빌드합니다.');
-  const result = spawnSync(process.execPath, [path.join(ROOT, 'scripts', 'build.js')], { cwd: ROOT, stdio: 'inherit' });
+function ensureDist(directory, { rebuild, includeDraft }) {
+  if (!rebuild && fs.existsSync(path.join(directory, 'index.html'))) return;
+  const args = [path.join(ROOT, 'scripts', 'build.js'), '--out', path.relative(ROOT, directory)];
+  if (includeDraft) args.push('--include-drafts');
+  const result = spawnSync(process.execPath, args, { cwd: ROOT, stdio: 'inherit' });
   if (result.status !== 0) throw new Error('빌드 실패');
 }
 
@@ -44,16 +46,25 @@ function waitForServer(url, timeoutMs = 15000) {
   });
 }
 
-async function start() {
-  ensureDist();
+async function start({ directory = DIST, rebuild = false, includeDraft = false } = {}) {
+  directory = resolveBuildOutput(ROOT, directory);
+  ensureDist(directory, { rebuild, includeDraft });
   const port = await freePort();
   const bin = require.resolve('http-server/bin/http-server', { paths: [ROOT] });
-  const child = spawn(process.execPath, [bin, DIST, '-p', String(port), '-a', '127.0.0.1', '-c-1', '-s'], {
+  const child = spawn(process.execPath, [bin, directory, '-p', String(port), '-a', '127.0.0.1', '-c-1', '-s'], {
     cwd: ROOT,
     stdio: 'ignore'
   });
   const baseUrl = `http://127.0.0.1:${port}`;
-  await waitForServer(`${baseUrl}/index.html`);
+  let spawnError;
+  child.on('error', (error) => { spawnError = error; });
+  try {
+    await waitForServer(`${baseUrl}/index.html`);
+    if (spawnError) throw spawnError;
+  } catch (error) {
+    child.kill();
+    throw spawnError || error;
+  }
   return {
     baseUrl,
     stop: () => {

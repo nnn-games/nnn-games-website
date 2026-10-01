@@ -18,19 +18,28 @@
  *   node scripts/build.js            전체 빌드 (dist 초기화)
  *   node scripts/build.js --watch    변경 감시하며 재빌드 (삭제·공개 철회 반영)
  *   node scripts/build.js --serve    dist/ 를 http://localhost:8080 으로 서비스 (보통 --watch 와 함께)
+ *   node scripts/build.js --out tmp/preview --include-drafts  초안 포함 격리 빌드
  */
 
 const fs = require('fs');
 const path = require('path');
 const { spawn, spawnSync } = require('child_process');
 const { loadDecks } = require('./lib/deck-policy');
+const { resolveBuildOutput } = require('./lib/build-output');
 
 const ROOT = path.join(__dirname, '..');
 const args = new Set(process.argv.slice(2));
 const isWatch = args.has('--watch');
 const isServe = args.has('--serve');
-const OUTPUT = 'dist';
-const DIST = path.join(ROOT, OUTPUT);
+const outIndex = process.argv.indexOf('--out');
+if (outIndex !== -1 && (!process.argv[outIndex + 1] || process.argv[outIndex + 1].startsWith('--'))) {
+  throw new Error('--out 뒤에 tmp/<하위 폴더>를 지정하세요.');
+}
+const DIST = resolveBuildOutput(ROOT, outIndex === -1 ? 'dist' : process.argv[outIndex + 1]);
+const OUTPUT = path.relative(ROOT, DIST);
+if (args.has('--include-drafts') && OUTPUT === 'dist' && !isWatch) {
+  throw new Error('초안 일회성 빌드는 --out tmp/<하위 폴더>와 함께 실행하세요.');
+}
 const SITE_URL = 'https://www.triplengames.com';
 const PORT = process.env.PORT || 8080;
 
@@ -171,7 +180,7 @@ function writeSitemap() {
 
 function build({ clean }) {
   const started = Date.now();
-  const decks = loadDecks(ROOT, { includeDraft: isWatch });
+  const decks = loadDecks(ROOT, { includeDraft: isWatch || args.has('--include-drafts') });
   if (clean) fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
   for (const [srcRel, destRel] of buildMap(decks)) copyMapped(srcRel, destRel);

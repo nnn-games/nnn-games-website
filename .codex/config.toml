@@ -1,0 +1,9 @@
+# 계정·모델·권한은 개인/앱 설정을 상속한다. 프로젝트 범위만 공유한다.
+# trusted 프로젝트에서 다음 Codex 세션부터 읽힌다.
+web_search = "live"
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+required = false

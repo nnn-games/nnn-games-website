@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title data-deck-key="ui_page_title">{{TITLE}}</title>
+        <link rel="icon" href="../images/nnn-logo.png" />
+        <link rel="stylesheet" href="../slides/shared/deck.css" />
+        <link rel="stylesheet" href="deck.css" />
+    </head>
+    <body>
+        <main class="deck" id="deck">
+            <div class="deck-rail" aria-hidden="true"><span class="deck-rail-fill" id="deckRail"></span></div>
+            <header class="deck-bar deck-bar-top">
+                <span class="deck-wordmark">TRIPLE N GAMES</span>
+                <div class="deck-tools">
+                    <div class="deck-langs" role="group" data-deck-key-aria-label="ui_lang_group">{{LANG_BUTTONS}}</div>
+                    <button
+                        type="button"
+                        class="deck-tool"
+                        id="deckFull"
+                        aria-pressed="false"
+                        data-deck-key-aria-label="ui_fullscreen"
+                    >
+                        ⛶
+                    </button>
+                </div>
+            </header>
+            <div class="deck-viewport" id="deckViewport">
+                <div class="deck-stage" id="deckStage" role="group" data-deck-key-aria-label="ui_deck_label">
+                    <section
+                        class="slide starter-slide"
+                        data-slide="cover"
+                        data-theme="paper"
+                        role="region"
+                        aria-roledescription="slide"
+                    >
+                        <p class="starter-kicker">TRIPLE N GAMES</p>
+                        <h1 data-deck-key="cover_title">{{TITLE}}</h1>
+                        <p class="starter-lead" data-deck-key="cover_lead"></p>
+                    </section>
+                    <section
+                        class="slide starter-slide"
+                        data-slide="story"
+                        data-theme="paper"
+                        role="region"
+                        aria-roledescription="slide"
+                    >
+                        <p class="starter-kicker" data-deck-key="story_kicker"></p>
+                        <h2 data-deck-key="story_title"></h2>
+                        <p class="starter-lead" data-deck-key="story_lead"></p>
+                    </section>
+                    <section
+                        class="slide starter-slide"
+                        data-slide="next-steps"
+                        data-theme="dark"
+                        role="region"
+                        aria-roledescription="slide"
+                    >
+                        <p class="starter-kicker" data-deck-key="next_kicker"></p>
+                        <h2 data-deck-key="next_title"></h2>
+                        <p class="starter-lead" data-deck-key="next_lead"></p>
+                    </section>
+                </div>
+            </div>
+            <footer class="deck-bar deck-bar-bottom">
+                <button type="button" class="deck-nav" id="deckPrev" data-deck-key="ui_prev"></button>
+                <div class="deck-dots" id="deckDots" aria-label="Slides"></div>
+                <div class="deck-counter">
+                    <span id="deckCurrent"></span><span id="deckSep"> / </span><span id="deckTotal"></span>
+                </div>
+                <button type="button" class="deck-nav" id="deckNext">
+                    <span id="deckNextLabel" data-deck-key="ui_next"></span>
+                </button>
+            </footer>
+            <div class="deck-sr" id="deckAnnounce" aria-live="polite" aria-atomic="true"></div>
+        </main>
+        <script src="slides.js"></script>
+        <script src="../slides/shared/deck.js"></script>
+    </body>
+</html>

@@ -5,7 +5,7 @@ description: 웹 슬라이드 덱의 배포 상태를 바꾼다. archived 로 �
 
 # 덱 상태 전환 절차
 
-인자: `$ARGUMENTS` (덱 slug 와 목표 상태 `active` / `draft` / `archived`, 사유)
+입력: 사용자 요청 (덱 slug 와 목표 상태 `active` / `draft` / `archived`, 사유)
 
 ## 상태 의미
 

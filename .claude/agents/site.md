@@ -6,7 +6,7 @@ tools: Read, Edit, Write, Grep, Glob, Bash
 
 # 홈페이지 작업 안내
 
-루트 `CLAUDE.md`와 `README.md`를 따른다. 1인 개발 흐름에서 필요한 연관 파일은 함께 수정하고 검증한다.
+루트 `AGENTS.md`와 `README.md`를 따른다. 1인 개발 흐름에서 필요한 연관 파일은 함께 수정하고 검증한다.
 
 ## 작업 위치
 
@@ -28,4 +28,4 @@ tools: Read, Edit, Write, Grep, Glob, Bash
 
 `npm run dev`로 화면을 확인하고 `npm run check`를 실행한다. 기능 변경은 `docs/site/prd.md`, 계획·기록은 관련 프로젝트 문서와 전체 로드맵에 반영한다.
 
-프로젝트 반복 작업은 `.claude/skills/`의 `add-project`, `activate-project`, `update-project`, `retire-project`, `refresh-metrics`를 참고한다.
+프로젝트 반복 작업은 `.agents/skills/`의 `add-project`, `activate-project`, `update-project`, `retire-project`, `refresh-metrics`를 참고한다.

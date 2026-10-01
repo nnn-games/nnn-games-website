@@ -16,7 +16,7 @@ test('실제 빌드에서 상태별 배포·초안 개발·검색 제외를 검�
   };
   const exists = (file) => fs.existsSync(path.join(root, file));
   const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
-  for (const file of ['scripts/build.js', 'scripts/lib/deck-policy.js', 'tailwind.config.js', 'postcss.config.js']) {
+  for (const file of ['scripts/build.js', 'scripts/lib/deck-policy.js', 'scripts/lib/build-output.js', 'tailwind.config.js', 'postcss.config.js']) {
     write(file, fs.readFileSync(path.join(ROOT, file)));
   }
   fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(root, 'node_modules'), 'dir');
@@ -49,6 +49,19 @@ test('실제 빌드에서 상태별 배포·초안 개발·검색 제외를 검�
     assert.match(read('dist/company/index.html'), /content="noindex, nofollow"/);
     assert.equal((read('dist/company/index.html').match(/name="robots"/g) || []).length, 1);
     assert.doesNotMatch(read('dist/sitemap.xml'), /\/(company|draft|archived)\//);
+  });
+
+  await t.test('에이전트 초안 빌드는 운영 산출물을 바꾸지 않는다', () => {
+    const result = build('--out', 'tmp/agent-preview', '--include-drafts');
+    assert.equal(result.status, 0, result.stderr);
+    assert.ok(exists('tmp/agent-preview/draft/index.html'));
+    assert.equal(exists('tmp/agent-preview/archived'), false);
+    assert.equal(exists('dist/draft'), false);
+    assert.match(read('tmp/agent-preview/draft/index.html'), /content="noindex, nofollow"/);
+    assert.doesNotMatch(read('tmp/agent-preview/sitemap.xml'), /\/(company|draft|archived)\//);
+    assert.notEqual(build('--include-drafts').status, 0);
+    assert.notEqual(build('--out', 'site').status, 0);
+    assert.match(read('site/index.html'), /Homepage/);
   });
 
   await t.test('개발 모드는 초안을 포함하고 보관 전환 시 이전 파일을 제거한다', async () => {

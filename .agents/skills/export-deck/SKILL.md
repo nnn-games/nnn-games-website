@@ -5,10 +5,10 @@ description: 웹 슬라이드 덱을 슬라이드별 PNG 와 언어별 PDF 로 �
 
 # 덱 내보내기 절차
 
-인자: `$ARGUMENTS` (덱 slug, 언어, PDF/PNG 여부. 비우면 전체 덱·전체 언어·둘 다)
+입력: 사용자 요청 (덱 slug, 언어, PDF/PNG 여부. 비우면 전체 덱·전체 언어·둘 다)
 
 ## 0. 사전 확인
-- `decks/decks.json`에서 대상이 `archived`가 아닌지 확인한다. archived 덱은 빌드에 없으므로 내보낼 수 없다(필요하면 `/archive-deck`으로 `draft` 전환 후).
+- `decks/decks.json`에서 대상이 `archived`가 아닌지 확인한다. 명시한 draft 덱은 임시 빌드로 내보낸다. archived 덱은 상태 전환 요청이 있어야 포함할 수 있다.
 - 최신 지표를 인용하는 덱이면 내보내기 전에 `shared/data`가 최신인지(`metrics.updatedAt`) 사용자에게 알린다.
 - 결과물(`exports/`)은 git 에 추가하지 않는다. `.gitignore`에 있다.
 
@@ -21,7 +21,7 @@ npm run export:deck                    # 전체 덱, 전체 언어
 - 출력: `exports/decks/<slug>/<slug>-<lang>.pdf`, `exports/decks/<slug>/<lang>/<nn>-<slide-id>.png`, `manifest.json`
 - 옵션: `--pdf-only`, `--png-only`, `--out <dir>`
 
-## 2. CI 실행 (권장: 사용자에게 파일을 전달할 때)
+## 2. CI 실행 (사용자가 원격 실행을 요청한 경우)
 ```
 gh workflow run export-decks.yml -f slugs="jumpstart" -f langs="ko,en"
 gh run watch
