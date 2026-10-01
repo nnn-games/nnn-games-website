@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../slides/shared/deck.css">
-    <link rel="stylesheet" href="deck.css?v=20261002-13">
+    <link rel="stylesheet" href="deck.css?v=20261002-14">
 </head>
 <body class="deck-brand-jumpstart">
     <main class="deck" id="deck">
@@ -366,38 +366,14 @@
                         <h2 data-deck-key="research_title">Roblox 연구의 실전 적용</h2>
                         <p class="js-research-lead" data-deck-key="research_lead">Roblox의 3D AI·그래픽 연구를 참고해 실제 AI 제작 파이프라인에 적용하는 실험을 진행하고 있습니다.</p>
                     </header>
-                    <div class="js-research-grid">
-                        <article><h3 data-deck-key="research_card_cube">Cube</h3><p data-deck-key="research_apply_cube">프롬프트 기반 3D 에셋·장면 제작과 후처리 흐름을 탐색합니다.</p><pre class="js-research-bib" data-deck-key="research_bib_cube">@misc{cube2025,
-  author = {{Foundation AI Group at Roblox}},
-  title = {Cube: A Roblox View of 3D Intelligence},
-  year = {2025}
-}</pre></article>
-                        <article><h3 data-deck-key="research_card_mesh">Textured Mesh</h3><p data-deck-key="research_apply_mesh">Blender 전처리·메시 단순화·텍스처 재베이킹을 시험합니다.</p><pre class="js-research-bib" data-deck-key="research_bib_mesh">@misc{texturedMesh2025,
-  author = {Liu, Hsueh-Ti Derek and others},
-  title = {Simplifying Textured Triangle Meshes in the Wild},
-  year = {2025}
-}</pre></article>
-                        <article><h3 data-deck-key="research_card_line">Line Quadrics</h3><p data-deck-key="research_apply_line">실루엣·중요 특징을 보존하는 폴리곤 감소 규칙을 시험합니다.</p><pre class="js-research-bib" data-deck-key="research_bib_line">@misc{lineQuadrics2025,
-  author = {Liu, Hsueh-Ti Derek and others},
-  title = {Controlling Quadric Error Simplification with Line Quadrics},
-  year = {2025}
-}</pre></article>
-                        <article><h3 data-deck-key="research_card_cage">CageNet</h3><p data-deck-key="research_apply_cage">생성 캐릭터 정리에 분할·스키닝 접근을 활용할 수 있는지 검토합니다.</p><pre class="js-research-bib" data-deck-key="research_bib_cage">@misc{cageNet2025,
-  author = {Edelstein, Michal and others},
-  title = {CageNet: A Meta-Framework for Learning on Wild Meshes},
-  year = {2025}
-}</pre></article>
-                        <article><h3 data-deck-key="research_card_avatar">Avatar Setup</h3><p data-deck-key="research_apply_avatar">NPC·캐릭터의 리깅·스키닝 준비 과정을 줄이는 데 참고합니다.</p><pre class="js-research-bib" data-deck-key="research_bib_avatar">@misc{avatarSetup2024,
-  author = {Shi, Weiqi and others},
-  title = {End-to-end Automatic Body and Face Setup for Generative or User Created 3D Avatar},
-  year = {2024}
-}</pre></article>
-                        <article><h3 data-deck-key="research_card_slim">SLIM</h3><p data-deck-key="research_apply_slim">경량 표현·LoD 원리로 월드와 반복 프롭의 최적화를 검토합니다.</p><pre class="js-research-bib" data-deck-key="research_bib_slim">@misc{slim2025,
-  author = {Mani, Varun},
-  title = {Introducing SLIM: Scalable Lightweight Interactive Models},
-  year = {2025}
-}</pre></article>
-                    </div>
+                    <ul class="js-research-notes">
+                        <li><time datetime="2024">2024</time><span data-deck-key="research_reference_avatar">생성형 AI·사용자 제작 3D 아바타의 몸과 얼굴 자동 설정</span></li>
+                        <li><time datetime="2025">2025</time><span data-deck-key="research_reference_cube">Cube: 로블록스가 바라보는 3D 지능</span></li>
+                        <li><time datetime="2025">2025</time><span data-deck-key="research_reference_mesh">실제 환경에서 텍스처가 있는 3D 메시 단순화</span></li>
+                        <li><time datetime="2025">2025</time><span data-deck-key="research_reference_line">라인 쿼드릭을 활용한 3D 메시 단순화 제어</span></li>
+                        <li><time datetime="2025">2025</time><span data-deck-key="research_reference_cage">CageNet: 다양한 3D 메시에서 학습하는 메타 프레임워크</span></li>
+                        <li><time datetime="2025">2025</time><span data-deck-key="research_reference_slim">SLIM 소개: 확장 가능한 경량 인터랙티브 모델</span></li>
+                    </ul>
                     <p class="js-research-status" data-deck-key="research_status">적용 실험 단계 · 효과는 프로젝트별 테스트로 검증합니다.</p>
                 </section>
             </div>
@@ -411,7 +387,7 @@
         <p class="deck-sr" aria-live="polite" id="deckAnnounce"></p>
     </main>
 
-    <script src="slides.js?v=20261002-13"></script>
+    <script src="slides.js?v=20261002-14"></script>
     <script src="../slides/shared/deck.js"></script>
 </body>
 </html>

@@ -397,16 +397,14 @@
 
 /* 연구 근거와 적용 실험 */
 .js-research-lead { max-width: 52rem; margin-top: .7rem; color: var(--deck-muted); font-size: .85rem; line-height: 1.5; }
-.js-research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: .7rem 0; }
-.js-research-grid article { display: flex; flex-direction: column; padding: .7rem; border: 1px solid var(--deck-line); border-radius: .5rem; background: rgba(255,255,255,.5); }
-.js-research-grid h3 { color: var(--ketchup); font-size: .95rem; }
-.js-research-grid article > p { margin: .45rem 0 .65rem; font-size: .65rem; line-height: 1.5; }
-.js-research-bib { margin: auto 0 0; padding: .65rem; background: #ebe5dc; color: #51443e; font: .56rem/1.4 ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
-.js-research-status { margin-top: .55rem; color: var(--deck-muted); font-size: .55rem; line-height: 1.5; }
+.js-research-notes { margin: 1.2rem 0; padding: 0; list-style: none; }
+.js-research-notes li { display: flex; align-items: baseline; gap: 1.2rem; padding: .8rem 0; border-bottom: 1px solid var(--deck-line); font-size: .78rem; line-height: 1.5; }
+.js-research-notes time { flex: 0 0 2.5rem; color: var(--deck-muted); font-weight: 700; }
+.js-research-notes span { min-width: 0; }
+.js-research-status { margin-top: auto; color: var(--deck-muted); font-size: .65rem; line-height: 1.5; }
 
 @media screen and (max-width: 767px) {
-    .js-research-grid { grid-template-columns: 1fr; }
-    .js-research-bib { font-size: .65rem; }
+    .js-research-notes li { gap: .7rem; font-size: .8rem; }
     .js-research-status { font-size: .65rem; }
 
     .js-timeline { margin-top: 1rem; }

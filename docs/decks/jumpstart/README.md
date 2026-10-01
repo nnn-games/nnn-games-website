@@ -18,7 +18,7 @@
 | 17 | `progress-2026-10-02-stage-1` | 1단계 목표 4종·Enchant a Weapon 대표 이미지 |
 | 18 | `progress-2026-10-02-stage-2` | 2단계 목표·Hunt a Slime 대표 이미지 |
 | 19 | `progress-2026-10-02-stage-3` | 3단계 콘텐츠 업데이트·이벤트 목표·Tomato Splatter 대표 이미지 |
-| 20 | `progress-2026-10-02-research` | Roblox 연구의 AI 제작 파이프라인 적용 실험·BibTeX 6종 |
+| 20 | `progress-2026-10-02-research` | Roblox 연구의 AI 제작 파이프라인 적용 실험·연도와 연구 제목 6종 |
 
 사용자 제공 개발 계획(2026-10-02):
 
@@ -77,7 +77,7 @@
 
 ### 20장 연구의 실전 적용
 
-사용자 제공 [연구 적용 문서](roblox_research_to_project.md)를 요약했습니다. 원문은 자료로만 다루고 공개 링크의 초록·공식 설명을 2026-10-02 확인했습니다. 3D 생성(Cube), 메시 최적화(Textured Mesh Simplification·Line Quadrics), 캐릭터 셋업(Automatic Avatar Setup·CageNet), 월드 최적화(SLIM)의 4영역과 제작 흐름을 KO/EN으로 표시합니다. 20장은 연구별 6개 카드에 적용 시도와 BibTeX(`@misc`, 저자·제목·연도)를 표시하며 하이퍼링크를 사용하지 않습니다. 원문 링크는 연구 적용 문서에 보존합니다. BibTeX의 `and others`는 공동 저자 생략 표기입니다.
+사용자 제공 [연구 적용 문서](roblox_research_to_project.md)를 요약했습니다. 원문은 자료로만 다루고 공개 링크의 초록·공식 설명을 2026-10-02 확인했습니다. 3D 생성(Cube), 메시 최적화(Textured Mesh Simplification·Line Quadrics), 캐릭터 셋업(Automatic Avatar Setup·CageNet), 월드 최적화(SLIM)의 4영역과 제작 흐름을 KO/EN으로 표시합니다. 20장은 카드·BibTeX 없이 1열 노트 형태로 발표 연도와 연구 제목 6종만 나열합니다. KO는 이해를 돕는 번역 제목, EN은 원문 제목을 표시합니다. 하이퍼링크는 사용하지 않으며 원문 링크와 서지 정보는 연구 적용 문서에 보존합니다. SLIM은 기술 발표입니다.
 
 팀의 적용 시도는 사용자 제공 문서에 근거합니다. 외부 출처는 연구 내용의 근거이며 팀의 구현 완료나 성능 개선을 증명하지 않습니다. CageNet은 향후 적용 검토, Cube는 탐색, 특징 보존 감소는 시험 단계로 표현합니다. SLIM은 연구 논문이 아닌 2025-12-05 공개 기술 발표로 구분합니다. Textured Mesh 논문은 arXiv 최초 공개 2024-09-23·개정/SIGGRAPH Asia 2025이며 원문의 단일 2025 표기를 보완합니다. 자동 아바타 셋업 연구를 R15 애니메이션 제작 완료로 확대 해석하지 않습니다.
 
