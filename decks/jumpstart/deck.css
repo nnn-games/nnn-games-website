@@ -326,7 +326,43 @@
 .js-final-line span { color: #fff; font-size: .86rem; font-weight: 800; line-height: 1.35; white-space: pre-line; }
 .js-final-line b { color: var(--tomato); font: 900 1.05rem/1 Inter, sans-serif; letter-spacing: -.04em; }
 
+/* 날짜별 진행현황 챕터 */
+.js-progress-chapter { justify-content: space-between; }
+.js-progress-chapter-copy { margin: auto 0; padding: 2rem 0; }
+.js-progress-date { color: var(--gold); font: 900 4.4rem/1.1 Inter, sans-serif; letter-spacing: -.06em; }
+.js-progress-chapter h2 { margin-top: 1rem; font-size: 2.8rem; line-height: 1.2; letter-spacing: -.04em; }
+.js-progress-chapter-copy > p:last-child { margin-top: 1rem; color: #bdb3af; font-size: 1rem; }
+.js-progress-brand { padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.15); color: var(--tomato); font: 900 .8rem/1.2 Inter, sans-serif; letter-spacing: .1em; }
+.js-progress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: auto 0; padding: 1.5rem 0; }
+.js-progress-grid article { min-height: 13rem; padding: 1.4rem; border: 1px solid var(--deck-line); border-radius: .7rem; background: rgba(255,255,255,.5); }
+.js-progress-step { color: var(--tomato); font-size: .7rem; font-weight: 800; }
+.js-progress-lead { margin-top: .8rem; color: var(--deck-muted); font-size: .9rem; line-height: 1.5; }
+.js-progress-grid h3 { margin-top: 1.5rem; color: var(--ketchup); font-size: 1.1rem; }
+.js-progress-grid p { margin-top: .8rem; color: var(--deck-muted); font-size: .78rem; line-height: 1.6; }
+
+/* 단계별 목표와 프로젝트 이미지 */
+.js-stage-layout { display: grid; grid-template-columns: 1fr 1.25fr; align-items: center; gap: 2rem; margin: auto 0; padding: 1.5rem 0; }
+.js-stage-goal-list { display: grid; gap: 1.2rem; margin: 0; padding: 0; list-style: none; }
+.js-stage-goal-list li { display: flex; align-items: baseline; gap: .8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--deck-line); }
+.js-stage-goal-list span { flex-shrink: 0; white-space: nowrap; color: var(--tomato); font: 800 .75rem/1.4 Inter, sans-serif; }
+.js-stage-goal-list p { font-size: 1rem; font-weight: 700; line-height: 1.5; }
+.js-stage-image { min-width: 0; margin: 0; }
+.js-stage-image img { display: block; width: 100%; height: auto; }
+.js-stage-image figcaption { margin-top: .7rem; color: var(--deck-muted); font: 700 .75rem/1.4 Inter, sans-serif; }
+
+.js-stage-operations-list { gap: .8rem; }
+.js-stage-operations-list li { padding-bottom: .65rem; }
+.js-stage-operations-list p { font-size: .9rem; }
+
 @media screen and (max-width: 767px) {
+    .js-stage-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+    .js-stage-goal-list { gap: .8rem; }
+    .js-stage-goal-list p { font-size: .9rem; }
+    .js-progress-date { font-size: 2.7rem; }
+    .js-progress-chapter h2 { font-size: 2rem; }
+    .js-progress-grid { grid-template-columns: 1fr; gap: .8rem; }
+    .js-progress-grid article { min-height: 0; padding: 1.2rem; }
+    .js-progress-grid h3 { margin-top: .65rem; }
     .deck-brand-jumpstart, .deck-brand-jumpstart .deck, .deck-brand-jumpstart .deck-viewport { width: 100vw; max-width: 100vw; overflow-x: hidden; }
     .deck-brand-jumpstart .deck-stage, .deck-brand-jumpstart .slide { width: 100vw; max-width: 100vw; overflow-x: hidden; }
     .deck-brand-jumpstart .deck-wordmark { max-width: 112px; overflow: hidden; font-size: 10px; white-space: nowrap; }
