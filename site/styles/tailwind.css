@@ -621,6 +621,18 @@
   [data-project-id="hunt-a-slime"] .detail-gallery-card:last-child {
     @apply mx-auto w-full max-w-[640px];
   }
+  .detail-highlight-image {
+    @apply mb-5 block h-auto w-full rounded-xl;
+  }
+  .detail-content-section {
+    @apply mt-8 scroll-mt-24;
+  }
+  [data-project-id="hunt-a-slime"] .detail-project-grid {
+    @apply grid-cols-1;
+  }
+  [data-project-id="hunt-a-slime"] .detail-sidebar {
+    @apply grid gap-5 space-y-0 md:grid-cols-2;
+  }
   .project-detail-error,
   .project-detail-loading {
     @apply rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-10 text-center text-sm text-gray-500;

@@ -104,7 +104,7 @@
                         : 'btn-primary';
                 const label = renderText(button.text, lang);
                 return `
-                    <a href="${u.escapeHtml(url)}" class="${styleClass}" target="_blank" rel="noreferrer"
+                    <a href="${u.escapeHtml(url)}" class="${styleClass}"${url.startsWith('#') ? '' : ' target="_blank" rel="noreferrer"'}
                         data-cta="${u.escapeHtml(button.type || 'external')}" data-project-id="${u.escapeHtml(projectId)}"
                         data-cta-origin="detail-header">${label}</a>
                 `;
@@ -132,6 +132,7 @@
         const items = (highlights || [])
             .map((item) => `
                 <article class="detail-highlight-card">
+                    ${item.image ? `<img class="detail-highlight-image" src="${u.escapeHtml(item.image.src)}" alt="${u.escapeHtml(u.pickLocalized(item.image.alt, lang))}" loading="lazy">` : ''}
                     <p class="detail-highlight-eyebrow">${renderText(item.eyebrow, lang)}</p>
                     <h3>${renderText(item.title, lang)}</h3>
                     <p>${renderText(item.description, lang)}</p>
@@ -154,7 +155,7 @@
         `;
     };
 
-    const buildLinks = function (links, project, lang) {
+    const buildLinks = function (links, project, lang, hideEmpty) {
         const u = U();
         const projectId = project ? project.id : '';
         const items = (links || [])
@@ -172,6 +173,8 @@
             })
             .filter(Boolean)
             .join('');
+
+        if (!items && hideEmpty) return '';
 
         const content = items || `
             <div class="detail-link-card detail-link-card-muted">
@@ -282,6 +285,22 @@
     };
 
     // 운영 중(표준) 레이아웃
+    // 콘텐츠 설정이 있는 프로젝트에만 추가 소개 섹션을 표시합니다.
+    const buildContentSections = function (sections, lang) {
+        const u = U();
+        return (sections || []).map((section) => `
+            <section id="${u.escapeHtml(section.id)}" class="detail-section detail-content-section">
+                <div class="section-header section-header-left detail-section-header">
+                    <p class="section-kicker">${renderText(section.eyebrow, lang)}</p>
+                    <h2>${renderText(section.title, lang)}</h2>
+                </div>
+                <div class="detail-copy">
+                    ${(section.paragraphs || []).map((paragraph) => `<p>${renderText(paragraph, lang)}</p>`).join('')}
+                </div>
+            </section>
+        `).join('');
+    };
+
     const buildStandardPage = function (config, project, lang) {
         const u = U();
         const title = u.pickLocalized(config.hero && config.hero.title, lang)
@@ -293,7 +312,7 @@
             .join('');
         const media = buildMedia(config.media, lang, title);
         const highlights = buildHighlights(config.highlights, lang);
-        const links = buildLinks(config.links, project, lang);
+        const links = buildLinks(config.links, project, lang, config.hideEmptyLinks);
         const gallery = buildGallery(config.gallery, lang);
         const heroPlatform = u.pickLocalized(config.hero && config.hero.platform, lang)
             || ((project && project.platform) ? `Platform: ${project.platform}` : 'Platform: Roblox');
@@ -338,6 +357,7 @@
                         ${buildFeatures(config.features, lang)}
                     </aside>
                 </div>
+                ${buildContentSections(config.sections, lang)}
                 ${gallery}
             </section>
         `;

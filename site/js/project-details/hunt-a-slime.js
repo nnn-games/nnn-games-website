@@ -1,79 +1,254 @@
-// 사용자 제공 프로젝트 이미지. 상세 게임 기획 확정 시 소개를 갱신합니다.
+// Hunt a Slime — 사용자 제공 게임 소개서 기반의 개발 중 상세 콘텐츠 (KO / EN / JA).
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
 window.ProjectDetailConfigs['hunt-a-slime'] = {
+    "hideEmptyLinks": true,
     "seo": {
         "title": {
-            "ko": "Hunt a slime - NNN GAMES",
-            "en": "Hunt a slime - NNN GAMES",
-            "ja": "Hunt a slime - NNN GAMES"
+            "ko": "Hunt a Slime - NNN GAMES",
+            "en": "Hunt a Slime - NNN GAMES",
+            "ja": "Hunt a Slime - NNN GAMES"
         },
         "description": {
-            "ko": "말랑한 슬라임을 찾아 초록빛 세계로 떠나는 사냥 모험 콘셉트.",
-            "en": "A hunting adventure concept that follows bouncy slimes into a vibrant green world.",
-            "ja": "ぷるぷるのスライムを探し、緑豊かな世界へ出かけるハンティングアドベンチャーのコンセプト。"
+            "ko": "슬라임을 사냥하고 전리품으로 장비와 스킬을 성장시키는 Roblox Action RPG. 현재 개발 중입니다.",
+            "en": "A Roblox Action RPG about hunting slimes and growing stronger through loot, equipment, and skills. Currently in development.",
+            "ja": "スライムを狩り、戦利品で装備とスキルを育てるRobloxのAction RPG。現在開発中です。"
         },
-        "ogImage": "assets/huntaslime/hunt-a-slime-main.webp"
+        "ogImage": "assets/huntaslime/hunt-a-slime-preview.webp",
+        "keywords": {
+            "ko": "Roblox, Hunt a Slime, Action RPG, Gelaria, NNN GAMES",
+            "en": "Roblox, Hunt a Slime, Action RPG, Gelaria, NNN GAMES",
+            "ja": "Roblox, Hunt a Slime, Action RPG, Gelaria, NNN GAMES"
+        }
     },
     "hero": {
         "title": {
-            "ko": "Hunt a slime",
-            "en": "Hunt a slime",
-            "ja": "Hunt a slime"
+            "ko": "Hunt a Slime",
+            "en": "Hunt a Slime",
+            "ja": "Hunt a Slime"
         },
         "tagline": {
-            "ko": "말랑한 슬라임을 찾아 초록빛 세계로 떠나는 사냥 모험 콘셉트.",
-            "en": "A hunting adventure concept that follows bouncy slimes into a vibrant green world.",
-            "ja": "ぷるぷるのスライムを探し、緑豊かな世界へ出かけるハンティングアドベンチャーのコンセプト。"
+            "ko": "쏟아지는 슬라임을 처치하고, 전리품으로 더 강해지세요.",
+            "en": "Defeat waves of slimes and grow stronger with every haul of loot.",
+            "ja": "押し寄せるスライムを倒し、戦利品でさらに強くなろう。"
         },
         "genre": {
-            "ko": "장르 콘셉트: 사냥 · 모험",
-            "en": "Genre concept: Hunting · Adventure",
-            "ja": "ジャンル構想: ハンティング・冒険"
+            "ko": "장르: Action RPG",
+            "en": "Genre: Action RPG",
+            "ja": "ジャンル: Action RPG"
         },
         "platform": {
             "ko": "플랫폼: Roblox",
             "en": "Platform: Roblox",
             "ja": "プラットフォーム: Roblox"
+        },
+        "status": {
+            "ko": "개발 중",
+            "en": "In development",
+            "ja": "開発中"
         }
     },
     "snapshot": {
         "launch": {
-            "ko": "2026년 11월 출시 예정",
-            "en": "Expected November 2026",
-            "ja": "2026年11月公開予定"
+            "ko": "추후 공개",
+            "en": "To be announced",
+            "ja": "後日公開"
+        },
+        "status": {
+            "ko": "개발 중 · 기획 및 홍보 비주얼 제작 단계",
+            "en": "In development · Game planning and promotional visuals",
+            "ja": "開発中・ゲーム企画とプロモーションビジュアルの制作段階"
+        },
+        "client": {
+            "ko": "미정",
+            "en": "To be confirmed",
+            "ja": "未定"
+        },
+        "stack": {
+            "ko": "추후 공개",
+            "en": "To be announced",
+            "ja": "後日公開"
         }
     },
     "media": {
         "type": "image",
-        "src": "assets/huntaslime/hunt-a-slime-main.webp",
+        "src": "assets/huntaslime/hunt-a-slime-preview.webp",
         "alt": {
-            "ko": "달빛 아래 슬라임과 황금 검을 그린 Hunt a slime 대표 이미지",
-            "en": "Hunt a slime artwork with slimes and a golden sword under moonlight",
-            "ja": "月明かりの下のスライムと金色の剣を描いたHunt a slimeのメイン画像"
+            "ko": "달빛 비치는 유적 속 베이컨 헤어 캐릭터와 라임색 슬라임, Hunt a Slime 타이틀",
+            "en": "Hunt a Slime title artwork with a bacon-haired character and lime-green slimes in moonlit ruins",
+            "ja": "月明かりの遺跡に立つベーコンヘアのキャラクターとライム色のスライム、Hunt a Slimeのタイトル"
         }
     },
-    "gallery": [
+    "overview": [
         {
-            "src": "assets/huntaslime/hunt-a-slime-main-gallery-1.webp",
-            "alt": {
-                "ko": "달빛 비치는 유적에서 검을 휘두르는 캐릭터와 초록 슬라임",
-                "en": "A character swinging a sword among green slimes in moonlit ruins",
-                "ja": "月明かりの遺跡で緑のスライムに囲まれ、剣を振るうキャラクター"
+            "ko": "Hunt a Slime은 몰려오는 슬라임을 사냥하고, 전리품을 모아 캐릭터를 성장시키는 Roblox Action RPG입니다. 더 좋은 장비와 자신만의 스킬 조합으로 더 강력한 슬라임과 보스에 도전하는 모험을 목표로 개발 중입니다.",
+            "en": "Hunt a Slime is a Roblox Action RPG in development, built around hunting waves of slimes, collecting loot, and growing your character. The adventure aims to let you take on stronger slimes and bosses with better equipment and your own skill combinations.",
+            "ja": "Hunt a Slimeは、押し寄せるスライムを狩り、戦利品を集めてキャラクターを育てるRobloxのAction RPGです。より良い装備と自分だけのスキルの組み合わせで、強力なスライムやボスに挑む冒険を目指して開発中です。"
+        }
+    ],
+    "highlights": [
+        {
+            "eyebrow": {
+                "ko": "액션",
+                "en": "Action",
+                "ja": "アクション"
+            },
+            "title": {
+                "ko": "쏟아지는 슬라임 무리",
+                "en": "Waves of slimes",
+                "ja": "押し寄せるスライムの群れ"
+            },
+            "description": {
+                "ko": "몰려오는 슬라임 무리를 처치하는 시원한 액션을 기획하고 있습니다. 귀여운 몬스터와 친근한 모험의 분위기를 함께 담습니다.",
+                "en": "We are planning satisfying action against waves of slimes, combining cute monsters with an approachable adventure.",
+                "ja": "押し寄せるスライムの群れを倒す爽快なアクションを企画中。かわいいモンスターと親しみやすい冒険の雰囲気を大切にしています。"
+            },
+            "image": {
+                "src": "assets/huntaslime/hunt-a-slime-main-gallery-1.webp",
+                "alt": {
+                    "ko": "달빛 비치는 유적에서 검을 휘두르는 캐릭터와 초록 슬라임",
+                    "en": "A character swinging a sword among green slimes in moonlit ruins",
+                    "ja": "月明かりの遺跡で緑のスライムに囲まれ、剣を振るうキャラクター"
+                }
             }
         },
         {
-            "src": "assets/huntaslime/icon-slash.webp",
-            "alt": {
-                "ko": "검을 들어 올린 캐릭터와 커다란 초록 슬라임의 정사각형 이미지",
-                "en": "Square artwork of a character raising a sword beside a large green slime",
-                "ja": "剣を掲げるキャラクターと大きな緑のスライムを描いた正方形の画像"
+            "eyebrow": {
+                "ko": "전리품과 성장",
+                "en": "Loot & Growth",
+                "ja": "戦利品と成長"
+            },
+            "title": {
+                "ko": "나만의 장비와 스킬 조합",
+                "en": "Your equipment, your skills",
+                "ja": "自分だけの装備とスキル"
+            },
+            "description": {
+                "ko": "전리품을 모으고 장비를 교체하며 스킬을 성장시키는 흐름을 준비하고 있습니다. 자신만의 조합으로 더 강한 적에 도전하는 것이 목표입니다.",
+                "en": "We are designing a loop of collecting loot, upgrading equipment, and developing skills, so you can challenge stronger enemies with your own combinations.",
+                "ja": "戦利品を集め、装備を替え、スキルを育てる流れを準備中。自分だけの組み合わせで、より強い敵に挑む体験を目指しています。"
+            },
+            "image": {
+                "src": "assets/huntaslime/hunt-a-slime-main.webp",
+                "alt": {
+                    "ko": "슬라임 사이에 빛나는 황금 검과 동전, 보석 전리품",
+                    "en": "A glowing golden sword, coins, and gem loot among slimes",
+                    "ja": "スライムの間で輝く金色の剣とコイン、宝石の戦利品"
+                }
+            }
+        },
+        {
+            "eyebrow": {
+                "ko": "슬라임과 보스",
+                "en": "Slimes & Bosses",
+                "ja": "スライムとボス"
+            },
+            "title": {
+                "ko": "분열·합체하는 슬라임",
+                "en": "Slimes that split and merge",
+                "ja": "分裂・合体するスライム"
+            },
+            "description": {
+                "ko": "분열·합체하는 슬라임과 거대한 보스에 도전하는 전투를 기획하고 있습니다. 슬라임 고유의 규칙이 사냥에 변화를 더합니다.",
+                "en": "Planned encounters include slimes that split and merge, along with giant bosses. Slime-specific behaviors are intended to bring variety to each hunt.",
+                "ja": "分裂・合体するスライムや巨大なボスに挑む戦闘を企画中。スライムならではのルールで、狩りに変化を加えます。"
+            },
+            "image": {
+                "src": "assets/huntaslime/icon-slash.webp",
+                "alt": {
+                    "ko": "검을 들어 올린 캐릭터와 커다란 초록 슬라임의 정사각형 이미지",
+                    "en": "Square artwork of a character raising a sword beside a large green slime",
+                    "ja": "剣を掲げるキャラクターと大きな緑のスライムを描いた正方形の画像"
+                }
             }
         }
     ],
-    "developmentNote": {
-        "ko": "개발 중인 프로젝트의 소개 이미지입니다. 상세 게임 내용은 추후 공개됩니다.",
-        "en": "These images introduce the project currently in development. Gameplay details will be announced later.",
-        "ja": "開発中のプロジェクトを紹介する画像です。ゲームの詳細は後日お知らせします。"
-    }
+    "features": [
+        {
+            "title": {
+                "ko": "이런 플레이어를 위한 모험",
+                "en": "An adventure for players who enjoy",
+                "ja": "こんなプレイヤーに向けた冒険"
+            },
+            "description": {
+                "ko": "귀여운 몬스터와의 액션, 전리품 수집, 캐릭터 성장을 즐기는 Roblox 플레이어를 위한 게임을 만들고 있습니다.",
+                "en": "We are building for Roblox players who enjoy action with cute monsters, collecting loot, and growing their characters.",
+                "ja": "かわいいモンスターとのアクション、戦利品の収集、キャラクターの成長を楽しむRobloxプレイヤーに向けて制作しています。"
+            }
+        }
+    ],
+    "sections": [
+        {
+            "id": "gameplay-loop",
+            "eyebrow": {
+                "ko": "플레이 흐름",
+                "en": "Gameplay Loop",
+                "ja": "プレイの流れ"
+            },
+            "title": {
+                "ko": "사냥에서 다음 모험으로",
+                "en": "From one hunt to the next adventure",
+                "ja": "狩りから次の冒険へ"
+            },
+            "paragraphs": [
+                {
+                    "ko": "지역 탐험 → 슬라임 사냥 → 전리품 획득 → 장비 교체·스킬 성장 → 다음 지역과 보스에 도전",
+                    "en": "Explore a region → Hunt slimes → Collect loot → Upgrade equipment and skills → Challenge the next region and its bosses",
+                    "ja": "エリア探索 → スライム狩り → 戦利品獲得 → 装備の変更・スキル育成 → 次のエリアとボスに挑戦"
+                }
+            ]
+        },
+        {
+            "id": "gelaria",
+            "eyebrow": {
+                "ko": "세계관",
+                "en": "World",
+                "ja": "世界観"
+            },
+            "title": {
+                "ko": "젤라리아의 슬라임 사냥꾼",
+                "en": "Slime hunters of Gelaria",
+                "ja": "ジェラリアのスライムハンター"
+            },
+            "paragraphs": [
+                {
+                    "ko": "생명의 점액이 흐르는 세계 젤라리아(Gelaria). 온순했던 슬라임들이 오염된 원액의 영향으로 무엇이든 삼키며 세계를 뒤덮기 시작했습니다. 플레이어는 사냥꾼이 되어 숲과 폐허를 지나 슬라임 군주들을 추적합니다.",
+                    "en": "In Gelaria, a world flowing with the slime of life, once-gentle slimes have begun swallowing everything and spreading across the land under the influence of a corrupted essence. As a hunter, you travel through forests and ruins to track down the slime lords.",
+                    "ja": "生命の粘液が流れる世界、ジェラリア（Gelaria）。おとなしかったスライムたちは、汚染された原液の影響であらゆるものを飲み込み、世界を覆い始めました。プレイヤーはハンターとなり、森や廃墟を抜けてスライムの君主たちを追います。"
+                }
+            ]
+        },
+        {
+            "id": "development-news",
+            "eyebrow": {
+                "ko": "개발 소식",
+                "en": "Development Updates",
+                "ja": "開発情報"
+            },
+            "title": {
+                "ko": "새로운 모험을 준비하고 있습니다",
+                "en": "A new adventure is taking shape",
+                "ja": "新しい冒険を準備中"
+            },
+            "paragraphs": [
+                {
+                    "ko": "현재 게임 기획과 홍보 비주얼을 제작하고 있습니다. 소개된 전투·전리품·성장 시스템과 슬라임 고유 규칙은 개발 목표이며, 공개 체험 주소와 출시 일정은 확정 후 이 페이지에서 안내하겠습니다.",
+                    "en": "We are currently working on game planning and promotional visuals. Combat, loot, progression, and slime-specific mechanics described here are development goals. The public experience link and launch schedule will be shared on this page once confirmed.",
+                    "ja": "現在、ゲーム企画とプロモーションビジュアルを制作しています。紹介した戦闘・戦利品・成長システムやスライム独自のルールは開発目標です。公開体験のリンクとリリース時期は、確定後にこのページでお知らせします。"
+                }
+            ]
+        }
+    ],
+    "ctaButtons": [
+        {
+            "type": "development-news",
+            "style": "primary",
+            "url": "#development-news",
+            "text": {
+                "ko": "개발 소식 확인하기",
+                "en": "View development updates",
+                "ja": "開発情報を見る"
+            }
+        }
+    ]
 };

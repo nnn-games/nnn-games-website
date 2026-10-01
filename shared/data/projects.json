@@ -386,14 +386,14 @@
     {
       "id": "hunt-a-slime",
       "title": {
-        "ko": "Hunt a slime",
-        "en": "Hunt a slime",
-        "ja": "Hunt a slime"
+        "ko": "Hunt a Slime",
+        "en": "Hunt a Slime",
+        "ja": "Hunt a Slime"
       },
       "description": {
-        "ko": "말랑한 슬라임을 찾아 초록빛 세계로 떠나는 사냥 모험 콘셉트.",
-        "en": "A hunting adventure concept that follows bouncy slimes into a vibrant green world.",
-        "ja": "ぷるぷるのスライムを探し、緑豊かな世界へ出かけるハンティングアドベンチャーのコンセプト。"
+        "ko": "슬라임을 사냥하고 전리품으로 장비와 스킬을 성장시키는 Roblox Action RPG. 현재 개발 중입니다.",
+        "en": "A Roblox Action RPG about hunting slimes and growing stronger through loot, equipment, and skills. Currently in development.",
+        "ja": "スライムを狩り、戦利品で装備とスキルを育てるRobloxのAction RPG。現在開発中です。"
       },
       "image": "assets/huntaslime/hunt-a-slime-preview.webp",
       "detailPage": "hunt-a-slime.html",
@@ -401,7 +401,8 @@
       "status": "development",
       "featured": true,
       "order": 30,
-      "launchDate": "2026-11",
+      "launchDate": null,
+      "detailRenderer": "standard",
       "platform": "Roblox",
       "client": "",
       "technologies": [],
