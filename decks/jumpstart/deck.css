@@ -340,6 +340,31 @@
 .js-progress-grid h3 { margin-top: 1.5rem; color: var(--ketchup); font-size: 1.1rem; }
 .js-progress-grid p { margin-top: .8rem; color: var(--deck-muted); font-size: .78rem; line-height: 1.6; }
 
+/* 개발 계획의 프로젝트와 월간 타임라인 */
+.js-project-1 { --project-color: #255bbc; }
+.js-project-2 { --project-color: #35742b; }
+.js-project-3 { --project-color: #c93220; }
+.js-progress-summary .js-progress-grid { margin: 1.1rem 0; padding: 0; }
+.js-progress-summary .js-progress-grid article { min-height: 0; padding: 1rem; }
+.js-progress-summary .js-progress-grid h3 { margin-top: .8rem; font-size: .95rem; }
+.js-progress-summary .js-progress-grid p { font-size: .65rem; }
+.js-progress-project { display: block; margin-top: .5rem; color: var(--project-color); font: 800 1rem/1.3 Inter, sans-serif; }
+.js-timeline { margin-top: auto; }
+.js-timeline > h3 { margin-bottom: .65rem; color: var(--deck-ink); font-size: .95rem; }
+.js-timeline-axis, .js-timeline-row { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1rem; align-items: center; }
+.js-timeline-axis > div, .js-timeline-track { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.js-timeline-axis b { color: var(--deck-muted); font: 700 .65rem/1.5 Inter, sans-serif; text-align: center; }
+.js-timeline-row { margin-top: .45rem; }
+.js-timeline-row > b { color: var(--project-color); font: 800 .75rem/1.3 Inter, sans-serif; }
+.js-timeline-cell, .js-timeline-launch { min-height: 2.4rem; border-left: 1px solid var(--deck-line); background: rgba(255,255,255,.5); }
+.js-timeline-launch { display: flex; flex-direction: column; justify-content: center; gap: .25rem; padding: .3rem .5rem; border-top: 2px solid var(--project-color); color: var(--project-color); }
+.js-timeline-launch strong { font: 900 .9rem/1 Inter, sans-serif; }
+.js-timeline-launch progress { display: block; width: 100%; height: .3rem; border: 0; border-radius: 0; background: var(--deck-line); color: var(--project-color); accent-color: var(--project-color); appearance: none; }
+.js-timeline-launch progress::-webkit-progress-bar { background: var(--deck-line); }
+.js-timeline-launch progress::-webkit-progress-value { background: var(--project-color); }
+.js-timeline-launch progress::-moz-progress-bar { background: var(--project-color); }
+.js-timeline-note { margin-top: .65rem; color: var(--deck-muted); font-size: .5rem; line-height: 1.5; }
+
 /* 단계별 목표와 프로젝트 이미지 */
 .js-stage-layout { display: grid; grid-template-columns: 1fr 1.25fr; align-items: center; gap: 2rem; margin: auto 0; padding: 1.5rem 0; }
 .js-stage-goal-list { display: grid; gap: 1.2rem; margin: 0; padding: 0; list-style: none; }
@@ -361,7 +386,30 @@
 .js-stage-operations-list li { padding-bottom: .65rem; }
 .js-stage-operations-list p { font-size: .9rem; }
 
+/* 연구 근거와 적용 실험 */
+.js-research-lead { max-width: 52rem; margin-top: .7rem; color: var(--deck-muted); font-size: .85rem; line-height: 1.5; }
+.js-research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin: 1rem 0; }
+.js-research-grid article { display: flex; flex-direction: column; padding: 1rem; border: 1px solid var(--deck-line); border-radius: .5rem; background: rgba(255,255,255,.5); }
+.js-research-grid h3 { color: var(--ketchup); font-size: .95rem; }
+.js-research-grid article > p { margin: .5rem 0 .7rem; font-size: .72rem; line-height: 1.5; }
+.js-research-refs { display: flex; flex-wrap: wrap; gap: .35rem .8rem; margin-top: auto; }
+.js-research-refs a { color: #255bbc; font: 700 .6rem/1.5 Inter, sans-serif; text-decoration: underline; text-underline-offset: .15rem; }
+.js-research-flow { margin-top: auto; padding: .7rem 1rem; background: var(--night); color: var(--gold); font-size: .7rem; font-weight: 700; line-height: 1.5; text-align: center; }
+.js-research-status { margin-top: .55rem; color: var(--deck-muted); font-size: .55rem; line-height: 1.5; }
+
 @media screen and (max-width: 767px) {
+    .js-research-grid { grid-template-columns: 1fr; }
+    .js-research-refs a { font-size: .7rem; }
+    .js-research-status { font-size: .65rem; }
+
+    .js-timeline { margin-top: 1rem; }
+    .js-timeline-axis, .js-timeline-row { grid-template-columns: 1fr; gap: .4rem; }
+    .js-timeline-axis > span { display: none; }
+    .js-timeline-axis b { font-size: .55rem; }
+    .js-timeline-row { margin-top: .8rem; }
+    .js-timeline-launch { padding: .3rem; }
+    .js-timeline-note { font-size: .6rem; }
+
     .js-stage-layout { grid-template-columns: 1fr; gap: 1.5rem; }
     .js-stage-goal-list { gap: .8rem; }
     .js-stage-goal-list p { font-size: .9rem; }
