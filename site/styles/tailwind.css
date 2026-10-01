@@ -610,6 +610,17 @@
   .detail-gallery-card img {
     @apply h-full w-full object-cover;
   }
+  /* Hunt a slime의 가로·정사각형 이미지를 원본 비율로 표시합니다. */
+  [data-project-id="hunt-a-slime"] .detail-media-image,
+  [data-project-id="hunt-a-slime"] .detail-gallery-card img {
+    @apply block h-auto w-full object-contain;
+  }
+  [data-project-id="hunt-a-slime"] .detail-gallery-grid {
+    @apply grid grid-cols-1 items-start;
+  }
+  [data-project-id="hunt-a-slime"] .detail-gallery-card:last-child {
+    @apply mx-auto w-full max-w-[640px];
+  }
   .project-detail-error,
   .project-detail-loading {
     @apply rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-10 text-center text-sm text-gray-500;

@@ -2,7 +2,7 @@
 // - 데이터 소스: js/project-details/<slug>.js (config) + data/projects.json (project)
 // - 모드: project.detailRenderer > config.mode > status (development 이면 간소화 레이아웃, 그 외 표준 레이아웃)
 //   standard    : 히어로 / 미디어 / 개요 / 핵심 포인트 / 링크 / 스냅샷 / 특징 / 갤러리
-//   development : 히어로(제목·한 줄 소개·장르·플랫폼·출시 예정) / 프리뷰 이미지 / 안내문
+//   development : 히어로(제목·한 줄 소개·장르·플랫폼·출시 예정) / 프리뷰 이미지 / 안내문 / 선택 갤러리
 (function () {
     window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
@@ -343,7 +343,7 @@
         `;
     };
 
-    // 개발 중 레이아웃: 제목 / 한 줄 소개 / 상태·장르·플랫폼·출시 예정 / 프리뷰 이미지 / 안내문
+    // 개발 중 레이아웃: 제목 / 한 줄 소개 / 상태·장르·플랫폼·출시 예정 / 프리뷰 이미지 / 안내문 / 선택 갤러리
     const buildDevelopmentPage = function (config, project, lang) {
         const u = U();
         const title = u.pickLocalized(config.hero && config.hero.title, lang)
@@ -386,6 +386,7 @@
                     <img src="${u.escapeHtml(previewSrc)}" alt="${u.escapeHtml(previewAlt)}" class="detail-media-image" loading="lazy">
                 </div>
                 <p class="detail-dev-note">${u.escapeHtml(u.pickLocalized(config.developmentNote, lang) || u.t(lang, 'project_detail_dev_note', 'Detailed information will be revealed as we approach launch.'))}</p>
+                ${buildGallery(config.gallery, lang)}
             </section>
         `;
     };

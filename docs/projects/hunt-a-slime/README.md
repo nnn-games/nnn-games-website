@@ -19,7 +19,7 @@
 - client: 미정
 - technologies: []
 - placeId / universeId:
-- thumbnail (image): assets/huntaslime/hunt-a-slime-preview.jpg
+- thumbnail (image): assets/huntaslime/hunt-a-slime-preview.webp
 - detailPage: hunt-a-slime.html
 - 외부 링크: play / trailer / article / group / showcase
 - reporting: collectMetrics=false / includeInHeroProjectCount=false / includeInHeroVisitTotal=false
@@ -47,9 +47,9 @@
 | 3 |  |  |  |
 
 ## 4. 메인 미디어
-- type: (image | video)
-- src:
-- alt (KO / EN / JA):
+- type: image
+- src: `assets/huntaslime/hunt-a-slime-main.webp`
+- alt: 달빛 아래 슬라임과 황금 검을 그린 대표 이미지 (KO / EN / JA 반영)
 
 ## 5. 개요 (Overview)
 1. 문단 1 (KO / EN / JA):
@@ -78,14 +78,13 @@
 |  |  |  |
 
 ## 10. 갤러리 (Gallery)
-- 1: `images/...` — alt (KO / EN / JA):
-- 2: `images/...` — alt:
-- 3: `images/...` — alt:
+- 1: `assets/huntaslime/hunt-a-slime-main-gallery-1.webp` — 달빛 비치는 유적에서 검을 휘두르는 캐릭터와 초록 슬라임 (KO / EN / JA 반영)
+- 2: `assets/huntaslime/icon-slash.webp` — 검을 들어 올린 캐릭터와 커다란 초록 슬라임의 정사각형 이미지 (KO / EN / JA 반영)
 
 ## 11. 체크리스트
 - [x] `data/projects.json` 메타·링크·리포팅 갱신
 - [x] `js/project-details/hunt-a-slime.js` 콘텐츠 입력 (KO / EN / JA)
-- [x] 이미지 에셋 준비 (preview / main / og, 개발 중 페이지는 갤러리 생략)
+- [x] 이미지 에셋 준비 (preview / main / og / gallery 2종)
 - 해당 없음: 외부 링크 미등록
 - [x] i18n 누락 키 확인
 - [x] `npm run build:css` 후 로컬 미리보기 동작 확인
@@ -103,3 +102,11 @@
 - `npm run check` 통과.
 - `npm run snapshot`: 홈·목록·신규 상세 3개, KO/EN/JA × PC/모바일, 총 30장.
 - Playwright: 신규 3개 이미지 디코딩, 모바일 가로 넘침 없음, KO/EN/JA 언어 전환, JS 오류 없음 확인.
+
+
+## 2026-10-02 이미지 교체 반영
+- 사용자 제공 PNG 4종은 그대로 보존하고, 웹에서는 가로 1200px 이하·각 156~209KB WebP 사본을 사용합니다.
+- 삭제된 JPG 참조를 홈·목록 카드, 상세 대표 이미지, HTML/JS OG 및 Twitter 이미지, company-intro 개발 카드에서 교체했습니다.
+- 개발 중 렌더러에 선택 갤러리를 연결하고 가로 장면은 한 열 전체 폭, 정사각형 이미지는 최대 640px 중앙 배치로 표시합니다. 원본 비율을 유지합니다.
+- KO/EN/JA 이미지 설명과 개발 안내문을 사용자 제공 이미지에 맞게 변경했습니다. 상태·일정·게임 콘셉트는 유지합니다.
+- 검증: `npm run check` 통과, 관련 6개 경로의 3언어·3폭 smoke 54조합 통과. 상세 이미지 27개 비율 계측 및 PC·모바일 PNG 확인. 보고서: `exports/agent/2026-10-01T15-03-23-914Z-46921/report.json`.

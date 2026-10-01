@@ -1,4 +1,4 @@
-// 이름을 바탕으로 제작한 임시 콘셉트 콘텐츠. 상세 기획 확정 시 갱신합니다.
+// 사용자 제공 프로젝트 이미지. 상세 게임 기획 확정 시 소개를 갱신합니다.
 window.ProjectDetailConfigs = window.ProjectDetailConfigs || {};
 
 window.ProjectDetailConfigs['hunt-a-slime'] = {
@@ -13,7 +13,7 @@ window.ProjectDetailConfigs['hunt-a-slime'] = {
             "en": "A hunting adventure concept that follows bouncy slimes into a vibrant green world.",
             "ja": "ぷるぷるのスライムを探し、緑豊かな世界へ出かけるハンティングアドベンチャーのコンセプト。"
         },
-        "ogImage": "assets/huntaslime/hunt-a-slime-main.jpg"
+        "ogImage": "assets/huntaslime/hunt-a-slime-main.webp"
     },
     "hero": {
         "title": {
@@ -46,16 +46,34 @@ window.ProjectDetailConfigs['hunt-a-slime'] = {
     },
     "media": {
         "type": "image",
-        "src": "assets/huntaslime/hunt-a-slime-main.jpg",
+        "src": "assets/huntaslime/hunt-a-slime-main.webp",
         "alt": {
-            "ko": "Hunt a slime 임시 콘셉트 이미지",
-            "en": "Hunt a slime placeholder concept artwork",
-            "ja": "Hunt a slime 仮コンセプト画像"
+            "ko": "달빛 아래 슬라임과 황금 검을 그린 Hunt a slime 대표 이미지",
+            "en": "Hunt a slime artwork with slimes and a golden sword under moonlight",
+            "ja": "月明かりの下のスライムと金色の剣を描いたHunt a slimeのメイン画像"
         }
     },
+    "gallery": [
+        {
+            "src": "assets/huntaslime/hunt-a-slime-main-gallery-1.webp",
+            "alt": {
+                "ko": "달빛 비치는 유적에서 검을 휘두르는 캐릭터와 초록 슬라임",
+                "en": "A character swinging a sword among green slimes in moonlit ruins",
+                "ja": "月明かりの遺跡で緑のスライムに囲まれ、剣を振るうキャラクター"
+            }
+        },
+        {
+            "src": "assets/huntaslime/icon-slash.webp",
+            "alt": {
+                "ko": "검을 들어 올린 캐릭터와 커다란 초록 슬라임의 정사각형 이미지",
+                "en": "Square artwork of a character raising a sword beside a large green slime",
+                "ja": "剣を掲げるキャラクターと大きな緑のスライムを描いた正方形の画像"
+            }
+        }
+    ],
     "developmentNote": {
-        "ko": "프로젝트 이름을 바탕으로 제작한 임시 콘셉트 이미지와 소개입니다. 상세 게임 내용은 추후 공개됩니다.",
-        "en": "This concept artwork and introduction were created from the project name. Gameplay details will be announced later.",
-        "ja": "プロジェクト名をもとに制作した仮のコンセプト画像と紹介です。ゲームの詳細は後日お知らせします。"
+        "ko": "개발 중인 프로젝트의 소개 이미지입니다. 상세 게임 내용은 추후 공개됩니다.",
+        "en": "These images introduce the project currently in development. Gameplay details will be announced later.",
+        "ja": "開発中のプロジェクトを紹介する画像です。ゲームの詳細は後日お知らせします。"
     }
 };
