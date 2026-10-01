@@ -438,11 +438,11 @@
         "ja": "Tomato Splatter"
       },
       "description": {
-        "ko": "토마토가 팡팡 터지는 유쾌한 농장을 그린 캐주얼 액션 콘셉트.",
-        "en": "A casual action concept set on a cheerful farm bursting with tomato splashes.",
-        "ja": "トマトがはじける陽気な農場を描いたカジュアルアクションのコンセプト。"
+        "ko": "토마토 괴물을 사냥하고 전리품으로 장비와 스킬을 성장시키며, 토마토 마왕의 지배에서 세계를 되찾는 Roblox Action RPG. 현재 개발 중입니다.",
+        "en": "A Roblox Action RPG about hunting tomato monsters, developing equipment and skills through loot, and reclaiming the world from the Tomato Demon King. Currently in development.",
+        "ja": "トマトの怪物を狩り、戦利品で装備とスキルを育て、トマト魔王の支配から世界を取り戻すRobloxのAction RPG。現在開発中です。"
       },
-      "image": "assets/tomatosplatter/tomato-splatter-preview.jpg",
+      "image": "assets/tomatosplatter/tomatosplatter-preview.webp",
       "detailPage": "tomato-splatter.html",
       "category": "roblox",
       "status": "development",

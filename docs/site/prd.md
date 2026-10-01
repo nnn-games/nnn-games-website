@@ -62,9 +62,9 @@
 | ASMR UGC Town | Roblox | 개발 | 2026-10 (예정) | 미정 | `asmr-ugc-town.html` |
 
 - Hunt a Slime: 개발 중 Action RPG. 사용자 제공 기획 소개를 KO/EN/JA로 반영하고 다른 프로젝트와 같은 표준 상세 구성으로 텍스트 핵심 포인트·개요·프로젝트 정보·주요 특징을 제공합니다. 개요에 젤라리아 세계관·개발 안내, 주요 특징에 플레이 흐름·대상 플레이어를 담습니다. 소개된 기능은 개발 목표이며 출시 일정과 체험 주소는 미확정입니다. 상세·OG는 main, 홈·목록은 preview만 사용하며 갤러리는 추후 추가합니다.
-- Tomato Splatter: 개발 중으로 등록. 이름 기반 콘셉트 이미지·소개를 KO/EN/JA로 제공하며 임시 콘셉트 안내와 출시 예정 월을 표시합니다. 외부 링크는 미정입니다.
+- Tomato Splatter: 개발 중·2027-02 출시 예정인 Action RPG. 사용자 제공 토마토 마왕·붉은 정원 스토리를 KO/EN/JA로 소개합니다. 자신의 아바타로 마을을 구하고 숲·광산·무너진 요새를 탐험하며, 동료들과 봉인의 비밀을 밝혀 마왕의 지배를 끊는 모험입니다. Hunt a Slime과 같은 몬스터 무리 사냥·전리품 수집·장비 및 스킬 성장·분열/합체 몬스터와 보스 도전 흐름을 반영합니다. `mode: standard`로 개요·핵심 포인트 3개·프로젝트 정보·플레이 흐름 및 대상 플레이어·갤러리 3장을 제공합니다. 소개된 시스템은 개발 목표이며 체험 주소는 추후 공개합니다.
 - ASMR UGC Town: ASMR 장애물이 있는 마을을 탐험하고 수집한 재화·재료를 무료 Roblox UGC로 교환하는 캐주얼 Obby. 개발 중 상태와 2026-10 출시 예정은 유지하며, `detailRenderer: standard`로 개요·핵심 포인트 3개·프로젝트 정보·특징 4개·갤러리 3장을 제공합니다. 본문·카드·SEO는 KO/EN/JA로 동기화하며 외부 링크는 미정입니다.
-- Hunt a slime은 사용자 제공 PNG 원본에서 만든 1200px 이하 WebP를 카드·상세·OG에 사용합니다. Hunt a Slime은 표준 상세 레이아웃을 그대로 사용하며 피처 이미지·전용 배치·추가 섹션을 사용하지 않습니다. Tomato Splatter의 카드 이미지는 640px, 상세·OG 이미지는 1200px JPEG입니다. 최초 3개 프로젝트의 생성 프롬프트는 `docs/projects/project-concept-image-prompts.json`에 기록되어 있으며, ASMR UGC Town은 현재 등록된 대표·카드·갤러리 이미지를 사용합니다.
+- Hunt a slime은 사용자 제공 PNG 원본에서 만든 1200px 이하 WebP를 카드·상세·OG에 사용합니다. Hunt a Slime은 표준 상세 레이아웃을 그대로 사용하며 피처 이미지·전용 배치·추가 섹션을 사용하지 않습니다. Tomato Splatter는 사용자 제공 PNG 원본을 보존하고 카드 640px, 상세·OG·갤러리 1200px 이하 WebP 사본을 사용합니다. 최초 3개 프로젝트의 생성 프롬프트는 `docs/projects/project-concept-image-prompts.json`에 기록되어 있으며, ASMR UGC Town은 현재 등록된 대표·카드·갤러리 이미지를 사용합니다.
 - 홈과 프로젝트 목록의 첫 4개는 Enchant a Weapon → ASMR UGC Town → Hunt a slime → Tomato Splatter 순으로 고정(`pinned: true`, `order: 10/20/30/40`). 이후 운영 중 6개는 누적 방문 수 내림차순, 나머지는 `order`순입니다. 동률은 `order`와 원본 순서로 정렬합니다. NNN UGC는 목록의 별도 UGC 섹션을 사용합니다.
 - Enchant a Weapon의 기존 URL `enchanted-weapon.html`과 내부 ID는 유지합니다.
 

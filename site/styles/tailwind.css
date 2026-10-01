@@ -610,6 +610,13 @@
   .detail-gallery-card img {
     @apply h-full w-full object-cover;
   }
+  /* Tomato Splatter 콘셉트 아트는 서로 다른 원본 비율을 유지합니다. */
+  body[data-project-id="tomato-splatter"] .detail-gallery-card {
+    @apply self-start;
+  }
+  body[data-project-id="tomato-splatter"] .detail-gallery-card img {
+    @apply h-auto;
+  }
   .project-detail-error,
   .project-detail-loading {
     @apply rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-10 text-center text-sm text-gray-500;
