@@ -8,7 +8,7 @@
         "ja": "NNN GAMES 会社紹介"
       },
       "audience": "partner",
-      "status": "active",
+      "status": "archived",
       "languages": [
         "ko",
         "en",
@@ -16,7 +16,7 @@
       ],
       "runtime": "shared",
       "project": null,
-      "note": "2026-08 최신 회사 소개 덱. nnn 덱의 후속 버전."
+      "note": "2026-10-01 보관: 최신 데이터·프로젝트를 반영할 새 회사 소개 제작을 위해 company-intro 초안으로 대체. 소스 보존."
     },
     {
       "slug": "nnn",
@@ -26,7 +26,7 @@
         "ja": "NNN GAMES 会社紹介 (2026-07)"
       },
       "audience": "partner",
-      "status": "active",
+      "status": "archived",
       "languages": [
         "ko",
         "en",
@@ -34,7 +34,7 @@
       ],
       "runtime": "shared",
       "project": null,
-      "note": "2026-07 버전 회사 소개 덱. company 덱으로 대체됨. 외부 공유 링크가 남아 있을 수 있어 유지 중이며, 정리 시 /archive-deck 사용."
+      "note": "2026-10-01 보관: 기존 회사 소개 정리 및 신규 제작을 위해 company-intro 초안으로 대체. 소스 보존."
     },
     {
       "slug": "jumpstart",
@@ -52,6 +52,24 @@
       "runtime": "shared",
       "project": "tomato-splatter-simulator",
       "note": "Roblox Jumpstart 프로그램 제안 덱. KO/EN 만 제공."
+    },
+    {
+      "slug": "company-intro",
+      "title": {
+        "ko": "NNN GAMES 회사 소개",
+        "en": "NNN GAMES Company Introduction",
+        "ja": "NNN GAMES 会社紹介"
+      },
+      "audience": "partner",
+      "status": "draft",
+      "languages": [
+        "ko",
+        "en",
+        "ja"
+      ],
+      "runtime": "shared",
+      "project": null,
+      "note": "2026-10-01 신규 회사 소개 초안. 본편 13장·부록 4장, company·nnn 이미지·내용 재구성 및 최신 운영·개발 프로젝트·공식 지표 반영. KO/EN/JA."
     }
   ]
 }

@@ -40,8 +40,9 @@ site/          회사 홈페이지 코드, 스타일, CNAME·robots.txt
 decks/         발표자료 코드와 발표용 이미지
   decks.json   발표 목록·상태
   shared/      공통 슬라이드 런타임
-  company/     최신 회사 소개
-  nnn/         기존 회사 소개 (공유 주소 유지)
+  company-intro/  신규 회사 소개 (본편 13장·부록 4장 초안)
+  company/     보관된 회사 소개 (2026-08)
+  nnn/         보관된 회사 소개 (2026-07)
   jumpstart/   프로젝트 제안
 
 shared/        양쪽에서 사용하는 데이터·이미지·프로젝트 자산
@@ -77,7 +78,7 @@ tmp/           임시 작업 파일 (Git 제외)
 | `npm run build` / `npm run serve` | 운영 배포 결과 생성 / 로컬 확인 |
 | `npm run update:metrics` | 프로젝트·커뮤니티 지표 갱신 |
 | `npm run snapshot` | 주요 화면 스크린샷 → `exports/site/` |
-| `npm run export:deck -- company --lang ko` | 발표 PNG·PDF → `exports/decks/` |
+| `npm run export:deck -- company-intro --lang ko` | 초안 발표 PNG·PDF → `exports/decks/` |
 | `npm run audit` | 점검 보고서 → `exports/audit/` |
 
 스크린샷·PDF 도구는 최초 한 번 `npx playwright install chromium`이 필요합니다. Windows의 지표 갱신·빌드 도우미는 `scripts/update-metrics-and-build.bat`입니다.
@@ -93,7 +94,7 @@ tmp/           임시 작업 파일 (Git 제외)
 - `decks/<slug>/` → `/<slug>/`
 - `decks/shared/` → `/slides/shared/`
 
-사이트 주소, 발표 공유 주소와 자동 배포 방식은 유지합니다. 배포 설정은 `.github/workflows/`, 도메인·검색 설정은 `site/CNAME`·`site/robots.txt`에 있습니다. 빌드 결과와 내보내기 결과는 커밋하지 않습니다.
+사이트와 운영 중 발표의 주소, 자동 배포 방식은 유지합니다. 보관한 발표의 주소는 개발·운영 빌드에서 404가 됩니다. 배포 설정은 `.github/workflows/`, 도메인·검색 설정은 `site/CNAME`·`site/robots.txt`에 있습니다. 빌드 결과와 내보내기 결과는 커밋하지 않습니다.
 
 작업 지침은 [AGENTS.md](AGENTS.md), 문서 목록과 개발 기록은 [docs/README.md](docs/README.md)를 참고합니다.
 
@@ -104,7 +105,7 @@ OpenAI 공식 자료를 기준으로 구성한 [에이전트 개발환경](docs/
 ```bash
 npm run agent:setup                 # 새 환경: lockfile 설치·Chromium·빌드·진단
 npm run agent:doctor                # 환경 확인
-npm run agent:smoke -- --pages /,/company/  # 다국어·모바일·슬라이드·화면 증거
+npm run agent:smoke -- --pages /,/company-intro/  # 다국어·모바일·슬라이드·화면 증거
 npm run deck:new -- proposal --title "제안서" --langs ko,en
 npm run agent:check                 # 정적·회귀·환경·실제 브라우저 전체 검증
 ```

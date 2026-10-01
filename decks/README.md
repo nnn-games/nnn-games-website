@@ -8,12 +8,13 @@ Each deck keeps only page-specific concerns in its own directory:
 
 ```text
 decks/decks.json        # registry: slug, title, audience, status (active/draft/archived), languages, runtime, project
-decks/company/
-  index.html            # route entry: /company/
+decks/company-intro/    # 신규 회사 소개 제작용 draft
+  index.html            # route entry: /company-intro/ (dev only)
   slides.js             # DECK_SLIDES (order, appendix flags, renderer data) + DECK_I18N (KO/EN/JA copy)
   deck.css              # deck-specific styles
   assets/
-decks/nnn/              # route entry: /nnn/ (2026-07 version of the company deck, same structure)
+decks/company/          # archived: 2026-08 회사 소개, 소스 보존
+decks/nnn/              # archived: 2026-07 회사 소개, 소스 보존
 decks/jumpstart/
   index.html            # route entry: /jumpstart/
   slides.js
@@ -40,8 +41,15 @@ When final designs are ready, add page-specific styles beside the relevant page 
 - `draft`: `npm run dev`에서만 확인하며 운영 빌드에는 포함되지 않습니다.
 - `archived`: 개발 화면과 운영 빌드 모두에서 제외됩니다.
 
-발표자료는 모두 `noindex, nofollow`를 적용하고 사이트맵에서 제외합니다. 기존 발표 주소는 유지합니다. 검색 제외는 주소 접근을 제한하지 않습니다.
+발표자료는 모두 `noindex, nofollow`를 적용하고 사이트맵에서 제외합니다. `archived`로 전환한 덱의 주소는 개발·운영 빌드에서 404가 됩니다. 검색 제외는 주소 접근을 제한하지 않습니다.
 
-평소에는 `npm run dev`로 작업하고 `main`에 푸시하면 기존 자동 배포가 진행됩니다. 발표 준비가 끝나면 `status`를 `active`로 바꾸면 됩니다. `npm run build`와 `npm run serve`는 운영 결과를 확인할 때 사용합니다. 스냅샷과 PDF 내보내기는 active 덱을 대상으로 합니다.
+| 덱 | 상태 | 용도 |
+| --- | --- | --- |
+| `company-intro` | `draft` | 기존 이미지·내용과 최신 프로젝트·지표를 반영한 본편 13장·부록 4장 (KO/EN/JA) |
+| `company` | `archived` | 2026-08 회사 소개 보관 (2026-10-01 전환) |
+| `nnn` | `archived` | 2026-07 회사 소개 보관 (2026-10-01 전환) |
+| `jumpstart` | `active` | 기존 Jumpstart 제안 |
+
+평소에는 `npm run dev`로 작업하고 `main`에 푸시하면 기존 자동 배포가 진행됩니다. 발표 준비가 끝나면 `status`를 `active`로 바꾸면 됩니다. `npm run build`와 `npm run serve`는 운영 결과를 확인할 때 사용합니다. 기본 내보내기는 active 덱을 대상으로 하며, draft도 slug를 명시하면 검증·내보내기할 수 있습니다.
 
 기획·원고·디자인 원본은 [docs/decks/](../docs/decks/README.md)에 모읍니다. 실제 웹 화면에서 사용하는 파일만 이 폴더에 둡니다.
