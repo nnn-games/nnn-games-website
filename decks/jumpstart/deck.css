@@ -350,6 +350,13 @@
 .js-stage-image img { display: block; width: 100%; height: auto; }
 .js-stage-image figcaption { margin-top: .7rem; color: var(--deck-muted); font: 700 .75rem/1.4 Inter, sans-serif; }
 
+.js-stage-project-name { color: var(--deck-ink); font-size: .9rem; }
+.js-stage-project-meta { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-top: .7rem; }
+.js-stage-project-meta > div { padding: .7rem .8rem; border-top: 2px solid var(--deck-line); background: rgba(255,255,255,.5); }
+.js-stage-project-meta dt { color: var(--deck-muted); font-size: .6rem; }
+.js-stage-project-meta dd { margin: .35rem 0 0; color: var(--deck-ink); font-size: .9rem; font-weight: 800; }
+.js-stage-project-meta .js-stage-project-progress { color: var(--tomato); font-size: 1.2rem; }
+
 .js-stage-operations-list { gap: .8rem; }
 .js-stage-operations-list li { padding-bottom: .65rem; }
 .js-stage-operations-list p { font-size: .9rem; }
