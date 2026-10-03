@@ -1,4 +1,25 @@
-## 신규 프로젝트 등록 템플릿
+# Tower Flood Race 콘텐츠 관리
+
+## 현재 편집 방법 (2026-10-03)
+
+콘텐츠 원본은 `shared/assets/www-tower-flood-race/content.json`입니다. 대표·프리뷰 이미지와 `videos.txt`를 같은 폴더에서 관리합니다. 기존 프로젝트 ID·페이지는 tower-flood-race를 유지합니다.
+
+| JSON 위치 | 수정 내용 |
+| --- | --- |
+| `project` | KO/EN/JA 카드 제목·설명·프리뷰 이미지·상세 주소·프로젝트 정보·플레이/트레일러/그룹 링크 |
+| `detail` | KO/EN/JA 상세·SEO·공유 전용 OG 문구·CTA·대표 YouTube 영상·개요·핵심 포인트·요약·특징·링크 안내 |
+| `detail.communityVideos` | 영상 목록 경로·커뮤니티 영상 섹션/모달/이동 버튼의 다국어 UI 문구 |
+| `presentations.company-intro` | 회사 소개 제목·장르·이미지 alt (KO/EN/JA) |
+
+홈페이지 문구는 필드별 `{ "ko": "한국어", "en": "English", "ja": "日本語" }`, 발표 문구는 언어별 사전입니다. 이미지·영상 목록 경로는 `assets/www-tower-flood-race/...`를 사용합니다. 상세 JS는 JSON의 `detail`을 읽으며 기존 영상 렌더러는 `communityVideos.source`의 `videos.txt`를 읽습니다. 영상 URL·태그 형식은 그대로 유지합니다.
+
+빌드가 카드 데이터·초기 SEO·발표 번역을 만들고 `{{project:tower-flood-race:image}}`를 프리뷰 경로로 바꿉니다. `ogTitle`·`ogDescription`은 검색 제목·설명과 구분해 유지합니다. 발표 지표는 기존 기준일의 고정 인용으로 유지합니다.
+
+운영 상태·정렬·노출·placeId·universeId·reporting·metrics는 `shared/data/projects.json`에 유지합니다. 수집 지표는 `npm run update:metrics`로만 갱신합니다. JSON 정보와 운영 데이터를 합쳐 기존 데이터 주소로 배포하므로 수집과 집계 방식은 유지합니다.
+
+검증: `npm run check`, `npm run agent:smoke -- --pages /,/projects-roblox.html,/tower-flood-race.html,/company-intro/`.
+
+## 과거 등록 참고 자료
 
 신규 프로젝트를 추가할 때 아래 항목을 채워 주세요. 값을 모르면 `TBD`로 표시하고, 번역이 없으면 한국어만 먼저 적어도 됩니다.  
 데이터 확정 후 `data/projects.json`, `js/i18n.js`(필요 시), 개별 상세 페이지(옵션) 순서로 반영합니다.

@@ -258,3 +258,15 @@
 
 - 2026-10-03: ASMR UGC Town의 대표·프리뷰·갤러리 3장 경로를 `assets/www-asmr-ugc-town/`로 변경. 이미지 옆 `content.json`으로 카드 정보·링크·KO/EN/JA 상세·SEO·회사 소개 문구를 이전하고 Hunt a Slime의 공통 빌드·로더 연결을 재사용. 운영 설정·지표·출시 일정·공유 URL 유지.
 - 검증: `npm run check` 통과, 홈·Roblox 목록·ASMR 상세·회사 소개 KO/EN/JA × 1280·390·320px smoke 36조합 통과. 기존 정보·지표·상세 및 발표 번역과 이미지 5개의 동일성 확인. 모바일 상세와 영어 발표 PNG 직접 확인. 증거: `exports/agent/2026-10-03T09-34-44-794Z-2444/`.
+
+- 2026-10-03: Enchant a Weapon의 이미지 6개를 보관한 `shared/assets/www-enchant-a-weapon/`으로 홈페이지·회사 소개·Jumpstart 참조 변경. 이미지 옆 `content.json`으로 카드 정보·KO/EN/JA 상세·SEO·갤러리·발표 이미지 소개를 이전하고 기존 JSON 빌드·상세 로더 재사용. 프로젝트 ID·상세 주소 enchanted-weapon과 운영 설정·지표 유지.
+- 검증: `npm run check` 통과, 홈·Roblox 목록·Enchant 상세·회사 소개·Jumpstart smoke 42조합 통과. 기존 프로젝트 정보·지표·상세·발표 번역 동일성 및 이미지 6개 Git 해시 확인. 모바일 상세·Jumpstart 17장 PNG 직접 확인. 증거: `exports/agent/2026-10-03T10-01-30-540Z-34112/`.
+
+- 2026-10-03: Tomato Splatter의 이미지 10개를 보관한 `shared/assets/www-tomato-splatter/`으로 홈페이지·회사 소개·Jumpstart 참조 변경. 이미지 옆 `content.json`으로 카드 정보·KO/EN/JA 상세·SEO·갤러리·발표 이미지 소개를 이전하고 기존 JSON 빌드·로더 재사용. Tomato Splatter Simulator 및 기존 Enchant a Weapon 변경 보존.
+- 검증: `npm run check` 통과, 관련 5개 경로의 다국어·모바일 smoke 42조합 통과. 이전 프로젝트 정보·지표·상세·발표 번역 및 이미지 10개 Git 해시 동일성 확인. 모바일 상세·Jumpstart 19장 PNG 직접 확인. 증거: `exports/agent/2026-10-03T10-08-07-372Z-39200/`.
+
+- 2026-10-03: Tower Flood Race의 대표·프리뷰·videos.txt 경로를 `assets/www-tower-flood-race/`로 변경. 카드·KO/EN/JA 상세·공유용 OG·CTA·영상 UI·회사 소개를 이미지 옆 content.json으로 이전. 영상 목록·모달은 기존 렌더러로 유지하며 JSON 로드를 기다리도록 연결. 공유 전용 OG 문구를 초기 빌드에도 반영하고 회귀 검사 추가. 운영 지표·집계·링크 및 앞선 미커밋 변경 보존.
+- 검증: `npm run check` 통과, 홈·목록·Tower 상세·회사 소개 smoke 36조합 통과. 기존 정보·지표·링크·번역 및 이미지 2개·videos.txt의 Git 해시 동일성 확인. 영상 카드 25개 로드와 KO/EN/JA 모달 문구·열기/닫기 확인. 모바일 상세 PNG 직접 확인. 증거: `exports/agent/2026-10-03T10-17-16-684Z-6876/`.
+
+- 2026-10-03: `shared/assets`의 프로젝트 13개를 `www-<project>/content.json` 구조로 통일. 남은 운영 4개의 메타·KO/EN/JA 상세·회사 소개를 이전하고 홈페이지·발표의 이미지 참조를 수정. 보관 프로젝트 3개는 기존 아카이브 원고를 복사하고 Forest Workshop과 함께 `catalogOnly`로 관리해 등록·공개 상태 유지. 원본 아카이브·기존 미커밋 변경·지표·URL 보존. 전체 매핑과 편집 규칙은 `docs/projects/asset-content.md`에 정리.
+- 검증: `npm run check`, `npm run agent:test` 통과. 관련 홈페이지·상세·회사 소개·Jumpstart 브라우저 69조합 통과 및 변경 상세 4개·회사 소개 PNG 직접 확인. 기존 정보·지표·상세·발표 번역의 동일성과 이동 자산 38개 Git 해시 확인. 미등록 카탈로그 4개의 자동 등록·페이지 생성 방지 회귀 검사 추가. 증거: `exports/agent/2026-10-03T10-27-58-867Z-19180/`.

@@ -9,6 +9,14 @@ description: NNN GAMES 홈페이지의 UI, Tailwind 스타일, 공통 헤더·�
 
 ## 작업 위치
 
+자산 프로젝트 13개의 원본은 `shared/assets/www-<프로젝트>/content.json`이다. 전체 매핑은 `docs/projects/asset-content.md`를 따른다. 상세 JS는 JSON 로더이고 운영 설정·지표는 레지스트리에서 유지한다. catalogOnly 자산은 홈페이지에 추가하지 않는다.
+
+Tower Flood Race의 콘텐츠 원본은 `shared/assets/www-tower-flood-race/content.json`이다. 영상 렌더러는 `detail.communityVideos`의 목록 경로·다국어 UI를 읽는다. 수집 지표와 운영 설정은 기존 레지스트리에 유지한다.
+
+Tomato Splatter의 콘텐츠 원본은 `shared/assets/www-tomato-splatter/content.json`이다. 기존 JSON 빌드·로더를 재사용한다. Tomato Splatter Simulator는 별도로 유지한다.
+
+Enchant a Weapon의 콘텐츠 원본은 `shared/assets/www-enchant-a-weapon/content.json`이다. 프로젝트 ID·페이지는 enchanted-weapon을 유지하며 앞선 프로젝트의 JSON 빌드·로더를 재사용한다.
+
 ASMR UGC Town의 정보·링크·다국어 상세·SEO·회사 소개는 `shared/assets/www-asmr-ugc-town/content.json`이 원본이다. Hunt a Slime의 빌드 병합과 JSON 로더를 재사용한다. 운영 설정·지표는 기존 레지스트리에 유지한다.
 
 - 공통 UI: `site/_partials/`. 개별 HTML의 `@include` 마커를 유지한다.

@@ -1,0 +1,211 @@
+{
+  "id": "enchanted-weapon",
+  "project": {
+    "title": {
+      "ko": "Enchant a Weapon",
+      "en": "Enchant a Weapon",
+      "ja": "Enchant a Weapon"
+    },
+    "description": {
+      "ko": "트리플엔게임즈의 첫 번째 RPG 프로젝트. 다양한 무기를 제작하고 강화하며 Roblox 최고의 무기 장인으로 성장하는 게임입니다.",
+      "en": "TripleN Games’ first RPG project. Craft and enhance a variety of weapons as you grow into the greatest weaponsmith on Roblox.",
+      "ja": "TripleN Games初のRPGプロジェクト。多彩な武器を製作・強化し、Roblox最高の武器職人を目指すゲームです。"
+    },
+    "image": "assets/www-enchant-a-weapon/eaw-preview.jpg",
+    "detailPage": "enchanted-weapon.html",
+    "category": "roblox",
+    "launchDate": "2026-10",
+    "platform": "Roblox",
+    "client": "Internal Project",
+    "technologies": [
+      "Roblox Studio",
+      "Luau"
+    ],
+    "links": {
+      "play": "",
+      "trailer": "",
+      "article": "",
+      "group": "",
+      "showcase": ""
+    }
+  },
+  "detail": {
+    "seo": {
+      "title": {
+        "ko": "Enchant a Weapon - NNN GAMES",
+        "en": "Enchant a Weapon - NNN GAMES",
+        "ja": "Enchant a Weapon - NNN GAMES"
+      },
+      "description": {
+        "ko": "트리플엔게임즈의 첫 번째 RPG 프로젝트. 다양한 무기를 제작하고 강화하며 Roblox 최고의 무기 장인으로 성장하는 게임입니다.",
+        "en": "TripleN Games’ first RPG project. Craft and enhance a variety of weapons as you grow into the greatest weaponsmith on Roblox.",
+        "ja": "TripleN Games初のRPGプロジェクト。多彩な武器を製作・強化し、Roblox最高の武器職人を目指すゲームです。"
+      },
+      "ogImage": "assets/www-enchant-a-weapon/eaw-main.jpg",
+      "keywords": {
+        "ko": "Roblox, Enchant a Weapon, RPG, 무기 제작, 무기 강화, 광산, 던전, UGC, 트리플엔게임즈",
+        "en": "Roblox, Enchant a Weapon, RPG, weapon crafting, weapon enhancement, mines, dungeons, UGC, TripleN Games",
+        "ja": "Roblox, Enchant a Weapon, RPG, 武器製作, 武器強化, 鉱山, ダンジョン, UGC, TripleN Games"
+      }
+    },
+    "hero": {
+      "title": {
+        "ko": "Enchant a Weapon",
+        "en": "Enchant a Weapon",
+        "ja": "Enchant a Weapon"
+      },
+      "tagline": {
+        "ko": "다양한 무기를 제작하고 강화해, Roblox 최고의 무기 장인이 되어보세요.",
+        "en": "Craft and enhance a variety of weapons to become the greatest weaponsmith on Roblox.",
+        "ja": "多彩な武器を製作・強化し、Roblox最高の武器職人を目指そう。"
+      },
+      "genre": {
+        "ko": "장르: RPG",
+        "en": "Genre: RPG",
+        "ja": "ジャンル: RPG"
+      },
+      "platform": {
+        "ko": "플랫폼: Roblox",
+        "en": "Platform: Roblox",
+        "ja": "プラットフォーム: Roblox"
+      },
+      "status": {
+        "ko": "개발 중 · 2026년 10월 출시 예정",
+        "en": "In development · Expected October 2026",
+        "ja": "開発中・2026年10月公開予定"
+      }
+    },
+    "snapshot": {
+      "launch": {
+        "ko": "2026년 10월 출시 예정",
+        "en": "Expected October 2026",
+        "ja": "2026年10月公開予定"
+      },
+      "status": {
+        "ko": "개발 중",
+        "en": "In development",
+        "ja": "開発中"
+      },
+      "client": {
+        "ko": "자체 개발",
+        "en": "Internal Project",
+        "ja": "自社開発"
+      },
+      "stack": {
+        "ko": "Roblox Studio / Luau",
+        "en": "Roblox Studio / Luau",
+        "ja": "Roblox Studio / Luau"
+      }
+    },
+    "media": {
+      "type": "image",
+      "src": "assets/www-enchant-a-weapon/eaw-main.jpg",
+      "alt": {
+        "ko": "마법진 위의 검과 주문서를 든 캐릭터",
+        "en": "A floating sword and a character holding a scroll",
+        "ja": "魔法陣に浮かぶ剣と巻物を持つキャラクター"
+      }
+    },
+    "mode": "standard",
+    "overview": [
+      {
+        "ko": "트리플엔게임즈의 첫 번째 RPG 프로젝트. 다양한 무기를 제작하고 강화하며 Roblox 최고의 무기 장인으로 성장하는 게임입니다.",
+        "en": "TripleN Games’ first RPG project. Craft and enhance a variety of weapons as you grow into the greatest weaponsmith on Roblox.",
+        "ja": "TripleN Games初のRPGプロジェクト。多彩な武器を製作・強化し、Roblox最高の武器職人を目指すゲームです。"
+      }
+    ],
+    "features": [
+      {
+        "title": {
+          "ko": "+10 강화로 얻는 UGC",
+          "en": "Earn UGC at +10",
+          "ja": "+10強化でUGCを獲得"
+        },
+        "description": {
+          "ko": "무기를 +10까지 강화해 UGC를 획득합니다.",
+          "en": "Enhance a weapon to +10 to earn UGC.",
+          "ja": "武器を+10まで強化してUGCを獲得します。"
+        }
+      },
+      {
+        "title": {
+          "ko": "광산과 던전에서 시작하는 무기 제작",
+          "en": "Craft weapons with materials from mines and dungeons",
+          "ja": "鉱山とダンジョンの素材で武器製作"
+        },
+        "description": {
+          "ko": "광산과 던전에서 얻은 재료로 다양한 무기를 만들고 도감을 채웁니다.",
+          "en": "Gather materials from mines and dungeons, craft a variety of weapons, and fill your collection.",
+          "ja": "鉱山やダンジョンで得た素材から多彩な武器を製作し、図鑑を埋めていきます。"
+        }
+      },
+      {
+        "title": {
+          "ko": "최고의 무기 장인으로 성장",
+          "en": "Become a master weaponsmith",
+          "ja": "最高の武器職人へ成長"
+        },
+        "description": {
+          "ko": "물약과 도구를 활용해 더 많은 무기를 제작하고 강화하며, 최고의 무기 장인으로 성장합니다.",
+          "en": "Use potions and tools to craft and enhance more weapons as you grow into a master weaponsmith.",
+          "ja": "ポーションや道具を活用してより多くの武器を製作・強化し、最高の武器職人へと成長します。"
+        }
+      }
+    ],
+    "gallery": [
+      {
+        "src": "assets/www-enchant-a-weapon/eaw-gallery-1.jpg",
+        "alt": {
+          "ko": "대장간에서 검을 +10으로 강화하는 콘셉트 이미지",
+          "en": "Concept artwork of a sword being enhanced from +0 to +10 at a forge",
+          "ja": "鍛冶場で剣を+10に強化するコンセプトアート"
+        }
+      },
+      {
+        "src": "assets/www-enchant-a-weapon/eaw-gallery-2.jpg",
+        "alt": {
+          "ko": "주문서로 보라색 도끼를 강화하는 콘셉트 이미지",
+          "en": "Concept artwork of a purple axe being enchanted with a scroll",
+          "ja": "巻物で紫色の斧を強化するコンセプトアート"
+        }
+      },
+      {
+        "src": "assets/www-enchant-a-weapon/eaw-gallery-3.jpg",
+        "alt": {
+          "ko": "+10 무기와 무료 UGC를 소개하는 콘셉트 이미지",
+          "en": "Concept artwork featuring a +10 weapon and free UGC",
+          "ja": "+10の武器と無料UGCを紹介するコンセプトアート"
+        }
+      }
+    ]
+  },
+  "presentations": {
+    "company-intro": {
+      "ko": {
+        "name_enchanted-weapon": "Enchant a Weapon",
+        "desc_enchanted-weapon": "무기 제작·강화와 UGC 보상을 결합한 RPG",
+        "alt_enchanted-weapon": "Enchant a Weapon 개발 이미지"
+      },
+      "en": {
+        "name_enchanted-weapon": "Enchant a Weapon",
+        "desc_enchanted-weapon": "An RPG combining weapon crafting, enhancement and UGC rewards",
+        "alt_enchanted-weapon": "Enchant a Weapon development visual"
+      },
+      "ja": {
+        "name_enchanted-weapon": "Enchant a Weapon",
+        "desc_enchanted-weapon": "武器制作・強化とUGC報酬を組み合わせたRPG",
+        "alt_enchanted-weapon": "Enchant a Weaponの開発ビジュアル"
+      }
+    },
+    "jumpstart": {
+      "ko": {
+        "stage_1_image_caption": "Enchant a Weapon",
+        "stage_1_image_alt": "Enchant a Weapon 대표 이미지 — 무기와 캐릭터가 있는 전시장"
+      },
+      "en": {
+        "stage_1_image_caption": "Enchant a Weapon",
+        "stage_1_image_alt": "Enchant a Weapon key visual showing weapons and a character in a display hall"
+      }
+    }
+  }
+}

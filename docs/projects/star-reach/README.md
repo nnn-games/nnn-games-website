@@ -1,5 +1,7 @@
 # Star Reach 상세 페이지 작업 계획
 
+> 현재 JSON: `shared/assets/www-star-reach/content.json`. [자산·콘텐츠 편집 안내](../asset-content.md)
+
 - **slug**: `star-reach`
 - **HTML**: `star-reach.html`
 - **콘텐츠 설정 파일**: `js/project-details/star-reach.js`

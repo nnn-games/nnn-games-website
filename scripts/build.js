@@ -57,7 +57,7 @@ function buildMap(decks) {
   return [...STATIC_MAP, ...decks.map((deck) => [`decks/${deck.slug}`, deck.slug])];
 }
 // 매핑된 디렉터리 안에서도 제외할 것: 문서/원고 디렉터리, 문서·디자인 원본, 숨김 파일, Tailwind 소스
-// 주의: .txt 는 전역 제외하지 않는다. shared/assets/towerfloodrace/videos.txt 처럼 런타임에 fetch 되는 파일이 있다.
+// 주의: .txt 는 전역 제외하지 않는다. shared/assets/www-tower-flood-race/videos.txt 처럼 런타임에 fetch 되는 파일이 있다.
 // _partials 는 빌드 시 인라인되므로 배포하지 않고, pdf 디렉터리는 export-decks 워크플로가 대체한다.
 const EXCLUDED_SEGMENTS = new Set(['docs', 'node_modules', 'styles', '_partials', 'pdf']);
 const EXCLUDED_EXT = new Set(['.md', '.psd', '.ai', '.sketch', '.fig']);

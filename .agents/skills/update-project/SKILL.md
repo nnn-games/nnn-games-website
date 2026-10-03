@@ -14,6 +14,14 @@ description: 기존 프로젝트의 문구·링크·갤러리·메타·표시 �
 
 ## 1. 어디를 고치는지 (필드 → 파일)
 
+`shared/assets` 프로젝트 13개는 개별 경로 안내보다 `docs/projects/asset-content.md`를 우선한다. `contentFile`이 있는 등록 프로젝트는 이미지 옆 JSON에서 project·detail·presentations를 편집한다. 운영 설정·지표는 레지스트리에서 유지한다. catalogOnly 자산을 홈페이지에 자동 등록하지 않는다.
+
+Tower Flood Race는 `shared/assets/www-tower-flood-race/content.json`에서 같은 구조로 관리한다. 영상 UI는 `detail.communityVideos`, 목록은 같은 폴더의 videos.txt이다. 운영 지표·수집 ID·집계 플래그는 기존 레지스트리에 유지하며 `docs/projects/tower-flood-race/README.md`를 따른다.
+
+Tomato Splatter는 `shared/assets/www-tomato-splatter/content.json`에서 같은 JSON 구조로 관리한다. 운영 설정·지표는 기존 레지스트리에서 유지하며 `docs/projects/tomato-splatter/README.md`를 따른다. Tomato Splatter Simulator와 구분한다.
+
+Enchant a Weapon은 `shared/assets/www-enchant-a-weapon/content.json`에서 같은 JSON 구조로 관리한다. 프로젝트 ID·페이지는 enchanted-weapon이며 편집 안내는 `docs/projects/enchanted-weapon/README.md`를 따른다.
+
 ASMR UGC Town도 `shared/assets/www-asmr-ugc-town/content.json`에서 Hunt a Slime과 같은 `project`·`detail`·`presentations` 구조로 관리한다. 운영 설정·지표는 레지스트리에 유지하고 `docs/projects/asmr-ugc-town/README.md`의 편집 안내를 따른다.
 
 Hunt a Slime은 아래 기존 경로 대신 `shared/assets/www-hunt-a-slime/content.json`에서 `project`(카드 정보·링크)·`detail`(다국어 상세·SEO)·`presentations`(발표 소개)를 편집한다. 운영 상태·표시 순서·노출·수집 설정·지표는 기존 `shared/data/projects.json`에 남는다. 상세 JS는 로더이며 HTML SEO와 배포용 카드·발표 문구는 빌드가 생성한다. 필드별 안내는 `docs/projects/hunt-a-slime/README.md`를 따른다.

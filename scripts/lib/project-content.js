@@ -40,6 +40,32 @@ function loadProjectContents(root) {
     contents.set(project.id, content);
     return { ...project, ...content.project };
   });
+  // 자산만 보관하는 프로젝트도 검증하되 홈페이지 등록·집계에 자동 추가하지 않는다.
+  const assets = path.join(root, 'shared/assets');
+  if (fs.existsSync(assets)) {
+    for (const entry of fs.readdirSync(assets, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const file = path.join(assets, entry.name, 'content.json');
+      if (!fs.existsSync(file)) continue;
+      const content = JSON.parse(fs.readFileSync(file, 'utf8'));
+      if (contents.has(content.id)) {
+        const registered = all.find((project) => project.id === content.id);
+        if (!registered || registered.contentFile !== `assets/${entry.name}/content.json`) throw new Error(`${entry.name}: 프로젝트 JSON이 중복됩니다.`);
+        continue;
+      }
+      if (content.catalogOnly !== true || !['archived', 'unlisted'].includes(content.catalogStatus) || !/^[a-z0-9-]+$/.test(content.id) || !content.project || !content.detail) {
+        throw new Error(`${entry.name}/content.json: 미등록 자산은 catalogOnly와 archived/unlisted 상태를 명시하세요.`);
+      }
+      if ((registry.all || []).some((project) => project.id === content.id)) throw new Error(`${entry.name}: 등록된 프로젝트 ID를 자산 목록에 중복 사용할 수 없습니다.`);
+      for (const key of Object.keys(content.project)) {
+        if (!FIELDS.includes(key)) throw new Error(`${entry.name}.project.${key}: 운영 설정과 지표는 콘텐츠에 넣을 수 없습니다.`);
+      }
+      validateLocalized(content.project, `${entry.name}.project`);
+      validateLocalized(content.detail, `${entry.name}.detail`);
+      if (Object.keys(content.presentations || {}).length) throw new Error(`${entry.name}: 미등록 자산에는 현재 발표 문구를 연결하지 않습니다.`);
+      contents.set(content.id, content);
+    }
+  }
   return { projects: { ...registry, all }, contents };
 }
 
@@ -74,17 +100,19 @@ function compileProjectHtml(source, contents, slug) {
     const title = escapeHtml(seo.title.ko);
     const description = escapeHtml(seo.description.ko);
     const image = escapeHtml(seo.ogImage);
+    const ogTitle = escapeHtml(seo.ogTitle ? seo.ogTitle.ko : seo.title.ko);
+    const ogDescription = escapeHtml(seo.ogDescription ? seo.ogDescription.ko : seo.description.ko);
     return [`<title>${title}</title>`,
       `<meta name="description" content="${description}">`,
       `<meta name="keywords" content="${escapeHtml(seo.keywords.ko)}">`,
-      `<meta property="og:title" content="${title}">`,
-      `<meta property="og:description" content="${description}">`,
+      `<meta property="og:title" content="${ogTitle}">`,
+      `<meta property="og:description" content="${ogDescription}">`,
       '<meta property="og:type" content="article">',
       `<meta property="og:image" content="${image}">`,
       '<meta property="og:site_name" content="NNN GAMES">',
       '<meta name="twitter:card" content="summary_large_image">',
-      `<meta name="twitter:title" content="${title}">`,
-      `<meta name="twitter:description" content="${description}">`,
+      `<meta name="twitter:title" content="${ogTitle}">`,
+      `<meta name="twitter:description" content="${ogDescription}">`,
       `<meta name="twitter:image" content="${image}">`].join('\n    ');
   });
   html = html.replace(/\{\{project:([a-z0-9-]+):image\}\}/g, (_match, id) => {

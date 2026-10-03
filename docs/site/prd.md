@@ -49,6 +49,14 @@
   - 지원 언어: KO/EN/JA. `localStorage` 기반 언어 기억, `data-key`를 통해 텍스트 교체, `languageChanged` 커스텀 이벤트로 프로젝트 카드 재렌더.
 
 ## 5. 현재 프로젝트 파이프라인 (코드 기준)
+
+`shared/assets` 프로젝트 13개는 www- 폴더와 content.json 구조로 통일한다. 등록 프로젝트 9개는 기존 레지스트리의 운영 설정·지표와 병합하고, 미등록/보관 자산 4개는 catalogOnly 검증만 수행한다. 페이지·목록·사이트맵·집계에 자동 추가하지 않는다. 전체 필드·경로 매핑은 `docs/projects/asset-content.md`를 따른다.
+
+Tower Flood Race도 `shared/assets/www-tower-flood-race/content.json`에서 카드 정보·KO/EN/JA 상세·SEO·공유 문구·CTA·커뮤니티 영상 UI·회사 소개 문구를 관리한다. 이미지 2개·videos.txt를 함께 보관하며 영상 목록 파싱·보강·모달·언어 전환을 유지한다. 운영 수집 지표·집계·수집 ID는 기존 레지스트리에 유지한다.
+
+Tomato Splatter도 `shared/assets/www-tomato-splatter/content.json`에서 카드 정보·KO/EN/JA 상세·SEO·갤러리·회사 소개 및 Jumpstart 이미지 소개를 관리한다. 이미지 10개와 JSON을 함께 보관하고 기존 JSON 빌드·로더를 재사용한다. Tomato Splatter Simulator는 별도 프로젝트다.
+
+Enchant a Weapon도 `shared/assets/www-enchant-a-weapon/content.json`에서 카드 정보·KO/EN/JA 상세·SEO·갤러리·회사 소개 및 Jumpstart 이미지 소개를 관리한다. 이미지 6개와 JSON을 함께 보관하며 기존 JSON 빌드와 상세 로더를 재사용한다. 프로젝트 ID와 상세 주소는 enchanted-weapon을 유지한다.
 | 이름 | 플랫폼 | 상태 | 예정/출시 | 클라이언트 | 상세 페이지 |
 | --- | --- | --- | --- | --- | --- |
 | Tower Flood Race | Roblox | 운영 | 2026-01 | Internal Project | `tower-flood-race.html` |

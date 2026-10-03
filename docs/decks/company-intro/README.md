@@ -5,6 +5,14 @@
 언어: KO/EN/JA  
 구성: 본편 13장 + 부록 4장
 
+자산 폴더가 있는 등록 프로젝트의 제목·장르·소개·alt는 프로젝트 JSON의 `presentations.company-intro`에서 관리합니다. Korean Spa 포트폴리오 소개도 같은 JSON에 포함됩니다. 전체 자산 매핑은 `docs/projects/asset-content.md`를 따르며 지표 인용·기준일은 덱에 유지합니다.
+
+Tower Flood Race 제목·장르·alt는 `shared/assets/www-tower-flood-race/content.json`의 `presentations.company-intro`에서 KO/EN/JA로 관리합니다. 프리뷰 마커를 게임 소개·연혁 이미지에 함께 적용하며 기존 지표 인용과 기준일은 덱에 유지합니다.
+
+Tomato Splatter 제목·소개·이미지 alt는 `shared/assets/www-tomato-splatter/content.json`의 `presentations.company-intro`에서 KO/EN/JA로 관리하며 프리뷰 마커는 `project.image`를 사용합니다.
+
+Enchant a Weapon의 KO/EN/JA 제목·소개·alt는 `shared/assets/www-enchant-a-weapon/content.json`의 `presentations.company-intro`에서 관리합니다. 프리뷰 마커는 `project.image`를 사용합니다.
+
 ASMR UGC Town도 `shared/assets/www-asmr-ugc-town/content.json`의 `presentations.company-intro`에서 KO/EN/JA 제목·소개·이미지 alt를 관리합니다. 프리뷰 이미지 마커는 `project.image`를 사용합니다.
 
 Hunt a Slime의 제목·소개·이미지 alt는 `shared/assets/www-hunt-a-slime/content.json`의 `presentations.company-intro`에서 KO/EN/JA로 관리합니다. 빌드가 DECK_I18N과 초기 HTML에 반영합니다. 이미지 마커는 같은 JSON의 `project.image`를 사용하며, 발표에서 인용하는 출시 예정 월과 기타 설명은 이 덱에서 관리합니다.

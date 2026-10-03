@@ -2,39 +2,11 @@
   "all": [
     {
       "id": "tower-flood-race",
-      "title": {
-        "ko": "타워 홍수 경주",
-        "en": "Tower Flood Race",
-        "ja": "タワー・フラッド・レース"
-      },
-      "description": {
-        "ko": "Race Up. Water Rises. – 물이 차오르는 가운데 랜덤 타워를 가장 빠르게 오르는 오비 레이스.",
-        "en": "Race up while the water keeps rising—an obby race to the top of random towers before the flood catches you.",
-        "ja": "水位が上がる中、ランダムなタワーを誰より速く登り切るObbyレース。"
-      },
-      "image": "assets/towerfloodrace/tfr-preview.jpg",
-      "detailPage": "tower-flood-race.html",
-      "category": "roblox",
       "status": "active",
       "featured": true,
       "order": 50,
-      "launchDate": "2026-01",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "Procedural Level"
-      ],
       "placeId": "77732766603333",
       "universeId": "8908746905",
-      "links": {
-        "play": "https://www.roblox.com/games/77732766603333",
-        "trailer": "https://youtu.be/5g11rbdF4_I",
-        "article": "",
-        "group": "https://www.roblox.com/groups/294985728",
-        "showcase": ""
-      },
       "reporting": {
         "collectMetrics": true,
         "includeInHeroProjectCount": true,
@@ -46,7 +18,8 @@
         "favorites": 525896,
         "likeRatio": 0.6043885124233623,
         "updatedAt": "2026-10-03T08:49:03.763Z"
-      }
+      },
+      "contentFile": "assets/www-tower-flood-race/content.json"
     },
     {
       "id": "fruit-battles",
@@ -99,37 +72,11 @@
     },
     {
       "id": "korean-spa",
-      "title": {
-        "ko": "Korean Spa",
-        "en": "Korean Spa",
-        "ja": "Korean Spa"
-      },
-      "description": {
-        "ko": "작아진 탐험가가 되어 거대한 한국 목욕탕을 모험하는 퍼즐 어드벤처 게임.",
-        "en": "A puzzle adventure game where you explore a giant Korean spa as a tiny explorer.",
-        "ja": "小さな探検家になって巨大な韓国式スパを冒険するパズルアドベンチャーゲーム。"
-      },
-      "image": "assets/koreanspa/ks-preview.jpg",
-      "detailPage": "korean-spa.html",
-      "category": "roblox",
       "status": "active",
       "featured": true,
       "order": 90,
-      "launchDate": "2025-12",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "UGC Creation"
-      ],
       "placeId": "90029482000377",
       "universeId": "8508024007",
-      "links": {
-        "play": "https://www.roblox.com/games/90029482000377/Grubby",
-        "trailer": "",
-        "article": ""
-      },
       "reporting": {
         "collectMetrics": true,
         "includeInHeroProjectCount": true,
@@ -141,7 +88,8 @@
         "favorites": 740,
         "likeRatio": 0.8645320197044335,
         "updatedAt": "2026-10-03T08:49:03.763Z"
-      }
+      },
+      "contentFile": "assets/www-korean-spa/content.json"
     },
     {
       "id": "nnn-ugc",
@@ -193,38 +141,11 @@
     },
     {
       "id": "tomato-splatter-simulator",
-      "title": {
-        "ko": "Tomato Splatter Simulator",
-        "en": "Tomato Splatter Simulator",
-        "ja": "Tomato Splatter Simulator"
-      },
-      "description": {
-        "ko": "농장에서 깨어난 토마토를 시원하게 썰고 캐릭터를 성장시키며 스트레스를 해소하는 액션 시뮬레이터.",
-        "en": "Slice through swarms of awakened tomatoes, grow your character, and blow off steam in this action simulator.",
-        "ja": "農場で目覚めたトマトを爽快に斬り、キャラクターを成長させながらストレスも解消するアクションシミュレーター。"
-      },
-      "image": "assets/tomatosplattersimulator/tss-preview.jpg",
-      "detailPage": "tomato-splatter-simulator.html",
-      "category": "roblox",
       "status": "active",
       "featured": true,
       "order": 60,
-      "launchDate": "2026-04",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau"
-      ],
       "placeId": "98363496512711",
       "universeId": "8296982488",
-      "links": {
-        "play": "https://www.roblox.com/ko/games/98363496512711/Tomato-Splatter-Simulator",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": "https://www.roblox.com/ko/games/98363496512711/Tomato-Splatter-Simulator"
-      },
       "reporting": {
         "collectMetrics": true,
         "includeInHeroProjectCount": true,
@@ -236,43 +157,16 @@
         "favorites": 12504,
         "likeRatio": 0.7666666666666667,
         "updatedAt": "2026-10-03T08:49:03.763Z"
-      }
+      },
+      "contentFile": "assets/www-tomato-splatter-simulator/content.json"
     },
     {
       "id": "afk-or",
-      "title": {
-        "ko": "[Free UGC] AFK or arcade game",
-        "en": "[Free UGC] AFK or arcade game",
-        "ja": "[Free UGC] AFK or arcade game"
-      },
-      "description": {
-        "ko": "게임을 즐기며 코인을 모아 무료 한정 UGC를 수집하는 Roblox 아케이드·수집 게임.",
-        "en": "A Roblox arcade-and-collection game where you play, earn coins, and collect free limited UGC.",
-        "ja": "ゲームを楽しみながらコインを貯め、無料の限定UGCを集めるRobloxアーケード＆コレクションゲーム。"
-      },
-      "image": "assets/afkor/afk-preview.jpg",
-      "detailPage": "afk-or.html",
-      "category": "roblox",
       "status": "active",
       "featured": true,
       "order": 70,
-      "launchDate": "2026-05",
-      "platform": "Roblox",
-      "client": "BlockyUGC",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "UGC Economy"
-      ],
       "placeId": "116369674521067",
       "universeId": "10239007666",
-      "links": {
-        "play": "https://www.roblox.com/games/116369674521067/AFK-or",
-        "trailer": "",
-        "article": "",
-        "group": "https://www.roblox.com/communities/35735121/BlockyUGC#!/about",
-        "showcase": "https://www.roblox.com/games/116369674521067/AFK-or"
-      },
       "reporting": {
         "collectMetrics": true,
         "includeInHeroProjectCount": true,
@@ -284,43 +178,16 @@
         "favorites": 8681,
         "likeRatio": 0.9689285356319535,
         "updatedAt": "2026-10-03T08:49:03.763Z"
-      }
+      },
+      "contentFile": "assets/www-afk-or/content.json"
     },
     {
       "id": "free-ugc-rng",
-      "title": {
-        "ko": "🎁 FREE UGC RNG",
-        "en": "🎁 FREE UGC RNG",
-        "ja": "🎁 FREE UGC RNG"
-      },
-      "description": {
-        "ko": "무료로 굴려 귀여운 더키를 수집하고 행운을 키우며 한정 UGC를 획득하는 Roblox RNG 수집 게임.",
-        "en": "A Roblox RNG collector where you roll for free, collect Duckies, grow your luck, and claim limited UGC.",
-        "ja": "無料で回して可愛いダッキーを集め、運を育てながら限定UGCを獲得するRoblox RNGコレクションゲーム。"
-      },
-      "image": "assets/freeugcrng/fur-preview.jpg",
-      "detailPage": "free-ugc-rng.html",
-      "category": "roblox",
       "status": "active",
       "featured": true,
       "order": 80,
-      "launchDate": "2026-05",
-      "platform": "Roblox",
-      "client": "NNN UGC",
-      "technologies": [
-        "Roblox Studio",
-        "Luau",
-        "RNG Systems"
-      ],
       "placeId": "123520570013325",
       "universeId": "10225655315",
-      "links": {
-        "play": "https://www.roblox.com/games/123520570013325/FREE-UGC-RNG",
-        "trailer": "",
-        "article": "",
-        "group": "https://www.roblox.com/ko/communities/34453707/NNN-UGC#!/about",
-        "showcase": "https://www.roblox.com/games/123520570013325/FREE-UGC-RNG"
-      },
       "reporting": {
         "collectMetrics": true,
         "includeInHeroProjectCount": true,
@@ -332,42 +199,16 @@
         "favorites": 5700,
         "likeRatio": 0.834920634920635,
         "updatedAt": "2026-10-03T08:49:03.763Z"
-      }
+      },
+      "contentFile": "assets/www-free-ugc-rng/content.json"
     },
     {
       "id": "enchanted-weapon",
-      "title": {
-        "ko": "Enchant a Weapon",
-        "en": "Enchant a Weapon",
-        "ja": "Enchant a Weapon"
-      },
-      "description": {
-        "ko": "트리플엔게임즈의 첫 번째 RPG 프로젝트. 다양한 무기를 제작하고 강화하며 Roblox 최고의 무기 장인으로 성장하는 게임입니다.",
-        "en": "TripleN Games’ first RPG project. Craft and enhance a variety of weapons as you grow into the greatest weaponsmith on Roblox.",
-        "ja": "TripleN Games初のRPGプロジェクト。多彩な武器を製作・強化し、Roblox最高の武器職人を目指すゲームです。"
-      },
-      "image": "assets/enchantaweapon/eaw-preview.jpg",
-      "detailPage": "enchanted-weapon.html",
-      "category": "roblox",
       "status": "development",
       "featured": true,
       "order": 10,
-      "launchDate": "2026-10",
-      "platform": "Roblox",
-      "client": "Internal Project",
-      "technologies": [
-        "Roblox Studio",
-        "Luau"
-      ],
       "placeId": null,
       "universeId": null,
-      "links": {
-        "play": "",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
-      },
       "reporting": {
         "collectMetrics": false,
         "includeInHomePreview": true,
@@ -381,7 +222,8 @@
         "likeRatio": null,
         "updatedAt": null
       },
-      "pinned": true
+      "pinned": true,
+      "contentFile": "assets/www-enchant-a-weapon/content.json"
     },
     {
       "id": "hunt-a-slime",
@@ -408,35 +250,11 @@
     },
     {
       "id": "tomato-splatter",
-      "title": {
-        "ko": "Tomato Splatter",
-        "en": "Tomato Splatter",
-        "ja": "Tomato Splatter"
-      },
-      "description": {
-        "ko": "토마토 괴물을 사냥하고 전리품으로 장비와 스킬을 성장시키며, 토마토 마왕의 지배에서 세계를 되찾는 Roblox Action RPG. 현재 개발 중입니다.",
-        "en": "A Roblox Action RPG about hunting tomato monsters, developing equipment and skills through loot, and reclaiming the world from the Tomato Demon King. Currently in development.",
-        "ja": "トマトの怪物を狩り、戦利品で装備とスキルを育て、トマト魔王の支配から世界を取り戻すRobloxのAction RPG。現在開発中です。"
-      },
-      "image": "assets/tomatosplatter/tomatosplatter-preview.webp",
-      "detailPage": "tomato-splatter.html",
-      "category": "roblox",
       "status": "development",
       "featured": true,
       "order": 40,
-      "launchDate": "2027-02",
-      "platform": "Roblox",
-      "client": "",
-      "technologies": [],
       "placeId": null,
       "universeId": null,
-      "links": {
-        "play": "",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
-      },
       "reporting": {
         "collectMetrics": false,
         "includeInHomePreview": true,
@@ -450,7 +268,8 @@
         "likeRatio": null,
         "updatedAt": null
       },
-      "pinned": true
+      "pinned": true,
+      "contentFile": "assets/www-tomato-splatter/content.json"
     },
     {
       "id": "asmr-ugc-town",

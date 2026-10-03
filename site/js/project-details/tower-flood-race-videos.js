@@ -1,47 +1,18 @@
 // Tower Flood Race - 커뮤니티 영상 섹션 렌더러
-// assets/towerfloodrace/videos.txt 의 URL 목록을 읽어 런타임에 파싱·렌더한다.
+// assets/www-tower-flood-race/videos.txt 의 URL 목록을 읽어 런타임에 파싱·렌더한다.
 //   - URL 만으로 platform / videoId / format / embedUrl / thumbnail(YouTube) 산출
 //   - 제목·작성자·썸네일(TikTok) 은 oEmbed 로 진보적 보강 (CORS 실패 시 기본값 유지)
 (function () {
     const TARGET_PROJECT_ID = 'tower-flood-race';
-    const VIDEOS_URL = 'assets/towerfloodrace/videos.txt';
     const STYLE_ID = 'tfr-videos-style';
     const SECTION_ID = 'tfr-videos-section';
     const CACHE_PREFIX = 'tfr-meta:';
     const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7d
 
-    const I18N = {
-        ko: {
-            longKicker: 'Community Highlights',
-            shortsKicker: 'Shorts',
-            empty: '아직 등록된 영상이 없습니다.',
-            openOriginal: '원본 보기',
-            close: '닫기',
-            untitled: '(제목 없음)',
-            prev: '이전',
-            next: '다음'
-        },
-        en: {
-            longKicker: 'Community Highlights',
-            shortsKicker: 'Shorts',
-            empty: 'No videos yet.',
-            openOriginal: 'View original',
-            close: 'Close',
-            untitled: '(untitled)',
-            prev: 'Previous',
-            next: 'Next'
-        },
-        ja: {
-            longKicker: 'Community Highlights',
-            shortsKicker: 'Shorts',
-            empty: '登録された動画はまだありません。',
-            openOriginal: '元動画を見る',
-            close: '閉じる',
-            untitled: '(無題)',
-            prev: '前へ',
-            next: '次へ'
-        }
-    };
+    function videoSettings() {
+        const config = window.ProjectDetailConfigs && window.ProjectDetailConfigs[TARGET_PROJECT_ID];
+        return config && config.communityVideos ? config.communityVideos : {};
+    }
 
     const STYLE_CSS = `
 .tfr-videos-section { margin-top: 2.5rem; }
@@ -199,7 +170,7 @@
     }
 
     function t(lang, key) {
-        return (I18N[lang] || I18N.ko)[key] || I18N.ko[key] || key;
+        return window.NNNUtils.pickLocalized((videoSettings().labels || {})[key], lang) || key;
     }
 
     function escapeHtml(value) {
@@ -506,7 +477,7 @@
     async function loadRecords() {
         if (recordsCache) return recordsCache;
         try {
-            const res = await fetch(VIDEOS_URL, { cache: 'no-cache' });
+            const res = await fetch(videoSettings().source, { cache: 'no-cache' });
             if (!res.ok) throw new Error('HTTP ' + res.status);
             const text = await res.text();
             const items = parseList(text);
@@ -546,6 +517,14 @@
 
     async function render() {
         if (document.body.getAttribute('data-project-id') !== TARGET_PROJECT_ID) return;
+        // 언어 전환 이벤트가 상세 렌더보다 먼저 도착해도 JSON 로드를 기다린다.
+        if (window.ProjectDetailReady) {
+            try {
+                await window.ProjectDetailReady;
+            } catch (_error) {
+                return;
+            }
+        }
         const root = document.getElementById('project-detail-root');
         if (!root) return;
 

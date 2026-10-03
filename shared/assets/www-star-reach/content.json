@@ -1,0 +1,88 @@
+{
+  "id": "star-reach",
+  "catalogOnly": true,
+  "catalogStatus": "archived",
+  "project": {
+    "title": {
+      "ko": "Star Reach",
+      "en": "Star Reach",
+      "ja": "Star Reach"
+    },
+    "description": {
+      "ko": "Starship X 의 로켓 엔지니어가 되어 다른 플레이어와 함께 로켓을 대기권에서 심우주까지 점점 더 높이 쏘아 올리는 시뮬레이터.",
+      "en": "Become a Starship X rocket engineer and team up with other players to send rockets higher and higher — from atmosphere to deep space.",
+      "ja": "Starship Xのロケットエンジニアとなり、他のプレイヤーと協力してロケットを大気圏から深宇宙へとより高く打ち上げていくシミュレーター。"
+    },
+    "image": "assets/www-star-reach/sr-preview.jpg",
+    "detailPage": "star-reach.html",
+    "category": "roblox",
+    "launchDate": "2026-05",
+    "platform": "Roblox",
+    "client": "Internal Project",
+    "technologies": [
+      "Roblox Studio",
+      "Luau"
+    ],
+    "links": {
+      "play": "",
+      "trailer": "",
+      "article": "",
+      "group": "",
+      "showcase": ""
+    }
+  },
+  "detail": {
+    "seo": {
+      "title": {
+        "ko": "Star Reach - NNN GAMES",
+        "en": "Star Reach - NNN GAMES",
+        "ja": "Star Reach - NNN GAMES"
+      },
+      "description": {
+        "ko": "Starship X 의 로켓 엔지니어가 되어 다른 플레이어와 함께 로켓을 대기권에서 심우주까지 점점 더 높이 쏘아 올리는 시뮬레이터입니다.",
+        "en": "Become a Starship X rocket engineer and team up with other players to send rockets higher and higher — from atmosphere to deep space.",
+        "ja": "Starship Xのロケットエンジニアとなり、他のプレイヤーと協力してロケットを大気圏から深宇宙までより高く打ち上げていくシミュレーターです。"
+      },
+      "ogImage": "assets/www-star-reach/sr-preview.jpg"
+    },
+    "hero": {
+      "title": {
+        "ko": "Star Reach",
+        "en": "Star Reach",
+        "ja": "Star Reach"
+      },
+      "tagline": {
+        "ko": "Starship X 의 로켓 엔지니어가 되어 다른 플레이어와 함께 로켓을 대기권에서 심우주까지 더 높이 쏘아 올리는 시뮬레이터.",
+        "en": "Become a Starship X rocket engineer and team up with other players to send rockets higher and higher — from atmosphere to deep space.",
+        "ja": "Starship Xのロケットエンジニアとなり、他のプレイヤーと協力してロケットを大気圏から深宇宙へとより高く打ち上げていくシミュレーター。"
+      },
+      "genre": {
+        "ko": "장르: 시뮬레이션 / 인크리멘탈 시뮬레이터",
+        "en": "Genre: Simulation / Incremental Simulator",
+        "ja": "ジャンル: シミュレーション / インクリメンタルシミュレーター"
+      },
+      "platform": {
+        "ko": "플랫폼: Roblox",
+        "en": "Platform: Roblox",
+        "ja": "プラットフォーム: Roblox"
+      }
+    },
+    "snapshot": {
+      "launch": {
+        "ko": "2026년 5월 예정",
+        "en": "Planned for May 2026",
+        "ja": "2026年5月予定"
+      }
+    },
+    "media": {
+      "type": "image",
+      "src": "assets/www-star-reach/sr-preview.jpg",
+      "alt": {
+        "ko": "Star Reach 프리뷰 이미지",
+        "en": "Star Reach preview image",
+        "ja": "Star Reach プレビュー画像"
+      }
+    }
+  },
+  "presentations": {}
+}

@@ -14,6 +14,14 @@ description: 기존 웹 슬라이드 덱의 슬라이드 추가·삭제·순서 
 
 ## 1. 어디를 고치는지
 
+자산 프로젝트의 제목·소개·장르·이미지 alt는 `shared/assets/www-<프로젝트>/content.json`의 presentations에서 관리한다. 전체 매핑은 `docs/projects/asset-content.md`를 따른다. 지표 인용과 기준일은 덱에 유지하며 미등록 catalogOnly 자산은 발표에 자동 추가하지 않는다.
+
+Tower Flood Race의 회사 소개 제목·장르·alt는 `shared/assets/www-tower-flood-race/content.json`의 `presentations.company-intro`에서 수정한다. 기존 기준일의 지표 인용은 덱에 유지하고 프리뷰 마커는 `project.image`를 사용한다.
+
+Tomato Splatter의 회사 소개 제목·요약·alt 및 Jumpstart 이미지 캡션·alt는 `shared/assets/www-tomato-splatter/content.json`의 `presentations`에서 수정한다. 프리뷰 마커는 `project.image`를 사용하며 덱 전체 원고·출시 월·연구 목표·진척도는 기존 발표에서 유지한다.
+
+Enchant a Weapon의 회사 소개 제목·요약·alt 및 Jumpstart 이미지 캡션·alt는 `shared/assets/www-enchant-a-weapon/content.json`의 `presentations`에서 수정한다. 프리뷰 마커는 `project.image`를 사용하며 단계별 연구 목표·출시 월은 기존 발표에서 관리한다.
+
 ASMR UGC Town의 회사 소개 제목·요약·alt는 `shared/assets/www-asmr-ugc-town/content.json`의 `presentations.company-intro.<언어>`에서 수정한다. 프리뷰 이미지 마커는 같은 JSON의 `project.image`를 사용한다.
 
 Hunt a Slime의 회사 소개 제목·요약·alt와 Jumpstart 이미지 캡션·alt는 `shared/assets/www-hunt-a-slime/content.json`의 `presentations.<덱>.<언어>`에서 수정한다. 빌드가 DECK_I18N에 합친다. 프로젝트 프리뷰 이미지 마커는 같은 JSON의 `project.image`를 사용한다. 덱의 출시 월·연구 목표·지표 인용은 기존 발표 파일에서 유지한다.

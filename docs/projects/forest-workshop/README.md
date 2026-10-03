@@ -1,5 +1,7 @@
 # Forest Workshop 상세 페이지 작업 계획
 
+> 현재 JSON: `shared/assets/www-forest-workshop/content.json`. [자산·콘텐츠 편집 안내](../asset-content.md)
+
 - **slug**: `forest-workshop`
 - **HTML**: `forest-workshop.html`
 - **콘텐츠 설정 파일**: `js/project-details/forest-workshop.js`

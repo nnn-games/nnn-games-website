@@ -1,5 +1,7 @@
 # Hacker vs Security 상세 페이지 작업 계획
 
+> 현재 JSON: `shared/assets/www-hacker-vs-security/content.json`. [자산·콘텐츠 편집 안내](../asset-content.md)
+
 - **slug**: `hacker-vs-security`
 - **HTML**: `hacker-vs-security.html`
 - **콘텐츠 설정 파일**: `js/project-details/hacker-vs-security.js`

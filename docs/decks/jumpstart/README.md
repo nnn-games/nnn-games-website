@@ -1,5 +1,9 @@
 # Jumpstart 제안 원고·디자인
 
+Tomato Splatter 이미지 캡션·alt는 `shared/assets/www-tomato-splatter/content.json`의 `presentations.jumpstart`에서 KO/EN으로 관리합니다. 프리뷰 마커는 `project.image`를 사용하며 덱 전체 원고·단계별 연구 목표·출시 월·진척도는 기존 발표에서 유지합니다.
+
+Enchant a Weapon 이미지 캡션·alt는 `shared/assets/www-enchant-a-weapon/content.json`의 `presentations.jumpstart`에서 KO/EN으로 관리합니다. 프리뷰 마커는 `project.image`를 사용하며 단계별 연구 목표·출시 월은 기존 덱에서 유지합니다.
+
 Hunt a Slime 이미지 캡션·alt는 `shared/assets/www-hunt-a-slime/content.json`의 `presentations.jumpstart`에서 KO/EN으로 관리합니다. 빌드가 DECK_I18N과 초기 HTML에 반영하며, 이미지 마커는 `project.image`를 사용합니다. 단계별 연구·개발 목표는 제안서 고유 문구로 기존 덱에 유지합니다.
 
 - [제안서 초안 v0.5](TomatoSplat2_Jumpstart_제안서_초안_v0.5.md)
@@ -37,7 +41,7 @@ Hunt a Slime 이미지 캡션·alt는 `shared/assets/www-hunt-a-slime/content.js
 - 아이템 및 UGC 제작 시스템 구축
 - 기본 전투 환경 구축
 
-이미지: 기존 `shared/assets/enchantaweapon/eaw-preview.jpg` 재사용. 원본 비율과 전체 이미지를 보존하며 실제 전투 캡처나 완료 증거로 표기하지 않습니다.
+이미지: 기존 `shared/assets/www-enchant-a-weapon/eaw-preview.jpg` 재사용. 원본 비율과 전체 이미지를 보존하며 실제 전투 캡처나 완료 증거로 표기하지 않습니다.
 
 ### 2단계 목표
 
@@ -59,7 +63,7 @@ Hunt a Slime 이미지 캡션·alt는 `shared/assets/www-hunt-a-slime/content.js
 - 시즌 이벤트 진행
 - 이슈에 따른 이벤트 진행
 
-3단계 이미지: `shared/assets/tomatosplatter/tomatosplatter-preview.webp` 재사용. 두 이미지 모두 원본 비율과 전체 영역을 보존합니다. 업데이트 주기의 구체적인 기간이나 이벤트 내용은 지정되지 않아 추가하지 않습니다.
+3단계 이미지: `shared/assets/www-tomato-splatter/tomatosplatter-preview.webp` 재사용. 두 이미지 모두 원본 비율과 전체 영역을 보존합니다. 업데이트 주기의 구체적인 기간이나 이벤트 내용은 지정되지 않아 추가하지 않습니다.
 
 ### 프로젝트별 출시 예정·개발 진척도
 
