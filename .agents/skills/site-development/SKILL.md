@@ -9,6 +9,8 @@ description: NNN GAMES 홈페이지의 UI, Tailwind 스타일, 공통 헤더·�
 
 ## 작업 위치
 
+ASMR UGC Town의 정보·링크·다국어 상세·SEO·회사 소개는 `shared/assets/www-asmr-ugc-town/content.json`이 원본이다. Hunt a Slime의 빌드 병합과 JSON 로더를 재사용한다. 운영 설정·지표는 기존 레지스트리에 유지한다.
+
 - 공통 UI: `site/_partials/`. 개별 HTML의 `@include` 마커를 유지한다.
 - 스타일: `site/styles/tailwind.css`. 동적으로 만드는 클래스는 `tailwind.config.js`의 safelist를 확인한다.
 - 다국어: 공통 문구는 `site/js/i18n.js`, 상세 콘텐츠는 `site/js/project-details/<slug>.js`. KO/EN/JA와 HTML SEO 메타를 함께 맞춘다.

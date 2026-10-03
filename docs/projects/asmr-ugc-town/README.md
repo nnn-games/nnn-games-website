@@ -5,8 +5,25 @@
 
 - **slug**: `asmr-ugc-town`
 - **HTML**: `site/asmr-ugc-town.html`
-- **콘텐츠 설정 파일**: `site/js/project-details/asmr-ugc-town.js`
-- **카드 메타 위치**: `shared/data/projects.json` (id: `asmr-ugc-town`)
+- **콘텐츠 원본**: `shared/assets/www-asmr-ugc-town/content.json`
+- **상세 로더**: `site/js/project-details/asmr-ugc-town.js`
+- **운영 설정·지표**: `shared/data/projects.json` (id: `asmr-ugc-town`)
+
+## JSON 편집 방법 (2026-10-03)
+
+이미지와 텍스트를 `shared/assets/www-asmr-ugc-town/`에서 함께 관리합니다. Hunt a Slime에 적용한 JSON 연결을 재사용합니다.
+
+| JSON 위치 | 수정 내용 |
+| --- | --- |
+| `project` | 카드 제목·설명, 프리뷰 이미지, 상세 주소, 카테고리·플랫폼·클라이언트·기술 스택·출시 일정·링크 |
+| `detail` | KO/EN/JA SEO·히어로·개요·핵심 포인트·요약·특징·대표 이미지·갤러리 3장과 alt |
+| `presentations.company-intro` | 회사 소개의 프로젝트 제목·요약·이미지 alt (KO/EN/JA) |
+
+홈페이지 문구는 필드별 `{ "ko": "한국어", "en": "English", "ja": "日本語" }`, 발표 문구는 언어별 키 사전으로 관리합니다. 이미지 경로는 `assets/www-asmr-ugc-town/...`를 사용합니다. 빌드가 기존 `/data/projects.json`의 카드 데이터와 초기 SEO를 생성하고, 회사 소개의 `{{project:asmr-ugc-town:image}}`를 프리뷰 이미지로 바꾸며 발표 번역을 합칩니다. 상세 로더는 같은 JSON의 `detail`을 읽습니다.
+
+운영 상태·featured·pinned·order·placeId·universeId·reporting·metrics는 기존 레지스트리에서 관리합니다. 지표는 수집 스크립트로만 갱신합니다. 같은 정보의 중복 정의와 누락 번역은 검증으로 검사합니다.
+
+검증 명령: `npm run check`, `npm run agent:smoke -- --pages /,/projects-roblox.html,/asmr-ugc-town.html,/company-intro/`.
 
 ## 1. 메타와 표시 방식
 
@@ -18,8 +35,8 @@
 - client / technologies: 미정. 상세에서는 다국어로 미정·추후 공개 표시.
 - placeId / universeId / 외부 링크: 미등록
 - reporting: 기존 값 유지. 지표 수집·히어로 집계 제외.
-- 카드: `assets/asmrugctown/asmr-ugc-town-preview.jpg`
-- 상세·OG: `assets/asmrugctown/asmr-ugc-town-main.jpg`
+- 카드: `assets/www-asmr-ugc-town/asmr-ugc-town-preview.jpg`
+- 상세·OG: `assets/www-asmr-ugc-town/asmr-ugc-town-main.jpg`
 
 ## 2. 게임 소개와 SEO
 
@@ -43,9 +60,9 @@
 
 | 경로 (배포 URL 기준) | 장면 |
 | --- | --- |
-| `assets/asmrugctown/asmr-ugc-town-gallery-1.jpg` | 키보드 길 위의 버터·젤리 장애물과 캐릭터들 |
-| `assets/asmrugctown/asmr-ugc-town-gallery-2.jpg` | 마을 위에 떠 있는 버터 모양 발판 |
-| `assets/asmrugctown/asmr-ugc-town-gallery-3.jpg` | 알록달록한 젤리 발판의 공중 장애물 코스 |
+| `assets/www-asmr-ugc-town/asmr-ugc-town-gallery-1.jpg` | 키보드 길 위의 버터·젤리 장애물과 캐릭터들 |
+| `assets/www-asmr-ugc-town/asmr-ugc-town-gallery-2.jpg` | 마을 위에 떠 있는 버터 모양 발판 |
+| `assets/www-asmr-ugc-town/asmr-ugc-town-gallery-3.jpg` | 알록달록한 젤리 발판의 공중 장애물 코스 |
 
 ## 5. 작업 이력
 

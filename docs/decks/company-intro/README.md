@@ -5,6 +5,8 @@
 언어: KO/EN/JA  
 구성: 본편 13장 + 부록 4장
 
+ASMR UGC Town도 `shared/assets/www-asmr-ugc-town/content.json`의 `presentations.company-intro`에서 KO/EN/JA 제목·소개·이미지 alt를 관리합니다. 프리뷰 이미지 마커는 `project.image`를 사용합니다.
+
 Hunt a Slime의 제목·소개·이미지 alt는 `shared/assets/www-hunt-a-slime/content.json`의 `presentations.company-intro`에서 KO/EN/JA로 관리합니다. 빌드가 DECK_I18N과 초기 HTML에 반영합니다. 이미지 마커는 같은 JSON의 `project.image`를 사용하며, 발표에서 인용하는 출시 예정 월과 기타 설명은 이 덱에서 관리합니다.
 
 2026-10-01 보관한 `company`·`nnn`의 이미지·설명을 재구성하고 현행 운영 게임 6종, 개발 게임 4종, NNN UGC 제작 프로젝트와 최신 공개 지표를 반영했습니다. 타이틀은 두 단어 이내의 개념명으로 통일합니다. 기존 덱 소스는 보존합니다.

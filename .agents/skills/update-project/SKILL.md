@@ -14,6 +14,8 @@ description: 기존 프로젝트의 문구·링크·갤러리·메타·표시 �
 
 ## 1. 어디를 고치는지 (필드 → 파일)
 
+ASMR UGC Town도 `shared/assets/www-asmr-ugc-town/content.json`에서 Hunt a Slime과 같은 `project`·`detail`·`presentations` 구조로 관리한다. 운영 설정·지표는 레지스트리에 유지하고 `docs/projects/asmr-ugc-town/README.md`의 편집 안내를 따른다.
+
 Hunt a Slime은 아래 기존 경로 대신 `shared/assets/www-hunt-a-slime/content.json`에서 `project`(카드 정보·링크)·`detail`(다국어 상세·SEO)·`presentations`(발표 소개)를 편집한다. 운영 상태·표시 순서·노출·수집 설정·지표는 기존 `shared/data/projects.json`에 남는다. 상세 JS는 로더이며 HTML SEO와 배포용 카드·발표 문구는 빌드가 생성한다. 필드별 안내는 `docs/projects/hunt-a-slime/README.md`를 따른다.
 
 | 바꿀 것 | 파일 |

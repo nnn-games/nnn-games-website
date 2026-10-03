@@ -14,6 +14,8 @@ description: 기존 웹 슬라이드 덱의 슬라이드 추가·삭제·순서 
 
 ## 1. 어디를 고치는지
 
+ASMR UGC Town의 회사 소개 제목·요약·alt는 `shared/assets/www-asmr-ugc-town/content.json`의 `presentations.company-intro.<언어>`에서 수정한다. 프리뷰 이미지 마커는 같은 JSON의 `project.image`를 사용한다.
+
 Hunt a Slime의 회사 소개 제목·요약·alt와 Jumpstart 이미지 캡션·alt는 `shared/assets/www-hunt-a-slime/content.json`의 `presentations.<덱>.<언어>`에서 수정한다. 빌드가 DECK_I18N에 합친다. 프로젝트 프리뷰 이미지 마커는 같은 JSON의 `project.image`를 사용한다. 덱의 출시 월·연구 목표·지표 인용은 기존 발표 파일에서 유지한다.
 
 | 바꿀 것 | 파일 |

@@ -37,6 +37,7 @@
 - **상세 페이지 본문 렌더링**: `js/project-detail.js` + `js/project-details/*.js`
   - 프로젝트별 설정 파일에서 SEO, 히어로 카피, 개요, 핵심 포인트, 스냅샷, 특징, 링크, 갤러리를 읽어 공통 레이아웃으로 렌더.
   - Hunt a Slime은 `shared/assets/www-hunt-a-slime/content.json`에서 카드 정보·링크, KO/EN/JA 상세·SEO, 발표별 소개 문구를 관리한다. 상세 설정 JS는 JSON 로더이며, 빌드는 운영 설정·지표와 카드 정보를 합쳐 `/data/projects.json`을 만들고 초기 SEO·발표 번역·프리뷰 경로를 생성한다. 다른 프로젝트는 기존 관리 방식을 유지한다.
+  - ASMR UGC Town도 `shared/assets/www-asmr-ugc-town/content.json`에서 같은 방식으로 관리한다. 대표·프리뷰·갤러리 3장과 KO/EN/JA 상세·카드·회사 소개 문구를 같은 폴더에 두며 공통 빌드 연결을 재사용한다.
 - **커뮤니티 데이터**: 설정 JSON + 정적 JSON + 공개 API 폴백
   - 설정 소스: `data/community-groups.json` — `status`, `showOnHomepage`, `includeInHeroSubscriberTotal`, `names`, `url`
   - 정적 소스: `data/communities.json` (`npm run update:metrics` 실행 시 생성) — `groups[]`, `totals.heroSubscriberCount`, `totalMembers`, `icon`, `memberCount`, `updatedAt`

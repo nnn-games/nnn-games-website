@@ -22,8 +22,8 @@
     "prompt": "Use case: stylized-concept. Asset type: landscape 16:9 concept art for a Roblox game project website, readable at thumbnail scale. Primary request: imaginative dummy key art based on the name ASMR UGC Town. Scene: cozy miniature town plaza with rounded pastel buildings, a gentle fountain, playful accessory displays featuring headphones, hats and bags, two friendly block-shaped avatars exploring. Style: polished calming 3D game illustration, soft tactile clay and smooth glossy surfaces, pastel lavender mint and peach tones, warm diffuse light, quiet inviting atmosphere, clean uncluttered composition. No text, logos, UI, watermarks or borders. This is illustrative concept artwork, not a screenshot. One wide landscape image.",
     "generator": "Built-in image_gen",
     "assets": [
-      "shared/assets/asmrugctown/asmr-ugc-town-main.jpg",
-      "shared/assets/asmrugctown/asmr-ugc-town-preview.jpg"
+      "shared/assets/www-asmr-ugc-town/asmr-ugc-town-main.jpg",
+      "shared/assets/www-asmr-ugc-town/asmr-ugc-town-preview.jpg"
     ]
   }
 ]

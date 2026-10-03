@@ -454,36 +454,11 @@
     },
     {
       "id": "asmr-ugc-town",
-      "title": {
-        "ko": "ASMR UGC Town",
-        "en": "ASMR UGC Town",
-        "ja": "ASMR UGC Town"
-      },
-      "description": {
-        "ko": "ASMR 장애물이 있는 마을을 탐험하고, 모은 재화와 재료를 무료 UGC로 교환하는 캐주얼 Obby 게임.",
-        "en": "A casual Obby where you explore a town of ASMR obstacles and exchange collected currency and materials for free UGC.",
-        "ja": "ASMR障害物のある街を探索し、集めたゲーム内通貨や素材を無料UGCと交換するカジュアルObbyゲーム。"
-      },
-      "image": "assets/asmrugctown/asmr-ugc-town-preview.jpg",
-      "detailPage": "asmr-ugc-town.html",
-      "category": "roblox",
       "status": "development",
       "featured": true,
       "order": 20,
-      "detailRenderer": "standard",
-      "launchDate": "2026-10",
-      "platform": "Roblox",
-      "client": "",
-      "technologies": [],
       "placeId": null,
       "universeId": null,
-      "links": {
-        "play": "",
-        "trailer": "",
-        "article": "",
-        "group": "",
-        "showcase": ""
-      },
       "reporting": {
         "collectMetrics": false,
         "includeInHomePreview": true,
@@ -497,7 +472,8 @@
         "likeRatio": null,
         "updatedAt": null
       },
-      "pinned": true
+      "pinned": true,
+      "contentFile": "assets/www-asmr-ugc-town/content.json"
     }
   ],
   "summary": {

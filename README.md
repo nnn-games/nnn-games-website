@@ -21,6 +21,7 @@ npm run check  # 빌드·번역·링크·데이터·코드·배포 상태 검사
 | 홈페이지 동작·번역·스타일 | `site/js/`, `site/styles/tailwind.css` |
 | 프로젝트 상세 내용 | `site/js/project-details/<slug>.js` |
 | Hunt a Slime 정보·다국어 상세·발표 소개 | `shared/assets/www-hunt-a-slime/content.json` (이미지와 함께 관리) |
+| ASMR UGC Town 정보·다국어 상세·발표 소개 | `shared/assets/www-asmr-ugc-town/content.json` (이미지와 함께 관리) |
 | 프로젝트·커뮤니티 정보 | `shared/data/` |
 | 프로젝트 이미지·공통 로고 | `shared/assets/<project>/`, `shared/images/` |
 | 발표 내용·디자인 | `decks/<slug>/index.html`, `slides.js`, `deck.css` |
@@ -63,6 +64,8 @@ tmp/           임시 작업 파일 (Git 제외)
 Hunt a Slime은 프로젝트 JSON 정리를 먼저 적용했습니다. `content.json`의 `project`는 카드 정보·링크, `detail`은 KO/EN/JA 상세·SEO, `presentations`는 발표별 소개 문구입니다. `shared/data/projects.json`에는 `contentFile`과 운영 상태·표시 순서·노출·수집 설정·지표를 유지합니다. 빌드가 두 파일을 합쳐 기존 `/data/projects.json`과 상세 SEO·발표 번역을 만들며, 상세 JS는 JSON을 읽는 로더입니다. 수정 방법은 [프로젝트 문서](docs/projects/hunt-a-slime/README.md)를 참고하세요.
 
 ## 발표자료 관리
+
+ASMR UGC Town에도 같은 JSON 구조를 적용했습니다. 원본은 `shared/assets/www-asmr-ugc-town/content.json`이며, 대표·프리뷰·갤러리 3장도 같은 폴더에 있습니다. [편집 안내](docs/projects/asmr-ugc-town/README.md)를 참고하세요.
 
 `decks/decks.json`의 `status` 하나만 관리합니다.
 
