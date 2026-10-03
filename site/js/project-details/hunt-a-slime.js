@@ -13,7 +13,7 @@ window.ProjectDetailConfigs['hunt-a-slime'] = {
             "en": "A Roblox Action RPG about hunting slimes and growing stronger through loot, equipment, and skills. Currently in development.",
             "ja": "スライムを狩り、戦利品で装備とスキルを育てるRobloxのAction RPG。現在開発中です。"
         },
-        "ogImage": "assets/huntaslime/hunt-a-slime-main.webp",
+        "ogImage": "assets/www-hunt-a-slime/hunt-a-slime-main.webp",
         "keywords": {
             "ko": "Roblox, Hunt a Slime, Action RPG, Gelaria, NNN GAMES",
             "en": "Roblox, Hunt a Slime, Action RPG, Gelaria, NNN GAMES",
@@ -71,7 +71,7 @@ window.ProjectDetailConfigs['hunt-a-slime'] = {
     },
     "media": {
         "type": "image",
-        "src": "assets/huntaslime/hunt-a-slime-main.webp",
+        "src": "assets/www-hunt-a-slime/hunt-a-slime-main.webp",
         "alt": {
             "ko": "달빛 아래 슬라임과 황금 검을 그린 Hunt a Slime 대표 이미지",
             "en": "Hunt a Slime artwork with slimes and a golden sword under moonlight",

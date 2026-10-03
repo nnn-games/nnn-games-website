@@ -250,3 +250,5 @@
 
 - 1열 노트에 3D 에셋·지형 제작 / NPC·캐릭터 제작 / 3D 모델 최적화 / 월드·배경 최적화 분류를 KO/EN 추가. 제목·연도·실험 상태 유지.
 - 검증: `npm run check` 및 KO/EN × 1280·390·320px smoke 6조합·20장 통과. 20장 PC·모바일 PNG 직접 확인. 증거: `exports/agent/2026-10-01T22-49-22-597Z-74204/`.
+
+- 2026-10-03: Hunt a Slime 공유 이미지 경로를 `assets/www-hunt-a-slime/`로 변경. 홈페이지 카드·상세·OG, company-intro·jumpstart 발표 및 관련 문서 반영.

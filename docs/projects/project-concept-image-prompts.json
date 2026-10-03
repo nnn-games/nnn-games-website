@@ -4,8 +4,8 @@
     "prompt": "Use case: stylized-concept. Asset type: landscape 16:9 concept art for a Roblox game project website, readable at thumbnail scale. Primary request: imaginative dummy key art based on the name Hunt a slime. Scene: lush playful low-poly meadow and soft forest clearing, big adorable translucent lime-green slime facing a small block-shaped adventurer holding a simple wooden sword, several tiny slimes nearby. Style: polished playful 3D game illustration, rounded toy-like surfaces, expressive slime face, bright daylight, rich green and gold tones, clear focal point, dynamic inviting composition. No text, logos, UI, watermarks or borders. This is illustrative concept artwork, not a screenshot. One wide landscape image.",
     "generator": "Built-in image_gen",
     "assets": [
-      "shared/assets/huntaslime/hunt-a-slime-main.jpg",
-      "shared/assets/huntaslime/hunt-a-slime-preview.jpg"
+      "shared/assets/www-hunt-a-slime/hunt-a-slime-main.jpg",
+      "shared/assets/www-hunt-a-slime/hunt-a-slime-preview.jpg"
     ]
   },
   {

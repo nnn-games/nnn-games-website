@@ -19,7 +19,7 @@
 - client: 미정
 - technologies: []
 - placeId / universeId:
-- thumbnail (image): assets/huntaslime/hunt-a-slime-preview.webp
+- thumbnail (image): assets/www-hunt-a-slime/hunt-a-slime-preview.webp
 - detailPage: hunt-a-slime.html
 - 외부 링크: play / trailer / article / group / showcase
 - reporting: collectMetrics=false / includeInHeroProjectCount=false / includeInHeroVisitTotal=false
@@ -48,7 +48,7 @@
 
 ## 4. 메인 미디어
 - type: image
-- src: `assets/huntaslime/hunt-a-slime-main.webp`
+- src: `assets/www-hunt-a-slime/hunt-a-slime-main.webp`
 - alt: 달빛 아래 슬라임과 황금 검을 그린 대표 이미지 (KO / EN / JA 반영)
 
 ## 5. 개요 (Overview)
@@ -78,8 +78,8 @@
 |  |  |  |
 
 ## 10. 갤러리 (Gallery)
-- 1: `assets/huntaslime/hunt-a-slime-main-gallery-1.webp` — 달빛 비치는 유적에서 검을 휘두르는 캐릭터와 초록 슬라임 (KO / EN / JA 반영)
-- 2: `assets/huntaslime/icon-slash.webp` — 검을 들어 올린 캐릭터와 커다란 초록 슬라임의 정사각형 이미지 (KO / EN / JA 반영)
+- 1: `assets/www-hunt-a-slime/hunt-a-slime-main-gallery-1.webp` — 달빛 비치는 유적에서 검을 휘두르는 캐릭터와 초록 슬라임 (KO / EN / JA 반영)
+- 2: `assets/www-hunt-a-slime/icon-slash.webp` — 검을 들어 올린 캐릭터와 커다란 초록 슬라임의 정사각형 이미지 (KO / EN / JA 반영)
 
 ## 11. 체크리스트
 - [x] `data/projects.json` 메타·링크·리포팅 갱신
@@ -92,7 +92,7 @@
 ## 메모 / 결정 사항
 - 2026-09-29: 사용자가 이름 기반 더미 이미지 생성 및 페이지 채우기를 요청하여 진행.
 - 기본 제공 image_gen 도구로 프로젝트별 콘셉트 아트 1장 생성. 생성 프롬프트는 `project-concept-image-prompts.json`에 보관.
-- 카드: `assets/huntaslime/hunt-a-slime-preview.jpg` (640px), 상세·OG: `assets/huntaslime/hunt-a-slime-main.jpg` (1200px).
+- 카드: `assets/www-hunt-a-slime/hunt-a-slime-preview.jpg` (640px), 상세·OG: `assets/www-hunt-a-slime/hunt-a-slime-main.jpg` (1200px).
 - 이름 기반 임시 콘셉트임을 KO/EN/JA 안내문으로 명시.
 - 상태는 개발 중. 플레이 링크, 클라이언트, 기술 스택은 미정.
 - 정렬값: 30. 상단 고정 프로젝트로 등록. 고정 4개 이후 라이브 6개는 누적 방문 수 내림차순.

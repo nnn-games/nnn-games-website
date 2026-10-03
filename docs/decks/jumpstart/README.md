@@ -48,7 +48,7 @@
 
 운영 지표의 수치나 운영 주기의 구체적인 기간은 아직 지정되지 않아 목표로만 기록합니다.
 
-2단계 이미지: `shared/assets/huntaslime/hunt-a-slime-preview.webp` 재사용.
+2단계 이미지: `shared/assets/www-hunt-a-slime/hunt-a-slime-preview.webp` 재사용.
 
 ### 3단계 목표
 
