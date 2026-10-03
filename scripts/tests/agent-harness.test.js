@@ -29,7 +29,7 @@ test('출력 경로를 검사해 소스·루트·외부 디렉터리를 지우�
     assert.throws(() => resolveBuildOutput(root, output));
   }
   fs.mkdirSync(path.join(root, 'tmp'));
-  fs.symlinkSync(os.tmpdir(), path.join(root, 'tmp/external'), 'dir');
+  fs.symlinkSync(os.tmpdir(), path.join(root, 'tmp/external'), process.platform === 'win32' ? 'junction' : 'dir');
   assert.throws(() => resolveBuildOutput(root, 'tmp/external/build'), /저장소 밖/);
 });
 
@@ -76,6 +76,7 @@ test('생성한 초안을 실제 렌더하고 JS 예외·없는 이미지·넘�
     'scripts/build.js',
     'scripts/lib/deck-policy.js',
     'scripts/lib/build-output.js',
+    'scripts/lib/project-content.js',
     'scripts/lib/preview-server.js',
     'scripts/agent/smoke.js',
     'scripts/export-deck.js',
@@ -90,7 +91,7 @@ test('생성한 초안을 실제 렌더하고 JS 예외·없는 이미지·넘�
   write('shared/data/projects.json', JSON.stringify({ all: [] }));
   write('site/index.html', '<html><head></head><body>Homepage</body></html>');
   write('site/styles/tailwind.css', '@tailwind utilities;');
-  fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(root, 'node_modules'), 'dir');
+  fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
   createDeck(root, parse(['fresh-deck', '--langs', 'ko,en,ja']));
   const run = (script, args) =>
     spawnSync(process.execPath, [path.join(root, script), ...args], { cwd: root, encoding: 'utf8', timeout: 85000 });

@@ -1,5 +1,7 @@
 # Jumpstart 제안 원고·디자인
 
+Hunt a Slime 이미지 캡션·alt는 `shared/assets/www-hunt-a-slime/content.json`의 `presentations.jumpstart`에서 KO/EN으로 관리합니다. 빌드가 DECK_I18N과 초기 HTML에 반영하며, 이미지 마커는 `project.image`를 사용합니다. 단계별 연구·개발 목표는 제안서 고유 문구로 기존 덱에 유지합니다.
+
 - [제안서 초안 v0.5](TomatoSplat2_Jumpstart_제안서_초안_v0.5.md)
 - [슬라이드 구성안](TomatoSplat2_Jumpstart_슬라이드_구성안_v0.1.md)
 - [용어 감사 기록](TomatoSplat2_제안서_v0.4_용어감사.md)

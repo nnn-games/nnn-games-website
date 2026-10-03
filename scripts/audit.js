@@ -325,7 +325,7 @@ function render(linkResults) {
 }
 
 async function main() {
-  const projects = readJson('shared/data/projects.json');
+  const projects = require('./lib/project-content').loadProjectContents(ROOT).projects;
   const communities = readJson('shared/data/communities.json');
   const groups = readJson('shared/data/community-groups.json');
   const decks = (readJson('decks/decks.json').decks || []).filter((d) => d && d.slug);

@@ -11,6 +11,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { loadProjectContents } = require('./lib/project-content');
 
 const ROOT = path.join(__dirname, '..');
 const DATA = 'shared/data';
@@ -81,7 +82,12 @@ function flag(project, key) {
 
 // projects.json
 console.log(`[${DATA}/projects.json]`);
-const projects = readJson(`${DATA}/projects.json`);
+let projects = null;
+try {
+  projects = loadProjectContents(ROOT).projects;
+} catch (error) {
+  fail(error.message);
+}
 if (projects) {
   const all = Array.isArray(projects.all) ? projects.all : [];
   if (all.length === 0) fail('all 배열이 비어 있습니다.');

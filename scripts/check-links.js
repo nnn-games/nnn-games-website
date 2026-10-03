@@ -101,6 +101,7 @@ if (fs.existsSync(path.join(DIST, projectsRel))) {
   for (const project of projects.all || []) {
     if (project.image) refs.push(project.image);
     if (project.detailPage) refs.push(project.detailPage);
+    if (project.contentFile) refs.push(project.contentFile);
   }
   checkRefs(projectsRel, refs, DIST);
   console.log(`  data/projects.json: 프로젝트 ${(projects.all || []).length}개`);
@@ -117,6 +118,19 @@ if (fs.existsSync(detailDir)) {
     checkRefs(rel, refs, DIST);
   }
   console.log(`  상세 설정 ${detailFiles.length}개`);
+}
+
+// 프로젝트 JSON 안의 상세·미디어 경로도 배포 루트 기준으로 검사한다.
+const assetJsonFiles = listFiles(path.join(DIST, 'assets'), (name) => name === 'content.json');
+for (const rel of assetJsonFiles) {
+  const content = JSON.parse(fs.readFileSync(path.join(DIST, rel), 'utf8'));
+  const refs = [];
+  const visit = (value) => {
+    if (typeof value === 'string' && /^(?:assets|images)\//.test(value)) refs.push(value);
+    else if (value && typeof value === 'object') Object.values(value).forEach(visit);
+  };
+  visit(content);
+  checkRefs(rel, refs, DIST);
 }
 
 console.log('');

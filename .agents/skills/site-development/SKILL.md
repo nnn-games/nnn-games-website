@@ -14,6 +14,7 @@ description: NNN GAMES 홈페이지의 UI, Tailwind 스타일, 공통 헤더·�
 - 다국어: 공통 문구는 `site/js/i18n.js`, 상세 콘텐츠는 `site/js/project-details/<slug>.js`. KO/EN/JA와 HTML SEO 메타를 함께 맞춘다.
 - 렌더러: `site/js/project-detail.js`, `project-renderer.js`, 데이터 로더 `projects-data.js`, 공통 유틸 `utils.js`.
 - 메타·링크·정렬: `shared/data/projects.json`. 수집 지표는 `npm run update:metrics`로만 변경한다.
+- Hunt a Slime의 정보·링크·다국어 상세·SEO·발표 소개는 `shared/assets/www-hunt-a-slime/content.json`이 원본이다. 상세 JS는 로더이며 빌드가 운영 데이터와 병합한다. 운영 상태·정렬·노출·수집 설정·지표는 기존 파일에서 관리한다.
 - 기획·동작 기준: `docs/site/prd.md`, 지표 작업이면 `docs/site/metric.md`. 프로젝트 추가·수정·상태 변경은 해당 공용 스킬을 읽는다.
 
 자산 URL은 빌드 후 주소(`assets/...`, `data/...`) 기준이다. 공유 자산 참조를 바꾸면 덱에서 쓰는 참조도 확인한다. 관련 파일 수정은 요청 범위 안에서 함께 수행한다.

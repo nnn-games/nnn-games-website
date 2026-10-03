@@ -26,6 +26,7 @@ const path = require('path');
 const { spawn, spawnSync } = require('child_process');
 const { loadDecks } = require('./lib/deck-policy');
 const { resolveBuildOutput } = require('./lib/build-output');
+const { loadProjectContents, compileDeckScript, compileProjectHtml } = require('./lib/project-content');
 
 const ROOT = path.join(__dirname, '..');
 const args = new Set(process.argv.slice(2));
@@ -181,9 +182,23 @@ function writeSitemap() {
 function build({ clean }) {
   const started = Date.now();
   const decks = loadDecks(ROOT, { includeDraft: isWatch || args.has('--include-drafts') });
+  const { projects, contents } = loadProjectContents(ROOT);
   if (clean) fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
   for (const [srcRel, destRel] of buildMap(decks)) copyMapped(srcRel, destRel);
+  if (fs.existsSync(path.join(DIST, 'data/projects.json'))) {
+    fs.writeFileSync(path.join(DIST, 'data/projects.json'), JSON.stringify(projects, null, 2) + '\n');
+  }
+  for (const file of fs.readdirSync(DIST).filter((name) => name.endsWith('.html'))) {
+    const target = path.join(DIST, file);
+    fs.writeFileSync(target, compileProjectHtml(fs.readFileSync(target, 'utf8'), contents));
+  }
+  for (const deck of decks) {
+    const html = path.join(DIST, deck.slug, 'index.html');
+    fs.writeFileSync(html, compileProjectHtml(fs.readFileSync(html, 'utf8'), contents, deck.slug));
+    const script = path.join(DIST, deck.slug, 'slides.js');
+    if (fs.existsSync(script)) fs.writeFileSync(script, compileDeckScript(fs.readFileSync(script, 'utf8'), contents, deck.slug));
+  }
   const includes = inlinePartials();
   applyDeckRobots(decks);
   buildCss();

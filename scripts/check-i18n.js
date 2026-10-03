@@ -12,6 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const { loadProjectContents, compileDeckScript } = require('./lib/project-content');
 
 const ROOT = path.join(__dirname, '..');
 const SITE = 'site';
@@ -64,7 +65,9 @@ function evalBrowserScript(relPath, pick) {
   };
   sandbox.globalThis = sandbox;
   try {
-    vm.runInNewContext(`${read(relPath)}\n;globalThis.__picked = (${pick});`, sandbox, { filename: relPath });
+    const slug = relPath.startsWith('decks/') ? relPath.split('/')[1] : null;
+    const source = slug ? compileDeckScript(read(relPath), loadProjectContents(ROOT).contents, slug) : read(relPath);
+    vm.runInNewContext(`${source}\n;globalThis.__picked = (${pick});`, sandbox, { filename: relPath });
   } catch (error) {
     fail(`${relPath} 평가 실패: ${error.message}`);
     return null;

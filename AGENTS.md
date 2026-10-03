@@ -49,6 +49,7 @@ HTML·JS·CSS·JSON의 자산 경로는 배포 주소 기준이다. 홈페이지
 - 홈페이지 공통 UI는 `site/_partials/` 한 곳에서 수정한다. 페이지의 include 마커를 유지한다.
 - 홈페이지 스타일은 `site/styles/tailwind.css`에서 수정한다. `dist/css/style.css`는 빌드 결과이며 커밋하지 않는다. Tailwind 스캔은 홈페이지 파일만 대상으로 한다.
 - 프로젝트 메타·표시 순서·링크는 `shared/data/projects.json`, 상세 카피는 `site/js/project-details/<slug>.js`에서 수정한다.
+- Hunt a Slime은 `shared/assets/www-hunt-a-slime/content.json`에서 카드 정보·링크·KO/EN/JA 상세·SEO·발표 소개를 관리한다. 운영 상태·표시 순서·노출·수집 설정·지표는 기존 `shared/data/projects.json`에 유지한다. 상세 JS는 JSON 로더, 초기 SEO·카드 데이터·발표 번역은 빌드 산출물이다. 필드 안내는 `docs/projects/hunt-a-slime/README.md`를 따른다.
 - 프로젝트·커뮤니티 지표는 `npm run update:metrics`로 갱신한다. 메타·집계 플래그는 편집할 수 있지만 수집 수치는 손으로 변경하지 않는다. 규칙은 `docs/site/metric.md`를 따른다.
 - 발표에 수치를 인용하면 출처와 기준일을 함께 기록한다. 실행 시 최신 값으로 바꾸는 기능을 임의로 추가하지 않는다.
 - 공유 자산의 이름 변경·삭제는 홈페이지와 발표 참조를 함께 확인한다. 웹 이미지는 압축하고 발표 전용 이미지는 해당 발표 폴더에 둔다.

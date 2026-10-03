@@ -5,12 +5,36 @@
 
 - **slug**: `hunt-a-slime`
 - **HTML**: `hunt-a-slime.html`
-- **콘텐츠 설정 파일**: `js/project-details/hunt-a-slime.js`
-- **카드 메타 위치**: `data/projects.json` (id: `hunt-a-slime`)
+- **콘텐츠 원본**: `shared/assets/www-hunt-a-slime/content.json`
+- **상세 로더**: `site/js/project-details/hunt-a-slime.js` (본문 카피는 JSON에서 읽음)
+- **운영 설정·수집 지표**: `shared/data/projects.json` (id: `hunt-a-slime`)
+
+## JSON 편집 방법 (2026-10-03)
+
+홈페이지와 발표가 같은 프로젝트 자산을 사용하므로 `shared/assets/www-hunt-a-slime/`에 이미지와 JSON을 함께 둡니다. 배포 위치는 `/assets/www-hunt-a-slime/content.json`입니다. 다른 프로젝트는 기존 방식을 유지합니다.
+
+| JSON 위치 | 수정하는 내용 |
+| --- | --- |
+| `project.title`, `project.description` | 카드 제목·설명 (`ko`, `en`, `ja`) |
+| `project.image`, `project.detailPage` | 카드 이미지와 상세 페이지 주소 (배포 루트 기준) |
+| `project.category`, `project.platform`, `project.client`, `project.technologies`, `project.launchDate`, `project.detailRenderer` | 프로젝트 정보·출시 일정·상세 표시 방식 |
+| `project.links` | play / trailer / article / group / showcase |
+| `detail.seo`, `detail.hero`, `detail.snapshot` | 검색·공유 메타, 제목·한 줄 소개, 프로젝트 요약 |
+| `detail.media`, `detail.overview`, `detail.highlights`, `detail.features` | 대표 이미지·개요·핵심 포인트·주요 특징 |
+| `presentations.company-intro.<언어>` | 회사 소개의 프로젝트 제목·요약·이미지 alt (KO/EN/JA) |
+| `presentations.jumpstart.<언어>` | 제안서의 프로젝트 이미지 캡션·alt (KO/EN) |
+
+상세 문구는 필드별 `{ "ko": "한국어", "en": "English", "ja": "日本語" }` 형식입니다. 발표 문구는 덱의 등록 언어별로 관리합니다. 회사 소개의 콘셉트 요약과 제안서의 단계별 설명은 발표 목적에 맞는 별도 문구로 유지하며, 출시 예정 월·제안 목표처럼 발표 전체에 속한 내용은 해당 덱에서 편집합니다.
+
+이미지 경로는 `assets/www-hunt-a-slime/...`를 사용합니다. 발표 HTML의 `{{project:hunt-a-slime:image}}`는 빌드 시 `../assets/...`로 바뀝니다. 상세 HTML의 `@project-seo` 마커는 `detail.seo`로부터 한국어 초기 메타를 만들고, 언어 전환 시 상세 렌더러가 해당 언어 메타로 갱신합니다. 카드·발표 번역의 배포 파일은 빌드가 생성하므로 `dist/`를 직접 수정하지 않습니다.
+
+운영 상태·featured·order·pinned·placeId·universeId·reporting·metrics는 `shared/data/projects.json`에서 관리합니다. 지표 수치는 `npm run update:metrics`로만 갱신합니다. JSON과 운영 데이터에 같은 정보 필드를 중복 정의하거나 상세 번역을 누락하면 검증이 실패합니다.
+
+검증: `npm run check`, `npm run agent:smoke -- --pages /,/projects-roblox.html,/hunt-a-slime.html,/company-intro/,/jumpstart/`.
 
 ---
 
-## 0. 메타 (`data/projects.json`)
+## 0. 메타 (`content.json.project` + 운영 설정)
 - category: roblox
 - status: development
 - featured: true

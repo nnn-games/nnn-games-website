@@ -7,6 +7,61 @@ const { spawn, spawnSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..', '..');
 
+test('프로젝트 JSON 수정이 카드·SEO·상세·발표에 반영되고 지표는 보존된다', (t) => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'nnn-project-content-'));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const write = (file, value) => {
+    fs.mkdirSync(path.dirname(path.join(root, file)), { recursive: true });
+    fs.writeFileSync(path.join(root, file), value);
+  };
+  const json = (file) => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
+  for (const file of ['scripts/build.js', 'scripts/lib/deck-policy.js', 'scripts/lib/build-output.js', 'scripts/lib/project-content.js', 'tailwind.config.js', 'postcss.config.js']) {
+    write(file, fs.readFileSync(path.join(ROOT, file)));
+  }
+  fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
+  write('site/index.html', '<html><head><!-- @project-seo hunt-a-slime --></head><body></body></html>');
+  write('site/styles/tailwind.css', '@tailwind utilities;');
+  const operational = { id: 'hunt-a-slime', status: 'development', metrics: { visits: null }, contentFile: 'assets/www-hunt-a-slime/content.json' };
+  write('shared/data/projects.json', JSON.stringify({ all: [operational] }));
+  const content = JSON.parse(fs.readFileSync(path.join(ROOT, 'shared', operational.contentFile), 'utf8'));
+  write('shared/' + operational.contentFile, JSON.stringify(content));
+  write('decks/decks.json', JSON.stringify({ decks: [{ slug: 'company-intro', status: 'active' }] }));
+  write('decks/company-intro/index.html', '<html><head></head><body><img src="{{project:hunt-a-slime:image}}" alt="초기 이미지" data-deck-key-alt="alt_hunt-a-slime"><p data-deck-key="desc_hunt-a-slime">초기 설명</p></body></html>');
+  write('decks/company-intro/slides.js', 'window.DECK_I18N = {ko:{}, en:{}, ja:{}};');
+  const build = () => {
+    const result = spawnSync(process.execPath, [path.join(root, 'scripts/build.js')], { cwd: root, encoding: 'utf8' });
+    assert.equal(result.status, 0, result.stderr);
+  };
+  build();
+  content.project.title.en = 'Updated card title';
+  content.project.image = 'assets/www-hunt-a-slime/updated-preview.webp';
+  content.detail.seo.description.ko = '수정한 검색 설명';
+  content.detail.overview[0].en = 'Updated overview';
+  content.presentations['company-intro'].ko['desc_hunt-a-slime'] = '수정한 발표 설명';
+  content.presentations['company-intro'].en['alt_hunt-a-slime'] = 'Updated slide image';
+  write('shared/' + operational.contentFile, JSON.stringify(content));
+  build();
+  const project = json('dist/data/projects.json').all[0];
+  assert.equal(project.title.en, 'Updated card title');
+  assert.deepEqual(project.metrics, operational.metrics);
+  assert.deepEqual(json('shared/data/projects.json').all[0], operational);
+  assert.match(fs.readFileSync(path.join(root, 'dist/index.html'), 'utf8'), /수정한 검색 설명/);
+  assert.equal(json('dist/' + operational.contentFile).detail.overview[0].en, 'Updated overview');
+  const html = fs.readFileSync(path.join(root, 'dist/company-intro/index.html'), 'utf8');
+  assert.match(html, /수정한 발표 설명/);
+  assert.match(html, /\.\.\/assets\/www-hunt-a-slime\/updated-preview\.webp/);
+  const sandbox = { window: {} };
+  require('node:vm').runInNewContext(fs.readFileSync(path.join(root, 'dist/company-intro/slides.js'), 'utf8'), sandbox);
+  assert.equal(sandbox.window.DECK_I18N.en['alt_hunt-a-slime'], 'Updated slide image');
+  const { loadProjectContents } = require('../lib/project-content');
+  delete content.detail.hero.tagline.ja;
+  write('shared/' + operational.contentFile, JSON.stringify(content));
+  assert.throws(() => loadProjectContents(root), /tagline.ja/);
+  content.project.metrics = { visits: 999 };
+  write('shared/' + operational.contentFile, JSON.stringify(content));
+  assert.throws(() => loadProjectContents(root), /project.metrics/);
+});
+
 test('실제 빌드에서 상태별 배포·초안 개발·검색 제외를 검증한다', async (t) => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'nnn-deck-policy-'));
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
@@ -16,10 +71,10 @@ test('실제 빌드에서 상태별 배포·초안 개발·검색 제외를 검�
   };
   const exists = (file) => fs.existsSync(path.join(root, file));
   const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
-  for (const file of ['scripts/build.js', 'scripts/lib/deck-policy.js', 'scripts/lib/build-output.js', 'tailwind.config.js', 'postcss.config.js']) {
+  for (const file of ['scripts/build.js', 'scripts/lib/deck-policy.js', 'scripts/lib/build-output.js', 'scripts/lib/project-content.js', 'tailwind.config.js', 'postcss.config.js']) {
     write(file, fs.readFileSync(path.join(ROOT, file)));
   }
-  fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(root, 'node_modules'), 'dir');
+  fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(root, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
   write('site/index.html', '<html><head></head><body>Homepage</body></html>');
   write('site/styles/tailwind.css', '@tailwind utilities;');
   write('site/CNAME', 'www.triplengames.com');

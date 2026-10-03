@@ -35,7 +35,7 @@ const VIEWPORTS = [
 
 function defaultPages() {
   const pages = ['/', '/projects-roblox.html', '/contact.html'];
-  const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'shared', 'data', 'projects.json'), 'utf8')).all || [];
+  const projects = require('./lib/project-content').loadProjectContents(ROOT).projects.all || [];
   const active = projects.find((p) => p.status === 'active');
   const development = projects.find((p) => p.status === 'development');
   if (active) pages.push(`/${active.detailPage}`);

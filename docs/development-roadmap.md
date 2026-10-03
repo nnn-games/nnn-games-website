@@ -252,3 +252,6 @@
 - 검증: `npm run check` 및 KO/EN × 1280·390·320px smoke 6조합·20장 통과. 20장 PC·모바일 PNG 직접 확인. 증거: `exports/agent/2026-10-01T22-49-22-597Z-74204/`.
 
 - 2026-10-03: Hunt a Slime 공유 이미지 경로를 `assets/www-hunt-a-slime/`로 변경. 홈페이지 카드·상세·OG, company-intro·jumpstart 발표 및 관련 문서 반영.
+
+- 2026-10-03: Hunt a Slime의 카드 정보·링크·KO/EN/JA 상세·SEO·발표 소개를 이미지 옆 `shared/assets/www-hunt-a-slime/content.json`으로 통합. 운영 설정과 수집 지표는 기존 레지스트리에 유지하고 빌드가 카드 데이터·초기 SEO·발표 문구·이미지 경로를 생성. 상세 JS는 기존 ProjectDetailReady 방식의 JSON 로더로 변경. 다른 프로젝트·발표 상태·공유 URL 유지.
+- 검증: `npm run check` 5개 테스트, `npm run agent:test` 4개 테스트, 홈·Roblox 목록·상세·company-intro·jumpstart smoke 42조합 통과. 이전 카드 정보·지표·상세 번역·발표 사전과 동일함을 비교 검증. 관련 PNG 직접 확인. 증거: `exports/agent/2026-10-03T08-53-37-969Z-34648/`. Windows 테스트 디렉터리 링크는 junction으로 생성해 기존 권한 오류 해결.

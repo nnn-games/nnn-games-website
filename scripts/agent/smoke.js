@@ -34,7 +34,7 @@ function options(argv) {
 }
 
 function defaultRoutes(decks) {
-  const projects = JSON.parse(fs.readFileSync(path.join(server.ROOT, 'shared/data/projects.json'), 'utf8')).all;
+  const projects = require('../lib/project-content').loadProjectContents(server.ROOT).projects.all;
   const examples = ['active', 'development'].map((status) => projects.find((p) => p.status === status)).filter(Boolean);
   return [
     '/',
