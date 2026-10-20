@@ -285,7 +285,7 @@ a { color: inherit; }
 .pororo-details > div { display: grid; grid-template-columns: 4.7rem minmax(0, 1fr); gap: .6rem; padding: .65rem 0; border-bottom: 1px solid var(--deck-line); }
 .pororo-details dt { color: var(--deck-muted); font-size: .7rem; line-height: 1.5; }
 .pororo-details dd { font-size: .76rem; font-weight: 650; line-height: 1.5; }
-.pororo-details [data-deck-key="pororo_ip_name"], .pororo-details [data-deck-key="pororo_partner_name"] { font-family: Inter, "Noto Sans KR", "Noto Sans JP", system-ui, sans-serif; }
+.pororo-details [data-deck-key="pororo_partner_name"] { font-family: Inter, "Noto Sans KR", "Noto Sans JP", system-ui, sans-serif; }
 .pororo-gallery { display: grid; min-width: 0; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: .7rem; align-items: start; }
 .pororo-game-shots, .pororo-brand-shots { display: grid; min-width: 0; gap: .65rem; }
 .pororo-gallery figure { min-width: 0; }

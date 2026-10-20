@@ -299,3 +299,5 @@
 - 12장 `pororo-community`에 사용자 지정 Roblox 프로젝트의 썸네일·최종 로딩 배경·게임 아이콘과 ICONIX 공식 로고·뽀로로 작품 이미지를 추가. 회사 설명·수행 업무와 이미지 갤러리를 PC 2열·모바일 세로 흐름으로 구성. 원본 전체·비율·로고 투명도 보존, 웹용 WebP 5개 합계 261,376바이트.
 - 프로젝트 README를 근거로 Roblox·루피 ASMR 타워 설명과 이미지 캡션·alt를 KO/EN/JA 반영. 공식 이미지의 출처 링크·저작권 표시, 원본 경로·URL·해시·변환 규격을 docs/decks/company-intro/pororo-assets.json에 기록. 외부 원본 저장소·기존 수치·18장 순서·배포 상태 유지, CSS·JS 캐시 버전 갱신.
 - 검증: npm run check 통과. KO/EN/JA × 1280·390·320px smoke 9조합·18장 통과(실패·경고 0), 이미지 5개의 로딩·원본 비율을 3개 폭에서 대조. PC·모바일 상단/하단 PNG 직접 확인. 증거: exports/agent/2026-10-20T03-44-12-171Z-98003/ 및 exports/agent/pororo-art-preview/image-check.json.
+
+- 2026-10-20: 사용자 요청으로 회사 소개 12장 협업사례의 활용 IP 행 제거. KO/EN/JA 불필요 문구 키·스타일 선택자와 문서 동기화, 캐시 버전 갱신. npm run check 및 PC·모바일 smoke 2조합·18장 통과. 3개 언어에서 협업사·수행 업무 2행 확인, PNG 직접 확인. 증거: exports/agent/2026-10-20T03-46-56-996Z-2742/.

@@ -116,4 +116,4 @@
 
 ## 수정·검증 위치
 
-슬라이드 ID와 마크업 순서는 `index.html`·`DECK_SLIDES`에서 일치하며 마지막 4장은 `appendix: true`입니다. 텍스트는 `DECK_I18N`의 219개 키를 KO/EN/JA로 작성했습니다. 팀소개의 `people_avatar_alt`는 nnn 원문을 그대로 사용합니다. 아바타·배경 장식은 기존 `company-renderers.js`의 avatars 렌더러를 사용하며 역할 라벨과 people_badge는 nnn 원본 화면과 동일하게 표시하지 않습니다. 전체 18장의 서브타이틀 18개 문구 키와 회사연혁의 중복 도입 문구는 실행 마크업에서 제거하고 [발표 메모](speaker-notes.md)에 보관했습니다. 언어 전환·키보드 이동·해시 딥링크·전체화면·부록은 공통 런타임을 사용합니다.
+슬라이드 ID와 마크업 순서는 `index.html`·`DECK_SLIDES`에서 일치하며 마지막 4장은 `appendix: true`입니다. 텍스트는 `DECK_I18N`의 217개 키를 KO/EN/JA로 작성했습니다. 팀소개의 `people_avatar_alt`는 nnn 원문을 그대로 사용합니다. 아바타·배경 장식은 기존 `company-renderers.js`의 avatars 렌더러를 사용하며 역할 라벨과 people_badge는 nnn 원본 화면과 동일하게 표시하지 않습니다. 전체 18장의 서브타이틀 18개 문구 키와 회사연혁의 중복 도입 문구는 실행 마크업에서 제거하고 [발표 메모](speaker-notes.md)에 보관했습니다. 언어 전환·키보드 이동·해시 딥링크·전체화면·부록은 공통 런타임을 사용합니다.
