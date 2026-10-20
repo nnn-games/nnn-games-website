@@ -72,6 +72,10 @@ window.DECK_SLIDES = [
         "theme": "paper"
     },
     {
+        "id": "pororo-community",
+        "theme": "paper"
+    },
+    {
         "id": "ip-strategy",
         "theme": "dark"
     },
@@ -103,6 +107,14 @@ window.DECK_SLIDES = [
 
 window.DECK_I18N = {
     "ko": {
+        "title_pororo-community": "협업사례",
+        "pororo_ip_name": "뽀로로",
+        "pororo_partner_name": "아이코닉스 (ICONIX)",
+        "pororo_partner_label": "협업사",
+        "pororo_ip_label": "활용 IP",
+        "pororo_work_label": "수행 업무",
+        "pororo_work_name": "커뮤니티 구축",
+        "pororo_summary": "뽀로로 IP를 활용한 커뮤니티 구축",
         "ui_page_title": "NNN GAMES 회사 소개",
         "ui_prev": "이전",
         "ui_next": "다음",
@@ -277,6 +289,14 @@ window.DECK_I18N = {
         "brief_scope": "일정·범위"
     },
     "en": {
+        "title_pororo-community": "Partnerships",
+        "pororo_ip_name": "Pororo",
+        "pororo_partner_name": "ICONIX",
+        "pororo_partner_label": "Partner",
+        "pororo_ip_label": "IP",
+        "pororo_work_label": "Scope of work",
+        "pororo_work_name": "Community building",
+        "pororo_summary": "Pororo IP community building",
         "ui_page_title": "NNN GAMES Company Introduction",
         "ui_prev": "Prev",
         "ui_next": "Next",
@@ -451,6 +471,14 @@ window.DECK_I18N = {
         "brief_scope": "Schedule / scope"
     },
     "ja": {
+        "title_pororo-community": "協業事例",
+        "pororo_ip_name": "Pororo",
+        "pororo_partner_name": "ICONIX",
+        "pororo_partner_label": "パートナー",
+        "pororo_ip_label": "活用IP",
+        "pororo_work_label": "担当業務",
+        "pororo_work_name": "コミュニティ構築",
+        "pororo_summary": "Pororo IPを活用したコミュニティ構築",
         "ui_page_title": "NNN GAMES 会社紹介",
         "ui_prev": "前へ",
         "ui_next": "次へ",
