@@ -1,8 +1,8 @@
 # 신규 회사 소개 제작 출처
 
 제작일: 2026-10-01  
-지표 기준: 2026.10.01 14:57 KST (`2026-10-01T05:57:11.388Z`)  
-덱: `decks/company-intro/` · 본편 13장 + 부록 4장 · KO/EN/JA · draft
+지표 기준: 2026.10.20 11:59 KST (`2026-10-20T02:59:46.223Z`)  
+덱: `decks/company-intro/` · 본편 13장 + 부록 4장 · KO/EN/JA · active
 
 ## 지표 스냅샷
 
@@ -13,20 +13,20 @@
 | 지표 | 고정 값 | 집계·표기 |
 | --- | ---: | --- |
 | 운영 게임 | 6 | `summary.hero.projectCount`, active 집계 대상 |
-| 게임 누적 방문 | 14,008,163 | `summary.hero.totalVisits`, 재방문 포함. 본편 `14.0M+` |
-| 커뮤니티 가입 합계 | 208,979 | `totals.heroSubscriberCount`, 7개 그룹 합계·중복 포함. 본편 `208K+` |
-| NNN UGC 가입 수 | 84,356 | 그룹 ID `34453707`, IP 전략 참고 카드 |
+| 게임 누적 방문 | 14,147,125 | `summary.hero.totalVisits`, 재방문 포함. 본편 `14.1M+` |
+| 커뮤니티 가입 합계 | 215,053 | `totals.heroSubscriberCount`, 7개 그룹 합계·중복 포함. 본편 `215K+` |
+| NNN UGC 가입 수 | 90,270 | 그룹 ID `34453707`, IP 전략 참고 카드 |
 
 본편의 축약 수치는 내림 표기합니다. A2에는 정확한 방문·즐겨찾기와 좋아요 비율(정수 %로 반올림)을 기록합니다. 현재 접속자·Peak CCU·리텐션·매출은 이 덱의 성과 지표에 포함하지 않습니다.
 
 | 운영 게임 | 출시 월 | 누적 방문 | 즐겨찾기 | 좋아요 |
 | --- | --- | ---: | ---: | ---: |
-| Tower Flood Race | 2026-01 | 11,387,959 | 525,667 | 60% |
-| Tomato Splatter Simulator | 2026-04 | 1,245,221 | 12,483 | 77% |
-| [Free UGC] AFK or arcade game | 2026-05 | 826,310 | 8,665 | 97% |
-| 🎁 FREE UGC RNG | 2026-05 | 347,212 | 5,638 | 83% |
-| Korean Spa | 2025-12 | 144,271 | 739 | 86% |
-| Fruit Battles | 2026-04 | 57,190 | 249 | 56% |
+| Tower Flood Race | 2026-01 | 11,435,566 | 527,223 | 61% |
+| Tomato Splatter Simulator | 2026-04 | 1,288,605 | 12,647 | 76% |
+| [Free UGC] AFK or arcade game | 2026-05 | 847,607 | 8,784 | 97% |
+| 🎁 FREE UGC RNG | 2026-05 | 372,688 | 6,078 | 83% |
+| Korean Spa | 2025-12 | 145,395 | 749 | 87% |
+| Fruit Battles | 2026-04 | 57,264 | 249 | 56% |
 
 출시 월은 프로젝트 메타이며 수집 날짜와 구분합니다. 개발 프로젝트는 게임 4종(Enchant a Weapon, ASMR UGC Town, Hunt a slime, Tomato Splatter), NNN UGC는 별도 UGC 제작 프로젝트로 소개합니다. 등록된 출시 예정 월은 보장된 일정으로 표현하지 않습니다. Hunt a slime·Tomato Splatter 이미지는 개발 콘셉트로 표시합니다.
 

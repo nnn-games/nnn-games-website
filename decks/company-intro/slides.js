@@ -1,6 +1,6 @@
 // 신규 회사 소개 — 기존 company·nnn 문구를 재사용하고 KO/EN/JA로 작성.
 // 지표는 제작 시점의 고정 스냅샷. 출처·기준일: docs/decks/company-intro/sources.md
-// 기준: 2026-10-01T05:57:11.388Z (Roblox 공개 API 공식 갱신)
+// 기준: 2026-10-20T02:59:46.223Z (Roblox 공개 API 공식 갱신)
 window.DECK_SLIDES = [
     {
         "id": "intro",
@@ -128,8 +128,8 @@ window.DECK_I18N = {
         "label_concept": "개발 콘셉트",
         "label_expected": "출시 예정",
         "label_production": "UGC 제작 프로젝트",
-        "source_current": "Roblox 공개 지표 · 2026.10.01 14:57 KST",
-        "source_games": "운영 게임 6종 · Roblox 공개 지표 · 2026.10.01",
+        "source_current": "Roblox 공개 지표 · 2026.10.20 11:59 KST",
+        "source_games": "운영 게임 6종 · Roblox 공개 지표 · 2026.10.20",
         "source_pipeline": "개발 중 · 등록된 출시 예정 월 기준 · 2026.10",
         "source_cases": "운영 게임의 플레이·보상 설계 사례",
         "source_events": "기존 라이브 이벤트 사례 · Top 100 Challenge / Golden Ducky",
@@ -302,8 +302,8 @@ window.DECK_I18N = {
         "label_concept": "Development concept",
         "label_expected": "Expected release",
         "label_production": "UGC creation project",
-        "source_current": "Roblox public metrics · 2026.10.01 14:57 KST",
-        "source_games": "6 live games · Roblox public metrics · 2026.10.01",
+        "source_current": "Roblox public metrics · 2026.10.20 11:59 KST",
+        "source_games": "6 live games · Roblox public metrics · 2026.10.20",
         "source_pipeline": "In development · Scheduled release months · 2026.10",
         "source_cases": "Gameplay and reward design from live games",
         "source_events": "Past live events · Top 100 Challenge / Golden Ducky",
@@ -476,8 +476,8 @@ window.DECK_I18N = {
         "label_concept": "開発コンセプト",
         "label_expected": "公開予定",
         "label_production": "UGC制作プロジェクト",
-        "source_current": "Roblox公開指標 · 2026.10.01 14:57 KST",
-        "source_games": "運営ゲーム6本 · Roblox公開指標 · 2026.10.01",
+        "source_current": "Roblox公開指標 · 2026.10.20 11:59 KST",
+        "source_games": "運営ゲーム6本 · Roblox公開指標 · 2026.10.20",
         "source_pipeline": "開発中 · 登録済み公開予定月 · 2026.10",
         "source_cases": "運営ゲームのプレイ・報酬設計事例",
         "source_events": "過去のライブイベント事例 · Top 100 Challenge / Golden Ducky",
