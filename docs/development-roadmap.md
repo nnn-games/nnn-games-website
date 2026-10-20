@@ -270,3 +270,10 @@
 
 - 2026-10-03: `shared/assets`의 프로젝트 13개를 `www-<project>/content.json` 구조로 통일. 남은 운영 4개의 메타·KO/EN/JA 상세·회사 소개를 이전하고 홈페이지·발표의 이미지 참조를 수정. 보관 프로젝트 3개는 기존 아카이브 원고를 복사하고 Forest Workshop과 함께 `catalogOnly`로 관리해 등록·공개 상태 유지. 원본 아카이브·기존 미커밋 변경·지표·URL 보존. 전체 매핑과 편집 규칙은 `docs/projects/asset-content.md`에 정리.
 - 검증: `npm run check`, `npm run agent:test` 통과. 관련 홈페이지·상세·회사 소개·Jumpstart 브라우저 69조합 통과 및 변경 상세 4개·회사 소개 PNG 직접 확인. 기존 정보·지표·상세·발표 번역의 동일성과 이동 자산 38개 Git 해시 확인. 미등록 카탈로그 4개의 자동 등록·페이지 생성 방지 회귀 검사 추가. 증거: `exports/agent/2026-10-03T10-27-58-867Z-19180/`.
+
+
+### 2026-10-20 — 회사 소개 슬라이드 공개
+
+- `company-intro`를 `draft`에서 `active`로 전환해 기존 `/company-intro/` 주소로 운영 배포에 포함. 본편 13장·부록 4장과 KO/EN/JA 콘텐츠·지표 기준일 유지. `company`·`nnn`은 보관 상태 유지.
+- 레지스트리와 루트·발표 문서의 상태·접속 안내 갱신. 최신 원격 변경을 반영해 기존 자산 경로·프로젝트 JSON 구조 보존.
+- 검증: `npm run check` 통과, 운영 빌드 HTTP 200·noindex·사이트맵 제외 확인. KO/EN/JA × 1280·390·320px smoke 9조합·17장 통과(실패·경고 0). PC·모바일 PNG 직접 확인. 증거: `exports/agent/2026-10-20T02-47-55-257Z-32393/`.

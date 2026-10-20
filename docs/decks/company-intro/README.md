@@ -1,7 +1,7 @@
 # 신규 회사 소개
 
 대상: 협력사·브랜드/IP 파트너  
-상태: 제작 초안 (`draft`)  
+상태: 공개 (`active`, 2026-10-20 전환)  
 언어: KO/EN/JA  
 구성: 본편 13장 + 부록 4장
 
@@ -49,7 +49,7 @@ Hunt a Slime의 제목·소개·이미지 alt는 `shared/assets/www-hunt-a-slime
 - `decks/company-intro/assets/`: 보관 덱에서 재사용한 압축 이미지
 - `docs/decks/company-intro/`: 구성·근거·원고 관리
 
-`npm run dev` 실행 후 <http://localhost:8080/company-intro/>에서 확인합니다. 운영 빌드에는 포함되지 않으며 검색·사이트맵에서 제외됩니다.
+공개 주소는 <https://www.triplengames.com/company-intro/>입니다. `npm run dev` 실행 후 <http://localhost:8080/company-intro/>에서도 확인합니다. 운영 빌드에 포함되며 검색·사이트맵에서는 제외됩니다.
 
 ```bash
 npm run check

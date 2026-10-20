@@ -3,7 +3,7 @@
 발표 코드는 `decks/<slug>/`, 원고와 디자인 원본은 `docs/decks/<slug>/`에서 관리합니다. 원고·메모·디자인 원본은 배포되지 않습니다.
 
 - [발표 구조 기획](structure.md): company/jumpstart 초기 구성 기록
-- [신규 회사 소개](company-intro/README.md): 본편 13장·부록 4장 초안, 보관 덱 비교·구성안·인용 출처
+- [신규 회사 소개](company-intro/README.md): 공개 중인 본편 13장·부록 4장, 보관 덱 비교·구성안·인용 출처
 - [보관된 회사 소개](company/README.md): company와 nnn 발표의 과거 기획·원본
 - [Jumpstart 제안](jumpstart/README.md): 제안 원고·슬라이드 기획·이미지 프롬프트
 

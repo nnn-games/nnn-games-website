@@ -41,7 +41,7 @@ site/          회사 홈페이지 코드, 스타일, CNAME·robots.txt
 decks/         발표자료 코드와 발표용 이미지
   decks.json   발표 목록·상태
   shared/      공통 슬라이드 런타임
-  company-intro/  신규 회사 소개 (본편 13장·부록 4장 초안)
+  company-intro/  공개 회사 소개 (본편 13장·부록 4장)
   company/     보관된 회사 소개 (2026-08)
   nnn/         보관된 회사 소개 (2026-07)
   jumpstart/   프로젝트 제안
@@ -83,7 +83,7 @@ ASMR UGC Town에도 같은 JSON 구조를 적용했습니다. 원본은 `shared/
 | `npm run build` / `npm run serve` | 운영 배포 결과 생성 / 로컬 확인 |
 | `npm run update:metrics` | 프로젝트·커뮤니티 지표 갱신 |
 | `npm run snapshot` | 주요 화면 스크린샷 → `exports/site/` |
-| `npm run export:deck -- company-intro --lang ko` | 초안 발표 PNG·PDF → `exports/decks/` |
+| `npm run export:deck -- company-intro --lang ko` | 회사 소개 PNG·PDF → `exports/decks/` |
 | `npm run audit` | 점검 보고서 → `exports/audit/` |
 
 스크린샷·PDF 도구는 최초 한 번 `npx playwright install chromium`이 필요합니다. Windows의 지표 갱신·빌드 도우미는 `scripts/update-metrics-and-build.bat`입니다.
