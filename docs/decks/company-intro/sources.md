@@ -45,7 +45,7 @@
 | 09 개발현황 | `shared/data/projects.json`, 각 프로젝트 상세와 `docs/projects/`의 현재 기획. 옛 계획 목록을 현행 4종으로 교체 |
 | 10 팀소개 | nnn people의 ONESHOT/JEFF/PAPASLIME 아바타·이름·JEFF 강조·Claude/ChatGPT 배경 구성. 기존 경력·포트폴리오 카드는 사용자 요청으로 폐기, 리드 문구는 전체 서브타이틀 제거 기준에 따라 발표 메모로 이동 |
 | 11 협업사례 | 공통 global의 JR EAST × NAVER Z Get Train, 야마노테선·JRE WALLET 연동 설명. ZEPETO와 기존 기재 기간 2024.09–2025.12 명시 |
-| 12 협업사례 · ICONIX | 2026-10-20 사용자 제공: IConix, Pororo IP 활용 커뮤니티 구축. 회사 표기는 ICONIX로 통일. 지정 Roblox 프로젝트의 README·썸네일·로딩 배경·아이콘과 ICONIX 공식 로고·뽀로로 작품 이미지를 사용. 기간·성과·추가 업무는 인용하지 않음 |
+| 12 협업사례 · ICONIX | 2026-10-20 사용자 제공: IConix, Pororo IP 활용 커뮤니티 구축·POC 제작. 회사 표기는 ICONIX로 통일. 지정 Roblox 프로젝트의 README·썸네일·로딩 배경·아이콘과 ICONIX 공식 로고·뽀로로 작품 이미지를 사용. 기간·성과·추가 업무는 인용하지 않음 |
 | 13 IP 전략 | company kungya-entry/community/expansion의 접근법을 일반 브랜드/IP 제안 흐름으로 재작성. NNN UGC 현재 가입 수를 별도 참고 지표로 제시 |
 | 14 협업문의 | 공통 closing의 제공 역량. 대표 이메일은 기존 덱, 일반 문의·주소는 현행 홈페이지 기준 |
 | A1 회사연혁 | 공통 history의 MOBILE·IFLAND·ZEPETO 경험. Roblox 시작 연도 차이는 단정하지 않고 현재 운영으로 표시 |

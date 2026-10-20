@@ -33,7 +33,7 @@ Hunt a Slime의 제목·소개·이미지 alt는 `shared/assets/www-hunt-a-slime
 
 ## ICONIX·Pororo 협업사례
 
-2026-10-20 사용자 제공 사례를 12장 `pororo-community`로 추가했습니다. 아이코닉스(ICONIX), 뽀로로 IP 활용, 커뮤니티 구축을 KO/EN/JA로 표시합니다. 사용자가 지정한 `roblox-loopy-asmr-tower`의 썸네일·로딩 배경·아이콘과 ICONIX 공식 로고·뽀로로 작품 이미지를 추가했습니다. 프로젝트 README에서 확인한 Roblox·루피 ASMR 타워 맥락을 소개합니다. 기간·가입 수·추가 수행 범위는 기재하지 않습니다. 이미지별 원본·출처·크기·해시는 [이미지 명세](pororo-assets.json)에 기록했습니다.
+2026-10-20 사용자 제공 사례를 12장 `pororo-community`로 추가했습니다. 아이코닉스(ICONIX), 뽀로로 IP 활용과 수행 업무인 커뮤니티 구축·POC 제작을 KO/EN/JA로 표시합니다. 사용자가 지정한 `roblox-loopy-asmr-tower`의 썸네일·로딩 배경·아이콘과 ICONIX 공식 로고·뽀로로 작품 이미지를 추가했습니다. 프로젝트 README에서 확인한 Roblox·루피 ASMR 타워 맥락을 소개합니다. 기간·가입 수·추가 수행 범위는 기재하지 않습니다. 이미지별 원본·출처·크기·해시는 [이미지 명세](pororo-assets.json)에 기록했습니다.
 
 ## 제작 기준
 

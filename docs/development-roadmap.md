@@ -301,3 +301,5 @@
 - 검증: npm run check 통과. KO/EN/JA × 1280·390·320px smoke 9조합·18장 통과(실패·경고 0), 이미지 5개의 로딩·원본 비율을 3개 폭에서 대조. PC·모바일 상단/하단 PNG 직접 확인. 증거: exports/agent/2026-10-20T03-44-12-171Z-98003/ 및 exports/agent/pororo-art-preview/image-check.json.
 
 - 2026-10-20: 사용자 요청으로 회사 소개 12장 협업사례의 활용 IP 행 제거. KO/EN/JA 불필요 문구 키·스타일 선택자와 문서 동기화, 캐시 버전 갱신. npm run check 및 PC·모바일 smoke 2조합·18장 통과. 3개 언어에서 협업사·수행 업무 2행 확인, PNG 직접 확인. 증거: exports/agent/2026-10-20T03-46-56-996Z-2742/.
+
+- 2026-10-20: 회사 소개 12장 수행 업무를 사용자 제공 문구인 커뮤니티 구축, POC 제작으로 확장. KO/EN/JA와 원고·출처 반영, 캐시 버전 갱신. npm run check 및 PC·모바일 smoke 2조합·18장 통과. 3개 언어 POC 문구 및 모바일 PNG 확인. 증거: exports/agent/2026-10-20T03-47-46-821Z-4472/.
