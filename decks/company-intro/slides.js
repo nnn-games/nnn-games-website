@@ -107,6 +107,17 @@ window.DECK_SLIDES = [
 
 window.DECK_I18N = {
     "ko": {
+        "pororo_project_desc": "루피 캐릭터를 활용한 Roblox ASMR 타워",
+        "pororo_caption_thumbnail": "게임 썸네일",
+        "pororo_caption_loading": "로딩 화면 아트",
+        "pororo_caption_icon": "게임 아이콘",
+        "pororo_caption_brand": "뽀로로 IP",
+        "pororo_brand_source": "브랜드 이미지: ICONIX",
+        "alt_pororo_iconix": "아이코닉스 공식 로고",
+        "alt_pororo_thumbnail": "루피 포스터와 디저트 발판이 배치된 LOOPY ASMR TOWER 썸네일",
+        "alt_pororo_loading": "루피와 도넛·젤리·케이크를 담은 LOOPY ASMR TOWER 로딩 화면 아트",
+        "alt_pororo_icon": "루피와 딸기 탕후루·젤리를 담은 LOOPY ASMR TOWER 아이콘",
+        "alt_pororo_brand": "아이코닉스 공식 뽀로로와 친구들 이미지",
         "title_pororo-community": "협업사례",
         "pororo_ip_name": "뽀로로",
         "pororo_partner_name": "아이코닉스 (ICONIX)",
@@ -289,6 +300,17 @@ window.DECK_I18N = {
         "brief_scope": "일정·범위"
     },
     "en": {
+        "pororo_project_desc": "A Roblox ASMR tower experience featuring Loopy",
+        "pororo_caption_thumbnail": "Game thumbnail",
+        "pororo_caption_loading": "Loading screen artwork",
+        "pororo_caption_icon": "Game icon",
+        "pororo_caption_brand": "Pororo IP",
+        "pororo_brand_source": "Brand images: ICONIX",
+        "alt_pororo_iconix": "Official ICONIX logo",
+        "alt_pororo_thumbnail": "LOOPY ASMR TOWER thumbnail with a Loopy poster and dessert platforms",
+        "alt_pororo_loading": "LOOPY ASMR TOWER loading artwork featuring Loopy, a doughnut, jelly and cake",
+        "alt_pororo_icon": "LOOPY ASMR TOWER icon featuring Loopy, strawberry tanghulu and jelly",
+        "alt_pororo_brand": "Official ICONIX image of Pororo and friends",
         "title_pororo-community": "Partnerships",
         "pororo_ip_name": "Pororo",
         "pororo_partner_name": "ICONIX",
@@ -471,6 +493,17 @@ window.DECK_I18N = {
         "brief_scope": "Schedule / scope"
     },
     "ja": {
+        "pororo_project_desc": "Loopyを活用したRobloxのASMRタワー体験",
+        "pororo_caption_thumbnail": "ゲームサムネイル",
+        "pororo_caption_loading": "ローディング画面アート",
+        "pororo_caption_icon": "ゲームアイコン",
+        "pororo_caption_brand": "Pororo IP",
+        "pororo_brand_source": "ブランド画像：ICONIX",
+        "alt_pororo_iconix": "ICONIX公式ロゴ",
+        "alt_pororo_thumbnail": "Loopyのポスターとデザートの足場を配置したLOOPY ASMR TOWERのサムネイル",
+        "alt_pororo_loading": "Loopyとドーナツ・ゼリー・ケーキを描いたLOOPY ASMR TOWERのローディング画面アート",
+        "alt_pororo_icon": "Loopyとイチゴのタンフル・ゼリーを描いたLOOPY ASMR TOWERのアイコン",
+        "alt_pororo_brand": "ICONIX公式のPororoと仲間たちの画像",
         "title_pororo-community": "協業事例",
         "pororo_ip_name": "Pororo",
         "pororo_partner_name": "ICONIX",

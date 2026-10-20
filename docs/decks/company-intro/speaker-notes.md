@@ -70,9 +70,9 @@
 
 ## 12 협업사례 · ICONIX
 
-- **KO:** 아이코닉스 · 뽀로로 IP를 활용한 커뮤니티 구축
-- **EN:** ICONIX · Community building with the Pororo IP
-- **JA:** ICONIX · Pororo IPを活用したコミュニティ構築
+- **KO:** 아이코닉스 · 뽀로로 IP를 활용한 커뮤니티 구축. LOOPY ASMR TOWER의 썸네일·로딩 화면 아트·아이콘을 함께 소개합니다.
+- **EN:** ICONIX · Community building with the Pororo IP. The gallery shows the LOOPY ASMR TOWER thumbnail, loading artwork and game icon.
+- **JA:** ICONIX · Pororo IPを活用したコミュニティ構築。LOOPY ASMR TOWERのサムネイル、ローディング画面アート、ゲームアイコンを紹介します。
 
 ## 13 IP 전략
 
