@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-20",
+  "slide": "pororo-community",
+  "sourceRepository": "/Users/nnnceo/WorkspaceRoblox/roblox-loopy-asmr-tower",
+  "notes": [
+    "외부 프로젝트는 읽기만 수행하고 원본은 수정하지 않음.",
+    "썸네일·아이콘은 프로젝트 제작 결과, 로딩은 final 배경 아트. 실제 플레이 캡처·커뮤니티 성과 이미지로 주장하지 않음.",
+    "공식 회사 로고와 IP 이미지의 권리는 각 권리자에게 있음."
+  ],
+  "assets": [
+    {
+      "file": "decks/company-intro/assets/pororo-loopy-thumbnail.webp",
+      "role": "게임 썸네일",
+      "source": "/Users/nnnceo/WorkspaceRoblox/roblox-loopy-asmr-tower/art/app-thumbnail/app-thumbnail-1920x1080.png",
+      "sourcePage": null,
+      "sourceSha256": "27cd679bfd741a1b71fee067b8b63103126531a5a2cbcd094d9bc296375deed1",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 3990260,
+      "width": 1200,
+      "height": 675,
+      "bytes": 93358,
+      "conversion": "WebP 압축·축소, 원본 비율·전체 영역 유지"
+    },
+    {
+      "file": "decks/company-intro/assets/pororo-loopy-loading.webp",
+      "role": "로딩 화면 배경 아트",
+      "source": "/Users/nnnceo/WorkspaceRoblox/roblox-loopy-asmr-tower/art/loading-screen/final/ASMRTOWER_LOOPY_LOAIDING_1920x1080.png",
+      "sourcePage": null,
+      "sourceSha256": "a8147bbe3efbafb74930d960eb7f43e4a95d734bc05450e93494258cbec24fbe",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 2485453,
+      "width": 1200,
+      "height": 675,
+      "bytes": 82018,
+      "conversion": "WebP 압축·축소, 원본 비율·전체 영역 유지"
+    },
+    {
+      "file": "decks/company-intro/assets/pororo-loopy-icon.webp",
+      "role": "게임 아이콘",
+      "source": "/Users/nnnceo/WorkspaceRoblox/roblox-loopy-asmr-tower/art/app-icon/app-icon.png",
+      "sourcePage": null,
+      "sourceSha256": "16e547ebba88e374c6843655075a5fbb89f1a244fda085a6ca230bbd96e03120",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "sourceBytes": 1463788,
+      "width": 512,
+      "height": 512,
+      "bytes": 33968,
+      "conversion": "WebP 압축·축소, 원본 비율·전체 영역 유지"
+    },
+    {
+      "file": "decks/company-intro/assets/pororo-brand.webp",
+      "role": "뽀로로 공식 IP 이미지",
+      "source": "https://iconix.co.kr/uploaded/product/1/large_3a9bb84660cdb1fbdffa30fd8365c8690.png",
+      "sourcePage": "https://iconix.co.kr/works/iconix-detail.php?idx=1",
+      "sourceSha256": "d6fc188d3a670d615c000c3eb90b0f370aea72e9015e91ec88d8d4022ca699c0",
+      "sourceWidth": 680,
+      "sourceHeight": 383,
+      "sourceBytes": 408382,
+      "width": 680,
+      "height": 383,
+      "bytes": 51060,
+      "conversion": "WebP 압축·축소, 원본 비율·전체 영역 유지"
+    },
+    {
+      "file": "decks/company-intro/assets/pororo-iconix-logo.webp",
+      "role": "아이코닉스 공식 회사 로고",
+      "source": "https://iconix.co.kr/images/common/logo.png",
+      "sourcePage": "https://iconix.co.kr/",
+      "sourceSha256": "2519d30646d43dbe2bb37e9f39a65630526fddae0c922c3d92b3dd4a09e98f49",
+      "sourceWidth": 119,
+      "sourceHeight": 26,
+      "sourceBytes": 2104,
+      "width": 119,
+      "height": 26,
+      "bytes": 972,
+      "conversion": "WebP 무손실, 원본 비율·전체 영역·투명도 유지"
+    }
+  ]
+}

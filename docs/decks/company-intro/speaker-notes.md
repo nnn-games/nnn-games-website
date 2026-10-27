@@ -68,13 +68,19 @@
 - **EN:** JR EAST × NAVER Z · Get Train
 - **JA:** JR EAST × NAVER Z · Get Train
 
-## 12 IP 전략
+## 12 협업사례 · ICONIX
+
+- **KO:** 아이코닉스 · 뽀로로 IP를 활용한 커뮤니티 구축. LOOPY ASMR TOWER의 썸네일·로딩 화면 아트·아이콘을 함께 소개합니다.
+- **EN:** ICONIX · Community building with the Pororo IP. The gallery shows the LOOPY ASMR TOWER thumbnail, loading artwork and game icon.
+- **JA:** ICONIX · Pororo IPを活用したコミュニティ構築。LOOPY ASMR TOWERのサムネイル、ローディング画面アート、ゲームアイコンを紹介します。
+
+## 13 IP 전략
 
 - **KO:** 캐릭터와 세계관을 플레이 경험과 커뮤니티로 연결합니다.
 - **EN:** Connect characters and worlds to play and communities.
 - **JA:** キャラクターと世界観をプレイ体験とコミュニティにつなげます。
 
-## 13 협업문의
+## 14 협업문의
 
 - **KO:** 함께 만들 다음 프로젝트를 이야기해 주세요.
 - **EN:** Let’s talk about the next project we can build together.

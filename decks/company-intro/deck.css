@@ -274,6 +274,25 @@ a { color: inherit; }
 .partner-scope article { display: flex; gap: .65rem; align-items: center; padding: .6rem .8rem; border: 1px solid var(--deck-line); border-radius: .35rem; }
 .partner-scope span { color: #8b5208; font-size: .65rem; font-weight: 750; }
 .partner-scope h3 { font-size: .79rem; }
+/* ICONIX·Pororo 공식 이미지와 프로젝트 아트를 원본 비율로 배치한다. */
+.pororo-layout { display: grid; flex: 1; min-height: 0; grid-template-columns: minmax(0, .9fr) minmax(0, 1.7fr); gap: 1.6rem; align-items: center; }
+.pororo-company { display: block; width: 6.35rem; }
+.pororo-company img { width: 100%; height: auto; }
+.pororo-case h3 { margin-top: 1.2rem; font-size: 1.55rem; line-height: 1.4; letter-spacing: -.04em; }
+.pororo-project { margin-top: 1.15rem; color: #8b5208; font: 750 .76rem/1.4 Inter, sans-serif; letter-spacing: .035em; }
+.pororo-description { margin-top: .4rem; color: var(--deck-muted); font-size: .76rem; line-height: 1.6; }
+.pororo-details { display: grid; gap: .35rem; margin-top: 1rem; }
+.pororo-details > div { display: grid; grid-template-columns: 4.7rem minmax(0, 1fr); gap: .6rem; padding: .65rem 0; border-bottom: 1px solid var(--deck-line); }
+.pororo-details dt { color: var(--deck-muted); font-size: .7rem; line-height: 1.5; }
+.pororo-details dd { font-size: .76rem; font-weight: 650; line-height: 1.5; }
+.pororo-details [data-deck-key="pororo_partner_name"] { font-family: Inter, "Noto Sans KR", "Noto Sans JP", system-ui, sans-serif; }
+.pororo-gallery { display: grid; min-width: 0; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: .7rem; align-items: start; }
+.pororo-game-shots, .pororo-brand-shots { display: grid; min-width: 0; gap: .65rem; }
+.pororo-gallery figure { min-width: 0; }
+.pororo-gallery img { width: 100%; height: auto; border: 1px solid #e6d9df; border-radius: .35rem; }
+.pororo-gallery figcaption { margin-top: .25rem; color: var(--deck-muted); font-size: .55rem; line-height: 1.35; }
+.pororo-source { font-family: Inter, "Noto Sans KR", "Noto Sans JP", system-ui, sans-serif; }
+.pororo-source a { text-underline-offset: .15em; }
 .strategy-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .9rem; margin-top: .4rem; }
 .strategy-grid article { padding: 1.2rem .9rem; border-top: 2px solid #f5a623; background: #ffffff08; }
 .strategy-num { font: 750 1.85rem/1 Inter, sans-serif; color: #f5a623; }
@@ -462,6 +481,18 @@ a { color: inherit; }
     }
 
     .partner-collage { max-width: none; }
+    .pororo-layout { flex: none; grid-template-columns: 1fr; gap: 1.4rem; }
+    .pororo-company { width: 7rem; }
+    .pororo-case h3 { margin-top: 1rem; font-size: 1.5rem; }
+    .pororo-project { margin-top: 1rem; font-size: .85rem; }
+    .pororo-description { font-size: .9rem; }
+    .pororo-details { margin-top: .8rem; gap: .3rem; }
+    .pororo-details > div { grid-template-columns: 5.5rem minmax(0, 1fr); gap: .65rem; }
+    .pororo-details dt, .pororo-details dd { font-size: .85rem; }
+    .pororo-gallery { grid-template-columns: 1fr; gap: 1.1rem; }
+    .pororo-game-shots { gap: 1.1rem; }
+    .pororo-brand-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; align-items: start; }
+    .pororo-gallery figcaption { margin-top: .4rem; font-size: .74rem; }
     .partner-collage > div { grid-template-columns: 1fr; gap: 1.1rem; }
     .partner-copy > p { font-size: .94rem; }
     .partner-scope h3 { font-size: .95rem; }

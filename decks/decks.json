@@ -61,7 +61,7 @@
         "ja": "NNN GAMES 会社紹介"
       },
       "audience": "partner",
-      "status": "draft",
+      "status": "active",
       "languages": [
         "ko",
         "en",
@@ -69,7 +69,7 @@
       ],
       "runtime": "shared",
       "project": null,
-      "note": "2026-10-01 신규 회사 소개 초안. 본편 13장·부록 4장, company·nnn 이미지·내용 재구성 및 최신 운영·개발 프로젝트·공식 지표 반영. KO/EN/JA."
+      "note": "2026-10-20 공개: 회사 소개 초안을 active로 전환. 본편 14장·부록 4장, KO/EN/JA. ICONIX·Pororo 커뮤니티 구축 협업사례 추가. company·nnn 보관 덱을 대체하며 기존 /company-intro/ 주소 유지."
     }
   ]
 }

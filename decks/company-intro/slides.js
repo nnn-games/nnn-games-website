@@ -1,6 +1,6 @@
 // 신규 회사 소개 — 기존 company·nnn 문구를 재사용하고 KO/EN/JA로 작성.
 // 지표는 제작 시점의 고정 스냅샷. 출처·기준일: docs/decks/company-intro/sources.md
-// 기준: 2026-10-01T05:57:11.388Z (Roblox 공개 API 공식 갱신)
+// 기준: 2026-10-20T02:59:46.223Z (Roblox 공개 API 공식 갱신)
 window.DECK_SLIDES = [
     {
         "id": "intro",
@@ -72,6 +72,10 @@ window.DECK_SLIDES = [
         "theme": "paper"
     },
     {
+        "id": "pororo-community",
+        "theme": "paper"
+    },
+    {
         "id": "ip-strategy",
         "theme": "dark"
     },
@@ -103,6 +107,23 @@ window.DECK_SLIDES = [
 
 window.DECK_I18N = {
     "ko": {
+        "pororo_project_desc": "루피 캐릭터를 활용한 Roblox ASMR 타워",
+        "pororo_caption_thumbnail": "게임 썸네일",
+        "pororo_caption_loading": "로딩 화면 아트",
+        "pororo_caption_icon": "게임 아이콘",
+        "pororo_caption_brand": "뽀로로 IP",
+        "pororo_brand_source": "브랜드 이미지: ICONIX",
+        "alt_pororo_iconix": "아이코닉스 공식 로고",
+        "alt_pororo_thumbnail": "루피 포스터와 디저트 발판이 배치된 LOOPY ASMR TOWER 썸네일",
+        "alt_pororo_loading": "루피와 도넛·젤리·케이크를 담은 LOOPY ASMR TOWER 로딩 화면 아트",
+        "alt_pororo_icon": "루피와 딸기 탕후루·젤리를 담은 LOOPY ASMR TOWER 아이콘",
+        "alt_pororo_brand": "아이코닉스 공식 뽀로로와 친구들 이미지",
+        "title_pororo-community": "협업사례",
+        "pororo_partner_name": "아이코닉스 (ICONIX)",
+        "pororo_partner_label": "협업사",
+        "pororo_work_label": "수행 업무",
+        "pororo_work_name": "커뮤니티 구축, POC 제작",
+        "pororo_summary": "뽀로로 IP를 활용한 커뮤니티 구축",
         "ui_page_title": "NNN GAMES 회사 소개",
         "ui_prev": "이전",
         "ui_next": "다음",
@@ -128,8 +149,8 @@ window.DECK_I18N = {
         "label_concept": "개발 콘셉트",
         "label_expected": "출시 예정",
         "label_production": "UGC 제작 프로젝트",
-        "source_current": "Roblox 공개 지표 · 2026.10.01 14:57 KST",
-        "source_games": "운영 게임 6종 · Roblox 공개 지표 · 2026.10.01",
+        "source_current": "Roblox 공개 지표 · 2026.10.20 11:59 KST",
+        "source_games": "운영 게임 6종 · Roblox 공개 지표 · 2026.10.20",
         "source_pipeline": "개발 중 · 등록된 출시 예정 월 기준 · 2026.10",
         "source_cases": "운영 게임의 플레이·보상 설계 사례",
         "source_events": "기존 라이브 이벤트 사례 · Top 100 Challenge / Golden Ducky",
@@ -277,6 +298,23 @@ window.DECK_I18N = {
         "brief_scope": "일정·범위"
     },
     "en": {
+        "pororo_project_desc": "A Roblox ASMR tower experience featuring Loopy",
+        "pororo_caption_thumbnail": "Game thumbnail",
+        "pororo_caption_loading": "Loading screen artwork",
+        "pororo_caption_icon": "Game icon",
+        "pororo_caption_brand": "Pororo IP",
+        "pororo_brand_source": "Brand images: ICONIX",
+        "alt_pororo_iconix": "Official ICONIX logo",
+        "alt_pororo_thumbnail": "LOOPY ASMR TOWER thumbnail with a Loopy poster and dessert platforms",
+        "alt_pororo_loading": "LOOPY ASMR TOWER loading artwork featuring Loopy, a doughnut, jelly and cake",
+        "alt_pororo_icon": "LOOPY ASMR TOWER icon featuring Loopy, strawberry tanghulu and jelly",
+        "alt_pororo_brand": "Official ICONIX image of Pororo and friends",
+        "title_pororo-community": "Partnerships",
+        "pororo_partner_name": "ICONIX",
+        "pororo_partner_label": "Partner",
+        "pororo_work_label": "Scope of work",
+        "pororo_work_name": "Community building, POC development",
+        "pororo_summary": "Pororo IP community building",
         "ui_page_title": "NNN GAMES Company Introduction",
         "ui_prev": "Prev",
         "ui_next": "Next",
@@ -302,8 +340,8 @@ window.DECK_I18N = {
         "label_concept": "Development concept",
         "label_expected": "Expected release",
         "label_production": "UGC creation project",
-        "source_current": "Roblox public metrics · 2026.10.01 14:57 KST",
-        "source_games": "6 live games · Roblox public metrics · 2026.10.01",
+        "source_current": "Roblox public metrics · 2026.10.20 11:59 KST",
+        "source_games": "6 live games · Roblox public metrics · 2026.10.20",
         "source_pipeline": "In development · Scheduled release months · 2026.10",
         "source_cases": "Gameplay and reward design from live games",
         "source_events": "Past live events · Top 100 Challenge / Golden Ducky",
@@ -451,6 +489,23 @@ window.DECK_I18N = {
         "brief_scope": "Schedule / scope"
     },
     "ja": {
+        "pororo_project_desc": "Loopyを活用したRobloxのASMRタワー体験",
+        "pororo_caption_thumbnail": "ゲームサムネイル",
+        "pororo_caption_loading": "ローディング画面アート",
+        "pororo_caption_icon": "ゲームアイコン",
+        "pororo_caption_brand": "Pororo IP",
+        "pororo_brand_source": "ブランド画像：ICONIX",
+        "alt_pororo_iconix": "ICONIX公式ロゴ",
+        "alt_pororo_thumbnail": "Loopyのポスターとデザートの足場を配置したLOOPY ASMR TOWERのサムネイル",
+        "alt_pororo_loading": "Loopyとドーナツ・ゼリー・ケーキを描いたLOOPY ASMR TOWERのローディング画面アート",
+        "alt_pororo_icon": "Loopyとイチゴのタンフル・ゼリーを描いたLOOPY ASMR TOWERのアイコン",
+        "alt_pororo_brand": "ICONIX公式のPororoと仲間たちの画像",
+        "title_pororo-community": "協業事例",
+        "pororo_partner_name": "ICONIX",
+        "pororo_partner_label": "パートナー",
+        "pororo_work_label": "担当業務",
+        "pororo_work_name": "コミュニティ構築・POC制作",
+        "pororo_summary": "Pororo IPを活用したコミュニティ構築",
         "ui_page_title": "NNN GAMES 会社紹介",
         "ui_prev": "前へ",
         "ui_next": "次へ",
@@ -476,8 +531,8 @@ window.DECK_I18N = {
         "label_concept": "開発コンセプト",
         "label_expected": "公開予定",
         "label_production": "UGC制作プロジェクト",
-        "source_current": "Roblox公開指標 · 2026.10.01 14:57 KST",
-        "source_games": "運営ゲーム6本 · Roblox公開指標 · 2026.10.01",
+        "source_current": "Roblox公開指標 · 2026.10.20 11:59 KST",
+        "source_games": "運営ゲーム6本 · Roblox公開指標 · 2026.10.20",
         "source_pipeline": "開発中 · 登録済み公開予定月 · 2026.10",
         "source_cases": "運営ゲームのプレイ・報酬設計事例",
         "source_events": "過去のライブイベント事例 · Top 100 Challenge / Golden Ducky",

@@ -8,8 +8,8 @@ Each deck keeps only page-specific concerns in its own directory:
 
 ```text
 decks/decks.json        # registry: slug, title, audience, status (active/draft/archived), languages, runtime, project
-decks/company-intro/    # 신규 회사 소개 제작용 draft
-  index.html            # route entry: /company-intro/ (dev only)
+decks/company-intro/    # 공개 회사 소개 active
+  index.html            # route entry: /company-intro/
   slides.js             # DECK_SLIDES (order, appendix flags, renderer data) + DECK_I18N (KO/EN/JA copy)
   deck.css              # deck-specific styles
   assets/
@@ -45,7 +45,7 @@ When final designs are ready, add page-specific styles beside the relevant page 
 
 | 덱 | 상태 | 용도 |
 | --- | --- | --- |
-| `company-intro` | `draft` | 기존 이미지·내용과 최신 프로젝트·지표를 반영한 본편 13장·부록 4장 (KO/EN/JA) |
+| `company-intro` | `active` | 기존 이미지·내용과 최신 프로젝트·지표를 반영한 본편 14장·부록 4장 (KO/EN/JA) |
 | `company` | `archived` | 2026-08 회사 소개 보관 (2026-10-01 전환) |
 | `nnn` | `archived` | 2026-07 회사 소개 보관 (2026-10-01 전환) |
 | `jumpstart` | `active` | 기존 Jumpstart 제안 |
