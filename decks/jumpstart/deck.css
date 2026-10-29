@@ -366,9 +366,22 @@
 .js-timeline-period-2 { grid-column: 1 / span 2; --period-months: 2; }
 .js-timeline-period-3 { grid-column: 1 / span 3; --period-months: 3; }
 .js-timeline-period-6 { grid-column: 1 / span 6; --period-months: 6; }
+.js-timeline-period-early-nov { grid-column: 1 / -1; width: calc(100% * 2.2 / 6); --period-months: 2.2; }
+.js-timeline-period-mid-jan { grid-column: 1 / -1; width: calc(100% * 4.5 / 6); --period-months: 4.5; }
 .js-timeline-start { position: absolute; left: -.15rem; top: 50%; width: .3rem; height: .3rem; border-radius: 50%; background: var(--project-color); transform: translateY(-50%); }
 .js-timeline-current-progress { position: absolute; left: calc(103.23% / var(--period-months)); top: 50%; transform: translate(-50%, -50%); padding: .35rem .45rem; border-radius: .2rem; background: var(--project-color); color: #fff; font: 900 .8rem/1 Inter, sans-serif; }
 .js-timeline-release { font-size: .55rem; font-weight: 700; }
+[data-slide="progress-2026-10-29-summary"] .js-progress-grid { margin: .5rem 0; }
+.js-timeline-legend { display: flex; flex-wrap: wrap; gap: .4rem 1rem; margin-bottom: .5rem; font: 700 .6rem/1.4 Inter, sans-serif; }
+.js-timeline-legend span { display: inline-flex; align-items: center; gap: .35rem; }
+.js-timeline-legend span::before { content: ""; width: .6rem; height: .6rem; border-radius: .12rem; background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)), linear-gradient(90deg, #2458ba 0 33%, #34752d 33% 66%, #c93220 66%); }
+.js-timeline-legend .js-timeline-legend-current::before { background: linear-gradient(90deg, #2458ba 0 33%, #34752d 33% 66%, #c93220 66%); }
+.js-timeline-comparison .js-timeline-row { margin-top: .75rem; }
+.js-timeline-comparison .js-timeline-track { min-height: 2rem; margin-bottom: .7rem; }
+.js-timeline-comparison .js-timeline-period { min-height: 2rem; }
+.js-timeline-progress-fill { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(90deg, rgba(255,255,255,.6) 0 var(--progress-previous), transparent var(--progress-previous)), linear-gradient(90deg, var(--project-color) 0 var(--progress-current), transparent var(--progress-current)); }
+.js-timeline-comparison .js-timeline-current-progress { left: calc(var(--progress-current) - .3rem); right: auto; transform: translate(-100%, -50%); padding: .2rem 0; border-radius: 0; background: transparent; font-size: .7rem; }
+.js-timeline-comparison .js-timeline-release { position: absolute; top: calc(100% + .12rem); right: 0; white-space: nowrap; }
 .js-timeline-note { margin-top: .65rem; color: var(--deck-muted); font-size: .5rem; line-height: 1.5; }
 
 /* 단계별 목표와 프로젝트 이미지 */
@@ -395,6 +408,30 @@
 .js-stage-operations-list li { padding-bottom: .65rem; }
 .js-stage-operations-list p { font-size: .9rem; }
 
+
+.js-stage3-work { display: grid; gap: 1rem; }
+.js-stage3-work article { padding: 1.25rem; border: 1px solid var(--deck-line); border-radius: .6rem; background: rgba(255,255,255,.5); }
+.js-stage3-work h3 { font-size: 1.1rem; line-height: 1.4; }
+.js-stage3-work ul { margin: .9rem 0; padding-left: 1.2rem; font-size: .95rem; line-height: 1.9; }
+.js-stage3-work-count { display: block; color: #287044; font: 900 1.7rem/1.3 Inter, sans-serif; }
+
+.js-direction-layout { display: grid; grid-template-columns: minmax(0, 1fr) 19rem; align-items: center; gap: 1.5rem; flex: 1; min-height: 0; }
+.js-direction-concept { min-width: 0; max-width: 26rem; padding: .5rem 0; }
+.js-direction-confirmed { margin-bottom: 1rem; color: #287044; font-size: .85rem; font-weight: 800; }
+.js-direction-combination { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: .8rem; }
+.js-direction-combination article { display: grid; min-height: 4rem; place-items: center; padding: .7rem; border: 1px solid var(--deck-line); border-radius: .7rem; background: rgba(255,255,255,.65); text-align: center; }
+.js-direction-combination h3 { color: var(--ketchup); font-size: 1.2rem; line-height: 1.4; }
+.js-direction-gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: .45rem; width: 11rem; justify-self: center; }
+.js-direction-gallery figure { min-width: 0; margin: 0; }
+.js-direction-gallery img { display: block; width: 100%; height: auto; border-radius: .25rem; }
+.js-direction-plus { color: var(--tomato); font: 900 2rem/1 Inter, sans-serif; text-align: center; }
+.js-direction-genre { margin-top: 1rem; text-align: center; font-size: 1rem; font-weight: 800; }
+
+.js-visual-assets { display: grid; grid-template-rows: minmax(0, 1.4fr) minmax(0, 1fr); gap: .7rem; flex: 1; min-height: 0; margin-top: 1rem; }
+.js-visual-concept-image { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.js-visual-assets-bottom { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; min-height: 0; }
+.js-visual-assets-bottom img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+
 /* 연구 근거와 적용 실험 */
 .js-research-lead { max-width: 52rem; margin-top: .7rem; color: var(--deck-muted); font-size: .85rem; line-height: 1.5; }
 .js-research-notes { margin: 1.2rem 0; padding: 0; list-style: none; }
@@ -405,7 +442,30 @@
 .js-research-area { flex: 0 0 9.5rem; color: var(--ketchup); font-size: .6rem; font-weight: 700; text-align: right; }
 .js-research-status { margin-top: auto; color: var(--deck-muted); font-size: .65rem; line-height: 1.5; }
 
+@media screen and (min-width: 768px) {
+    [data-slide="progress-2026-10-29-direction"] .js-slide-head { max-width: calc(100% - 19rem); }
+    .js-direction-concept { transform: translateX(5rem); }
+    .js-direction-gallery { position: absolute; top: 1.5rem; right: 7.5rem; width: 16rem; }
+    [data-slide="progress-2026-10-29-stage-2"] .js-stage-goal-list { gap: .6rem; }
+    [data-slide="progress-2026-10-29-stage-2"] .js-stage-goal-list li { padding-bottom: .65rem; }
+    [data-slide="progress-2026-10-29-stage-2"] .js-stage-goal-list p { font-size: .9rem; }
+    [data-slide="progress-2026-10-29-stage-1"] .js-stage-goal-list { gap: .5rem; }
+    [data-slide="progress-2026-10-29-stage-1"] .js-stage-goal-list li { padding-bottom: .5rem; }
+    [data-slide="progress-2026-10-29-stage-1"] .js-stage-goal-list p { font-size: .9rem; }
+}
+
 @media screen and (max-width: 767px) {
+    .js-visual-assets { display: block; flex: none; }
+    .js-visual-concept-image { height: auto; }
+    .js-visual-assets-bottom { grid-template-columns: minmax(0, 1fr); margin-top: .8rem; }
+    .js-visual-assets-bottom img { height: auto; }
+    .js-direction-layout { grid-template-columns: minmax(0, 1fr); gap: 1rem; flex: none; }
+    .js-direction-gallery { width: 100%; gap: .8rem; }
+    .js-direction-gallery img { height: auto; }
+    .js-direction-combination { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
+    .js-direction-combination article { min-height: 8rem; padding: 1.2rem; }
+    .js-direction-combination h3 { font-size: 1.4rem; }
+    .js-direction-plus { text-align: center; }
     .js-research-notes li { gap: .7rem; font-size: .8rem; }
     .js-research-note-body { flex-direction: column; gap: .3rem; }
     .js-research-area { flex: none; text-align: left; font-size: .65rem; }
