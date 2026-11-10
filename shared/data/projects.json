@@ -13,11 +13,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 11476319,
-        "playing": 9,
-        "favorites": 528448,
-        "likeRatio": 0.608060933037131,
-        "updatedAt": "2026-11-09T10:49:40.492Z"
+        "visits": 11478207,
+        "playing": 11,
+        "favorites": 528489,
+        "likeRatio": 0.6074825618262524,
+        "updatedAt": "2026-11-10T10:42:51.296Z"
       },
       "contentFile": "assets/www-tower-flood-race/content.json"
     },
@@ -67,7 +67,7 @@
         "playing": 0,
         "favorites": 249,
         "likeRatio": 0.5555555555555556,
-        "updatedAt": "2026-11-09T10:49:40.492Z"
+        "updatedAt": "2026-11-10T10:42:51.296Z"
       }
     },
     {
@@ -83,11 +83,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 145944,
-        "playing": 0,
+        "visits": 145970,
+        "playing": 1,
         "favorites": 755,
         "likeRatio": 0.8665850673194615,
-        "updatedAt": "2026-11-09T10:49:40.492Z"
+        "updatedAt": "2026-11-10T10:42:51.296Z"
       },
       "contentFile": "assets/www-korean-spa/content.json"
     },
@@ -152,11 +152,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 1321719,
-        "playing": 2,
-        "favorites": 12772,
+        "visits": 1322911,
+        "playing": 1,
+        "favorites": 12774,
         "likeRatio": 0.7642276422764228,
-        "updatedAt": "2026-11-09T10:49:40.492Z"
+        "updatedAt": "2026-11-10T10:42:51.296Z"
       },
       "contentFile": "assets/www-tomato-splatter-simulator/content.json"
     },
@@ -173,11 +173,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 864729,
-        "playing": 5,
-        "favorites": 8832,
-        "likeRatio": 0.9682129730803616,
-        "updatedAt": "2026-11-09T10:49:40.492Z"
+        "visits": 865884,
+        "playing": 11,
+        "favorites": 8838,
+        "likeRatio": 0.9681231380337637,
+        "updatedAt": "2026-11-10T10:42:51.296Z"
       },
       "contentFile": "assets/www-afk-or/content.json"
     },
@@ -194,11 +194,11 @@
         "includeInHeroVisitTotal": true
       },
       "metrics": {
-        "visits": 396109,
-        "playing": 9,
-        "favorites": 6511,
-        "likeRatio": 0.8342911877394636,
-        "updatedAt": "2026-11-09T10:49:40.492Z"
+        "visits": 397801,
+        "playing": 7,
+        "favorites": 6548,
+        "likeRatio": 0.8341277407054337,
+        "updatedAt": "2026-11-10T10:42:51.296Z"
       },
       "contentFile": "assets/www-free-ugc-rng/content.json"
     },
@@ -306,7 +306,7 @@
         "afk-or",
         "free-ugc-rng"
       ],
-      "totalVisits": 14262153,
+      "totalVisits": 14268106,
       "visitProjectIds": [
         "tower-flood-race",
         "fruit-battles",
@@ -315,7 +315,7 @@
         "afk-or",
         "free-ugc-rng"
       ],
-      "updatedAt": "2026-11-09T10:49:40.492Z"
+      "updatedAt": "2026-11-10T10:42:51.296Z"
     }
   }
 }
