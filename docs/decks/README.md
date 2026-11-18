@@ -4,6 +4,7 @@
 
 - [발표 구조 기획](structure.md): company/jumpstart 초기 구성 기록
 - [신규 회사 소개](company-intro/README.md): 공개 중인 본편 14장·부록 4장, 보관 덱 비교·구성안·인용 출처
+- [2026년 11월 진행 중인 프로젝트](nnn-dev-2611/README.md): 개발 게임 6종·본문 7장. 장르·타깃·재미와 출시 목표·진척도 소개, KO/EN/JA 공개
 - [보관된 회사 소개](company/README.md): company와 nnn 발표의 과거 기획·원본
 - [Jumpstart 제안](jumpstart/README.md): 제안 원고·슬라이드 기획·이미지 프롬프트
 

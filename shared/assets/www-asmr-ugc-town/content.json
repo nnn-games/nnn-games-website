@@ -263,6 +263,29 @@
         "desc_asmr-ugc-town": "ASMR障害物の探索・素材収集・無料UGC交換",
         "alt_asmr-ugc-town": "ASMR UGC Townの開発ビジュアル"
       }
+    },
+    "nnn-dev-2611": {
+      "ko": {
+        "name_asmr-ugc-town": "ASMR UGC Town",
+        "alt_asmr-ugc-town": "ASMR UGC Town 개발 이미지",
+        "genre_asmr-ugc-town": "캐주얼 Obby · ASMR · 수집",
+        "target_asmr-ugc-town": "연령: 8~12세\n성별: 여성 중심",
+        "fun_asmr-ugc-town": "장애물을 넘는 소리·반응의 쾌감과 모은 재료를 UGC로 바꾸는 보상"
+      },
+      "en": {
+        "name_asmr-ugc-town": "ASMR UGC Town",
+        "alt_asmr-ugc-town": "Preview image for ASMR UGC Town",
+        "genre_asmr-ugc-town": "Casual ASMR obby with collectibles",
+        "target_asmr-ugc-town": "Ages 8–12\nPrimarily female",
+        "fun_asmr-ugc-town": "Clear obstacles with satisfying sounds and feedback, then trade collected materials for UGC avatar items."
+      },
+      "ja": {
+        "name_asmr-ugc-town": "ASMR UGC Town",
+        "alt_asmr-ugc-town": "ASMR UGC Townの開発ビジュアル",
+        "genre_asmr-ugc-town": "カジュアルObby・ASMR・収集",
+        "target_asmr-ugc-town": "年齢：8～12歳\n性別：女性中心",
+        "fun_asmr-ugc-town": "障害物の音・反応の心地よさと、集めた素材をUGCに交換する楽しさ"
+      }
     }
   }
 }

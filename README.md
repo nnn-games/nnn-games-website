@@ -42,6 +42,7 @@ decks/         발표자료 코드와 발표용 이미지
   decks.json   발표 목록·상태
   shared/      공통 슬라이드 런타임
   company-intro/  공개 회사 소개 (본편 14장·부록 4장)
+  nnn-dev-2611/   2026년 11월 진행 중인 프로젝트 (active, 본문 7장)
   company/     보관된 회사 소개 (2026-08)
   nnn/         보관된 회사 소개 (2026-07)
   jumpstart/   프로젝트 제안

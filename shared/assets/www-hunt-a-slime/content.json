@@ -228,6 +228,29 @@
         "stage_2_image_caption": "Hunt a Slime",
         "stage_2_image_alt": "Hunt a Slime key visual showing a sword-wielding character and slimes"
       }
+    },
+    "nnn-dev-2611": {
+      "ko": {
+        "name_hunt-a-slime": "Hunt a Slime",
+        "alt_hunt-a-slime": "Hunt a slime 개발 이미지",
+        "genre_hunt-a-slime": "슬라임 사냥 액션 RPG",
+        "target_hunt-a-slime": "연령: 10~18세\n성별: 남성 중심",
+        "fun_hunt-a-slime": "슬라임 무리 사냥, 전리품 파밍과 장비·스킬 조합, 보스 도전"
+      },
+      "en": {
+        "name_hunt-a-slime": "Hunt a Slime",
+        "alt_hunt-a-slime": "Preview image for Hunt a Slime",
+        "genre_hunt-a-slime": "Slime-hunting action RPG",
+        "target_hunt-a-slime": "Ages 10–18\nPrimarily male",
+        "fun_hunt-a-slime": "Fight slime hordes, farm loot, and combine gear and skills to take on bosses."
+      },
+      "ja": {
+        "name_hunt-a-slime": "Hunt a Slime",
+        "alt_hunt-a-slime": "Hunt a slimeの開発ビジュアル",
+        "genre_hunt-a-slime": "スライム狩りアクションRPG",
+        "target_hunt-a-slime": "年齢：10～18歳\n性別：男性中心",
+        "fun_hunt-a-slime": "スライムの群れを狩り、装備・スキルを組み合わせてボスに挑む楽しさ"
+      }
     }
   }
 }

@@ -70,6 +70,24 @@
       "runtime": "shared",
       "project": null,
       "note": "2026-10-20 공개: 회사 소개 초안을 active로 전환. 본편 14장·부록 4장, KO/EN/JA. ICONIX·Pororo 커뮤니티 구축 협업사례 추가. company·nnn 보관 덱을 대체하며 기존 /company-intro/ 주소 유지."
+    },
+    {
+      "slug": "nnn-dev-2611",
+      "title": {
+        "ko": "2026년 11월 진행 중인 프로젝트",
+        "en": "Games in Development · November 2026",
+        "ja": "2026年11月 進行中のプロジェクト"
+      },
+      "audience": "internal",
+      "status": "active",
+      "languages": [
+        "ko",
+        "en",
+        "ja"
+      ],
+      "runtime": "shared",
+      "project": null,
+      "note": "2026-11-18 공개: 사용자 배포 요청으로 draft에서 active로 전환. 개발 게임 6종 소개 1장과 개별 6장, KO/EN/JA, Jumpstart 형식. 사용자 제공 출시 목표·진척도와 게임별 장르·연령·성별 타깃·핵심 재미 요약 반영. Archer 소개는 콘셉트 제안이며 사용자 제공 대표 이미지 사용."
     }
   ]
 }

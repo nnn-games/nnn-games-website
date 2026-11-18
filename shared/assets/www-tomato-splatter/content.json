@@ -259,6 +259,29 @@
         "stage_3_image_caption": "Tomato Splatter",
         "stage_3_image_alt": "Tomato Splatter key visual showing characters facing a tomato monster"
       }
+    },
+    "nnn-dev-2611": {
+      "ko": {
+        "name_tomato-splatter": "Tomato Splatter",
+        "alt_tomato-splatter": "Tomato Splatter 개발 로비 전체 화면",
+        "genre_tomato-splatter": "3D 서바이버 · 루팅 액션 RPG",
+        "target_tomato-splatter": "연령: 15세 이상\n성별: 남성 중심",
+        "fun_tomato-splatter": "대규모 몬스터 사냥과 희귀 전리품, 장비·스킬 조합으로 강해지는 재미"
+      },
+      "en": {
+        "name_tomato-splatter": "Tomato Splatter",
+        "alt_tomato-splatter": "Full view of the Tomato Splatter lobby in development",
+        "genre_tomato-splatter": "3D survivors-like / loot-driven action RPG",
+        "target_tomato-splatter": "Ages 15+\nPrimarily male",
+        "fun_tomato-splatter": "Battle monster hordes, chase rare loot, and grow stronger with gear and skill builds."
+      },
+      "ja": {
+        "name_tomato-splatter": "Tomato Splatter",
+        "alt_tomato-splatter": "Tomato Splatterの開発中ロビー全景",
+        "genre_tomato-splatter": "3Dサバイバー・ハクスラ型アクションRPG",
+        "target_tomato-splatter": "年齢：15歳以上\n性別：男性中心",
+        "fun_tomato-splatter": "モンスターの群れを倒し、希少な戦利品と装備・スキルの組み合わせで強くなる楽しさ"
+      }
     }
   }
 }

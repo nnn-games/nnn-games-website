@@ -206,6 +206,29 @@
         "stage_1_image_caption": "Enchant a Weapon",
         "stage_1_image_alt": "Enchant a Weapon key visual showing weapons and a character in a display hall"
       }
+    },
+    "nnn-dev-2611": {
+      "ko": {
+        "name_enchanted-weapon": "Enchant a Weapon",
+        "alt_enchanted-weapon": "Enchant a Weapon 개발 이미지",
+        "genre_enchanted-weapon": "AD&D 룰 기반 무기 제작·강화 RPG",
+        "target_enchanted-weapon": "연령: 10~18세\n성별: 남성 중심",
+        "fun_enchanted-weapon": "재료를 모아 무기를 만들고, +10 강화에 도전해 UGC를 얻는 성취감"
+      },
+      "en": {
+        "name_enchanted-weapon": "Enchant a Weapon",
+        "alt_enchanted-weapon": "Preview image for Enchant a Weapon",
+        "genre_enchanted-weapon": "RPG based on AD&D rules, with weapon crafting and upgrades",
+        "target_enchanted-weapon": "Ages 10–18\nPrimarily male",
+        "fun_enchanted-weapon": "Gather materials, craft weapons, and upgrade them to +10 to earn UGC avatar items."
+      },
+      "ja": {
+        "name_enchanted-weapon": "Enchant a Weapon",
+        "alt_enchanted-weapon": "Enchant a Weaponの開発ビジュアル",
+        "genre_enchanted-weapon": "AD&Dルールベースの武器製作・強化RPG",
+        "target_enchanted-weapon": "年齢：10～18歳\n性別：男性中心",
+        "fun_enchanted-weapon": "素材を集めて武器を作り、+10強化に挑んでUGCを獲得する達成感"
+      }
     }
   }
 }
